@@ -1,0 +1,46 @@
+{
+  "01_combined.zh": {
+    "pages": 108,
+    "rendered": 108,
+    "sha256": "c6acceaf48a66465df56f649bde88e5e8134ed1f58a33fdbadea13729a23c057",
+    "layout_warnings": [],
+    "edge_characters": [],
+    "missing_internal_targets": [],
+    "document_body_preserved": true
+  },
+  "03_constant_factor.zh": {
+    "pages": 73,
+    "rendered": 73,
+    "sha256": "fb704f51529fc33d6349511ef9342d2f8cd042c45e1ed9362380809d3050e259",
+    "layout_warnings": [],
+    "edge_characters": [],
+    "missing_internal_targets": [],
+    "document_body_preserved": true
+  },
+  "04_wormald.zh": {
+    "pages": 35,
+    "rendered": 35,
+    "sha256": "80e6b296ef74e7f36707fc20936514f9cc6a078c5f27eb4757860ee6667430b3",
+    "layout_warnings": [],
+    "edge_characters": [],
+    "missing_internal_targets": [],
+    "document_body_preserved": true
+  },
+  "05_proof_idea.zh": {
+    "pages": 1,
+    "rendered": 1,
+    "sha256": "380a5235636c65332949a46d8ed63b44ba09505049aab038c8755b69e171e4b6",
+    "layout_warnings": [],
+    "edge_characters": [],
+    "missing_internal_targets": [],
+    "document_body_preserved": true
+  },
+  "06_freshman_guide.zh": {
+    "pages": 33,
+    "rendered": 33,
+    "sha256": "81fdf55e5006a2818fcb48ecc758c3c93b6b68835c952a41488bf3481167fd55",
+    "layout_warnings": [],
+    "edge_characters": [],
+    "missing_internal_targets": []
+  }
+}

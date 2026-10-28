@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec,amsmath,amssymb,mathtools}
+\providecommand{\mathscr}[1]{\mathcal{#1}}
+\DeclareFontFamily{U}{euf}{}
+\DeclareFontShape{U}{euf}{m}{n}{<-> eufm10}{}
+\usepackage[margin=22mm,headheight=14pt]{geometry}
+\usepackage{graphicx,booktabs,longtable,array,calc,enumitem}
+\usepackage{needspace,xurl,newunicodechar}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{bookmark,fancyhdr}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{xeCJK}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setCJKmainfont[Path=../fonts/,
+  BoldFont=NotoSansSC-SemiBold.ttf,
+  ItalicFont=NotoSerifSC-Regular.ttf]{NotoSerifSC-Regular.ttf}
+\setCJKsansfont[Path=../fonts/,
+  BoldFont=NotoSansSC-SemiBold.ttf]{NotoSansSC-SemiBold.ttf}
+\setCJKmonofont[Path=../fonts/]{NotoSansSC-SemiBold.ttf}
+\xeCJKsetup{PunctStyle=quanjiao,CJKmath=true}
+\renewcommand{\figurename}{图}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\setmonofont{Consolas}[Scale=0.82]
+\newfontfamily\extendedlatin{lmroman10-regular.otf}
+\newunicodechar{ő}{{\extendedlatin\char"0151}}
+\newunicodechar{ű}{{\extendedlatin\char"0171}}
+\setlength{\emergencystretch}{4em}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{2.5pt plus 1pt}
+\linespread{1.10}
+\allowdisplaybreaks[3]
+\raggedbottom
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\setcounter{secnumdepth}{-1}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\passthrough}[1]{#1}
+\setlist{itemsep=2pt,parsep=0pt}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}{-2.8ex plus -1ex minus -.2ex}{1.1ex plus .2ex}{\normalfont\large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}{-2.1ex plus -.8ex minus -.2ex}{.8ex plus .2ex}{\normalfont\normalsize\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}{-1.8ex plus -.5ex minus -.2ex}{.6ex plus .2ex}{\normalfont\normalsize\bfseries}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small 竞赛图中的 Hamilton 计数}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\hypersetup{pdftitle={本文结果及其与已有工作的关系},pdfauthor={简短说明}}
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+{\Large\bfseries 本文结果及其与已有工作的关系\par}
+\vspace{9pt}
+{\normalsize 简短说明\par}
+\vspace{5pt}
+{\small 2026 年 10 月 28 日\par}
+\end{center}
+\vspace{3pt}
+\Needspace{5\baselineskip}
+\section{1. 全局路径数的定量误差}\label{ux5168ux5c40ux8defux5f84ux6570ux7684ux5b9aux91cfux8befux5dee}
+
+Divoux--Wang 已证明，竞赛图 Hamilton 路径极值的首项常数为 \(L=\cosh1/\cos1\)，奇阶圆环及其偶阶删点图渐近达到该值。本文保留这一常数与构造，证明
+
+\[P(n)=\left(L+O(n^{-1})\right)\frac{n!}{2^{n-1}}.\]
+
+证明直接从 Irving--Omar 所讨论的路径卷积出发，逐项控制永久式、删点、缩放及求和的误差。McCullagh 已有永久式的行列式近似和 \(O(n^{-1})\) 误差；Divoux--Wang 的证明在非负双随机情形也可细化到这一阶。这里的定量结论是经过全部计数步骤后，全图路径极值仍保留 \(O(n^{-1})\) 误差。
+
+\Needspace{5\baselineskip}
+\section{2. 原角函数的完整 Hessian}\label{ux539fux89d2ux51fdux6570ux7684ux5b8cux6574-hessian}
+
+Wormald 的固定基图渐近式以角 Hessian 非退化为条件。本文从他的原隐式方程求导，对奇数 \(d\ge3\) 的正则基图得到
+
+\[\mathbf H=E^T(I+C^2)(I-C^2)^{-1}E>0,
+\qquad C=(A-A^T)/d.\]
+
+这里 \(E=(e_1-e_d,\ldots,e_{d-1}-e_d)\)。压缩行列式中的因子 \(\det(E^TE)=d\) 给出
+
+\[\sqrt{\frac d{\det\mathbf H}}
+=\frac{\det(I+C)}{\det(I+iC)}=\rho_d(A-A^T).\]
+
+正定性直接验证非退化条件，正有理行列式之比解释平方根的有理性；这就是对 Wormald Hessian 猜想的直接证明。
+
+\Needspace{5\baselineskip}
+\section{3. 既有理论的应用与补充}\label{ux65e2ux6709ux7406ux8bbaux7684ux5e94ux7528ux4e0eux8865ux5145}
+
+模型常数 \(\rho_d\) 本身可将期望加权邻接矩阵代入 Divoux--Wang 的一般计数定理得到。其谱上界与圆环闭式也见于他们的论文；正则内部块的 \(e^{1/d}\) 因子来自 Wormald。本文在这些结果上接入 Fang--Huang 的等号条件，以零行和确定圆环同构，再用非正则基图的指数衰减得到固定基图阶数下的期望唯一极值。严格单调性由已有显式频率推出，高阶展开由已知闭式计算。合稿将这些结论列作推论，保留具体证明并在相应位置注明来源。
+\end{document}

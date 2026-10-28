@@ -1,0 +1,112 @@
+Freshman guide: checked mathematical examples
+Source baseline: rewrite_20261028_v4/output/pdf/01_combined.zh.md and 02_combined.en.md
+Scope: the elementary examples and logical explanations in parts/05_exercises.zh.md.
+This note does not certify the full research proof.
+
+1. Three-vertex counts and normalizations
+   Orientation Q: 1->2, 2->3, 3->1.
+   Hamilton paths, counted as vertex orders:
+     (1,2,3), (2,3,1), (3,1,2), hence H(Q)=3.
+   Hamilton cycles, cyclic starts identified: C(Q)=1.
+   Transitive orientation 1->2, 1->3, 2->3:
+     H(T)=1, C(T)=0.
+   Labeled order-3 tournaments: 6 transitive and 2 cyclic.
+   E H = (6*1+2*3)/8=3/2=mu_3.
+   E C = (6*0+2*1)/8=1/4=nu_3.
+   Maximum path count P(3)=3.
+   Finite Q ratios: H(Q)/mu_3=2 and C(Q)/nu_3=4.
+   Do not identify the finite cycle ratio 4 with the spectral ratio rho_3=2.
+   Cycle expectation nu_n=(n-1)!/2^n is stated only for n>=3.
+
+2. Permanent, scaling, and the C3 convolution
+   A_Q=[[0,1,0],[0,0,1],[1,0,0]].
+   per(A_Q)=1; det(I+A_Q)=2.
+   In the path convolution, contributions by |U|=0,1,2,3 are 1,0,0,2.
+   Their sum is 3=H(Q).
+   Delete row 1 and column 2:
+     A[{2,3},{1,3}]=[[0,1],[1,0]], permanent 1.
+   Delete row 1 and column 1:
+     A[{2,3},{2,3}]=[[0,1],[0,0]], permanent 0.
+   Scaling sample M=[[1,2],[3,6]]:
+     row multipliers (1/3,1/9), then column multipliers (3/2,3/4).
+     Result B has every entry 1/2.
+     Product of all multipliers is 1/24.
+     per(M)=12, per(B)=1/2=12/24.
+   One-round success is asserted only for this special sample.
+
+3. Degree imbalance and the factor 1/4
+   s_i=d_i^+-d_i^-=2d_i^+-(n-1).
+   Thus d_i^+-(n-1)/2=s_i/2.
+   V=sum_i(d_i^+-(n-1)/2)^2=(1/4)sum_i s_i^2.
+   Transitive T3:
+     outdegrees (2,1,0); imbalances (2,0,-2);
+     V=2, sum s_i^2=8, tau=sum(s_i/(n-1))^2=2.
+   C3: all outdegrees 1, all imbalances 0, V=tau=0.
+   V is not renamed as the degree-imbalance square sum without its factor 1/4.
+
+4. C3 Hessian and spectral factor
+   S=[[0,1,-1],[-1,0,1],[1,-1,0]].
+   S^2=J_3-3I_3.
+   C_0=S/3, and C_0^2 v=-(1/3)v for every zero-sum vector v.
+   E=[[1,0],[0,1],[-1,-1]], with zero-sum columns.
+   (I+C_0^2)(I-C_0^2)^(-1)E=(1/2)E.
+   H=(1/2)E^T E=[[1,1/2],[1/2,1]].
+   det H=3/4, sqrt(3/det H)=2.
+   Positive quadratic form:
+     x^2+xy+y^2=(x+y/2)^2+3y^2/4.
+   det(I+tS)=1+3t^2.
+   det(I+S/3)=4/3; det(I+iS/3)=2/3; rho_3=2.
+   This verifies the d=3 substitution only, not the Hessian theorem for all bases.
+
+5. O(1/n), completing the square, and uniformity
+   (sqrt(tau)/2-K/sqrt(n))^2>=0 gives
+     K*sqrt(tau/n)<=tau/4+K^2/n.
+   Therefore exp(-tau+K*sqrt(tau/n))<=exp(K^2/n).
+   For n>=K^2, exp(K^2/n)<=1+e*K^2/n.
+   The upper-bound constant is independent of tau.
+   It is NOT asserted that exp(-tau+K*sqrt(tau/n)) itself equals
+   1+O(1/n) uniformly over tau: for large tau it can be near zero.
+   Dropping -tau and taking tau=1 leaves exp(K/sqrt(n))-1>=K/sqrt(n),
+   which is not O(1/n).
+   Research theorem interpretation:
+     exists K0,n0; all n>=n0:
+       |P(n)/mu_n-L|<=K0/n.
+     Equivalently |P(n)-L*mu_n|<=K0*mu_n/n.
+   This is a maximum-count statement, not a two-sided formula for every tournament.
+   It does not give K0=1, an explicit numerical threshold, or finite-order uniqueness.
+
+6. Blow-ups and the order of limits
+   Fixed C3 base d=3, total order N=3m.
+   Expected outgoing weight: m+(m-1)/2=(N-1)/2;
+   expected incoming weight is the same.
+   D=2W/(N-1) is nonnegative doubly stochastic.
+   Independent internal blocks:
+     E C/nu_(3m) -> 2, E H/mu_(3m) -> 2.
+   Regular internal blocks, m odd only:
+     both normalized limits -> 2*exp(1/3), approximately 2.79122.
+   For m=1, actual C(Q)=1 whereas 2*nu_3=1/2:
+   the limit formula is not a finite-order identity.
+   Counterexample to an unjustified change of limit order:
+     f(d,m)=d/(d+m);
+     lim_d lim_m f(d,m)=0, but f(m,m)=1/2.
+
+7. Attribution and logical boundaries (v4)
+   The global leading constant L and carousel constructions are due to Divoux-Wang.
+   The present path assertion is the quantitative O(1/n) refinement.
+   Fixed-base model constants follow from the earlier weighted counting formula;
+   the regular-block multiplier exp(1/d) is due to Wormald.
+   The full Hessian formula and positive definiteness are separately proved in v4.
+   A conditional asymptotic cannot be reversed to infer Hessian nondegeneracy.
+   The fixed-base expectation extrema use existing comparisons plus equality
+   and nonregular-base arguments. They are not finite-order extremal statements
+   about every tournament on N vertices.
+   Elementary examples and logical implications above are checked independently;
+   research theorems are used as stated in v4, not reproved by these exercises.
+
+8. Exact arithmetic verification performed
+   Enumerated all 8 labeled tournaments on 3 vertices and all their vertex orders.
+   Recomputed the four C3 convolution subtotals by determinant/permanent expansions.
+   Checked the principal and nonprincipal remaining matrices.
+   Multiplied S by itself and checked the Hessian determinant using exact fractions.
+   Checked both permanents in the 2x2 scaling example using exact fractions.
+   All these checks passed.

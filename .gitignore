@@ -1,0 +1,25 @@
+# Local compilation output and temporary files
+/build/
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.nav
+*.snm
+*.vrb
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+
+# Local editor and authentication configuration
+.env
+.env.*
+.vscode/
+.idea/

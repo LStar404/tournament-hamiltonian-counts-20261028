@@ -1,0 +1,78 @@
+{
+  "bilingual_display_counts": [
+    867,
+    867
+  ],
+  "bilingual_display_differences": [],
+  "files": {
+    "01_combined.zh": {
+      "control_characters": [],
+      "missing_links": [],
+      "invalid_section_references": [],
+      "display_delimiters_even": true,
+      "remaining_divs": false,
+      "duplicate_headings": []
+    },
+    "02_combined.en": {
+      "control_characters": [],
+      "missing_links": [],
+      "invalid_section_references": [],
+      "display_delimiters_even": true,
+      "remaining_divs": false,
+      "duplicate_headings": []
+    },
+    "03_constant_factor.zh": {
+      "control_characters": [],
+      "missing_links": [],
+      "invalid_section_references": [],
+      "display_delimiters_even": true,
+      "remaining_divs": false,
+      "duplicate_headings": []
+    },
+    "04_wormald.zh": {
+      "control_characters": [],
+      "missing_links": [],
+      "invalid_section_references": [],
+      "display_delimiters_even": true,
+      "remaining_divs": false,
+      "duplicate_headings": []
+    },
+    "05_proof_idea.zh": {
+      "control_characters": [],
+      "missing_links": [],
+      "invalid_section_references": [],
+      "display_delimiters_even": true,
+      "remaining_divs": false,
+      "duplicate_headings": []
+    }
+  },
+  "parity_extension_exact_checks": {
+    "orders": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "powers": [
+      1,
+      2,
+      3
+    ],
+    "scope": "Finite algebra checks; not a proof of the asymptotic estimates."
+  }
+}

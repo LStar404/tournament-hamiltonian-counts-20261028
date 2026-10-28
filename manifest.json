@@ -1,0 +1,341 @@
+{
+  "date": "2026-10-28",
+  "scope": "Fourth-version manuscripts, beginner guide, refreshed Chinese typography, sources, figures and review records.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 268,
+      "sha256": "cd90e6a705c8c697ef32dcfcf5d3e746110895ac81777e1869890205f543a4b1"
+    },
+    {
+      "path": "fonts/NotoSansSC-SemiBold.ttf",
+      "bytes": 10586004,
+      "sha256": "953c88c631a84da98593079514b56419374930a8c3b706d2577d6f3047a696c1"
+    },
+    {
+      "path": "fonts/NotoSerifSC-Regular.ttf",
+      "bytes": 14852644,
+      "sha256": "87b152fb3df3d1f763c235dda6dfb308711de1a9ceffea24fad87039b1cd3685"
+    },
+    {
+      "path": "fonts/OFL-NotoSansSC.txt",
+      "bytes": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    },
+    {
+      "path": "fonts/OFL-NotoSerifSC.txt",
+      "bytes": 4350,
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6"
+    },
+    {
+      "path": "fonts/README.md",
+      "bytes": 763,
+      "sha256": "a894663bebc04f438d364bd406691493fe244fc0f41257694d755c130b75f8eb"
+    },
+    {
+      "path": "guide_parts/01_foundations.zh.md",
+      "bytes": 14234,
+      "sha256": "5652744dedb52509fd4ff7b707d870d113cd8716a22918b4a28f1476e6d24fb1"
+    },
+    {
+      "path": "guide_parts/02_paths.zh.md",
+      "bytes": 20653,
+      "sha256": "77eda0368af69c991ba3eb20d26f35d1f864527a09a640f617ddfa582913babb"
+    },
+    {
+      "path": "guide_parts/03_hessian.zh.md",
+      "bytes": 24778,
+      "sha256": "d3908f2681354efdf2f8e3b430722844c0e7c6e70bdbb0f1feb904d9e6004793"
+    },
+    {
+      "path": "guide_parts/04_reading.zh.md",
+      "bytes": 5578,
+      "sha256": "be7bc0c68d6a205a0c2e185f737c3ee14798a77ddcb8c11f76746cadce43c073"
+    },
+    {
+      "path": "guide_parts/05_exercises.zh.md",
+      "bytes": 19597,
+      "sha256": "7245ed401c5fbc69e7e5b285ec000faee3d5f226ab90647bbedbe2d2522c6d96"
+    },
+    {
+      "path": "guide_parts/06_references.zh.md",
+      "bytes": 1916,
+      "sha256": "d40791ed30e79f905788257ca98b29d4b6c6c82aa3498d4e099b835aeef419e8"
+    },
+    {
+      "path": "manuscripts/01_combined.zh.md",
+      "bytes": 244204,
+      "sha256": "20fee0bd9f0f22d47986894d9e75bc1966dbf3db1a3f6deceba74bfc47a73686"
+    },
+    {
+      "path": "manuscripts/01_combined.zh.pdf",
+      "bytes": 839358,
+      "sha256": "c6acceaf48a66465df56f649bde88e5e8134ed1f58a33fdbadea13729a23c057"
+    },
+    {
+      "path": "manuscripts/01_combined.zh.tex",
+      "bytes": 258654,
+      "sha256": "cf82de8334f64980ad7d32c4a17ee7d75f99d5101401563342e1632e320ac3e3"
+    },
+    {
+      "path": "manuscripts/02_combined.en.md",
+      "bytes": 277574,
+      "sha256": "6695eb7aa0d0d51075005ab1effaa6aaeccdebd55d6492a23c8331df5aa9c9fc"
+    },
+    {
+      "path": "manuscripts/02_combined.en.pdf",
+      "bytes": 691495,
+      "sha256": "be51d342dbee37de92ad5ababd71f829ad1f52b993bf491f4a6dbcceaacf3563"
+    },
+    {
+      "path": "manuscripts/02_combined.en.tex",
+      "bytes": 291453,
+      "sha256": "d0dae273686831affc34883a2080797723bcaaa7fe36a08989f8d2a86e0f0107"
+    },
+    {
+      "path": "manuscripts/03_constant_factor.zh.md",
+      "bytes": 173698,
+      "sha256": "5da067767320fb4e7490f1f6789afaf2deb893ebd3109993b26fcef94e59ce37"
+    },
+    {
+      "path": "manuscripts/03_constant_factor.zh.pdf",
+      "bytes": 654542,
+      "sha256": "fb704f51529fc33d6349511ef9342d2f8cd042c45e1ed9362380809d3050e259"
+    },
+    {
+      "path": "manuscripts/03_constant_factor.zh.tex",
+      "bytes": 183161,
+      "sha256": "5c3819be0c018eaee6b02f6380889619486dbf6fc109b7ee9aef62b7ada0d2cc"
+    },
+    {
+      "path": "manuscripts/04_wormald.zh.md",
+      "bytes": 71952,
+      "sha256": "e45782464a8576d5874043a3e09df847d287e2e2c16556602a50284e01738262"
+    },
+    {
+      "path": "manuscripts/04_wormald.zh.pdf",
+      "bytes": 414870,
+      "sha256": "80e6b296ef74e7f36707fc20936514f9cc6a078c5f27eb4757860ee6667430b3"
+    },
+    {
+      "path": "manuscripts/04_wormald.zh.tex",
+      "bytes": 79653,
+      "sha256": "bf5a46a069991da8265d5fb3eeb86ae894dea1cfa468fb8010cfb9a1334b63e8"
+    },
+    {
+      "path": "manuscripts/05_proof_idea.zh.md",
+      "bytes": 1949,
+      "sha256": "1acf173c8f348e9e6a2cba04ea065b5f6a255d62de1aaa0370c121762f9022a7"
+    },
+    {
+      "path": "manuscripts/05_proof_idea.zh.pdf",
+      "bytes": 110356,
+      "sha256": "380a5235636c65332949a46d8ed63b44ba09505049aab038c8755b69e171e4b6"
+    },
+    {
+      "path": "manuscripts/05_proof_idea.zh.tex",
+      "bytes": 4699,
+      "sha256": "f708bc157cb7577c661432f379c3c05a98fcf2ce22400d653be3028b78326b41"
+    },
+    {
+      "path": "manuscripts/06_freshman_guide.zh.md",
+      "bytes": 86766,
+      "sha256": "f13aa1a5abb61adae56eda783911aea0c66a7f544f66071559304d8591a6fc7e"
+    },
+    {
+      "path": "manuscripts/06_freshman_guide.zh.pdf",
+      "bytes": 519438,
+      "sha256": "81fdf55e5006a2818fcb48ecc758c3c93b6b68835c952a41488bf3481167fd55"
+    },
+    {
+      "path": "manuscripts/06_freshman_guide.zh.tex",
+      "bytes": 97507,
+      "sha256": "1ff38f5858fb44b417bf2ec3d09e688bf67c70674f4d8c964a72078abfa6e64b"
+    },
+    {
+      "path": "manuscripts/figures/carousel_deletion.pdf",
+      "bytes": 12487,
+      "sha256": "8b072c0e272f393c3a382b6afba39f93e266f43991a57e495a00c499746b3722"
+    },
+    {
+      "path": "manuscripts/figures/carousel_deletion.png",
+      "bytes": 126151,
+      "sha256": "0024472e9fc33c3d5ba1af9e140fe63dabb6b5105ecc4214ac96a41890a776eb"
+    },
+    {
+      "path": "manuscripts/figures/carousel_deletion.svg",
+      "bytes": 30821,
+      "sha256": "a99d7dc16c587df8280da7b2bb5d0f2d03f94dbdc15ca837ff0e3a3af4ec6e51"
+    },
+    {
+      "path": "manuscripts/figures/carousel_switching.pdf",
+      "bytes": 18549,
+      "sha256": "0d3c2bc0e5ec9763294dd30794b61b8d836de8b5897ce9f788f3f9a40b23ef31"
+    },
+    {
+      "path": "manuscripts/figures/carousel_switching.png",
+      "bytes": 99409,
+      "sha256": "0e21132ce6982a47e4c735ce5846abde5d4fceabbf61f346c485a7d74cddf011"
+    },
+    {
+      "path": "manuscripts/figures/carousel_switching.svg",
+      "bytes": 25245,
+      "sha256": "4bd0495bc9b277245765543e52473785ff3bf47992e44fbc11324609cbf283a9"
+    },
+    {
+      "path": "manuscripts/figures/graph_figure_data.json",
+      "bytes": 5619,
+      "sha256": "1c4dd0c651ea24a7b1a7cebbf1b8f8e14209586b81c074b2c1cdc13cfedf4a8f"
+    },
+    {
+      "path": "manuscripts/figures/guide_figure_data.json",
+      "bytes": 739,
+      "sha256": "cf139e806d614fff1f01034f01d61b748bc36c2fa7d888a195eb41dc28ab3315"
+    },
+    {
+      "path": "manuscripts/figures/hessian_quadratic.pdf",
+      "bytes": 19787,
+      "sha256": "b89c0716fe07132544840a8a78f574faa34e07d1ee5b677e24bcc65f217dbcbf"
+    },
+    {
+      "path": "manuscripts/figures/hessian_quadratic.png",
+      "bytes": 106925,
+      "sha256": "7159e9dbaffe87a9ff942c3ec247f39897a1bab2e35ba42a8dab688afdb01bdd"
+    },
+    {
+      "path": "manuscripts/figures/hessian_quadratic.svg",
+      "bytes": 26062,
+      "sha256": "713308928acf3a442ddc3f220d9377caa30b36d87921a1a3eadfc0f87dc86fc1"
+    },
+    {
+      "path": "manuscripts/figures/nonprincipal_matching.pdf",
+      "bytes": 17690,
+      "sha256": "fb0ad5e8b77666ea702df79b543273390ff9db5c84369f676f200770ddb7ec9d"
+    },
+    {
+      "path": "manuscripts/figures/nonprincipal_matching.png",
+      "bytes": 84059,
+      "sha256": "25c198d158fa551a70441009c12a6fc0ddf0a318269709f5e25d532d055211ca"
+    },
+    {
+      "path": "manuscripts/figures/nonprincipal_matching.svg",
+      "bytes": 28723,
+      "sha256": "57364c3fd9dac963a85d00d06df0c5f07df2ec43b2eeb4941285a5461c0ea941"
+    },
+    {
+      "path": "manuscripts/figures/three_vertex_examples.pdf",
+      "bytes": 9327,
+      "sha256": "78483abcda0b231e9a8e01f68059f97801f2168850daa6a9456b9172efaf635c"
+    },
+    {
+      "path": "manuscripts/figures/three_vertex_examples.png",
+      "bytes": 39731,
+      "sha256": "7265b1fbd78e1df6ee95aa45a72d4246f8b4ba84c59bb871cc31b72334352484"
+    },
+    {
+      "path": "manuscripts/figures/three_vertex_examples.svg",
+      "bytes": 9574,
+      "sha256": "b6f58f2a3d1b4138025e93b2f643d69aa58ba4002f964d76cd807df259252287"
+    },
+    {
+      "path": "manuscripts/figures/triangle_blowup.pdf",
+      "bytes": 13320,
+      "sha256": "3b1d893b26721d26de6cd818afef9e00a5c18c4fd35058f9846fe32935de6b25"
+    },
+    {
+      "path": "manuscripts/figures/triangle_blowup.png",
+      "bytes": 62205,
+      "sha256": "a9057989057bb645bd93e18240b5613dcd065e902f1176ba91efd4b23af19f6c"
+    },
+    {
+      "path": "manuscripts/figures/triangle_blowup.svg",
+      "bytes": 21013,
+      "sha256": "9a3981a215d66bcf9f8b5213f95ee094292719735fb291740bcc205b6feb5792"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6535,
+      "sha256": "7c53c95f727b124af8ae4e989409dc6aac3f2ee8fb7e757e8ba3a3dfed63d4b7"
+    },
+    {
+      "path": "review/added_identities.json",
+      "bytes": 923,
+      "sha256": "4d8177f87ced824359beb143b692cf852be04373d88081ecc4606fa8fddec0f0"
+    },
+    {
+      "path": "review/current_typography_review.json",
+      "bytes": 1384,
+      "sha256": "cd20772fec757c65de7b9e03f0941196271a69585ad9a7474fd3839a003654e5"
+    },
+    {
+      "path": "review/final_review.json",
+      "bytes": 2080,
+      "sha256": "f916cfaf9c869d94cc8365271e5882a93e65f9230ccee7151f4ce64845188cc9"
+    },
+    {
+      "path": "review/guide_checked_examples.txt",
+      "bytes": 5169,
+      "sha256": "5cbdc0348cc9f34b318cc7fc52905ff672955d0936ae3617b353d57063cfc0d0"
+    },
+    {
+      "path": "review/math_review.txt",
+      "bytes": 20709,
+      "sha256": "8b6b187e3518fff73d48f853a1e1c52b51fb77302830eaa4c1803a932df2765f"
+    },
+    {
+      "path": "review/pdf_review.json",
+      "bytes": 2178,
+      "sha256": "bdd4ab422bc8f77aa71787a0cbc5e6fc343750b7862e33d985a245e295dbe077"
+    },
+    {
+      "path": "review/proof_preservation.json",
+      "bytes": 1533,
+      "sha256": "3061e661e6b6a0523a3b4e6e1d09982b6306ff3b4168acd89f25268a349354aa"
+    },
+    {
+      "path": "review/README.md",
+      "bytes": 1526,
+      "sha256": "22c49e5071787dd2898b8be5e4602ab6c6945b78cbb6d93c5948f851dede82f8"
+    },
+    {
+      "path": "review/source_review.md",
+      "bytes": 2447,
+      "sha256": "611cd8e5e3143446f68f2327b3cce38119ead1cff3592a3d3aec6c4e56a38337"
+    },
+    {
+      "path": "review/structural_audit.json",
+      "bytes": 1726,
+      "sha256": "9945e7275c305a7d2ae06b482b696ad8fbfb5e43136aff459333677da685443c"
+    },
+    {
+      "path": "review/复核说明.txt",
+      "bytes": 6417,
+      "sha256": "3500901e2f8aa04e82e3a7efdd5a9d23e363d2e9bc98b29f83ada53abc255033"
+    },
+    {
+      "path": "review/本轮说明.txt",
+      "bytes": 1565,
+      "sha256": "749b1dc64ee6da8495787979b7b2bfc1810ac25467edf8ab87f9dcc37ccad489"
+    },
+    {
+      "path": "review/研究定位说明.txt",
+      "bytes": 1865,
+      "sha256": "8db67b4c91abb1db39e92ecd8e9ffc791ef1ecde09d3c10099c2292645ecfac1"
+    },
+    {
+      "path": "tools/compile_tex.py",
+      "bytes": 7832,
+      "sha256": "aa3d91dc49256897bf58eef060f1482c1ddb253ed10170e41d35e525e9fa4ba3"
+    },
+    {
+      "path": "tools/create_graph_figures.py",
+      "bytes": 8743,
+      "sha256": "6b58e94f8987f24af7303048c2ab77c3da46778f3cdf6e50f0ca0dd2196c59f6"
+    },
+    {
+      "path": "tools/create_guide_figures.py",
+      "bytes": 2354,
+      "sha256": "121db643ed8e7f091f3696fb94022391301059babec9bf8b6762f1137151bc59"
+    }
+  ]
+}

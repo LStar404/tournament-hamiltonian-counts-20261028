@@ -1,0 +1,30 @@
+{
+  "01_combined.zh": {
+    "original_proof_display_formulas": 838,
+    "current_proof_display_formulas": 859,
+    "same_formulas_in_same_order": true,
+    "comparison": "All original proof displays retained in order; whitespace normalized; new attributed derivations may be inserted.",
+    "md_sha256": "20fee0bd9f0f22d47986894d9e75bc1966dbf3db1a3f6deceba74bfc47a73686"
+  },
+  "02_combined.en": {
+    "original_proof_display_formulas": 838,
+    "current_proof_display_formulas": 859,
+    "same_formulas_in_same_order": true,
+    "comparison": "All original proof displays retained in order; whitespace normalized; new attributed derivations may be inserted.",
+    "md_sha256": "6695eb7aa0d0d51075005ab1effaa6aaeccdebd55d6492a23c8331df5aa9c9fc"
+  },
+  "03_constant_factor.zh": {
+    "original_proof_display_formulas": 575,
+    "current_proof_display_formulas": 575,
+    "same_formulas_in_same_order": true,
+    "comparison": "All original proof displays retained in order; whitespace normalized; new attributed derivations may be inserted.",
+    "md_sha256": "5da067767320fb4e7490f1f6789afaf2deb893ebd3109993b26fcef94e59ce37"
+  },
+  "04_wormald.zh": {
+    "original_proof_display_formulas": 254,
+    "current_proof_display_formulas": 271,
+    "same_formulas_in_same_order": true,
+    "comparison": "All original proof displays retained in order; whitespace normalized; new attributed derivations may be inserted.",
+    "md_sha256": "e45782464a8576d5874043a3e09df847d287e2e2c16556602a50284e01738262"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "01_combined.zh": {
+    "pages": 105,
+    "rendered": 105,
+    "sha256": "56b8436f00e3a40285b5e3ae07a2d688d3ee3b3a8ba6e257ad54d58bf594e65d",
+    "layout_warnings": [],
+    "edge_characters": [],
+    "missing_internal_targets": [],
+    "contact_sheets": [
+      "01_combined.zh/contact-01.jpg",
+      "01_combined.zh/contact-02.jpg",
+      "01_combined.zh/contact-03.jpg",
+      "01_combined.zh/contact-04.jpg",
+      "01_combined.zh/contact-05.jpg",
+      "01_combined.zh/contact-06.jpg"
+    ]
+  },
+  "02_combined.en": {
+    "pages": 112,
+    "rendered": 112,
+    "sha256": "be51d342dbee37de92ad5ababd71f829ad1f52b993bf491f4a6dbcceaacf3563",
+    "layout_warnings": [],
+    "edge_characters": [],
+    "missing_internal_targets": [],
+    "contact_sheets": [
+      "02_combined.en/contact-01.jpg",
+      "02_combined.en/contact-02.jpg",
+      "02_combined.en/contact-03.jpg",
+      "02_combined.en/contact-04.jpg",
+      "02_combined.en/contact-05.jpg",
+      "02_combined.en/contact-06.jpg"
+    ]
+  },
+  "03_constant_factor.zh": {
+    "pages": 72,
+    "rendered": 72,
+    "sha256": "f80c41f6f22dda741ed686689b22dfb0a2db095a72dc8c62612045cb4463000b",
+    "layout_warnings": [],
+    "edge_characters": [],
+    "missing_internal_targets": [],
+    "contact_sheets": [
+      "03_constant_factor.zh/contact-01.jpg",
+      "03_constant_factor.zh/contact-02.jpg",
+      "03_constant_factor.zh/contact-03.jpg",
+      "03_constant_factor.zh/contact-04.jpg"
+    ]
+  },
+  "04_wormald.zh": {
+    "pages": 34,
+    "rendered": 34,
+    "sha256": "ad49bd0d734914038f79ce16214bd8be123883149eacb10e62157ecdbb3397c9",
+    "layout_warnings": [],
+    "edge_characters": [],
+    "missing_internal_targets": [],
+    "contact_sheets": [
+      "04_wormald.zh/contact-01.jpg",
+      "04_wormald.zh/contact-02.jpg"
+    ]
+  },
+  "05_proof_idea.zh": {
+    "pages": 1,
+    "rendered": 1,
+    "sha256": "69025d67f264ce4c82af7872d8bf846709778d2eaf9880075c69e66f35c63c00",
+    "layout_warnings": [],
+    "edge_characters": [],
+    "missing_internal_targets": [],
+    "contact_sheets": [
+      "05_proof_idea.zh/contact-01.jpg"
+    ]
+  }
+}
