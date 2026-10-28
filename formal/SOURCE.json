@@ -1,0 +1,14 @@
+{
+  "repository": "LStar404/tournament-hamiltonian-counts-20261028",
+  "source_commit": "d3ae4d7692c23985c1aba21f5846a49b13721b92",
+  "snapshot_encoding": "UTF-8, CRLF normalized to LF",
+  "files": {
+    "README.md": "988cfdead478384417a698a4ec1fb7d14d62c8f91f0cea101a95752b642a20b0",
+    "manuscripts/01_combined.zh.md": "e344a2e0cbcdd1aebe3bbcb10178e89e38db89bda943dc8cdb4a5ce7eea8135e",
+    "manuscripts/04_wormald.zh.md": "24f7fa5d89339d5f8585fb1987eecde87a2e92b089718dd0588e77abdcd747ff",
+    "manuscripts/05_proof_idea.zh.md": "57bfe7cad918003157a5dcc77dc6149b835fbcf5fd91d6feae720da3c255aea7",
+    "review/math_review.txt": "2e415fcc5ab6252838679ae641d67bb0b459184064a146aa2250abd3c9102f36"
+  },
+  "source_tree": "caed74c4ad1984c72baf111233ab505895fcbdb1",
+  "commit_verification_url": "https://api.github.com/repos/LStar404/tournament-hamiltonian-counts-20261028/git/commits/d3ae4d7692c23985c1aba21f5846a49b13721b92"
+}

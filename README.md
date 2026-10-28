@@ -71,3 +71,11 @@ python tools/create_graph_figures.py
 该脚本根据明确的顶点、边及切换排列生成四幅图，覆盖 `manuscripts/figures/` 内对应的 PDF、SVG、PNG 和图数据 JSON。TeX 引用 PDF，Markdown 引用 PNG，SVG 用于继续编辑。图中文字使用 DejaVu Serif。不同 Matplotlib 或字体版本可能改变文字位置，重新生成后应核对图形及正文分页。
 
 导读新增的三顶点图与 Hessian 二次型图由 `python tools/create_guide_figures.py` 生成。这个脚本需要 NumPy 和 Matplotlib，仅重绘这两幅图；导读其余三幅图与论文共用。
+
+## Lean 形式化验证
+
+新增 [`formal/`](formal/README.zh.md)，包含 Wormald 原角函数 Hessian 主定理的机器证明，以及增点路径计数和若干精确代数引理。主端点直接使用原角函数的实际二阶导数，证明矩阵公式、正定性、行列式及正有理平方根。
+
+工具链与依赖已固定；构建、公理审计及源码包解压重建均通过。详见 [覆盖范围](formal/COVERAGE.zh.md) 和 [复现说明](formal/README.zh.md#复现)。**全局 Hamilton 路径的定量渐近定理、路径卷积及其余未列明结果尚未形式化，不能据此称整篇论文已经机器认证。**
+
+GitHub Actions 检查为手动触发，不会因推送或拉取请求自动运行。
