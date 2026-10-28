@@ -1,0 +1,30 @@
+name: Lean formal verification
+
+# Manual only: adding this workflow does not start billable background jobs.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Check out the selected revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install the pinned official Lean release locally
+        working-directory: formal
+        run: bash scripts/setup-local-lean.sh
+      - name: Restore pinned mathlib artifacts and verify
+        working-directory: formal
+        shell: bash
+        run: |
+          export PATH="$PWD/.toolchain/lean-4.35.0-linux/bin:$PATH"
+          export MATHLIB_CACHE_DIR="$PWD/.toolchain/mathlib-cache"
+          export XDG_CACHE_HOME="$PWD/.toolchain/cache"
+          lake exe cache get
+          bash scripts/verify.sh

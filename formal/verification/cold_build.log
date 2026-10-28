@@ -1,0 +1,25 @@
+PASS: 20 local Lean sources have no forbidden proof placeholders/trust extensions.
+✔ [2864/2884] Built Tournament.Deletion (1.8s)
+✔ [2865/2884] Built Tournament.Paths (1.9s)
+✔ [2866/2884] Built Tournament.AsymptoticTransfer (2.9s)
+✔ [2867/2884] Built Tournament.HessianAlgebra (3.3s)
+✔ [2868/2884] Built Tournament.HessianBranch (3.0s)
+✔ [2869/2884] Built Tournament.HessianLogNormalization (3.0s)
+✔ [2870/2884] Built Tournament.HessianDeterminant (3.4s)
+✔ [2871/2884] Built Tournament.HessianCoordinates (3.5s)
+✔ [2872/2884] Built Tournament.RankOneEquation (4.3s)
+✔ [2873/2884] Built Tournament.HessianDerivatives (7.7s)
+✔ [2874/2884] Built Tournament.HessianRationality (2.5s)
+✔ [2875/2884] Built Tournament.ResolventDerivatives (3.8s)
+✔ [2876/2884] Built Tournament.HessianPositiveRatio (2.7s)
+✔ [2877/2884] Built Tournament.HessianCoordinateBridge (4.7s)
+✔ [2878/2884] Built Tournament.SignMatrix (2.4s)
+✔ [2879/2884] Built Tournament.ScalarTwoJet (3.8s)
+✔ [2880/2884] Built Tournament.OriginalCoordinates (2.3s)
+✔ [2881/2884] Built Tournament.HessianMain (2.5s)
+✔ [2882/2884] Built Tournament.HessianTheorem (1.8s)
+✔ [2883/2884] Built Tournament (1.6s)
+Build completed successfully (2884 jobs).
+PASS: 243 declared theorems; transitive axioms restricted to standard foundations.
+Lean compilation and the declared-theorem axiom audit passed.
+Read the coverage document: this does not certify the whole manuscript.

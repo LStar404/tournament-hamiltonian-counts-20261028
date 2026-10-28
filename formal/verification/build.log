@@ -1,0 +1,8 @@
+PASS: 20 local Lean sources have no forbidden proof placeholders/trust extensions.
+✔ [2881/2884] Built Tournament.HessianMain (2.3s)
+✔ [2882/2884] Built Tournament.HessianTheorem (1.6s)
+✔ [2883/2884] Built Tournament (1.6s)
+Build completed successfully (2884 jobs).
+PASS: 243 declared theorems; transitive axioms restricted to standard foundations.
+Lean compilation and the declared-theorem axiom audit passed.
+Read the coverage document: this does not certify the whole manuscript.

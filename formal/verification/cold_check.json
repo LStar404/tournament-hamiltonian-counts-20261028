@@ -1,0 +1,7 @@
+{
+  "proof_source_hashes_match": true,
+  "local_modules_rebuilt_from_zip": true,
+  "upstream_mathlib_cache_reused": true,
+  "declared_theorems_checked": 243,
+  "axiom_audit_passed": true
+}
