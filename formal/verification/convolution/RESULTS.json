@@ -6,8 +6,14 @@
   "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
   "targeted_build_passed": true,
   "full_build_passed": true,
-  "public_theorem_audit_count": 258,
-  "public_theorem_audit_passed": true,
+  "registered_theorem_audit_count": 258,
+  "registered_theorem_audit_passed": true,
+  "theorem_audit_scope": {
+    "inventory": "formal/theorems.json",
+    "explicitly_registered_endpoints_only": true,
+    "enumerates_every_public_declaration": false,
+    "checks_transitive_axiom_dependencies_of_registered_endpoints": true
+  },
   "endpoint_axiom_audit": {
     "TournamentPaths.isHamiltonPathFinite_iff_legacy": [
       "Quot.sound"
@@ -97,7 +103,22 @@
   ],
   "environment_notes": [
     "official matching mathlib cache used; no independent rebuild of all upstream libraries",
-    "target Git clone did not complete; exact target formal sources were materialized via authorized GitHub connector at pinned commit",
+    "target Git clone did not complete; target formal sources were materialized via authorized GitHub connector at pinned commit",
     "no TeX compiler available; editorial PDF rebuild remains separate"
-  ]
+  ],
+  "metadata_correction": {
+    "kind": "Documentation and hash-provenance clarification only; historical successful-run flags are retained.",
+    "based_on_git_commit": "5d528bc2b962ea3d2ada921fbcae0ddf49afe481",
+    "historical_count_field_renames": {
+      "public_theorem_audit_count": "registered_theorem_audit_count",
+      "public_theorem_audit_passed": "registered_theorem_audit_passed"
+    },
+    "historical_source_hash_file_preserved": "formal/verification/convolution/source_hashes.json",
+    "hash_provenance_file": "formal/verification/convolution/source_hashes.provenance.json",
+    "historical_build_and_axiom_logs_rewritten": false,
+    "lean_proof_sources_changed": false,
+    "new_lean_build_run": false,
+    "canonical_git_snapshot_rebuilt": false,
+    "status_scope": "Existing build and audit status fields describe the original local-materialized-source run, not a new build of canonical Git snapshot bytes."
+  }
 }
