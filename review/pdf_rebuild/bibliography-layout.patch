@@ -1,0 +1,211 @@
+--- a/manuscripts/04_wormald.zh.tex
++++ b/manuscripts/04_wormald.zh.tex
+@@ -1946,6 +1946,7 @@
+ {[}3{]} Noga Alon. The Maximum Number of Hamiltonian Paths in Tournaments. Combinatorica 10(4) (1990), 319--324. \href{https://doi.org/10.1007/BF02128667}{DOI: 10.1007/BF02128667}.
+ 
+ {[}4{]} Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). \href{https://arxiv.org/html/2610.23755v1}{Full text}.
++
+ {[}5{]} Deep Bhattacharjee. Two conjectures of Wormald on Hamilton cycles in tournaments. Hexagon preprint 2610.00460v2 (2026). \href{https://hexagonmath.org/2610.00460v2}{Fixed version}.
+ \endgroup
+ \end{document}
+--- a/manuscripts/01_combined.zh.tex
++++ b/manuscripts/01_combined.zh.tex
+@@ -5739,6 +5739,7 @@
+ {[}11{]} Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). \href{https://arxiv.org/html/2608.06238v1\#S3}{Corollary 3.4}.
+ 
+ {[}12{]} Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). \href{https://arxiv.org/html/2610.23755v1}{Full text}.
++
+ {[}13{]} Deep Bhattacharjee. Two conjectures of Wormald on Hamilton cycles in tournaments. Hexagon preprint 2610.00460v2 (2026). \href{https://hexagonmath.org/2610.00460v2}{Fixed version}.
+ \endgroup
+ \end{document}
+--- a/manuscripts/02_combined.en.tex
++++ b/manuscripts/02_combined.en.tex
+@@ -5722,6 +5722,7 @@
+ {[}11{]} Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). \href{https://arxiv.org/html/2608.06238v1\#S3}{Corollary 3.4}.
+ 
+ {[}12{]} Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). \href{https://arxiv.org/html/2610.23755v1}{Full text}.
++
+ {[}13{]} Deep Bhattacharjee. Two conjectures of Wormald on Hamilton cycles in tournaments. Hexagon preprint 2610.00460v2 (2026). \href{https://hexagonmath.org/2610.00460v2}{Fixed version}.
+ \endgroup
+ \end{document}
+--- a/manuscripts/06_freshman_guide.zh.tex
++++ b/manuscripts/06_freshman_guide.zh.tex
+@@ -1541,6 +1541,7 @@
+ {[}5{]} John Irving and Mohamed Omar. \emph{Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra}. The Electronic Journal of Combinatorics 32(4) (2025), P4.43. \href{https://doi.org/10.37236/13841}{DOI: 10.37236/13841}。第 5 节使用的路径矩阵恒等式见相关生成函数方法。
+ 
+ {[}6{]} Yanjun Han and Jonathan Niles-Weed. \emph{Approximate independence of permutation mixtures}. \href{https://arxiv.org/html/2408.09341v2}{arXiv:2408.09341v2}。永久式余项的分析使用了与该文复高斯矩估计相关的方法。读指南时不必先掌握整篇文献；需要核对具体引理时，再回到合稿给出的版本和编号。
++
+ {[}7{]} Deep Bhattacharjee. \emph{Two conjectures of Wormald on Hamilton cycles in tournaments}. \href{https://hexagonmath.org/2610.00460v2}{Hexagon 2610.00460v2} (2026)。完整原角 Hessian、正定性、猜想 2、6 及圆环展开与本文相应结果重合。
+ \end{document}
+ 
+--- a/manuscripts/06_freshman_guide.zh.md
++++ b/manuscripts/06_freshman_guide.zh.md
+@@ -995,7 +995,6 @@
+ ### 16.3 常用词与读法
+ 
+ 
+-[7] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. [Hexagon 2610.00460v2](https://hexagonmath.org/2610.00460v2) (2026)。完整原角 Hessian、正定性、猜想 2、6 及圆环展开与本文相应结果重合。
+ | 词或记号 | 在本文中的意思 |
+ |:--|:--|
+ | Hamilton 路径 / 圈 | 每个顶点经过一次；圈额外要求回到起点，且不区分起点 |
+@@ -1607,3 +1606,5 @@
+ 
+ [6] Yanjun Han and Jonathan Niles-Weed. *Approximate independence of permutation mixtures*. [arXiv:2408.09341v2](https://arxiv.org/html/2408.09341v2)。永久式余项的分析使用了与该文复高斯矩估计相关的方法。读指南时不必先掌握整篇文献；需要核对具体引理时，再回到合稿给出的版本和编号。
+ 
++[7] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. [Hexagon 2610.00460v2](https://hexagonmath.org/2610.00460v2) (2026)。完整原角 Hessian、正定性、猜想 2、6 及圆环展开与本文相应结果重合。
++
+--- a/manuscripts/02_combined.en.md
++++ b/manuscripts/02_combined.en.md
+@@ -7342,29 +7342,30 @@
+ 
+ ## References
+ 
++
++[1] John Irving and Mohamed Omar. Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra. The Electronic Journal of Combinatorics 32(4) (2025), Paper P4.43, 23 pp. [DOI: 10.37236/13841](https://doi.org/10.37236/13841).
++
++[2] Noga Alon. The Maximum Number of Hamiltonian Paths in Tournaments. Combinatorica 10(4) (1990), 319–324. [DOI: 10.1007/BF02128667](https://doi.org/10.1007/BF02128667).
++
++[3] Yanjun Han and Jonathan Niles-Weed. Approximate independence of permutation mixtures. The Annals of Statistics, to appear ([author's publication list](https://yanjunhan2021.github.io/publication.html)). [arXiv:2408.09341v2](https://arxiv.org/html/2408.09341v2) (9 September 2024); the lemma numbers cited in the text refer to this version.
++
++[4] Bo Deng, Xueliang Li, Bryan Shader and Wasin So. On the Maximum Skew Spectral Radius and Minimum Skew Energy of Tournaments. Linear and Multilinear Algebra 66(7) (2018), 1434–1441. [DOI: 10.1080/03081087.2017.1357676](https://doi.org/10.1080/03081087.2017.1357676).
++
++[5] Peter McCullagh. An asymptotic approximation for the permanent of a doubly stochastic matrix. Journal of Statistical Computation and Simulation 84(2) (2014), 404–414. [DOI: 10.1080/00949655.2012.712122](https://doi.org/10.1080/00949655.2012.712122). [arXiv:1205.5723](https://arxiv.org/abs/1205.5723).
++
++[6] N. C. Wormald. Tournaments with many Hamilton cycles. arXiv:2610.16245v1 (2026). [Fixed version](https://arxiv.org/html/2610.16245v1).
++
++[7] Ehud Friedgut and Jeff Kahn. On the Number of Hamiltonian Cycles in a Tournament. Combinatorics, Probability and Computing 14(5–6) (2005), 769–781. [DOI: 10.1017/S0963548305006863](https://doi.org/10.1017/S0963548305006863).
++
++[8] Eric Li. The Godsil–McKay Asymptotic for Latin Rectangles in the Sublinear Range of Erdős Problem 725. [arXiv:2608.01671v1](https://arxiv.org/html/2608.01671v1) (2026).
++
++[9] Ilan Adler, Noga Alon and Sheldon M. Ross. On the Maximum Number of Hamiltonian Paths in Tournaments. Random Structures & Algorithms 18(3) (2001), 291–296. [DOI: 10.1002/rsa.1010](https://doi.org/10.1002/rsa.1010).
++
++[10] Tibor Szele. Kombinatorikai vizsgálatok az irányított teljes gráffal kapcsolatban. Matematikai és Fizikai Lapok 50 (1943), 223–256. [Original volume archive](https://real-j.mtak.hu/7300/).
++
++[11] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
++
++[12] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [Full text](https://arxiv.org/html/2610.23755v1).
++
+ [13] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. Hexagon preprint 2610.00460v2 (2026). [Fixed version](https://hexagonmath.org/2610.00460v2).
+ 
+-[1] John Irving and Mohamed Omar. Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra. The Electronic Journal of Combinatorics 32(4) (2025), Paper P4.43, 23 pp. [DOI: 10.37236/13841](https://doi.org/10.37236/13841).
+-
+-[2] Noga Alon. The Maximum Number of Hamiltonian Paths in Tournaments. Combinatorica 10(4) (1990), 319–324. [DOI: 10.1007/BF02128667](https://doi.org/10.1007/BF02128667).
+-
+-[3] Yanjun Han and Jonathan Niles-Weed. Approximate independence of permutation mixtures. The Annals of Statistics, to appear ([author's publication list](https://yanjunhan2021.github.io/publication.html)). [arXiv:2408.09341v2](https://arxiv.org/html/2408.09341v2) (9 September 2024); the lemma numbers cited in the text refer to this version.
+-
+-[4] Bo Deng, Xueliang Li, Bryan Shader and Wasin So. On the Maximum Skew Spectral Radius and Minimum Skew Energy of Tournaments. Linear and Multilinear Algebra 66(7) (2018), 1434–1441. [DOI: 10.1080/03081087.2017.1357676](https://doi.org/10.1080/03081087.2017.1357676).
+-
+-[5] Peter McCullagh. An asymptotic approximation for the permanent of a doubly stochastic matrix. Journal of Statistical Computation and Simulation 84(2) (2014), 404–414. [DOI: 10.1080/00949655.2012.712122](https://doi.org/10.1080/00949655.2012.712122). [arXiv:1205.5723](https://arxiv.org/abs/1205.5723).
+-
+-[6] N. C. Wormald. Tournaments with many Hamilton cycles. arXiv:2610.16245v1 (2026). [Fixed version](https://arxiv.org/html/2610.16245v1).
+-
+-[7] Ehud Friedgut and Jeff Kahn. On the Number of Hamiltonian Cycles in a Tournament. Combinatorics, Probability and Computing 14(5–6) (2005), 769–781. [DOI: 10.1017/S0963548305006863](https://doi.org/10.1017/S0963548305006863).
+-
+-[8] Eric Li. The Godsil–McKay Asymptotic for Latin Rectangles in the Sublinear Range of Erdős Problem 725. [arXiv:2608.01671v1](https://arxiv.org/html/2608.01671v1) (2026).
+-
+-[9] Ilan Adler, Noga Alon and Sheldon M. Ross. On the Maximum Number of Hamiltonian Paths in Tournaments. Random Structures & Algorithms 18(3) (2001), 291–296. [DOI: 10.1002/rsa.1010](https://doi.org/10.1002/rsa.1010).
+-
+-[10] Tibor Szele. Kombinatorikai vizsgálatok az irányított teljes gráffal kapcsolatban. Matematikai és Fizikai Lapok 50 (1943), 223–256. [Original volume archive](https://real-j.mtak.hu/7300/).
+-
+-[11] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
+-
+-[12] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [Full text](https://arxiv.org/html/2610.23755v1).
+-
+--- a/manuscripts/04_wormald.zh.md
++++ b/manuscripts/04_wormald.zh.md
+@@ -2400,13 +2400,14 @@
+ 
+ ## 参考文献
+ 
++
++[1] N. C. Wormald. Tournaments with many Hamilton cycles. arXiv:2610.16245v1 (2026). [Fixed version](https://arxiv.org/html/2610.16245v1).
++
++[2] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
++
++[3] Noga Alon. The Maximum Number of Hamiltonian Paths in Tournaments. Combinatorica 10(4) (1990), 319–324. [DOI: 10.1007/BF02128667](https://doi.org/10.1007/BF02128667).
++
++[4] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [Full text](https://arxiv.org/html/2610.23755v1).
++
+ [5] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. Hexagon preprint 2610.00460v2 (2026). [Fixed version](https://hexagonmath.org/2610.00460v2).
+ 
+-[1] N. C. Wormald. Tournaments with many Hamilton cycles. arXiv:2610.16245v1 (2026). [Fixed version](https://arxiv.org/html/2610.16245v1).
+-
+-[2] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
+-
+-[3] Noga Alon. The Maximum Number of Hamiltonian Paths in Tournaments. Combinatorica 10(4) (1990), 319–324. [DOI: 10.1007/BF02128667](https://doi.org/10.1007/BF02128667).
+-
+-[4] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [Full text](https://arxiv.org/html/2610.23755v1).
+-
+--- a/manuscripts/01_combined.zh.md
++++ b/manuscripts/01_combined.zh.md
+@@ -7363,29 +7363,30 @@
+ 
+ ## 参考文献
+ 
++
++[1] John Irving and Mohamed Omar. Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra. The Electronic Journal of Combinatorics 32(4) (2025), Paper P4.43, 23 pp. [DOI: 10.37236/13841](https://doi.org/10.37236/13841).
++
++[2] Noga Alon. The Maximum Number of Hamiltonian Paths in Tournaments. Combinatorica 10(4) (1990), 319–324. [DOI: 10.1007/BF02128667](https://doi.org/10.1007/BF02128667).
++
++[3] Yanjun Han and Jonathan Niles-Weed. Approximate independence of permutation mixtures. The Annals of Statistics, to appear（[作者发表目录](https://yanjunhan2021.github.io/publication.html)）。[arXiv:2408.09341v2](https://arxiv.org/html/2408.09341v2)（2024年9月9日）；正文所引引理编号对应这一版本。
++
++[4] Bo Deng, Xueliang Li, Bryan Shader and Wasin So. On the Maximum Skew Spectral Radius and Minimum Skew Energy of Tournaments. Linear and Multilinear Algebra 66(7) (2018), 1434–1441. [DOI: 10.1080/03081087.2017.1357676](https://doi.org/10.1080/03081087.2017.1357676).
++
++[5] Peter McCullagh. An asymptotic approximation for the permanent of a doubly stochastic matrix. Journal of Statistical Computation and Simulation 84(2) (2014), 404–414. [DOI: 10.1080/00949655.2012.712122](https://doi.org/10.1080/00949655.2012.712122). [arXiv:1205.5723](https://arxiv.org/abs/1205.5723).
++
++[6] N. C. Wormald. Tournaments with many Hamilton cycles. arXiv:2610.16245v1 (2026). [Fixed version](https://arxiv.org/html/2610.16245v1).
++
++[7] Ehud Friedgut and Jeff Kahn. On the Number of Hamiltonian Cycles in a Tournament. Combinatorics, Probability and Computing 14(5–6) (2005), 769–781. [DOI: 10.1017/S0963548305006863](https://doi.org/10.1017/S0963548305006863).
++
++[8] Eric Li. The Godsil–McKay Asymptotic for Latin Rectangles in the Sublinear Range of Erdős Problem 725. [arXiv:2608.01671v1](https://arxiv.org/html/2608.01671v1) (2026).
++
++[9] Ilan Adler, Noga Alon and Sheldon M. Ross. On the Maximum Number of Hamiltonian Paths in Tournaments. Random Structures & Algorithms 18(3) (2001), 291–296. [DOI: 10.1002/rsa.1010](https://doi.org/10.1002/rsa.1010).
++
++[10] Tibor Szele. Kombinatorikai vizsgálatok az irányított teljes gráffal kapcsolatban. Matematikai és Fizikai Lapok 50 (1943), 223–256. [Original volume archive](https://real-j.mtak.hu/7300/).
++
++[11] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
++
++[12] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [Full text](https://arxiv.org/html/2610.23755v1).
++
+ [13] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. Hexagon preprint 2610.00460v2 (2026). [Fixed version](https://hexagonmath.org/2610.00460v2).
+ 
+-[1] John Irving and Mohamed Omar. Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra. The Electronic Journal of Combinatorics 32(4) (2025), Paper P4.43, 23 pp. [DOI: 10.37236/13841](https://doi.org/10.37236/13841).
+-
+-[2] Noga Alon. The Maximum Number of Hamiltonian Paths in Tournaments. Combinatorica 10(4) (1990), 319–324. [DOI: 10.1007/BF02128667](https://doi.org/10.1007/BF02128667).
+-
+-[3] Yanjun Han and Jonathan Niles-Weed. Approximate independence of permutation mixtures. The Annals of Statistics, to appear（[作者发表目录](https://yanjunhan2021.github.io/publication.html)）。[arXiv:2408.09341v2](https://arxiv.org/html/2408.09341v2)（2024年9月9日）；正文所引引理编号对应这一版本。
+-
+-[4] Bo Deng, Xueliang Li, Bryan Shader and Wasin So. On the Maximum Skew Spectral Radius and Minimum Skew Energy of Tournaments. Linear and Multilinear Algebra 66(7) (2018), 1434–1441. [DOI: 10.1080/03081087.2017.1357676](https://doi.org/10.1080/03081087.2017.1357676).
+-
+-[5] Peter McCullagh. An asymptotic approximation for the permanent of a doubly stochastic matrix. Journal of Statistical Computation and Simulation 84(2) (2014), 404–414. [DOI: 10.1080/00949655.2012.712122](https://doi.org/10.1080/00949655.2012.712122). [arXiv:1205.5723](https://arxiv.org/abs/1205.5723).
+-
+-[6] N. C. Wormald. Tournaments with many Hamilton cycles. arXiv:2610.16245v1 (2026). [Fixed version](https://arxiv.org/html/2610.16245v1).
+-
+-[7] Ehud Friedgut and Jeff Kahn. On the Number of Hamiltonian Cycles in a Tournament. Combinatorics, Probability and Computing 14(5–6) (2005), 769–781. [DOI: 10.1017/S0963548305006863](https://doi.org/10.1017/S0963548305006863).
+-
+-[8] Eric Li. The Godsil–McKay Asymptotic for Latin Rectangles in the Sublinear Range of Erdős Problem 725. [arXiv:2608.01671v1](https://arxiv.org/html/2608.01671v1) (2026).
+-
+-[9] Ilan Adler, Noga Alon and Sheldon M. Ross. On the Maximum Number of Hamiltonian Paths in Tournaments. Random Structures & Algorithms 18(3) (2001), 291–296. [DOI: 10.1002/rsa.1010](https://doi.org/10.1002/rsa.1010).
+-
+-[10] Tibor Szele. Kombinatorikai vizsgálatok az irányított teljes gráffal kapcsolatban. Matematikai és Fizikai Lapok 50 (1943), 223–256. [Original volume archive](https://real-j.mtak.hu/7300/).
+-
+-[11] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
+-
+-[12] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [Full text](https://arxiv.org/html/2610.23755v1).
+-
+--- a/guide_parts/06_references.zh.md
++++ b/guide_parts/06_references.zh.md
+@@ -1,7 +1,6 @@
+ ## 18. 继续阅读的文献
+ 
+ 
+-[7] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. [Hexagon 2610.00460v2](https://hexagonmath.org/2610.00460v2) (2026)。完整原角 Hessian、正定性、猜想 2、6 及圆环展开与本文相应结果重合。
+ 指南以 2026 年 10 月 28 日的第四版论文为依据，研究结论及引用关系与该版对齐。下面给出直接相关的原始文献；固定版本用于避免不同修订稿的定理编号混淆。
+ 
+ [1] Alexander Divoux and Shouda Wang. *The maximum number of Hamiltonian cycles in tournaments*. [arXiv:2610.23755v1](https://arxiv.org/html/2610.23755v1)。可先读引言，再对照第 3 节的永久式近似、第 5 节的加权计数、第 7、9 节的谱比值与圆环闭式。
+@@ -16,3 +15,5 @@
+ 
+ [6] Yanjun Han and Jonathan Niles-Weed. *Approximate independence of permutation mixtures*. [arXiv:2408.09341v2](https://arxiv.org/html/2408.09341v2)。永久式余项的分析使用了与该文复高斯矩估计相关的方法。读指南时不必先掌握整篇文献；需要核对具体引理时，再回到合稿给出的版本和编号。
+ 
++[7] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. [Hexagon 2610.00460v2](https://hexagonmath.org/2610.00460v2) (2026)。完整原角 Hessian、正定性、猜想 2、6 及圆环展开与本文相应结果重合。
++

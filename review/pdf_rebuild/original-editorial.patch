@@ -1,0 +1,731 @@
+From 91c96692e7210bbffbc0e8578aa63e7ba2730aca Mon Sep 17 00:00:00 2001
+From: Codex <codex@openai.com>
+Date: Thu, 29 Oct 2026 17:25:27 +0800
+Subject: [PATCH] Correct references, augmentation boundary and overlapping
+ results in manuscript sources
+
+---
+ README.md                                     |  2 +-
+ guide_parts/01_foundations.zh.md              |  4 +-
+ guide_parts/03_hessian.zh.md                  |  2 +-
+ guide_parts/04_reading.zh.md                  |  4 +-
+ guide_parts/06_references.zh.md               |  2 +
+ manuscripts/01_combined.zh.md                 | 12 ++--
+ manuscripts/01_combined.zh.tex                | 11 ++--
+ manuscripts/02_combined.en.md                 | 12 ++--
+ manuscripts/02_combined.en.tex                | 11 ++--
+ manuscripts/03_constant_factor.zh.md          |  4 +-
+ manuscripts/03_constant_factor.zh.tex         |  4 +-
+ manuscripts/04_wormald.zh.md                  | 10 ++-
+ manuscripts/04_wormald.zh.tex                 |  9 ++-
+ manuscripts/05_proof_idea.zh.md               |  2 +-
+ manuscripts/05_proof_idea.zh.tex              |  2 +-
+ manuscripts/06_freshman_guide.zh.md           | 12 ++--
+ manuscripts/06_freshman_guide.zh.tex          | 11 ++--
+ review/20261029_editorial_corrections.md      | 17 +++++
+ review/editorial_source_checks.json           | 63 +++++++++++++++++++
+ review/editorial_source_hashes.json           | 28 +++++++++
+ ...2\344\275\215\350\257\264\346\230\216.txt" |  5 ++
+ 21 files changed, 183 insertions(+), 44 deletions(-)
+ create mode 100644 review/20261029_editorial_corrections.md
+ create mode 100644 review/editorial_source_checks.json
+ create mode 100644 review/editorial_source_hashes.json
+
+diff --git a/README.md b/README.md
+index 9ff7dd7..fc55f45 100644
+--- a/README.md
++++ b/README.md
+@@ -25,7 +25,7 @@ $$L=\frac{\cosh1}{\cos1}$$
+ 
+ 由 Divoux–Wang 确定。合稿的路径部分在这一首项基础上证明对全体竞赛图统一的 $O(n^{-1})$ 归一化误差，细化永久式、删除、对角缩放及删集求和中的误差控制。局部永久式的 $O(n^{-1})$ 误差阶已有 McCullagh 的工作，也可从 Divoux–Wang 的非负双随机矩阵证明中进一步提取；本文的全局误差结论需要后续计数步骤共同成立。
+ 
+-另一项主结果直接计算 Wormald 原角函数的完整 Hessian，证明它的正定性，并求出行列式。固定正则基图的模型常数也可以直接从 Divoux–Wang 的加权圈公式得到。正则内部块因子与路径转换仍调用 Wormald 的计数定理；谱比较及其等号分类承接 Fang–Huang、Divoux–Wang。稿件在相应位置明确这些依赖，再补充等号分析、非正则基图估计及固定阶图类的比较。
++另一项主结果直接计算 Wormald 原角函数的完整 Hessian，证明它的正定性，并求出行列式。固定正则基图的模型常数也可以直接从 Divoux–Wang 的加权圈公式得到。正则内部块因子与路径转换仍调用 Wormald 的计数定理；谱比较及其等号分类承接 Fang–Huang、Divoux–Wang。稿件在相应位置明确这些依赖，再补充等号分析、非正则基图估计及固定阶图类的比较。 完整原角 Hessian、正定性、行列式/有理平方性质及圆环极限也见于 Bhattacharjee 的工作；这里给出详细推导和教学说明，不将这些重合结论列作相对于该文的新增结果。 [固定版本](https://hexagonmath.org/2610.00460v2)。
+ 
+ 原 $C_*>L$ 常数因子上界已被已有首项结论涵盖，因此保留为辅助估计。圆环闭式及其极限同样注明已有来源；严格单调性和高阶展开作为这些公式的进一步推论与计算呈现。完整对照见[研究定位说明](review/研究定位说明.txt)。
+ 
+diff --git a/guide_parts/01_foundations.zh.md b/guide_parts/01_foundations.zh.md
+index 135754e..f96e76e 100644
+--- a/guide_parts/01_foundations.zh.md
++++ b/guide_parts/01_foundations.zh.md
+@@ -139,11 +139,11 @@ $$
+ 
+ 圆环图及其相应删点图给出渐近极值构造；这与“它们在每一个有限 $n$ 都是唯一最优图”是不同的命题。第四版论文没有证明后者。
+ 
+-### 3.3 另一项主要结果为什么涉及 Hessian
++### 3.3 为什么还讨论 Hessian
+ 
+ Wormald 研究把一个固定小竞赛图吹胀为大图时，Hamilton 圈的期望值。其渐近公式中出现一个角变量函数，以及这个函数在指定点处的二阶导数矩阵，称作 **Hessian**。如果这个矩阵退化，通常的局部高斯近似就可能失效；若不退化，就有希望把渐近常数算清楚。原角函数还含有一个一次相位项，须在完整的积分表达式中消去，不能把它本身误称为在该点梯度为零的函数。
+ 
+-本文第二项主要结果给出了这个原始角 Hessian 的完整矩阵公式，并证明它对每个正则基图都正定。它不只是计算了一个行列式，也不是仅对圆环图作数值试验。第 11–15 节会从二元 Taylor 展开开始说明，并把三顶点基图的矩阵逐项算出。
++本文也推导出这个原始角 Hessian 的完整矩阵公式，并证明它对每个正则基图都正定。它不只是计算了一个行列式，也不是仅对圆环图作数值试验。第 11–15 节会从二元 Taylor 展开开始说明，并把三顶点基图的矩阵逐项算出。
+ 
+ 这两项结果研究的范围不同：路径定理面对所有 $n$ 顶点竞赛图；Hessian 定理先固定一个小基图，再研究它的随机吹胀。二者通过同一类行列式常数联系起来，不能因此把模型里的结论直接当成全体有限竞赛图的精确极值结论。
+ 
+diff --git a/guide_parts/03_hessian.zh.md b/guide_parts/03_hessian.zh.md
+index b74ff18..f571416 100644
+--- a/guide_parts/03_hessian.zh.md
++++ b/guide_parts/03_hessian.zh.md
+@@ -366,5 +366,5 @@ $$
+ 
+ 极限可以直接从闭式得到：$(1\pm1/d)^d\to e^{\pm1}$，$(1\pm i/d)^d\to e^{\pm i}$，而 $e^{1/d}\to1$。严格单调性则不是仅由极限存在推出的。研究稿用 [Fang–Huang 的显式谱](https://arxiv.org/html/2608.06238v1)配合 Divoux–Wang 的正系数展开，逐项比较得到这一性质；本指南不再重复该级数论证。
+ 
+-最后需要分清结论的归属和范围。模型常数还能直接由 Divoux–Wang 的加权圈计数定理推出，不必先算角 Hessian；圆环闭式和全图渐近常数也已有于该文。研究稿在这一部分直接处理的是 Wormald 原角函数的完整 Hessian 及其正定性，再说明它与已有计数理论的关系。固定基图阶数后比较模型期望，需要相应的谱等号分析与非正则基图估计；这仍不同于断言每一个有限阶竞赛图中，圆环都恰好拥有最多的 Hamilton 圈。
++最后需要分清结论的归属和范围。模型常数还能直接由 Divoux–Wang 的加权圈计数定理推出，不必先算角 Hessian；圆环闭式和全图渐近常数也已有于该文。研究稿在这一部分直接处理的是 Wormald 原角函数的完整 Hessian 及其正定性，再说明它与已有计数理论的关系。固定基图阶数后比较模型期望，需要相应的谱等号分析与非正则基图估计；这仍不同于断言每一个有限阶竞赛图中，圆环都恰好拥有最多的 Hamilton 圈。 完整原角 Hessian、正定性、行列式/有理平方性质及圆环极限也见于 Bhattacharjee 的工作；这里给出详细推导和教学说明，不将这些重合结论列作相对于该文的新增结果。
+ 
+diff --git a/guide_parts/04_reading.zh.md b/guide_parts/04_reading.zh.md
+index fd5212c..c408110 100644
+--- a/guide_parts/04_reading.zh.md
++++ b/guide_parts/04_reading.zh.md
+@@ -18,11 +18,11 @@
+ | 全体竞赛图的 $P(n)=(L+O(1/n))\mu_n$ | 第四版路径主定理，重点是对全部图统一保留 $1/n$ 级误差 |
+ | 永久式的行列式型近似 | McCullagh、Divoux–Wang 的既有方法；本文采用与当前删点、缩放求和相适应的定量形式 |
+ | 反对称矩阵的谱比较及圆环常数公式 | Fang–Huang、Divoux–Wang 的已有结果，不能改写为本文首创 |
+-| Wormald 原始角 Hessian 的完整矩阵、正定性与有理平方性质 | 第四版 Hessian 主定理；由明确的矩阵公式逐步推出 |
++| Wormald 原始角 Hessian 的完整矩阵、正定性与有理平方性质 | 与 Bhattacharjee 的相应结果重合；此处保留直接推导和教学说明 |
+ | 固定奇数阶基图、大块随机吹胀中圆环基图的期望极值 | 结合 Wormald 模型、已有谱极值和 Hessian 计算所得的推论；须注明沿用的结果 |
+ | 正则块常数在奇数阶上严格递增并趋于 $L$ | 从已有频率和常数表达式继续推出；不是另一项独立发现的极限常数 |
+ 
+-在某篇已有论文的公式上再走一步，得到一个新写出的推论，依然应该在那一步说明来源。读者需要知道哪些困难已经由前人解决，本文又在哪个具体环节增加了信息。这里最应分清的，是“首项常数已经确定”与“统一误差仍需证明”，以及“吹胀常数已有表达式”与“原始角 Hessian 的矩阵结构得到直接计算”。
++在某篇已有论文的公式上再走一步，得到一个新写出的推论，依然应该在那一步说明来源。读者需要知道哪些困难已经由前人解决，本文又在哪个具体环节增加了信息。这里最应分清的，是“首项常数已经确定”与“统一误差仍需证明”，以及“吹胀常数已有表达式”与“原始角 Hessian 的矩阵结构得到直接计算”。 完整原角 Hessian、正定性、行列式/有理平方性质及圆环极限也见于 Bhattacharjee 的工作；这里给出详细推导和教学说明，不将这些重合结论列作相对于该文的新增结果。
+ 
+ ### 16.3 常用词与读法
+ 
+diff --git a/guide_parts/06_references.zh.md b/guide_parts/06_references.zh.md
+index c41c8ec..1878ad4 100644
+--- a/guide_parts/06_references.zh.md
++++ b/guide_parts/06_references.zh.md
+@@ -1,5 +1,7 @@
+ ## 18. 继续阅读的文献
+ 
++
++[7] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. [Hexagon 2610.00460v2](https://hexagonmath.org/2610.00460v2) (2026)。完整原角 Hessian、正定性、猜想 2、6 及圆环展开与本文相应结果重合。
+ 指南以 2026 年 10 月 28 日的第四版论文为依据，研究结论及引用关系与该版对齐。下面给出直接相关的原始文献；固定版本用于避免不同修订稿的定理编号混淆。
+ 
+ [1] Alexander Divoux and Shouda Wang. *The maximum number of Hamiltonian cycles in tournaments*. [arXiv:2610.23755v1](https://arxiv.org/html/2610.23755v1)。可先读引言，再对照第 3 节的永久式近似、第 5 节的加权计数、第 7、9 节的谱比值与圆环闭式。
+diff --git a/manuscripts/01_combined.zh.md b/manuscripts/01_combined.zh.md
+index a2e0747..ff7161c 100644
+--- a/manuscripts/01_combined.zh.md
++++ b/manuscripts/01_combined.zh.md
+@@ -12,7 +12,7 @@ $$
+ P(n)=\left(\frac{\cosh1}{\cos1}+O(n^{-1})\right)\frac{n!}{2^{n-1}}.
+ $$
+ 
+-我们还求出 Wormald 固定基图计数公式中的完整角 Hessian，证明它对每个正则基图均正定；其行列式给出 Divoux–Wang 所用的谱比值。结合他们的计数与谱比较、Fang–Huang 的等号条件以及 Wormald 的模型转换，得到固定基图的期望极值。文中补充等号分析和非正则基图估计，并由已知显式谱推出圆环常数的严格单调性。
++我们还求出 Wormald 固定基图计数公式中的完整角 Hessian，证明它对每个正则基图均正定；其行列式给出 Divoux–Wang 所用的谱比值。结合他们的计数与谱比较、Fang–Huang 的等号条件以及 Wormald 的模型转换，得到固定基图的期望极值。文中补充等号分析和非正则基图估计，并由已知显式谱推出圆环常数的严格单调性。原角 Hessian 和圆环极限也与 Bhattacharjee 的工作重合，本文明确注明这一关系。
+ 
+ ## 1. 引言
+ 
+@@ -82,6 +82,8 @@ $$
+ 
+ 定理 1.2 直接证明 Wormald [6] 关于原 Hessian 的猜想 6。推论 1.3 结合已有计数与谱比较，补入等号分析及非正则基图估计。猜想 2 的极限存在性由 [12] 的闭式及 Wormald 的 $e^{1/d}$ 因子即得，推论 1.4 则补充严格单调性。第 10 节保留直至 $d^{-5}$ 项、余项为 $O(d^{-6})$ 的展开，作为该闭式的进一步计算。
+ 
++Bhattacharjee [13, 定理 1.1、1.3，命题 3.1，引理 3.2 及推论 3.3] 也处理了 Wormald 的猜想 2 和 6。其原角 Hessian、正定性、行列式/有理平方性质、圆环闭式、极限及低阶展开与本文相应结果重合；本文保留直接推导，不将这些结论列作相对于该文的新结果。下文另讨论严格单调性、谱等号条件、非正则基图及固定阶数下的期望唯一极值。定理 1.1 的全局定量路径问题与这些固定基图结论不同。
++
+ ### 1.1 永久式估计与路径计数
+ 
+ McCullagh [5] 已在适度偏离条件下给出行列式近似及 $O(n^{-1})$ 相对误差。Divoux–Wang [12, 命题 3.1] 对非负双随机矩阵证明了对矩阵类一致的 $1+o(1)$ 版本；细化其系数估计及 Gamma 平均，也可在这一情形保留 $O(n^{-1})$。第 3 节采用固定元素界和算子范数界，给出后文所需的形式与详细证明。定理 1.1 的定量结论在于经过删点、缩放和求和后，最终路径数仍具有同阶误差。
+@@ -3113,7 +3115,7 @@ $$
+ 
+ 即有 $\sum_{k>k_n}c^kw_k=n^{-2+o(1)}$。
+ 
+-使用 [2, Lemma 5.1] 所述的 Brégman 界及 [2, Corollary 2.3] 的度数平衡化，再结合 Stirling 公式，给出统一常数 $C$，使任意 $m$ 阶竞赛图满足
++使用 [2, Lemma 2.1] 所述的 Brégman 界及 [2, Corollary 2.3] 的度数平衡化，再结合 Stirling 公式，给出统一常数 $C$，使任意 $m$ 阶竞赛图满足
+ 
+ $$
+ \operatorname{per}A_T\le C\sqrt{m+1}\,\frac{m!}{2^m}.
+@@ -6334,7 +6336,7 @@ $$
+ 
+ **引理 11.5 (随机增点与路径计数).**
+ 
+-固定旧竞赛图$G$，加入新顶点$v$，与旧顶点的边独立公平定向。每条路径$x_1\to\cdots\to x_N$对应唯一候选圈$v\to x_1\to\cdots\to x_N\to v$，两条新增边的联合概率为$(1/2)^2=1/4$。删除$v$是逆操作。因此
++固定一个有 $N\ge2$ 个顶点的竞赛图 $G$，加入新顶点 $v$，与旧顶点的边独立公平定向。每条路径 $x_1\to\cdots\to x_N$ 对应唯一候选圈 $v\to x_1\to\cdots\to x_N\to v$。由于 $x_1\ne x_N$，所需的两条新增边不同，其联合概率为 $(1/2)^2=1/4$。圈以 $v$ 为规范起点，删除 $v$ 是逆操作。条件 $N\ge2$ 必不可少：$N=1$ 时 $H(G)=1$，但增广竞赛图没有有向二圈。本文固定 $d\ge3$ 的吹胀应用自动满足该条件。因此
+ 
+ $$
+ \mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
+@@ -7357,10 +7359,12 @@ $$
+ 
+ ## 作者说明
+ 
+-路径部分的配套形式化证明由叶祥宇完成。本文的文字整理及部分证明检查使用了 AI 辅助。定理 1.1 的新增推导尚未纳入端到端 Lean 形式化证明；已有检查的覆盖范围见另附复核说明。
++路径部分旧版主界的配套 Lean 形式化由叶祥宇完成，其上界首项常数为 $C_*>L$，精确陈述和版本见[旧仓库核验记录](https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md)。当前仓库的 `formal/` 另覆盖 Wormald 原角函数的实际二阶导数、Hessian 矩阵公式、正定性、行列式和正有理平方根，以及覆盖表列明的辅助结果。合稿定理 1.1 的锐常数定量渐近式尚未获得端到端 Lean 形式化；未列入覆盖表的结论亦不在本工程的认证范围内。文字整理及部分证明检查使用了 AI 辅助。这些检查不表示整篇现稿已经机器认证，详见 `formal/COVERAGE.zh.md` 与相应版本的核验记录。
+ 
+ ## 参考文献
+ 
++[13] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. Hexagon preprint 2610.00460v2 (2026). [Fixed version](https://hexagonmath.org/2610.00460v2).
++
+ [1] John Irving and Mohamed Omar. Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra. The Electronic Journal of Combinatorics 32(4) (2025), Paper P4.43, 23 pp. [DOI: 10.37236/13841](https://doi.org/10.37236/13841).
+ 
+ [2] Noga Alon. The Maximum Number of Hamiltonian Paths in Tournaments. Combinatorica 10(4) (1990), 319–324. [DOI: 10.1007/BF02128667](https://doi.org/10.1007/BF02128667).
+diff --git a/manuscripts/01_combined.zh.tex b/manuscripts/01_combined.zh.tex
+index 36a9468..d0760ec 100644
+--- a/manuscripts/01_combined.zh.tex
++++ b/manuscripts/01_combined.zh.tex
+@@ -65,7 +65,7 @@
+ 
+ \[P(n)=\left(\frac{\cosh1}{\cos1}+O(n^{-1})\right)\frac{n!}{2^{n-1}}.\]
+ 
+-我们还求出 Wormald 固定基图计数公式中的完整角 Hessian，证明它对每个正则基图均正定；其行列式给出 Divoux--Wang 所用的谱比值。结合他们的计数与谱比较、Fang--Huang 的等号条件以及 Wormald 的模型转换，得到固定基图的期望极值。文中补充等号分析和非正则基图估计，并由已知显式谱推出圆环常数的严格单调性。
++我们还求出 Wormald 固定基图计数公式中的完整角 Hessian，证明它对每个正则基图均正定；其行列式给出 Divoux--Wang 所用的谱比值。结合他们的计数与谱比较、Fang--Huang 的等号条件以及 Wormald 的模型转换，得到固定基图的期望极值。文中补充等号分析和非正则基图估计，并由已知显式谱推出圆环常数的严格单调性。原角 Hessian 和圆环极限也与 Bhattacharjee 的工作重合，本文明确注明这一关系。
+ \end{quote}
+ \Needspace{5\baselineskip}
+ \section{1. 引言}\label{ux5f15ux8a00}
+@@ -137,6 +137,8 @@ Wormald {[}6{]} 的定理 4 以角 Hessian 的行列式非零为条件，给出
+ 
+ 定理 1.2 直接证明 Wormald {[}6{]} 关于原 Hessian 的猜想 6。推论 1.3 结合已有计数与谱比较，补入等号分析及非正则基图估计。猜想 2 的极限存在性由 {[}12{]} 的闭式及 Wormald 的 \(e^{1/d}\) 因子即得，推论 1.4 则补充严格单调性。第 10 节保留直至 \(d^{-5}\) 项、余项为 \(O(d^{-6})\) 的展开，作为该闭式的进一步计算。
+ 
++Bhattacharjee {[}13, 定理 1.1、1.3，命题 3.1，引理 3.2 及推论 3.3{]} 也处理了 Wormald 的猜想 2 和 6。其原角 Hessian、正定性、行列式/有理平方性质、圆环闭式、极限及低阶展开与本文相应结果重合；本文保留直接推导，不将这些结论列作相对于该文的新结果。下文另讨论严格单调性、谱等号条件、非正则基图及固定阶数下的期望唯一极值。定理 1.1 的全局定量路径问题与这些固定基图结论不同。
++
+ \Needspace{5\baselineskip}
+ \subsection{1.1 永久式估计与路径计数}\label{ux6c38ux4e45ux5f0fux4f30ux8ba1ux4e0eux8defux5f84ux8ba1ux6570}
+ 
+@@ -2433,7 +2435,7 @@ H(T)=\sum_{U\subseteq V(T)}\det(I+A[U])\operatorname{per}A[U^c].
+ 
+ 即有 \(\sum_{k>k_n}c^kw_k=n^{-2+o(1)}\)。
+ 
+-使用 {[}2, Lemma 5.1{]} 所述的 Brégman 界及 {[}2, Corollary 2.3{]} 的度数平衡化，再结合 Stirling 公式，给出统一常数 \(C\)，使任意 \(m\) 阶竞赛图满足
++使用 {[}2, Lemma 2.1{]} 所述的 Brégman 界及 {[}2, Corollary 2.3{]} 的度数平衡化，再结合 Stirling 公式，给出统一常数 \(C\)，使任意 \(m\) 阶竞赛图满足
+ 
+ \[\operatorname{per}A_T\le C\sqrt{m+1}\,\frac{m!}{2^m}.\]
+ 
+@@ -4903,7 +4905,7 @@ m\sum_{i=1}^d\frac{\log(R_i!)}{R_i}
+ 
+ \textbf{引理 11.5 (随机增点与路径计数).}
+ 
+-固定旧竞赛图\(G\)，加入新顶点\(v\)，与旧顶点的边独立公平定向。每条路径\(x_1\to\cdots\to x_N\)对应唯一候选圈\(v\to x_1\to\cdots\to x_N\to v\)，两条新增边的联合概率为\((1/2)^2=1/4\)。删除\(v\)是逆操作。因此
++固定一个有 \(N\ge2\) 个顶点的竞赛图 \(G\)，加入新顶点 \(v\)，与旧顶点的边独立公平定向。每条路径 \(x_1\to\cdots\to x_N\) 对应唯一候选圈 \(v\to x_1\to\cdots\to x_N\to v\)。由于 \(x_1\ne x_N\)，所需的两条新增边不同，其联合概率为 \((1/2)^2=1/4\)。圈以 \(v\) 为规范起点，删除 \(v\) 是逆操作。条件 \(N\ge2\) 必不可少：\(N=1\) 时 \(H(G)=1\)，但增广竞赛图没有有向二圈。本文固定 \(d\ge3\) 的吹胀应用自动满足该条件。因此
+ 
+ \[\mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
+ 4\nu_{N+1}=\frac{4N!}{2^{N+1}}=\frac{N!}{2^{N-1}}=\mu_N,\]
+@@ -5708,7 +5710,7 @@ Young 不等式在本文只是配方：\(0\le(u-v)^2\) 给出 \(2uv\le u^2+v^2\)
+ \Needspace{5\baselineskip}
+ \section{作者说明}\label{ux4f5cux8005ux8bf4ux660e}
+ 
+-路径部分的配套形式化证明由叶祥宇完成。本文的文字整理及部分证明检查使用了 AI 辅助。定理 1.1 的新增推导尚未纳入端到端 Lean 形式化证明；已有检查的覆盖范围见另附复核说明。
++路径部分旧版主界的配套 Lean 形式化由叶祥宇完成，其上界首项常数为 \(C_*>L\)，精确陈述和版本见\href{https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md}{旧仓库核验记录}。当前仓库的 \texttt{formal/} 另覆盖 Wormald 原角函数的实际二阶导数、Hessian 矩阵公式、正定性、行列式和正有理平方根，以及覆盖表列明的辅助结果。合稿定理 1.1 的锐常数定量渐近式尚未获得端到端 Lean 形式化；未列入覆盖表的结论亦不在本工程的认证范围内。文字整理及部分证明检查使用了 AI 辅助。这些检查不表示整篇现稿已经机器认证，详见 \texttt{formal/COVERAGE.zh.md} 与相应版本的核验记录。
+ 
+ \Needspace{5\baselineskip}
+ \begingroup\small\linespread{1}\selectfont
+@@ -5737,6 +5739,7 @@ Young 不等式在本文只是配方：\(0\le(u-v)^2\) 给出 \(2uv\le u^2+v^2\)
+ {[}11{]} Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). \href{https://arxiv.org/html/2608.06238v1\#S3}{Corollary 3.4}.
+ 
+ {[}12{]} Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). \href{https://arxiv.org/html/2610.23755v1}{Full text}.
++{[}13{]} Deep Bhattacharjee. Two conjectures of Wormald on Hamilton cycles in tournaments. Hexagon preprint 2610.00460v2 (2026). \href{https://hexagonmath.org/2610.00460v2}{Fixed version}.
+ \endgroup
+ \end{document}
+ 
+diff --git a/manuscripts/02_combined.en.md b/manuscripts/02_combined.en.md
+index 10030ad..9565107 100644
+--- a/manuscripts/02_combined.en.md
++++ b/manuscripts/02_combined.en.md
+@@ -12,7 +12,7 @@ $$
+ P(n)=\left(\frac{\cosh1}{\cos1}+O(n^{-1})\right)\frac{n!}{2^{n-1}}.
+ $$
+ 
+-We also compute the full angular Hessian in Wormald's fixed-base formula and prove that it is positive definite for every regular base. Its determinant recovers the spectral ratio used by Divoux and Wang. Combining this identity with their counting and spectral results, the equality conditions of Fang and Huang, and Wormald's model comparisons yields the fixed-base expectation extrema. We give the additional equality analysis and nonregular-base estimates, and derive strict monotonicity of the carousel constants from the known spectrum.
++We also compute the full angular Hessian in Wormald's fixed-base formula and prove that it is positive definite for every regular base. Its determinant recovers the spectral ratio used by Divoux and Wang. Combining this identity with their counting and spectral results, the equality conditions of Fang and Huang, and Wormald's model comparisons yields the fixed-base expectation extrema. We give the additional equality analysis and nonregular-base estimates, and derive strict monotonicity of the carousel constants from the known spectrum. The original Hessian and carousel limit overlap with Bhattacharjee's work.
+ 
+ ## 1. Introduction
+ 
+@@ -82,6 +82,8 @@ Along odd integers $d\ge3$, the sequence $\mathfrak r_d$ increases strictly to $
+ 
+ Theorem 1.2 directly proves Wormald's Hessian conjecture [6, Conjecture 6]. Corollary 1.3 combines existing counting and spectral results with the equality and nonregular-base arguments given here. The limit in Conjecture 2 follows from the closed form in [12] and Wormald's factor $e^{1/d}$; Corollary 1.4 adds strict monotonicity. Section 10 retains the expansion through $d^{-5}$, with remainder $O(d^{-6})$, as a calculation from that closed form.
+ 
++Bhattacharjee [13, Theorems 1.1 and 1.3, Proposition 3.1, Lemma 3.2 and Corollary 3.3] also treats Wormald's Conjectures 2 and 6. His original angular Hessian, positivity, determinant/rational-square formulas, carousel value, limit and low-order expansion overlap with the corresponding results here. We retain direct derivations without claiming these as new relative to that work. We separately discuss monotonicity, equality, nonregular bases and eventual uniqueness at fixed base order. The global quantitative path problem in Theorem 1.1 is distinct.
++
+ ### 1.1 The counting estimates and their relation to earlier methods
+ 
+ McCullagh [5] obtained the determinant approximation with an $O(n^{-1})$ relative error under moderate-deviation assumptions. Divoux and Wang [12, Proposition 3.1] prove a uniform $1+o(1)$ version for nonnegative doubly stochastic matrices; their coefficient estimates and Gamma averaging can be refined to retain $O(n^{-1})$ in that setting. Section 3 gives the form needed here, with fixed entry and operator-norm bounds, and includes the detailed proof. The quantitative assertion of Theorem 1.1 concerns the final path count after deletion, scaling and summation; it does not assert a new determinant main term or a first $O(n^{-1})$ permanent approximation.
+@@ -3104,7 +3106,7 @@ $$
+ 
+ Then $\sum_{k>k_n}c^kw_k=n^{-2+o(1)}$.
+ 
+-The Brégman bound stated in [2, Lemma 5.1], the degree-balancing argument of [2, Corollary 2.3], and Stirling's formula give a uniform constant $C$ such that every $m$-vertex tournament satisfies
++The Brégman bound stated in [2, Lemma 2.1], the degree-balancing argument of [2, Corollary 2.3], and Stirling's formula give a uniform constant $C$ such that every $m$-vertex tournament satisfies
+ 
+ $$
+ \operatorname{per}A_T\le C\sqrt{m+1}\,\frac{m!}{2^m}.
+@@ -6313,7 +6315,7 @@ Both normalized cycle expectations therefore tend to zero.
+ 
+ **Lemma 11.5 (Random augmentation and path counts).**
+ 
+-Fix the old tournament $G$. Add a vertex $v$ whose edges to old vertices are independently and fairly oriented. Each path $x_1\to\cdots\to x_N$ corresponds to the unique candidate cycle $v\to x_1\to\cdots\to x_N\to v$. The two required new edges have joint probability $(1/2)^2=1/4$. Deleting $v$ reverses the correspondence. Therefore
++Fix a tournament $G$ on $N\ge2$ vertices. Add a vertex $v$ whose edges to the old vertices are independently and fairly oriented. Each path $x_1\to\cdots\to x_N$ corresponds to the unique candidate cycle $v\to x_1\to\cdots\to x_N\to v$. Since $x_1\ne x_N$, the two required new edges are distinct and have joint probability $(1/2)^2=1/4$. Represent each cycle with $v$ as its starting vertex; deleting $v$ reverses the correspondence. The condition $N\ge2$ is necessary: for $N=1$, $H(G)=1$ but the augmented tournament has no directed 2-cycle. It is automatic in the blow-up applications here, where $d\ge3$ is fixed. Therefore
+ 
+ $$
+ \mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
+@@ -7336,10 +7338,12 @@ Thus $\|Mx\|\ge\|x\|$. The matrix has trivial nullspace and, being square, is in
+ 
+ ## Author statement
+ 
+-The companion formalization of the path results was completed by Xiangyu Ye. AI assistance was used in the exposition and in parts of the proof checking. The new deduction in Theorem 1.1 has not been added to the end-to-end Lean formalization; the scope of the recorded checks is given in the accompanying review note.
++Xiangyu Ye completed the companion Lean formalization of the earlier path bound, whose upper leading constant is $C_*>L$; its precise statement and revision are recorded in the [earlier repository](https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md). The present `formal/` directory separately covers the actual second derivatives of Wormald's original angular function, the Hessian matrix formula, positive definiteness, determinant and positive rational square root, together with explicitly listed auxiliary results. The sharp quantitative asymptotic in Theorem 1.1 has not been formalized end to end in Lean; results not listed in the coverage table are also outside this project's certification scope. AI assistance was used in the exposition and parts of the proof checking. These checks do not constitute machine certification of the entire present manuscript; see `formal/COVERAGE.zh.md` and the revision-specific verification records.
+ 
+ ## References
+ 
++[13] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. Hexagon preprint 2610.00460v2 (2026). [Fixed version](https://hexagonmath.org/2610.00460v2).
++
+ [1] John Irving and Mohamed Omar. Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra. The Electronic Journal of Combinatorics 32(4) (2025), Paper P4.43, 23 pp. [DOI: 10.37236/13841](https://doi.org/10.37236/13841).
+ 
+ [2] Noga Alon. The Maximum Number of Hamiltonian Paths in Tournaments. Combinatorica 10(4) (1990), 319–324. [DOI: 10.1007/BF02128667](https://doi.org/10.1007/BF02128667).
+diff --git a/manuscripts/02_combined.en.tex b/manuscripts/02_combined.en.tex
+index b54d235..ce49184 100644
+--- a/manuscripts/02_combined.en.tex
++++ b/manuscripts/02_combined.en.tex
+@@ -54,7 +54,7 @@
+ 
+ \[P(n)=\left(\frac{\cosh1}{\cos1}+O(n^{-1})\right)\frac{n!}{2^{n-1}}.\]
+ 
+-We also compute the full angular Hessian in Wormald\textquotesingle s fixed-base formula and prove that it is positive definite for every regular base. Its determinant recovers the spectral ratio used by Divoux and Wang. Combining this identity with their counting and spectral results, the equality conditions of Fang and Huang, and Wormald\textquotesingle s model comparisons yields the fixed-base expectation extrema. We give the additional equality analysis and nonregular-base estimates, and derive strict monotonicity of the carousel constants from the known spectrum.
++We also compute the full angular Hessian in Wormald\textquotesingle s fixed-base formula and prove that it is positive definite for every regular base. Its determinant recovers the spectral ratio used by Divoux and Wang. Combining this identity with their counting and spectral results, the equality conditions of Fang and Huang, and Wormald\textquotesingle s model comparisons yields the fixed-base expectation extrema. We give the additional equality analysis and nonregular-base estimates, and derive strict monotonicity of the carousel constants from the known spectrum. The original Hessian and carousel limit overlap with Bhattacharjee's work.
+ \end{quote}
+ \Needspace{5\baselineskip}
+ \section{1. Introduction}\label{introduction}
+@@ -126,6 +126,8 @@ Along odd integers \(d\ge3\), the sequence \(\mathfrak r_d\) increases strictly
+ 
+ Theorem 1.2 directly proves Wormald\textquotesingle s Hessian conjecture {[}6, Conjecture 6{]}. Corollary 1.3 combines existing counting and spectral results with the equality and nonregular-base arguments given here. The limit in Conjecture 2 follows from the closed form in {[}12{]} and Wormald\textquotesingle s factor \(e^{1/d}\); Corollary 1.4 adds strict monotonicity. Section 10 retains the expansion through \(d^{-5}\), with remainder \(O(d^{-6})\), as a calculation from that closed form.
+ 
++Bhattacharjee {[}13, Theorems 1.1 and 1.3, Proposition 3.1, Lemma 3.2 and Corollary 3.3{]} also treats Wormald's Conjectures 2 and 6. His original angular Hessian, positivity, determinant/rational-square formulas, carousel value, limit and low-order expansion overlap with the corresponding results here. We retain direct derivations without claiming these as new relative to that work. We separately discuss monotonicity, equality, nonregular bases and eventual uniqueness at fixed base order. The global quantitative path problem in Theorem 1.1 is distinct.
++
+ \Needspace{5\baselineskip}
+ \subsection{1.1 The counting estimates and their relation to earlier methods}\label{the-counting-estimates-and-their-relation-to-earlier-methods}
+ 
+@@ -2420,7 +2422,7 @@ Indeed, Stirling\textquotesingle s formula gives \(\log(c^kw_k)=-(k/2)\log k+O_c
+ 
+ Then \(\sum_{k>k_n}c^kw_k=n^{-2+o(1)}\).
+ 
+-The Brégman bound stated in {[}2, Lemma 5.1{]}, the degree-balancing argument of {[}2, Corollary 2.3{]}, and Stirling\textquotesingle s formula give a uniform constant \(C\) such that every \(m\)-vertex tournament satisfies
++The Brégman bound stated in {[}2, Lemma 2.1{]}, the degree-balancing argument of {[}2, Corollary 2.3{]}, and Stirling\textquotesingle s formula give a uniform constant \(C\) such that every \(m\)-vertex tournament satisfies
+ 
+ \[\operatorname{per}A_T\le C\sqrt{m+1}\,\frac{m!}{2^m}.\]
+ 
+@@ -4886,7 +4888,7 @@ Both normalized cycle expectations therefore tend to zero.
+ 
+ \textbf{Lemma 11.5 (Random augmentation and path counts).}
+ 
+-Fix the old tournament \(G\). Add a vertex \(v\) whose edges to old vertices are independently and fairly oriented. Each path \(x_1\to\cdots\to x_N\) corresponds to the unique candidate cycle \(v\to x_1\to\cdots\to x_N\to v\). The two required new edges have joint probability \((1/2)^2=1/4\). Deleting \(v\) reverses the correspondence. Therefore
++Fix a tournament \(G\) on \(N\ge2\) vertices. Add a vertex \(v\) whose edges to the old vertices are independently and fairly oriented. Each path \(x_1\to\cdots\to x_N\) corresponds to the unique candidate cycle \(v\to x_1\to\cdots\to x_N\to v\). Since \(x_1\ne x_N\), the two required new edges are distinct and have joint probability \((1/2)^2=1/4\). Represent each cycle with \(v\) as its starting vertex; deleting \(v\) reverses the correspondence. The condition \(N\ge2\) is necessary: for \(N=1\), \(H(G)=1\) but the augmented tournament has no directed 2-cycle. It is automatic in the blow-up applications here, where \(d\ge3\) is fixed. Therefore
+ 
+ \[\mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
+ 4\nu_{N+1}=\frac{4N!}{2^{N+1}}=\frac{N!}{2^{N-1}}=\mu_N,\]
+@@ -5691,7 +5693,7 @@ Thus \(\|Mx\|\ge\|x\|\). The matrix has trivial nullspace and, being square, is
+ \Needspace{5\baselineskip}
+ \section{Author statement}\label{author-statement}
+ 
+-The companion formalization of the path results was completed by Xiangyu Ye. AI assistance was used in the exposition and in parts of the proof checking. The new deduction in Theorem 1.1 has not been added to the end-to-end Lean formalization; the scope of the recorded checks is given in the accompanying review note.
++Xiangyu Ye completed the companion Lean formalization of the earlier path bound, whose upper leading constant is \(C_*>L\); its precise statement and revision are recorded in the \href{https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md}{earlier repository}. The present \texttt{formal/} directory separately covers the actual second derivatives of Wormald's original angular function, the Hessian matrix formula, positive definiteness, determinant and positive rational square root, together with explicitly listed auxiliary results. The sharp quantitative asymptotic in Theorem 1.1 has not been formalized end to end in Lean; results not listed in the coverage table are also outside this project's certification scope. AI assistance was used in the exposition and parts of the proof checking. These checks do not constitute machine certification of the entire present manuscript; see \texttt{formal/COVERAGE.zh.md} and the revision-specific verification records.
+ 
+ \Needspace{5\baselineskip}
+ \begingroup\small\linespread{1}\selectfont
+@@ -5720,6 +5722,7 @@ The companion formalization of the path results was completed by Xiangyu Ye. AI
+ {[}11{]} Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). \href{https://arxiv.org/html/2608.06238v1\#S3}{Corollary 3.4}.
+ 
+ {[}12{]} Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). \href{https://arxiv.org/html/2610.23755v1}{Full text}.
++{[}13{]} Deep Bhattacharjee. Two conjectures of Wormald on Hamilton cycles in tournaments. Hexagon preprint 2610.00460v2 (2026). \href{https://hexagonmath.org/2610.00460v2}{Fixed version}.
+ \endgroup
+ \end{document}
+ 
+diff --git a/manuscripts/03_constant_factor.zh.md b/manuscripts/03_constant_factor.zh.md
+index cf3c35f..fef20d4 100644
+--- a/manuscripts/03_constant_factor.zh.md
++++ b/manuscripts/03_constant_factor.zh.md
+@@ -3026,7 +3026,7 @@ $$
+ 
+ 即有 $\sum_{k>k_n}c^kw_k=n^{-2+o(1)}$。
+ 
+-使用 [2, Lemma 5.1] 所述的 Brégman 界及 [2, Corollary 2.3] 的度数平衡化，再结合 Stirling 公式，给出统一常数 $C$，使任意 $m$ 阶竞赛图满足
++使用 [2, Lemma 2.1] 所述的 Brégman 界及 [2, Corollary 2.3] 的度数平衡化，再结合 Stirling 公式，给出统一常数 $C$，使任意 $m$ 阶竞赛图满足
+ 
+ $$
+ \operatorname{per}A_T\le C\sqrt{m+1}\,\frac{m!}{2^m}.
+@@ -4867,7 +4867,7 @@ $$
+ 
+ ## 作者说明
+ 
+-配套形式化证明由叶祥宇完成。文字整理及部分证明检查使用了 AI 辅助。形式化版本与纸面证明的对应范围见另附复核说明。
++配套的旧版路径主界形式化由叶祥宇完成，其上界首项常数为 $C_*>L$，精确陈述和覆盖范围见[旧仓库核验记录](https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md)。它不构成配套合稿锐常数定量渐近定理的端到端形式化，也不表示本技术补充每一处改写均已逐项机器核对。文字整理及部分证明检查使用了 AI 辅助。
+ 
+ ## 参考文献
+ 
+diff --git a/manuscripts/03_constant_factor.zh.tex b/manuscripts/03_constant_factor.zh.tex
+index 1329815..34fb51c 100644
+--- a/manuscripts/03_constant_factor.zh.tex
++++ b/manuscripts/03_constant_factor.zh.tex
+@@ -2352,7 +2352,7 @@ H(T)=\sum_{U\subseteq V(T)}\det(I+A[U])\operatorname{per}A[U^c].
+ 
+ 即有 \(\sum_{k>k_n}c^kw_k=n^{-2+o(1)}\)。
+ 
+-使用 {[}2, Lemma 5.1{]} 所述的 Brégman 界及 {[}2, Corollary 2.3{]} 的度数平衡化，再结合 Stirling 公式，给出统一常数 \(C\)，使任意 \(m\) 阶竞赛图满足
++使用 {[}2, Lemma 2.1{]} 所述的 Brégman 界及 {[}2, Corollary 2.3{]} 的度数平衡化，再结合 Stirling 公式，给出统一常数 \(C\)，使任意 \(m\) 阶竞赛图满足
+ 
+ \[\operatorname{per}A_T\le C\sqrt{m+1}\,\frac{m!}{2^m}.\]
+ 
+@@ -3768,7 +3768,7 @@ Young 不等式在本文只是配方：\(0\le(u-v)^2\) 给出 \(2uv\le u^2+v^2\)
+ \Needspace{5\baselineskip}
+ \section{作者说明}\label{ux4f5cux8005ux8bf4ux660e}
+ 
+-配套形式化证明由叶祥宇完成。文字整理及部分证明检查使用了 AI 辅助。形式化版本与纸面证明的对应范围见另附复核说明。
++配套的旧版路径主界形式化由叶祥宇完成，其上界首项常数为 \(C_*>L\)，精确陈述和覆盖范围见\href{https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md}{旧仓库核验记录}。它不构成配套合稿锐常数定量渐近定理的端到端形式化，也不表示本技术补充每一处改写均已逐项机器核对。文字整理及部分证明检查使用了 AI 辅助。
+ 
+ \Needspace{5\baselineskip}
+ \begingroup\small\linespread{1}\selectfont
+diff --git a/manuscripts/04_wormald.zh.md b/manuscripts/04_wormald.zh.md
+index ea00d72..a2f2d4a 100644
+--- a/manuscripts/04_wormald.zh.md
++++ b/manuscripts/04_wormald.zh.md
+@@ -6,7 +6,7 @@
+ 
+ ## 摘要
+ 
+-Wormald 对竞赛图随机吹胀的计数公式含有一个由隐式角函数定义的 Hessian，并以其非退化为条件。本文直接计算这个矩阵，将它表示为正则基图符号矩阵的有理函数，由此证明正定性及相关平方根的有理性，回答其猜想 6。模型的期望常数也可直接由 Divoux–Wang 的加权圈计数公式得到；本文给出这一代入，并说明它与原 Hessian 计算的关系。结合 Fang–Huang 的等号分类及非正则基图的指数损失，得到圆环基图在充分大块阶下的唯一期望极值。圆环常数的闭式已见于 Divoux–Wang；其严格单调性由显式谱推出，渐近展开则由该闭式计算。
++Wormald 对竞赛图随机吹胀的计数公式含有一个由隐式角函数定义的 Hessian，并以其非退化为条件。本文直接计算这个矩阵，将它表示为正则基图符号矩阵的有理函数，由此证明正定性及相关平方根的有理性，回答其猜想 6。模型的期望常数也可直接由 Divoux–Wang 的加权圈计数公式得到；本文给出这一代入，并说明它与原 Hessian 计算的关系。结合 Fang–Huang 的等号分类及非正则基图的指数损失，得到圆环基图在充分大块阶下的唯一期望极值。圆环常数的闭式已见于 Divoux–Wang；其严格单调性由显式谱推出，渐近展开则由该闭式计算。原角 Hessian 和圆环极限也与 Bhattacharjee 的工作重合，本文明确注明这一关系。
+ 
+ ## 1. 引言
+ 
+@@ -24,6 +24,8 @@ Divoux–Wang [4] 已证明全体竞赛图的 Hamilton 圈与路径的归一化
+ 
+ 这些计数结论本身没有给出 Wormald 原角函数的 Hessian，也不能在未证明非退化之前反过来使用他的条件渐近式确定 Hessian。本文的主要计算针对这一原始对象。随后保留谱比较中的等号条件，并估计非正则基图，以说明已有计数理论如何给出固定基图阶数下的唯一期望极值。
+ 
++Bhattacharjee [5, 定理 1.1、1.3，命题 3.1，引理 3.2 及推论 3.3] 也处理了 Wormald 的猜想 2 和 6。其原角 Hessian、正定性、行列式/有理平方性质、圆环闭式、极限及低阶展开与本文相应结果重合；本文保留直接推导，不将这些结论列作相对于该文的新结果。下文另讨论严格单调性、谱等号条件、非正则基图及固定阶数下的期望唯一极值。
++
+ ![有向三圈的吹胀示例。每个内部块在图中均选为有向三圈，块间粗箭头表示相应方向的全部 $9$ 条边。在随机模型中，内部块按规定的分布独立抽取。](figures/triangle_blowup.png){width=78%}
+ 
+ 
+@@ -1858,7 +1860,7 @@ $$
+ 
+ **引理 6.4 (随机增点与路径计数).**
+ 
+-固定旧竞赛图$G$，加入新顶点$v$，与旧顶点的边独立公平定向。每条路径$x_1\to\cdots\to x_N$对应唯一候选圈$v\to x_1\to\cdots\to x_N\to v$，两条新增边的联合概率为$(1/2)^2=1/4$。删除$v$是逆操作。因此
++固定一个有 $N\ge2$ 个顶点的竞赛图 $G$，加入新顶点 $v$，与旧顶点的边独立公平定向。每条路径 $x_1\to\cdots\to x_N$ 对应唯一候选圈 $v\to x_1\to\cdots\to x_N\to v$。由于 $x_1\ne x_N$，所需的两条新增边不同，其联合概率为 $(1/2)^2=1/4$。圈以 $v$ 为规范起点，删除 $v$ 是逆操作。条件 $N\ge2$ 必不可少：$N=1$ 时 $H(G)=1$，但增广竞赛图没有有向二圈。本文固定 $d\ge3$ 的吹胀应用自动满足该条件。因此
+ 
+ $$
+ \mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
+@@ -2394,10 +2396,12 @@ $$
+ 
+ ## 作者说明
+ 
+-原研究作者为刘星辰。叶祥宇完成后续证明梳理、简化及配套形式化工作。文字整理及部分证明检查使用了 AI 辅助。历史形式化记录与本文各结果的对应范围见另附复核说明。
++原研究作者为刘星辰。叶祥宇完成后续证明梳理、简化及配套形式化工作。当前形式化覆盖原角函数的实际二阶导数、Hessian 矩阵公式、正定性、行列式和正有理平方根及列明辅助引理；并不覆盖本文全部计数渐近、谱等号分类、严格单调性和期望极值推论。文字整理及部分证明检查使用了 AI 辅助。精确对应与限制见 `formal/COVERAGE.zh.md`。
+ 
+ ## 参考文献
+ 
++[5] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. Hexagon preprint 2610.00460v2 (2026). [Fixed version](https://hexagonmath.org/2610.00460v2).
++
+ [1] N. C. Wormald. Tournaments with many Hamilton cycles. arXiv:2610.16245v1 (2026). [Fixed version](https://arxiv.org/html/2610.16245v1).
+ 
+ [2] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
+diff --git a/manuscripts/04_wormald.zh.tex b/manuscripts/04_wormald.zh.tex
+index 5416b2a..275c6ae 100644
+--- a/manuscripts/04_wormald.zh.tex
++++ b/manuscripts/04_wormald.zh.tex
+@@ -61,7 +61,7 @@
+ \end{center}
+ \vspace{3pt}
+ \begin{quote}
+-\noindent\textbf{摘要.} Wormald 对竞赛图随机吹胀的计数公式含有一个由隐式角函数定义的 Hessian，并以其非退化为条件。本文直接计算这个矩阵，将它表示为正则基图符号矩阵的有理函数，由此证明正定性及相关平方根的有理性，回答其猜想 6。模型的期望常数也可直接由 Divoux--Wang 的加权圈计数公式得到；本文给出这一代入，并说明它与原 Hessian 计算的关系。结合 Fang--Huang 的等号分类及非正则基图的指数损失，得到圆环基图在充分大块阶下的唯一期望极值。圆环常数的闭式已见于 Divoux--Wang；其严格单调性由显式谱推出，渐近展开则由该闭式计算。
++\noindent\textbf{摘要.} Wormald 对竞赛图随机吹胀的计数公式含有一个由隐式角函数定义的 Hessian，并以其非退化为条件。本文直接计算这个矩阵，将它表示为正则基图符号矩阵的有理函数，由此证明正定性及相关平方根的有理性，回答其猜想 6。模型的期望常数也可直接由 Divoux--Wang 的加权圈计数公式得到；本文给出这一代入，并说明它与原 Hessian 计算的关系。结合 Fang--Huang 的等号分类及非正则基图的指数损失，得到圆环基图在充分大块阶下的唯一期望极值。圆环常数的闭式已见于 Divoux--Wang；其严格单调性由显式谱推出，渐近展开则由该闭式计算。原角 Hessian 和圆环极限也与 Bhattacharjee 的工作重合，本文明确注明这一关系。
+ \end{quote}
+ \Needspace{5\baselineskip}
+ \section{1. 引言}\label{ux5f15ux8a00}
+@@ -80,6 +80,8 @@ Divoux--Wang {[}4{]} 已证明全体竞赛图的 Hamilton 圈与路径的归一
+ 
+ 这些计数结论本身没有给出 Wormald 原角函数的 Hessian，也不能在未证明非退化之前反过来使用他的条件渐近式确定 Hessian。本文的主要计算针对这一原始对象。随后保留谱比较中的等号条件，并估计非正则基图，以说明已有计数理论如何给出固定基图阶数下的唯一期望极值。
+ 
++Bhattacharjee {[}5, 定理 1.1、1.3，命题 3.1，引理 3.2 及推论 3.3{]} 也处理了 Wormald 的猜想 2 和 6。其原角 Hessian、正定性、行列式/有理平方性质、圆环闭式、极限及低阶展开与本文相应结果重合；本文保留直接推导，不将这些结论列作相对于该文的新结果。下文另讨论严格单调性、谱等号条件、非正则基图及固定阶数下的期望唯一极值。
++
+ \begin{figure}[htbp]
+ \centering
+ \includegraphics[width=0.78\linewidth]{figures/triangle_blowup.pdf}
+@@ -1507,7 +1509,7 @@ m\sum_{i=1}^d\frac{\log(R_i!)}{R_i}
+ 
+ \textbf{引理 6.4 (随机增点与路径计数).}
+ 
+-固定旧竞赛图\(G\)，加入新顶点\(v\)，与旧顶点的边独立公平定向。每条路径\(x_1\to\cdots\to x_N\)对应唯一候选圈\(v\to x_1\to\cdots\to x_N\to v\)，两条新增边的联合概率为\((1/2)^2=1/4\)。删除\(v\)是逆操作。因此
++固定一个有 \(N\ge2\) 个顶点的竞赛图 \(G\)，加入新顶点 \(v\)，与旧顶点的边独立公平定向。每条路径 \(x_1\to\cdots\to x_N\) 对应唯一候选圈 \(v\to x_1\to\cdots\to x_N\to v\)。由于 \(x_1\ne x_N\)，所需的两条新增边不同，其联合概率为 \((1/2)^2=1/4\)。圈以 \(v\) 为规范起点，删除 \(v\) 是逆操作。条件 \(N\ge2\) 必不可少：\(N=1\) 时 \(H(G)=1\)，但增广竞赛图没有有向二圈。本文固定 \(d\ge3\) 的吹胀应用自动满足该条件。因此
+ 
+ \[\mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
+ 4\nu_{N+1}=\frac{4N!}{2^{N+1}}=\frac{N!}{2^{N-1}}=\mu_N,\]
+@@ -1931,7 +1933,7 @@ q(W)=\sum_{\ell=1}^L q(W_{\ell,\cdot}).\]
+ \Needspace{5\baselineskip}
+ \section{作者说明}\label{ux4f5cux8005ux8bf4ux660e}
+ 
+-原研究作者为刘星辰。叶祥宇完成后续证明梳理、简化及配套形式化工作。文字整理及部分证明检查使用了 AI 辅助。历史形式化记录与本文各结果的对应范围见另附复核说明。
++原研究作者为刘星辰。叶祥宇完成后续证明梳理、简化及配套形式化工作。当前形式化覆盖原角函数的实际二阶导数、Hessian 矩阵公式、正定性、行列式和正有理平方根及列明辅助引理；并不覆盖本文全部计数渐近、谱等号分类、严格单调性和期望极值推论。文字整理及部分证明检查使用了 AI 辅助。精确对应与限制见 \texttt{formal/COVERAGE.zh.md}。
+ 
+ \Needspace{5\baselineskip}
+ \begingroup\small\linespread{1}\selectfont
+@@ -1944,6 +1946,7 @@ q(W)=\sum_{\ell=1}^L q(W_{\ell,\cdot}).\]
+ {[}3{]} Noga Alon. The Maximum Number of Hamiltonian Paths in Tournaments. Combinatorica 10(4) (1990), 319--324. \href{https://doi.org/10.1007/BF02128667}{DOI: 10.1007/BF02128667}.
+ 
+ {[}4{]} Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). \href{https://arxiv.org/html/2610.23755v1}{Full text}.
++{[}5{]} Deep Bhattacharjee. Two conjectures of Wormald on Hamilton cycles in tournaments. Hexagon preprint 2610.00460v2 (2026). \href{https://hexagonmath.org/2610.00460v2}{Fixed version}.
+ \endgroup
+ \end{document}
+ 
+diff --git a/manuscripts/05_proof_idea.zh.md b/manuscripts/05_proof_idea.zh.md
+index e7e9b38..f7a145c 100644
+--- a/manuscripts/05_proof_idea.zh.md
++++ b/manuscripts/05_proof_idea.zh.md
+@@ -30,7 +30,7 @@ $$
+ =\frac{\det(I+C)}{\det(I+iC)}=\rho_d(A-A^T).
+ $$
+ 
+-正定性直接验证非退化条件，正有理行列式之比解释平方根的有理性；这就是对 Wormald Hessian 猜想的直接证明。
++正定性直接验证非退化条件，正有理行列式之比解释平方根的有理性；这就是对 Wormald Hessian 猜想的直接证明。 完整原角 Hessian、正定性、行列式/有理平方性质及圆环极限也见于 Bhattacharjee 的工作；这里给出详细推导和教学说明，不将这些重合结论列作相对于该文的新增结果。
+ 
+ ## 3. 既有理论的应用与补充
+ 
+diff --git a/manuscripts/05_proof_idea.zh.tex b/manuscripts/05_proof_idea.zh.tex
+index db95bb2..a1a55a2 100644
+--- a/manuscripts/05_proof_idea.zh.tex
++++ b/manuscripts/05_proof_idea.zh.tex
+@@ -82,7 +82,7 @@ Wormald 的固定基图渐近式以角 Hessian 非退化为条件。本文从他
+ \[\sqrt{\frac d{\det\mathbf H}}
+ =\frac{\det(I+C)}{\det(I+iC)}=\rho_d(A-A^T).\]
+ 
+-正定性直接验证非退化条件，正有理行列式之比解释平方根的有理性；这就是对 Wormald Hessian 猜想的直接证明。
++正定性直接验证非退化条件，正有理行列式之比解释平方根的有理性；这就是对 Wormald Hessian 猜想的直接证明。 完整原角 Hessian、正定性、行列式/有理平方性质及圆环极限也见于 Bhattacharjee 的工作；这里给出详细推导和教学说明，不将这些重合结论列作相对于该文的新增结果。
+ 
+ \Needspace{5\baselineskip}
+ \section{3. 既有理论的应用与补充}\label{ux65e2ux6709ux7406ux8bbaux7684ux5e94ux7528ux4e0eux8865ux5145}
+diff --git a/manuscripts/06_freshman_guide.zh.md b/manuscripts/06_freshman_guide.zh.md
+index b62ffa0..a0e8fb4 100644
+--- a/manuscripts/06_freshman_guide.zh.md
++++ b/manuscripts/06_freshman_guide.zh.md
+@@ -139,11 +139,11 @@ $$
+ 
+ 圆环图及其相应删点图给出渐近极值构造；这与“它们在每一个有限 $n$ 都是唯一最优图”是不同的命题。第四版论文没有证明后者。
+ 
+-### 3.3 另一项主要结果为什么涉及 Hessian
++### 3.3 为什么还讨论 Hessian
+ 
+ Wormald 研究把一个固定小竞赛图吹胀为大图时，Hamilton 圈的期望值。其渐近公式中出现一个角变量函数，以及这个函数在指定点处的二阶导数矩阵，称作 **Hessian**。如果这个矩阵退化，通常的局部高斯近似就可能失效；若不退化，就有希望把渐近常数算清楚。原角函数还含有一个一次相位项，须在完整的积分表达式中消去，不能把它本身误称为在该点梯度为零的函数。
+ 
+-本文第二项主要结果给出了这个原始角 Hessian 的完整矩阵公式，并证明它对每个正则基图都正定。它不只是计算了一个行列式，也不是仅对圆环图作数值试验。第 11–15 节会从二元 Taylor 展开开始说明，并把三顶点基图的矩阵逐项算出。
++本文也推导出这个原始角 Hessian 的完整矩阵公式，并证明它对每个正则基图都正定。它不只是计算了一个行列式，也不是仅对圆环图作数值试验。第 11–15 节会从二元 Taylor 展开开始说明，并把三顶点基图的矩阵逐项算出。
+ 
+ 这两项结果研究的范围不同：路径定理面对所有 $n$ 顶点竞赛图；Hessian 定理先固定一个小基图，再研究它的随机吹胀。二者通过同一类行列式常数联系起来，不能因此把模型里的结论直接当成全体有限竞赛图的精确极值结论。
+ 
+@@ -964,7 +964,7 @@ $$
+ 
+ 极限可以直接从闭式得到：$(1\pm1/d)^d\to e^{\pm1}$，$(1\pm i/d)^d\to e^{\pm i}$，而 $e^{1/d}\to1$。严格单调性则不是仅由极限存在推出的。研究稿用 [Fang–Huang 的显式谱](https://arxiv.org/html/2608.06238v1)配合 Divoux–Wang 的正系数展开，逐项比较得到这一性质；本指南不再重复该级数论证。
+ 
+-最后需要分清结论的归属和范围。模型常数还能直接由 Divoux–Wang 的加权圈计数定理推出，不必先算角 Hessian；圆环闭式和全图渐近常数也已有于该文。研究稿在这一部分直接处理的是 Wormald 原角函数的完整 Hessian 及其正定性，再说明它与已有计数理论的关系。固定基图阶数后比较模型期望，需要相应的谱等号分析与非正则基图估计；这仍不同于断言每一个有限阶竞赛图中，圆环都恰好拥有最多的 Hamilton 圈。
++最后需要分清结论的归属和范围。模型常数还能直接由 Divoux–Wang 的加权圈计数定理推出，不必先算角 Hessian；圆环闭式和全图渐近常数也已有于该文。研究稿在这一部分直接处理的是 Wormald 原角函数的完整 Hessian 及其正定性，再说明它与已有计数理论的关系。固定基图阶数后比较模型期望，需要相应的谱等号分析与非正则基图估计；这仍不同于断言每一个有限阶竞赛图中，圆环都恰好拥有最多的 Hamilton 圈。 完整原角 Hessian、正定性、行列式/有理平方性质及圆环极限也见于 Bhattacharjee 的工作；这里给出详细推导和教学说明，不将这些重合结论列作相对于该文的新增结果。
+ 
+ ## 16. 带着问题回到论文
+ 
+@@ -986,14 +986,16 @@ $$
+ | 全体竞赛图的 $P(n)=(L+O(1/n))\mu_n$ | 第四版路径主定理，重点是对全部图统一保留 $1/n$ 级误差 |
+ | 永久式的行列式型近似 | McCullagh、Divoux–Wang 的既有方法；本文采用与当前删点、缩放求和相适应的定量形式 |
+ | 反对称矩阵的谱比较及圆环常数公式 | Fang–Huang、Divoux–Wang 的已有结果，不能改写为本文首创 |
+-| Wormald 原始角 Hessian 的完整矩阵、正定性与有理平方性质 | 第四版 Hessian 主定理；由明确的矩阵公式逐步推出 |
++| Wormald 原始角 Hessian 的完整矩阵、正定性与有理平方性质 | 与 Bhattacharjee 的相应结果重合；此处保留直接推导和教学说明 |
+ | 固定奇数阶基图、大块随机吹胀中圆环基图的期望极值 | 结合 Wormald 模型、已有谱极值和 Hessian 计算所得的推论；须注明沿用的结果 |
+ | 正则块常数在奇数阶上严格递增并趋于 $L$ | 从已有频率和常数表达式继续推出；不是另一项独立发现的极限常数 |
+ 
+-在某篇已有论文的公式上再走一步，得到一个新写出的推论，依然应该在那一步说明来源。读者需要知道哪些困难已经由前人解决，本文又在哪个具体环节增加了信息。这里最应分清的，是“首项常数已经确定”与“统一误差仍需证明”，以及“吹胀常数已有表达式”与“原始角 Hessian 的矩阵结构得到直接计算”。
++在某篇已有论文的公式上再走一步，得到一个新写出的推论，依然应该在那一步说明来源。读者需要知道哪些困难已经由前人解决，本文又在哪个具体环节增加了信息。这里最应分清的，是“首项常数已经确定”与“统一误差仍需证明”，以及“吹胀常数已有表达式”与“原始角 Hessian 的矩阵结构得到直接计算”。 完整原角 Hessian、正定性、行列式/有理平方性质及圆环极限也见于 Bhattacharjee 的工作；这里给出详细推导和教学说明，不将这些重合结论列作相对于该文的新增结果。
+ 
+ ### 16.3 常用词与读法
+ 
++
++[7] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. [Hexagon 2610.00460v2](https://hexagonmath.org/2610.00460v2) (2026)。完整原角 Hessian、正定性、猜想 2、6 及圆环展开与本文相应结果重合。
+ | 词或记号 | 在本文中的意思 |
+ |:--|:--|
+ | Hamilton 路径 / 圈 | 每个顶点经过一次；圈额外要求回到起点，且不区分起点 |
+diff --git a/manuscripts/06_freshman_guide.zh.tex b/manuscripts/06_freshman_guide.zh.tex
+index 810fa9d..15a7ce8 100644
+--- a/manuscripts/06_freshman_guide.zh.tex
++++ b/manuscripts/06_freshman_guide.zh.tex
+@@ -195,11 +195,11 @@
+ 圆环图及其相应删点图给出渐近极值构造；这与``它们在每一个有限 \(n\) 都是唯一最优图''是不同的命题。第四版论文没有证明后者。
+ 
+ \Needspace{7\baselineskip}
+-\subsection{3.3 另一项主要结果为什么涉及 Hessian}\label{ux53e6ux4e00ux9879ux4e3bux8981ux7ed3ux679cux4e3aux4ec0ux4e48ux6d89ux53ca-hessian}
++\subsection{3.3 为什么还讨论 Hessian}\label{ux53e6ux4e00ux9879ux4e3bux8981ux7ed3ux679cux4e3aux4ec0ux4e48ux6d89ux53ca-hessian}
+ 
+ Wormald 研究把一个固定小竞赛图吹胀为大图时，Hamilton 圈的期望值。其渐近公式中出现一个角变量函数，以及这个函数在指定点处的二阶导数矩阵，称作 \textbf{Hessian}。如果这个矩阵退化，通常的局部高斯近似就可能失效；若不退化，就有希望把渐近常数算清楚。原角函数还含有一个一次相位项，须在完整的积分表达式中消去，不能把它本身误称为在该点梯度为零的函数。
+ 
+-本文第二项主要结果给出了这个原始角 Hessian 的完整矩阵公式，并证明它对每个正则基图都正定。它不只是计算了一个行列式，也不是仅对圆环图作数值试验。第 11--15 节会从二元 Taylor 展开开始说明，并把三顶点基图的矩阵逐项算出。
++本文也推导出这个原始角 Hessian 的完整矩阵公式，并证明它对每个正则基图都正定。它不只是计算了一个行列式，也不是仅对圆环图作数值试验。第 11--15 节会从二元 Taylor 展开开始说明，并把三顶点基图的矩阵逐项算出。
+ 
+ 这两项结果研究的范围不同：路径定理面对所有 \(n\) 顶点竞赛图；Hessian 定理先固定一个小基图，再研究它的随机吹胀。二者通过同一类行列式常数联系起来，不能因此把模型里的结论直接当成全体有限竞赛图的精确极值结论。
+ 
+@@ -894,7 +894,7 @@ L=\frac{\cosh1}{\cos1}\approx2.855958,
+ 
+ 极限可以直接从闭式得到：\((1\pm1/d)^d\to e^{\pm1}\)，\((1\pm i/d)^d\to e^{\pm i}\)，而 \(e^{1/d}\to1\)。严格单调性则不是仅由极限存在推出的。研究稿用 \href{https://arxiv.org/html/2608.06238v1}{Fang--Huang 的显式谱}配合 Divoux--Wang 的正系数展开，逐项比较得到这一性质；本指南不再重复该级数论证。
+ 
+-最后需要分清结论的归属和范围。模型常数还能直接由 Divoux--Wang 的加权圈计数定理推出，不必先算角 Hessian；圆环闭式和全图渐近常数也已有于该文。研究稿在这一部分直接处理的是 Wormald 原角函数的完整 Hessian 及其正定性，再说明它与已有计数理论的关系。固定基图阶数后比较模型期望，需要相应的谱等号分析与非正则基图估计；这仍不同于断言每一个有限阶竞赛图中，圆环都恰好拥有最多的 Hamilton 圈。
++最后需要分清结论的归属和范围。模型常数还能直接由 Divoux--Wang 的加权圈计数定理推出，不必先算角 Hessian；圆环闭式和全图渐近常数也已有于该文。研究稿在这一部分直接处理的是 Wormald 原角函数的完整 Hessian 及其正定性，再说明它与已有计数理论的关系。固定基图阶数后比较模型期望，需要相应的谱等号分析与非正则基图估计；这仍不同于断言每一个有限阶竞赛图中，圆环都恰好拥有最多的 Hamilton 圈。 完整原角 Hessian、正定性、行列式/有理平方性质及圆环极限也见于 Bhattacharjee 的工作；这里给出详细推导和教学说明，不将这些重合结论列作相对于该文的新增结果。
+ 
+ \Needspace{13\baselineskip}
+ \section{16. 带着问题回到论文}\label{ux5e26ux7740ux95eeux9898ux56deux5230ux8bbaux6587}
+@@ -930,13 +930,13 @@ L=\frac{\cosh1}{\cos1}\approx2.855958,
+ 全体竞赛图的 \(P(n)=(L+O(1/n))\mu_n\) & 第四版路径主定理，重点是对全部图统一保留 \(1/n\) 级误差 \\
+ 永久式的行列式型近似 & McCullagh、Divoux--Wang 的既有方法；本文采用与当前删点、缩放求和相适应的定量形式 \\
+ 反对称矩阵的谱比较及圆环常数公式 & Fang--Huang、Divoux--Wang 的已有结果，不能改写为本文首创 \\
+-Wormald 原始角 Hessian 的完整矩阵、正定性与有理平方性质 & 第四版 Hessian 主定理；由明确的矩阵公式逐步推出 \\
++Wormald 原始角 Hessian 的完整矩阵、正定性与有理平方性质 & 与 Bhattacharjee 的相应结果重合；此处保留直接推导和教学说明 \\
+ 固定奇数阶基图、大块随机吹胀中圆环基图的期望极值 & 结合 Wormald 模型、已有谱极值和 Hessian 计算所得的推论；须注明沿用的结果 \\
+ 正则块常数在奇数阶上严格递增并趋于 \(L\) & 从已有频率和常数表达式继续推出；不是另一项独立发现的极限常数 \\
+ \end{longtable}
+ }
+ 
+-在某篇已有论文的公式上再走一步，得到一个新写出的推论，依然应该在那一步说明来源。读者需要知道哪些困难已经由前人解决，本文又在哪个具体环节增加了信息。这里最应分清的，是``首项常数已经确定''与``统一误差仍需证明''，以及``吹胀常数已有表达式''与``原始角 Hessian 的矩阵结构得到直接计算''。
++在某篇已有论文的公式上再走一步，得到一个新写出的推论，依然应该在那一步说明来源。读者需要知道哪些困难已经由前人解决，本文又在哪个具体环节增加了信息。这里最应分清的，是``首项常数已经确定''与``统一误差仍需证明''，以及``吹胀常数已有表达式''与``原始角 Hessian 的矩阵结构得到直接计算''。 完整原角 Hessian、正定性、行列式/有理平方性质及圆环极限也见于 Bhattacharjee 的工作；这里给出详细推导和教学说明，不将这些重合结论列作相对于该文的新增结果。
+ 
+ \Needspace{7\baselineskip}
+ \subsection{16.3 常用词与读法}\label{ux5e38ux7528ux8bcdux4e0eux8bfbux6cd5}
+@@ -1541,5 +1541,6 @@ C_0^2v=-\frac13v.\]
+ {[}5{]} John Irving and Mohamed Omar. \emph{Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra}. The Electronic Journal of Combinatorics 32(4) (2025), P4.43. \href{https://doi.org/10.37236/13841}{DOI: 10.37236/13841}。第 5 节使用的路径矩阵恒等式见相关生成函数方法。
+ 
+ {[}6{]} Yanjun Han and Jonathan Niles-Weed. \emph{Approximate independence of permutation mixtures}. \href{https://arxiv.org/html/2408.09341v2}{arXiv:2408.09341v2}。永久式余项的分析使用了与该文复高斯矩估计相关的方法。读指南时不必先掌握整篇文献；需要核对具体引理时，再回到合稿给出的版本和编号。
++{[}7{]} Deep Bhattacharjee. \emph{Two conjectures of Wormald on Hamilton cycles in tournaments}. \href{https://hexagonmath.org/2610.00460v2}{Hexagon 2610.00460v2} (2026)。完整原角 Hessian、正定性、猜想 2、6 及圆环展开与本文相应结果重合。
+ \end{document}
+ 
+diff --git a/review/20261029_editorial_corrections.md b/review/20261029_editorial_corrections.md
+new file mode 100644
+index 0000000..41c0828
+--- /dev/null
++++ b/review/20261029_editorial_corrections.md
+@@ -0,0 +1,17 @@
++# 2026-10-29 外发源码修正
++
++基准为目标仓库 `20fc92ae3a64d559d2aeaf6c5d30856dd5c438d8`。
++本记录描述本轮实际修改和核对，不改写历史构建证据。
++
++- 将三个稿件引用 Alon 的 `[2, Lemma 5.1]` 改为 `[2, Lemma 2.1]`，保留正文自身的路径卷积引理 5.1 和 Corollary 2.3。依据：[作者原论文](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf)，PDF 第 4 页。
++- 中英文合稿引理 11.5、Wormald 专题引理 6.4 明列旧图阶数 `N≥2`，解释首末顶点不同和两条独立新增边，并列出 `N=1` 反例；原归一化公式保持原样。
++- 作者说明保留署名和贡献归属，区分旧路径工程的 `C_*>L` 主界、当前原角 Hessian 形式化和现合稿定理 1.1 尚未获得的端到端认证。已读旧工程固定版本的 `MainBound.lean` 与 `VERIFICATION.md`，没有将旧定理误写成条件命题。
++- 补入 Bhattacharjee 的 [Hexagon 2610.00460v2](https://hexagonmath.org/2610.00460v2)：核对 PDF 的 Proposition 3.1、Lemma 3.2、Corollary 3.3 及 Theorems 1.1、1.3。重合包括完整原角 Hessian、正定性、行列式/有理平方性质、圆环闭式、极限和低阶展开。没有以只计算行列式或缺少原函数解析桥接来区别双方，也未根据上传时间判断优先权。
++
++同步范围为中英文合稿、两个专题稿、README、研究定位说明、一页思路、导读和相应导读分节源；有 TeX 的文本同步修改 TeX。书目采用固定版本号；Hexagon 页面顶部日期与版本历史不一致，因此没有将其顶部日期作为 v2 日期。
++
++`editorial_source_checks.json` 记录本轮源码检查：十二份 Markdown/TeX 的全部独立陈列公式保持原样，正文自己的路径卷积引理编号保留，新增 TeX 行内数学定界符配对。
++
++**尚未完成外发 PDF 构建。** 本机 PATH 中未找到 XeLaTeX、LuaLaTeX、pdfLaTeX、Tectonic 或 Pandoc；没有安装新的排版软件。没有重建或逐页审校 PDF，也没有更新旧版 PDF 的版本/哈希清单来暗示重建成功。发布前仍须用仓库既有排版流程生成 PDF、逐页检查，并刷新相应发布清单。
++
++精确有限卷积迁移另行记录，不由它推断永久式渐近、全局定理 1.1 或全部期望极值已经机器认证。
+diff --git a/review/editorial_source_checks.json b/review/editorial_source_checks.json
+new file mode 100644
+index 0000000..e5d3236
+--- /dev/null
++++ b/review/editorial_source_checks.json
+@@ -0,0 +1,63 @@
++{
++  "passed": true,
++  "checks": [
++    "all display equations preserved",
++    "only cited Alon Lemma 5.1 corrected",
++    "own path-convolution Lemma 5.1 preserved",
++    "augmentation order and N=1 boundary included",
++    "fixed Bhattacharjee v2 cited",
++    "TeX inline math delimiters balanced"
++  ],
++  "files": [
++    {
++      "path": "manuscripts/01_combined.zh.md",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/01_combined.zh.tex",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/02_combined.en.md",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/02_combined.en.tex",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/03_constant_factor.zh.md",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/03_constant_factor.zh.tex",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/04_wormald.zh.md",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/04_wormald.zh.tex",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/05_proof_idea.zh.md",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/05_proof_idea.zh.tex",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/06_freshman_guide.zh.md",
++      "display_equations_unchanged": true
++    },
++    {
++      "path": "manuscripts/06_freshman_guide.zh.tex",
++      "display_equations_unchanged": true
++    }
++  ],
++  "pdf_rebuilt": false,
++  "pdf_blocker": "No XeLaTeX, LuaLaTeX, pdfLaTeX, Tectonic or Pandoc found on PATH."
++}
+diff --git a/review/editorial_source_hashes.json b/review/editorial_source_hashes.json
+new file mode 100644
+index 0000000..ae3669a
+--- /dev/null
++++ b/review/editorial_source_hashes.json
+@@ -0,0 +1,28 @@
++{
++  "baseline_commit": "20fc92ae3a64d559d2aeaf6c5d30856dd5c438d8",
++  "kind": "editorial source snapshot, not a PDF release manifest",
++  "pdfs_rebuilt": false,
++  "sha256": {
++    "README.md": "6b89c379a0fc04694d7e158a932ea9bcb5fbf2abdaf30ec0feb63d00c2d8fe52",
++    "guide_parts/01_foundations.zh.md": "77399880584924afd3cfccec1bee53f74d33bea07604dbd94365f5ecd92cadcb",
++    "guide_parts/02_paths.zh.md": "4766d42cd422b3bae3871b18c8302cf75072496943e7d56e30ce4d6296dae796",
++    "guide_parts/03_hessian.zh.md": "7f8b0bed1d8e7a5e3487a0c3703fedf0491afb8eab873e7147c87ba3dd31de17",
++    "guide_parts/04_reading.zh.md": "fa1a7c0a6a1d6c580b9c565c7002cc604edc8033a26a66f0a6bba069ed1ca8a1",
++    "guide_parts/05_exercises.zh.md": "f3e599f5caa43b9ccb7694185595b668b08ffe7fab3c837906f8dfebb683ad34",
++    "guide_parts/06_references.zh.md": "97cd888f462064a45620e7477871d4a48ebe206e6d214805a46c0c543db07010",
++    "manuscripts/01_combined.zh.md": "32eeba040479904c8bb2d8e90ca46aaaedbaa2407a92548975e4c6dd79e572f0",
++    "manuscripts/01_combined.zh.tex": "d17fbc820ebbe4b9337b0b46fd4e66e2c6c428243b414ece9cfb707ba1a8369a",
++    "manuscripts/02_combined.en.md": "903acb34dc4b1b3467255a7c594963f51161f9c0e60847dc7c385f3070b0a123",
++    "manuscripts/02_combined.en.tex": "4efffdc2af170bd7a575a2aa90adec9597a707665e26b4801a0a167137f50ad8",
++    "manuscripts/03_constant_factor.zh.md": "d6401e37de90ab7ebe629e08b2414e7959f4be5b7eced6ce431ce3195d9b7c08",
++    "manuscripts/03_constant_factor.zh.tex": "e37ca4df35499cf188b73561a0bc7ce1d7431136446719ad9a33a00b7afb2998",
++    "manuscripts/04_wormald.zh.md": "63287723e9f02eb1d529513507c9d3d8b5d9117d2423830b84810b1b3eb9c56c",
++    "manuscripts/04_wormald.zh.tex": "c565706e2b8e61accfa479170c803799797367799265f85aeeff4ac175740e3e",
++    "manuscripts/05_proof_idea.zh.md": "5ecde3254a0cd870d660aff0a2ba37b7d506b70e219a83d6435c07ca942086dd",
++    "manuscripts/05_proof_idea.zh.tex": "d318f6d7517660e13f41aea2e1d8773d308e01a16a207ae1ce178508beeeafaf",
++    "manuscripts/06_freshman_guide.zh.md": "7d11b51cdd1bb03318c568998c294a9f3386a8d98937d1fcb963812584b197b7",
++    "manuscripts/06_freshman_guide.zh.tex": "d8ef8176ff37b71bccabef1ab05b34c1171999302463d4e42acf617d927e0794",
++    "review/20261029_editorial_corrections.md": "95497dc44a5b870eaf41a0ef0a725b95165dce63148e21aa4319a95130ee1a6b",
++    "review/研究定位说明.txt": "22fa1fa209caff49acb55e326d1b1a05ecbb281b772351b2e74b58d55387b74e"
++  }
++}
+diff --git "a/review/\347\240\224\347\251\266\345\256\232\344\275\215\350\257\264\346\230\216.txt" "b/review/\347\240\224\347\251\266\345\256\232\344\275\215\350\257\264\346\230\216.txt"
+index e77583e..d70b578 100644
+--- "a/review/\347\240\224\347\251\266\345\256\232\344\275\215\350\257\264\346\230\216.txt"
++++ "b/review/\347\240\224\347\251\266\345\256\232\344\275\215\350\257\264\346\230\216.txt"
+@@ -8,6 +8,11 @@
+ 直接从 Wormald 的隐式方程计算，验证猜想6中的条件。模型计数公式仍引用
+ Wormald；本文不把这些外部计数定理改称自己的结果。
+ 
++完整原角 Hessian、正定性、行列式/有理平方性质及圆环极限也见于 Bhattacharjee 的工作；这里给出详细推导和教学说明，不将这些重合结论列作相对于该文的新增结果。
++文献：Deep Bhattacharjee, Two conjectures of Wormald on Hamilton cycles in tournaments,
++Hexagon 2610.00460v2 (2026), https://hexagonmath.org/2610.00460v2。
++重合包含完整矩阵本身及一次、三次项消失和五次项；不据上传日期推定优先权。
++
+ 固定正则基图模型常数：Divoux–Wang 命题5.1的直接应用，正文写出加权矩阵
+ 代入。正则内部块的 e^{1/d} 乘子及路径对应来自 Wormald 定理1、5。
+ 
+-- 
+2.49.0.windows.1
+

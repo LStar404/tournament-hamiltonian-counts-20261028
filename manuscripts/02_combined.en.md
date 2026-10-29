@@ -12,7 +12,7 @@ $$
 P(n)=\left(\frac{\cosh1}{\cos1}+O(n^{-1})\right)\frac{n!}{2^{n-1}}.
 $$
 
-We also compute the full angular Hessian in Wormald's fixed-base formula and prove that it is positive definite for every regular base. Its determinant recovers the spectral ratio used by Divoux and Wang. Combining this identity with their counting and spectral results, the equality conditions of Fang and Huang, and Wormald's model comparisons yields the fixed-base expectation extrema. We give the additional equality analysis and nonregular-base estimates, and derive strict monotonicity of the carousel constants from the known spectrum.
+We also compute the full angular Hessian in Wormald's fixed-base formula and prove that it is positive definite for every regular base. Its determinant recovers the spectral ratio used by Divoux and Wang. Combining this identity with their counting and spectral results, the equality conditions of Fang and Huang, and Wormald's model comparisons yields the fixed-base expectation extrema. We give the additional equality analysis and nonregular-base estimates, and derive strict monotonicity of the carousel constants from the known spectrum. The original Hessian and carousel limit overlap with Bhattacharjee's work.
 
 ## 1. Introduction
 
@@ -81,6 +81,8 @@ $$
 Along odd integers $d\ge3$, the sequence $\mathfrak r_d$ increases strictly to $L$.
 
 Theorem 1.2 directly proves Wormald's Hessian conjecture [6, Conjecture 6]. Corollary 1.3 combines existing counting and spectral results with the equality and nonregular-base arguments given here. The limit in Conjecture 2 follows from the closed form in [12] and Wormald's factor $e^{1/d}$; Corollary 1.4 adds strict monotonicity. Section 10 retains the expansion through $d^{-5}$, with remainder $O(d^{-6})$, as a calculation from that closed form.
+
+Bhattacharjee [13, Theorems 1.1 and 1.3, Proposition 3.1, Lemma 3.2 and Corollary 3.3] also treats Wormald's Conjectures 2 and 6. His original angular Hessian, positivity, determinant/rational-square formulas, carousel value, limit and low-order expansion overlap with the corresponding results here. We retain direct derivations without claiming these as new relative to that work. We separately discuss monotonicity, equality, nonregular bases and eventual uniqueness at fixed base order. The global quantitative path problem in Theorem 1.1 is distinct.
 
 ### 1.1 The counting estimates and their relation to earlier methods
 
@@ -3104,7 +3106,7 @@ $$
 
 Then $\sum_{k>k_n}c^kw_k=n^{-2+o(1)}$.
 
-The Brégman bound stated in [2, Lemma 5.1], the degree-balancing argument of [2, Corollary 2.3], and Stirling's formula give a uniform constant $C$ such that every $m$-vertex tournament satisfies
+The Brégman bound stated in [2, Lemma 2.1], the degree-balancing argument of [2, Corollary 2.3], and Stirling's formula give a uniform constant $C$ such that every $m$-vertex tournament satisfies
 
 $$
 \operatorname{per}A_T\le C\sqrt{m+1}\,\frac{m!}{2^m}.
@@ -6313,7 +6315,7 @@ Both normalized cycle expectations therefore tend to zero.
 
 **Lemma 11.5 (Random augmentation and path counts).**
 
-Fix the old tournament $G$. Add a vertex $v$ whose edges to old vertices are independently and fairly oriented. Each path $x_1\to\cdots\to x_N$ corresponds to the unique candidate cycle $v\to x_1\to\cdots\to x_N\to v$. The two required new edges have joint probability $(1/2)^2=1/4$. Deleting $v$ reverses the correspondence. Therefore
+Fix a tournament $G$ on $N\ge2$ vertices. Add a vertex $v$ whose edges to the old vertices are independently and fairly oriented. Each path $x_1\to\cdots\to x_N$ corresponds to the unique candidate cycle $v\to x_1\to\cdots\to x_N\to v$. Since $x_1\ne x_N$, the two required new edges are distinct and have joint probability $(1/2)^2=1/4$. Represent each cycle with $v$ as its starting vertex; deleting $v$ reverses the correspondence. The condition $N\ge2$ is necessary: for $N=1$, $H(G)=1$ but the augmented tournament has no directed 2-cycle. It is automatic in the blow-up applications here, where $d\ge3$ is fixed. Therefore
 
 $$
 \mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
@@ -7336,9 +7338,10 @@ Thus $\|Mx\|\ge\|x\|$. The matrix has trivial nullspace and, being square, is in
 
 ## Author statement
 
-The companion formalization of the path results was completed by Xiangyu Ye. AI assistance was used in the exposition and in parts of the proof checking. The new deduction in Theorem 1.1 has not been added to the end-to-end Lean formalization; the scope of the recorded checks is given in the accompanying review note.
+Xiangyu Ye completed the companion Lean formalization of the earlier path bound, whose upper leading constant is $C_*>L$; its precise statement and revision are recorded in the [earlier repository](https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md). The present `formal/` directory separately covers the actual second derivatives of Wormald's original angular function, the Hessian matrix formula, positive definiteness, determinant and positive rational square root, together with explicitly listed auxiliary results. The sharp quantitative asymptotic in Theorem 1.1 has not been formalized end to end in Lean; results not listed in the coverage table are also outside this project's certification scope. AI assistance was used in the exposition and parts of the proof checking. These checks do not constitute machine certification of the entire present manuscript; see `formal/COVERAGE.zh.md` and the revision-specific verification records.
 
 ## References
+
 
 [1] John Irving and Mohamed Omar. Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra. The Electronic Journal of Combinatorics 32(4) (2025), Paper P4.43, 23 pp. [DOI: 10.37236/13841](https://doi.org/10.37236/13841).
 
@@ -7363,3 +7366,6 @@ The companion formalization of the path results was completed by Xiangyu Ye. AI 
 [11] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
 
 [12] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [Full text](https://arxiv.org/html/2610.23755v1).
+
+[13] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. Hexagon preprint 2610.00460v2 (2026). [Fixed version](https://hexagonmath.org/2610.00460v2).
+

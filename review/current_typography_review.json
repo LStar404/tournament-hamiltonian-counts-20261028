@@ -2,45 +2,82 @@
   "01_combined.zh": {
     "pages": 108,
     "rendered": 108,
-    "sha256": "c6acceaf48a66465df56f649bde88e5e8134ed1f58a33fdbadea13729a23c057",
-    "layout_warnings": [],
+    "sha256": "475e4d55c0a278e25e3af1c8e218ec724cabfdb0489184446345f46624e0ffc0",
+    "layout_warnings": [
+      "2 underfull boxes: visually checked; minor expanded English word spacing only"
+    ],
     "edge_characters": [],
     "missing_internal_targets": [],
-    "document_body_preserved": true
+    "document_body_preserved_from_final_editorial_source": true,
+    "contact_sheet_review": "Every page inspected at overview scale; figures, first/last pages, formula-dense and warning pages enlarged. After bibliography fix only final pages changed; those were re-rendered and inspected.",
+    "final_visual_status": "passed",
+    "rendered_page_images_retained_in_build_workspace_not_shipped": true
+  },
+  "02_combined.en": {
+    "pages": 113,
+    "rendered": 113,
+    "sha256": "45d6849791bf791470540edc56c41217307ba17ba54f4a862ef9830f8209fd82",
+    "layout_warnings": [
+      "4 underfull boxes: visually checked; minor expanded English word spacing only"
+    ],
+    "edge_characters": [],
+    "missing_internal_targets": [],
+    "document_body_preserved_from_final_editorial_source": true,
+    "contact_sheet_review": "Every page inspected at overview scale; figures, first/last pages, formula-dense and warning pages enlarged. After bibliography fix only final pages changed; those were re-rendered and inspected.",
+    "final_visual_status": "passed",
+    "rendered_page_images_retained_in_build_workspace_not_shipped": true
   },
   "03_constant_factor.zh": {
     "pages": 73,
     "rendered": 73,
-    "sha256": "fb704f51529fc33d6349511ef9342d2f8cd042c45e1ed9362380809d3050e259",
-    "layout_warnings": [],
+    "sha256": "cf8a444d2a8e258498c633dc00102ad48d7900ba08408f79ab909c16d22cd6e9",
+    "layout_warnings": [
+      "2 underfull boxes: visually checked; minor expanded English word spacing only"
+    ],
     "edge_characters": [],
     "missing_internal_targets": [],
-    "document_body_preserved": true
+    "document_body_preserved_from_final_editorial_source": true,
+    "contact_sheet_review": "Every page inspected at overview scale; figures, first/last pages, formula-dense and warning pages enlarged. After bibliography fix only final pages changed; those were re-rendered and inspected.",
+    "final_visual_status": "passed",
+    "rendered_page_images_retained_in_build_workspace_not_shipped": true
   },
   "04_wormald.zh": {
     "pages": 35,
     "rendered": 35,
-    "sha256": "80e6b296ef74e7f36707fc20936514f9cc6a078c5f27eb4757860ee6667430b3",
+    "sha256": "33d1616b32bd480acc408474e2876a0201eb1e41adab6a7aff75c531ae51c07f",
     "layout_warnings": [],
     "edge_characters": [],
     "missing_internal_targets": [],
-    "document_body_preserved": true
+    "document_body_preserved_from_final_editorial_source": true,
+    "contact_sheet_review": "Every page inspected at overview scale; figures, first/last pages, formula-dense and warning pages enlarged. After bibliography fix only final pages changed; those were re-rendered and inspected.",
+    "final_visual_status": "passed",
+    "rendered_page_images_retained_in_build_workspace_not_shipped": true
   },
   "05_proof_idea.zh": {
     "pages": 1,
     "rendered": 1,
-    "sha256": "380a5235636c65332949a46d8ed63b44ba09505049aab038c8755b69e171e4b6",
+    "sha256": "d405bda09095aed79f09aad2c599d4f842abfb7d5583a1f05e96ccf483d5bf66",
     "layout_warnings": [],
     "edge_characters": [],
     "missing_internal_targets": [],
-    "document_body_preserved": true
+    "document_body_preserved_from_final_editorial_source": true,
+    "contact_sheet_review": "Every page inspected at overview scale; figures, first/last pages, formula-dense and warning pages enlarged. After bibliography fix only final pages changed; those were re-rendered and inspected.",
+    "final_visual_status": "passed",
+    "rendered_page_images_retained_in_build_workspace_not_shipped": true
   },
   "06_freshman_guide.zh": {
     "pages": 33,
     "rendered": 33,
-    "sha256": "81fdf55e5006a2818fcb48ecc758c3c93b6b68835c952a41488bf3481167fd55",
-    "layout_warnings": [],
+    "sha256": "1d474da0df0c479f1d3a5fb9be5c606139481680608c35c50b46cfe581bb5145",
+    "layout_warnings": [
+      "1 underfull boxes: visually checked; minor expanded English word spacing only"
+    ],
     "edge_characters": [],
-    "missing_internal_targets": []
-  }
+    "missing_internal_targets": [],
+    "document_body_preserved_from_final_editorial_source": true,
+    "contact_sheet_review": "Every page inspected at overview scale; figures, first/last pages, formula-dense and warning pages enlarged. After bibliography fix only final pages changed; those were re-rendered and inspected.",
+    "final_visual_status": "passed",
+    "rendered_page_images_retained_in_build_workspace_not_shipped": true
+  },
+  "scope": "2026-10-29 editorial PDF release; visual/source checks are not a proof of mathematical correctness."
 }

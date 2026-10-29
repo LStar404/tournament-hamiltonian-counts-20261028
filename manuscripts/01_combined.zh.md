@@ -12,7 +12,7 @@ $$
 P(n)=\left(\frac{\cosh1}{\cos1}+O(n^{-1})\right)\frac{n!}{2^{n-1}}.
 $$
 
-我们还求出 Wormald 固定基图计数公式中的完整角 Hessian，证明它对每个正则基图均正定；其行列式给出 Divoux–Wang 所用的谱比值。结合他们的计数与谱比较、Fang–Huang 的等号条件以及 Wormald 的模型转换，得到固定基图的期望极值。文中补充等号分析和非正则基图估计，并由已知显式谱推出圆环常数的严格单调性。
+我们还求出 Wormald 固定基图计数公式中的完整角 Hessian，证明它对每个正则基图均正定；其行列式给出 Divoux–Wang 所用的谱比值。结合他们的计数与谱比较、Fang–Huang 的等号条件以及 Wormald 的模型转换，得到固定基图的期望极值。文中补充等号分析和非正则基图估计，并由已知显式谱推出圆环常数的严格单调性。原角 Hessian 和圆环极限也与 Bhattacharjee 的工作重合，本文明确注明这一关系。
 
 ## 1. 引言
 
@@ -81,6 +81,8 @@ $$
 沿奇数 $d\ge3$，$\mathfrak r_d$ 严格递增并趋于 $L$。
 
 定理 1.2 直接证明 Wormald [6] 关于原 Hessian 的猜想 6。推论 1.3 结合已有计数与谱比较，补入等号分析及非正则基图估计。猜想 2 的极限存在性由 [12] 的闭式及 Wormald 的 $e^{1/d}$ 因子即得，推论 1.4 则补充严格单调性。第 10 节保留直至 $d^{-5}$ 项、余项为 $O(d^{-6})$ 的展开，作为该闭式的进一步计算。
+
+Bhattacharjee [13, 定理 1.1、1.3，命题 3.1，引理 3.2 及推论 3.3] 也处理了 Wormald 的猜想 2 和 6。其原角 Hessian、正定性、行列式/有理平方性质、圆环闭式、极限及低阶展开与本文相应结果重合；本文保留直接推导，不将这些结论列作相对于该文的新结果。下文另讨论严格单调性、谱等号条件、非正则基图及固定阶数下的期望唯一极值。定理 1.1 的全局定量路径问题与这些固定基图结论不同。
 
 ### 1.1 永久式估计与路径计数
 
@@ -3113,7 +3115,7 @@ $$
 
 即有 $\sum_{k>k_n}c^kw_k=n^{-2+o(1)}$。
 
-使用 [2, Lemma 5.1] 所述的 Brégman 界及 [2, Corollary 2.3] 的度数平衡化，再结合 Stirling 公式，给出统一常数 $C$，使任意 $m$ 阶竞赛图满足
+使用 [2, Lemma 2.1] 所述的 Brégman 界及 [2, Corollary 2.3] 的度数平衡化，再结合 Stirling 公式，给出统一常数 $C$，使任意 $m$ 阶竞赛图满足
 
 $$
 \operatorname{per}A_T\le C\sqrt{m+1}\,\frac{m!}{2^m}.
@@ -6334,7 +6336,7 @@ $$
 
 **引理 11.5 (随机增点与路径计数).**
 
-固定旧竞赛图$G$，加入新顶点$v$，与旧顶点的边独立公平定向。每条路径$x_1\to\cdots\to x_N$对应唯一候选圈$v\to x_1\to\cdots\to x_N\to v$，两条新增边的联合概率为$(1/2)^2=1/4$。删除$v$是逆操作。因此
+固定一个有 $N\ge2$ 个顶点的竞赛图 $G$，加入新顶点 $v$，与旧顶点的边独立公平定向。每条路径 $x_1\to\cdots\to x_N$ 对应唯一候选圈 $v\to x_1\to\cdots\to x_N\to v$。由于 $x_1\ne x_N$，所需的两条新增边不同，其联合概率为 $(1/2)^2=1/4$。圈以 $v$ 为规范起点，删除 $v$ 是逆操作。条件 $N\ge2$ 必不可少：$N=1$ 时 $H(G)=1$，但增广竞赛图没有有向二圈。本文固定 $d\ge3$ 的吹胀应用自动满足该条件。因此
 
 $$
 \mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
@@ -7357,9 +7359,10 @@ $$
 
 ## 作者说明
 
-路径部分的配套形式化证明由叶祥宇完成。本文的文字整理及部分证明检查使用了 AI 辅助。定理 1.1 的新增推导尚未纳入端到端 Lean 形式化证明；已有检查的覆盖范围见另附复核说明。
+路径部分旧版主界的配套 Lean 形式化由叶祥宇完成，其上界首项常数为 $C_*>L$，精确陈述和版本见[旧仓库核验记录](https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md)。当前仓库的 `formal/` 另覆盖 Wormald 原角函数的实际二阶导数、Hessian 矩阵公式、正定性、行列式和正有理平方根，以及覆盖表列明的辅助结果。合稿定理 1.1 的锐常数定量渐近式尚未获得端到端 Lean 形式化；未列入覆盖表的结论亦不在本工程的认证范围内。文字整理及部分证明检查使用了 AI 辅助。这些检查不表示整篇现稿已经机器认证，详见 `formal/COVERAGE.zh.md` 与相应版本的核验记录。
 
 ## 参考文献
+
 
 [1] John Irving and Mohamed Omar. Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra. The Electronic Journal of Combinatorics 32(4) (2025), Paper P4.43, 23 pp. [DOI: 10.37236/13841](https://doi.org/10.37236/13841).
 
@@ -7384,3 +7387,6 @@ $$
 [11] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
 
 [12] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [Full text](https://arxiv.org/html/2610.23755v1).
+
+[13] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. Hexagon preprint 2610.00460v2 (2026). [Fixed version](https://hexagonmath.org/2610.00460v2).
+

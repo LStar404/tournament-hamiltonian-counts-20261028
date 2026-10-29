@@ -3026,7 +3026,7 @@ $$
 
 即有 $\sum_{k>k_n}c^kw_k=n^{-2+o(1)}$。
 
-使用 [2, Lemma 5.1] 所述的 Brégman 界及 [2, Corollary 2.3] 的度数平衡化，再结合 Stirling 公式，给出统一常数 $C$，使任意 $m$ 阶竞赛图满足
+使用 [2, Lemma 2.1] 所述的 Brégman 界及 [2, Corollary 2.3] 的度数平衡化，再结合 Stirling 公式，给出统一常数 $C$，使任意 $m$ 阶竞赛图满足
 
 $$
 \operatorname{per}A_T\le C\sqrt{m+1}\,\frac{m!}{2^m}.
@@ -4867,7 +4867,7 @@ $$
 
 ## 作者说明
 
-配套形式化证明由叶祥宇完成。文字整理及部分证明检查使用了 AI 辅助。形式化版本与纸面证明的对应范围见另附复核说明。
+配套的旧版路径主界形式化由叶祥宇完成，其上界首项常数为 $C_*>L$，精确陈述和覆盖范围见[旧仓库核验记录](https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md)。它不构成配套合稿锐常数定量渐近定理的端到端形式化，也不表示本技术补充每一处改写均已逐项机器核对。文字整理及部分证明检查使用了 AI 辅助。
 
 ## 参考文献
 
@@ -4894,3 +4894,4 @@ $$
 [11] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
 
 [12] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [Full text](https://arxiv.org/html/2610.23755v1).
+

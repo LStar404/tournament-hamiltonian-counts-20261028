@@ -1,0 +1,230 @@
+[
+  {
+    "path": "README.md",
+    "patch_old_prefix": "9ff7dd7",
+    "canonical_blob_sha1": "1a6c02af2729c7ede745abe8fddc269c162a3dbc",
+    "materialized_blob_sha1": "9ff7dd7b8e6cd342b0448f4541d057c267c010ca",
+    "canonical_sha256": "60420cc434352504f06fd506ec1ae6f3e287cba002d3c27bbe867e73537adb90",
+    "materialized_sha256": "8fb436ad8fe7a24e3bc712dd553d57bac3b4e863197664225922773610c5b861",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 7273,
+    "materialized_bytes": 7193,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "guide_parts/01_foundations.zh.md",
+    "patch_old_prefix": "135754e",
+    "canonical_blob_sha1": "17e69f604d81ea9b84b7f071d98246263d89b293",
+    "materialized_blob_sha1": "135754ec360b29c894d707dd67840918d40758ae",
+    "canonical_sha256": "5652744dedb52509fd4ff7b707d870d113cd8716a22918b4a28f1476e6d24fb1",
+    "materialized_sha256": "523e7384dea62235a40676187aa3999a175b5a83e61c58df3c30e66feda781f7",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 14234,
+    "materialized_bytes": 13987,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "guide_parts/03_hessian.zh.md",
+    "patch_old_prefix": "b74ff18",
+    "canonical_blob_sha1": "614bd556da818f92a4b69773c85d639754f00857",
+    "materialized_blob_sha1": "b74ff18d5541e94c93cde6afc50f87f19e0f4822",
+    "canonical_sha256": "d3908f2681354efdf2f8e3b430722844c0e7c6e70bdbb0f1feb904d9e6004793",
+    "materialized_sha256": "35578187cb968571571904148fdac8e5a4fe0141f8391f3090733a2327456777",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 24778,
+    "materialized_bytes": 24410,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "guide_parts/04_reading.zh.md",
+    "patch_old_prefix": "fd5212c",
+    "canonical_blob_sha1": "0945eaf5bcc736019f5c99ff773a807668332f25",
+    "materialized_blob_sha1": "fd5212cc261e733839a45861a90114972e9614f6",
+    "canonical_sha256": "be7bc0c68d6a205a0c2e185f737c3ee14798a77ddcb8c11f76746cadce43c073",
+    "materialized_sha256": "ae586ee42cfb95a7e6cb946ede8c30ed1788eecfefff9099beef82e0a96b6802",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 5578,
+    "materialized_bytes": 5526,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "guide_parts/06_references.zh.md",
+    "patch_old_prefix": "c41c8ec",
+    "canonical_blob_sha1": "7604b491479289c844ae25873c8c774e8e5072d1",
+    "materialized_blob_sha1": "c41c8ec4ee4d9c6123fbce92f839f433991ed7df",
+    "canonical_sha256": "d40791ed30e79f905788257ca98b29d4b6c6c82aa3498d4e099b835aeef419e8",
+    "materialized_sha256": "999d799920f27bf605893379b2fa9db5b38c6c51899a27bf432d65a632412e2d",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 1916,
+    "materialized_bytes": 1902,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/01_combined.zh.md",
+    "patch_old_prefix": "a2e0747",
+    "canonical_blob_sha1": "545bc44e57815577def4b181c12ebbf8294fc920",
+    "materialized_blob_sha1": "a2e0747dcda8e45e04886034b5b778dc49749836",
+    "canonical_sha256": "20fee0bd9f0f22d47986894d9e75bc1966dbf3db1a3f6deceba74bfc47a73686",
+    "materialized_sha256": "e344a2e0cbcdd1aebe3bbcb10178e89e38db89bda943dc8cdb4a5ce7eea8135e",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 244204,
+    "materialized_bytes": 236819,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/01_combined.zh.tex",
+    "patch_old_prefix": "36a9468",
+    "canonical_blob_sha1": "7094f16937b3643475ca3ee071c61fe900cbd0b0",
+    "materialized_blob_sha1": "36a946832940854763aac84d7ffe172981c301ce",
+    "canonical_sha256": "cf82de8334f64980ad7d32c4a17ee7d75f99d5101401563342e1632e320ac3e3",
+    "materialized_sha256": "5e818b0d9bf0c0712d012e28eb74cc3b664c29ec99c0ff13c7ae4253f749a06d",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 258654,
+    "materialized_bytes": 252914,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/02_combined.en.md",
+    "patch_old_prefix": "10030ad",
+    "canonical_blob_sha1": "3a494fc2403ccb9217d9b677ee87849f7de96421",
+    "materialized_blob_sha1": "10030adb7dec2bad7b2a630b6b7f452d964426ef",
+    "canonical_sha256": "6695eb7aa0d0d51075005ab1effaa6aaeccdebd55d6492a23c8331df5aa9c9fc",
+    "materialized_sha256": "d52b6c1208eec267adc88d08d5f4fc97f53b6d9a7f4bdf8a958b2c933e09f4f3",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 277574,
+    "materialized_bytes": 270210,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/02_combined.en.tex",
+    "patch_old_prefix": "b54d235",
+    "canonical_blob_sha1": "0b9085996ae19ed8a94c9f06928fd726bd57c096",
+    "materialized_blob_sha1": "b54d235dc0a935cf789265e9f2a5f84689ebd3fa",
+    "canonical_sha256": "d0dae273686831affc34883a2080797723bcaaa7fe36a08989f8d2a86e0f0107",
+    "materialized_sha256": "6d187045b7c34e635cab8a151cb6dd193e3f93f81338230f8b4d1d3d637d66ac",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 291453,
+    "materialized_bytes": 285730,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/03_constant_factor.zh.md",
+    "patch_old_prefix": "cf3c35f",
+    "canonical_blob_sha1": "634912193d831ec8f7ec99962d0ce0ae699582fd",
+    "materialized_blob_sha1": "cf3c35f1ec421785b2768d0cd78430d6309917f1",
+    "canonical_sha256": "5da067767320fb4e7490f1f6789afaf2deb893ebd3109993b26fcef94e59ce37",
+    "materialized_sha256": "90e781737d727e6b84ee79e3946587947e010e94495d0dfca90071e6e73544ab",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 173698,
+    "materialized_bytes": 168803,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/03_constant_factor.zh.tex",
+    "patch_old_prefix": "1329815",
+    "canonical_blob_sha1": "5d2211589a24645f9ff9ba8858ca5ffd042c7d0d",
+    "materialized_blob_sha1": "132981559b1f7725a797d97e726ec7a73596297f",
+    "canonical_sha256": "5c3819be0c018eaee6b02f6380889619486dbf6fc109b7ee9aef62b7ada0d2cc",
+    "materialized_sha256": "3e87faf9e4e6c1eabc3c85ff95fddc89a76e3b7837551b846a32e21c213844d6",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 183161,
+    "materialized_bytes": 179361,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/04_wormald.zh.md",
+    "patch_old_prefix": "ea00d72",
+    "canonical_blob_sha1": "716007d9af35ba795a171b3fe7841814670bbdf5",
+    "materialized_blob_sha1": "ea00d72db148a815b91f491682aa098f34c514c5",
+    "canonical_sha256": "e45782464a8576d5874043a3e09df847d287e2e2c16556602a50284e01738262",
+    "materialized_sha256": "24f7fa5d89339d5f8585fb1987eecde87a2e92b089718dd0588e77abdcd747ff",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 71952,
+    "materialized_bytes": 69546,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/04_wormald.zh.tex",
+    "patch_old_prefix": "5416b2a",
+    "canonical_blob_sha1": "714b71b4a6ae723a2a41662bfa7a7334b2ffd170",
+    "materialized_blob_sha1": "5416b2a87277a5f85316bb4430756b88c591b286",
+    "canonical_sha256": "bf5a46a069991da8265d5fb3eeb86ae894dea1cfa468fb8010cfb9a1334b63e8",
+    "materialized_sha256": "9b7e5f23f3ec3c14a8a1f68ac694a901fc8056a8cfd92a7f7e5b7419e6495597",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 79653,
+    "materialized_bytes": 77706,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/05_proof_idea.zh.md",
+    "patch_old_prefix": "e7e9b38",
+    "canonical_blob_sha1": "1c4ab4be1c6cb5e628c45d64ca1c8ae1fa743aac",
+    "materialized_blob_sha1": "e7e9b3822ae8c47668118b46e2d4d1057ff70efd",
+    "canonical_sha256": "1acf173c8f348e9e6a2cba04ea065b5f6a255d62de1aaa0370c121762f9022a7",
+    "materialized_sha256": "57bfe7cad918003157a5dcc77dc6149b835fbcf5fd91d6feae720da3c255aea7",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 1949,
+    "materialized_bytes": 1913,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/05_proof_idea.zh.tex",
+    "patch_old_prefix": "db95bb2",
+    "canonical_blob_sha1": "05ff50b68a14e082e45fec25b1b45ae1139b90a0",
+    "materialized_blob_sha1": "db95bb2973722bde8fddc575c112694cea832087",
+    "canonical_sha256": "f708bc157cb7577c661432f379c3c05a98fcf2ce22400d653be3028b78326b41",
+    "materialized_sha256": "c02530f36d4a3e850aed095f70289889eba738b1398df0089949b271607bb632",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 4699,
+    "materialized_bytes": 4609,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/06_freshman_guide.zh.md",
+    "patch_old_prefix": "b62ffa0",
+    "canonical_blob_sha1": "f061483b40cf6117b919f00c264ebda8f619e790",
+    "materialized_blob_sha1": "b62ffa04106f8f418ef70d1b6bd149e702f4795d",
+    "canonical_sha256": "f13aa1a5abb61adae56eda783911aea0c66a7f544f66071559304d8591a6fc7e",
+    "materialized_sha256": "e1c89f6c03769790999b899127f3909de055b8dc689016e0c7705682c727377c",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 86766,
+    "materialized_bytes": 85161,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "manuscripts/06_freshman_guide.zh.tex",
+    "patch_old_prefix": "810fa9d",
+    "canonical_blob_sha1": "37cfbc390987594b5c1dbee8c39ba4fd35c9fb50",
+    "materialized_blob_sha1": "810fa9de82a1993f7a9d202e0422b1ae941de96e",
+    "canonical_sha256": "1ff38f5858fb44b417bf2ec3d09e688bf67c70674f4d8c964a72078abfa6e64b",
+    "materialized_sha256": "d3ccd23e0706aa92706fb8d05226724c43ff42ead0582b6000c2792c36a50077",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 97507,
+    "materialized_bytes": 95964,
+    "content_line_sequence_unchanged": true
+  },
+  {
+    "path": "review/20261029_editorial_corrections.md",
+    "new_file": true
+  },
+  {
+    "path": "review/editorial_source_checks.json",
+    "new_file": true
+  },
+  {
+    "path": "review/editorial_source_hashes.json",
+    "new_file": true
+  },
+  {
+    "path": "review/研究定位说明.txt",
+    "patch_old_prefix": "e77583e",
+    "canonical_blob_sha1": "bff4902f6028606aba3984800d21b508c90d7bf0",
+    "materialized_blob_sha1": "e77583e44dfd136a710d13ff2763a95c7792a7a9",
+    "canonical_sha256": "8db67b4c91abb1db39e92ecd8e9ffc791ef1ecde09d3c10099c2292645ecfac1",
+    "materialized_sha256": "0beb83d24ec57042420c2ab5b82d7425ce362e8c34b8ea9c4c1fd3d6abcd99a8",
+    "materialization": "CRLF_to_LF_plus_one_LF",
+    "canonical_bytes": 1865,
+    "materialized_bytes": 1865,
+    "content_line_sequence_unchanged": true
+  }
+]

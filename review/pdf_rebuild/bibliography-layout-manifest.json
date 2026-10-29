@@ -1,0 +1,65 @@
+[
+  {
+    "path": "manuscripts/04_wormald.zh.tex",
+    "before_sha256": "c565706e2b8e61accfa479170c803799797367799265f85aeeff4ac175740e3e",
+    "after_sha256": "21fa8a18a9b08783f169be81e16a659620f1787dba0eb928961388d9cc48d59d",
+    "change": "separate new bibliography paragraph",
+    "word_multiset_unchanged": true
+  },
+  {
+    "path": "manuscripts/01_combined.zh.tex",
+    "before_sha256": "d17fbc820ebbe4b9337b0b46fd4e66e2c6c428243b414ece9cfb707ba1a8369a",
+    "after_sha256": "1a32e41df38e60780ab986a3175121442afb18deb1a85378bdc3671d060963ab",
+    "change": "separate new bibliography paragraph",
+    "word_multiset_unchanged": true
+  },
+  {
+    "path": "manuscripts/02_combined.en.tex",
+    "before_sha256": "4efffdc2af170bd7a575a2aa90adec9597a707665e26b4801a0a167137f50ad8",
+    "after_sha256": "7de7246cbe66c5be76d3eb76b90dd31ee3c0256edada4a174161e0b4ceff2e3b",
+    "change": "separate new bibliography paragraph",
+    "word_multiset_unchanged": true
+  },
+  {
+    "path": "manuscripts/06_freshman_guide.zh.tex",
+    "before_sha256": "d8ef8176ff37b71bccabef1ab05b34c1171999302463d4e42acf617d927e0794",
+    "after_sha256": "f9e1fae8253c2936ea0bc60e74da0ff51fbb5baaff8dc055f7aa4c78e85d47a4",
+    "change": "separate new bibliography paragraph",
+    "word_multiset_unchanged": true
+  },
+  {
+    "path": "manuscripts/06_freshman_guide.zh.md",
+    "before_sha256": "7d11b51cdd1bb03318c568998c294a9f3386a8d98937d1fcb963812584b197b7",
+    "after_sha256": "7e3e37d4bdfdc072f50ae32d3bcc88f93ddf4a99571fe439302733fbfb7db501",
+    "change": "relocate unchanged new bibliography entry to end of references",
+    "word_multiset_unchanged": true
+  },
+  {
+    "path": "manuscripts/02_combined.en.md",
+    "before_sha256": "903acb34dc4b1b3467255a7c594963f51161f9c0e60847dc7c385f3070b0a123",
+    "after_sha256": "6978b7b10c02058ae94c9cd32e1b253f156f0139d75198a612d8eb63055e6eda",
+    "change": "relocate unchanged new bibliography entry to end of references",
+    "word_multiset_unchanged": true
+  },
+  {
+    "path": "manuscripts/04_wormald.zh.md",
+    "before_sha256": "63287723e9f02eb1d529513507c9d3d8b5d9117d2423830b84810b1b3eb9c56c",
+    "after_sha256": "11bb41829fe61171430025e54c6ebc4a360f507a24d7e574e495f4c6011625f7",
+    "change": "relocate unchanged new bibliography entry to end of references",
+    "word_multiset_unchanged": true
+  },
+  {
+    "path": "manuscripts/01_combined.zh.md",
+    "before_sha256": "32eeba040479904c8bb2d8e90ca46aaaedbaa2407a92548975e4c6dd79e572f0",
+    "after_sha256": "e8ca41817a32b4405d6eae6cc878ef7ed920f268dde001f7abf518e0678b7f51",
+    "change": "relocate unchanged new bibliography entry to end of references",
+    "word_multiset_unchanged": true
+  },
+  {
+    "path": "guide_parts/06_references.zh.md",
+    "before_sha256": "97cd888f462064a45620e7477871d4a48ebe206e6d214805a46c0c543db07010",
+    "after_sha256": "4cc3c95943d6d7e2308bcb7adb179acf0e8c7115e09a4c335bfff02ffe7d3b42",
+    "change": "relocate unchanged new bibliography entry to end of references",
+    "word_multiset_unchanged": true
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "checks": [
+    "all display equations preserved",
+    "only cited Alon Lemma 5.1 corrected",
+    "own path-convolution Lemma 5.1 preserved",
+    "augmentation order and N=1 boundary included",
+    "fixed Bhattacharjee v2 cited",
+    "TeX inline math delimiters balanced"
+  ],
+  "files": [
+    {
+      "path": "manuscripts/01_combined.zh.md",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/01_combined.zh.tex",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/02_combined.en.md",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/02_combined.en.tex",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/03_constant_factor.zh.md",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/03_constant_factor.zh.tex",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/04_wormald.zh.md",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/04_wormald.zh.tex",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/05_proof_idea.zh.md",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/05_proof_idea.zh.tex",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/06_freshman_guide.zh.md",
+      "display_equations_unchanged": true
+    },
+    {
+      "path": "manuscripts/06_freshman_guide.zh.tex",
+      "display_equations_unchanged": true
+    }
+  ],
+  "pdf_rebuilt": false,
+  "pdf_blocker": "No XeLaTeX, LuaLaTeX, pdfLaTeX, Tectonic or Pandoc found on PATH."
+}
