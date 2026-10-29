@@ -40,7 +40,9 @@ $$H(T)=\sum_{U\subseteq V(T)}\det(I+A[U])\operatorname{per}(A[U^c]).$$
 本轮 `lake build Tournament.PathConvolution` 已成功（3332 jobs）。
 独立 `#print axioms` 审计的 14 个桥接/边界/复用端点只使用
 `propext`、`Classical.choice`、`Quot.sound`；`#check` 确认主端点没有额外数学前提。
-`verification/convolution/` 保存最终构建、端点与全工程审计、回归结果及源码哈希；全工程最终结果以其中机器报告为准。
+`verification/convolution/` 保存原运行的构建、14 端点专项审计、`theorems.json` 中 258 个登记定理的传递公理审计、回归结果及源码哈希。
+258 是明确登记的定理端点数，不是所有迁入模块公开声明的完整枚举；对登记端点执行的 `#print axioms` 仍检查其实际证明的传递依赖。
+这 258 项登记审计通过，只出现 `propext`、`Classical.choice`、`Quot.sound`；构建和审计成功状态指原本地物化源码运行，不是本次元数据校正新跑的结果。
 
 在 `formal/` 中运行：
 
@@ -61,6 +63,17 @@ Windows 本轮使用工作目录内的 `ELAN_HOME` 与 `MATHLIB_CACHE_DIR`，并
 对应日志另存，均通过格式/可见性调整解决，没有加入 `sorry`、`admit` 或新数学公理。
 
 标准库 Python 枚举对 0 至 5 阶全部 1100 个标号竞赛图通过；这是独立精确整数回归，不替代 Lean 的全阶数证明。
+
+## 历史运行字节与 Git 规范字节
+
+`verification/convolution/source_hashes.json` 保留原运行记录的全部 38 个哈希，原值和文件字节均未由本次校正改写；旧构建、公理与回归日志也不改写。
+新增 `verification/convolution/source_hashes.provenance.json` 分别列出 `local_materialized_sha256` 与 `canonical_git_sha256`，后者固定到合并后的 Git 快照 `5d528bc2b962ea3d2ada921fbcae0ddf49afe481`。
+38 个规范源文件的 Git blob 标识均已核对：16 项两组哈希直接相同，另 22 项满足“规范 Git 文件字节末尾再附加一个 LF 字节”后的 SHA-256 等于原记录。
+这是可逐项复算的哈希映射；本次没有重新读取原工作站构建时的文件，不把映射解释为重新观察了历史运行，也不以规范哈希替换历史运行哈希。
+完整方法和复核命令见 `verification/convolution/SOURCE_HASHES.zh.md`。
+
+**本次仅修正文档与证据元数据，不改 Lean 证明正文，不重新运行构建或公理审计；尚未针对上述 canonical Git 字节快照新跑 Lean 编译。**
+不能把补充的规范 Git 哈希当作一次新的、逐字节相同的已完成构建。原运行的构建结果与标准基础公理结果保持其原有证据范围。
 
 ## 覆盖限制
 
