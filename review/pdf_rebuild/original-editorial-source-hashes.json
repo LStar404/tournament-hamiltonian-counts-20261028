@@ -1,0 +1,28 @@
+{
+  "baseline_commit": "20fc92ae3a64d559d2aeaf6c5d30856dd5c438d8",
+  "kind": "editorial source snapshot, not a PDF release manifest",
+  "pdfs_rebuilt": false,
+  "sha256": {
+    "README.md": "6b89c379a0fc04694d7e158a932ea9bcb5fbf2abdaf30ec0feb63d00c2d8fe52",
+    "guide_parts/01_foundations.zh.md": "77399880584924afd3cfccec1bee53f74d33bea07604dbd94365f5ecd92cadcb",
+    "guide_parts/02_paths.zh.md": "4766d42cd422b3bae3871b18c8302cf75072496943e7d56e30ce4d6296dae796",
+    "guide_parts/03_hessian.zh.md": "7f8b0bed1d8e7a5e3487a0c3703fedf0491afb8eab873e7147c87ba3dd31de17",
+    "guide_parts/04_reading.zh.md": "fa1a7c0a6a1d6c580b9c565c7002cc604edc8033a26a66f0a6bba069ed1ca8a1",
+    "guide_parts/05_exercises.zh.md": "f3e599f5caa43b9ccb7694185595b668b08ffe7fab3c837906f8dfebb683ad34",
+    "guide_parts/06_references.zh.md": "97cd888f462064a45620e7477871d4a48ebe206e6d214805a46c0c543db07010",
+    "manuscripts/01_combined.zh.md": "32eeba040479904c8bb2d8e90ca46aaaedbaa2407a92548975e4c6dd79e572f0",
+    "manuscripts/01_combined.zh.tex": "d17fbc820ebbe4b9337b0b46fd4e66e2c6c428243b414ece9cfb707ba1a8369a",
+    "manuscripts/02_combined.en.md": "903acb34dc4b1b3467255a7c594963f51161f9c0e60847dc7c385f3070b0a123",
+    "manuscripts/02_combined.en.tex": "4efffdc2af170bd7a575a2aa90adec9597a707665e26b4801a0a167137f50ad8",
+    "manuscripts/03_constant_factor.zh.md": "d6401e37de90ab7ebe629e08b2414e7959f4be5b7eced6ce431ce3195d9b7c08",
+    "manuscripts/03_constant_factor.zh.tex": "e37ca4df35499cf188b73561a0bc7ce1d7431136446719ad9a33a00b7afb2998",
+    "manuscripts/04_wormald.zh.md": "63287723e9f02eb1d529513507c9d3d8b5d9117d2423830b84810b1b3eb9c56c",
+    "manuscripts/04_wormald.zh.tex": "c565706e2b8e61accfa479170c803799797367799265f85aeeff4ac175740e3e",
+    "manuscripts/05_proof_idea.zh.md": "5ecde3254a0cd870d660aff0a2ba37b7d506b70e219a83d6435c07ca942086dd",
+    "manuscripts/05_proof_idea.zh.tex": "d318f6d7517660e13f41aea2e1d8773d308e01a16a207ae1ce178508beeeafaf",
+    "manuscripts/06_freshman_guide.zh.md": "7d11b51cdd1bb03318c568998c294a9f3386a8d98937d1fcb963812584b197b7",
+    "manuscripts/06_freshman_guide.zh.tex": "d8ef8176ff37b71bccabef1ab05b34c1171999302463d4e42acf617d927e0794",
+    "review/20261029_editorial_corrections.md": "95497dc44a5b870eaf41a0ef0a725b95165dce63148e21aa4319a95130ee1a6b",
+    "review/研究定位说明.txt": "22fa1fa209caff49acb55e326d1b1a05ecbb281b772351b2e74b58d55387b74e"
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "pdf": "01_combined.zh.pdf",
+    "pages": 108,
+    "pixel_changed_pages": [
+      108
+    ],
+    "all_other_pages_pixel_identical_at_72dpi": true
+  },
+  {
+    "pdf": "02_combined.en.pdf",
+    "pages": 113,
+    "pixel_changed_pages": [
+      113
+    ],
+    "all_other_pages_pixel_identical_at_72dpi": true
+  },
+  {
+    "pdf": "04_wormald.zh.pdf",
+    "pages": 35,
+    "pixel_changed_pages": [
+      35
+    ],
+    "all_other_pages_pixel_identical_at_72dpi": true
+  },
+  {
+    "pdf": "06_freshman_guide.zh.pdf",
+    "pages": 33,
+    "pixel_changed_pages": [
+      33
+    ],
+    "all_other_pages_pixel_identical_at_72dpi": true
+  }
+]

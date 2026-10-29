@@ -1,11 +1,16 @@
 {
-  "date": "2026-10-28",
-  "scope": "Fourth-version manuscripts, beginner guide, refreshed Chinese typography, sources, figures and review records.",
+  "date": "2026-10-29",
+  "scope": "Editorial corrections, bibliography layout repair, six rebuilt portable-font PDFs and current QA/build records. Existing figures and font files retained; already-merged convolution formalization is unchanged.",
   "files": [
     {
       "path": ".gitignore",
       "bytes": 268,
       "sha256": "cd90e6a705c8c697ef32dcfcf5d3e746110895ac81777e1869890205f543a4b1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7812,
+      "sha256": "53826fd8cdcf6991e88bc3f00f609848aefb13cbad4a3b584a5a5645d329ebc5"
     },
     {
       "path": "fonts/NotoSansSC-SemiBold.ttf",
@@ -34,8 +39,8 @@
     },
     {
       "path": "guide_parts/01_foundations.zh.md",
-      "bytes": 14234,
-      "sha256": "5652744dedb52509fd4ff7b707d870d113cd8716a22918b4a28f1476e6d24fb1"
+      "bytes": 13951,
+      "sha256": "77399880584924afd3cfccec1bee53f74d33bea07604dbd94365f5ecd92cadcb"
     },
     {
       "path": "guide_parts/02_paths.zh.md",
@@ -44,13 +49,13 @@
     },
     {
       "path": "guide_parts/03_hessian.zh.md",
-      "bytes": 24778,
-      "sha256": "d3908f2681354efdf2f8e3b430722844c0e7c6e70bdbb0f1feb904d9e6004793"
+      "bytes": 24630,
+      "sha256": "7f8b0bed1d8e7a5e3487a0c3703fedf0491afb8eab873e7147c87ba3dd31de17"
     },
     {
       "path": "guide_parts/04_reading.zh.md",
-      "bytes": 5578,
-      "sha256": "be7bc0c68d6a205a0c2e185f737c3ee14798a77ddcb8c11f76746cadce43c073"
+      "bytes": 5761,
+      "sha256": "fa1a7c0a6a1d6c580b9c565c7002cc604edc8033a26a66f0a6bba069ed1ca8a1"
     },
     {
       "path": "guide_parts/05_exercises.zh.md",
@@ -59,98 +64,98 @@
     },
     {
       "path": "guide_parts/06_references.zh.md",
-      "bytes": 1916,
-      "sha256": "d40791ed30e79f905788257ca98b29d4b6c6c82aa3498d4e099b835aeef419e8"
+      "bytes": 2156,
+      "sha256": "4cc3c95943d6d7e2308bcb7adb179acf0e8c7115e09a4c335bfff02ffe7d3b42"
     },
     {
       "path": "manuscripts/01_combined.zh.md",
-      "bytes": 244204,
-      "sha256": "20fee0bd9f0f22d47986894d9e75bc1966dbf3db1a3f6deceba74bfc47a73686"
+      "bytes": 238425,
+      "sha256": "e8ca41817a32b4405d6eae6cc878ef7ed920f268dde001f7abf518e0678b7f51"
     },
     {
       "path": "manuscripts/01_combined.zh.pdf",
-      "bytes": 839358,
-      "sha256": "c6acceaf48a66465df56f649bde88e5e8134ed1f58a33fdbadea13729a23c057"
+      "bytes": 796341,
+      "sha256": "475e4d55c0a278e25e3af1c8e218ec724cabfdb0489184446345f46624e0ffc0"
     },
     {
       "path": "manuscripts/01_combined.zh.tex",
-      "bytes": 258654,
-      "sha256": "cf82de8334f64980ad7d32c4a17ee7d75f99d5101401563342e1632e320ac3e3"
+      "bytes": 254565,
+      "sha256": "1a32e41df38e60780ab986a3175121442afb18deb1a85378bdc3671d060963ab"
     },
     {
       "path": "manuscripts/02_combined.en.md",
-      "bytes": 277574,
-      "sha256": "6695eb7aa0d0d51075005ab1effaa6aaeccdebd55d6492a23c8331df5aa9c9fc"
+      "bytes": 272026,
+      "sha256": "6978b7b10c02058ae94c9cd32e1b253f156f0139d75198a612d8eb63055e6eda"
     },
     {
       "path": "manuscripts/02_combined.en.pdf",
-      "bytes": 691495,
-      "sha256": "be51d342dbee37de92ad5ababd71f829ad1f52b993bf491f4a6dbcceaacf3563"
+      "bytes": 630037,
+      "sha256": "45d6849791bf791470540edc56c41217307ba17ba54f4a862ef9830f8209fd82"
     },
     {
       "path": "manuscripts/02_combined.en.tex",
-      "bytes": 291453,
-      "sha256": "d0dae273686831affc34883a2080797723bcaaa7fe36a08989f8d2a86e0f0107"
+      "bytes": 287591,
+      "sha256": "7de7246cbe66c5be76d3eb76b90dd31ee3c0256edada4a174161e0b4ceff2e3b"
     },
     {
       "path": "manuscripts/03_constant_factor.zh.md",
-      "bytes": 173698,
-      "sha256": "5da067767320fb4e7490f1f6789afaf2deb893ebd3109993b26fcef94e59ce37"
+      "bytes": 169118,
+      "sha256": "d6401e37de90ab7ebe629e08b2414e7959f4be5b7eced6ce431ce3195d9b7c08"
     },
     {
       "path": "manuscripts/03_constant_factor.zh.pdf",
-      "bytes": 654542,
-      "sha256": "fb704f51529fc33d6349511ef9342d2f8cd042c45e1ed9362380809d3050e259"
+      "bytes": 607950,
+      "sha256": "cf8a444d2a8e258498c633dc00102ad48d7900ba08408f79ab909c16d22cd6e9"
     },
     {
       "path": "manuscripts/03_constant_factor.zh.tex",
-      "bytes": 183161,
-      "sha256": "5c3819be0c018eaee6b02f6380889619486dbf6fc109b7ee9aef62b7ada0d2cc"
+      "bytes": 179683,
+      "sha256": "e37ca4df35499cf188b73561a0bc7ce1d7431136446719ad9a33a00b7afb2998"
     },
     {
       "path": "manuscripts/04_wormald.zh.md",
-      "bytes": 71952,
-      "sha256": "e45782464a8576d5874043a3e09df847d287e2e2c16556602a50284e01738262"
+      "bytes": 70737,
+      "sha256": "11bb41829fe61171430025e54c6ebc4a360f507a24d7e574e495f4c6011625f7"
     },
     {
       "path": "manuscripts/04_wormald.zh.pdf",
-      "bytes": 414870,
-      "sha256": "80e6b296ef74e7f36707fc20936514f9cc6a078c5f27eb4757860ee6667430b3"
+      "bytes": 390258,
+      "sha256": "33d1616b32bd480acc408474e2876a0201eb1e41adab6a7aff75c531ae51c07f"
     },
     {
       "path": "manuscripts/04_wormald.zh.tex",
-      "bytes": 79653,
-      "sha256": "bf5a46a069991da8265d5fb3eeb86ae894dea1cfa468fb8010cfb9a1334b63e8"
+      "bytes": 78928,
+      "sha256": "21fa8a18a9b08783f169be81e16a659620f1787dba0eb928961388d9cc48d59d"
     },
     {
       "path": "manuscripts/05_proof_idea.zh.md",
-      "bytes": 1949,
-      "sha256": "1acf173c8f348e9e6a2cba04ea065b5f6a255d62de1aaa0370c121762f9022a7"
+      "bytes": 2133,
+      "sha256": "5ecde3254a0cd870d660aff0a2ba37b7d506b70e219a83d6435c07ca942086dd"
     },
     {
       "path": "manuscripts/05_proof_idea.zh.pdf",
-      "bytes": 110356,
-      "sha256": "380a5235636c65332949a46d8ed63b44ba09505049aab038c8755b69e171e4b6"
+      "bytes": 89427,
+      "sha256": "d405bda09095aed79f09aad2c599d4f842abfb7d5583a1f05e96ccf483d5bf66"
     },
     {
       "path": "manuscripts/05_proof_idea.zh.tex",
-      "bytes": 4699,
-      "sha256": "f708bc157cb7577c661432f379c3c05a98fcf2ce22400d653be3028b78326b41"
+      "bytes": 4829,
+      "sha256": "d318f6d7517660e13f41aea2e1d8773d308e01a16a207ae1ce178508beeeafaf"
     },
     {
       "path": "manuscripts/06_freshman_guide.zh.md",
-      "bytes": 86766,
-      "sha256": "f13aa1a5abb61adae56eda783911aea0c66a7f544f66071559304d8591a6fc7e"
+      "bytes": 85834,
+      "sha256": "7e3e37d4bdfdc072f50ae32d3bcc88f93ddf4a99571fe439302733fbfb7db501"
     },
     {
       "path": "manuscripts/06_freshman_guide.zh.pdf",
-      "bytes": 519438,
-      "sha256": "81fdf55e5006a2818fcb48ecc758c3c93b6b68835c952a41488bf3481167fd55"
+      "bytes": 475597,
+      "sha256": "1d474da0df0c479f1d3a5fb9be5c606139481680608c35c50b46cfe581bb5145"
     },
     {
       "path": "manuscripts/06_freshman_guide.zh.tex",
-      "bytes": 97507,
-      "sha256": "1ff38f5858fb44b417bf2ec3d09e688bf67c70674f4d8c964a72078abfa6e64b"
+      "bytes": 96650,
+      "sha256": "f9e1fae8253c2936ea0bc60e74da0ff51fbb5baaff8dc055f7aa4c78e85d47a4"
     },
     {
       "path": "manuscripts/figures/carousel_deletion.pdf",
@@ -253,9 +258,24 @@
       "sha256": "9a3981a215d66bcf9f8b5213f95ee094292719735fb291740bcc205b6feb5792"
     },
     {
-      "path": "README.md",
-      "bytes": 6535,
-      "sha256": "7c53c95f727b124af8ae4e989409dc6aac3f2ee8fb7e757e8ba3a3dfed63d4b7"
+      "path": "review/20261029_editorial_corrections.md",
+      "bytes": 2306,
+      "sha256": "95497dc44a5b870eaf41a0ef0a725b95165dce63148e21aa4319a95130ee1a6b"
+    },
+    {
+      "path": "review/20261029_pdf_build.md",
+      "bytes": 4158,
+      "sha256": "a870e6f79df8279e34b89cdd201a7ac533520b99379f3b2203dcb6fc634072ae"
+    },
+    {
+      "path": "review/20261029_pdf_build_manifest.json",
+      "bytes": 8121,
+      "sha256": "5a5c9a0ec05f28faed409e6b2939c323b7ed6835edb73f84475cdc898d8ed568"
+    },
+    {
+      "path": "review/README.md",
+      "bytes": 1526,
+      "sha256": "22c49e5071787dd2898b8be5e4602ab6c6945b78cbb6d93c5948f851dede82f8"
     },
     {
       "path": "review/added_identities.json",
@@ -264,13 +284,23 @@
     },
     {
       "path": "review/current_typography_review.json",
-      "bytes": 1384,
-      "sha256": "cd20772fec757c65de7b9e03f0941196271a69585ad9a7474fd3839a003654e5"
+      "bytes": 4325,
+      "sha256": "c6a3f04aaff717f3b8a7ab68c9b68e7cd6ac372ab211b43ec32bf4022fbcd781"
+    },
+    {
+      "path": "review/editorial_source_checks.json",
+      "bytes": 2005,
+      "sha256": "9b34c80381927e9cf966bc64f3530b4ef02d54bdfecd9de1b269cd6a9bbf8cfb"
+    },
+    {
+      "path": "review/editorial_source_hashes.json",
+      "bytes": 2528,
+      "sha256": "028e46fd19c459c9bdefe2de3bad2efe72eea7af82053a86214e32daf9d332fa"
     },
     {
       "path": "review/final_review.json",
-      "bytes": 2080,
-      "sha256": "f916cfaf9c869d94cc8365271e5882a93e65f9230ccee7151f4ce64845188cc9"
+      "bytes": 4325,
+      "sha256": "c6a3f04aaff717f3b8a7ab68c9b68e7cd6ac372ab211b43ec32bf4022fbcd781"
     },
     {
       "path": "review/guide_checked_examples.txt",
@@ -283,19 +313,59 @@
       "sha256": "8b6b187e3518fff73d48f853a1e1c52b51fb77302830eaa4c1803a932df2765f"
     },
     {
+      "path": "review/pdf_rebuild/README-current-main-editorial.patch",
+      "bytes": 1994,
+      "sha256": "684d32abcf55a54b89d04b029ee1d284624b4acb907a6945a525cfa1a0816f61"
+    },
+    {
+      "path": "review/pdf_rebuild/bibliography-layout-manifest.json",
+      "bytes": 3034,
+      "sha256": "866054d61caab276b8d14afa92c1ffaf353ff416a2ac6154b296f67b6b248645"
+    },
+    {
+      "path": "review/pdf_rebuild/bibliography-layout.patch",
+      "bytes": 18605,
+      "sha256": "13c6abc0d670b91c7ce5f603444a3b5488815fbd547c119577863926a5f4d5a2"
+    },
+    {
+      "path": "review/pdf_rebuild/font-only-transform-manifest.json",
+      "bytes": 3330,
+      "sha256": "3bcecf1b418a8718623a0c8c417be214b218347ccd45910cd94438e36c59c0a6"
+    },
+    {
+      "path": "review/pdf_rebuild/formatting-rebuild-pixel-diff.json",
+      "bytes": 640,
+      "sha256": "6705508efefeec11d99337c3e3179b4f0eda4cea3ae5bde3077845e43640b69f"
+    },
+    {
+      "path": "review/pdf_rebuild/materialization-manifest.json",
+      "bytes": 10654,
+      "sha256": "06ecd0fdc5db50be767d354ad70ccd959ccaaa90b0754e8d6008808ecb0da71d"
+    },
+    {
+      "path": "review/pdf_rebuild/original-editorial-source-checks.json",
+      "bytes": 1685,
+      "sha256": "bc278ffaa918ea6f720471bb57ff565e07f1bbfb98cc2783cd499ff47bb52fae"
+    },
+    {
+      "path": "review/pdf_rebuild/original-editorial-source-hashes.json",
+      "bytes": 2409,
+      "sha256": "2fd07523db41700cc573184e15b91a84f155ac2ef5fc2db4c0a2fdd1ce574729"
+    },
+    {
+      "path": "review/pdf_rebuild/original-editorial.patch",
+      "bytes": 74274,
+      "sha256": "1e3d9d14323862ce5d4dcc15e3743eb60e0be5d0e3eb37820ed99011ea1a88ea"
+    },
+    {
       "path": "review/pdf_review.json",
-      "bytes": 2178,
-      "sha256": "bdd4ab422bc8f77aa71787a0cbc5e6fc343750b7862e33d985a245e295dbe077"
+      "bytes": 4325,
+      "sha256": "c6a3f04aaff717f3b8a7ab68c9b68e7cd6ac372ab211b43ec32bf4022fbcd781"
     },
     {
       "path": "review/proof_preservation.json",
       "bytes": 1533,
       "sha256": "3061e661e6b6a0523a3b4e6e1d09982b6306ff3b4168acd89f25268a349354aa"
-    },
-    {
-      "path": "review/README.md",
-      "bytes": 1526,
-      "sha256": "22c49e5071787dd2898b8be5e4602ab6c6945b78cbb6d93c5948f851dede82f8"
     },
     {
       "path": "review/source_review.md",
@@ -319,8 +389,13 @@
     },
     {
       "path": "review/研究定位说明.txt",
-      "bytes": 1865,
-      "sha256": "8db67b4c91abb1db39e92ecd8e9ffc791ef1ecde09d3c10099c2292645ecfac1"
+      "bytes": 2355,
+      "sha256": "22fa1fa209caff49acb55e326d1b1a05ecbb281b772351b2e74b58d55387b74e"
+    },
+    {
+      "path": "tools/compile_portable_pdfs.py",
+      "bytes": 6946,
+      "sha256": "d06b7da993114bce7ea755aae0f6baeaebeddd8c05e37d112fd1165ce2705a4e"
     },
     {
       "path": "tools/compile_tex.py",
@@ -337,5 +412,8 @@
       "bytes": 2354,
       "sha256": "121db643ed8e7f091f3696fb94022391301059babec9bf8b6762f1137151bc59"
     }
-  ]
+  ],
+  "base_main_commit": "5d528bc2b962ea3d2ada921fbcae0ddf49afe481",
+  "pdf_build_manifest": "review/20261029_pdf_build_manifest.json",
+  "font_mode": "Explicit portable alternatives; see review/20261029_pdf_build.md. Not an original-font replica."
 }

@@ -1,0 +1,67 @@
+{
+  "changes": [
+    {
+      "file": "01_combined.zh.tex",
+      "source_sha256": "1a32e41df38e60780ab986a3175121442afb18deb1a85378bdc3671d060963ab",
+      "working_sha256": "7a40dd6a435fb35e7cef8bd071f3ddb1540fe4307cb5b34e1c6a88caf1665b52",
+      "body_sha256": "6241c9caa302c9534105edefaac8ffa59ff7a680d13aa2d0053dafcbdc16952d",
+      "body_unchanged": true,
+      "only_preamble_font_changes": true,
+      "preamble_compatibility_shims": [],
+      "all_changes_limited_to_preamble": true
+    },
+    {
+      "file": "02_combined.en.tex",
+      "source_sha256": "7de7246cbe66c5be76d3eb76b90dd31ee3c0256edada4a174161e0b4ceff2e3b",
+      "working_sha256": "9c49452b26388609226469d9ede8433d849c01bf55a288490e664394d1323be6",
+      "body_sha256": "a2bd866048d06a86ce80c42b53ca38d16d336c7358829554af10dad50fd6c857",
+      "body_unchanged": true,
+      "only_preamble_font_changes": true,
+      "preamble_compatibility_shims": [],
+      "all_changes_limited_to_preamble": true
+    },
+    {
+      "file": "03_constant_factor.zh.tex",
+      "source_sha256": "e37ca4df35499cf188b73561a0bc7ce1d7431136446719ad9a33a00b7afb2998",
+      "working_sha256": "f2a0d6a1e9a217d216ce3d2dc072f4fcd31cca5bd0a0483bfafe576b3b7fe66e",
+      "body_sha256": "66e1a102cc8d8b4e7c202b6529b9ada53bd398846471688f516523568f613436",
+      "body_unchanged": true,
+      "only_preamble_font_changes": true,
+      "preamble_compatibility_shims": [],
+      "all_changes_limited_to_preamble": true
+    },
+    {
+      "file": "04_wormald.zh.tex",
+      "source_sha256": "21fa8a18a9b08783f169be81e16a659620f1787dba0eb928961388d9cc48d59d",
+      "working_sha256": "d8b9072ca0a65baaec9f357f3e78272f8b1753936fc5607e419733a6cc967b1c",
+      "body_sha256": "94f260fc1362d9ded5f50c2d31ea7d13d79e2e1c7c58e75fbb89885c5517da19",
+      "body_unchanged": true,
+      "only_preamble_font_changes": true,
+      "preamble_compatibility_shims": [],
+      "all_changes_limited_to_preamble": true
+    },
+    {
+      "file": "05_proof_idea.zh.tex",
+      "source_sha256": "d318f6d7517660e13f41aea2e1d8773d308e01a16a207ae1ce178508beeeafaf",
+      "working_sha256": "0ee3a1b0af31f9a8e4868d63441bf1e058ac08f85b69266d6907d54a34ac7ae3",
+      "body_sha256": "fc612feaf65a0637627e67202349cdcc8d5cdf38399b24c429bf6302bf514445",
+      "body_unchanged": true,
+      "only_preamble_font_changes": true,
+      "preamble_compatibility_shims": [],
+      "all_changes_limited_to_preamble": true
+    },
+    {
+      "file": "06_freshman_guide.zh.tex",
+      "source_sha256": "f9e1fae8253c2936ea0bc60e74da0ff51fbb5baaff8dc055f7aa4c78e85d47a4",
+      "working_sha256": "f34041ceee19a8f14d6b5fc00ac5e68384dbc83676983c02e33de616beb861ae",
+      "body_sha256": "7848433acaaec99d788bdd83daefe43713c006c33fa8f7f7c99818ef8a98f14b",
+      "body_unchanged": true,
+      "only_preamble_font_changes": false,
+      "preamble_compatibility_shims": [
+        "longtable LTcaptype=none mapped to empty with unique internal LT@tables counter"
+      ],
+      "all_changes_limited_to_preamble": true
+    }
+  ],
+  "source_ref": "baseline commit 20fc92ae3a64d559d2aeaf6c5d30856dd5c438d8 + exact materialization described in environment/materialization-manifest.json + original editorial.patch SHA256 1e3d9d14323862ce5d4dcc15e3743eb60e0be5d0e3eb37820ed99011ea1a88ea (patch commit 91c96692e7210bbffbc0e8578aa63e7ba2730aca)"
+}
