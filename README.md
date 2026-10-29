@@ -76,6 +76,6 @@ python tools/create_graph_figures.py
 
 新增 [`formal/`](formal/README.zh.md)，包含 Wormald 原角函数 Hessian 主定理的机器证明，以及增点路径计数和若干精确代数引理。主端点直接使用原角函数的实际二阶导数，证明矩阵公式、正定性、行列式及正有理平方根。
 
-工具链与依赖已固定；构建、公理审计及源码包解压重建均通过。详见 [覆盖范围](formal/COVERAGE.zh.md) 和 [复现说明](formal/README.zh.md#复现)。**全局 Hamilton 路径的定量渐近定理、路径卷积及其余未列明结果尚未形式化，不能据此称整篇论文已经机器认证。**
+精确有限的行列式—永久式路径卷积现已迁入；新旧竞赛图类型、真实路径计数与矩阵定义的桥接及零阶、单顶点边界均已在锁定工具链下编译并作端点公理审计，见[迁移记录](formal/CONVOLUTION_MIGRATION.zh.md)。此前 Hessian 构建与源码包重建记录仍对应各自版本，详见[覆盖范围](formal/COVERAGE.zh.md)和[复现说明](formal/README.zh.md#复现)。**现稿全局 Hamilton 路径的锐常数量化渐近定理及其他未列明结果尚未在本工程形式化，不能据此称整篇论文已经机器认证。**
 
 GitHub Actions 检查为手动触发，不会因推送或拉取请求自动运行。

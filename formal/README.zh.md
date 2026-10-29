@@ -1,6 +1,6 @@
 # 竞赛图 Hamilton 计数：Lean 形式化
 
-本目录包含 Wormald 原角函数 Hessian 主定理的 Lean 机器证明，以及路径增点计数、删集恒等式和有限族极限比较的形式化。全局 Hamilton 路径计数的定量渐近定理尚未形式化，具体覆盖范围见 `COVERAGE.zh.md`。
+本目录包含 Wormald 原角函数 Hessian 主定理、精确有限行列式—永久式路径卷积，以及路径增点计数、删集恒等式和有限族极限比较的形式化。现稿全局 Hamilton 路径计数的锐常数量化渐近定理尚未在本工程形式化，具体覆盖范围见 `COVERAGE.zh.md`。
 
 核对的论文快照与源文件哈希见 `SOURCE.json`。原论文的编号在该快照中固定；后续正文修订需要重新核对对应关系。
 
@@ -10,6 +10,8 @@
 - `Tournament/HessianMain.lean`：原角函数与其实际二阶导数的定义，以及 Hessian 等于矩阵公式的证明。
 - `Tournament/OriginalCoordinates.lean`：原论文的 `A+I/2`、`z=2/d` 与归一化计算之间的精确连接。
 - `Tournament/Paths.lean`：真正的有限路径、圈与随机增点计数模型。
+- `Tournament/PathConvolution.lean`：全阶数路径计数、新旧类型与计数桥接、精确卷积及零阶/单点边界。
+- `TournamentHamiltonian/`：从固定旧提交复用的八文件依赖闭包，仅作 Lean 4.35 模块格式适配；来源、许可和哈希见 `CONVOLUTION_SOURCE.json`。
 - `COVERAGE.zh.md`：原文编号、机器定理与未覆盖部分的对应表。
 
 主定理只要求一个实际竞赛图及其正则性。局部函数存在、非退化、导数公式、正定性以及正有理平方根均由证明导出，没有把需要证明的 Hessian 公式当作假设。原角函数的 Hessian 先保留复数值，再证明它等于实矩阵的复化。
@@ -57,4 +59,7 @@ mathlib 使用官方已编译缓存，并固定其源代码版本。这不等于
 
 可选回归检查：安装 SymPy 后运行 `python3 scripts/check_hessian_examples.py`。它对几个指定正则图，从原隐式行列式直接计算有理二阶导数并与矩阵公式比较。这些有限例子用于检查实现，不参与 Lean 主定理证明。
 
+`python3 scripts/check_convolution_examples.py` 只用 Python 标准库，对 0 至 5 阶的全部 1100 个标号竞赛图作精确整数回归，包括空永久式/行列式取值 1。一般卷积的证明来自 Lean；这些枚举不是定理假设。迁移边界和本轮命令见 `CONVOLUTION_MIGRATION.zh.md`。
+
 仓库附带的 GitHub Actions 工作流只允许手动启动，不会因推送或拉取请求自动运行。
+

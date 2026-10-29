@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "target_baseline": "20fc92ae3a64d559d2aeaf6c5d30856dd5c438d8",
+  "source_commit": "a01680d39647bc4fa2f88d56b4e01a4b8dc98d48",
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "targeted_build_passed": true,
+  "full_build_passed": true,
+  "public_theorem_audit_count": 258,
+  "public_theorem_audit_passed": true,
+  "endpoint_axiom_audit": {
+    "TournamentPaths.isHamiltonPathFinite_iff_legacy": [
+      "Quot.sound"
+    ],
+    "TournamentPaths.isHamiltonPathFinite_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathCountFinite_eq_legacy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathCountFinite_eq_pathCount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.adjacency_toLegacy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.principalWeightMatrix_toLegacy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathConvolutionSum_eq_legacy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathCountFinite_eq_pathConvolutionSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathCount_eq_pathConvolutionSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathCount_eq_positive_convolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.empty_path_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.empty_path_convolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.singleton_path_convolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentHamiltonian.pathCount_eq_pathConvolutionSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_placeholder_check_passed": true,
+  "legacy_dependency_closure_modules": 8,
+  "original_proof_bodies_unchanged": true,
+  "exact_regression_tournaments": 1100,
+  "orders_checked": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "remaining_finite_identity_proof_obligations": [],
+  "not_certified": [
+    "current manuscript Theorem 1.1 sharp quantitative asymptotic",
+    "uniform permanent asymptotics",
+    "spectral equality classification and complete expectation-extremum application"
+  ],
+  "environment_notes": [
+    "official matching mathlib cache used; no independent rebuild of all upstream libraries",
+    "target Git clone did not complete; exact target formal sources were materialized via authorized GitHub connector at pinned commit",
+    "no TeX compiler available; editorial PDF rebuild remains separate"
+  ]
+}

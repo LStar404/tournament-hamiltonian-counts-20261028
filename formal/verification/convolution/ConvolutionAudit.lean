@@ -1,0 +1,18 @@
+import Tournament.PathConvolution
+
+#print axioms TournamentPaths.isHamiltonPathFinite_iff_legacy
+#print axioms TournamentPaths.isHamiltonPathFinite_iff
+#print axioms TournamentPaths.pathCountFinite_eq_legacy
+#print axioms TournamentPaths.pathCountFinite_eq_pathCount
+#print axioms TournamentPaths.adjacency_toLegacy
+#print axioms TournamentPaths.principalWeightMatrix_toLegacy
+#print axioms TournamentPaths.pathConvolutionSum_eq_legacy
+#print axioms TournamentPaths.pathCountFinite_eq_pathConvolutionSum
+#print axioms TournamentPaths.pathCount_eq_pathConvolutionSum
+#print axioms TournamentPaths.pathCount_eq_positive_convolution
+#print axioms TournamentPaths.empty_path_count
+#print axioms TournamentPaths.empty_path_convolution
+#print axioms TournamentPaths.singleton_path_convolution
+#print axioms TournamentHamiltonian.pathCount_eq_pathConvolutionSum
+#check TournamentPaths.pathCount_eq_positive_convolution
+#check TournamentPaths.pathCountFinite_eq_pathConvolutionSum

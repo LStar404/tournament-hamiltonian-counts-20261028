@@ -10,6 +10,7 @@
 
 | 论文位置／结果 | 导出的 Lean 端点 | 精确覆盖与条件 |
 |---|---|---|
+| §5.1：精确有限 Hamilton 路径卷积 | `TournamentPaths.pathCount_eq_positive_convolution`；`pathCountFinite_eq_pathConvolutionSum` | 对真实 Boolean 竞赛图及真实排列路径计数证明 `H(T)=∑_U det(I+A[U]) per(A[Uᶜ])`，无正则性或额外数学假设。复用旧工程的循环消去证明，并证明竞赛图类型、路径谓词、计数、邻接矩阵及主子矩阵的桥接。`pathCountFinite` 对 `Fin n` 的所有阶数成立；在 `Fin (n+1)` 上与原 `pathCount` 严格相等。零阶和单顶点路径数及卷积均为 1，边界端点已检查。此项不包含永久式渐近或现稿定理 1.1 的全局定量结论。来源和本轮证据见 `CONVOLUTION_SOURCE.json`、`CONVOLUTION_MIGRATION.zh.md`。 |
 | 合并稿定理 1.2、9.2；`04_wormald.zh.md` 定理 3.2：原角函数 Hessian | `Tournament.wormald_original_angle_hessian` | 对实际 `Fin (n+1)` 竞赛图，唯一额外假设是**各点出度正则**。证明实际角函数的两次实 Fréchet 导数等于 `Eᵀ(I+C²)(I−C²)⁻¹E` 的复数嵌入，给出实正定矩阵、严格正的行列式、精确行列式商，以及等于正平方根的正有理数。论文的奇数 `d≥3` 范围全部包含。**没有把 Hessian 定义成目标矩阵，也没有将目标二阶导数公式当作前提。** |
 | §9.5–9.6：原分支存在、唯一性与局部解析性 | `Tournament.OriginalCoordinates.regular_original_branch_analytic`；`regular_original_branch_local_unique`；`regular_original_rawLog_analytic`；`regular_original_rawLog_exp_analytic` | 对实际非空正则竞赛图，从图结构证明原基点行列式为零、选定坐标系数非零；原消元分支在基点局部解析且唯一，其未经归一化的对数和指数坐标下的对数也局部解析。没有将隐式函数的非退化条件留作额外假设。 |
 | 同上：实际函数与矩阵表达式的等同性 | `Tournament.HessianMain.angleHessian_eq_compressedResolvent`；`original_angle_second` | `originalAngle` 使用原行列式 `det(I−(A+I/2)diag y)` 的显式消元分支，在 `y_j=(2/d)exp(iθ_j)` 上取对数；只有 `d−1` 个实角变量。保留导数完整的复数值，再证明其为实矩阵，未预先取实部。 |
@@ -30,7 +31,6 @@
 ## 尚未形式化的论文内容
 
 - 全图最大 Hamilton 路径数的统一渐近界、`O(n⁻¹)` 误差、圆环下界与上下界常数比较。
-- 行列式—永久式卷积恒等式及其与 Hamilton 路径计数的完整对应。
 - 统一永久式估计、Sinkhorn/对角缩放、删集的解析误差与尾项、度差分类及其合并。
 - 谱比较及等号同构分类、Wormald 的计数渐近定理、四个随机吹胀模型/计数极限，以及由它们得到的唯一期望极值。
 - 文中其余未在上表明确列出的命题。不能从单个辅助恒等式通过检查推断这些内容也已通过检查。
@@ -43,3 +43,4 @@ Lean 使用固定工具链和精确依赖版本；最终构建与公理审计应
 官方 mathlib 编译缓存属于依赖供应链信任，不代表独立重建了全部上游库。
 
 SymPy 的小阶精确有理数检查是**回归测试**，不是一般定理的证明，也不是任何上述 Lean 主定理的假设。
+

@@ -1,0 +1,24 @@
+鉁?[3324/3332] Built TournamentHamiltonian.Packing (19s)
+鉁?[3325/3332] Built TournamentHamiltonian.Definitions (16s)
+鉁?[3326/3332] Built TournamentHamiltonian.Orientation (16s)
+鉁?[3327/3332] Built TournamentHamiltonian.PositiveDeterminant (17s)
+鉁?[3328/3332] Built TournamentHamiltonian.PathConvolutionCoefficients (17s)
+鉁?[3329/3332] Built TournamentHamiltonian.Hadamard (18s)
+鉁?[3330/3332] Built TournamentHamiltonian.PathConvolution (17s)
+鉁?[3331/3332] Built TournamentHamiltonian.PathConvolutionGenerating (18s)
+鉁?[3332/3332] Building Tournament.PathConvolution (15s)
+trace: .> LEAN_PATH=C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\build\lib\lean c:\Users\STAR\Documents\Codex\2026-10-29\task-2\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\Tournament\PathConvolution.lean -o C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\build\lib\lean\Tournament\PathConvolution.olean -i C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\build\lib\lean\Tournament\PathConvolution.ilean -c C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\build\ir\Tournament\PathConvolution.c --setup C:\Users\STAR\Documents\Codex\2026-10-29\task-2\port\formal\.lake\build\ir\Tournament\PathConvolution.setup.json --json
+error: Tournament/PathConvolution.lean:43:2: Type mismatch
+  TournamentHamiltonian.isHamiltonian_iff_consecutive (toLegacy T) p
+has type
+  TournamentHamiltonian.IsHamiltonian (toLegacy T) p 鈫?鈭€ (i : Fin n), 鈫?toLegacy T) (p i.castSucc) (p i.succ) = true
+error: build failed
+but is expected to have type
+  IsHamiltonPathFinite T p 鈫?IsHamiltonPath T p
+
+Note: The following definitions were not unfolded because their definition is not exposed:
+  IsHamiltonPath 鈫?2
+error: Tournament/PathConvolution.lean:56:25: Tactic `unfold` failed to unfold `pathCount` in
+  (鈭?p, if IsHamiltonPathFinite T p then 1 else 0) = pathCount T
+Some required targets logged failures:
+- Tournament.PathConvolution

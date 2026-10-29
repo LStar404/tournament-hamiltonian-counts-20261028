@@ -43,6 +43,7 @@ def code_only(text: str) -> str:
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
     files = sorted((root / 'Tournament').rglob('*.lean'))
+    files += sorted((root / 'TournamentHamiltonian').rglob('*.lean'))
     if (root / 'Tournament.lean').exists():
         files.append(root / 'Tournament.lean')
     if not files:
@@ -64,3 +65,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     sys.exit(main())
+
