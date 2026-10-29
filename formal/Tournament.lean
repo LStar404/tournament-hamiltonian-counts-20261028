@@ -2,6 +2,7 @@ module
 
 public import Tournament.Deletion
 public import Tournament.Paths
+public import Tournament.PathConvolution
 public import Tournament.HessianAlgebra
 public import Tournament.HessianDeterminant
 public import Tournament.HessianRationality
@@ -15,3 +16,4 @@ public import Tournament.ScalarTwoJet
 public import Tournament.OriginalCoordinates
 public import Tournament.HessianTheorem
 public import Tournament.AsymptoticTransfer
+

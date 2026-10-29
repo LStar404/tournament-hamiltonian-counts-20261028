@@ -241,5 +241,21 @@
   "TournamentPaths.normalizedRationalSign_skew",
   "TournamentPaths.normalizedRationalSign_real",
   "TournamentPaths.normalizedRationalSign_complex",
-  "TournamentPaths.regular_tournament_positive_rational_sqrt"
+  "TournamentPaths.regular_tournament_positive_rational_sqrt",
+  "TournamentPaths.isHamiltonPathFinite_iff_legacy",
+  "TournamentPaths.isHamiltonPathFinite_iff",
+  "TournamentPaths.pathCountFinite_eq_legacy",
+  "TournamentPaths.pathCountFinite_eq_pathCount",
+  "TournamentPaths.adjacency_toLegacy",
+  "TournamentPaths.principalWeightMatrix_toLegacy",
+  "TournamentPaths.pathConvolutionSum_eq_legacy",
+  "TournamentPaths.pathCountFinite_eq_pathConvolutionSum",
+  "TournamentPaths.pathCount_eq_pathConvolutionSum",
+  "TournamentPaths.pathCount_eq_positive_convolution",
+  "TournamentPaths.empty_path_count",
+  "TournamentPaths.empty_path_convolution",
+  "TournamentPaths.singleton_path_convolution",
+  "TournamentHamiltonian.pathCount_eq_pathConvolutionSum",
+  "TournamentHamiltonian.pathCount_eq_positive_convolution"
 ]
+

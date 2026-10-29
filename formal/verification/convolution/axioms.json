@@ -1,0 +1,1296 @@
+{
+  "theorem_count": 258,
+  "allowlisted_foundational_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "checked": {
+    "Tournament.sqrt_error_absorption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.total_error_absorption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.eventual_lt_of_limit_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.finite_eventual_forall": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.finite_eventual_unique_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.sum_complement_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.complement_block_mass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.complement_block_mass_columns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.deleted_row_deviation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.deleted_column_deviation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.deletion_mass_cleared": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.deletion_mass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.deletion_row_marginal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.deletion_column_marginal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.complement_product_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.deleted_factor_restoration": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.score_factor_restoration": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.dot_mulVec_sq_le_frobenius": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.skew_quadratic_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.skew_square_quadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.one_sub_skew_isUnit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.one_sub_square_posDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.one_add_square_posDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.resolvent_eq_congruence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.resolvent_eq_inverse_add_transpose_sub_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.map_inverse_of_isUnit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.complexified_resolvent_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.resolvent_posDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.differenceEmbedding_mulVec_castSucc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.differenceEmbedding_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.compressedResolvent_posDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.compressedResolvent_det_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.normalizedSign_frobeniusSq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.normalizedSign_frobeniusSq_lt_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.tournament_compressed_posDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.K_update_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.K\u2081_eq_difference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.hasDerivAt_K_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.analyticAt_K": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.analyticAt_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.analyticAt_K\u2080": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.analyticAt_K\u2081": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.analyticAt_branch": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.branch_local_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.branch_at_base": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.expCoordinates_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.analyticAt_expCoordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.analyticAt_logBranch": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.logBranch_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianBranch.logBranch_local_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinateBridge.parameterDeriv_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinateBridge.parameterSecond_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinateBridge.hasFDerivAt_parameter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinateBridge.hasFDerivAt_parameterDeriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinateBridge.implicit_coordinate_hessian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinateBridge.real_angle_coordinate_hessian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.mass_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.insert_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.mass_insert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.clear_apply_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.clear_apply_of_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.clear_add_insert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.clear_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.realIncludeFirst_castSucc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.realIncludeFirst_last": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.clear_realIncludeFirst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.mass_realIncludeFirst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.compressedDirection_castSucc": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.compressedDirection_last": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.matrixBilinear_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.compressedDirection_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianCoordinates.compressed_matrixBilinear_entry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.second_chain_rule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.implicit_second_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.schur_product_second_at_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.graphDeriv_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.graphSecond_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.hasFDerivAt_graph": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.hasFDerivAt_graphDeriv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.implicit_graph_second": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.implicit_graph_first": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.second_fderiv_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.implicit_hessian_of_normalized_two_jet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.second_complex_angle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.second_real_angle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.real_angle_hessian_of_implicit_two_jet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.analyticAt_affine_branch": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianDerivatives.affine_branch_local_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.resolvent_det": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.resolvent_mulVec_of_mulVec_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.det_compression_of_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.differenceLeftInverse_mul_embedding": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.embedding_mul_differenceLeftInverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.embedding_transpose_mul_projection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.embedding_gram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.embedding_gram_det": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.mul_constantProjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.det_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.compressedResolvent_det": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianLogNormalization.log_eq_log_positive_add_normalized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianLogNormalization.eventually_log_normalization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianLogNormalization.real_hessian_log_normalization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianLogNormalization.branch_log_eq_normalized_eventually": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianMain.normalized_angle_second": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianMain.regular_normalized_branch_data": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianMain.originalAngle_eventually_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianMain.original_angle_second": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianMain.angleHessian_eq_compressedResolvent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.complexOfReal_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.real_imaginary_perturbation_hermitian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.imaginaryDet_cast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.complexOfReal_det": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.imaginaryDet_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.frobeniusSq_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.frobeniusSq_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.frobeniusSq_smul_lt_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.imaginaryDet_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.imaginaryDet_homotopy_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.positive_at_one_of_nonvanishing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.imaginaryDet_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.real_perturbation_det_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.realDeterminantRatio_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.realDeterminantRatio_cast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.sqrt_compressedResolvent_det": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.realOfRat_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.complexOfReal_realOfRat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.positive_rational_sqrt_compressed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.det_mem_rationalComplex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.complexOfRat_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.imaginary_perturbation_hermitian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.det_imaginary_perturbation_rational": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.determinant_ratio_rational": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.det_one_sub_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.det_one_add_square_complex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.wormald_original_angle_hessian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.K_scale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.update_scale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.K\u2080_scale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.K\u2081_scale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.branch_scale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.realCoordinateScale_cast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.realCoordinateScale_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.normalized_originalMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.original_K_scaled": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.original_K_expCoordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.coordinateScale_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.original_branch_scaled": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.original_branch_expCoordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.regular_original_K\u2081_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.regular_original_K_base_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.regular_original_branch_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.regular_original_branch_base": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.regular_original_branch_local_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.regular_original_rawLog_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.OriginalCoordinates.regular_original_rawLog_exp_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.augmented_cycle_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.four_mul_two_coordinate_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.augmentation_count_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.augmentation_average": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.one_vertex_path_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.one_vertex_augmented_cycle_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.one_vertex_average_not_quarter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.D_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.M_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.D_det_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.det_sub_P0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.matrix_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.det_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.one_sub_complex_skew_isUnit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.inv_one_sub_mulVec_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.one_vecMul_inv_one_sub": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.phi_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.K_one_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.K_update_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.K\u2081_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.K\u2081_one_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.K_exp_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.analyticAt_logBranch": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.continuous_M": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.eventually_isUnit_det_M": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.RankOneEquation.logBranch_local_phi_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.hasFDerivAt_inverse_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.fderiv_inverse_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.second_fderiv_inverse_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.diagonalCLM_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.pencilFirst_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.pencilSecondApply_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.hasFDerivAt_pencil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.hasFDerivAt_pencilFirst_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.analyticAt_pencil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.analyticAt_resolvent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.fderiv_resolvent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.second_fderiv_resolvent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.pencil_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.pencilFirst_zero_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.pencilSecondApply_zero_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.fderiv_resolvent_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.second_fderiv_resolvent_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.iterated_fderiv_resolvent_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.fderiv_resolvent_coordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.iterated_fderiv_resolvent_coordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ResolventDerivatives.one_sub_complex_skew_isUnit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.sumEntriesCLM_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.hasFDerivAt_affineTotal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.analyticAt_phi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.fderiv_phi_zero_raw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.iterated_fderiv_phi_zero_raw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.sumEntries_eq_dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.sumEntries_mul_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.sumEntries_mul_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.sumEntries_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.sumEntries_diagonal_sandwich": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.sumEntries_outer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.sumEntries_two_projectors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.fderiv_phi_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.iterated_fderiv_phi_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.complexification_mulVec_one_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.complexification_one_vecMul_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.complex_skew_inverse_fixes_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.fderiv_phi_zero_real_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.iterated_fderiv_phi_zero_real_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.ScalarTwoJet.analyticAt_phi_real_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.adjacency_diag": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.adjacency_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.signMatrix_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.signMatrix_diag": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.signMatrix_offdiag_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.adjacency_row_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.signMatrix_row_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.regular_signMatrix_mulVec_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.normalizedSign_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.regular_normalizedSign_mulVec_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.tournament_normalizedSign_frobeniusSq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.tournament_algebraicHessian_posDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.regular_tournament_algebraicHessian_det": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.rationalAdjacency_cast_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.rationalSignMatrix_cast_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.rationalSignMatrix_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.normalizedRationalSign_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.normalizedRationalSign_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.normalizedRationalSign_complex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.regular_tournament_positive_rational_sqrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.isHamiltonPathFinite_iff_legacy": [
+      "Quot.sound"
+    ],
+    "TournamentPaths.isHamiltonPathFinite_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathCountFinite_eq_legacy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathCountFinite_eq_pathCount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.adjacency_toLegacy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.principalWeightMatrix_toLegacy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathConvolutionSum_eq_legacy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathCountFinite_eq_pathConvolutionSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathCount_eq_pathConvolutionSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.pathCount_eq_positive_convolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.empty_path_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.empty_path_convolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentPaths.singleton_path_convolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentHamiltonian.pathCount_eq_pathConvolutionSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TournamentHamiltonian.pathCount_eq_positive_convolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Tournament.HessianAlgebra.last_ne_castSucc": []
+  },
+  "missing": [],
+  "unexpected": {},
+  "passed": true
+}

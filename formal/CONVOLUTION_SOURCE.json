@@ -1,0 +1,75 @@
+{
+  "repository": "https://github.com/LStar404/tournament-hamiltonian-paths",
+  "commit": "a01680d39647bc4fa2f88d56b4e01a4b8dc98d48",
+  "source_directory": "formalization/TournamentHamiltonian",
+  "source_toolchain": "leanprover/lean4:v4.34.1",
+  "target_toolchain": "leanprover/lean4:v4.35.0",
+  "entrypoint": "TournamentHamiltonian.PathConvolutionGenerating",
+  "changes": "Lean 4.35 module-system adaptation only: prepend module, change import to public import, and add @[expose] public section before the namespace. All proof bodies are unchanged.",
+  "copyright": "2026 Xingchen Liu / 刘星辰 and Xiangyu Ye / 叶祥宇",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "scope": "Exact finite determinant-permanent convolution only; no claim that current manuscript Theorem 1.1 is certified.",
+  "ported_files_sha256": {
+    "Definitions.lean": "9a5b9e788758f5f6bb3be89da06f601340d2a8fb448ccd589f6e3b223c724363",
+    "Hadamard.lean": "1e0c6db0f41d2d39fa750257f4176b6619a3fc30510d8c6eb28003eb39e73f47",
+    "Orientation.lean": "4f2c7db45f3e8e0c90886d1fb9042ad05e30293ea6cc442b8c1df9cb747c35df",
+    "Packing.lean": "7daecd5b35507e3aabf9d9f5c4dfc76e02f715390659f4427945da303e2c6004",
+    "PathConvolution.lean": "aa4bfbee5174e4fc2dd1322620b16176c9c214cb4575bfe3bcc4c10fd1b6e4c1",
+    "PathConvolutionCoefficients.lean": "99e8d5437d1887b4476ca61c85035bfa8e2cdf60cc38e77d23b6d104e744ad35",
+    "PathConvolutionGenerating.lean": "8f308aec6e6301dc101701e56da1cf0612ca5433380dcb63c5f8f25b04b7e8e8",
+    "PositiveDeterminant.lean": "ddaba422ce128765469e36f07438334d3e8b8acf4aa07d9e94b0343e40648d7e"
+  },
+  "dependency_edges": {
+    "Definitions": [
+      "TournamentHamiltonian.Packing"
+    ],
+    "Hadamard": [
+      "TournamentHamiltonian.PositiveDeterminant"
+    ],
+    "Orientation": [
+      "TournamentHamiltonian.Definitions"
+    ],
+    "Packing": [],
+    "PathConvolution": [
+      "TournamentHamiltonian.Hadamard",
+      "TournamentHamiltonian.Orientation"
+    ],
+    "PathConvolutionCoefficients": [
+      "TournamentHamiltonian.Definitions"
+    ],
+    "PathConvolutionGenerating": [
+      "TournamentHamiltonian.PathConvolution",
+      "TournamentHamiltonian.PathConvolutionCoefficients"
+    ],
+    "PositiveDeterminant": [
+      "TournamentHamiltonian.Definitions"
+    ]
+  },
+  "original_proof_bodies_unchanged": true,
+  "source_checkout_files_sha256": {
+    "Definitions.lean": "27f18e9989758e93c7cf738b62a587cc8b12d1345233bd7c813ec0ce5fb31293",
+    "Hadamard.lean": "b6b91b14897bf85c60d7f1ee517e5f192879b4481970644a1406019d81da656b",
+    "Orientation.lean": "d819a9147d774aacd7403f48e5d2337eec77c41583bb991122869da397f9ea72",
+    "Packing.lean": "5dbb12a36a9c199855f59c0ae2a658dfbc246add2d89fc459cb287daf17f4a32",
+    "PathConvolution.lean": "24be5c5636c8594feb764f5bcc0e3da721e1e3ae60997c6b4d404d9a57a5e014",
+    "PathConvolutionCoefficients.lean": "2ced15ee62a5307d950c3d7a4c8a6aedc7a3dd3b730a6c5a55582ccc95d50048",
+    "PathConvolutionGenerating.lean": "94fb02741c2ec87b063d173adb824941fefca1d8556bcf3faf1e219d8b2508bf",
+    "PositiveDeterminant.lean": "5e55b4b5eae6ff4a94a19c8281f85365769b57e11f09f2bd9999293b01f5c32b"
+  },
+  "source_git_blob_sha256": {
+    "Definitions.lean": "27f18e9989758e93c7cf738b62a587cc8b12d1345233bd7c813ec0ce5fb31293",
+    "Hadamard.lean": "b6b91b14897bf85c60d7f1ee517e5f192879b4481970644a1406019d81da656b",
+    "Orientation.lean": "d819a9147d774aacd7403f48e5d2337eec77c41583bb991122869da397f9ea72",
+    "Packing.lean": "5dbb12a36a9c199855f59c0ae2a658dfbc246add2d89fc459cb287daf17f4a32",
+    "PathConvolution.lean": "24be5c5636c8594feb764f5bcc0e3da721e1e3ae60997c6b4d404d9a57a5e014",
+    "PathConvolutionCoefficients.lean": "2ced15ee62a5307d950c3d7a4c8a6aedc7a3dd3b730a6c5a55582ccc95d50048",
+    "PathConvolutionGenerating.lean": "94fb02741c2ec87b063d173adb824941fefca1d8556bcf3faf1e219d8b2508bf",
+    "PositiveDeterminant.lean": "5e55b4b5eae6ff4a94a19c8281f85365769b57e11f09f2bd9999293b01f5c32b"
+  },
+  "line_endings": "Vendored proof bodies preserve the Windows source checkout bytes; canonical source Git blob hashes are supplied separately.",
+  "target_definitions_exposed": [
+    "TournamentPaths.IsHamiltonPath",
+    "TournamentPaths.pathCount"
+  ]
+}

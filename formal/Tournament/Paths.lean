@@ -62,7 +62,7 @@ def augment {V : Type*} (T : Tournament V) (f : V → Bool) :
       exact h (congrArg some he)
 
 /-- The consecutive-edge condition for an ordering of all `n+1` vertices. -/
-def IsHamiltonPath {n : ℕ} (T : Tournament (Fin (n + 1)))
+@[expose] def IsHamiltonPath {n : ℕ} (T : Tournament (Fin (n + 1)))
     (p : Equiv.Perm (Fin (n + 1))) : Prop :=
   ∀ i : Fin n, T.edge (p i.castSucc) (p i.succ) = true
 
@@ -75,7 +75,7 @@ def IsRootedHamiltonCycle {n : ℕ} (T : Tournament (Option (Fin (n + 1))))
   T.edge (some (p (Fin.last n))) none = true
 
 /-- Number of Hamilton paths, counted by their vertex order. -/
-noncomputable def pathCount {n : ℕ} (T : Tournament (Fin (n + 1))) : ℕ := by
+@[expose] noncomputable def pathCount {n : ℕ} (T : Tournament (Fin (n + 1))) : ℕ := by
   classical
   exact ∑ p : Equiv.Perm (Fin (n + 1)), if IsHamiltonPath T p then 1 else 0
 
@@ -196,3 +196,4 @@ theorem one_vertex_average_not_quarter (T : Tournament (Fin 1)) :
     one_vertex_path_count]
 
 end TournamentPaths
+

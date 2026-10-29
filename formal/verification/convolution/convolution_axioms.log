@@ -1,0 +1,21 @@
+'TournamentPaths.isHamiltonPathFinite_iff_legacy' depends on axioms: [Quot.sound]
+'TournamentPaths.isHamiltonPathFinite_iff' depends on axioms: [propext, Quot.sound]
+'TournamentPaths.pathCountFinite_eq_legacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentPaths.pathCountFinite_eq_pathCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentPaths.adjacency_toLegacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentPaths.principalWeightMatrix_toLegacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentPaths.pathConvolutionSum_eq_legacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentPaths.pathCountFinite_eq_pathConvolutionSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentPaths.pathCount_eq_pathConvolutionSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentPaths.pathCount_eq_positive_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentPaths.empty_path_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentPaths.empty_path_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentPaths.singleton_path_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TournamentHamiltonian.pathCount_eq_pathConvolutionSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+TournamentPaths.pathCount_eq_positive_convolution {n : ℕ} (T : TournamentPaths.Tournament (Fin (n + 1))) :
+  ↑(TournamentPaths.pathCount T) =
+    ∑ U,
+      (1 + (TournamentPaths.adjacency T).submatrix Subtype.val Subtype.val).det *
+        ((TournamentPaths.adjacency T).submatrix Subtype.val Subtype.val).permanent
+TournamentPaths.pathCountFinite_eq_pathConvolutionSum {n : ℕ} (T : TournamentPaths.Tournament (Fin n)) :
+  ↑(TournamentPaths.pathCountFinite T) = TournamentPaths.pathConvolutionSum T
