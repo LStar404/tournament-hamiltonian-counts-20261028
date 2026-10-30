@@ -4869,6 +4869,8 @@ $$
 
 配套的旧版路径主界形式化由叶祥宇完成，其上界首项常数为 $C_*>L$，精确陈述和覆盖范围见[旧仓库核验记录](https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md)。它不构成配套合稿锐常数定量渐近定理的端到端形式化，也不表示本技术补充每一处改写均已逐项机器核对。文字整理及部分证明检查使用了 AI 辅助。
 
+本工程另为配套合稿定理 1.1 的锐常数定量渐近及覆盖表所列编号结果提供对应的 Lean 端点，不改变上述旧工程的结论或归属。这不表示本文每句话、全部替代证明，或完整的 SVD、矩形矩阵核范数背景均已形式化。具体对应与核验版本见 `formal/COVERAGE.zh.md` 及相应核验记录；历史记录和来源哈希保持其原有含义。
+
 ## 参考文献
 
 [1] John Irving and Mohamed Omar. Revisiting the Rédei-Berge Symmetric Functions via Matrix Algebra. The Electronic Journal of Combinatorics 32(4) (2025), Paper P4.43, 23 pp. [DOI: 10.37236/13841](https://doi.org/10.37236/13841).

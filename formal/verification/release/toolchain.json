@@ -1,0 +1,15 @@
+{
+  "lean_version": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "lean_binary_sha256": "bf8d54e4714cc4b03d3f6bb34c83b7202b87e49c8bfcbff6895c085bb90ceb38",
+  "lake_binary_sha256": "8ba83c98f76562d03b8dbc33f1057151ba6cbb121679dde76b2260ccc90495e1",
+  "lean_githash": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+  "LEAN_NUM_THREADS": 2,
+  "bounded_ready_project_targets": 2,
+  "LAKE_NO_CACHE": true,
+  "LAKE_ARTIFACT_CACHE": false,
+  "LAKE_RESTORE_ARTIFACTS": false,
+  "LAKE_CACHE_DIR_empty_disables_system_cache": true,
+  "initial_LEAN_PATH_unset": true,
+  "shared_only_pinned_external_cache": true,
+  "not_all_mathlib_cold_build": true
+}

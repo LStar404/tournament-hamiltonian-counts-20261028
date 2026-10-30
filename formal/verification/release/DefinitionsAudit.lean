@@ -1,0 +1,49 @@
+module
+import Tournament
+set_option pp.fullNames true
+set_option pp.explicit true
+set_option format.width 160
+#print TournamentHamiltonian.Tournament
+#print TournamentHamiltonian.pathCount
+#print TournamentHamiltonian.maxPaths
+#print TournamentHamiltonian.meanPaths
+#print TournamentHamiltonian.spectralRatio
+#print TournamentHamiltonian.comparisonMatrix
+#print TournamentHamiltonian.Equality.prefixTruncationMax
+#print UniformBlowup.Sample
+#print UniformBlowup.blowup
+#print UniformBlowup.Cycle
+#print UniformBlowup.IsPath
+#print UniformBlowup.pathCount
+#print UniformBlowup.cycleCount
+#print UniformBlowup.avgPath
+#print UniformBlowup.avgCycle
+#print UniformBlowup.weight
+#print RegularOrientation.RegularSample
+#print RegularOrientation.regularSampleBits
+#print NonregularDecay.regularAvgPath
+#print NonregularDecay.regularAvgCycle
+#print FiniteFamilyGap.CarouselClass
+#print FiniteExtremum.UniformMaximumAt
+#print FiniteExtremum.RegularMaximumAt
+#print Tournament.HessianMain.originalAngle
+#print Tournament.HessianMain.angleHessian
+#print Tournament.OriginalCoordinates.originalMatrix
+#print Tournament.HessianBranch.K
+#print PaperGaussianRecovery.paperW
+#print PaperGaussianRecovery.paperD
+#print PaperGaussianRecovery.paperT
+#print PaperGaussianRecovery.paperAlpha
+#print PaperGaussianRecovery.paperBudget
+#print PaperGaussianRecovery.gaussianRecoveryBudget
+#print TournamentPaths.Tournament
+#print TournamentPaths.pathCount
+#print TournamentPaths.uniformAugmentedCycleAverage
+#print NonregularDecay.meanCycles
+#print RegularOrientation.RegularTournament
+#print UniformBlockMatrix.IsRegular
+#print TournamentHamiltonian.Equality.SignedPermutationTransitive
+#print TournamentHamiltonian.Equality.signedPermutationMatrix
+#print TournamentHamiltonian.transitiveRatio
+#print TournamentHamiltonian.binomialMean
+#print TournamentHamiltonian.transitiveKernel

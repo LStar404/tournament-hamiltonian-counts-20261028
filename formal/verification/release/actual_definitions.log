@@ -1,0 +1,2181 @@
+@[reducible] def TournamentHamiltonian.Tournament : Nat → Type :=
+fun n => @Subtype (Fin n → Fin n → Bool) fun A => @TournamentHamiltonian.IsTournament n A
+def TournamentHamiltonian.pathCount : {n : Nat} → TournamentHamiltonian.Tournament n → Nat :=
+fun {n} T =>
+  @Finset.card (Equiv.Perm (Fin n))
+    (@Finset.filter (Equiv.Perm (Fin n)) (@TournamentHamiltonian.IsHamiltonian n T)
+      (fun a => Classical.propDecidable (@TournamentHamiltonian.IsHamiltonian n T a))
+      (@Finset.univ (Equiv.Perm (Fin n))
+        (@Equiv.instFintype (Fin n) (Fin n) (instDecidableEqFin n) (instDecidableEqFin n) (Fin.fintype n)
+          (Fin.fintype n))))
+def TournamentHamiltonian.maxPaths : Nat → Nat :=
+fun n =>
+  @Finset.sup Nat (TournamentHamiltonian.Tournament n) (@Lattice.toSemilatticeSup Nat Nat.instLattice) Nat.instOrderBot
+    (@Finset.univ (TournamentHamiltonian.Tournament n) (TournamentHamiltonian.instFintypeTournament n))
+    (@TournamentHamiltonian.pathCount n)
+def TournamentHamiltonian.meanPaths : Nat → Real :=
+fun n =>
+  @HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+    (@Nat.cast Real Real.instNatCast n.factorial)
+    (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))
+      (@OfNat.ofNat Real (nat_lit 2)
+        (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast TournamentHamiltonian.meanPaths._proof_1))
+      (@HSub.hSub Nat Nat Nat (@instHSub Nat instSubNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+def TournamentHamiltonian.spectralRatio : {n : Nat} → TournamentHamiltonian.Tournament n → Real :=
+fun {n} T =>
+  @HMul.hMul Real Real Real (@instHMul Real Real.instMul) (@TournamentHamiltonian.gaussianFactor n T)
+    (@Matrix.det (Fin n) (instDecidableEqFin n) (Fin.fintype n) Real Real.commRing
+      (@HAdd.hAdd (Matrix (Fin n) (Fin n) Real) (Matrix (Fin n) (Fin n) Real) (Matrix (Fin n) (Fin n) Real)
+        (@instHAdd (Matrix (Fin n) (Fin n) Real) (@Matrix.add (Fin n) (Fin n) Real Real.instAdd))
+        (@OfNat.ofNat (Matrix (Fin n) (Fin n) Real) (nat_lit 1)
+          (@One.toOfNat1 (Matrix (Fin n) (Fin n) Real)
+            (@Matrix.one (Fin n) Real (instDecidableEqFin n) Real.instZero Real.instOne)))
+        (@HSMul.hSMul Real (Matrix (Fin n) (Fin n) Real) (Matrix (Fin n) (Fin n) Real)
+          (@instHSMul Real (Matrix (Fin n) (Fin n) Real)
+            (@Matrix.smul (Fin n) (Fin n) Real Real (@instSMulOfMul Real Real.instMul)))
+          (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+            (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) (@Nat.cast Real Real.instNatCast n))
+          (@TournamentHamiltonian.signMatrix n T))))
+def TournamentHamiltonian.comparisonMatrix : (n : Nat) → Matrix (Fin n) (Fin n) Real :=
+fun n i j => TournamentHamiltonian.comparisonKernel n (@Fin.val n i) (@Fin.val n j)
+def TournamentHamiltonian.Equality.prefixTruncationMax : {n : Nat} → (Fin n → Real) → Real → Real :=
+fun {n} u t =>
+  @Finset.sup' Real Nat Real.instSemilatticeSup
+    (Finset.range
+      (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+    ⋯ fun r =>
+    @HSub.hSub Real Real Real (@instHSub Real Real.instSub) (@TournamentHamiltonian.finPrefixSum n u r)
+      (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (@Nat.cast Real Real.instNatCast r) t)
+@[reducible] def UniformBlowup.Sample : Nat → Nat → Type :=
+fun d m => UniformBlowup.Coord d m → Bool
+def UniformBlowup.blowup : {d m : Nat} →
+  TournamentHamiltonian.Tournament d →
+    UniformBlowup.Sample d m →
+      Equiv (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)) (UniformBlowup.Vertex d m) →
+        TournamentHamiltonian.Tournament (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m) :=
+fun {d m} T ω e =>
+  @Subtype.mk
+    (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m) →
+      Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m) → Bool)
+    (fun A => @TournamentHamiltonian.IsTournament (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m) A)
+    (fun i j =>
+      @UniformBlowup.arc d m T ω
+        (@DFunLike.coe (Equiv (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)) (UniformBlowup.Vertex d m))
+          (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)) (fun x => UniformBlowup.Vertex d m)
+          (@EquivLike.toFunLike
+            (Equiv (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)) (UniformBlowup.Vertex d m))
+            (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)) (UniformBlowup.Vertex d m)
+            (@Equiv.instEquivLike (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m))
+              (UniformBlowup.Vertex d m)))
+          e i)
+        (@DFunLike.coe (Equiv (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)) (UniformBlowup.Vertex d m))
+          (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)) (fun x => UniformBlowup.Vertex d m)
+          (@EquivLike.toFunLike
+            (Equiv (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)) (UniformBlowup.Vertex d m))
+            (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)) (UniformBlowup.Vertex d m)
+            (@Equiv.instEquivLike (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m))
+              (UniformBlowup.Vertex d m)))
+          e j))
+    ⋯
+@[reducible] def UniformBlowup.Cycle : Nat → Nat → Type :=
+fun d m =>
+  @Subtype (Equiv.Perm (UniformBlowup.Vertex d m)) fun σ =>
+    And (@Equiv.Perm.IsCycle (UniformBlowup.Vertex d m) σ)
+      (@Eq (Finset (UniformBlowup.Vertex d m))
+        (@Equiv.Perm.support (UniformBlowup.Vertex d m)
+          (fun a b => @instDecidableEqProd (Fin d) (Fin m) (instDecidableEqFin d) (instDecidableEqFin m) a b)
+          (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m)) σ)
+        (@Finset.univ (UniformBlowup.Vertex d m) (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m))))
+def UniformBlowup.IsPath : {d m : Nat} →
+  TournamentHamiltonian.Tournament d → UniformBlowup.Sample d m → UniformBlowup.Arrangement d m → Prop :=
+fun {d m} T ω π =>
+  ∀ (r : UniformBlowup.Step (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)),
+    @Eq Bool (@UniformBlowup.arc d m T ω (@UniformBlowup.tail d m π r) (@UniformBlowup.head d m π r)) Bool.true
+def UniformBlowup.pathCount : {d m : Nat} → TournamentHamiltonian.Tournament d → UniformBlowup.Sample d m → Nat :=
+fun {d m} T ω =>
+  @Finset.card (UniformBlowup.Arrangement d m)
+    (@Finset.filter (UniformBlowup.Arrangement d m) (@UniformBlowup.IsPath d m T ω)
+      (fun a => Classical.propDecidable (@UniformBlowup.IsPath d m T ω a))
+      (@Finset.univ (UniformBlowup.Arrangement d m)
+        (@Equiv.instFintype (Fin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m)) (UniformBlowup.Vertex d m)
+          (instDecidableEqFin (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m))
+          (fun a b => @instDecidableEqProd (Fin d) (Fin m) (instDecidableEqFin d) (instDecidableEqFin m) a b)
+          (Fin.fintype (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) d m))
+          (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m)))))
+def UniformBlowup.cycleCount : {d m : Nat} → TournamentHamiltonian.Tournament d → UniformBlowup.Sample d m → Nat :=
+fun {d m} T ω =>
+  @Finset.card (UniformBlowup.Cycle d m)
+    (@Finset.filter (UniformBlowup.Cycle d m) (@UniformBlowup.IsCyclePresent d m T ω)
+      (fun a => Classical.propDecidable (@UniformBlowup.IsCyclePresent d m T ω a))
+      (@Finset.univ (UniformBlowup.Cycle d m)
+        (@Subtype.fintype (Equiv.Perm (UniformBlowup.Vertex d m))
+          (fun σ =>
+            And (@Equiv.Perm.IsCycle (UniformBlowup.Vertex d m) σ)
+              (@Eq (Finset (UniformBlowup.Vertex d m))
+                (@Equiv.Perm.support (UniformBlowup.Vertex d m)
+                  (fun a b => @instDecidableEqProd (Fin d) (Fin m) (instDecidableEqFin d) (instDecidableEqFin m) a b)
+                  (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m)) σ)
+                (@Finset.univ (UniformBlowup.Vertex d m)
+                  (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m)))))
+          (fun a =>
+            @instDecidableAnd (@Equiv.Perm.IsCycle (UniformBlowup.Vertex d m) a)
+              (@Eq (Finset (UniformBlowup.Vertex d m))
+                (@Equiv.Perm.support (UniformBlowup.Vertex d m)
+                  (fun a b => @instDecidableEqProd (Fin d) (Fin m) (instDecidableEqFin d) (instDecidableEqFin m) a b)
+                  (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m)) a)
+                (@Finset.univ (UniformBlowup.Vertex d m)
+                  (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m))))
+              (Classical.propDecidable (@Equiv.Perm.IsCycle (UniformBlowup.Vertex d m) a))
+              (@Finset.decidableEq (UniformBlowup.Vertex d m)
+                (fun a b => @instDecidableEqProd (Fin d) (Fin m) (instDecidableEqFin d) (instDecidableEqFin m) a b)
+                (@Equiv.Perm.support (UniformBlowup.Vertex d m)
+                  (fun a b => @instDecidableEqProd (Fin d) (Fin m) (instDecidableEqFin d) (instDecidableEqFin m) a b)
+                  (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m)) a)
+                (@Finset.univ (UniformBlowup.Vertex d m)
+                  (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m)))))
+          (@Equiv.instFintype (UniformBlowup.Vertex d m) (UniformBlowup.Vertex d m)
+            (fun a b => @instDecidableEqProd (Fin d) (Fin m) (instDecidableEqFin d) (instDecidableEqFin m) a b)
+            (fun a b => @instDecidableEqProd (Fin d) (Fin m) (instDecidableEqFin d) (instDecidableEqFin m) a b)
+            (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m))
+            (@instFintypeProd (Fin d) (Fin m) (Fin.fintype d) (Fin.fintype m))))))
+def UniformBlowup.avgPath : {d : Nat} → {m : Nat} → TournamentHamiltonian.Tournament d → Real :=
+fun {d m} T =>
+  @HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+    (∑ ω, @Nat.cast Real Real.instNatCast (@UniformBlowup.pathCount d m T ω))
+    (@Nat.cast Real Real.instNatCast
+      (@Fintype.card (UniformBlowup.Sample d m)
+        (@Pi.instFintype (UniformBlowup.Coord d m) (fun a => Bool)
+          (fun a b =>
+            @instDecidableEqProd (Fin d) (UniformBlowup.Edge m) (instDecidableEqFin d)
+              (fun a b =>
+                @Subtype.instDecidableEq (Prod (Fin m) (Fin m))
+                  (fun x => @LT.lt (Fin m) (@instLTFin m) (@Prod.fst (Fin m) (Fin m) x) (@Prod.snd (Fin m) (Fin m) x))
+                  (fun a b => @instDecidableEqProd (Fin m) (Fin m) (instDecidableEqFin m) (instDecidableEqFin m) a b) a
+                  b)
+              a b)
+          (@instFintypeProd (Fin d) (UniformBlowup.Edge m) (Fin.fintype d)
+            (@Subtype.fintype (Prod (Fin m) (Fin m))
+              (fun p => @LT.lt (Fin m) (@instLTFin m) (@Prod.fst (Fin m) (Fin m) p) (@Prod.snd (Fin m) (Fin m) p))
+              (fun a => @Fin.decLt m (@Prod.fst (Fin m) (Fin m) a) (@Prod.snd (Fin m) (Fin m) a))
+              (@instFintypeProd (Fin m) (Fin m) (Fin.fintype m) (Fin.fintype m))))
+          fun a => Bool.fintype)))
+def UniformBlowup.avgCycle : {d : Nat} → {m : Nat} → TournamentHamiltonian.Tournament d → Real :=
+fun {d m} T =>
+  @HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+    (∑ ω, @Nat.cast Real Real.instNatCast (@UniformBlowup.cycleCount d m T ω))
+    (@Nat.cast Real Real.instNatCast
+      (@Fintype.card (UniformBlowup.Sample d m)
+        (@Pi.instFintype (UniformBlowup.Coord d m) (fun a => Bool)
+          (fun a b =>
+            @instDecidableEqProd (Fin d) (UniformBlowup.Edge m) (instDecidableEqFin d)
+              (fun a b =>
+                @Subtype.instDecidableEq (Prod (Fin m) (Fin m))
+                  (fun x => @LT.lt (Fin m) (@instLTFin m) (@Prod.fst (Fin m) (Fin m) x) (@Prod.snd (Fin m) (Fin m) x))
+                  (fun a b => @instDecidableEqProd (Fin m) (Fin m) (instDecidableEqFin m) (instDecidableEqFin m) a b) a
+                  b)
+              a b)
+          (@instFintypeProd (Fin d) (UniformBlowup.Edge m) (Fin.fintype d)
+            (@Subtype.fintype (Prod (Fin m) (Fin m))
+              (fun p => @LT.lt (Fin m) (@instLTFin m) (@Prod.fst (Fin m) (Fin m) p) (@Prod.snd (Fin m) (Fin m) p))
+              (fun a => @Fin.decLt m (@Prod.fst (Fin m) (Fin m) a) (@Prod.snd (Fin m) (Fin m) a))
+              (@instFintypeProd (Fin m) (Fin m) (Fin.fintype m) (Fin.fintype m))))
+          fun a => Bool.fintype)))
+def UniformBlowup.weight : {d m : Nat} →
+  TournamentHamiltonian.Tournament d → UniformBlowup.Vertex d m → UniformBlowup.Vertex d m → Real :=
+fun {d m} T u v =>
+  @ite Real (@Eq (UniformBlowup.Vertex d m) u v)
+    (@instDecidableEqProd (Fin d) (Fin m) (instDecidableEqFin d) (instDecidableEqFin m) u v)
+    (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))
+    (@ite Real (@Eq (Fin d) (@Prod.fst (Fin d) (Fin m) u) (@Prod.fst (Fin d) (Fin m) v))
+      (instDecidableEqFin d (@Prod.fst (Fin d) (Fin m) u) (@Prod.fst (Fin d) (Fin m) v))
+      (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+        (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))
+        (@OfNat.ofNat Real (nat_lit 2)
+          (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast UniformBlowup.weight._proof_1)))
+      (@ite Real
+        (@Eq Bool
+          (@Subtype.val (Fin d → Fin d → Bool) (fun A => @TournamentHamiltonian.IsTournament d A) T
+            (@Prod.fst (Fin d) (Fin m) u) (@Prod.fst (Fin d) (Fin m) v))
+          Bool.true)
+        (instDecidableEqBool
+          (@Subtype.val (Fin d → Fin d → Bool) (fun A => @TournamentHamiltonian.IsTournament d A) T
+            (@Prod.fst (Fin d) (Fin m) u) (@Prod.fst (Fin d) (Fin m) v))
+          Bool.true)
+        (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))
+        (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))))
+@[reducible] def RegularOrientation.RegularSample : Nat → Nat → Type :=
+fun d k =>
+  Fin d →
+    RegularOrientation.RegularTournament
+      (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+        (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+        (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+def RegularOrientation.regularSampleBits : {d k : Nat} →
+  RegularOrientation.RegularSample d k →
+    UniformBlowup.Sample d
+      (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+        (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+        (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) :=
+fun {d k} ω =>
+  @DFunLike.coe
+    (Equiv
+      (Fin d →
+        TournamentHamiltonian.Tournament
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+            (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              k)
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (UniformBlowup.Sample d
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            k)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
+    (Fin d →
+      TournamentHamiltonian.Tournament
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            k)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+    (fun x =>
+      UniformBlowup.Sample d
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            k)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+    (@EquivLike.toFunLike
+      (Equiv
+        (Fin d →
+          TournamentHamiltonian.Tournament
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+              (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+        (UniformBlowup.Sample d
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+            (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              k)
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
+      (Fin d →
+        TournamentHamiltonian.Tournament
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+            (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              k)
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (UniformBlowup.Sample d
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            k)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (@Equiv.instEquivLike
+        (Fin d →
+          TournamentHamiltonian.Tournament
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+              (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+        (UniformBlowup.Sample d
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+            (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              k)
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))))
+    (@Equiv.symm
+      (UniformBlowup.Sample d
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            k)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (Fin d →
+        TournamentHamiltonian.Tournament
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+            (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              k)
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (UniformBlowup.blockTournamentEquiv d
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            k)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
+    fun i =>
+    @Subtype.val
+      (TournamentHamiltonian.Tournament
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            k)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (fun T =>
+        @RegularOrientation.IsRegular
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+            (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              k)
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+          T)
+      (ω i)
+def NonregularDecay.regularAvgPath : {d : Nat} → TournamentHamiltonian.Tournament d → Nat → Real :=
+fun {d} T k =>
+  @HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+    (∑ ω,
+      @Nat.cast Real Real.instNatCast
+        (@UniformBlowup.pathCount d
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+            (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              k)
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+          T (@RegularOrientation.regularSampleBits d k ω)))
+    (@Nat.cast Real Real.instNatCast
+      (@Fintype.card (RegularOrientation.RegularSample d k)
+        (@Pi.instFintype (Fin d)
+          (fun a =>
+            RegularOrientation.RegularTournament
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+          (instDecidableEqFin d) (Fin.fintype d) fun a =>
+          @Subtype.fintype
+            (TournamentHamiltonian.Tournament
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+            (@RegularOrientation.IsRegular
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+            (fun a =>
+              Classical.propDecidable
+                (@RegularOrientation.IsRegular
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                    (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                      (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                  a))
+            (TournamentHamiltonian.instFintypeTournament
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))))
+def NonregularDecay.regularAvgCycle : {d : Nat} → TournamentHamiltonian.Tournament d → Nat → Real :=
+fun {d} T k =>
+  @HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+    (∑ ω,
+      @Nat.cast Real Real.instNatCast
+        (@UniformBlowup.cycleCount d
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+            (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              k)
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+          T (@RegularOrientation.regularSampleBits d k ω)))
+    (@Nat.cast Real Real.instNatCast
+      (@Fintype.card (RegularOrientation.RegularSample d k)
+        (@Pi.instFintype (Fin d)
+          (fun a =>
+            RegularOrientation.RegularTournament
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+          (instDecidableEqFin d) (Fin.fintype d) fun a =>
+          @Subtype.fintype
+            (TournamentHamiltonian.Tournament
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+            (@RegularOrientation.IsRegular
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+            (fun a =>
+              Classical.propDecidable
+                (@RegularOrientation.IsRegular
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                    (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                      (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+                  a))
+            (TournamentHamiltonian.instFintypeTournament
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))))
+def FiniteFamilyGap.CarouselClass : (h : Nat) →
+  TournamentHamiltonian.Tournament
+      (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+        (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+        (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+    Prop :=
+fun h T =>
+  ∃ e,
+    @Eq
+      (TournamentHamiltonian.Tournament
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            h)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (@TournamentHamiltonian.relabelTournament
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            h)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+        T e)
+      (TournamentHamiltonian.carouselTournament h)
+def FiniteExtremum.UniformMaximumAt : Nat → Nat → Prop :=
+fun h m =>
+  ∀
+    (T :
+      TournamentHamiltonian.Tournament
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            h)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))),
+    And
+      (And
+        (@LE.le Real Real.instLE
+          (@UniformBlowup.avgCycle
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+              (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+            m T)
+          (@UniformBlowup.avgCycle
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+              (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+            m (TournamentHamiltonian.carouselTournament h)))
+        (Iff
+          (@Eq Real
+            (@UniformBlowup.avgCycle
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              m T)
+            (@UniformBlowup.avgCycle
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              m (TournamentHamiltonian.carouselTournament h)))
+          (FiniteFamilyGap.CarouselClass h T)))
+      (And
+        (@LE.le Real Real.instLE
+          (@UniformBlowup.avgPath
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+              (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+            m T)
+          (@UniformBlowup.avgPath
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+              (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+            m (TournamentHamiltonian.carouselTournament h)))
+        (Iff
+          (@Eq Real
+            (@UniformBlowup.avgPath
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              m T)
+            (@UniformBlowup.avgPath
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              m (TournamentHamiltonian.carouselTournament h)))
+          (FiniteFamilyGap.CarouselClass h T)))
+def FiniteExtremum.RegularMaximumAt : Nat → Nat → Prop :=
+fun h k =>
+  ∀
+    (T :
+      TournamentHamiltonian.Tournament
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+          (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            h)
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))),
+    And
+      (And
+        (@LE.le Real Real.instLE
+          (@NonregularDecay.regularAvgCycle
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+              (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+            T k)
+          (@NonregularDecay.regularAvgCycle
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+              (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+            (TournamentHamiltonian.carouselTournament h) k))
+        (Iff
+          (@Eq Real
+            (@NonregularDecay.regularAvgCycle
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              T k)
+            (@NonregularDecay.regularAvgCycle
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              (TournamentHamiltonian.carouselTournament h) k))
+          (FiniteFamilyGap.CarouselClass h T)))
+      (And
+        (@LE.le Real Real.instLE
+          (@NonregularDecay.regularAvgPath
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+              (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+            T k)
+          (@NonregularDecay.regularAvgPath
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+              (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+            (TournamentHamiltonian.carouselTournament h) k))
+        (Iff
+          (@Eq Real
+            (@NonregularDecay.regularAvgPath
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              T k)
+            (@NonregularDecay.regularAvgPath
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+                (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+                  (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) h)
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+              (TournamentHamiltonian.carouselTournament h) k))
+          (FiniteFamilyGap.CarouselClass h T)))
+def Tournament.HessianMain.originalAngle : {n : Nat} →
+  TournamentPaths.Tournament
+      (Fin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))) →
+    (Fin n → Real) → Complex :=
+fun {n} T θ =>
+  Complex.log
+    (@Tournament.HessianBranch.branch
+      (Fin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (Fin.fintype
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (instDecidableEqFin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (@Tournament.OriginalCoordinates.originalMatrix
+        (Fin
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+        (Fin.fintype
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+        (instDecidableEqFin
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+        T)
+      (Fin.last n)
+      (@Tournament.HessianBranch.expCoordinates
+        (Fin
+          (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+            (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+        (@Tournament.OriginalCoordinates.coordinateScale
+          (Fin
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+          (Fin.fintype
+            (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+              (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
+        (@HSMul.hSMul Complex
+          (Fin
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+            Complex)
+          (Fin
+              (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+            Complex)
+          (@instHSMul Complex
+            (Fin
+                (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                  (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+              Complex)
+            (@Function.hasSMul
+              (Fin
+                (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                  (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+              Complex Complex (@instSMulOfMul Complex Complex.instMul)))
+          Complex.I
+          (@DFunLike.coe
+            (@ContinuousLinearMap Real Real Real.semiring Real.semiring
+              (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) (Fin n → Real)
+              (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+                @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+              (@Pi.addCommMonoid (Fin n) (fun a => Real) fun i => Real.instAddCommMonoid)
+              (Fin
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+                Complex)
+              (@Pi.topologicalSpace
+                (Fin
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                (fun a => Complex) fun i =>
+                @UniformSpace.toTopologicalSpace Complex
+                  (@PseudoMetricSpace.toUniformSpace Complex
+                    (@SeminormedRing.toPseudoMetricSpace Complex
+                      (@SeminormedCommRing.toSeminormedRing Complex
+                        (@NormedCommRing.toSeminormedCommRing Complex
+                          (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+              (@Pi.addCommMonoid
+                (Fin
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                (fun a => Complex) fun i => Complex.instAddCommMonoid)
+              (@Pi.Function.module (Fin n) Real Real Real.semiring Real.instAddCommMonoid
+                (@Semiring.toModule Real Real.semiring))
+              (@Pi.Function.module
+                (Fin
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                Real Complex Real.semiring Complex.instAddCommMonoid
+                (@NormedSpace.toModule Real Complex Real.normedField
+                  (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                    (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                      (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                        (@NormedCommRing.toSeminormedCommRing Complex
+                          (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+                  (@NormedSpace.complexToReal Complex
+                    (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                      (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                        (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                          (@NormedCommRing.toSeminormedCommRing Complex
+                            (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+                    (@NormedField.toNormedSpace Complex Complex.instNormedField)))))
+            (Fin n → Real)
+            (fun x =>
+              Fin
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+                Complex)
+            (@ContinuousLinearMap.funLike Real Real Real.semiring Real.semiring
+              (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) (Fin n → Real)
+              (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+                @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+              (@Pi.addCommMonoid (Fin n) (fun a => Real) fun i => Real.instAddCommMonoid)
+              (Fin
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+                Complex)
+              (@Pi.topologicalSpace
+                (Fin
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                (fun a => Complex) fun i =>
+                @UniformSpace.toTopologicalSpace Complex
+                  (@PseudoMetricSpace.toUniformSpace Complex
+                    (@SeminormedRing.toPseudoMetricSpace Complex
+                      (@SeminormedCommRing.toSeminormedRing Complex
+                        (@NormedCommRing.toSeminormedCommRing Complex
+                          (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+              (@Pi.addCommMonoid
+                (Fin
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                (fun a => Complex) fun i => Complex.instAddCommMonoid)
+              (@Pi.Function.module (Fin n) Real Real Real.semiring Real.instAddCommMonoid
+                (@Semiring.toModule Real Real.semiring))
+              (@Pi.Function.module
+                (Fin
+                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+                Real Complex Real.semiring Complex.instAddCommMonoid
+                (@NormedSpace.toModule Real Complex Real.normedField
+                  (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                    (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                      (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                        (@NormedCommRing.toSeminormedCommRing Complex
+                          (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+                  (@NormedSpace.complexToReal Complex
+                    (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                      (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                        (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                          (@NormedCommRing.toSeminormedCommRing Complex
+                            (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+                    (@NormedField.toNormedSpace Complex Complex.instNormedField)))))
+            (Tournament.HessianCoordinates.realIncludeFirst n) θ))))
+def Tournament.HessianMain.angleHessian : {n : Nat} →
+  TournamentPaths.Tournament
+      (Fin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))) →
+    Matrix (Fin n) (Fin n) Complex :=
+fun {n} T j k =>
+  @DFunLike.coe
+    (@ContinuousLinearMap Real Real
+      (@CommSemiring.toSemiring Real
+        (@Semifield.toCommSemiring Real
+          (@Field.toSemifield Real
+            (@NormedField.toField Real
+              (@NontriviallyNormedField.toNormedField Real
+                (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+      (@CommSemiring.toSemiring Real
+        (@Semifield.toCommSemiring Real
+          (@Field.toSemifield Real
+            (@NormedField.toField Real
+              (@NontriviallyNormedField.toNormedField Real
+                (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+      (@RingHom.id Real
+        (@Semiring.toNonAssocSemiring Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+      (Fin n → Real)
+      (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+        @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+      (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+        (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+      Complex
+      (@UniformSpace.toTopologicalSpace Complex
+        (@PseudoMetricSpace.toUniformSpace Complex
+          (@SeminormedRing.toPseudoMetricSpace Complex
+            (@SeminormedCommRing.toSeminormedRing Complex
+              (@NormedCommRing.toSeminormedCommRing Complex
+                (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+      (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+      (@Pi.Function.module (Fin n) Real Real
+        (@CommSemiring.toSemiring Real
+          (@Semifield.toCommSemiring Real
+            (@Field.toSemifield Real
+              (@NormedField.toField Real
+                (@NontriviallyNormedField.toNormedField Real
+                  (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+        (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+        (@Semiring.toModule Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+      (@NormedSpace.toModule Real Complex Real.normedField
+        (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+          (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+            (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+              (@NormedCommRing.toSeminormedCommRing Complex
+                (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+        (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+          (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+            (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+              (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                (@NormedCommRing.toSeminormedCommRing Complex
+                  (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+          instInnerProductSpaceRealComplex)))
+    (Fin n → Real) (fun x => Complex)
+    (@ContinuousLinearMap.funLike Real Real
+      (@CommSemiring.toSemiring Real
+        (@Semifield.toCommSemiring Real
+          (@Field.toSemifield Real
+            (@NormedField.toField Real
+              (@NontriviallyNormedField.toNormedField Real
+                (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+      (@CommSemiring.toSemiring Real
+        (@Semifield.toCommSemiring Real
+          (@Field.toSemifield Real
+            (@NormedField.toField Real
+              (@NontriviallyNormedField.toNormedField Real
+                (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+      (@RingHom.id Real
+        (@Semiring.toNonAssocSemiring Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+      (Fin n → Real)
+      (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+        @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+      (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+        (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+      Complex
+      (@UniformSpace.toTopologicalSpace Complex
+        (@PseudoMetricSpace.toUniformSpace Complex
+          (@SeminormedRing.toPseudoMetricSpace Complex
+            (@SeminormedCommRing.toSeminormedRing Complex
+              (@NormedCommRing.toSeminormedCommRing Complex
+                (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+      (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+      (@Pi.Function.module (Fin n) Real Real
+        (@CommSemiring.toSemiring Real
+          (@Semifield.toCommSemiring Real
+            (@Field.toSemifield Real
+              (@NormedField.toField Real
+                (@NontriviallyNormedField.toNormedField Real
+                  (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+        (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+        (@Semiring.toModule Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+      (@NormedSpace.toModule Real Complex Real.normedField
+        (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+          (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+            (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+              (@NormedCommRing.toSeminormedCommRing Complex
+                (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+        (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+          (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+            (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+              (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                (@NormedCommRing.toSeminormedCommRing Complex
+                  (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+          instInnerProductSpaceRealComplex)))
+    (@DFunLike.coe
+      (@ContinuousLinearMap Real Real
+        (@CommSemiring.toSemiring Real
+          (@Semifield.toCommSemiring Real
+            (@Field.toSemifield Real
+              (@NormedField.toField Real
+                (@NontriviallyNormedField.toNormedField Real
+                  (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+        (@CommSemiring.toSemiring Real
+          (@Semifield.toCommSemiring Real
+            (@Field.toSemifield Real
+              (@NormedField.toField Real
+                (@NontriviallyNormedField.toNormedField Real
+                  (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+        (@RingHom.id Real
+          (@Semiring.toNonAssocSemiring Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+        (Fin n → Real)
+        (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+          @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+        (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+          (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+        (@ContinuousLinearMap Real Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (Fin n → Real)
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+            (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+          Complex
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex)))
+        (@ContinuousLinearMap.topologicalSpace Real Real Real.normedField Real.normedField
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (Fin n → Real) Complex (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup)
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          Complex.addCommGroup
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          Tournament.HessianMain.angleHessian._proof_1)
+        (@AddCommGroup.toAddCommMonoid
+          (@ContinuousLinearMap Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@RingHom.id Real
+              (@Semiring.toNonAssocSemiring Real
+                (@CommSemiring.toSemiring Real
+                  (@Semifield.toCommSemiring Real
+                    (@Field.toSemifield Real
+                      (@NormedField.toField Real
+                        (@NontriviallyNormedField.toNormedField Real
+                          (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+            (Fin n → Real)
+            (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+              @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+            (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+              (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+            Complex
+            (@UniformSpace.toTopologicalSpace Complex
+              (@PseudoMetricSpace.toUniformSpace Complex
+                (@SeminormedRing.toPseudoMetricSpace Complex
+                  (@SeminormedCommRing.toSeminormedRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+            (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+            (@Pi.Function.module (Fin n) Real Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+              (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+              (@Semiring.toModule Real
+                (@CommSemiring.toSemiring Real
+                  (@Semifield.toCommSemiring Real
+                    (@Field.toSemifield Real
+                      (@NormedField.toField Real
+                        (@NontriviallyNormedField.toNormedField Real
+                          (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+            (@NormedSpace.toModule Real Complex Real.normedField
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+                (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                  (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                    (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                      (@NormedCommRing.toSeminormedCommRing Complex
+                        (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+                instInnerProductSpaceRealComplex)))
+          (@ContinuousLinearMap.addCommGroup Real Real.instRing Real Real.instRing (Fin n → Real)
+            (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+              @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+            (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup) Complex
+            (@UniformSpace.toTopologicalSpace Complex
+              (@PseudoMetricSpace.toUniformSpace Complex
+                (@SeminormedRing.toPseudoMetricSpace Complex
+                  (@SeminormedCommRing.toSeminormedRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+            Complex.addCommGroup
+            (@Pi.Function.module (Fin n) Real Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+              (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+              (@Semiring.toModule Real
+                (@CommSemiring.toSemiring Real
+                  (@Semifield.toCommSemiring Real
+                    (@Field.toSemifield Real
+                      (@NormedField.toField Real
+                        (@NontriviallyNormedField.toNormedField Real
+                          (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+            (@NormedSpace.toModule Real Complex Real.normedField
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+                (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                  (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                    (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                      (@NormedCommRing.toSeminormedCommRing Complex
+                        (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+                instInnerProductSpaceRealComplex))
+            (@RingHom.id Real
+              (@Semiring.toNonAssocSemiring Real
+                (@CommSemiring.toSemiring Real
+                  (@Semifield.toCommSemiring Real
+                    (@Field.toSemifield Real
+                      (@NormedField.toField Real
+                        (@NontriviallyNormedField.toNormedField Real
+                          (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+            Tournament.HessianMain.angleHessian._proof_1))
+        (@Pi.Function.module (Fin n) Real Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+          (@Semiring.toModule Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+        (@ContinuousLinearMap.module Real Real Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (Fin n → Real)
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+            (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          Complex
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          Tournament.HessianMain.angleHessian._proof_2 Tournament.HessianMain.angleHessian._proof_3
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          Tournament.HessianMain.angleHessian._proof_4))
+      (Fin n → Real)
+      (fun x =>
+        @ContinuousLinearMap Real Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (Fin n → Real)
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+            (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+          Complex
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex)))
+      (@ContinuousLinearMap.funLike Real Real
+        (@CommSemiring.toSemiring Real
+          (@Semifield.toCommSemiring Real
+            (@Field.toSemifield Real
+              (@NormedField.toField Real
+                (@NontriviallyNormedField.toNormedField Real
+                  (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+        (@CommSemiring.toSemiring Real
+          (@Semifield.toCommSemiring Real
+            (@Field.toSemifield Real
+              (@NormedField.toField Real
+                (@NontriviallyNormedField.toNormedField Real
+                  (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+        (@RingHom.id Real
+          (@Semiring.toNonAssocSemiring Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+        (Fin n → Real)
+        (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+          @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+        (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+          (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+        (@ContinuousLinearMap Real Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (Fin n → Real)
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+            (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+          Complex
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex)))
+        (@ContinuousLinearMap.topologicalSpace Real Real Real.normedField Real.normedField
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (Fin n → Real) Complex (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup)
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          Complex.addCommGroup
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          Tournament.HessianMain.angleHessian._proof_1)
+        (@AddCommGroup.toAddCommMonoid
+          (@ContinuousLinearMap Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@RingHom.id Real
+              (@Semiring.toNonAssocSemiring Real
+                (@CommSemiring.toSemiring Real
+                  (@Semifield.toCommSemiring Real
+                    (@Field.toSemifield Real
+                      (@NormedField.toField Real
+                        (@NontriviallyNormedField.toNormedField Real
+                          (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+            (Fin n → Real)
+            (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+              @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+            (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+              (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+            Complex
+            (@UniformSpace.toTopologicalSpace Complex
+              (@PseudoMetricSpace.toUniformSpace Complex
+                (@SeminormedRing.toPseudoMetricSpace Complex
+                  (@SeminormedCommRing.toSeminormedRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+            (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+            (@Pi.Function.module (Fin n) Real Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+              (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+              (@Semiring.toModule Real
+                (@CommSemiring.toSemiring Real
+                  (@Semifield.toCommSemiring Real
+                    (@Field.toSemifield Real
+                      (@NormedField.toField Real
+                        (@NontriviallyNormedField.toNormedField Real
+                          (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+            (@NormedSpace.toModule Real Complex Real.normedField
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+                (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                  (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                    (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                      (@NormedCommRing.toSeminormedCommRing Complex
+                        (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+                instInnerProductSpaceRealComplex)))
+          (@ContinuousLinearMap.addCommGroup Real Real.instRing Real Real.instRing (Fin n → Real)
+            (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+              @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+            (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup) Complex
+            (@UniformSpace.toTopologicalSpace Complex
+              (@PseudoMetricSpace.toUniformSpace Complex
+                (@SeminormedRing.toPseudoMetricSpace Complex
+                  (@SeminormedCommRing.toSeminormedRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+            Complex.addCommGroup
+            (@Pi.Function.module (Fin n) Real Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+              (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+              (@Semiring.toModule Real
+                (@CommSemiring.toSemiring Real
+                  (@Semifield.toCommSemiring Real
+                    (@Field.toSemifield Real
+                      (@NormedField.toField Real
+                        (@NontriviallyNormedField.toNormedField Real
+                          (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+            (@NormedSpace.toModule Real Complex Real.normedField
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+                (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                  (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                    (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                      (@NormedCommRing.toSeminormedCommRing Complex
+                        (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+                instInnerProductSpaceRealComplex))
+            (@RingHom.id Real
+              (@Semiring.toNonAssocSemiring Real
+                (@CommSemiring.toSemiring Real
+                  (@Semifield.toCommSemiring Real
+                    (@Field.toSemifield Real
+                      (@NormedField.toField Real
+                        (@NontriviallyNormedField.toNormedField Real
+                          (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+            Tournament.HessianMain.angleHessian._proof_1))
+        (@Pi.Function.module (Fin n) Real Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+          (@Semiring.toModule Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+        (@ContinuousLinearMap.module Real Real Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (Fin n → Real)
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+            (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          Complex
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          Tournament.HessianMain.angleHessian._proof_2 Tournament.HessianMain.angleHessian._proof_3
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          Tournament.HessianMain.angleHessian._proof_4))
+      (@fderiv Real (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField) (Fin n → Real)
+        (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup)
+        (@Pi.Function.module (Fin n) Real Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+          (@Semiring.toModule Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+        (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+          @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+        (@ContinuousLinearMap Real Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (Fin n → Real)
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+            (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+          Complex
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex)))
+        (@ContinuousLinearMap.addCommGroup Real Real.instRing Real Real.instRing (Fin n → Real)
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup) Complex
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          Complex.addCommGroup
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          Tournament.HessianMain.angleHessian._proof_1)
+        (@ContinuousLinearMap.module Real Real Real
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (@CommSemiring.toSemiring Real
+            (@Semifield.toCommSemiring Real
+              (@Field.toSemifield Real
+                (@NormedField.toField Real
+                  (@NontriviallyNormedField.toNormedField Real
+                    (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+          (Fin n → Real)
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@AddCommGroup.toAddCommMonoid (Fin n → Real)
+            (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup))
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          Complex
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          (@AddCommGroup.toAddCommMonoid Complex Complex.addCommGroup)
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          Tournament.HessianMain.angleHessian._proof_2 Tournament.HessianMain.angleHessian._proof_3
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          Tournament.HessianMain.angleHessian._proof_4)
+        (@ContinuousLinearMap.topologicalSpace Real Real Real.normedField Real.normedField
+          (@RingHom.id Real
+            (@Semiring.toNonAssocSemiring Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (Fin n → Real) Complex (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup)
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          Complex.addCommGroup
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          Tournament.HessianMain.angleHessian._proof_1)
+        (@fderiv Real (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField) (Fin n → Real)
+          (@Pi.addCommGroup (Fin n) (fun a => Real) fun i => Real.instAddCommGroup)
+          (@Pi.Function.module (Fin n) Real Real
+            (@CommSemiring.toSemiring Real
+              (@Semifield.toCommSemiring Real
+                (@Field.toSemifield Real
+                  (@NormedField.toField Real
+                    (@NontriviallyNormedField.toNormedField Real
+                      (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))
+            (@Semiring.toAddCommMonoid Real (@Ring.toSemiring Real Real.instRing))
+            (@Semiring.toModule Real
+              (@CommSemiring.toSemiring Real
+                (@Semifield.toCommSemiring Real
+                  (@Field.toSemifield Real
+                    (@NormedField.toField Real
+                      (@NontriviallyNormedField.toNormedField Real
+                        (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))
+          (@Pi.topologicalSpace (Fin n) (fun a => Real) fun i =>
+            @UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))
+          Complex Complex.addCommGroup
+          (@NormedSpace.toModule Real Complex Real.normedField
+            (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+              (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+            (@InnerProductSpace.toNormedSpace Real Complex Real.instRCLike
+              (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Complex
+                (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Complex
+                  (@SeminormedCommRing.toNonUnitalSeminormedCommRing Complex
+                    (@NormedCommRing.toSeminormedCommRing Complex
+                      (@NormedField.toNormedCommRing Complex Complex.instNormedField)))))
+              instInnerProductSpaceRealComplex))
+          (@UniformSpace.toTopologicalSpace Complex
+            (@PseudoMetricSpace.toUniformSpace Complex
+              (@SeminormedRing.toPseudoMetricSpace Complex
+                (@SeminormedCommRing.toSeminormedRing Complex
+                  (@NormedCommRing.toSeminormedCommRing Complex
+                    (@NormedField.toNormedCommRing Complex Complex.instNormedField))))))
+          (@Tournament.HessianMain.originalAngle n T))
+        (@OfNat.ofNat (Fin n → Real) (nat_lit 0)
+          (@Zero.toOfNat0 (Fin n → Real) (@Pi.instZero (Fin n) (fun a => Real) fun i => Real.instZero))))
+      (@Pi.single (Fin n) (fun a => Real) (fun i => Real.instZero) (instDecidableEqFin n) j
+        (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))))
+    (@Pi.single (Fin n) (fun a => Real) (fun i => Real.instZero) (instDecidableEqFin n) k
+      (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))
+def Tournament.OriginalCoordinates.originalMatrix.{u_1} : {ι : Type u_1} →
+  [Fintype ι] → [DecidableEq ι] → TournamentPaths.Tournament ι → Matrix ι ι Complex :=
+fun {ι} [inst : Fintype ι] [inst_1 : DecidableEq ι] T =>
+  @HAdd.hAdd (Matrix ι ι Complex) (Matrix ι ι Complex) (Matrix ι ι Complex)
+    (@instHAdd (Matrix ι ι Complex) (@Matrix.add ι ι Complex Complex.instAdd))
+    (@Tournament.HessianAlgebra.complexOfReal ι inst inst_1 (@TournamentPaths.adjacency ι T))
+    (@HSMul.hSMul Complex (Matrix ι ι Complex) (Matrix ι ι Complex)
+      (@instHSMul Complex (Matrix ι ι Complex)
+        (@Matrix.smul ι ι Complex Complex (@instSMulOfMul Complex Complex.instMul)))
+      (@Inv.inv Complex Complex.instInv
+        (@OfNat.ofNat Complex (nat_lit 2)
+          (@instOfNatAtLeastTwo Complex (nat_lit 2) Complex.instNatCast
+            Tournament.OriginalCoordinates.originalMatrix._proof_1)))
+      (@OfNat.ofNat (Matrix ι ι Complex) (nat_lit 1)
+        (@One.toOfNat1 (Matrix ι ι Complex) (@Matrix.one ι Complex inst_1 Complex.instZero Complex.instOne))))
+def Tournament.HessianBranch.K.{u_1} : {n : Type u_1} →
+  [Fintype n] → [DecidableEq n] → Matrix n n Complex → (n → Complex) → Complex :=
+fun {n} [inst : Fintype n] [inst_1 : DecidableEq n] M y =>
+  @Matrix.det n inst_1 inst Complex Complex.commRing
+    (@HSub.hSub (Matrix n n Complex) (Matrix n n Complex) (Matrix n n Complex)
+      (@instHSub (Matrix n n Complex) (@Matrix.sub n n Complex Complex.instSub))
+      (@OfNat.ofNat (Matrix n n Complex) (nat_lit 1)
+        (@One.toOfNat1 (Matrix n n Complex) (@Matrix.one n Complex inst_1 Complex.instZero Complex.instOne)))
+      (@HMul.hMul (Matrix n n Complex) (Matrix n n Complex) (Matrix n n Complex)
+        (@Matrix.instHMulOfFintypeOfMulOfAddCommMonoid n n n Complex inst Complex.instMul Complex.instAddCommMonoid) M
+        (@Matrix.diagonal n Complex inst_1 Complex.instZero y)))
+def PaperGaussianRecovery.paperW : Real → Real → Real → Real :=
+fun C q R =>
+  @Max.max Real Real.instMax (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))
+    (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+      (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) C R)
+      (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+        (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+          (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) C
+            (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+          (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) R
+            (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+        (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)
+          (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))
+          (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) R q))))
+def PaperGaussianRecovery.paperD : Real → Real → Real → Real :=
+fun C q R =>
+  @HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+    (@OfNat.ofNat Real (nat_lit 710)
+      (@instOfNatAtLeastTwo Real (nat_lit 710) Real.instNatCast PaperGaussianRecovery.paperD._proof_1))
+    (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))
+      (PaperGaussianRecovery.paperW C q R) (@OfNat.ofNat Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+def PaperGaussianRecovery.paperT : Real → Real → Real → Real :=
+fun C q R =>
+  @HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+    (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+      (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+        (@OfNat.ofNat Real (nat_lit 3)
+          (@instOfNatAtLeastTwo Real (nat_lit 3) Real.instNatCast PaperGaussianRecovery.paperT._proof_1))
+        (@OfNat.ofNat Real (nat_lit 2)
+          (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast PaperGaussianRecovery.paperT._proof_2)))
+      (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))
+        (PaperGaussianRecovery.paperW C q R) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+    (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+      (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+        (@OfNat.ofNat Real (nat_lit 10)
+          (@instOfNatAtLeastTwo Real (nat_lit 10) Real.instNatCast PaperGaussianRecovery.paperT._proof_3))
+        (@OfNat.ofNat Real (nat_lit 3)
+          (@instOfNatAtLeastTwo Real (nat_lit 3) Real.instNatCast PaperGaussianRecovery.paperT._proof_1)))
+      (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))
+        (PaperGaussianRecovery.paperW C q R) (@OfNat.ofNat Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))))
+def PaperGaussianRecovery.paperAlpha : Real → Real → Real → Real → Real :=
+fun C q σ R =>
+  @Min.min Real Real.instMin
+    (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+      (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))
+      (@OfNat.ofNat Real (nat_lit 4)
+        (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast PaperGaussianRecovery.paperAlpha._proof_1)))
+    (@Min.min Real Real.instMin
+      (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+        (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))
+        (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+          (@OfNat.ofNat Real (nat_lit 16)
+            (@instOfNatAtLeastTwo Real (nat_lit 16) Real.instNatCast PaperGaussianRecovery.paperAlpha._proof_2))
+          (PaperGaussianRecovery.paperD C q R)))
+      (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) (Real.log σ)
+        (@OfNat.ofNat Real (nat_lit 2)
+          (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast PaperGaussianRecovery.paperT._proof_2))))
+def PaperGaussianRecovery.paperBudget : Nat → Real → Real → Real → Real → Real :=
+fun n C q σ R =>
+  @HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+    (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+      (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+        (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+          (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+            (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (PaperGaussianRecovery.gammaBudget C q R)
+              (PaperGaussianRecovery.paperT C q R))
+            (PaperGaussianRecovery.gaussianRecoveryBudget C q σ (PaperGaussianRecovery.paperAlpha C q σ R)))
+          (@Nat.cast Real Real.instNatCast n))
+        (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+          (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+            (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+              (@OfNat.ofNat Real (nat_lit 8)
+                (@instOfNatAtLeastTwo Real (nat_lit 8) Real.instNatCast PaperGaussianRecovery.paperBudget._proof_1))
+              (PaperGaussianRecovery.gammaBudget C q R))
+            (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))
+              (PaperGaussianRecovery.paperD C q R) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+          (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))
+            (@Nat.cast Real Real.instNatCast n) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))
+      (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+        (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) R
+          (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) R
+            (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))))
+        (Real.exp
+          (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)
+            (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+              (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+                (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) R C)
+                (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)
+                  (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))
+                  (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) R q)))
+              (@Nat.cast Real Real.instNatCast n).sqrt)
+            (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+              (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (PaperGaussianRecovery.paperAlpha C q σ R)
+                (@Nat.cast Real Real.instNatCast n))
+              (Real.log R))))))
+    (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+      (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) σ (PaperGaussianRecovery.gammaBudget C q σ))
+      (Real.exp
+        (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+          (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+            (@Neg.neg Real Real.instNeg (PaperGaussianRecovery.paperAlpha C q σ R)) (@Nat.cast Real Real.instNatCast n))
+          (Real.log σ))))
+def PaperGaussianRecovery.gaussianRecoveryBudget : Real → Real → Real → Real → Real :=
+fun C q σ α =>
+  @HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+    (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+      (PaperGaussianRecovery.gammaBudget C q σ)
+      (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)
+        (@OfNat.ofNat Real (nat_lit 2)
+          (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast
+            PaperGaussianRecovery.gaussianRecoveryBudget._proof_1))
+        (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)
+          (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) α)))
+    (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)
+      (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))
+        (PaperGaussianRecovery.uBudget C q σ) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+      (PaperGaussianRecovery.vBudget C q σ))
+structure TournamentPaths.Tournament.{u_1} (V : Type u_1) : Type u_1
+number of parameters: 1
+fields:
+  TournamentPaths.Tournament.edge : V → V → Bool
+  TournamentPaths.Tournament.loopless : ∀ (v : V), @Eq Bool (@TournamentPaths.Tournament.edge V self v v) Bool.false
+  TournamentPaths.Tournament.oriented : ∀ (u v : V),
+      @Ne V u v →
+        @Eq Bool (@TournamentPaths.Tournament.edge V self u v) (@TournamentPaths.Tournament.edge V self v u).not
+constructor:
+  TournamentPaths.Tournament.mk.{u_1} {V : Type u_1} (edge : V → V → Bool)
+    (loopless : ∀ (v : V), @Eq Bool (edge v v) Bool.false)
+    (oriented : ∀ (u v : V), @Ne V u v → @Eq Bool (edge u v) (edge v u).not) : TournamentPaths.Tournament V
+def TournamentPaths.pathCount : {n : Nat} →
+  TournamentPaths.Tournament
+      (Fin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))) →
+    Nat :=
+fun {n} T =>
+  ∑ p,
+    @ite Nat (@TournamentPaths.IsHamiltonPath n T p) (Classical.propDecidable (@TournamentPaths.IsHamiltonPath n T p))
+      (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+      (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
+def TournamentPaths.uniformAugmentedCycleAverage : {n : Nat} →
+  TournamentPaths.Tournament
+      (Fin
+        (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))) →
+    Rat :=
+<not imported>
+def NonregularDecay.meanCycles : Nat → Real :=
+fun n =>
+  @HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+    (@Nat.cast Real Real.instNatCast
+      (@HSub.hSub Nat Nat Nat (@instHSub Nat instSubNat) n
+          (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))).factorial)
+    (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))
+      (@OfNat.ofNat Real (nat_lit 2)
+        (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast NonregularDecay.meanCycles._proof_1))
+      n)
+@[reducible] def RegularOrientation.RegularTournament : Nat → Type :=
+fun m => @Subtype (TournamentHamiltonian.Tournament m) fun T => @RegularOrientation.IsRegular m T
+def UniformBlockMatrix.IsRegular : {d : Nat} → TournamentHamiltonian.Tournament d → Prop :=
+fun {d} T =>
+  ∀ (i : Fin d),
+    @Eq Real (@TournamentHamiltonian.score d T i) (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))
+def TournamentHamiltonian.Equality.SignedPermutationTransitive : {n : Nat} → Matrix (Fin n) (Fin n) Real → Prop :=
+fun {n} S =>
+  ∃ ε,
+    And
+      (∀ (i : Fin n),
+        Or (@Eq Real (ε i) (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))
+          (@Eq Real (ε i)
+            (@Neg.neg Real Real.instNeg (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))))
+      (∃ e,
+        @Eq (Matrix (Fin n) (Fin n) Real)
+          (@Matrix.submatrix (Fin n) (Fin n) (Fin n) (Fin n) Real (@TournamentHamiltonian.Equality.switch (Fin n) S ε)
+            (@DFunLike.coe (Equiv.Perm (Fin n)) (Fin n) (fun x => Fin n)
+              (@EquivLike.toFunLike (Equiv.Perm (Fin n)) (Fin n) (Fin n) (@Equiv.instEquivLike (Fin n) (Fin n))) e)
+            (@DFunLike.coe (Equiv.Perm (Fin n)) (Fin n) (fun x => Fin n)
+              (@EquivLike.toFunLike (Equiv.Perm (Fin n)) (Fin n) (Fin n) (@Equiv.instEquivLike (Fin n) (Fin n))) e))
+          (@TournamentHamiltonian.transitiveSkew Real Real.instField n))
+def TournamentHamiltonian.Equality.signedPermutationMatrix : {n : Nat} →
+  (Fin n → Real) → Equiv.Perm (Fin n) → Matrix (Fin n) (Fin n) Real :=
+fun {n} ε e =>
+  @Matrix.submatrix (Fin n) (Fin n) (Fin n) (Fin n) Real
+    (@Matrix.diagonal (Fin n) Real (instDecidableEqFin n) Real.instZero ε) (@id (Fin n))
+    (@DFunLike.coe (Equiv.Perm (Fin n)) (Fin n) (fun x => Fin n)
+      (@EquivLike.toFunLike (Equiv.Perm (Fin n)) (Fin n) (Fin n) (@Equiv.instEquivLike (Fin n) (Fin n))) e)
+def TournamentHamiltonian.transitiveRatio : Nat → Complex :=
+fun n =>
+  @HDiv.hDiv Complex Complex Complex (@instHDiv Complex (@DivInvMonoid.toDiv Complex Complex.instDivInvMonoid))
+    (@Matrix.det (Fin n) (instDecidableEqFin n) (Fin.fintype n) Complex Complex.commRing
+      (@TournamentHamiltonian.transitiveKernel Complex Complex.instField n
+        (@HDiv.hDiv Complex Complex Complex (@instHDiv Complex (@DivInvMonoid.toDiv Complex Complex.instDivInvMonoid))
+          (@OfNat.ofNat Complex (nat_lit 1) (@One.toOfNat1 Complex Complex.instOne))
+          (@Nat.cast Complex Complex.instNatCast n))))
+    (@Matrix.det (Fin n) (instDecidableEqFin n) (Fin.fintype n) Complex Complex.commRing
+      (@TournamentHamiltonian.transitiveKernel Complex Complex.instField n
+        (@HDiv.hDiv Complex Complex Complex (@instHDiv Complex (@DivInvMonoid.toDiv Complex Complex.instDivInvMonoid))
+          Complex.I (@Nat.cast Complex Complex.instNatCast n))))
+def TournamentHamiltonian.binomialMean : Complex → Nat → Complex :=
+fun t n =>
+  @HDiv.hDiv Complex Complex Complex (@instHDiv Complex (@DivInvMonoid.toDiv Complex Complex.instDivInvMonoid))
+    (@HAdd.hAdd Complex Complex Complex (@instHAdd Complex Complex.instAdd)
+      (@HPow.hPow Complex Nat Complex
+        (@instHPow Complex Nat
+          (@NPow.toPow Complex (@Monoid.toNPow Complex (@Semiring.toMonoid Complex Complex.instSemiring))))
+        (@HAdd.hAdd Complex Complex Complex (@instHAdd Complex Complex.instAdd)
+          (@OfNat.ofNat Complex (nat_lit 1) (@One.toOfNat1 Complex Complex.instOne))
+          (@HDiv.hDiv Complex Complex Complex (@instHDiv Complex (@DivInvMonoid.toDiv Complex Complex.instDivInvMonoid))
+            t (@Nat.cast Complex Complex.instNatCast n)))
+        n)
+      (@HPow.hPow Complex Nat Complex
+        (@instHPow Complex Nat
+          (@NPow.toPow Complex (@Monoid.toNPow Complex (@Semiring.toMonoid Complex Complex.instSemiring))))
+        (@HSub.hSub Complex Complex Complex (@instHSub Complex Complex.instSub)
+          (@OfNat.ofNat Complex (nat_lit 1) (@One.toOfNat1 Complex Complex.instOne))
+          (@HDiv.hDiv Complex Complex Complex (@instHDiv Complex (@DivInvMonoid.toDiv Complex Complex.instDivInvMonoid))
+            t (@Nat.cast Complex Complex.instNatCast n)))
+        n))
+    (@OfNat.ofNat Complex (nat_lit 2)
+      (@instOfNatAtLeastTwo Complex (nat_lit 2) Complex.instNatCast TournamentHamiltonian.binomialMean._proof_1))
+def TournamentHamiltonian.transitiveKernel.{u_1} : {K : Type u_1} →
+  [Field K] → (n : Nat) → K → Matrix (Fin n) (Fin n) K :=
+fun {K} [inst : Field K] n z =>
+  @HAdd.hAdd (Matrix (Fin n) (Fin n) K) (Matrix (Fin n) (Fin n) K) (Matrix (Fin n) (Fin n) K)
+    (@instHAdd (Matrix (Fin n) (Fin n) K)
+      (@Matrix.add (Fin n) (Fin n) K
+        (@Distrib.toAdd K
+          (@instDistribOfSemiring K
+            (@CommSemiring.toSemiring K (@Semifield.toCommSemiring K (@Field.toSemifield K inst)))))))
+    (@OfNat.ofNat (Matrix (Fin n) (Fin n) K) (nat_lit 1)
+      (@One.toOfNat1 (Matrix (Fin n) (Fin n) K)
+        (@Matrix.one (Fin n) K (instDecidableEqFin n)
+          (@MulZeroClass.toZero K
+            (@instMulZeroClassOfSemiring K
+              (@CommSemiring.toSemiring K (@Semifield.toCommSemiring K (@Field.toSemifield K inst)))))
+          (@AddMonoidWithOne.toOne K
+            (@AddGroupWithOne.toAddMonoidWithOne K
+              (@Ring.toAddGroupWithOne K (@DivisionRing.toRing K (@Field.toDivisionRing K inst))))))))
+    (@HSMul.hSMul K (Matrix (Fin n) (Fin n) K) (Matrix (Fin n) (Fin n) K)
+      (@instHSMul K (Matrix (Fin n) (Fin n) K)
+        (@Matrix.smul (Fin n) (Fin n) K K
+          (@instSMulOfMul K
+            (@Distrib.toMul K
+              (@instDistribOfSemiring K
+                (@CommSemiring.toSemiring K (@Semifield.toCommSemiring K (@Field.toSemifield K inst))))))))
+      z (@TournamentHamiltonian.transitiveSkew K inst n))

@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-10-30T04:27:29.775988+00:00",
+  "before_any_Lake_command": true,
+  "project_build_directory_exists": false,
+  "candidate_olean_files": [],
+  "candidate_ilean_files": [],
+  "no_project_object_copy_or_symlink": true,
+  "production_modules": 609,
+  "registry_entries": 3067,
+  "source_archive_sha256": "3dca24e5a38a1938fdb7f150a4fa820dceed51c05fa763fc41dc0777c0bcd92a",
+  "source_manifest_sha256": "99c9963766142c9e694c82b7c56ec9f4241cf5c6c2778c45504a4ad92e8de349"
+}
