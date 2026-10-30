@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "entries": [
+    {
+      "kind": "pinned_upstream_package_cache",
+      "package": "Cli"
+    },
+    {
+      "kind": "pinned_upstream_package_cache",
+      "package": "batteries"
+    },
+    {
+      "kind": "pinned_upstream_package_cache",
+      "package": "Qq"
+    },
+    {
+      "kind": "pinned_upstream_package_cache",
+      "package": "aesop"
+    },
+    {
+      "kind": "pinned_upstream_package_cache",
+      "package": "proofwidgets"
+    },
+    {
+      "kind": "pinned_upstream_package_cache",
+      "package": "importGraph"
+    },
+    {
+      "kind": "pinned_upstream_package_cache",
+      "package": "LeanSearchClient"
+    },
+    {
+      "kind": "pinned_upstream_package_cache",
+      "package": "plausible"
+    },
+    {
+      "kind": "pinned_upstream_package_cache",
+      "package": "mathlib"
+    },
+    {
+      "kind": "candidate_own_production",
+      "path": "formal/.lake/build/lib/lean"
+    },
+    {
+      "kind": "official_pinned_lean_toolchain_library"
+    }
+  ],
+  "no_old_project_cache_on_search_path": true,
+  "no_absolute_paths_in_public_record": true
+}

@@ -1,0 +1,361 @@
+⚠ [3788/3820] Replayed TournamentHamiltonian.PartitionExpansion
+warning: TournamentHamiltonian/PartitionExpansion.lean:6:0: 'Mathlib.Data.Setoid.Partition' has been deprecated: please replace this import by
+
+import Mathlib.Order.Setoid.Partition
+⚠ [3987/4260] Replayed TournamentHamiltonian.RankOneGramFactor
+warning: TournamentHamiltonian/RankOneGramFactor.lean:95:8: Unused tactic linter: `rfl` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/RankOneGramFactor.lean:96:8: Unused tactic linter: `exact Subsingleton.elim _ _` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [4074/4260] Replayed TournamentHamiltonian.SharpSpectralMoments
+warning: TournamentHamiltonian/SharpSpectralMoments.lean:38:11: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [4076/4260] Replayed TournamentHamiltonian.ComparisonMatrix
+warning: TournamentHamiltonian/ComparisonMatrix.lean:69:5: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: TournamentHamiltonian/ComparisonMatrix.lean:94:30: This simp argument is unused:
+  hlt
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [comparisonMatrix, heq, comparisonKernel_antidiagonal n i.val j.val heq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4079/4260] Replayed TournamentHamiltonian.UnitScorePathsUpper
+warning: TournamentHamiltonian/UnitScorePathsUpper.lean:73:14: Unused tactic linter: `change (principalWeightMatrix T U).det * _ = _` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [4080/4260] Replayed TournamentHamiltonian.GeneralScoreShortConvolution
+warning: TournamentHamiltonian/GeneralScoreShortConvolution.lean:67:14: Unused tactic linter: `change (principalWeightMatrix T U).det * _ = _` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [4087/4260] Replayed TournamentHamiltonian.OperatorCap
+warning: TournamentHamiltonian/OperatorCap.lean:6:0: 'Mathlib.Data.Prod.Lex' has been deprecated: please replace this import by
+
+import Mathlib.Order.Prod.Lex.Basic
+⚠ [4096/4260] Replayed TournamentHamiltonian.Equality.FourthMomentCriterion
+warning: TournamentHamiltonian/Equality/FourthMomentCriterion.lean:51:65: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/Equality/FourthMomentCriterion.lean:51:65: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [4100/4260] Replayed TournamentHamiltonian.FiniteVectorOrder
+warning: TournamentHamiltonian/FiniteVectorOrder.lean:90:28: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: TournamentHamiltonian/FiniteVectorOrder.lean:90:40: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [4102/4260] Replayed TournamentHamiltonian.ComparisonBudget
+warning: TournamentHamiltonian/ComparisonBudget.lean:61:38: Variable name `hr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: TournamentHamiltonian/ComparisonBudget.lean:75:16: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/ComparisonBudget.lean:75:16: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [4103/4260] Replayed TournamentHamiltonian.FiniteComparisonOrder
+warning: TournamentHamiltonian/FiniteComparisonOrder.lean:21:31: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [4104/4260] Replayed TournamentHamiltonian.Equality.KPrefixEquality
+warning: TournamentHamiltonian/Equality/KPrefixEquality.lean:99:29: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/Equality/KPrefixEquality.lean:99:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [4106/4260] Replayed TournamentHamiltonian.VectorDomination
+warning: TournamentHamiltonian/VectorDomination.lean:159:41: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+⚠ [4107/4260] Replayed TournamentHamiltonian.ComparisonConjugation
+warning: TournamentHamiltonian/ComparisonConjugation.lean:68:32: This simp argument is unused:
+  Fin.mk.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.submatrix_apply, transitiveSkew, comparisonRankEquiv_apply, comparisonRank, Fin.lt_def,
+    neg_one_pow_eq_ite, Nat.even_iff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TournamentHamiltonian/ComparisonConjugation.lean:155:63: This simp argument is unused:
+  Fin.val_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.submatrix_apply, comparisonRank_zero, Matrix.mul_diagonal, Matrix.diagonal_mul,
+    alternatingDiagonal, alternatingSign, pow_zero, one_mul, mul_one] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4108/4260] Replayed TournamentHamiltonian.TransitiveShift
+warning: TournamentHamiltonian/TransitiveShift.lean:104:10: This simp argument is unused:
+  hj
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [transitiveSignedRotate, transitiveCycleSign, transitiveCycleSucc, hi, transitiveSkew, hij,
+    not_lt_of_ge hij.le, hjlast]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TournamentHamiltonian/TransitiveShift.lean:104:35: This simp argument is unused:
+  not_lt_of_ge hij.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [transitiveSignedRotate, transitiveCycleSign, transitiveCycleSucc, hi, hj, transitiveSkew, hij, hjlast]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TournamentHamiltonian/TransitiveShift.lean:108:6: This simp argument is unused:
+  hi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [transitiveSignedRotate, transitiveCycleSign, transitiveCycleSucc, hj, transitiveSkew, hji,
+    not_lt_of_ge hji.le, hilast]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4109/4260] Replayed TournamentHamiltonian.SpectralPowerMoments
+warning: TournamentHamiltonian/SpectralPowerMoments.lean:39:44: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TournamentHamiltonian/SpectralPowerMoments.lean:64:50: This simp argument is unused:
+  zero_pow (by norm_num : (2 : ℕ) ≠ 0)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [D, Matrix.diagonal_pow, Pi.pow_apply, Matrix.diagonal_apply, complexFrobeniusSq, apply_ite,
+    norm_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TournamentHamiltonian/SpectralPowerMoments.lean:65:12: This simp argument is unused:
+  imaginary_frequency_power_norm_sq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4111/4260] Replayed TournamentHamiltonian.Equality.PowerEqualityDescent
+warning: TournamentHamiltonian/Equality/PowerEqualityDescent.lean:132:4: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [hq]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [4114/4260] Replayed TournamentHamiltonian.Equality.SpectralClassification
+warning: TournamentHamiltonian/Equality/SpectralClassification.lean:29:12: This simp argument is unused:
+  Matrix.diagonal_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.diagonal_apply, Matrix.one_apply, ← pow_two, hε]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TournamentHamiltonian/Equality/SpectralClassification.lean:29:33: This simp argument is unused:
+  Matrix.diagonal_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.diagonal_mul, Matrix.one_apply, ← pow_two, hε]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TournamentHamiltonian/Equality/SpectralClassification.lean:29:56: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.diagonal_mul, Matrix.diagonal_apply, ← pow_two, hε]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TournamentHamiltonian/Equality/SpectralClassification.lean:30:12: This simp argument is unused:
+  Matrix.diagonal_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.diagonal_apply, Matrix.one_apply, hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TournamentHamiltonian/Equality/SpectralClassification.lean:30:33: This simp argument is unused:
+  Matrix.diagonal_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.diagonal_mul, Matrix.one_apply, hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TournamentHamiltonian/Equality/SpectralClassification.lean:30:56: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.diagonal_mul, Matrix.diagonal_apply, hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4149/4260] Replayed TournamentHamiltonian.DenseMinorBounds
+warning: TournamentHamiltonian/DenseMinorBounds.lean:99:41: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:99:45: Unused tactic linter: `ring` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:99:45: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:135:54: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:153:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:154:88: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:154:109: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:159:57: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:160:94: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:160:115: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:153:57: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:154:88: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:154:109: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:159:57: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:160:94: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: TournamentHamiltonian/DenseMinorBounds.lean:160:115: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [4172/4260] Replayed TournamentHamiltonian.Carousel.Asymptotic.RealFormBridge
+info: TournamentHamiltonian/Carousel/Asymptotic/RealFormBridge.lean:148:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [4195/4260] Replayed TournamentHamiltonian.DenseGramScaling
+warning: TournamentHamiltonian/DenseGramScaling.lean:76:29: This simp argument is unused:
+  abs_of_pos (inv_pos.mpr hpR)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [averagingMatrix, one_div]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4196/4260] Replayed TournamentHamiltonian.DensePermanentInputs
+warning: TournamentHamiltonian/DensePermanentInputs.lean:88:20: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DensePermanentInputs.lean:88:35: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DensePermanentInputs.lean:88:39: Unused tactic linter: `ring` does nothing.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TournamentHamiltonian/DensePermanentInputs.lean:88:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: TournamentHamiltonian/DensePermanentInputs.lean:88:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [4278/4486] Replayed TournamentHamiltonian.PeriodicBox.Tests
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:77:0: @[expose] def PeriodicBox.boxMeasure : (n : ℕ) → ℝ → MeasureTheory.Measure (Fin n → ℝ) :=
+fun n a => MeasureTheory.Measure.pi fun x => PeriodicBox.cellMeasure a
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:78:0: @[expose] def PeriodicBox.CoordPeriodic : {n : ℕ} → ((Fin n → ℝ) → ℝ) → Prop :=
+fun {n} f => ∀ (x : Fin n → ℝ) (i : Fin n), f (Function.update x i (x i + Real.pi)) = f x
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:79:0: @[expose] def PeriodicBox.JointInvariant : {n : ℕ} → ((Fin n → ℝ) → ℝ) → Prop :=
+fun {n} f => ∀ (x : Fin n → ℝ) (c : ℝ), (f fun i => x i + c) = f x
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:80:0: @[expose] def PeriodicBox.rootBad : {m : ℕ} → Fin m → ℝ → Set (Fin m → ℝ) :=
+fun {m} r t => {x | ∃ i, t < TorusCluster.circleDist (x i) (x r)}
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:81:0: @[expose] def PeriodicBox.badKernel : {m : ℕ} → SimpleGraph (Fin m) → Fin m → ℝ → (Fin m → ℝ) → ℝ :=
+fun {m} H r t => (PeriodicBox.rootBad r t).indicator (TorusCluster.kernel H)
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:82:0: @[expose] def PeriodicBox.mixedMeasure : {n : ℕ} → Finset (Fin n) → ℝ → MeasureTheory.Measure (Fin n → ℝ) :=
+fun {n} S r =>
+  MeasureTheory.Measure.pi fun i =>
+    if i ∈ S then MeasureTheory.volume.restrict (Set.Icc (-r) r) else PeriodicBox.cellMeasure (-Real.pi / 2)
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:83:0: PeriodicBox.integral_shift {n : ℕ} (a : ℝ) (f : (Fin n → ℝ) → ℝ) (hf : Measurable f) {M : ℝ}
+  (hb : ∀ (x : Fin n → ℝ), |f x| ≤ M) (hp : PeriodicBox.CoordPeriodic f) (c : Fin n → ℝ) :
+  ∫ (x : Fin n → ℝ), f fun i => x i + c i ∂PeriodicBox.boxMeasure n a =
+    ∫ (x : Fin n → ℝ), f x ∂PeriodicBox.boxMeasure n a
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:84:0: PeriodicBox.integral_boxes_eq {n : ℕ} (a b : ℝ) (f : (Fin n → ℝ) → ℝ) (hf : Measurable f) {M : ℝ}
+  (hb : ∀ (x : Fin n → ℝ), |f x| ≤ M) (hp : PeriodicBox.CoordPeriodic f) :
+  ∫ (x : Fin n → ℝ), f x ∂PeriodicBox.boxMeasure n a = ∫ (x : Fin n → ℝ), f x ∂PeriodicBox.boxMeasure n b
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:85:0: PeriodicBox.gauge_root_zero {n : ℕ} (a : ℝ) (f : (Fin (n + 1) → ℝ) → ℝ) (hf : Measurable f) {M : ℝ}
+  (hb : ∀ (x : Fin (n + 1) → ℝ), |f x| ≤ M) (hp : PeriodicBox.CoordPeriodic f) (hj : PeriodicBox.JointInvariant f) :
+  ∫ (x : Fin (n + 1) → ℝ), f x ∂PeriodicBox.boxMeasure (n + 1) a =
+    Real.pi * ∫ (z : Fin n → ℝ), f (Fin.cons 0 z) ∂PeriodicBox.boxMeasure n a
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:86:0: PeriodicBox.cosine_gauge_real {n : ℕ} (H : SimpleGraph (Fin (n + 1))) {t : ℝ} (ht : 0 ≤ t) :
+  ∫ (x : Fin (n + 1) → ℝ), PeriodicBox.badKernel H 0 t x ∂PeriodicBox.boxMeasure (n + 1) (-Real.pi / 2) =
+    Real.pi *
+      ∫ (z : Fin n → ℝ),
+        (PeriodicBox.realBad t).indicator (fun z => TorusCluster.kernel H (Fin.cons 0 z))
+          z ∂PeriodicBox.boxMeasure n (-Real.pi / 2)
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:87:0: PeriodicBox.unwrap_arc_integral {n : ℕ} (S : Finset (Fin n)) (c : ℝ) {r : ℝ} (hr : r ≤ Real.pi / 2)
+  (f : (Fin n → ℝ) → ℝ) (hf : Measurable f) {M : ℝ} (hb : ∀ (x : Fin n → ℝ), |f x| ≤ M)
+  (hp : PeriodicBox.CoordPeriodic f) :
+  ∫ (x : Fin n → ℝ), (PeriodicBox.arcEvent S c r).indicator f x ∂PeriodicBox.boxMeasure n (-Real.pi / 2) =
+    ∫ (x : Fin n → ℝ), f fun i => x i + c ∂PeriodicBox.mixedMeasure S r
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:88:0: PeriodicBox.unwrap_badKernel {n : ℕ} (H : SimpleGraph (Fin n)) (root : Fin n) (t c : ℝ) (S : Finset (Fin n)) {r : ℝ}
+  (hr : r ≤ Real.pi / 2) :
+  ∫ (x : Fin n → ℝ),
+      (PeriodicBox.arcEvent S c r).indicator (PeriodicBox.badKernel H root t)
+        x ∂PeriodicBox.boxMeasure n (-Real.pi / 2) =
+    ∫ (x : Fin n → ℝ), PeriodicBox.badKernel H root t x ∂PeriodicBox.mixedMeasure S r
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:89:0: PeriodicBox.unwrap_sixteen_local_badKernel {n : ℕ} (H : SimpleGraph (Fin n)) (root : Fin n) (t : ℝ) (j : Fin 16) :
+  ∫ (x : Fin n → ℝ),
+      (PeriodicBox.arcEvent Finset.univ (TorusCluster.center j) (3 * Real.pi / 16)).indicator
+        (PeriodicBox.badKernel H root t) x ∂PeriodicBox.boxMeasure n (-Real.pi / 2) =
+    ∫ (x : Fin n → ℝ) in Set.univ.pi fun x => Set.Icc (-(3 * Real.pi / 16)) (3 * Real.pi / 16),
+      (PeriodicBox.differenceBad root t).indicator (TorusCluster.kernel H) x
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:90:0: 'PeriodicBox.integral_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:91:0: 'PeriodicBox.integral_boxes_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:92:0: 'PeriodicBox.gauge_root_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:93:0: 'PeriodicBox.integral_reindex' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:94:0: 'PeriodicBox.cosine_gauge_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:95:0: 'PeriodicBox.unwrap_arc_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:96:0: 'PeriodicBox.unwrap_badKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:97:0: 'PeriodicBox.unwrap_sixteen_local_badKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:98:0: 'PeriodicBox.Tests.one_dim_abs_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:99:0: 'PeriodicBox.Tests.one_dim_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:100:0: 'PeriodicBox.Tests.one_vertex_constant_gauge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:101:0: 'PeriodicBox.Tests.constant_gauge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:102:0: 'PeriodicBox.Tests.one_vertex_bad_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:104:0: PeriodicBox.cosine_gauge_closed_volume {n : ℕ} (H : SimpleGraph (Fin (n + 1))) {t : ℝ} (ht : 0 ≤ t) :
+  ∫ (x : Fin (n + 1) → ℝ) in Set.univ.pi fun x => Set.Icc (-Real.pi / 2) (Real.pi / 2),
+      {x | t < PeriodicBox.maxRootDistance 0 x}.indicator (TorusCluster.kernel H) x =
+    Real.pi *
+      ∫ (z : Fin n → ℝ) in Set.univ.pi fun x => Set.Icc (-Real.pi / 2) (Real.pi / 2),
+        (PeriodicBox.realBad t).indicator (fun z => TorusCluster.kernel H (Fin.cons 0 z)) z
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:105:0: PeriodicBox.cosine_fixed_center_boxes {m : ℕ} (H : SimpleGraph (Fin m)) (r : Fin m) (t : ℝ) (j : Fin 16) :
+  ∫ (x : Fin m → ℝ), PeriodicBox.badKernel H r t x ∂PeriodicBox.boxMeasure m (-Real.pi / 2) =
+    ∫ (x : Fin m → ℝ), PeriodicBox.badKernel H r t x ∂PeriodicBox.boxMeasure m (TorusCluster.center j - Real.pi / 2)
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:106:0: 'PeriodicBox.cosine_gauge_closed_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TournamentHamiltonian/PeriodicBox/Tests.lean:107:0: 'PeriodicBox.arcEvent_univ_iff_no_outliers' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (4486 jobs).

@@ -1,0 +1,4392 @@
+{
+  "experiment": "publication_candidate_20261030_final_portable_gate_v1",
+  "base_commit": "cd8a0e1cf99165263167865c1201fc8b2c94cc01",
+  "mathematical_source_archive_sha256": "3dca24e5a38a1938fdb7f150a4fa820dceed51c05fa763fc41dc0777c0bcd92a",
+  "production_module_count": 609,
+  "registered_endpoint_count": 3067,
+  "numbered_statement_count": 30,
+  "production_sources": [
+    "Tournament.lean",
+    "Tournament/AsymptoticTransfer.lean",
+    "Tournament/Deletion.lean",
+    "Tournament/HessianAlgebra.lean",
+    "Tournament/HessianBranch.lean",
+    "Tournament/HessianCoordinateBridge.lean",
+    "Tournament/HessianCoordinates.lean",
+    "Tournament/HessianDerivatives.lean",
+    "Tournament/HessianDeterminant.lean",
+    "Tournament/HessianLogNormalization.lean",
+    "Tournament/HessianMain.lean",
+    "Tournament/HessianPositiveRatio.lean",
+    "Tournament/HessianRationality.lean",
+    "Tournament/HessianTheorem.lean",
+    "Tournament/OriginalCoordinates.lean",
+    "Tournament/PathConvolution.lean",
+    "Tournament/Paths.lean",
+    "Tournament/RankOneEquation.lean",
+    "Tournament/ResolventDerivatives.lean",
+    "Tournament/ScalarTwoJet.lean",
+    "Tournament/ScorePenalty.lean",
+    "Tournament/SharpAsymptoticComponents.lean",
+    "Tournament/SharpBound.lean",
+    "Tournament/SignMatrix.lean",
+    "Tournament/SmallScoreApproximation.lean",
+    "Tournament/SpectralCap.lean",
+    "Tournament/SpectralClassification.lean",
+    "Tournament/StochasticZero/Core.lean",
+    "Tournament/StochasticZero/Counterexamples.lean",
+    "Tournament/StochasticZero/OriginalZero.lean",
+    "Tournament/StochasticZero/TournamentBridge.lean",
+    "TournamentHamiltonian/AccretiveInverse/Boundary.lean",
+    "TournamentHamiltonian/AccretiveInverse/Coercivity.lean",
+    "TournamentHamiltonian/AccretiveInverse/Inverse.lean",
+    "TournamentHamiltonian/ActualCoreActivity.lean",
+    "TournamentHamiltonian/ActualCoreActivityPredicate.lean",
+    "TournamentHamiltonian/ActualExceptionalExclusion.lean",
+    "TournamentHamiltonian/ActualPermanentCircleTail.lean",
+    "TournamentHamiltonian/ActualPermanentFloorTail.lean",
+    "TournamentHamiltonian/AlternatingTournament.lean",
+    "TournamentHamiltonian/AmbientCoreMinors.lean",
+    "TournamentHamiltonian/AmbientCoreWeights.lean",
+    "TournamentHamiltonian/BaseRelabel/Boundary.lean",
+    "TournamentHamiltonian/BaseRelabel/Candidates.lean",
+    "TournamentHamiltonian/BaseRelabel/Expectations.lean",
+    "TournamentHamiltonian/BaseRelabel/Samples.lean",
+    "TournamentHamiltonian/BlockMatrix/ConstantDet.lean",
+    "TournamentHamiltonian/BlockMatrix/Core.lean",
+    "TournamentHamiltonian/BlockMatrix/DenseBridge.lean",
+    "TournamentHamiltonian/BlockMatrix/Determinant.lean",
+    "TournamentHamiltonian/BlockMatrix/Gap.lean",
+    "TournamentHamiltonian/BlockMatrix/Reindex.lean",
+    "TournamentHamiltonian/BlockMatrix/ScalarRatio.lean",
+    "TournamentHamiltonian/BlockMatrix/TensorNorm.lean",
+    "TournamentHamiltonian/BlockMatrix/UniformBridge.lean",
+    "TournamentHamiltonian/BlockMatrix/UniformDenseBridge.lean",
+    "TournamentHamiltonian/BlockMotif/Actual.lean",
+    "TournamentHamiltonian/BlockMotif/Count.lean",
+    "TournamentHamiltonian/BlockMotif/Edges.lean",
+    "TournamentHamiltonian/BlockMotif/Endpoint.lean",
+    "TournamentHamiltonian/BlockMotif/Native.lean",
+    "TournamentHamiltonian/BlockMotif/Regular.lean",
+    "TournamentHamiltonian/BlockMotif/Weights.lean",
+    "TournamentHamiltonian/BlockRatio/BaseLimit.lean",
+    "TournamentHamiltonian/BlockRatio/Decomposition.lean",
+    "TournamentHamiltonian/BlockRatio/Denominator.lean",
+    "TournamentHamiltonian/BlockRatio/Gram.lean",
+    "TournamentHamiltonian/BlockRatio/Limit.lean",
+    "TournamentHamiltonian/BlockRatio/Numerator.lean",
+    "TournamentHamiltonian/BlockRatio/Reindex.lean",
+    "TournamentHamiltonian/BlockRatio/ScalarLimit.lean",
+    "TournamentHamiltonian/BlockRatio/SpectralBridge.lean",
+    "TournamentHamiltonian/BlockRatio/UniformBridge.lean",
+    "TournamentHamiltonian/BlockRatio/UniformLimit.lean",
+    "TournamentHamiltonian/Bregman.lean",
+    "TournamentHamiltonian/BregmanBound.lean",
+    "TournamentHamiltonian/BregmanRanks.lean",
+    "TournamentHamiltonian/Carousel.lean",
+    "TournamentHamiltonian/Carousel/Asymptotic/ActualExpansion.lean",
+    "TournamentHamiltonian/Carousel/Asymptotic/AlphaRemainder.lean",
+    "TournamentHamiltonian/Carousel/Asymptotic/BetaRemainder.lean",
+    "TournamentHamiltonian/Carousel/Asymptotic/CompositeSequence.lean",
+    "TournamentHamiltonian/Carousel/Asymptotic/CompositeTaylor.lean",
+    "TournamentHamiltonian/Carousel/Asymptotic/ExpansionCertificate.lean",
+    "TournamentHamiltonian/Carousel/Asymptotic/PRemainder.lean",
+    "TournamentHamiltonian/Carousel/Asymptotic/QuotientAlgebra.lean",
+    "TournamentHamiltonian/Carousel/Asymptotic/RealFormBridge.lean",
+    "TournamentHamiltonian/Carousel/Asymptotic/SequenceBounds.lean",
+    "TournamentHamiltonian/Carousel/CarouselConstants.lean",
+    "TournamentHamiltonian/Carousel/ClosedValues.lean",
+    "TournamentHamiltonian/Carousel/CotMoments.lean",
+    "TournamentHamiltonian/Carousel/LogCancellation.lean",
+    "TournamentHamiltonian/Carousel/Monotonicity.lean",
+    "TournamentHamiltonian/Carousel/PositiveMoments.lean",
+    "TournamentHamiltonian/Carousel/ScalarCot.lean",
+    "TournamentHamiltonian/Carousel/SharpRemainders/ActualSharpBounds.lean",
+    "TournamentHamiltonian/Carousel/SharpRemainders/SharpRemainders.lean",
+    "TournamentHamiltonian/Carousel/TangentLower.lean",
+    "TournamentHamiltonian/CarouselPathLower.lean",
+    "TournamentHamiltonian/CenteredComplexPermanent.lean",
+    "TournamentHamiltonian/CenteredPreconditioning.lean",
+    "TournamentHamiltonian/CircularPSDComparison.lean",
+    "TournamentHamiltonian/CircularPermanentMoment.lean",
+    "TournamentHamiltonian/CircularRadialMoments.lean",
+    "TournamentHamiltonian/CircularWickFinite.lean",
+    "TournamentHamiltonian/ComparisonBudget.lean",
+    "TournamentHamiltonian/ComparisonConjugation.lean",
+    "TournamentHamiltonian/ComparisonMatrix.lean",
+    "TournamentHamiltonian/ComplexMatrixBounds/Boundary.lean",
+    "TournamentHamiltonian/ComplexMatrixBounds/Hadamard.lean",
+    "TournamentHamiltonian/ComplexMatrixBounds/Schur.lean",
+    "TournamentHamiltonian/ComplexSpectralFrobenius.lean",
+    "TournamentHamiltonian/CompressedCoreMajorant.lean",
+    "TournamentHamiltonian/CompressedCoreTensorBounds.lean",
+    "TournamentHamiltonian/CoreActivityPredicate.lean",
+    "TournamentHamiltonian/CoreCompressionCoverage.lean",
+    "TournamentHamiltonian/CoreCompressionEndpoints.lean",
+    "TournamentHamiltonian/CoreCompressionInvolutions.lean",
+    "TournamentHamiltonian/CoreCompressionPaths.lean",
+    "TournamentHamiltonian/CoreCompressionTensor.lean",
+    "TournamentHamiltonian/CoreCompressionVertices.lean",
+    "TournamentHamiltonian/CoreCompressionWeights.lean",
+    "TournamentHamiltonian/CoreDecorationCoordinates.lean",
+    "TournamentHamiltonian/CoreDecorationIncidence.lean",
+    "TournamentHamiltonian/CoreDecorationPaths.lean",
+    "TournamentHamiltonian/CoreDecorationVertices.lean",
+    "TournamentHamiltonian/CoreEncodingCount.lean",
+    "TournamentHamiltonian/CoreEncodingData.lean",
+    "TournamentHamiltonian/CoreEncodingDecoder.lean",
+    "TournamentHamiltonian/CoreEncodingInjectivity.lean",
+    "TournamentHamiltonian/CoreEncodingTerminals.lean",
+    "TournamentHamiltonian/CoreExcessDecorationMass.lean",
+    "TournamentHamiltonian/CoreGenerating.lean",
+    "TournamentHamiltonian/CorePathReversal.lean",
+    "TournamentHamiltonian/CrossFactorialNormalization.lean",
+    "TournamentHamiltonian/CrossPermanentBounds.lean",
+    "TournamentHamiltonian/CrudeExceptionalExclusion.lean",
+    "TournamentHamiltonian/CrudeSpectralDeterminant.lean",
+    "TournamentHamiltonian/Definitions.lean",
+    "TournamentHamiltonian/DegreeBalancing.lean",
+    "TournamentHamiltonian/DegreeDeletion.lean",
+    "TournamentHamiltonian/DegreeVariance.lean",
+    "TournamentHamiltonian/DeletedExceptionalCore.lean",
+    "TournamentHamiltonian/DeletedExceptionalCrossBounds.lean",
+    "TournamentHamiltonian/DeletedExceptionalProfiles.lean",
+    "TournamentHamiltonian/DeletedFourBlockBounds.lean",
+    "TournamentHamiltonian/DeletionBounds.lean",
+    "TournamentHamiltonian/DeletionFactorial.lean",
+    "TournamentHamiltonian/DeletionMass.lean",
+    "TournamentHamiltonian/DenseCycleConvergence.lean",
+    "TournamentHamiltonian/DenseErrorBudget.lean",
+    "TournamentHamiltonian/DenseGlobalRatio.lean",
+    "TournamentHamiltonian/DenseGramDeletion.lean",
+    "TournamentHamiltonian/DenseGramNormalization.lean",
+    "TournamentHamiltonian/DenseGramScaling.lean",
+    "TournamentHamiltonian/DenseHadamardLayers.lean",
+    "TournamentHamiltonian/DenseMinorBounds.lean",
+    "TournamentHamiltonian/DenseMinorKernel.lean",
+    "TournamentHamiltonian/DenseMinorQuantitative.lean",
+    "TournamentHamiltonian/DenseMinorRatio.lean",
+    "TournamentHamiltonian/DenseMinorScalars.lean",
+    "TournamentHamiltonian/DenseMinorWitness.lean",
+    "TournamentHamiltonian/DensePathConvergence.lean",
+    "TournamentHamiltonian/DensePathHadamard.lean",
+    "TournamentHamiltonian/DensePermanentInputs.lean",
+    "TournamentHamiltonian/DenseRatioAlgebra.lean",
+    "TournamentHamiltonian/DenseScaleBounds.lean",
+    "TournamentHamiltonian/DenseScaleConvergence.lean",
+    "TournamentHamiltonian/DenseSubstochastic.lean",
+    "TournamentHamiltonian/DenseTailKernel.lean",
+    "TournamentHamiltonian/DenseTailScalars.lean",
+    "TournamentHamiltonian/DisjointConvolution.lean",
+    "TournamentHamiltonian/Equality/FourthMomentAlgebra.lean",
+    "TournamentHamiltonian/Equality/FourthMomentCriterion.lean",
+    "TournamentHamiltonian/Equality/KPrefixEquality.lean",
+    "TournamentHamiltonian/Equality/PfaffianFour.lean",
+    "TournamentHamiltonian/Equality/PivotClassification.lean",
+    "TournamentHamiltonian/Equality/PowerEqualityDescent.lean",
+    "TournamentHamiltonian/Equality/PrefixEquality.lean",
+    "TournamentHamiltonian/Equality/RegularCarousel.lean",
+    "TournamentHamiltonian/Equality/SignedPermutationClassification.lean",
+    "TournamentHamiltonian/Equality/SignedPermutationMatrix.lean",
+    "TournamentHamiltonian/Equality/SixthMomentDivisibility.lean",
+    "TournamentHamiltonian/Equality/SpectralClassification.lean",
+    "TournamentHamiltonian/Equality/SpectralEqualityDescent.lean",
+    "TournamentHamiltonian/Equality/SpectralRatioEquality.lean",
+    "TournamentHamiltonian/Equality/SwitchingBasics.lean",
+    "TournamentHamiltonian/EtaBounds.lean",
+    "TournamentHamiltonian/ExceptionalBudgets.lean",
+    "TournamentHamiltonian/ExceptionalConvolution.lean",
+    "TournamentHamiltonian/ExceptionalCoreAssembly.lean",
+    "TournamentHamiltonian/ExceptionalCrossProfiles.lean",
+    "TournamentHamiltonian/ExceptionalDegrees.lean",
+    "TournamentHamiltonian/ExponentialRadialMoments.lean",
+    "TournamentHamiltonian/FactorialRecovery.lean",
+    "TournamentHamiltonian/FiniteComparisonOrder.lean",
+    "TournamentHamiltonian/FiniteDetPerturbation/Boundary.lean",
+    "TournamentHamiltonian/FiniteDetPerturbation/Perturbation.lean",
+    "TournamentHamiltonian/FiniteDetPerturbation/Real.lean",
+    "TournamentHamiltonian/FiniteExcessWindow.lean",
+    "TournamentHamiltonian/FiniteExtremum/Boundary.lean",
+    "TournamentHamiltonian/FiniteExtremum/Comparison.lean",
+    "TournamentHamiltonian/FiniteExtremum/Endpoint.lean",
+    "TournamentHamiltonian/FiniteExtremum/Limits.lean",
+    "TournamentHamiltonian/FiniteFamilyGap/Boundary.lean",
+    "TournamentHamiltonian/FiniteFamilyGap/Finite.lean",
+    "TournamentHamiltonian/FiniteFamilyGap/Scores.lean",
+    "TournamentHamiltonian/FiniteGaussianCoreWindow.lean",
+    "TournamentHamiltonian/FiniteMotif/Actual.lean",
+    "TournamentHamiltonian/FiniteMotif/Basic.lean",
+    "TournamentHamiltonian/FiniteMotif/Counts.lean",
+    "TournamentHamiltonian/FiniteMotif/Occurrences.lean",
+    "TournamentHamiltonian/FiniteMotif/Overlap.lean",
+    "TournamentHamiltonian/FinitePhaseOrthogonality.lean",
+    "TournamentHamiltonian/FiniteVectorOrder.lean",
+    "TournamentHamiltonian/FixedDeletion/Budget.lean",
+    "TournamentHamiltonian/FixedDeletion/Convolution.lean",
+    "TournamentHamiltonian/FixedDeletion/Estimates.lean",
+    "TournamentHamiltonian/FixedDeletion/HitLayers.lean",
+    "TournamentHamiltonian/FixedDeletion/Reindex.lean",
+    "TournamentHamiltonian/ForestGaussian/Boundary.lean",
+    "TournamentHamiltonian/ForestGaussian/Edges.lean",
+    "TournamentHamiltonian/ForestGaussian/Factor.lean",
+    "TournamentHamiltonian/ForestGaussian/Laplacian.lean",
+    "TournamentHamiltonian/ForestGaussian/MatrixBridge.lean",
+    "TournamentHamiltonian/ForestGaussian/OperatorNorm.lean",
+    "TournamentHamiltonian/ForestGaussian/SpectralEstimate.lean",
+    "TournamentHamiltonian/ForestGaussianIntegral/Actual.lean",
+    "TournamentHamiltonian/ForestGaussianIntegral/Boundary.lean",
+    "TournamentHamiltonian/ForestGaussianIntegral/CompleteRoot.lean",
+    "TournamentHamiltonian/ForestGaussianIntegral/Coordinates.lean",
+    "TournamentHamiltonian/ForestGaussianIntegral/Determinant.lean",
+    "TournamentHamiltonian/ForestGaussianIntegral/FactorBridge.lean",
+    "TournamentHamiltonian/ForestGaussianIntegral/Inverse.lean",
+    "TournamentHamiltonian/ForestQuartic/Boundary.lean",
+    "TournamentHamiltonian/ForestQuartic/Concentration.lean",
+    "TournamentHamiltonian/ForestQuartic/Density.lean",
+    "TournamentHamiltonian/ForestQuartic/Law.lean",
+    "TournamentHamiltonian/ForestQuartic/Removed.lean",
+    "TournamentHamiltonian/ForestQuartic/TiltBridge.lean",
+    "TournamentHamiltonian/ForestQuartic/Transfer.lean",
+    "TournamentHamiltonian/ForestQuartic/Weight.lean",
+    "TournamentHamiltonian/FourBlockBounds.lean",
+    "TournamentHamiltonian/FourBlockPermanent.lean",
+    "TournamentHamiltonian/FrobeniusComparison.lean",
+    "TournamentHamiltonian/FrobeniusCp/Algebra.lean",
+    "TournamentHamiltonian/FrobeniusCp/Boundary.lean",
+    "TournamentHamiltonian/FrobeniusCp/Estimate.lean",
+    "TournamentHamiltonian/FrobeniusCp/Norm.lean",
+    "TournamentHamiltonian/FrobeniusGeometry.lean",
+    "TournamentHamiltonian/FullScoreAbsorption.lean",
+    "TournamentHamiltonian/GaussianAnalytic.lean",
+    "TournamentHamiltonian/GaussianAnalyticTail.lean",
+    "TournamentHamiltonian/GaussianChainWords.lean",
+    "TournamentHamiltonian/GaussianChains.lean",
+    "TournamentHamiltonian/GaussianCoreCoefficientConvolution.lean",
+    "TournamentHamiltonian/GaussianCoreCoefficients.lean",
+    "TournamentHamiltonian/GaussianCoreComponents.lean",
+    "TournamentHamiltonian/GaussianCoreConvolution.lean",
+    "TournamentHamiltonian/GaussianCoreDecomposition.lean",
+    "TournamentHamiltonian/GaussianCoreExcess.lean",
+    "TournamentHamiltonian/GaussianCoreExcessCoefficients.lean",
+    "TournamentHamiltonian/GaussianCoreGraph.lean",
+    "TournamentHamiltonian/GaussianFactorialRecovery.lean",
+    "TournamentHamiltonian/GaussianMGF.lean",
+    "TournamentHamiltonian/GaussianMoments.lean",
+    "TournamentHamiltonian/GaussianQuartic/Base.lean",
+    "TournamentHamiltonian/GaussianQuartic/Edges.lean",
+    "TournamentHamiltonian/GaussianQuartic/Limit.lean",
+    "TournamentHamiltonian/GaussianQuartic/Local.lean",
+    "TournamentHamiltonian/GaussianQuartic/Moments.lean",
+    "TournamentHamiltonian/GaussianQuartic/SmallOrders.lean",
+    "TournamentHamiltonian/GaussianQuartic/Sums.lean",
+    "TournamentHamiltonian/GaussianSeries.lean",
+    "TournamentHamiltonian/GaussianTailBudget.lean",
+    "TournamentHamiltonian/GaussianWick.lean",
+    "TournamentHamiltonian/GaussianWickFinite.lean",
+    "TournamentHamiltonian/GeneralScoreLowerConvolution.lean",
+    "TournamentHamiltonian/GeneralScoreShortConvolution.lean",
+    "TournamentHamiltonian/GeneralSmallScoreAsymptotic.lean",
+    "TournamentHamiltonian/GeneralSmallScorePaths.lean",
+    "TournamentHamiltonian/GeneratingDeterminant.lean",
+    "TournamentHamiltonian/GramCentering.lean",
+    "TournamentHamiltonian/GramDeletion.lean",
+    "TournamentHamiltonian/GramLipschitz.lean",
+    "TournamentHamiltonian/Hadamard.lean",
+    "TournamentHamiltonian/HighVariance.lean",
+    "TournamentHamiltonian/HomogeneousGeometricBound.lean",
+    "TournamentHamiltonian/JacobiPath/Boundary.lean",
+    "TournamentHamiltonian/JacobiPath/Differential.lean",
+    "TournamentHamiltonian/JacobiPath/Path.lean",
+    "TournamentHamiltonian/LocalLogCos/Boundary.lean",
+    "TournamentHamiltonian/LocalLogCos/Derivatives.lean",
+    "TournamentHamiltonian/LocalLogCos/Error.lean",
+    "TournamentHamiltonian/LocalLogCos/Integral.lean",
+    "TournamentHamiltonian/LocalLogCos/Product.lean",
+    "TournamentHamiltonian/LocalLogCos/Scalar.lean",
+    "TournamentHamiltonian/LocalLogCos/Scale.lean",
+    "TournamentHamiltonian/LocalScaling.lean",
+    "TournamentHamiltonian/LocalScalingCapacity.lean",
+    "TournamentHamiltonian/LocalScalingComplete.lean",
+    "TournamentHamiltonian/LocalScalingDisplacement.lean",
+    "TournamentHamiltonian/LocalScalingEstimates.lean",
+    "TournamentHamiltonian/LocalScalingExistence.lean",
+    "TournamentHamiltonian/LocalScalingNormalization.lean",
+    "TournamentHamiltonian/LogTaylorAtOne/Boundary.lean",
+    "TournamentHamiltonian/LogTaylorAtOne/Bounds.lean",
+    "TournamentHamiltonian/LogTaylorAtOne/Derivatives.lean",
+    "TournamentHamiltonian/LogTaylorAtOne/Remainders.lean",
+    "TournamentHamiltonian/LongTail.lean",
+    "TournamentHamiltonian/LowerDeletionFactorial.lean",
+    "TournamentHamiltonian/LowerShortConvolution.lean",
+    "TournamentHamiltonian/MatrixComplexification.lean",
+    "TournamentHamiltonian/MatrixPowerDefs.lean",
+    "TournamentHamiltonian/MeanProjectionComplex.lean",
+    "TournamentHamiltonian/MotifExp/Endpoint.lean",
+    "TournamentHamiltonian/NonprincipalScaling.lean",
+    "TournamentHamiltonian/NonregularDecay/CycleBound.lean",
+    "TournamentHamiltonian/NonregularDecay/CycleDecay.lean",
+    "TournamentHamiltonian/NonregularDecay/ExpectationDecay.lean",
+    "TournamentHamiltonian/NonregularDecay/PathDecay.lean",
+    "TournamentHamiltonian/NonregularDecay/Variance.lean",
+    "TournamentHamiltonian/NonregularKappa/LogLoss.lean",
+    "TournamentHamiltonian/NonregularKappa/OddGap.lean",
+    "TournamentHamiltonian/NonregularNormalization/AugmentedPath.lean",
+    "TournamentHamiltonian/NonregularNormalization/AugmentedScalar.lean",
+    "TournamentHamiltonian/NonregularNormalization/CycleRate.lean",
+    "TournamentHamiltonian/NonregularNormalization/FineStirling.lean",
+    "TournamentHamiltonian/NonregularNormalization/PathRate.lean",
+    "TournamentHamiltonian/NonregularNormalization/ScalarRate.lean",
+    "TournamentHamiltonian/NonregularNormalization/Targets.lean",
+    "TournamentHamiltonian/NonregularRate/PermanentRows.lean",
+    "TournamentHamiltonian/NonregularRate/RowRounding.lean",
+    "TournamentHamiltonian/NonregularRate/WeightedBregman.lean",
+    "TournamentHamiltonian/NormalizationBounds.lean",
+    "TournamentHamiltonian/NormalizedConvolution.lean",
+    "TournamentHamiltonian/NuclearDeterminant/Boundary.lean",
+    "TournamentHamiltonian/NuclearDeterminant/Compression.lean",
+    "TournamentHamiltonian/NuclearDeterminant/Generating.lean",
+    "TournamentHamiltonian/NuclearDeterminant/Perturbation.lean",
+    "TournamentHamiltonian/NuclearInequalities/Algebra.lean",
+    "TournamentHamiltonian/NuclearInequalities/Boundary.lean",
+    "TournamentHamiltonian/NuclearInequalities/Frobenius.lean",
+    "TournamentHamiltonian/NuclearInequalities/Products.lean",
+    "TournamentHamiltonian/NuclearInequalities/RankOne.lean",
+    "TournamentHamiltonian/NuclearPolar/Base.lean",
+    "TournamentHamiltonian/NuclearPolar/Boundary.lean",
+    "TournamentHamiltonian/NuclearPolar/Dual.lean",
+    "TournamentHamiltonian/NuclearPolar/Polar.lean",
+    "TournamentHamiltonian/NuclearPolar/Spectral.lean",
+    "TournamentHamiltonian/OperatorCap.lean",
+    "TournamentHamiltonian/Orientation.lean",
+    "TournamentHamiltonian/OrthogonalPolarBridge.lean",
+    "TournamentHamiltonian/PDGaussian/Boundary.lean",
+    "TournamentHamiltonian/PDGaussian/Forest.lean",
+    "TournamentHamiltonian/PDGaussian/Integral.lean",
+    "TournamentHamiltonian/PDGaussian/PhaseMGF.lean",
+    "TournamentHamiltonian/PDGaussian/Spectral.lean",
+    "TournamentHamiltonian/PSDGaussianAMGM.lean",
+    "TournamentHamiltonian/Packing.lean",
+    "TournamentHamiltonian/PairedConvolutionWeights.lean",
+    "TournamentHamiltonian/PairedCrossProducts.lean",
+    "TournamentHamiltonian/PairedErrorWeights.lean",
+    "TournamentHamiltonian/PairedPermanentCoarseBudget.lean",
+    "TournamentHamiltonian/PairedPermanentErrorBudget.lean",
+    "TournamentHamiltonian/PairedPermanentGaussian.lean",
+    "TournamentHamiltonian/PairedPermanentRestoration.lean",
+    "TournamentHamiltonian/PairedPreconditioning.lean",
+    "TournamentHamiltonian/PairedShortSpectral.lean",
+    "TournamentHamiltonian/PairedWeightL1.lean",
+    "TournamentHamiltonian/PairingCardinality.lean",
+    "TournamentHamiltonian/PaperAugmentationNormalization/Endpoint.lean",
+    "TournamentHamiltonian/PaperCarouselPath/Boundary.lean",
+    "TournamentHamiltonian/PaperCarouselPath/Endpoint.lean",
+    "TournamentHamiltonian/PaperEndpointWrappersB/Boundary.lean",
+    "TournamentHamiltonian/PaperEndpointWrappersB/MainBound.lean",
+    "TournamentHamiltonian/PaperEndpointWrappersB/Relative.lean",
+    "TournamentHamiltonian/PaperEndpointWrappersB/SmallScore.lean",
+    "TournamentHamiltonian/PaperEndpointWrappersB/Variance.lean",
+    "TournamentHamiltonian/PaperEndpointsA/Activity32.lean",
+    "TournamentHamiltonian/PaperEndpointsA/Boundary.lean",
+    "TournamentHamiltonian/PaperEndpointsA/Permanent31.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/Approximation.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/Boundary.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/Bounds.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/Calculus.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/Endpoint.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/Factorial.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/GramDerivatives.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/Recovery.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/Series.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/Spectrum.lean",
+    "TournamentHamiltonian/PaperGaussianRecovery/Window.lean",
+    "TournamentHamiltonian/PaperSpectralOrbit/Endpoint.lean",
+    "TournamentHamiltonian/PartitionChromatic.lean",
+    "TournamentHamiltonian/PartitionComponentAssembly.lean",
+    "TournamentHamiltonian/PartitionComponentSplit.lean",
+    "TournamentHamiltonian/PartitionEdgeRelabel.lean",
+    "TournamentHamiltonian/PartitionExpansion.lean",
+    "TournamentHamiltonian/PartitionHalfEdges.lean",
+    "TournamentHamiltonian/PartitionWeights.lean",
+    "TournamentHamiltonian/PathConvolution.lean",
+    "TournamentHamiltonian/PathConvolutionCoefficients.lean",
+    "TournamentHamiltonian/PathConvolutionGenerating.lean",
+    "TournamentHamiltonian/PeriodicBox/Basic.lean",
+    "TournamentHamiltonian/PeriodicBox/Cosine.lean",
+    "TournamentHamiltonian/PeriodicBox/Local.lean",
+    "TournamentHamiltonian/PeriodicBox/Tests.lean",
+    "TournamentHamiltonian/PermanentAnalyticDefaults.lean",
+    "TournamentHamiltonian/PermanentAnalyticTail.lean",
+    "TournamentHamiltonian/PermanentApproximationConstant.lean",
+    "TournamentHamiltonian/PermanentApproximationFromActivities.lean",
+    "TournamentHamiltonian/PermanentApproximationRate.lean",
+    "TournamentHamiltonian/PermanentApproximationWindow.lean",
+    "TournamentHamiltonian/PermanentEntryFrobenius.lean",
+    "TournamentHamiltonian/PermanentExpansion.lean",
+    "TournamentHamiltonian/PermanentPolarization.lean",
+    "TournamentHamiltonian/PermanentSpectralEnvelope.lean",
+    "TournamentHamiltonian/PolarSpectralBound.lean",
+    "TournamentHamiltonian/PolynomialFloorTail.lean",
+    "TournamentHamiltonian/PolynomialSeriesComparison.lean",
+    "TournamentHamiltonian/PositiveDeterminant.lean",
+    "TournamentHamiltonian/PowerApproximation.lean",
+    "TournamentHamiltonian/PreconditionedGaussianComparison.lean",
+    "TournamentHamiltonian/PreconditionedMarginalBudgets.lean",
+    "TournamentHamiltonian/PreconditionedRetainedMassBudget.lean",
+    "TournamentHamiltonian/PreconditioningBounds.lean",
+    "TournamentHamiltonian/PreconditioningDisplacement.lean",
+    "TournamentHamiltonian/PreconditioningMarginals.lean",
+    "TournamentHamiltonian/PreconditioningNormalization.lean",
+    "TournamentHamiltonian/PrincipalGenerating.lean",
+    "TournamentHamiltonian/PrincipalLowerMoments.lean",
+    "TournamentHamiltonian/ProjectionPermanentEnvelope.lean",
+    "TournamentHamiltonian/RankOneGramFactor.lean",
+    "TournamentHamiltonian/RealPermanentAnalyticTail.lean",
+    "TournamentHamiltonian/RectangularGramAMGM.lean",
+    "TournamentHamiltonian/RectangularKernelBridge.lean",
+    "TournamentHamiltonian/RectangularPermanentApproximation.lean",
+    "TournamentHamiltonian/RectangularPermanentBridge.lean",
+    "TournamentHamiltonian/RectangularPermanentRelative.lean",
+    "TournamentHamiltonian/RectangularPermanentUnconditional.lean",
+    "TournamentHamiltonian/RectangularReindexing.lean",
+    "TournamentHamiltonian/RectangularScaling.lean",
+    "TournamentHamiltonian/RegularContainment/Approximation.lean",
+    "TournamentHamiltonian/RegularContainment/Boundary.lean",
+    "TournamentHamiltonian/RegularContainment/Bridge.lean",
+    "TournamentHamiltonian/RegularContainment/Endpoint.lean",
+    "TournamentHamiltonian/RegularContainment/Gaussian.lean",
+    "TournamentHamiltonian/RegularContainment/Local.lean",
+    "TournamentHamiltonian/RegularContainment/Quadratic.lean",
+    "TournamentHamiltonian/RegularContainment/Relative.lean",
+    "TournamentHamiltonian/RegularContainment/Scalar.lean",
+    "TournamentHamiltonian/RegularExpectation/Averages.lean",
+    "TournamentHamiltonian/RegularExpectation/Endpoint.lean",
+    "TournamentHamiltonian/RegularExpectation/Limits.lean",
+    "TournamentHamiltonian/RegularExpectation/Product.lean",
+    "TournamentHamiltonian/RegularFourier/Arcs.lean",
+    "TournamentHamiltonian/RegularFourier/Boundary.lean",
+    "TournamentHamiltonian/RegularFourier/Characters.lean",
+    "TournamentHamiltonian/RegularFourier/Endpoint.lean",
+    "TournamentHamiltonian/RegularFourier/Factorization.lean",
+    "TournamentHamiltonian/RegularFourier/Forest.lean",
+    "TournamentHamiltonian/RegularFourier/Integral.lean",
+    "TournamentHamiltonian/RegularFourier/Parity.lean",
+    "TournamentHamiltonian/RegularFourier/Polynomial.lean",
+    "TournamentHamiltonian/RegularFourier/Rates.lean",
+    "TournamentHamiltonian/RegularFourier/Small.lean",
+    "TournamentHamiltonian/RegularOrientation/Blowup.lean",
+    "TournamentHamiltonian/RegularOrientation/Boundary.lean",
+    "TournamentHamiltonian/RegularOrientation/Constraints.lean",
+    "TournamentHamiltonian/RegularOrientation/Degrees.lean",
+    "TournamentHamiltonian/RegularOrientation/Polynomial.lean",
+    "TournamentHamiltonian/RegularOrientation/Regular.lean",
+    "TournamentHamiltonian/RetainedMassPower.lean",
+    "TournamentHamiltonian/RootGaussianTail/Anchor.lean",
+    "TournamentHamiltonian/RootGaussianTail/AnchorBad.lean",
+    "TournamentHamiltonian/RootGaussianTail/Base.lean",
+    "TournamentHamiltonian/RootGaussianTail/Boundary.lean",
+    "TournamentHamiltonian/RootGaussianTail/Coordinates.lean",
+    "TournamentHamiltonian/RootGaussianTail/DimensionRatio.lean",
+    "TournamentHamiltonian/RootGaussianTail/Normalization.lean",
+    "TournamentHamiltonian/RootGaussianTail/Tail.lean",
+    "TournamentHamiltonian/RootObservable/Boundary.lean",
+    "TournamentHamiltonian/RootObservable/Coordinates.lean",
+    "TournamentHamiltonian/RootObservable/Fubini.lean",
+    "TournamentHamiltonian/RootObservable/Quartic.lean",
+    "TournamentHamiltonian/RootObservable/Transport.lean",
+    "TournamentHamiltonian/ScaledGaussianComparison.lean",
+    "TournamentHamiltonian/ScaledPermanentGaussian.lean",
+    "TournamentHamiltonian/ScalingIdentities.lean",
+    "TournamentHamiltonian/ScalingKernelBridge.lean",
+    "TournamentHamiltonian/ScoreAbsorption.lean",
+    "TournamentHamiltonian/SelectedMinorEmbeddings.lean",
+    "TournamentHamiltonian/SharpAssembly.lean",
+    "TournamentHamiltonian/SharpMain.lean",
+    "TournamentHamiltonian/SharpSpectralMoments.lean",
+    "TournamentHamiltonian/ShortQuadraticConvolution.lean",
+    "TournamentHamiltonian/ShortWeightedConvolution.lean",
+    "TournamentHamiltonian/SignedIndicatorBound.lean",
+    "TournamentHamiltonian/SkewGeometry.lean",
+    "TournamentHamiltonian/SkewOperatorNorm.lean",
+    "TournamentHamiltonian/SkewSpectrum.lean",
+    "TournamentHamiltonian/SmallScoreActualLogBudget.lean",
+    "TournamentHamiltonian/SmallScoreBudgets.lean",
+    "TournamentHamiltonian/SmallScoreGeneratingLower.lean",
+    "TournamentHamiltonian/SmallScoreLogBounds.lean",
+    "TournamentHamiltonian/SmallScoreMassBudgets.lean",
+    "TournamentHamiltonian/SmallScoreMassPower.lean",
+    "TournamentHamiltonian/SmallScoreMinorRestoration.lean",
+    "TournamentHamiltonian/SmallScorePathsLower.lean",
+    "TournamentHamiltonian/SmallScoreProducts.lean",
+    "TournamentHamiltonian/SmallScoreRelativeError.lean",
+    "TournamentHamiltonian/SmallScoreRestorationBudget.lean",
+    "TournamentHamiltonian/SmallScoreRestorationIdentity.lean",
+    "TournamentHamiltonian/SpectralPowerMoments.lean",
+    "TournamentHamiltonian/SpectralRadialMoments.lean",
+    "TournamentHamiltonian/SpectralSupplement/ProductComparison.lean",
+    "TournamentHamiltonian/SpectralSupplement/QuantitativeGap.lean",
+    "TournamentHamiltonian/SpectralSupplement/TruncatedPrefix.lean",
+    "TournamentHamiltonian/StirlingNormalization.lean",
+    "TournamentHamiltonian/StrictStirling/Boundary.lean",
+    "TournamentHamiltonian/StrictStirling/Bounds.lean",
+    "TournamentHamiltonian/SubsetWeights.lean",
+    "TournamentHamiltonian/TorusCluster/Boundary.lean",
+    "TournamentHamiltonian/TorusCluster/Circle.lean",
+    "TournamentHamiltonian/TorusCluster/CosineGaussian.lean",
+    "TournamentHamiltonian/TorusCluster/Endpoint.lean",
+    "TournamentHamiltonian/TorusCluster/Graph.lean",
+    "TournamentHamiltonian/TorusCluster/LocalProduct.lean",
+    "TournamentHamiltonian/TorusCluster/Product.lean",
+    "TournamentHamiltonian/TorusCluster/Quadratic.lean",
+    "TournamentHamiltonian/TorusCluster/Regions.lean",
+    "TournamentHamiltonian/TournamentGaussianLoss.lean",
+    "TournamentHamiltonian/TournamentWeightDisplacement.lean",
+    "TournamentHamiltonian/TransitiveCotSpectrum.lean",
+    "TournamentHamiltonian/TransitiveDeterminant.lean",
+    "TournamentHamiltonian/TransitiveShift.lean",
+    "TournamentHamiltonian/TripleContraction/Double.lean",
+    "TournamentHamiltonian/TripleContraction/PathBridge.lean",
+    "TournamentHamiltonian/TripleContraction/PathEvents.lean",
+    "TournamentHamiltonian/TripleContraction/Principal.lean",
+    "TournamentHamiltonian/TripleContraction/Reindex.lean",
+    "TournamentHamiltonian/TripleContraction/Sentinel.lean",
+    "TournamentHamiltonian/TripleContraction/Splice.lean",
+    "TournamentHamiltonian/TripleContraction/Triple.lean",
+    "TournamentHamiltonian/TripleContraction/Uniform.lean",
+    "TournamentHamiltonian/TripleContraction/Weight.lean",
+    "TournamentHamiltonian/UniformBlowup/BlockDistribution.lean",
+    "TournamentHamiltonian/UniformBlowup/Boundary.lean",
+    "TournamentHamiltonian/UniformBlowup/Cycle.lean",
+    "TournamentHamiltonian/UniformBlowup/ExistingPathCount.lean",
+    "TournamentHamiltonian/UniformBlowup/Expectation.lean",
+    "TournamentHamiltonian/UniformBlowup/FiniteCube.lean",
+    "TournamentHamiltonian/UniformBlowup/Marginal.lean",
+    "TournamentHamiltonian/UniformBlowup/Model.lean",
+    "TournamentHamiltonian/UniformBlowup/Normalization.lean",
+    "TournamentHamiltonian/UniformBlowup/PathConstraints.lean",
+    "TournamentHamiltonian/UniformDeletedMarginals.lean",
+    "TournamentHamiltonian/UniformDeletion/Homogeneity.lean",
+    "TournamentHamiltonian/UniformDeletion/PositiveScale.lean",
+    "TournamentHamiltonian/UniformDeletion/Ratios.lean",
+    "TournamentHamiltonian/UniformDeletionBudgets.lean",
+    "TournamentHamiltonian/UniformFinal/CountingNormalization.lean",
+    "TournamentHamiltonian/UniformFinal/ScalarLimits.lean",
+    "TournamentHamiltonian/UniformFinal/UniformDenseCountLimit.lean",
+    "TournamentHamiltonian/UniformFinal/UniformExpectationLimit.lean",
+    "TournamentHamiltonian/UniformFinal/UniformNormalization.lean",
+    "TournamentHamiltonian/UniformGaussianCost.lean",
+    "TournamentHamiltonian/UniformNonprincipalScaling.lean",
+    "TournamentHamiltonian/UniformPairedPermanentGaussian.lean",
+    "TournamentHamiltonian/UniformPairedShortUpper.lean",
+    "TournamentHamiltonian/UniformPermanentFromActivities.lean",
+    "TournamentHamiltonian/UniformPreconditioningBudgets.lean",
+    "TournamentHamiltonian/UniformPreconditioningGap.lean",
+    "TournamentHamiltonian/UniformRetainedMassHalf.lean",
+    "TournamentHamiltonian/UniformScaledGaussian.lean",
+    "TournamentHamiltonian/UniformScalingDisplacement.lean",
+    "TournamentHamiltonian/UniformSmallScoreMinor.lean",
+    "TournamentHamiltonian/UniformSpectralUpper.lean",
+    "TournamentHamiltonian/UniformTorusTail/Boundary.lean",
+    "TournamentHamiltonian/UniformTorusTail/Cover.lean",
+    "TournamentHamiltonian/UniformTorusTail/Endpoint.lean",
+    "TournamentHamiltonian/UniformTorusTail/Integration.lean",
+    "TournamentHamiltonian/UniformTorusTail/Limits.lean",
+    "TournamentHamiltonian/UniformTorusTail/Local.lean",
+    "TournamentHamiltonian/UniformTorusTail/Subsets.lean",
+    "TournamentHamiltonian/UniformTorusTail/Sum.lean",
+    "TournamentHamiltonian/UniformUnitScoreMinors.lean",
+    "TournamentHamiltonian/UnitScorePathsApproximation.lean",
+    "TournamentHamiltonian/UnitScorePathsLower.lean",
+    "TournamentHamiltonian/UnitScorePathsUpper.lean",
+    "TournamentHamiltonian/VectorDomination.lean",
+    "TournamentHamiltonian/WeakMajorization.lean",
+    "TournamentHamiltonian/WeightedCycle/Core.lean",
+    "TournamentHamiltonian/WeightedCycle/Integration.lean",
+    "TournamentHamiltonian/WeightedCycle/MainTerm.lean",
+    "TournamentHamiltonian/WeightedCycle/PathIntegration.lean",
+    "TournamentHamiltonian/WeightedCycle/PathMainTerm.lean",
+    "TournamentHamiltonian/WeightedCycle/PathReindex.lean",
+    "TournamentHamiltonian/WeightedCycle/UniformBridge.lean",
+    "TournamentHamiltonian/WeightedKernelInflation.lean",
+    "TournamentHamiltonian/WeightedMotif/ActualLaw.lean",
+    "TournamentHamiltonian/WeightedMotif/Estimates.lean",
+    "TournamentHamiltonian/WeightedMotif/Events.lean",
+    "TournamentHamiltonian/WeightedMotif/Law.lean",
+    "TournamentHamiltonian/WeightedMotif/Limits.lean",
+    "TournamentHamiltonian/WeightedMotif/Moments.lean",
+    "TournamentHamiltonian/WeightedMotif/Scalars.lean",
+    "TournamentHamiltonian/WeightedPrincipalGenerating.lean"
+  ],
+  "entries": [
+    {
+      "path": ".gitignore",
+      "bytes": 78,
+      "sha256": "9ea8313a21c9dc9a6d7d3fbf37f528b6fa0197d1e6690eb6e5f5495f3287b23b",
+      "git_blob_sha1": "92aee2f8d70ea6bacb35d6bcd7db94944ec65054"
+    },
+    {
+      "path": "COVERAGE.zh.md",
+      "bytes": 20743,
+      "sha256": "d1f761f5c1e48a8d5372633c31c67a91b6db3e55c54cd86c23ee39986cddba30",
+      "git_blob_sha1": "df826995895b3b279baad586b7c6375ab3c9b7b7"
+    },
+    {
+      "path": "README.zh.md",
+      "bytes": 4011,
+      "sha256": "270ffb8cf5998a02ebce6e0fa6aebc314ffa4f1f3c972c7eca81894c02570f25",
+      "git_blob_sha1": "3cb9e73983bcdfafecce6a0fcbf8d4c77548c75c"
+    },
+    {
+      "path": "Tournament.lean",
+      "bytes": 5358,
+      "sha256": "ae6c1b307bf845b4c6e15c00dd67819df52e6a427b09b608b54e29807da4991b",
+      "git_blob_sha1": "92a8020b1611fe65820c4db03d3bb639f8e1adf3"
+    },
+    {
+      "path": "Tournament/AsymptoticTransfer.lean",
+      "bytes": 3542,
+      "sha256": "4dd630a77ca98e9247061d5c46a73cd43bc8f903b564e62437f76b632ef5d7f5",
+      "git_blob_sha1": "63b69b15756e41f84b14bdb0046ea47b2e1ffd48"
+    },
+    {
+      "path": "Tournament/Deletion.lean",
+      "bytes": 7265,
+      "sha256": "0dba2fd84365e45b74ed821f1fc2caf52eb1a5a4f5c33a095dbdcd38ebaa0f23",
+      "git_blob_sha1": "ae4d105d52faf3f5cb76fb3c0c4f0e1aa7eb899b"
+    },
+    {
+      "path": "Tournament/HessianAlgebra.lean",
+      "bytes": 12718,
+      "sha256": "24398a29ff6c791a4cbcf5b7863a336f616128e7ac475d82a64454347d952fb8",
+      "git_blob_sha1": "7af614a0dbd21a9efd69c8fdb3e121c44f9fd7a1"
+    },
+    {
+      "path": "Tournament/HessianBranch.lean",
+      "bytes": 9254,
+      "sha256": "d9a6daf79de438b2d18471ec2177db986b24841307368f22a44e0c4bbe4a27a9",
+      "git_blob_sha1": "d28ac16a2ea9b55ff905ea8a7201dce864634aa8"
+    },
+    {
+      "path": "Tournament/HessianCoordinateBridge.lean",
+      "bytes": 6308,
+      "sha256": "8895423ed3359913465757d82be2d319121c7791e277b79da8b16832b27a15ef",
+      "git_blob_sha1": "37244d52b028279ea0312ff481f1cb1da5046020"
+    },
+    {
+      "path": "Tournament/HessianCoordinates.lean",
+      "bytes": 6222,
+      "sha256": "cc8b8271864530a1a2f1339af80b9aaff60a88abd6b539716af6a964b1e05ecc",
+      "git_blob_sha1": "8c30ba79a28b2c42e97be994028e645fca0dffe1"
+    },
+    {
+      "path": "Tournament/HessianDerivatives.lean",
+      "bytes": 17774,
+      "sha256": "3736208b0b9b6b38e635e9d921cd27e36a6def28a7bb02fabc7ad499e2e10ea5",
+      "git_blob_sha1": "2d9609df32c6d7de0aa77bbdf1d7889f8f789402"
+    },
+    {
+      "path": "Tournament/HessianDeterminant.lean",
+      "bytes": 6895,
+      "sha256": "0ba055ffeaf576df69de208ac91c0121f6479b3ef7a91a811283d10d31259430",
+      "git_blob_sha1": "611478712399e86ab3d7f4fe3b67aabbb5448569"
+    },
+    {
+      "path": "Tournament/HessianLogNormalization.lean",
+      "bytes": 3380,
+      "sha256": "23275f6e6843067c19381f27e681b1c0514b1aad741d9257ab2ff306ca210df0",
+      "git_blob_sha1": "46e9b9f90b8b48ec0d809561b5b0082ba2331be1"
+    },
+    {
+      "path": "Tournament/HessianMain.lean",
+      "bytes": 9969,
+      "sha256": "718a79129f125afad87f44e99a40e3fec641cae1629282917f534cd01742f87c",
+      "git_blob_sha1": "d608eb802f65a9452944b0383a1a67ab16aedacf"
+    },
+    {
+      "path": "Tournament/HessianPositiveRatio.lean",
+      "bytes": 8813,
+      "sha256": "7e75e11ada0bfe558ae5552a4727bdf004e5eeba855010bc715506453d73d414",
+      "git_blob_sha1": "fcc7b80f840dd570dc92094710e446a1435b1c00"
+    },
+    {
+      "path": "Tournament/HessianRationality.lean",
+      "bytes": 5097,
+      "sha256": "92aad5336e83f69f2fbf494d66971aa05ae54147016500336f8ede0466a158ca",
+      "git_blob_sha1": "55c764c9dc5335384ea4656669a5417a2a8cb07e"
+    },
+    {
+      "path": "Tournament/HessianTheorem.lean",
+      "bytes": 2298,
+      "sha256": "13baa715f6fd9940127ce438310a201ee4afdf3db6ac37b32463161ff785b508",
+      "git_blob_sha1": "1d0076a258270f364a1614f1c5f627afcb61fdc8"
+    },
+    {
+      "path": "Tournament/OriginalCoordinates.lean",
+      "bytes": 11796,
+      "sha256": "4b74c7840e3f5bd22dda6cc3cdb11db19c7e5d1299e69461a4f2c984e9db3994",
+      "git_blob_sha1": "b9c192e10d8bec37ab108745470fd479d9b08fb4"
+    },
+    {
+      "path": "Tournament/PathConvolution.lean",
+      "bytes": 5086,
+      "sha256": "d02f2457710285a5dfc7e0c270191881c3e1e54514a96372755a79784cecb997",
+      "git_blob_sha1": "63360de13c196809cdad00a4c639960e9513f58a"
+    },
+    {
+      "path": "Tournament/Paths.lean",
+      "bytes": 8300,
+      "sha256": "9f2edb79bdcf6673e408642b52d613e644c0c3c4672d9c3bf5e2e493d8f08ce3",
+      "git_blob_sha1": "1ae6cc03f4c90565813b93e68435f23641e80176"
+    },
+    {
+      "path": "Tournament/RankOneEquation.lean",
+      "bytes": 13308,
+      "sha256": "a5d211a03f394cc0244ba3c487d29595cec01d2ba3777e492f0be0e3f706bcc4",
+      "git_blob_sha1": "3239eeee15b3faa7c1eaef8c1d5ce814450a2ec7"
+    },
+    {
+      "path": "Tournament/ResolventDerivatives.lean",
+      "bytes": 12131,
+      "sha256": "ade58277aaa8c31bd8e75522107c85c1dcd8bbc2964133564478d774b2bc6d68",
+      "git_blob_sha1": "d310001fa9e802ec583f07f04aa0ab9a2a75373f"
+    },
+    {
+      "path": "Tournament/ScalarTwoJet.lean",
+      "bytes": 11000,
+      "sha256": "7841f2882cf9a633ae8c9f0b016e6df74f72fa9c87c7a260c7d8898229638a4e",
+      "git_blob_sha1": "48d8cca308b07f420af8b9e60732c4032c3a75b2"
+    },
+    {
+      "path": "Tournament/ScorePenalty.lean",
+      "bytes": 6219,
+      "sha256": "b77bf990cafaf5b7a32044902101173339afe77c6f9ede1291e53822d5f284ee",
+      "git_blob_sha1": "360b976174d59bde4aee85fa62f26b96e140227f"
+    },
+    {
+      "path": "Tournament/SharpAsymptoticComponents.lean",
+      "bytes": 2409,
+      "sha256": "d0d1640a3a1bbdecdb8952e3befd5107b9e344a364ca2565f9548bd82bd67c65",
+      "git_blob_sha1": "18883ec6c816fc4050fc70d1f7b81ffbd2903d0e"
+    },
+    {
+      "path": "Tournament/SharpBound.lean",
+      "bytes": 4781,
+      "sha256": "7002dc7558c7e0655d9f9a8555b6c5198e20e3f97af7d39b84c88c2bc650e651",
+      "git_blob_sha1": "a7e33e772ec4244220aa338ade223111b3600786"
+    },
+    {
+      "path": "Tournament/SignMatrix.lean",
+      "bytes": 9742,
+      "sha256": "ec2ab19dafedf2e6e2a45658e9178a2fd9b97affe90f6e20eeae44f6f56c1fdb",
+      "git_blob_sha1": "e09f6267652207167c7fef0d224fe0a02380ceba"
+    },
+    {
+      "path": "Tournament/SmallScoreApproximation.lean",
+      "bytes": 2528,
+      "sha256": "49e4a0d34f22a2ca9f8c4635e936feb4ff9bd888bddd1d93e7e60923500f8865",
+      "git_blob_sha1": "b725c8fbd9f9472d73deb125fddfc7353a43e29f"
+    },
+    {
+      "path": "Tournament/SpectralCap.lean",
+      "bytes": 1640,
+      "sha256": "d84f259c88ad2d90a8b773924912531ed00ede35537e07e01d8f31157ce5b8aa",
+      "git_blob_sha1": "ad9aae3547ffcf711e7d4da4b86584aaf7988b6b"
+    },
+    {
+      "path": "Tournament/SpectralClassification.lean",
+      "bytes": 4526,
+      "sha256": "eb64d3c5de4e7a5d565ec490eda6e4454d4c8ad0632abe67c27f1cd4b17c2969",
+      "git_blob_sha1": "ad1bd747457f1600e033fd5cb86436cff48b2d11"
+    },
+    {
+      "path": "Tournament/StochasticZero/Core.lean",
+      "bytes": 9812,
+      "sha256": "8be97e5c1f572ac8ef508af2ead5ec365d94e69bd54003cf770e85b2da4c4634",
+      "git_blob_sha1": "da9b079160ba92927b842ebe51a9073b8db94d4a"
+    },
+    {
+      "path": "Tournament/StochasticZero/Counterexamples.lean",
+      "bytes": 4344,
+      "sha256": "93b8cf4031067a6b9ddda2519aaa3f000610d683ff61d1ff73b3c241b2061a4b",
+      "git_blob_sha1": "7c6125f58672b851d84589bb41a7dfff9117c2a1"
+    },
+    {
+      "path": "Tournament/StochasticZero/OriginalZero.lean",
+      "bytes": 3965,
+      "sha256": "d01d5cfe2964289379107f5af7c2710b1a930ec2efa8bb8c517d06c0899ba3d2",
+      "git_blob_sha1": "ef5b57cb41283a7feda9d2a1d406e4fa72fd46c0"
+    },
+    {
+      "path": "Tournament/StochasticZero/TournamentBridge.lean",
+      "bytes": 4387,
+      "sha256": "3b2f191862e2d06c52026f9de3753a68f773e499c38d41d392162b26b83eb47f",
+      "git_blob_sha1": "b04ddc95e9e08444ece9f5505a18676898e1a239"
+    },
+    {
+      "path": "TournamentHamiltonian/AccretiveInverse/Boundary.lean",
+      "bytes": 3141,
+      "sha256": "32e1efe21848f7ce965925e77dc71f578c937448847af233f3b43d7464ee9d0c",
+      "git_blob_sha1": "08948e3a1f54324b6a63a40ce195dc1af49ddd88"
+    },
+    {
+      "path": "TournamentHamiltonian/AccretiveInverse/Coercivity.lean",
+      "bytes": 3712,
+      "sha256": "8b819f1d78e3c8f512b49867f090e6b66a44d95d0601f26f2a1154cb29e82f5e",
+      "git_blob_sha1": "3ef59e1746489faf5729f89cc1aeafb7d52c56ae"
+    },
+    {
+      "path": "TournamentHamiltonian/AccretiveInverse/Inverse.lean",
+      "bytes": 2996,
+      "sha256": "24555fde68cc5c606a66afe5d29db19b1cd118fbd603fb1e6fddb3461d5b6330",
+      "git_blob_sha1": "30bde7966ee39134f50d081c3156e42c6987d8e4"
+    },
+    {
+      "path": "TournamentHamiltonian/ActualCoreActivity.lean",
+      "bytes": 6302,
+      "sha256": "839c044bb230c4d6949e8b208809c7e12d992491400f2d28beff808b6cada756",
+      "git_blob_sha1": "0b73dcb304d51bafcb0e268cc23ab644dc26e4ce"
+    },
+    {
+      "path": "TournamentHamiltonian/ActualCoreActivityPredicate.lean",
+      "bytes": 1830,
+      "sha256": "e558db058c31f486af3702ee3e75da407f76491b678898fb9c37bc1ed7fb93bf",
+      "git_blob_sha1": "e74dad43f9c4c11cea819129d30ed35119decb99"
+    },
+    {
+      "path": "TournamentHamiltonian/ActualExceptionalExclusion.lean",
+      "bytes": 5245,
+      "sha256": "c9cc9e2835712a7318330f55226f179d073c50415421b5a4618080adc3abcb5f",
+      "git_blob_sha1": "d762c57753d7701dd2c99476fe3251ef952b44f1"
+    },
+    {
+      "path": "TournamentHamiltonian/ActualPermanentCircleTail.lean",
+      "bytes": 4475,
+      "sha256": "8ef370ba14c3cd3bde12bddb2a765ced52a3c8ed28a3e208e99622b227d6cabf",
+      "git_blob_sha1": "3b3d5efa7c4f7055f695ddfcf6c89ad89cec312f"
+    },
+    {
+      "path": "TournamentHamiltonian/ActualPermanentFloorTail.lean",
+      "bytes": 1572,
+      "sha256": "b552dad7afd88a051e82427f62579690253361ba37257268f865bf76608ba57f",
+      "git_blob_sha1": "f19d4bf736616457ef4cb09a43f5ec66e9326f74"
+    },
+    {
+      "path": "TournamentHamiltonian/AlternatingTournament.lean",
+      "bytes": 8904,
+      "sha256": "e0c4c10151273f85527494c62ecdb521b6155eed8d6a93c9af9ef0ee8b064af2",
+      "git_blob_sha1": "35a78c3a9558ebf1963377874af3c6f81e2e364e"
+    },
+    {
+      "path": "TournamentHamiltonian/AmbientCoreMinors.lean",
+      "bytes": 6207,
+      "sha256": "fb1fe635c2ebb1e4b0b867a33987aa3927e4e3a1dc0b0b6b2ec40cd14fef2375",
+      "git_blob_sha1": "117b13e42b3cdd2b12a4dd910096ac9ee8062dbe"
+    },
+    {
+      "path": "TournamentHamiltonian/AmbientCoreWeights.lean",
+      "bytes": 5694,
+      "sha256": "123a7d47351576fe1ce770ccc545d671efaef91f38d9bdaec56653c4fa4e9b32",
+      "git_blob_sha1": "c92fd6795d2e9f6883c8db56534b6486f7003862"
+    },
+    {
+      "path": "TournamentHamiltonian/BaseRelabel/Boundary.lean",
+      "bytes": 3379,
+      "sha256": "58944b8d0ba6823243d99465c477f551bee189c134c7870d27527c44b28f90b9",
+      "git_blob_sha1": "67b56b00f12068a90a421b719a7bee42ebd86358"
+    },
+    {
+      "path": "TournamentHamiltonian/BaseRelabel/Candidates.lean",
+      "bytes": 3925,
+      "sha256": "94846ddceccdfafb4d4b646efb81f4fab89f66c7f38d0cbf008ba6d29cdb304a",
+      "git_blob_sha1": "d31fa6e8855ad00492447209c1124c72961f1838"
+    },
+    {
+      "path": "TournamentHamiltonian/BaseRelabel/Expectations.lean",
+      "bytes": 3306,
+      "sha256": "37dfbf8591b47ee59e1e840ed6d4c4acc0b58a0e23a47f1ab355a01263c4b46e",
+      "git_blob_sha1": "2a36b190a73dc2c1b6eb96c6ce85b95faee0b936"
+    },
+    {
+      "path": "TournamentHamiltonian/BaseRelabel/Samples.lean",
+      "bytes": 2245,
+      "sha256": "e26b1a5aedbed64770fd05ca5cf4f6cee6db4e1d85fd8e33d05d313bca335931",
+      "git_blob_sha1": "0adf96ceea88a043cecec3d78e5c10fbd810cae5"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMatrix/ConstantDet.lean",
+      "bytes": 1907,
+      "sha256": "ca79b90cfaf26baca1c18f7ffcb94917e8b556e323a10a08c3077af84418c618",
+      "git_blob_sha1": "a3086d7b0a81a19d481f30d1fd65cc7ae4e0d89a"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMatrix/Core.lean",
+      "bytes": 6539,
+      "sha256": "3f3cebead046fbb79e8683c7111a7589339a44d6471c875e0171e4e1de2843ff",
+      "git_blob_sha1": "d2e5793f25f79b8e707d0433ef80b3b078ae3754"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMatrix/DenseBridge.lean",
+      "bytes": 1174,
+      "sha256": "2685a4593ba7b661b5f4022914357b05531349109f198f95bea59ef6a65c392a",
+      "git_blob_sha1": "734c41c697f3aec03f727325ae9c580aaa462c4c"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMatrix/Determinant.lean",
+      "bytes": 3329,
+      "sha256": "56a07debb25713212486586d38dfa82fa519508c6095eb646edb77ffe0ee9bec",
+      "git_blob_sha1": "3dbf883d22ab8a82a8ae8eba3a9222d16c3c1212"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMatrix/Gap.lean",
+      "bytes": 4445,
+      "sha256": "fcefee04719a42d8722236e2993cc8de3442a125d110efda7eb85acd2757caef",
+      "git_blob_sha1": "3f05b61269b43dbe23b9b9ee40a97acc4ff18059"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMatrix/Reindex.lean",
+      "bytes": 3360,
+      "sha256": "034f77e2c511ee0f142588c2393603d3aca91f41195ce4cd62320373deec0f6c",
+      "git_blob_sha1": "afffdf4ca6f4972322f4289a94cf3764a66a5527"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMatrix/ScalarRatio.lean",
+      "bytes": 4030,
+      "sha256": "b7cb4173f34c003714fce769b142a27c1dbe9ec4136b65e2e56114bba2fbfed8",
+      "git_blob_sha1": "6396fbb6c4856c4509cfc81eba073d961903b0a5"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMatrix/TensorNorm.lean",
+      "bytes": 3903,
+      "sha256": "11bb770f63d073d349a7f41e322ba503f721d1c7a0001a532b33f98b966d92d9",
+      "git_blob_sha1": "9bcaf153fbf2305aa599477df92088bb1875a359"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMatrix/UniformBridge.lean",
+      "bytes": 1127,
+      "sha256": "e1db8d8580937ee24162ec05c6c831f2f9afa2aebbbdd91511162f44890a8835",
+      "git_blob_sha1": "44cc7bcda8bbc967af8031905af412e633068cbe"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMatrix/UniformDenseBridge.lean",
+      "bytes": 1302,
+      "sha256": "459377ca75de3a33270a9df8e3f8a5296506b3479577a1d28730d5a573981a1c",
+      "git_blob_sha1": "f7fc1238a8739a77bfad43e07c6e4b78476de2df"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMotif/Actual.lean",
+      "bytes": 2885,
+      "sha256": "51649d4a335a4ab878449fcdf90335f3f0bb09315da58e2206a0c33ef13499dd",
+      "git_blob_sha1": "e6f5594e8519ca4031f0656cc768789502a891f6"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMotif/Count.lean",
+      "bytes": 3460,
+      "sha256": "9e04009b77c456c0b3e84d687d4749e0353221645e9ff2e3219bd85eefeb6437",
+      "git_blob_sha1": "d9aeaba54a540bc19686f2e790b9e48396c682e9"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMotif/Edges.lean",
+      "bytes": 4593,
+      "sha256": "806d9c64dc4e48439a568866a8c6778c2e7c472f6041c81d19ddcc00fc9056d1",
+      "git_blob_sha1": "3273ad4e5294e8bde7303344d6447829c08382e0"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMotif/Endpoint.lean",
+      "bytes": 5575,
+      "sha256": "cd7fc2ce04b36d778275edda077f9aadfcd34e226fb4a71bd3ee8014c39f9296",
+      "git_blob_sha1": "4a91a44133702ae5137487fe1e3a60e75af13780"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMotif/Native.lean",
+      "bytes": 4171,
+      "sha256": "79be5b1e299edbfea697b164fc898200f8868b6293421abbdd112fe2e522a1fc",
+      "git_blob_sha1": "614f3a182d4084bb1233559098ef0757be2c6e0f"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMotif/Regular.lean",
+      "bytes": 5096,
+      "sha256": "543341bacb9c51d973a469199517c0eaf4a1931b5e268116ac2008b8c85a55eb",
+      "git_blob_sha1": "64ced7a1993ca2c8b75b0b9e5aee110473ec0ec5"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockMotif/Weights.lean",
+      "bytes": 4810,
+      "sha256": "190a5601d76731a2c8e6664e0b79e8641349de39559a8a3cb1e20529edd4bbfb",
+      "git_blob_sha1": "8590f3019abff287ba47ad6f5c3c64b09a6b53f0"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/BaseLimit.lean",
+      "bytes": 2034,
+      "sha256": "e394a59df7665a36518ca6c394d7924bc107b20dce152fdd0f8136486988a193",
+      "git_blob_sha1": "8261f585d4872a926a01c309b91ea766a5af9662"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/Decomposition.lean",
+      "bytes": 1987,
+      "sha256": "ac308f9a63bbecfaa6531f38521476fe11eb98421dff17db0288a80f5bfb4db9",
+      "git_blob_sha1": "c5b752dd43b8082212a4d4292f198bd9332a5de2"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/Denominator.lean",
+      "bytes": 2929,
+      "sha256": "93a856a6dfe2b2dcfc49d0b46eb0ee2b68616e168a861e4339ab5785f118cb80",
+      "git_blob_sha1": "614a05cf2ef2648e9ccbdf1ae3d0a4a7475019df"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/Gram.lean",
+      "bytes": 5785,
+      "sha256": "a4b153c2164a36fe95a096ba4dff743ab32e05d7e8eb4afde57900a941aa3f19",
+      "git_blob_sha1": "2a6f8a77d714d15f2586a6b50fb4fd9b4d3dae63"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/Limit.lean",
+      "bytes": 1989,
+      "sha256": "9b929ee3fdf44290c3899ef4436ecd6f979ef1e7b48c7345f124a55ddc21ba5e",
+      "git_blob_sha1": "38dd6ef6db180db2b4879aeab45d9cc045633dd4"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/Numerator.lean",
+      "bytes": 2897,
+      "sha256": "8b7bae2891a2e87993282c1912fb63fc529f490436cf84bc03e086a18481c827",
+      "git_blob_sha1": "4e10921a6fdf703da54ea6b9b69e7073f9da6cde"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/Reindex.lean",
+      "bytes": 2037,
+      "sha256": "7798f90e46f75c15082f63a6d0009dbb1f628a783e335299db20aefd6b6ed0db",
+      "git_blob_sha1": "5c267caf7869fa71ca8579e9bbf7e312b7274229"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/ScalarLimit.lean",
+      "bytes": 5601,
+      "sha256": "03ef4ecaef4d587cefd4cd504214156cdef4fd8f34d16f5621ea215bfbd79bbe",
+      "git_blob_sha1": "0623a71bfa8155fabc2abdce02c7b46be031a6e1"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/SpectralBridge.lean",
+      "bytes": 1887,
+      "sha256": "f54545f8d39716deccf7418222c02801c2e2e7c5ef98f05cab0b96614e890697",
+      "git_blob_sha1": "43121a0d5ac2b851efc5f7d9099ed8ca4c5f29df"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/UniformBridge.lean",
+      "bytes": 903,
+      "sha256": "28cedc3974c8ef5eca825fabd5859beb2bf8ba006b7d0661c3e2d918860743fc",
+      "git_blob_sha1": "47957ea321b234751029de387eacbb7ba8253608"
+    },
+    {
+      "path": "TournamentHamiltonian/BlockRatio/UniformLimit.lean",
+      "bytes": 1699,
+      "sha256": "e03c77e3fda6b3665dcfce60d1537b54f40d0d0e04ec746d9f5db7ecaa0605a2",
+      "git_blob_sha1": "1cdf5da8e2967dc8af0ac220900a23c1d59d2b2f"
+    },
+    {
+      "path": "TournamentHamiltonian/Bregman.lean",
+      "bytes": 13999,
+      "sha256": "4fb271fd616dd6b700f8765db771af8a5ce2a3f6cea3267bdf0046aa779ea2e1",
+      "git_blob_sha1": "a426f01e77575a420ae0084361b89e62b2241b9f"
+    },
+    {
+      "path": "TournamentHamiltonian/BregmanBound.lean",
+      "bytes": 10533,
+      "sha256": "ba24f7216e67ef70ef080f076c34a52287bfb87ba37b17900bcf2237952881c5",
+      "git_blob_sha1": "41702b8eb7122bc8a354869b539cf5b768dd636f"
+    },
+    {
+      "path": "TournamentHamiltonian/BregmanRanks.lean",
+      "bytes": 6483,
+      "sha256": "abb40b3246209e4526a2c0ead20f8512c3d98f40be563d762a0a25ff5f1e4409",
+      "git_blob_sha1": "c131bf93c7120923fee62ea87515df40ee194f89"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel.lean",
+      "bytes": 14911,
+      "sha256": "91ceb4575a91f728da1287e4ba16ac369eaf08676e9b2d67fa4191a9f9f41060",
+      "git_blob_sha1": "b44ee573382c77b5eb8c65a60a81b2c2de93be10"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Asymptotic/ActualExpansion.lean",
+      "bytes": 5509,
+      "sha256": "8ce7fbd0df332fcce411ec32b1a632fc32d34a52345f357daefab1f5a858f5f1",
+      "git_blob_sha1": "e73e6b7165e918720a7533a9717e18900da2e52d"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Asymptotic/AlphaRemainder.lean",
+      "bytes": 2633,
+      "sha256": "5fea8dfe8136ee1ec4fe4871dc4845fc7141ad01febedac39a0eb730542d30f1",
+      "git_blob_sha1": "93dd844facbe1e0f90ff3004ddbf2e589963aa64"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Asymptotic/BetaRemainder.lean",
+      "bytes": 2970,
+      "sha256": "99acb54eccb972308bedbc9ec9b5ecf616c68aa02c661fea19803ead1e8c674f",
+      "git_blob_sha1": "51d05d9985fe68d06355e6f415075de9904d83ef"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Asymptotic/CompositeSequence.lean",
+      "bytes": 4291,
+      "sha256": "5e2d3cc084c24dc23e009bd3ebac5e1d2455c3fcf2e501871511b4d9e5b54363",
+      "git_blob_sha1": "7541f2609e1040ee7cc2e8d8dc10c9644868e9d8"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Asymptotic/CompositeTaylor.lean",
+      "bytes": 1842,
+      "sha256": "a08953e751a4ddd723a18276b7966aed7a5599367e921220103a5c466b302620",
+      "git_blob_sha1": "de3a9a86928efc97757bdb5eed68ffb156439fcc"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Asymptotic/ExpansionCertificate.lean",
+      "bytes": 1881,
+      "sha256": "e1a82b9648b5c2fc73bda4231dc32d2a8a795c3b9088882172d13bd182ec7533",
+      "git_blob_sha1": "c90aa203c86480214667c8ec4805e1605dc9e1aa"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Asymptotic/PRemainder.lean",
+      "bytes": 2429,
+      "sha256": "cc4cab9ee8d10df0e3096d5a6873f7ecb4919b3cbecbd7f6dc62c61c7f7cad7e",
+      "git_blob_sha1": "a7b554676fd35843669c40e00438f2f21a33a196"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Asymptotic/QuotientAlgebra.lean",
+      "bytes": 4089,
+      "sha256": "eba2a5a9c47bb1c193b2abedd4279b4329d0263e9ffe955021839ab469c4a6af",
+      "git_blob_sha1": "5c0d7dbc4144988195af99a80b3a90473b6c31fb"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Asymptotic/RealFormBridge.lean",
+      "bytes": 6709,
+      "sha256": "71d0cf9f4b70d2251cd128f307e6d98c7697d6c3f3191e01f978f631b265cde3",
+      "git_blob_sha1": "0c0eab4b5aede212ff582ad67d605fc7b26e7f55"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Asymptotic/SequenceBounds.lean",
+      "bytes": 4562,
+      "sha256": "3995a036399b04ef6e6ccf67a359df50de595fdb6a433385264c352c5989f8b0",
+      "git_blob_sha1": "7dc4e6035f2081c529ad45271cee45ec980f9a38"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/CarouselConstants.lean",
+      "bytes": 2733,
+      "sha256": "168385bb1966862e4968b8099e390cfe8f9dce4732f76bc617a3e9b5762dd127",
+      "git_blob_sha1": "681a9de47e9aed25052f46f0cb9db2188354c122"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/ClosedValues.lean",
+      "bytes": 1952,
+      "sha256": "8a3145186ce187a10ddb4f64d7aface13b3328cd74f191383cfbadf9d89b70f5",
+      "git_blob_sha1": "282b2aeb62eb6075e0e022faee47601f1524e19b"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/CotMoments.lean",
+      "bytes": 4000,
+      "sha256": "1d32db184c991386af760171a7cab8e63113874b97bfc7dd13e01e9ae7ac5588",
+      "git_blob_sha1": "c6e1ef9b87dd894a2c378db9aff1832d3e86cb94"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/LogCancellation.lean",
+      "bytes": 2741,
+      "sha256": "5950d5a35e7db6c0ff0a73b2629f1ed2cbbbdcfd6867cc59fc98dfadb1e6b860",
+      "git_blob_sha1": "f09d8b92593092b2e88d00531c9e78b340f32dbb"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/Monotonicity.lean",
+      "bytes": 2304,
+      "sha256": "4ed6440c878fd9a9c98dce2e4aba80a549e42066a2592fa6bd421e7dae767942",
+      "git_blob_sha1": "b93d6029c470546bcffde5378d3c0aa2b691922c"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/PositiveMoments.lean",
+      "bytes": 2900,
+      "sha256": "04c2b0a4c03de3dfdbf447dcfab4db2ce484b20be581f024600d91dc921559ec",
+      "git_blob_sha1": "f09f82c58029ae98ed4274a8744dc2302eb0ab56"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/ScalarCot.lean",
+      "bytes": 5952,
+      "sha256": "1539c4bb96775f3227c46ad56eaa91687cb5638c0ed117693d24df2ffe201915",
+      "git_blob_sha1": "a908cae063b64c6f7c933a8a804afb3310909caf"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/SharpRemainders/ActualSharpBounds.lean",
+      "bytes": 5471,
+      "sha256": "4f6901365417ca97dc412efb4bb29e0acd5c5f2c2e844b5e5a9ae2739489f1c6",
+      "git_blob_sha1": "71edec277d6b037a8cb00e28b4398b48312ea1ee"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/SharpRemainders/SharpRemainders.lean",
+      "bytes": 6932,
+      "sha256": "55e99fff1861ee3a3681ce880d129d81340e4c3ab0ffb32a3cac1062c021cf08",
+      "git_blob_sha1": "57f00a5b4e50aaa9c00942850e3ab3491251114d"
+    },
+    {
+      "path": "TournamentHamiltonian/Carousel/TangentLower.lean",
+      "bytes": 2057,
+      "sha256": "109d5f402c7c97b410812067d62d3a91003fa9104f0c131c7efb1df3573a6301",
+      "git_blob_sha1": "95dae92079573cf2d85da671abb5d9ede6267921"
+    },
+    {
+      "path": "TournamentHamiltonian/CarouselPathLower.lean",
+      "bytes": 2159,
+      "sha256": "286686fb2bcf0d960171be362956a4f6c6326ff1c05b2f77cc18e0079425956c",
+      "git_blob_sha1": "76ccf6cebfd3bfd9f1f4ee43d840a864ce59a333"
+    },
+    {
+      "path": "TournamentHamiltonian/CenteredComplexPermanent.lean",
+      "bytes": 4871,
+      "sha256": "615770af16a7ef2435ec566b19932d6153825a7aa1c8087568ac01bb6bf7cc2f",
+      "git_blob_sha1": "14a432651286e57ee68c6ecccae71dcaf87462cc"
+    },
+    {
+      "path": "TournamentHamiltonian/CenteredPreconditioning.lean",
+      "bytes": 9643,
+      "sha256": "9908da72fafe1f889b361116c3209daa42657e9772c188a81d6c8c9ef79531a1",
+      "git_blob_sha1": "708cae6f60f124414bc19faaab8092fae621a1be"
+    },
+    {
+      "path": "TournamentHamiltonian/CircularPSDComparison.lean",
+      "bytes": 8144,
+      "sha256": "68784709a867bcabb0837003ab4378f7f34c76b5b814320194c15eb877d278bb",
+      "git_blob_sha1": "0e44de381becc5c618d7974c452f375514265eb2"
+    },
+    {
+      "path": "TournamentHamiltonian/CircularPermanentMoment.lean",
+      "bytes": 7416,
+      "sha256": "ba68544d5cc240d0ee5b88f9360c36fe9adf80d2ac27a2515352de5bc4082a8e",
+      "git_blob_sha1": "83e69ea3cf633b0e4b4e8472d9096c6b6722fcb0"
+    },
+    {
+      "path": "TournamentHamiltonian/CircularRadialMoments.lean",
+      "bytes": 5838,
+      "sha256": "a6aa65f3fb3e4eb35b8a41bb9ef7b13486705f58be3a5a910f3bdf103fd0f8f9",
+      "git_blob_sha1": "7a58f40eff413bffe4625edc2db2ce20a0d99572"
+    },
+    {
+      "path": "TournamentHamiltonian/CircularWickFinite.lean",
+      "bytes": 7243,
+      "sha256": "d1775cc80adc3fff10bd987d6d152d3cbd37187174d31d1e39ffdb740082c5e4",
+      "git_blob_sha1": "e1c59be5c439b08fb97c520afb82319418ba4f20"
+    },
+    {
+      "path": "TournamentHamiltonian/ComparisonBudget.lean",
+      "bytes": 3710,
+      "sha256": "c82a45ad65575c665e5051cd727374dd62952654590e5c421b6574536c3d5bc5",
+      "git_blob_sha1": "044568d1b115af960978118b9313c960410ddb6f"
+    },
+    {
+      "path": "TournamentHamiltonian/ComparisonConjugation.lean",
+      "bytes": 7268,
+      "sha256": "5780cd8fd01f0efba5e487dd3250dcf5ed8806374d206b2a52e7f8c8b45c6233",
+      "git_blob_sha1": "fc56013f42afda0946f3ce06687599bedd3327c1"
+    },
+    {
+      "path": "TournamentHamiltonian/ComparisonMatrix.lean",
+      "bytes": 6804,
+      "sha256": "16c8d964e2e58144cf7387a46083d9b95ed016606b8a79051930ca8d8aa00ed9",
+      "git_blob_sha1": "45202e8bece99701cb6b3e760c52755bec151c7b"
+    },
+    {
+      "path": "TournamentHamiltonian/ComplexMatrixBounds/Boundary.lean",
+      "bytes": 5152,
+      "sha256": "9da9f3cf2533323fa9ce6879560dede248fa65de4410d5a7ebe5bfd3a2c5f294",
+      "git_blob_sha1": "629c475e849a102aaa56b94a64e879ca1968034b"
+    },
+    {
+      "path": "TournamentHamiltonian/ComplexMatrixBounds/Hadamard.lean",
+      "bytes": 4051,
+      "sha256": "fa50622a5268fea64a1d32ae5d066d4cd39e1e426b010fcd642d1c8ae670b501",
+      "git_blob_sha1": "cdf37c31c0395269c1a344cb50b6b8bc024f609f"
+    },
+    {
+      "path": "TournamentHamiltonian/ComplexMatrixBounds/Schur.lean",
+      "bytes": 5961,
+      "sha256": "6522680848763f334921b4aef741466264c9362b88c81eef7b82e9f5e8bf173a",
+      "git_blob_sha1": "c9252da886786380d1c4e42ae20b2092ab7dd696"
+    },
+    {
+      "path": "TournamentHamiltonian/ComplexSpectralFrobenius.lean",
+      "bytes": 3721,
+      "sha256": "a53ed8e948ebfcedf8fd8c5be109b100d0f32ee50fd4730228348c4e441737a9",
+      "git_blob_sha1": "f160e167a142795610dcd21504fec8035b05a44f"
+    },
+    {
+      "path": "TournamentHamiltonian/CompressedCoreMajorant.lean",
+      "bytes": 10308,
+      "sha256": "e5ac98d4a51d479ba36d23ff72b5981bf34f90122be637a4f71e13b318841800",
+      "git_blob_sha1": "9194ec3b4cc777cd1db87e2152a6d444a7f8aca8"
+    },
+    {
+      "path": "TournamentHamiltonian/CompressedCoreTensorBounds.lean",
+      "bytes": 9278,
+      "sha256": "00f51135ac75c71917ddab4b207f95c198dece5862adb0c766b777fe6e9cd237",
+      "git_blob_sha1": "5fbcb985fcfab5aa0315ca2f3516937a9c1ff674"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreActivityPredicate.lean",
+      "bytes": 1917,
+      "sha256": "e84178c304380695844c0d4cc326833529ba1ae4bbb2d03671c178ed2504ea37",
+      "git_blob_sha1": "d4f45f01cba404a3c72fb837744544a79315cfb4"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreCompressionCoverage.lean",
+      "bytes": 10830,
+      "sha256": "c8164d158f4b0ce08d9ce928db8422a584e31ee0735ffb6a846b41b8d730d5a8",
+      "git_blob_sha1": "969a4709dbf0a7223524077357ce86ec6c6b82ad"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreCompressionEndpoints.lean",
+      "bytes": 6986,
+      "sha256": "5b4251e11b1a4c642104e69e4a803cb1aea5c662110101466ded25116d038b76",
+      "git_blob_sha1": "8b864575c002dffbe563a020625a39103f6db897"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreCompressionInvolutions.lean",
+      "bytes": 8718,
+      "sha256": "81a4d90bc2fc9caf472178259c87f7870820067abe47317af408b2f80b25b5c4",
+      "git_blob_sha1": "bd7fdc92b5a96684331cb3d8e952d726b09dc296"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreCompressionPaths.lean",
+      "bytes": 11696,
+      "sha256": "9172e425df38133bb5d6bda171c8bb5727d0e445359e59f360480b361839eb93",
+      "git_blob_sha1": "44f7568e3b2ccb48cef8692b5b0d21f60a24a50d"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreCompressionTensor.lean",
+      "bytes": 13026,
+      "sha256": "726132a3ca4f3d2b6186b0ec5c93ccf5b1b030497c138f512941ba1a0adcd694",
+      "git_blob_sha1": "250cc95d8f08744ec079d3387caf8fae76b9f9f4"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreCompressionVertices.lean",
+      "bytes": 10194,
+      "sha256": "e9416b20d96bea5f0fca0be7994de5ec55d1d1596b8f88fc624039127ef0c300",
+      "git_blob_sha1": "5938b83d7b79fb39c74f7c1fb2203a3e70844bae"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreCompressionWeights.lean",
+      "bytes": 8017,
+      "sha256": "3d9b659f1cc6a18978f8f1746e873476a8d8978ee12f65ab6b0ba3b44e7475ca",
+      "git_blob_sha1": "f80951afb61370cfd762aad9a530ec58546a76ee"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreDecorationCoordinates.lean",
+      "bytes": 5019,
+      "sha256": "0f36bb79b8a959ba0bf65ca11291ced936842c4df684c6d99157eb18788b2686",
+      "git_blob_sha1": "f81692e66ead625d6ad8ee91c506c6ae4e891d02"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreDecorationIncidence.lean",
+      "bytes": 6378,
+      "sha256": "c2fdbd75c4799116697442a5e273d26acfad05ce58f1daac4aea046940758afc",
+      "git_blob_sha1": "0dc3dcf74d58dd161915be39a2adbea6fff41d7c"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreDecorationPaths.lean",
+      "bytes": 5314,
+      "sha256": "4af287cd8ee8b9e662b9584a4546eea95e952fca1d87e10ccbb3973c9aec7e3d",
+      "git_blob_sha1": "aaa748d677b3d1d84f017255d09e6222195ab391"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreDecorationVertices.lean",
+      "bytes": 4185,
+      "sha256": "8b5a003137805bf106863e9febd2dda4451d423b4a70b05dbf076e5bc78a1e09",
+      "git_blob_sha1": "b371da0c7d77704b4187640020824217ea0bf1ee"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreEncodingCount.lean",
+      "bytes": 9897,
+      "sha256": "e2d0c99d8dee80cd619d4220fb9fc69a2c3c83193d735b82f31de69e15ee23f3",
+      "git_blob_sha1": "00448ff8921b3aa36a11e4ae50c91f4c969ce941"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreEncodingData.lean",
+      "bytes": 5097,
+      "sha256": "776038e615cf4c1f5fc2c6bd1d97175b7727457a90056a16bb3da6d6c1ec7390",
+      "git_blob_sha1": "4e07a3c9d559585193f610e783552a2430702515"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreEncodingDecoder.lean",
+      "bytes": 6617,
+      "sha256": "b32bb9beecb116f0dc612e1c14399ae9ecf6815114be5363f998cb31842b1125",
+      "git_blob_sha1": "574a0b884d328524a9412c7f578a596a810850ad"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreEncodingInjectivity.lean",
+      "bytes": 8901,
+      "sha256": "29b55fb486adb7dedc9583a5ef74f82d05ad209ffd638055b5fd39f46f7d9b6a",
+      "git_blob_sha1": "6b716c408b73b6de3ed8e1e522b192551a2ea1fa"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreEncodingTerminals.lean",
+      "bytes": 4519,
+      "sha256": "e6adbcf8bef5867118969e036ba905d599d7f1475add7c43004db959c5f9ccf5",
+      "git_blob_sha1": "60f52239bbc8209e7d17807d063b3f694d4b2bd1"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreExcessDecorationMass.lean",
+      "bytes": 7154,
+      "sha256": "57d74d8305500b52ffcf8efdc28e64e336bc0276a4c2d22b49a1629751d1b683",
+      "git_blob_sha1": "b2b0f3fbee412b80b35e1f6c870268c88fdaddba"
+    },
+    {
+      "path": "TournamentHamiltonian/CoreGenerating.lean",
+      "bytes": 3225,
+      "sha256": "64408ed7dca0d1dafebd9a1c730cf335e7ac577ed0dd54511ad30aac688f5b36",
+      "git_blob_sha1": "a31f53880bea640f75ec35bd0c90b3909f461194"
+    },
+    {
+      "path": "TournamentHamiltonian/CorePathReversal.lean",
+      "bytes": 5097,
+      "sha256": "d0774d938a4fad9e4f5b93c6214362526fe04b6e12755f2dba2e390b219d2838",
+      "git_blob_sha1": "b7da836801471a141e69c56cae0d18c113a24cc6"
+    },
+    {
+      "path": "TournamentHamiltonian/CrossFactorialNormalization.lean",
+      "bytes": 5489,
+      "sha256": "03a3d7fc41c8e99307adc4057fb039e3f15b6389ee5a71db8955e7dda8b0a7b5",
+      "git_blob_sha1": "fc91f05f51b4cae47daed82d70b2d08d772334e2"
+    },
+    {
+      "path": "TournamentHamiltonian/CrossPermanentBounds.lean",
+      "bytes": 7338,
+      "sha256": "23424e6dd808efab9ed694cb19204f429a21c97b33271c7ec0b52c23bb74c749",
+      "git_blob_sha1": "0c116a648f5ce95e4042384c1aa78c9fe95d7717"
+    },
+    {
+      "path": "TournamentHamiltonian/CrudeExceptionalExclusion.lean",
+      "bytes": 6785,
+      "sha256": "51ae718c0214dd9b748c336bb5fe4ede46fce10b3d3b492b4799aac4a7bdacd6",
+      "git_blob_sha1": "44f32781ee47548a9df4ad3c4144c6422cc9f369"
+    },
+    {
+      "path": "TournamentHamiltonian/CrudeSpectralDeterminant.lean",
+      "bytes": 2021,
+      "sha256": "902392aa917c5b7cf51eb32f43d88c08ad76e41c95da4fccb12557540ab604d7",
+      "git_blob_sha1": "dc6d24463547803419cd2e93ac17ebc009884d0f"
+    },
+    {
+      "path": "TournamentHamiltonian/Definitions.lean",
+      "bytes": 5061,
+      "sha256": "9a5b9e788758f5f6bb3be89da06f601340d2a8fb448ccd589f6e3b223c724363",
+      "git_blob_sha1": "ef3d6a7f3f879f03465b8f847f35d7b346382121"
+    },
+    {
+      "path": "TournamentHamiltonian/DegreeBalancing.lean",
+      "bytes": 9734,
+      "sha256": "3775861a881f5e9097438fc1daa6dd37a32ce450f51c4e5832d6090ab79f9201",
+      "git_blob_sha1": "e00ce01a150cdc20ccb089adcd8ffd45b10b67d8"
+    },
+    {
+      "path": "TournamentHamiltonian/DegreeDeletion.lean",
+      "bytes": 7325,
+      "sha256": "9eeb70d2089dcb84ccc818d6a55f5168aedf7f9803ea9c4ad467d4079bf77807",
+      "git_blob_sha1": "67e8eee46fd1b8b8a868954d25f6513187dd831a"
+    },
+    {
+      "path": "TournamentHamiltonian/DegreeVariance.lean",
+      "bytes": 5902,
+      "sha256": "98427feb2e73be986275cc4a6ceec561e8e23fe902b874fbdf4be59c9fc19b9e",
+      "git_blob_sha1": "32ff4a5df5d43996eb17ee8ee68e10c68e9d432c"
+    },
+    {
+      "path": "TournamentHamiltonian/DeletedExceptionalCore.lean",
+      "bytes": 6801,
+      "sha256": "d941dc356a1f57c22680b8f20d59e179b77839e2886370876c22c7aa8b0d0462",
+      "git_blob_sha1": "34d2164f6078941267cbb8ec81416291c46e5c8d"
+    },
+    {
+      "path": "TournamentHamiltonian/DeletedExceptionalCrossBounds.lean",
+      "bytes": 2350,
+      "sha256": "93ae3c2b21fd1f279a4cdc96f8a69d4fed3477b00c7743e560df8e0a97499ac0",
+      "git_blob_sha1": "e649d85ca2c9d2bafd74367ba4c7b33f55d5297a"
+    },
+    {
+      "path": "TournamentHamiltonian/DeletedExceptionalProfiles.lean",
+      "bytes": 4463,
+      "sha256": "6da6f7e5d369eb774cd2add7e4e90208bfc6f0ddf96a88cfe5c949c7d6263bf3",
+      "git_blob_sha1": "19f0fe39eb9a407eefbea26c5a9f2b93a095c973"
+    },
+    {
+      "path": "TournamentHamiltonian/DeletedFourBlockBounds.lean",
+      "bytes": 7974,
+      "sha256": "f127109afc06260eb2bd582f428da39449428e5b66b7359df143801e467220a5",
+      "git_blob_sha1": "4989656d5b790f03b2a2a1752d7d5a5d0f7a6d8b"
+    },
+    {
+      "path": "TournamentHamiltonian/DeletionBounds.lean",
+      "bytes": 14458,
+      "sha256": "256dbe2d555740573f0fdb4a6e515fec0f8a18292beb9c29c5bb2fe5045c8667",
+      "git_blob_sha1": "5dbe127ba99dde7ad0ca37005b33f06dc88fbaac"
+    },
+    {
+      "path": "TournamentHamiltonian/DeletionFactorial.lean",
+      "bytes": 2755,
+      "sha256": "e0432f8bf0a279c6fc031378bc81ac960dec0de02d38c3ba2f19ca49ba5df9fc",
+      "git_blob_sha1": "9f76f9ead5cb0161724e154b464918a1de7a9a34"
+    },
+    {
+      "path": "TournamentHamiltonian/DeletionMass.lean",
+      "bytes": 8843,
+      "sha256": "9ff51da9b387ae533970b0966662aa323ddbb7a75b1738c11d4d12b07417ac13",
+      "git_blob_sha1": "6b56b7e974beec657685f0a8606573058a09d9ad"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseCycleConvergence.lean",
+      "bytes": 4421,
+      "sha256": "0e506a398e0ac6be57f4c37fb13cf429ff7fced78c291955de9845d2feb1b288",
+      "git_blob_sha1": "c788f1774a858d3279ede4850066dca3bdf4552c"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseErrorBudget.lean",
+      "bytes": 6788,
+      "sha256": "2d08bfcc3642f7ef9e622775c904bf2c7e71889cc9aa6e81fca89edb07059224",
+      "git_blob_sha1": "dc96ff60afd3f00ad5adfd97dfa8b8957e2e3254"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseGlobalRatio.lean",
+      "bytes": 5778,
+      "sha256": "ffa9495664335932ba4c38260e40f3dc59324562aff38bb7d341993dd83b447d",
+      "git_blob_sha1": "fe1d3e4ad1c335bfe68cd634180aa909bdc08c6f"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseGramDeletion.lean",
+      "bytes": 6568,
+      "sha256": "64ec69461d5e721105b872dfbfe894fbf2ece7efab67f07ed015e9d171421a72",
+      "git_blob_sha1": "c1d3c6ecb910e6725d1e8a077ef9c9d6d55ffe36"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseGramNormalization.lean",
+      "bytes": 7342,
+      "sha256": "d6cb451a12d021c923d07b71636951b6a6dfcffffbcdac4fd6101ccc1f85b69d",
+      "git_blob_sha1": "3a1a8c923700cdd680548b6c45a8958d077feac5"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseGramScaling.lean",
+      "bytes": 10111,
+      "sha256": "ffb76c288733ead004e964478f8d1f69af78488d73268187258ef655d8537dda",
+      "git_blob_sha1": "039f8ee1675ac2f28fc0875387eb1dd6d0e203a9"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseHadamardLayers.lean",
+      "bytes": 3498,
+      "sha256": "1916f31b57a3bd4ccbcfdce9d5c63c92b9784940e3220611b94cc0e0d7409e3c",
+      "git_blob_sha1": "23270cce5958f663f8f7920bfb9cd2082e214894"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseMinorBounds.lean",
+      "bytes": 8525,
+      "sha256": "8212579e489147b7ca53a6a59892b0f2be46f83aab15e73fbad8065efb936eef",
+      "git_blob_sha1": "ef122a86ded7af32138e365a3a8eee3d56580dd6"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseMinorKernel.lean",
+      "bytes": 6906,
+      "sha256": "c0cad2647a937dca52c3a8105888aca741d41b27e7fbf8709bbdb5db37317ef0",
+      "git_blob_sha1": "2407022fcdc221834ab73b5a9baa986660352d2c"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseMinorQuantitative.lean",
+      "bytes": 3331,
+      "sha256": "cc875449dc67d94c2c97af682cdca784228e461996ec660bc11e7cbe3528d84c",
+      "git_blob_sha1": "5b75bab5b5fa0ef4bde3e69dad9afe1a2439625a"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseMinorRatio.lean",
+      "bytes": 7224,
+      "sha256": "ba323b8f4ec58ed43fc3736504ad16d2a1eab550b366b4d929fbebf00abfee6c",
+      "git_blob_sha1": "9a98d8ee666a61fba5a98df7a8f0724f328fe8fd"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseMinorScalars.lean",
+      "bytes": 3191,
+      "sha256": "9db4547bd310a70dce4e7fd28f919f7da6269b6759fd79640c4dfe0347a9b303",
+      "git_blob_sha1": "2aa0fa322ccc329570f9af0c6f1067c2b6795da1"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseMinorWitness.lean",
+      "bytes": 4619,
+      "sha256": "d6f48bfb8af57dfa6bcd888de0bf5a50215e94a800287334cfb0b79840035245",
+      "git_blob_sha1": "d762b9bab9d32c9096a8bbf627ad8897ee49a057"
+    },
+    {
+      "path": "TournamentHamiltonian/DensePathConvergence.lean",
+      "bytes": 4592,
+      "sha256": "d7fd9aeace00b2b48f815d476bab85491241a40676f18c9414451875fd1b24e5",
+      "git_blob_sha1": "c1a8671e31eb06c7ef0820e35e84d7cfa64efafd"
+    },
+    {
+      "path": "TournamentHamiltonian/DensePathHadamard.lean",
+      "bytes": 7896,
+      "sha256": "2160a5b278ab643266e5bbfaeb60e3e7f94ede14a97cda3b4fc0156343cf1a9a",
+      "git_blob_sha1": "bc42ba58e020e2b1e91e1d004350429c2d4f955b"
+    },
+    {
+      "path": "TournamentHamiltonian/DensePermanentInputs.lean",
+      "bytes": 7006,
+      "sha256": "87dc41e3fb12a7577bc9be72c4192a1e1b965afd7926de4200e7ffb4369b0895",
+      "git_blob_sha1": "c6c324a6e170e2c7632a0f1a0fc5e350b4157775"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseRatioAlgebra.lean",
+      "bytes": 2870,
+      "sha256": "ae3965689107f634b01745eea2740c8111f75c8ee01080a68ea4fdb268464e4a",
+      "git_blob_sha1": "48ce25098306a2edaf9b62d515554582910052e4"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseScaleBounds.lean",
+      "bytes": 6059,
+      "sha256": "44692516c544cc89c1eb55abf1a7dee07b71eba14dea36599e0c6c4fccdb5cb9",
+      "git_blob_sha1": "139d9fed20b5e1bae8a3e3b4cfa23c8319c02abe"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseScaleConvergence.lean",
+      "bytes": 5436,
+      "sha256": "5d33c71540b4814cc300a6858c4e3dbd0126272bec8c1d1e8ba6f637834c8d70",
+      "git_blob_sha1": "23e1d54f6f2f0521a59df1da6bc2e8db8974b760"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseSubstochastic.lean",
+      "bytes": 3322,
+      "sha256": "1cf32fbba2069099898ffc9ce3dec9485e6f524313393e7f02a2608612492cf8",
+      "git_blob_sha1": "45e964d8ad99d73a037d4e62792b18dae2778bd3"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseTailKernel.lean",
+      "bytes": 5217,
+      "sha256": "fafc4f6fc31035f521ab7b18939c01fafe4133a23332d47593c6ab081a0eec8a",
+      "git_blob_sha1": "ebef9a27f8d9c82f86604d8600caf08c1b6785b6"
+    },
+    {
+      "path": "TournamentHamiltonian/DenseTailScalars.lean",
+      "bytes": 2605,
+      "sha256": "dd1a1710f9bd6026729529e20d6f7e6cbf991284b2b83a76116a5259b227a1af",
+      "git_blob_sha1": "ddfbb23d4217eeaf2a7bcd2e370857bb33825f6c"
+    },
+    {
+      "path": "TournamentHamiltonian/DisjointConvolution.lean",
+      "bytes": 7713,
+      "sha256": "70454fdd3f8f72a25aa419debfb4adbd825f76cf291bddf271a9da0b21ea5a48",
+      "git_blob_sha1": "0064bfd37a27d964f11fc9f2e657ef5b9f1dfe4d"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/FourthMomentAlgebra.lean",
+      "bytes": 5675,
+      "sha256": "74ce04a34923033f05441c4ab397f36fcc691364e00efd4e4ebb58b144090669",
+      "git_blob_sha1": "c717ac98e228643e3a7b13aa01329fd73b1a3ea4"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/FourthMomentCriterion.lean",
+      "bytes": 5786,
+      "sha256": "ca47ec641347f43a82ede5a0504ac2ee3ba756d020a70524c628c19c44f6f2fd",
+      "git_blob_sha1": "8c1f76de012641b27aa7571238f95549e06746ed"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/KPrefixEquality.lean",
+      "bytes": 6515,
+      "sha256": "5eb0ac627cc03763bdb5d2b8913e7f30a928a9b8e06a12136ba6319ecda5ad76",
+      "git_blob_sha1": "397e933ef6fff5ccc0b3c4e13d8dc0c1d2d8d6b3"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/PfaffianFour.lean",
+      "bytes": 2158,
+      "sha256": "9b547eb072b7292135426a0c27074484055b8aad52a5398b1cb0b1f188f36b00",
+      "git_blob_sha1": "88a811002622013876baff714ef01e3e1fc3e9dd"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/PivotClassification.lean",
+      "bytes": 3553,
+      "sha256": "f73af72b4d6be1dead6c6ccd2f899e7f2092e3e11b89bdd4ffcd68dcf4eb4f01",
+      "git_blob_sha1": "40f5ce373df154fb2cc7f20a599f21061986c4e2"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/PowerEqualityDescent.lean",
+      "bytes": 7322,
+      "sha256": "6da06e6c67add681c3797e3cb4fdcf5940a98970574cc7cf15e212144e1b74e0",
+      "git_blob_sha1": "3ce14b5b11f71729bdb78180258eba3a2c5d911e"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/PrefixEquality.lean",
+      "bytes": 1391,
+      "sha256": "2776a6f12e3004cecff341422e34e765142e64ccb387544b32b2aeb687f7a418",
+      "git_blob_sha1": "6179a945047a51967c9ac3bf800ba992238b3e8d"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/RegularCarousel.lean",
+      "bytes": 8314,
+      "sha256": "b615d9a9742a85ca9e9e8e5c8cbef5e3ae1ec8d1625611d8f85a3b621ab7090d",
+      "git_blob_sha1": "b08ff30284fa4216d7800ac03b1b50d3b6326658"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/SignedPermutationClassification.lean",
+      "bytes": 5874,
+      "sha256": "74abcd2ebe6528e70d62210071b3ee583f01ff2fb8f745f3b07122aa57e7618f",
+      "git_blob_sha1": "ff2606d56d21405e0d6c3165a8560e9a0262f9ca"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/SignedPermutationMatrix.lean",
+      "bytes": 4334,
+      "sha256": "624efbea64c70552e0a13cb0eeb317888c876b0840f8a30ab088c4ff481353ea",
+      "git_blob_sha1": "51bf6f916266e54d32ef33792cbfa24ea80adf59"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/SixthMomentDivisibility.lean",
+      "bytes": 10156,
+      "sha256": "87f66d50c47aecceb57e739fb4bec197144479b7c2c71eb22a6437c3ed30ec3f",
+      "git_blob_sha1": "d652bdff560fbae2423d3e246a4c5ffe11ad8fd1"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/SpectralClassification.lean",
+      "bytes": 7715,
+      "sha256": "883866754f89c3d56727dcf1beb1423b582a9a3e3ba4f836f78830badb7af30a",
+      "git_blob_sha1": "5a2b1dac56da10e6de0a0f8a71fe5fdee046dab0"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/SpectralEqualityDescent.lean",
+      "bytes": 4546,
+      "sha256": "fbbb37e0c91956e52c3f1bf39aafba20f1dfc440ab85767e8001219e94c6dbbe",
+      "git_blob_sha1": "8830ead3192f89ea5fbf9d4272180597a5fe4985"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/SpectralRatioEquality.lean",
+      "bytes": 4996,
+      "sha256": "e3bb9b1e74243bb181fb2bb75d8978dea1d6ace5ae1b5973061ac0769667f0b0",
+      "git_blob_sha1": "968a40b882be88f4efc39b4c4964c4b8caa27dea"
+    },
+    {
+      "path": "TournamentHamiltonian/Equality/SwitchingBasics.lean",
+      "bytes": 3577,
+      "sha256": "cc52fca670520be5a2984a537c425c1da6f088f90f93ef127d3943d689fc5075",
+      "git_blob_sha1": "a92c9aeeff7457a5e4d6990329707b0c1821b1f3"
+    },
+    {
+      "path": "TournamentHamiltonian/EtaBounds.lean",
+      "bytes": 4919,
+      "sha256": "0301687b903d66783fd252d4a92fe585dbde6dc42acb84a1fed9bf54ab494a87",
+      "git_blob_sha1": "904a9121bb865825203128c74c8a2c79133451ca"
+    },
+    {
+      "path": "TournamentHamiltonian/ExceptionalBudgets.lean",
+      "bytes": 8265,
+      "sha256": "7e3d02a0c4e94846172817c844567570a1fedd0a753743aa379425c9b82f2a90",
+      "git_blob_sha1": "c3c024181767adfede8d4b81c616b1b3d0d477d0"
+    },
+    {
+      "path": "TournamentHamiltonian/ExceptionalConvolution.lean",
+      "bytes": 9804,
+      "sha256": "4ee6468c906c1e9b6a02dea7c6dcf91d0d2f7b7241b42cf5e2f08d0a07093550",
+      "git_blob_sha1": "05aabcc8ce3fc57b7e04bbc0b84750a821ed218d"
+    },
+    {
+      "path": "TournamentHamiltonian/ExceptionalCoreAssembly.lean",
+      "bytes": 5185,
+      "sha256": "80e44a6ccc8a0af6ff0ffd8c33848e6433023a53d759058f851360ef82368436",
+      "git_blob_sha1": "59b270d3e3d07613f7f418831dad294427ad951f"
+    },
+    {
+      "path": "TournamentHamiltonian/ExceptionalCrossProfiles.lean",
+      "bytes": 6866,
+      "sha256": "81646818e7cfe9bd9ba01e8198bffb101a1c55e21e5b4c6b98794cf3e1a20720",
+      "git_blob_sha1": "9eb7772db4d31ff775ab2909d46511f36f612f1c"
+    },
+    {
+      "path": "TournamentHamiltonian/ExceptionalDegrees.lean",
+      "bytes": 11796,
+      "sha256": "9765f34e0214914137c3c317aba6ec6ffdc95f27227be9aa17b3f71209e03795",
+      "git_blob_sha1": "4e0307a9a62f20749842b83f02e1e345b32dc0ce"
+    },
+    {
+      "path": "TournamentHamiltonian/ExponentialRadialMoments.lean",
+      "bytes": 3181,
+      "sha256": "a467b7a55637093b5c6958d004cf80a2ec027ee9c95f95c6664294bb7b2108cc",
+      "git_blob_sha1": "aeb4a3cf3477e4aa19f214acc044d5bf235459e1"
+    },
+    {
+      "path": "TournamentHamiltonian/FactorialRecovery.lean",
+      "bytes": 4436,
+      "sha256": "538e3796082b60ee90890bc7dccf0da51058320b70ac8d0a12f3194250d5d5b8",
+      "git_blob_sha1": "978964940e2be01854540b3d427e8229cb43e81d"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteComparisonOrder.lean",
+      "bytes": 3390,
+      "sha256": "b16dd7c3660ed638503e140b43ff9ec8f0e04798add8834086b3c8e9e8d7bf55",
+      "git_blob_sha1": "05ef6f485b9751d3685b3003d35ccb04e71f2142"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteDetPerturbation/Boundary.lean",
+      "bytes": 3790,
+      "sha256": "b83ec372377eed2f6b3666e94b44002138ddcc7ec3780cb1b463642677c41da6",
+      "git_blob_sha1": "98f02e8cb828b477a9e352c2bb7a7f3f86780508"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteDetPerturbation/Perturbation.lean",
+      "bytes": 2289,
+      "sha256": "5557785b79006bf72af27b4dc22d7d88c917c2c3443c9c852f639a22673d4494",
+      "git_blob_sha1": "84b1c632b5a2269f1cc3ea7197247a58b1d2071e"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteDetPerturbation/Real.lean",
+      "bytes": 3765,
+      "sha256": "1b3a893876adbebada999de7b4865da80376fb77dabf0231f1b3aa160d0c66fd",
+      "git_blob_sha1": "a751a0f6ec2a98e08bd314054913a6c8750ed5e4"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteExcessWindow.lean",
+      "bytes": 4325,
+      "sha256": "f7a678c0cc4f1713a82cd5db3ae3daeec11818029f1e09ba5788bfaa434ef4df",
+      "git_blob_sha1": "e5ae97b07eeae29051e2b50ff3943de26d812a08"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteExtremum/Boundary.lean",
+      "bytes": 3134,
+      "sha256": "9fcf883bb8b756500c06b3888d8374f47fe74c8d84ce9495dbcc21a13990e9cb",
+      "git_blob_sha1": "1d40e58fcc87bdf2b5d8212329a1be593c4a0e38"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteExtremum/Comparison.lean",
+      "bytes": 5360,
+      "sha256": "e4e0a81d86561d1ce783ceb327062cf088630731a9daf2e2174895342972aa5e",
+      "git_blob_sha1": "274fca10b6beaecac6cf5a64f40281bb03accfc3"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteExtremum/Endpoint.lean",
+      "bytes": 3236,
+      "sha256": "50ae80149d2911280a12ebdd58a6cf62205b41191abd7171a15e58dc20737347",
+      "git_blob_sha1": "d326a9ab9511915a3a12e080eb3e8a9ba09ebded"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteExtremum/Limits.lean",
+      "bytes": 2592,
+      "sha256": "006a65a5ff5f3c4888dc712f53f80d62a12afe51a6dd53ef6b97757ab68d3bd6",
+      "git_blob_sha1": "4c3ded03d99737878842284742497270f73720e9"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteFamilyGap/Boundary.lean",
+      "bytes": 2643,
+      "sha256": "059adfa068d3dbd6f1165bb32ab7c87d36accc12e53f4599ef8ed818a95ebb9f",
+      "git_blob_sha1": "dd664732a636eae255a2d51f6f8e6127759b9e18"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteFamilyGap/Finite.lean",
+      "bytes": 3813,
+      "sha256": "2dc1de41fe28e67c53f4d477233bbfefe3081be506ecf58d5f9a52205b8060fc",
+      "git_blob_sha1": "b950d9ce5eac96835c609d1d9628663d0385c9f4"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteFamilyGap/Scores.lean",
+      "bytes": 6250,
+      "sha256": "4f7e8066bfbd5c75dea6ac38ea9bde6ac04e2e366f31cf2f352fa9c156431072",
+      "git_blob_sha1": "48c6a1da7110a80415c4ef1b03653b490f47116e"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteGaussianCoreWindow.lean",
+      "bytes": 8445,
+      "sha256": "5835dee66a638cd8cd9dea7b9d7cd893ce6cce8350f87ecadebbed0c981b55e4",
+      "git_blob_sha1": "608e6ba971d39487d925f90f64f683a4331f2a57"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteMotif/Actual.lean",
+      "bytes": 3593,
+      "sha256": "bb03c68968ba7bf7d7e3d8269d1b06aebc90171ffde99d68617be5b3255aee7c",
+      "git_blob_sha1": "13c15d654df0ac377b01569b0e4761a274e21566"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteMotif/Basic.lean",
+      "bytes": 5645,
+      "sha256": "cbd6ea78da6e5d5b4c7cb83cd8b959921b82c8b9ea0a24e729fb0033361d2f8c",
+      "git_blob_sha1": "bf1a3d7dc36d0daad07653a8101c2fb81c174d80"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteMotif/Counts.lean",
+      "bytes": 3494,
+      "sha256": "02a4fe50fbb565f55bde70ec14560e4b7f2af6cfb4e17bb3c9dfaccf987cddf3",
+      "git_blob_sha1": "034c72e6072a74cb642c6d3627e2b64bfae26f04"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteMotif/Occurrences.lean",
+      "bytes": 3280,
+      "sha256": "3ecccccba6a078a00fbc5ccb492e999fb54da45b919416b532e834f702913225",
+      "git_blob_sha1": "52bfe57fdf42e8eccd966b0b6476be62e3595655"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteMotif/Overlap.lean",
+      "bytes": 3993,
+      "sha256": "cbabfd8c56f64b3e98eda491c8760678aa5d7073cdf9284b8a7e3ac47d4c1259",
+      "git_blob_sha1": "45cb669f89e592739dba122fa3c5e73939e46009"
+    },
+    {
+      "path": "TournamentHamiltonian/FinitePhaseOrthogonality.lean",
+      "bytes": 2051,
+      "sha256": "3752e536dec871ff4a2c2bf0ca487b3ebbd2a57cf109e7a67da18f47ab742882",
+      "git_blob_sha1": "b977a8cf4cc424f4f4798695a3d6adf7ceee5625"
+    },
+    {
+      "path": "TournamentHamiltonian/FiniteVectorOrder.lean",
+      "bytes": 5918,
+      "sha256": "8751f7fd2b163564ba65999c75106b664ac330edccc31391190da19cfafff62f",
+      "git_blob_sha1": "2e83cafe2454a55b90fe3d4c5ec8ffa698a2bd4f"
+    },
+    {
+      "path": "TournamentHamiltonian/FixedDeletion/Budget.lean",
+      "bytes": 6388,
+      "sha256": "67fb3be386b5ddfcd48d878be851683af9192be5c94fc6a36edc2bbedf22a65d",
+      "git_blob_sha1": "4ebf9bb9c9b23d768cf17177dce9933b85af8550"
+    },
+    {
+      "path": "TournamentHamiltonian/FixedDeletion/Convolution.lean",
+      "bytes": 2292,
+      "sha256": "8ca4bbcd07c3ebdc08568efeb7f4484cae18b32157c46afddfd83e3d55eaceda",
+      "git_blob_sha1": "3b573fde45f630af5439d2bc19c4732b76b647aa"
+    },
+    {
+      "path": "TournamentHamiltonian/FixedDeletion/Estimates.lean",
+      "bytes": 8979,
+      "sha256": "0b987810235da3612a618e822308cb13683f07eee6137f9a20f56ff7751e3fe5",
+      "git_blob_sha1": "0d3048d29422b852559c98df0c3fce1616fbe379"
+    },
+    {
+      "path": "TournamentHamiltonian/FixedDeletion/HitLayers.lean",
+      "bytes": 6505,
+      "sha256": "2effac464a3b03f70817fab040d21a4f9bff58b0fcb5b6c5c039ed86ac6981b1",
+      "git_blob_sha1": "82502a799eb1b508e2a8562dead158545f82a1e7"
+    },
+    {
+      "path": "TournamentHamiltonian/FixedDeletion/Reindex.lean",
+      "bytes": 5738,
+      "sha256": "2020e61cd4769cbe50ca87eaf1f3936ff1e91fb1788e6ddbacf3f10d90d73e7c",
+      "git_blob_sha1": "6c6bab7f7f09743250f3cf22d834c51edac45927"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussian/Boundary.lean",
+      "bytes": 2207,
+      "sha256": "b1a65ebe1f0c4ebacc12fadd0a03e14473523e2cd03b00175131f87a5b63ea64",
+      "git_blob_sha1": "b90e19635898920dc27ce3f4062f3b0847832de5"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussian/Edges.lean",
+      "bytes": 6836,
+      "sha256": "3af2ebbc4522d21a61f92c0840262edfb2c9b8ab3e56b64f9bbcca4c5ef268c4",
+      "git_blob_sha1": "ebbb2b280c2a67d37ca3b4f4bbfeaefbd571b412"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussian/Factor.lean",
+      "bytes": 2391,
+      "sha256": "903effc9dfe1d3469adefb7263c7550ecf66dfa7267cabcdaa1f0442780be472",
+      "git_blob_sha1": "d18ac6c148f4b86799f93eaf3f1bebbb472d75ea"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussian/Laplacian.lean",
+      "bytes": 4007,
+      "sha256": "5ef4fb780f63f1cdeeec489d9278994d0b4ef89788ba120805b50862d281bfdd",
+      "git_blob_sha1": "0fafdbbe08fe4169adbe7d265f72928088a89f31"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussian/MatrixBridge.lean",
+      "bytes": 11598,
+      "sha256": "19997126193078db2e9511da88352aee6ca049b60783f2c7b46a7c9279869ad5",
+      "git_blob_sha1": "fceedd45eb9e0ce081b29e30c25fb892a0ec94a4"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussian/OperatorNorm.lean",
+      "bytes": 2566,
+      "sha256": "2d6261e88f965fe42c1d50fb73ae730d1bd9effe0c1cdf621ae56cd84d01e2ef",
+      "git_blob_sha1": "c335f68f2ffeee84beae65224b276f11a932e2a9"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussian/SpectralEstimate.lean",
+      "bytes": 8342,
+      "sha256": "d975af8b00629a66798a4558fdc5110a93e9bb79186f24b3330a0a2222b1ab70",
+      "git_blob_sha1": "da88da0fb14ea72b0654ec27edde14b6a72df019"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussianIntegral/Actual.lean",
+      "bytes": 3881,
+      "sha256": "112a517566d957a5e39fa77906c20b74ef60c9f7360bab0c83ca1cfa84c963a0",
+      "git_blob_sha1": "8a4b441d71a47f4cd3c1e31a511c260546e9a15a"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussianIntegral/Boundary.lean",
+      "bytes": 1167,
+      "sha256": "eec7fafd4937551e61a10f3551b4f189b8595476f7106caf817c4e119110f920",
+      "git_blob_sha1": "dd2e813ff8a0de5b0a668b314637baa10afc0c1c"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussianIntegral/CompleteRoot.lean",
+      "bytes": 3547,
+      "sha256": "04d34ed5014da3925e66bd8a2a5d2a3c7c8ba34fed19021de023147388cd27fd",
+      "git_blob_sha1": "a3e52e22112ce82038ef63a0060fa29bbdea0fb7"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussianIntegral/Coordinates.lean",
+      "bytes": 3807,
+      "sha256": "70363c737a7863469cf595ed7889a885408e2ff1954862a90a22a96e0daab730",
+      "git_blob_sha1": "9a6c121e4745ea4426c163777e05bf1f8a352d47"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussianIntegral/Determinant.lean",
+      "bytes": 3594,
+      "sha256": "66fbebb4fb81c1c5d8ee101ae3d9182e8d0f9c60a7978bf105597bc25eda70b2",
+      "git_blob_sha1": "29bdbb1866c5203bad95ee772f39fb9bb89d3834"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussianIntegral/FactorBridge.lean",
+      "bytes": 2469,
+      "sha256": "42673bb5806cca6b37cbd5e9bfe12b954bc471fc5a5de20bcf72af1c965df9eb",
+      "git_blob_sha1": "6722792e76a6aeba188e7d8d52aeb203c459b730"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestGaussianIntegral/Inverse.lean",
+      "bytes": 3222,
+      "sha256": "468b92402e4df4e70d6864aadf71195064b622fd1f808be0d3cd105bd5787734",
+      "git_blob_sha1": "a54d8b15e97ecd36764a896068962267f21218fa"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestQuartic/Boundary.lean",
+      "bytes": 2901,
+      "sha256": "aa7dca4baa62bb94eef4c04f599e2f4de43d86232ee9b7e4f7ea519d2d0459e9",
+      "git_blob_sha1": "d3fc7445193bec18312c0bdde1628df14fbf95b1"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestQuartic/Concentration.lean",
+      "bytes": 5113,
+      "sha256": "5343c83c275ba327dc873fdb92617e66c46fbe63e77c4f30ee9efb279144fed5",
+      "git_blob_sha1": "a8091a1f7c3cda6ec0a3b7a3624d8b80f760ca90"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestQuartic/Density.lean",
+      "bytes": 3381,
+      "sha256": "f2038c998b24c421fe4e412d0099fcea832b664a7beb114c0bb59c1031263440",
+      "git_blob_sha1": "51869ea58c8a4e961ab734e1bc59f5e6c7d3e4bf"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestQuartic/Law.lean",
+      "bytes": 3116,
+      "sha256": "ecef182c662748c1bcd938a273c0b65511f4a4b9bf2812025fb570f4e06da9c8",
+      "git_blob_sha1": "b8b2ceed0dc32b6e18c82c04b14fcb7bf3ec5f2d"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestQuartic/Removed.lean",
+      "bytes": 6382,
+      "sha256": "f4bc76ea6d53e719b5513b1a7f0f309409ca659f7a4c5ed1e5b0b238d79775e7",
+      "git_blob_sha1": "6fe5603ef5a5f4073a9b8dccceb457ed57a29461"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestQuartic/TiltBridge.lean",
+      "bytes": 5938,
+      "sha256": "942557c206993acc4224458b4842dcd5163c500fe2383d52398f85bb806731d2",
+      "git_blob_sha1": "0eab8eef75356217581c314f00c6f855207fa927"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestQuartic/Transfer.lean",
+      "bytes": 3299,
+      "sha256": "ef2aa209504d414cd10ad529607ae70406d3a7d6f1d79691534f8f29be2215a6",
+      "git_blob_sha1": "c3f26e431e0653cae52a0088e43cc439db7593e9"
+    },
+    {
+      "path": "TournamentHamiltonian/ForestQuartic/Weight.lean",
+      "bytes": 6812,
+      "sha256": "97048fc46fdc2706c5a829016db692469e04b29a331f8ecfef3adcd6b56b4bd2",
+      "git_blob_sha1": "b642af0d8aa313de76afef7367cc14ced9261a18"
+    },
+    {
+      "path": "TournamentHamiltonian/FourBlockBounds.lean",
+      "bytes": 14822,
+      "sha256": "731de0e7c261d24ac0ec2c7ce354ec88dffacf988a461d8e1a71e3a97a1df6c7",
+      "git_blob_sha1": "9321c5005e4e6e614cc497f5efb6bf10cad3256e"
+    },
+    {
+      "path": "TournamentHamiltonian/FourBlockPermanent.lean",
+      "bytes": 17749,
+      "sha256": "a686800816ea8a74e54e0ab5968c44cd703e270e5f8b41945d978c6866e4c86d",
+      "git_blob_sha1": "4d9e64e9b0ed4e8caa7410b6f90eaac1cb09f8a9"
+    },
+    {
+      "path": "TournamentHamiltonian/FrobeniusComparison.lean",
+      "bytes": 2650,
+      "sha256": "152ee129fe029bd3ac61a89b3957f7358d7da02a4c75a4f3202afe46f20c4049",
+      "git_blob_sha1": "a15dc5cfa89703247d26bd55e70fe7d05ae2f930"
+    },
+    {
+      "path": "TournamentHamiltonian/FrobeniusCp/Algebra.lean",
+      "bytes": 3457,
+      "sha256": "7b79d9905bb894ba42cf0aa55f00849c480f46cfce6f19f8809bb58b9cbc7486",
+      "git_blob_sha1": "4c5cb668c2f5f96df1780ef5c0c36ce0cc6e5b78"
+    },
+    {
+      "path": "TournamentHamiltonian/FrobeniusCp/Boundary.lean",
+      "bytes": 4074,
+      "sha256": "3fbc1511bece59071ac02e2d14a51c9980b4441c8d614630ec557f07aaa9411a",
+      "git_blob_sha1": "a09e5007b609c5c55f29c96e8f00b9a1815483fe"
+    },
+    {
+      "path": "TournamentHamiltonian/FrobeniusCp/Estimate.lean",
+      "bytes": 3304,
+      "sha256": "7fdf8d96e9471143378b2ec2a23f700c5f7b370038c8d1b869150d4d1ecd36a4",
+      "git_blob_sha1": "f3c70a895c609817be747f359d48a1fe407b8cc0"
+    },
+    {
+      "path": "TournamentHamiltonian/FrobeniusCp/Norm.lean",
+      "bytes": 2429,
+      "sha256": "f01148533a494c62026d8d382b010c4702d361e6fe468d25d24b98e7f0d51ee4",
+      "git_blob_sha1": "03f04b449a665f90bcc83de09a7fd4ed53626156"
+    },
+    {
+      "path": "TournamentHamiltonian/FrobeniusGeometry.lean",
+      "bytes": 8103,
+      "sha256": "ab7fe38014fdfa50d7cb33d93056097842fd65161dcaace256a4b00591b55fc1",
+      "git_blob_sha1": "7ed04841ca0778c5b29fcbf4894708f759eb6050"
+    },
+    {
+      "path": "TournamentHamiltonian/FullScoreAbsorption.lean",
+      "bytes": 4537,
+      "sha256": "6bd2d3ad16b250621c8937b63737804e9fe66c82140570b39236a4c345b9cdc7",
+      "git_blob_sha1": "6725b424f8ce67c53cbf51194bbc1ade0ac42dee"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianAnalytic.lean",
+      "bytes": 8668,
+      "sha256": "21f5a9c2fd28ef9d360fb7ef269638d0e8229562f6cc6dbd515541ef362d4c1f",
+      "git_blob_sha1": "c2c5757461dc9804635a7fe55a482604972c18ca"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianAnalyticTail.lean",
+      "bytes": 4300,
+      "sha256": "3744a7a86edc979ed9ca11d468f871d36d58b0dea5524fbeb9da85a80dea6034",
+      "git_blob_sha1": "ff5e5a3a982051b01b5e29d2606928b635ce5d1f"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianChainWords.lean",
+      "bytes": 3115,
+      "sha256": "a38e5a8ecd3edc3eb4e19bc1ea2e78155661e927c94ffd5e3242a97dffffb27c",
+      "git_blob_sha1": "d047a0830be1270a36843b1d14634d7cc954043e"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianChains.lean",
+      "bytes": 9193,
+      "sha256": "10fccb88a8b0017ad5a63ee1d65bb9583c354e447dbdcc68510ca2d0bea9fb00",
+      "git_blob_sha1": "81846ae03a9d955fec6f53a35ed164923cad4e6d"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianCoreCoefficientConvolution.lean",
+      "bytes": 5170,
+      "sha256": "138da9c0d48515d02ced89746f77b3b7439e8a6c41971da832b37937f414f2da",
+      "git_blob_sha1": "51e27ae7c8f2af7cf1e9d1509c02010ba649c0aa"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianCoreCoefficients.lean",
+      "bytes": 3620,
+      "sha256": "5a8c2e866281131597f7d547498265ad157fd213b1a967770d4db479b010f945",
+      "git_blob_sha1": "25ab72d2772ee06040860e9b4424e12009586296"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianCoreComponents.lean",
+      "bytes": 7851,
+      "sha256": "46eae54afffe232eb1588034f9ba78aee60ea579f71dde23e721957c3b0ae9cc",
+      "git_blob_sha1": "b5de0776cfa434597ac27a713234f9aefca447a8"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianCoreConvolution.lean",
+      "bytes": 3397,
+      "sha256": "8b416a2df73a6ee291587d16a442a3dc05170076ced810f3facbb1fc203a0a9f",
+      "git_blob_sha1": "00db236a5a25aed61efe5cda30557dedd947a09a"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianCoreDecomposition.lean",
+      "bytes": 7527,
+      "sha256": "90b735b4760bca323b616b89df645a119677199dbceed069f43c17065de8da6a",
+      "git_blob_sha1": "882177ad3ec5361492cecd713903047d6bc968ac"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianCoreExcess.lean",
+      "bytes": 6265,
+      "sha256": "a5a16024d2f05b17a37ebc25e82b563dce6fa5aa8cec1e0e8b49d5b613704165",
+      "git_blob_sha1": "9463c2c95a883a308979b1085ecbf4bdd5424397"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianCoreExcessCoefficients.lean",
+      "bytes": 6774,
+      "sha256": "33c9d2c67265bc3da1a79f8a1ab6cb4cd7f490c355c460c7c2d9ba6acad23d45",
+      "git_blob_sha1": "fd18d3d0551f30a03f96fff79ba2c18991d91a72"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianCoreGraph.lean",
+      "bytes": 10506,
+      "sha256": "03e02f20431b233a4572a31891a56e18b01b024d12836dfa15f17a65886dc220",
+      "git_blob_sha1": "be67a18861f43a0721ba1a688dacb861c8d66ef0"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianFactorialRecovery.lean",
+      "bytes": 6014,
+      "sha256": "618055f579c3653fdc515d39bc3436503d545ba4dbd18ef8ba86232f29ba3390",
+      "git_blob_sha1": "8069b27245bb3784000d5262279b71340f105d1f"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianMGF.lean",
+      "bytes": 10748,
+      "sha256": "280603bff3291df38a6dfdf456a3699a7712436d411c5f7753c8da98f4961792",
+      "git_blob_sha1": "ea6dce67fe92373ed24112a3badab0a015da7473"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianMoments.lean",
+      "bytes": 3897,
+      "sha256": "5afd40268913a638a61e2e5b8d913d8e8e6169868db2173c7aca05cbf3a35b59",
+      "git_blob_sha1": "a7998cac47d2d68bcce03fcc4c74b59826a8128e"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianQuartic/Base.lean",
+      "bytes": 3301,
+      "sha256": "ef98c27addad58de8131b1596f8d6b19a4719c868ede1a16b0b5cff32fa90ce7",
+      "git_blob_sha1": "e0bf5e13984010966fe06624363a9fd4d526ef3f"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianQuartic/Edges.lean",
+      "bytes": 5684,
+      "sha256": "850468f7d90b9ccb1241d75bb63149035d3a0572060ff5958ffb792e0731b8ab",
+      "git_blob_sha1": "6acd3e54b58116c55c02658f751a952f8a2cc778"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianQuartic/Limit.lean",
+      "bytes": 5068,
+      "sha256": "5b1523ebc679af5c4b7b079ff20d020f973fa1734ee2d90025a71c9e0dae6714",
+      "git_blob_sha1": "412ce82ce9b33ab91223aebed2ff6f1d2c40ef87"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianQuartic/Local.lean",
+      "bytes": 4374,
+      "sha256": "13a8023aa67d4436e4e1a614e5e63a73bc4527334319a8f9c87f3cf93ea181ec",
+      "git_blob_sha1": "c1c0b06a96a1457dc08e126f585d409c04243070"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianQuartic/Moments.lean",
+      "bytes": 5123,
+      "sha256": "fbdd6485ae17140436a6c1fc21569daeaa2ecb4b02cb5962204aae8ce95acc47",
+      "git_blob_sha1": "312d63c50f1d96ac6fff88ca6a8f274c4a2584a5"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianQuartic/SmallOrders.lean",
+      "bytes": 1808,
+      "sha256": "c77a0ccf57bfc026151bc96069a22d14edf33a2c97bcefc9c327a299836a0080",
+      "git_blob_sha1": "6310c481de943f69c22fd4c34d644a59bc631c00"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianQuartic/Sums.lean",
+      "bytes": 3815,
+      "sha256": "f0c1e4fc33c22d9eb5be698e6589b16055f1fed247814e1a811a46ecdea39a06",
+      "git_blob_sha1": "2ca320181f8de31d42b558fa359492717147a6a7"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianSeries.lean",
+      "bytes": 3693,
+      "sha256": "53f11b6f98ca8762e40a053bfefa6ff555da6acf5c4baf1cd6ec664310e7354c",
+      "git_blob_sha1": "5e12626c379f1e70b2ca2dfc2b8b1e34c26fe377"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianTailBudget.lean",
+      "bytes": 1776,
+      "sha256": "b5a9e3a7840d874b7e2787b1fd0025bf973ba2e34e95b1f62a7a42b46e6de477",
+      "git_blob_sha1": "71651ca311a8bc964e0c8c8b43604bfd3ddda36f"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianWick.lean",
+      "bytes": 12199,
+      "sha256": "5c9c5a1f0e4746a2fc513e54c70554b65f470d91ba052c25397a5ceb12e1b39f",
+      "git_blob_sha1": "befeaf753b3dd906548ac80c75cfa70029593bba"
+    },
+    {
+      "path": "TournamentHamiltonian/GaussianWickFinite.lean",
+      "bytes": 5747,
+      "sha256": "d4bf7d927cd07ce05bf5c204ee3762f490a926f1592ecd977d8560466317353f",
+      "git_blob_sha1": "d46751e73645bdf7314ba6fb7756384797507830"
+    },
+    {
+      "path": "TournamentHamiltonian/GeneralScoreLowerConvolution.lean",
+      "bytes": 6390,
+      "sha256": "c4ffee5ec5645f28c845c5914381f6fa2d606dc6f761f083ef248cae200fd061",
+      "git_blob_sha1": "ba2a1a1cca37450d5831651f2bbd3d95bc2f6539"
+    },
+    {
+      "path": "TournamentHamiltonian/GeneralScoreShortConvolution.lean",
+      "bytes": 5892,
+      "sha256": "98b702f0260cf4b78cbdd43915a03729ed55920c8f34f23041fad6f976f013b4",
+      "git_blob_sha1": "a918b0a59302a0b9d7d6da6781fd0c5979b4ff84"
+    },
+    {
+      "path": "TournamentHamiltonian/GeneralSmallScoreAsymptotic.lean",
+      "bytes": 4709,
+      "sha256": "563b1ea9cd4eb700659215198ef61e530612fa39b5889c885fb11116e48f7619",
+      "git_blob_sha1": "579b8554165c5ebfc3a3842b0800c03fed467519"
+    },
+    {
+      "path": "TournamentHamiltonian/GeneralSmallScorePaths.lean",
+      "bytes": 13284,
+      "sha256": "b76e667ab232892054776e0478d8cca0f476427715f3c5a84d3cbf00d1cdee5e",
+      "git_blob_sha1": "4eef7779623b1857200c08579122ca75a053fe49"
+    },
+    {
+      "path": "TournamentHamiltonian/GeneratingDeterminant.lean",
+      "bytes": 8983,
+      "sha256": "8554240469012d3193a204a395ff4c4b42072eadb41dde22f49a493dfc047167",
+      "git_blob_sha1": "d805652651ef464eda4a167ff78e8f4b8379a504"
+    },
+    {
+      "path": "TournamentHamiltonian/GramCentering.lean",
+      "bytes": 10127,
+      "sha256": "b1d42918dbdfa23ec21401603b4c7c8dadd9c90dc669ff961456aad1cacaeca5",
+      "git_blob_sha1": "1e5bafb5a9e8e512598f7ec6c663f0aae5453c21"
+    },
+    {
+      "path": "TournamentHamiltonian/GramDeletion.lean",
+      "bytes": 15910,
+      "sha256": "839ebb5b759ef6b8788ec81ada59e00301de67542f31a70783298a12ce6ab39f",
+      "git_blob_sha1": "a4c4c90a7288819ec4ed3b1444dceec12d574c00"
+    },
+    {
+      "path": "TournamentHamiltonian/GramLipschitz.lean",
+      "bytes": 11089,
+      "sha256": "d361d45991e19590030d147d6cd0c86398595ae14ac00529f6f79f5c9ec85090",
+      "git_blob_sha1": "b38df11c15a31697093546d91442724059e445b3"
+    },
+    {
+      "path": "TournamentHamiltonian/Hadamard.lean",
+      "bytes": 6227,
+      "sha256": "1e0c6db0f41d2d39fa750257f4176b6619a3fc30510d8c6eb28003eb39e73f47",
+      "git_blob_sha1": "a4f6c870c36dc12bc7c2a3db4d5e3869e830d253"
+    },
+    {
+      "path": "TournamentHamiltonian/HighVariance.lean",
+      "bytes": 11364,
+      "sha256": "c1f812415fff2e872bbf2ab08825ef93fc0d8ee7c13ec026ed945a2f9986b61b",
+      "git_blob_sha1": "e41bf37997822f2ca0428346028f97a719d01bd5"
+    },
+    {
+      "path": "TournamentHamiltonian/HomogeneousGeometricBound.lean",
+      "bytes": 4619,
+      "sha256": "d07c7cafdd2e3df49bd3500dbbe23471879dea2c5f340b530b00c4399d36c55a",
+      "git_blob_sha1": "861f5bc18de051976d8adf446354237840184346"
+    },
+    {
+      "path": "TournamentHamiltonian/JacobiPath/Boundary.lean",
+      "bytes": 4630,
+      "sha256": "acb17c9f87d1a99f7f8ca7fd4518bccb38b36d1e6701fe06cd4303b4aafe1d4b",
+      "git_blob_sha1": "cb152a7c4fa26d0ed05ab00e8a38fb61c93cec26"
+    },
+    {
+      "path": "TournamentHamiltonian/JacobiPath/Differential.lean",
+      "bytes": 2548,
+      "sha256": "cdf5bf3d2b9d90112a2b08496d3affd3683d753e0fe4d7634fb7384657524b30",
+      "git_blob_sha1": "3cb8714f1791d300593296a6eec4f222cb940924"
+    },
+    {
+      "path": "TournamentHamiltonian/JacobiPath/Path.lean",
+      "bytes": 2750,
+      "sha256": "9ddbb6a60ed52bfc305010963ad8a960c4b32ae5be7345432db14f6677d2a035",
+      "git_blob_sha1": "ee783d19d815365031bb6139cb4cc7a900e1ff4f"
+    },
+    {
+      "path": "TournamentHamiltonian/LICENSE",
+      "bytes": 557,
+      "sha256": "524cc8c4ea29b6284634d4fa1a279204a716809c66aaf336634a33ca919807d5",
+      "git_blob_sha1": "cfc56c9fda8b59951907102a8b778fc1c5b71a5d"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalLogCos/Boundary.lean",
+      "bytes": 3096,
+      "sha256": "2dd7534d2854510a1218f13d36de7a984f79cc5ac023eff027b96a22d680ef29",
+      "git_blob_sha1": "2193e2e06bb26290fc41e8fbcabaf3e3058acde0"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalLogCos/Derivatives.lean",
+      "bytes": 4446,
+      "sha256": "1603f06123427f9b7745ebe1e283d60820e429acf5891b10d69275c85af9979a",
+      "git_blob_sha1": "c1c9f117297c46c9f281b1d2d71802a2666e794d"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalLogCos/Error.lean",
+      "bytes": 7923,
+      "sha256": "af770730b208800820afa55dcce842615a25a832080f6b9b3eaec3e16e017243",
+      "git_blob_sha1": "c29fb24ae85c571793aea67ae01d1026fc42f8d5"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalLogCos/Integral.lean",
+      "bytes": 4368,
+      "sha256": "a0654d85ed3521403db386063f756bbc40974e20c05f62ee9e2cbe430326358c",
+      "git_blob_sha1": "63ee02696c7c517cda8356d9e5795e2c0254d837"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalLogCos/Product.lean",
+      "bytes": 4707,
+      "sha256": "22ac58b725d8f938e234caba63f63de4afcfce18bebf61b349d01e8970e6b8e4",
+      "git_blob_sha1": "64b8f45c03197ef1c73ce0d4aa4f7741219a0c7d"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalLogCos/Scalar.lean",
+      "bytes": 2748,
+      "sha256": "e56b1bdd0b9ddd2e0058f93338576b1d99edc6a4e72b6e31282d651303beb5af",
+      "git_blob_sha1": "216e0e829200daa3a8557e924fb7d4ce371615bc"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalLogCos/Scale.lean",
+      "bytes": 2196,
+      "sha256": "992779d6cd0c43038f1bcd71b01ca5ee5e232eef6d664307c68c459b5e376c13",
+      "git_blob_sha1": "57b55492b2a28af2c93546969ac29d2bd620e802"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalScaling.lean",
+      "bytes": 29989,
+      "sha256": "9b5f28d49bf79cf8291158d3b939ef63b40ac83e89b41450a641af4cf659453c",
+      "git_blob_sha1": "f64adcaef2fee9e0b8da0aed3188850f16ce4e09"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalScalingCapacity.lean",
+      "bytes": 10048,
+      "sha256": "7b6bcc1e8df1a8e3de0acee0a08b67cffabb08f8284dfd626ddda1c7e9468a61",
+      "git_blob_sha1": "1743dba3594fb286e58213ed5c7ae1f1b6df1781"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalScalingComplete.lean",
+      "bytes": 5390,
+      "sha256": "fad2870cb58234605ac4e9492bb31f81236aab438b4ea14037d7019d5983b332",
+      "git_blob_sha1": "de4b57126aeeccc909a74bf188a172d2897b4889"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalScalingDisplacement.lean",
+      "bytes": 12880,
+      "sha256": "408f83f699a39b3a45ef08f21909b6a0a7dc252b4ea7cd2e7a809b3d850b46b3",
+      "git_blob_sha1": "07ed58185a32784636fb9c4b48b8ff1dcecdd6b8"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalScalingEstimates.lean",
+      "bytes": 9841,
+      "sha256": "cf9127242babbf80b2c13a5b3b402885c73678baeed30dc98cd363731e261c17",
+      "git_blob_sha1": "e18e02988dfa43151aeeab22fd27b0cebd45f75f"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalScalingExistence.lean",
+      "bytes": 23930,
+      "sha256": "e1564e969d920aec5b629c8f3b6168f42625da3df220105807c95bb3f086f3fd",
+      "git_blob_sha1": "d6f09e157c06e3d81d66f0c3d10a94769bc4c9d2"
+    },
+    {
+      "path": "TournamentHamiltonian/LocalScalingNormalization.lean",
+      "bytes": 5460,
+      "sha256": "69144a0c61354d82f5af96fbcc9f536b44d23838e5ece3dcf41344dbafb2d149",
+      "git_blob_sha1": "8fa673bc5454ece7ca86a9cf12e11976ab569516"
+    },
+    {
+      "path": "TournamentHamiltonian/LogTaylorAtOne/Boundary.lean",
+      "bytes": 1850,
+      "sha256": "ae9338956664759cfce1e140fdc90135c991542b62a13e2dc040ec665a94e565",
+      "git_blob_sha1": "54e741bec8fd0b520bf9b76425aa736371ac99f1"
+    },
+    {
+      "path": "TournamentHamiltonian/LogTaylorAtOne/Bounds.lean",
+      "bytes": 3113,
+      "sha256": "69daffdaa420097202bf4c331e602124ebe911f498c085d66fdcf69611205c8b",
+      "git_blob_sha1": "a4aad67b36a602a6b826ab634d3029165137d23c"
+    },
+    {
+      "path": "TournamentHamiltonian/LogTaylorAtOne/Derivatives.lean",
+      "bytes": 3461,
+      "sha256": "f346067cd165285fab1ba977b2d0a96b9dc2c111ff45bb29c9dd5a5a0a9fc726",
+      "git_blob_sha1": "f23e011f66246ff70adbd4d71e861c4e7e4826f3"
+    },
+    {
+      "path": "TournamentHamiltonian/LogTaylorAtOne/Remainders.lean",
+      "bytes": 4549,
+      "sha256": "b999142af856dfcdae915c201467da8bc8574ceb60b80288e7cbe7e67867206a",
+      "git_blob_sha1": "9238028e3b6578e6b0b21a666ff0226648a94ebb"
+    },
+    {
+      "path": "TournamentHamiltonian/LongTail.lean",
+      "bytes": 9876,
+      "sha256": "9786004d98014c3497f3f1c10ab4c28aeac4c6ddfddd600b27a6b32de5efd7ec",
+      "git_blob_sha1": "e480625b3e7dc8c9acd19da31454200e47cf7196"
+    },
+    {
+      "path": "TournamentHamiltonian/LowerDeletionFactorial.lean",
+      "bytes": 1218,
+      "sha256": "b2c1908cee701678725466ebd6bfaa36fb94c48a675816034a8939473106576a",
+      "git_blob_sha1": "38d479e3313e834a19e9c24b58b1c6db092f0cf4"
+    },
+    {
+      "path": "TournamentHamiltonian/LowerShortConvolution.lean",
+      "bytes": 3527,
+      "sha256": "83e939935dab520c4464e7ebca8f60a4b478b393f4468311f9c75e7b8dfdfcaa",
+      "git_blob_sha1": "2b2ffaf23876b38e14756594c5682babcec2e2ba"
+    },
+    {
+      "path": "TournamentHamiltonian/MatrixComplexification.lean",
+      "bytes": 3190,
+      "sha256": "68259acbc438b8f0dbe16fb508f77454f5d1c19f983560a2c3118709bde07570",
+      "git_blob_sha1": "136acd45be0d8c1e2523219d63d66d82d41bdd37"
+    },
+    {
+      "path": "TournamentHamiltonian/MatrixPowerDefs.lean",
+      "bytes": 631,
+      "sha256": "9414f0e5535e2476911c41a3b53f48e372ddb89b2e2a8266535255ea87ca8676",
+      "git_blob_sha1": "82dbc5f8bb0f3d41369ed651aff25db914148814"
+    },
+    {
+      "path": "TournamentHamiltonian/MeanProjectionComplex.lean",
+      "bytes": 3736,
+      "sha256": "40db9f5528a137415a6b7c3329483889520799117a18d3734ebe278e0a252616",
+      "git_blob_sha1": "5609831e69e5f1fbb37c3cdd9bc77bd603b82238"
+    },
+    {
+      "path": "TournamentHamiltonian/MotifExp/Endpoint.lean",
+      "bytes": 5860,
+      "sha256": "6a8541ebedcf695a470d2155f35b3ca37bb45a451e1384b35b44b6f9afce83fa",
+      "git_blob_sha1": "f5450ec0cb653b8ae2b9d4a7d44991eb756ab801"
+    },
+    {
+      "path": "TournamentHamiltonian/NonprincipalScaling.lean",
+      "bytes": 7665,
+      "sha256": "a8c2dcb1ea5c211455ed0223124192a5e42be55da739b2955b4a6f5c9e981a35",
+      "git_blob_sha1": "c7dd559d92f592893d6188946e9953aa3e6ff27f"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularDecay/CycleBound.lean",
+      "bytes": 2313,
+      "sha256": "3d2e721ffa658df132773395225fff6e687be97dc8ec001080b6c63b2a88e299",
+      "git_blob_sha1": "b99f96fdcfc682f877e4a0a1d474a231f622929d"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularDecay/CycleDecay.lean",
+      "bytes": 3401,
+      "sha256": "4bad7acbcd15a817a7dad82ce8253bb220bc26bb353b524427ad3ca471aef527",
+      "git_blob_sha1": "d34f47fcbb70491abb620f88f391fd490286732e"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularDecay/ExpectationDecay.lean",
+      "bytes": 6450,
+      "sha256": "7a69e1cb82f3d483639624538a6f1f007e69542b5adb65e9f73a883f5b9bf609",
+      "git_blob_sha1": "2cce175aa520e453b726382052f3ce3dcb1c66ad"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularDecay/PathDecay.lean",
+      "bytes": 3693,
+      "sha256": "b8f6ec570321c67349c4d3cec3ebf610d6a1ce0a65ea7db199d60518b2e24bbe",
+      "git_blob_sha1": "95d818768dbd608e3b975df677ee272f89d578ee"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularDecay/Variance.lean",
+      "bytes": 4874,
+      "sha256": "079725bc7f83aa6d3c56a90480e4c517434e64aac235ae69d427121181f2ad21",
+      "git_blob_sha1": "7596d0d847dda13157a00fd6346048bccae684a1"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularKappa/LogLoss.lean",
+      "bytes": 5381,
+      "sha256": "b5a4a622c71ce6d5b4cf9cc3a665cb8ca644e0222a38920460681f5f48d747cd",
+      "git_blob_sha1": "6d49eb6202351be778145bbd0fe68e449cd7dbdd"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularKappa/OddGap.lean",
+      "bytes": 3987,
+      "sha256": "2e56dc454e2801f10e73c783b5f88aec2bd90cce4f92282ac1f50672de142fb1",
+      "git_blob_sha1": "02d1f2a46e0b174d2e29eca8e8038208fd7dc7b4"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularNormalization/AugmentedPath.lean",
+      "bytes": 6894,
+      "sha256": "e6b25f2b9f80c9bd74a7f971e401119ac57d1bc11623b3aa7877a716f07ee11b",
+      "git_blob_sha1": "3c9b147ff9e92a298c2678bc0f9a447549a135ad"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularNormalization/AugmentedScalar.lean",
+      "bytes": 8234,
+      "sha256": "c8895cc29255c4af838ea7d841e9c53971c385743a9933b8c9034017968b98b4",
+      "git_blob_sha1": "00a1eda9f4eb2c0d6942634ffeea885742055b9e"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularNormalization/CycleRate.lean",
+      "bytes": 6425,
+      "sha256": "e8095eeefb7521f44cf2f65bc99404a4dfe676103627ad023e67223ed8bc38dd",
+      "git_blob_sha1": "c3c0aa2405f65a2796ccfb272a653e59cf5c7c4e"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularNormalization/FineStirling.lean",
+      "bytes": 2955,
+      "sha256": "1a5596a435fb0c1135cb3f2efc39b85d799c19a05ffaee43195e75dcdbf93ba8",
+      "git_blob_sha1": "65d99e1862e0d8376de257f712cbb205b60bac46"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularNormalization/PathRate.lean",
+      "bytes": 6695,
+      "sha256": "a62f29b55c483885302adb1e888aa25ae4ed3588ac0fa6a0699c59626873dc75",
+      "git_blob_sha1": "6ff275b81eef9709e562475dbfe2d7f73e94e286"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularNormalization/ScalarRate.lean",
+      "bytes": 8429,
+      "sha256": "8ccf2ee61ab347c487f519a9af721567a64b70594767418be09a010eca395dd7",
+      "git_blob_sha1": "4bd514667127c7a7c368d4f5707caf54b8ceead5"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularNormalization/Targets.lean",
+      "bytes": 3358,
+      "sha256": "5426af74b7162fcfed31aee896411f92b39437a48ce7c66a58778594c8a3d7ef",
+      "git_blob_sha1": "64b8d4dc16635b51fab39789e17e81bfeece0272"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularRate/PermanentRows.lean",
+      "bytes": 3955,
+      "sha256": "98a04ada9915138915cbf68e19d7d7011b7752f8c4a0b59cde845881494d9b2b",
+      "git_blob_sha1": "e6b0b134618dbd3140b328168cee5c04d3d7f7b4"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularRate/RowRounding.lean",
+      "bytes": 3128,
+      "sha256": "f96c77d192b5b43c4bcf6ed97369c0c4d8fe8d5775215ef5ffcd44f5ac3d5cf5",
+      "git_blob_sha1": "4ef3166256535714a2bc15dda88f1da50ae40af4"
+    },
+    {
+      "path": "TournamentHamiltonian/NonregularRate/WeightedBregman.lean",
+      "bytes": 5510,
+      "sha256": "26b6b00091159665559d03a899dc2c8f6d9263980bf5c62124916bf5b0229917",
+      "git_blob_sha1": "f23cfc0de1dde68e834fd62a2233e048a1c793f7"
+    },
+    {
+      "path": "TournamentHamiltonian/NormalizationBounds.lean",
+      "bytes": 8831,
+      "sha256": "364dfd5eb24cfa3eafb7e649406b4b23ce145cb8accdc03307216c84ba881a12",
+      "git_blob_sha1": "418a570f9ab2fe0236e916ead7420d55c3abef9e"
+    },
+    {
+      "path": "TournamentHamiltonian/NormalizedConvolution.lean",
+      "bytes": 11239,
+      "sha256": "1f1b30785f7f4e9fbf263d100b12bf9c96aa370af21df4bd0b73fa20dc2c3d0f",
+      "git_blob_sha1": "6815230decf627e55b862cc6aa89c1efb2bf7d1e"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearDeterminant/Boundary.lean",
+      "bytes": 3037,
+      "sha256": "91d5897a536fbd0559ee7b0af640521b23329fb1e221d4a2202128c43df91a1d",
+      "git_blob_sha1": "e34d85c8447508f46b4bef7fc3b2d2907338ac32"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearDeterminant/Compression.lean",
+      "bytes": 4422,
+      "sha256": "d479584a95f3f2fea3baab5d65b2655d8328b2ca2dab3b421176201c67b22443",
+      "git_blob_sha1": "075fc3464bb45699f6823d6551c3dc63adb8f729"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearDeterminant/Generating.lean",
+      "bytes": 4127,
+      "sha256": "255586abcd8db8bf87cffe1e45b9d08e4e334e7256c9127f1532a1a469fd33d5",
+      "git_blob_sha1": "25fb1210db969c3a28db9efd606495e38ae9483d"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearDeterminant/Perturbation.lean",
+      "bytes": 2464,
+      "sha256": "4fe1aec5552b71e7cc23207e7ebc19a29ec407ae6595f1c56df94115bce0514e",
+      "git_blob_sha1": "94d8b29e7fd3315296e51947a270580fdff9f7c2"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearInequalities/Algebra.lean",
+      "bytes": 4803,
+      "sha256": "83ba8197232437342565127b40cc7ba223606526d773fadd93ba3159a84f59dc",
+      "git_blob_sha1": "fa849d6c42367488c33647048c02815921eea889"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearInequalities/Boundary.lean",
+      "bytes": 4088,
+      "sha256": "44c6721ec8e69a281d8823e5d5cec3a2218ce1af2bb74cc77f8cbd532fd7f51c",
+      "git_blob_sha1": "27bf74071c29aa3f775cce36bdcfa1a6722ece0e"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearInequalities/Frobenius.lean",
+      "bytes": 6348,
+      "sha256": "6964d24a3d4741707885b7721915f3bc586b0957a53b6557d7681d6a0ebb57ad",
+      "git_blob_sha1": "2d099152a531f3d7e933c4326e7852e75d83a5dd"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearInequalities/Products.lean",
+      "bytes": 2813,
+      "sha256": "bec19a51fc42f3b3e4a2f684661582f4fe5c8bf1f922a3a7bfba496484a7c5de",
+      "git_blob_sha1": "22b4de779c7b59c55aed3f53251a55525c1cdd4f"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearInequalities/RankOne.lean",
+      "bytes": 2459,
+      "sha256": "ed781b251d42fab9b786fe557848b0c181286f477d5c948f2c0639ce23375507",
+      "git_blob_sha1": "7ca001d4e20eb36380946b04062b6eb7d8b99d4a"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearPolar/Base.lean",
+      "bytes": 2817,
+      "sha256": "0a543841ff487648d15fba62fd6b33b72e7e28d71494a30daaa1c4c1225465c2",
+      "git_blob_sha1": "f0e8f066fbc3eaf0b6240a0a6c68f17a039a2819"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearPolar/Boundary.lean",
+      "bytes": 3937,
+      "sha256": "d59739983d6f069dc8163c3800cd7cec0e7e9c6375b350682b89a72000a7467e",
+      "git_blob_sha1": "197bf53bbd53f6d1de500c79df3979d6b4170859"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearPolar/Dual.lean",
+      "bytes": 3702,
+      "sha256": "4cc9af902f2b57d53e3c172ec29e6144ba420d740f145319c91b1e815a958266",
+      "git_blob_sha1": "3e9d6e7fe492666b677cbf9cde8e193bd3f53bf6"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearPolar/Polar.lean",
+      "bytes": 2982,
+      "sha256": "db9c8738f88e0143e08b5d1ac5512855f136880798006d9ff77f1fe56a627887",
+      "git_blob_sha1": "1f0f0cb1421195d2546b4d457cf3707699982144"
+    },
+    {
+      "path": "TournamentHamiltonian/NuclearPolar/Spectral.lean",
+      "bytes": 4219,
+      "sha256": "20fe94d5d4c3699765c904c859a5d025f0684980d445fbb0d9b3d455e48ab770",
+      "git_blob_sha1": "854a1a9c4619b466732860c380e2aa6cb99cf7ba"
+    },
+    {
+      "path": "TournamentHamiltonian/OperatorCap.lean",
+      "bytes": 18813,
+      "sha256": "64edc272d2129a3fe1cccf115572400e1830722ae6114ac6751ab65010e23992",
+      "git_blob_sha1": "1cf64d01f2b534dbd509cbc3415c53b52095ba7c"
+    },
+    {
+      "path": "TournamentHamiltonian/Orientation.lean",
+      "bytes": 4765,
+      "sha256": "4f2c7db45f3e8e0c90886d1fb9042ad05e30293ea6cc442b8c1df9cb747c35df",
+      "git_blob_sha1": "cf241e50f5c8ec235478f5f23a65e40fee131787"
+    },
+    {
+      "path": "TournamentHamiltonian/OrthogonalPolarBridge.lean",
+      "bytes": 3420,
+      "sha256": "1201298051e744603cd02ee575328dc95cced1f6a9d44ed623a6ddc531552e65",
+      "git_blob_sha1": "b41b274be89098e8fe0238fd72fcf6c6843d99d8"
+    },
+    {
+      "path": "TournamentHamiltonian/PDGaussian/Boundary.lean",
+      "bytes": 5392,
+      "sha256": "e917293a027492bdcc2208889219b0aa09ee5803bb5f652295b633bcc5503a41",
+      "git_blob_sha1": "7262b28e701b1748ee0453e7dd2733c204846a4b"
+    },
+    {
+      "path": "TournamentHamiltonian/PDGaussian/Forest.lean",
+      "bytes": 3925,
+      "sha256": "4953b568efe165e8779daa41bc5d1e8a09dffd7d5829d3c141496c4ff83e7d38",
+      "git_blob_sha1": "b40a1c206d63578296c30bc4628b35289726e15e"
+    },
+    {
+      "path": "TournamentHamiltonian/PDGaussian/Integral.lean",
+      "bytes": 5038,
+      "sha256": "c4bdf773b27c74902085908ef3d056a6b84bfe095bbfae5c0daea38e58f4e571",
+      "git_blob_sha1": "abcecd12ca3dcf87b3b013fad3aa05771e139806"
+    },
+    {
+      "path": "TournamentHamiltonian/PDGaussian/PhaseMGF.lean",
+      "bytes": 4991,
+      "sha256": "d6f84e2dc0f4e676b054896d27c78d9cafeec213873d0554beaa9904de8ac764",
+      "git_blob_sha1": "01f4be26c9ff8b4f5a2e2bb079204c473742dc39"
+    },
+    {
+      "path": "TournamentHamiltonian/PDGaussian/Spectral.lean",
+      "bytes": 5609,
+      "sha256": "4fd7eba76852f5d098d0bf0b85e5d595c97496eb40990c9c8dc97822be7f1b47",
+      "git_blob_sha1": "fbff973abaf0948f7600c85abfd5f4e8af68ca5e"
+    },
+    {
+      "path": "TournamentHamiltonian/PSDGaussianAMGM.lean",
+      "bytes": 2576,
+      "sha256": "684d82e24755d44c037649989bbd7fb81fc6c7fc17c227ba98444769aacd5a1d",
+      "git_blob_sha1": "f99f362fbffec2d6a018484e41f5998b859c9709"
+    },
+    {
+      "path": "TournamentHamiltonian/Packing.lean",
+      "bytes": 8218,
+      "sha256": "7daecd5b35507e3aabf9d9f5c4dfc76e02f715390659f4427945da303e2c6004",
+      "git_blob_sha1": "33fea21b1df8ed851d41d4b8a414cb3a1e70114a"
+    },
+    {
+      "path": "TournamentHamiltonian/PairedConvolutionWeights.lean",
+      "bytes": 5078,
+      "sha256": "04414f7ce99c1db94ca31a9cb50a477c2d4e116f7cc7d492c43f8014136a895f",
+      "git_blob_sha1": "a5cc232d67ca981566bd9c24e1e72779278a564c"
+    },
+    {
+      "path": "TournamentHamiltonian/PairedCrossProducts.lean",
+      "bytes": 3666,
+      "sha256": "1f26e0e3478fa82fa8cae0593b2f6587152ce2971ef5ff357c23715b9e5de9b3",
+      "git_blob_sha1": "fdebb5364a75d5453d6babf8aaf64ff3b31694d7"
+    },
+    {
+      "path": "TournamentHamiltonian/PairedErrorWeights.lean",
+      "bytes": 4570,
+      "sha256": "b2c2bb0b2a4d80fa4eeadbb986499773ba9a787909bfb68365ceec0bab207799",
+      "git_blob_sha1": "f6741816ae5548a261a844df3635680642ca50e6"
+    },
+    {
+      "path": "TournamentHamiltonian/PairedPermanentCoarseBudget.lean",
+      "bytes": 4179,
+      "sha256": "21c9c065d470d4835855769dc0f9313d12496daa872868471d102f16000b21e5",
+      "git_blob_sha1": "f19583aef16114a43d6f607bc66d476f13003b53"
+    },
+    {
+      "path": "TournamentHamiltonian/PairedPermanentErrorBudget.lean",
+      "bytes": 5411,
+      "sha256": "36f11e03caddc4c704bdc5da480b95b3883fc88fad44425b86bcecdc5c23ad50",
+      "git_blob_sha1": "17f2f433234b0d70aa498e387dd1168c3d10ce27"
+    },
+    {
+      "path": "TournamentHamiltonian/PairedPermanentGaussian.lean",
+      "bytes": 9211,
+      "sha256": "16da630639147d3444e6e34c84d310686531eabefa14c99efed2674dc5680a9a",
+      "git_blob_sha1": "73da1924eed39fc0b8487b9322149106a1df25f6"
+    },
+    {
+      "path": "TournamentHamiltonian/PairedPermanentRestoration.lean",
+      "bytes": 12099,
+      "sha256": "b4e37b56e0be1842a2185665af1fff5719fc9da9c1c66980f102495643d972f8",
+      "git_blob_sha1": "a2c27bd1a8b153ae4495513e30b68e7a9c98422d"
+    },
+    {
+      "path": "TournamentHamiltonian/PairedPreconditioning.lean",
+      "bytes": 9575,
+      "sha256": "d6068fec0bc654e5bdb456191046dd568e369f253e4699301bd81f76c0453626",
+      "git_blob_sha1": "7c62fb4cc438c2fb889c849d601a3eb6749abe5e"
+    },
+    {
+      "path": "TournamentHamiltonian/PairedShortSpectral.lean",
+      "bytes": 6223,
+      "sha256": "8f3d26bb360e561977acabd1db69f0b59e91698735d52073f9ab4bcc09527f9f",
+      "git_blob_sha1": "3408d4b3198c960e83d84b28cd6b8bfb9c5f34e7"
+    },
+    {
+      "path": "TournamentHamiltonian/PairedWeightL1.lean",
+      "bytes": 2623,
+      "sha256": "9b6abdfef690d0e5845a3ee610af17f26ca327f6c7dc68eb080f247e94ec8d3d",
+      "git_blob_sha1": "c155b3bf03d6009c41fe1fc743bde5fe20b24e36"
+    },
+    {
+      "path": "TournamentHamiltonian/PairingCardinality.lean",
+      "bytes": 19028,
+      "sha256": "9513ee7d0bb34a0a916858f1cad7da5c63fe1066263aea5ac82ebb238e2d5fe8",
+      "git_blob_sha1": "0c49720ef3e450a0795a58a6490cc44540633751"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperAugmentationNormalization/Endpoint.lean",
+      "bytes": 2062,
+      "sha256": "b94323e81d8a4d5d03b5e27745f89f5e680057a19b1f596f571962563d080162",
+      "git_blob_sha1": "21e88e09a572f237ab270b8bdbc0e3ff02557c35"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperCarouselPath/Boundary.lean",
+      "bytes": 1347,
+      "sha256": "6ada3b4ba66b53e43a7bf1c3cadaaa7d01a3eb67e39ce26d8aeab361d80d1864",
+      "git_blob_sha1": "80ec210c80be03dc0a36bc2c5214a1fc39d100f4"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperCarouselPath/Endpoint.lean",
+      "bytes": 3120,
+      "sha256": "c7e6a70f01dc91774c455576ab1b39580d4033151161a039c6bbebd4c2e9481a",
+      "git_blob_sha1": "6592a416223d8c0a97af34d1f86b97e54359eabc"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperEndpointWrappersB/Boundary.lean",
+      "bytes": 2219,
+      "sha256": "7d51d14dc5655b198b397c609c382e597eed47c3d64336940f81ad8825fe886a",
+      "git_blob_sha1": "150e2826a4984a4512ad120f085336f8236a4e36"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperEndpointWrappersB/MainBound.lean",
+      "bytes": 2998,
+      "sha256": "ea993722903d53051a63555dd4580ce74cec744d0ce49913e3575229e692bc93",
+      "git_blob_sha1": "0340ec832b19728cc8805eb13cb963b12d074d88"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperEndpointWrappersB/Relative.lean",
+      "bytes": 1762,
+      "sha256": "d8136a65fdada5a4b7e29dfb1dd40e7b2b9467b025facbe55cc8cfa28ae9e098",
+      "git_blob_sha1": "a10e0c8affaddebc8353d8c77a784e37de61afeb"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperEndpointWrappersB/SmallScore.lean",
+      "bytes": 4446,
+      "sha256": "2a6247dd6fbe9c6ded58a0f35da94bbc1e6993d198cbd9bb47e23fc8e8b16b06",
+      "git_blob_sha1": "3196371566714487fdf3bbdb8f024d624c8ecbeb"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperEndpointWrappersB/Variance.lean",
+      "bytes": 1216,
+      "sha256": "a34fb53bcae941c2f7e600ae3953657f6e74de605c7276543e18efdf9f70675c",
+      "git_blob_sha1": "620d5e9c33dde3a1c73ff1d5f7e110bc055b44b7"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperEndpointsA/Activity32.lean",
+      "bytes": 3657,
+      "sha256": "e278cbd41146c7c883f0434f1b5077cda86412f08e8e4f0100af5d5ca771edc1",
+      "git_blob_sha1": "85ea8878ae488fb9cc9e0923f4596eafdaa0e590"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperEndpointsA/Boundary.lean",
+      "bytes": 3692,
+      "sha256": "8e5cd50c70fb158c7b1fe2fb704bac59605a3af19ee017907a7b108652b690d5",
+      "git_blob_sha1": "2eb992f391dcd30fc9191b0342a15818f650ebab"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperEndpointsA/Permanent31.lean",
+      "bytes": 4695,
+      "sha256": "3f13dd5a1533c7d6683ea355e889e63d0d5ee343ee294884c7167f4d119640a6",
+      "git_blob_sha1": "470de6785aef45604eb3f42e36943bc397802382"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/Approximation.lean",
+      "bytes": 5250,
+      "sha256": "ebf949390111c9a7fda3cbb06c1f48272962c78a080f7bf41f3666837bd03d57",
+      "git_blob_sha1": "28dcf06255e2588d44d171eb40217c54d9cc9e78"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/Boundary.lean",
+      "bytes": 2773,
+      "sha256": "da644f84b86a70964ce05d0cef62a0da8ebae2aaf86b9a1756688d84f40777e1",
+      "git_blob_sha1": "ca105e50961b1e875d7733c531fc2e054a9c7d11"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/Bounds.lean",
+      "bytes": 4181,
+      "sha256": "0f70e92848e660fa6b77ff73b9c2d0d2a28fcc542bb8292f59de82318ce64153",
+      "git_blob_sha1": "9a5e5007bde9146b337e6f209408acb2ed1a23a5"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/Calculus.lean",
+      "bytes": 2770,
+      "sha256": "eb7fdd36e3ff84863314a9f498efbb1f042d1f1716fb10ee8942cba1c27fff16",
+      "git_blob_sha1": "27c642c991cebe280c4894a90d3487d692881fdf"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/Endpoint.lean",
+      "bytes": 6894,
+      "sha256": "99205633dc65d54541c323e24d5b96d6d459041617bc207a598f4cf6c59b756a",
+      "git_blob_sha1": "d27a8350f8e2bf9493450418aaa16d658216bb1e"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/Factorial.lean",
+      "bytes": 3271,
+      "sha256": "3aafeeebc9035a8b3a474949a5cd082f3b76b3b9d7e130f3adb0f43176755fa7",
+      "git_blob_sha1": "9209661c3ed5b78a0a351123b385098181371707"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/GramDerivatives.lean",
+      "bytes": 2617,
+      "sha256": "819d9d1a7a7e9ed274286d45d64c005f6d76069b14f129463560e5d9ba585cb2",
+      "git_blob_sha1": "facb167ffb79b48efd1b83ba27c9ccfa9a51fc1e"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/Recovery.lean",
+      "bytes": 3479,
+      "sha256": "f48e88bd637aa0a488460a17170b04fa5fc3ef6bb79b1b1ed0986822d57eeed4",
+      "git_blob_sha1": "63057dfdf29770dfb95a2e2471469dd8f0140491"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/Series.lean",
+      "bytes": 6228,
+      "sha256": "f1d330bd85b7ff2abe6153b83e690b5e879529375cfa5714851c22f9dade4998",
+      "git_blob_sha1": "72e23800eb33a8aee32dbfbe147fd9f2a0594e35"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/Spectrum.lean",
+      "bytes": 3252,
+      "sha256": "ad169379082a0948544ec1d42b70fdec98d2b7d7a85cf3c511e98928e5421193",
+      "git_blob_sha1": "f46d25cf23f0421cea400754bbaba958401ce6cc"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperGaussianRecovery/Window.lean",
+      "bytes": 2101,
+      "sha256": "8bd86c7c0ea8802dac107a789bd50871bc3d6be667a4d70357cb6c5798f84adb",
+      "git_blob_sha1": "af9de06f52fc78748f5ba86981bd27f405797032"
+    },
+    {
+      "path": "TournamentHamiltonian/PaperSpectralOrbit/Endpoint.lean",
+      "bytes": 3409,
+      "sha256": "b9d43ba4bd02ba96394b41cc5cae725abe2da65702cd0a4c5db6687363e7df39",
+      "git_blob_sha1": "bd2b5f9a0aa12477a13b5da1485d459c2515dc63"
+    },
+    {
+      "path": "TournamentHamiltonian/PartitionChromatic.lean",
+      "bytes": 9033,
+      "sha256": "223e6a509860b3acc0cb0f1bb67d106d89bbface647fc3e66902049295180469",
+      "git_blob_sha1": "88b75cdb7eac1ebe0b6f96981101ba0ef9bb088d"
+    },
+    {
+      "path": "TournamentHamiltonian/PartitionComponentAssembly.lean",
+      "bytes": 12546,
+      "sha256": "a1ce1c21077a954fb57ae32ea451af56e7244e40707d3f01a1bcda7546d24f54",
+      "git_blob_sha1": "0808c0ae347fcbde73c80ac993a8d697ed7f822f"
+    },
+    {
+      "path": "TournamentHamiltonian/PartitionComponentSplit.lean",
+      "bytes": 11644,
+      "sha256": "33e718578ef5848949c24af3c46a82d6b462857113bf99d7d5ebe08ff9301213",
+      "git_blob_sha1": "4244b4f9161cfdb9370d85660d6aeceeb7087404"
+    },
+    {
+      "path": "TournamentHamiltonian/PartitionEdgeRelabel.lean",
+      "bytes": 7868,
+      "sha256": "775287fec3a01721c3cca43152e84759840573c32bbded5d654b0f08fd648637",
+      "git_blob_sha1": "e711ed2330dbd1b4babfe1f517b1f4a20136e269"
+    },
+    {
+      "path": "TournamentHamiltonian/PartitionExpansion.lean",
+      "bytes": 14560,
+      "sha256": "18ecf96d6b736667d68c8eff55d6bb590151abeb3cd5189d18a681128f9b8d56",
+      "git_blob_sha1": "329956ec9b2e2c34acbde58a62dda3342e5516aa"
+    },
+    {
+      "path": "TournamentHamiltonian/PartitionHalfEdges.lean",
+      "bytes": 10363,
+      "sha256": "857d3433b91451aa3e03e6fec8f916f255925ae176e2906315c22d398b80af2e",
+      "git_blob_sha1": "1ec3c8cd49437fe9529f6002c06503c09e170a09"
+    },
+    {
+      "path": "TournamentHamiltonian/PartitionWeights.lean",
+      "bytes": 14128,
+      "sha256": "aa7bc2d025e450390bf62f5da26750df16bba894b974e888653dd2e00bcfc5b2",
+      "git_blob_sha1": "f63edadd9fbe6c72d4f8da2374c78dff4f7d7c71"
+    },
+    {
+      "path": "TournamentHamiltonian/PathConvolution.lean",
+      "bytes": 9782,
+      "sha256": "aa4bfbee5174e4fc2dd1322620b16176c9c214cb4575bfe3bcc4c10fd1b6e4c1",
+      "git_blob_sha1": "59044e04d758fab4149d44b03bb8f677801bf187"
+    },
+    {
+      "path": "TournamentHamiltonian/PathConvolutionCoefficients.lean",
+      "bytes": 26459,
+      "sha256": "99e8d5437d1887b4476ca61c85035bfa8e2cdf60cc38e77d23b6d104e744ad35",
+      "git_blob_sha1": "700121c398755eb72ad2f921597e1a21a1da37ce"
+    },
+    {
+      "path": "TournamentHamiltonian/PathConvolutionGenerating.lean",
+      "bytes": 28911,
+      "sha256": "8f308aec6e6301dc101701e56da1cf0612ca5433380dcb63c5f8f25b04b7e8e8",
+      "git_blob_sha1": "4f3593df566c7aa4e6e8b761a61275ebbb265432"
+    },
+    {
+      "path": "TournamentHamiltonian/PeriodicBox/Basic.lean",
+      "bytes": 9429,
+      "sha256": "aa31bda092a45e8fc8c6d7c119a38ab52c39beeaec276c3d9275e5db9ffc54df",
+      "git_blob_sha1": "c82c7dabfb1f4169ecdaa58a72d46341d3678ad2"
+    },
+    {
+      "path": "TournamentHamiltonian/PeriodicBox/Cosine.lean",
+      "bytes": 9988,
+      "sha256": "05932941b654fcfcb7c0e5e8adfcb4f6cb3c2f7be2e251a378c2e1a4f27a5910",
+      "git_blob_sha1": "f3484f039284b268be93e6645443b011bd1a2371"
+    },
+    {
+      "path": "TournamentHamiltonian/PeriodicBox/Local.lean",
+      "bytes": 9526,
+      "sha256": "42c8cbc9a3db8c2ddb438f723475c85076bd4479721006ef28806c86f37ff6fd",
+      "git_blob_sha1": "9273a1565279cc94c620c42eed9b45449fec5578"
+    },
+    {
+      "path": "TournamentHamiltonian/PeriodicBox/Tests.lean",
+      "bytes": 4355,
+      "sha256": "0867319b0ba72909b4bc8f3928bdc39ac36124c64fc5c1c5279542df31b1079a",
+      "git_blob_sha1": "604e9ff39b978ba5214888d46cf13f53a8332436"
+    },
+    {
+      "path": "TournamentHamiltonian/PermanentAnalyticDefaults.lean",
+      "bytes": 3551,
+      "sha256": "84c66679a0f3cd09b6bd8a5a4e902f2f983b165dbcfc30a50600a2f08b6c30e7",
+      "git_blob_sha1": "bf5ddfa170a872708b19c29ae52e7ef4fb87960e"
+    },
+    {
+      "path": "TournamentHamiltonian/PermanentAnalyticTail.lean",
+      "bytes": 5050,
+      "sha256": "193d70f7ac93658048602aa09d1c05a5387f1e4b371c1f2a6697d492b6040f30",
+      "git_blob_sha1": "2b2dfb290ed56926e8e4270d72cc193b2376c48c"
+    },
+    {
+      "path": "TournamentHamiltonian/PermanentApproximationConstant.lean",
+      "bytes": 1434,
+      "sha256": "9553fa64a2dbae60b10fbb0573ed97fc1f42c3e487596d69b2805a2d04ecfc8b",
+      "git_blob_sha1": "d41aee002247ee1247914239c8dd51636eafe90e"
+    },
+    {
+      "path": "TournamentHamiltonian/PermanentApproximationFromActivities.lean",
+      "bytes": 5198,
+      "sha256": "e94cbb295ced4086f4158b266cd15826033750241ead716f1d2703da4a4c17db",
+      "git_blob_sha1": "f11fd9d39fb8e3af0e3142676ff882a8e51a8e6f"
+    },
+    {
+      "path": "TournamentHamiltonian/PermanentApproximationRate.lean",
+      "bytes": 4230,
+      "sha256": "f7fc64dc5b2156300072143eb15f432dfeeff210ecfeb0eea3a2e8fc81d76b86",
+      "git_blob_sha1": "7ce6d75f67f535e8777517e57616d5e8fe621941"
+    },
+    {
+      "path": "TournamentHamiltonian/PermanentApproximationWindow.lean",
+      "bytes": 3969,
+      "sha256": "4e879510af34dc60da3811bb62ac27fd1c8a15ee93e33efa0744618c25764b7a",
+      "git_blob_sha1": "fdb0a83c63460d2bf9d4abe017b4df5840104d1b"
+    },
+    {
+      "path": "TournamentHamiltonian/PermanentEntryFrobenius.lean",
+      "bytes": 1613,
+      "sha256": "49fd6a38c3c40e59bf0f4aa224262890847b399bae2a74f1e3ecf6d2fd316dc4",
+      "git_blob_sha1": "55fc998f55a59d20a1ff9d83aeb6e84bfa624d5e"
+    },
+    {
+      "path": "TournamentHamiltonian/PermanentExpansion.lean",
+      "bytes": 21846,
+      "sha256": "9ddddbb8f23f3700b9aeec6c7011c8a2a9a913edfa8f8834ac88e5cc08786f0e",
+      "git_blob_sha1": "47dba4de808708d99859862f413127b7be05bb05"
+    },
+    {
+      "path": "TournamentHamiltonian/PermanentPolarization.lean",
+      "bytes": 9713,
+      "sha256": "60e678cdea65d0ef92e358d24184f7ae3bd5b88cabbdc6893aadc1b274018af8",
+      "git_blob_sha1": "17c51c7fc055c39394c5f2b216429f5192fdccc8"
+    },
+    {
+      "path": "TournamentHamiltonian/PermanentSpectralEnvelope.lean",
+      "bytes": 3082,
+      "sha256": "de7e75323b7a3a37a68c7d14351836f9ecccd34d1d0271082e2c72551f831e85",
+      "git_blob_sha1": "a0ee604410a102fff9eb5257d2471596ab0d7086"
+    },
+    {
+      "path": "TournamentHamiltonian/PolarSpectralBound.lean",
+      "bytes": 3450,
+      "sha256": "33a692a051d4b08df7384e704d42d1143f7f1d962a51fc176badee94d1cb567d",
+      "git_blob_sha1": "833405534c5b2342b2709a4f06b4f5a6bbf456b9"
+    },
+    {
+      "path": "TournamentHamiltonian/PolynomialFloorTail.lean",
+      "bytes": 2771,
+      "sha256": "ec54e64cea3e75d1b362ea465188ca433b8fb8444764c7ddfd3144410fcb5e39",
+      "git_blob_sha1": "52d772a16a2ced1c649156c2f1340dad32dfe2e3"
+    },
+    {
+      "path": "TournamentHamiltonian/PolynomialSeriesComparison.lean",
+      "bytes": 3257,
+      "sha256": "95ae8bf0c527ec8c03292413d89e3f5b202f1bbd6433361a78d01f538f92919d",
+      "git_blob_sha1": "97d0f6571f4b349625ca24da783e7971b85b86e9"
+    },
+    {
+      "path": "TournamentHamiltonian/PositiveDeterminant.lean",
+      "bytes": 5667,
+      "sha256": "ddaba422ce128765469e36f07438334d3e8b8acf4aa07d9e94b0343e40648d7e",
+      "git_blob_sha1": "21adccd0d163859d00af377946d4d61d22f3138a"
+    },
+    {
+      "path": "TournamentHamiltonian/PowerApproximation.lean",
+      "bytes": 7040,
+      "sha256": "284da9a7d4a572f15ac58982b6c71f338e907223396fd04d5c5016ef86382c4d",
+      "git_blob_sha1": "cad254c88b8517c370be95f06e8b613b747608c5"
+    },
+    {
+      "path": "TournamentHamiltonian/PreconditionedGaussianComparison.lean",
+      "bytes": 8006,
+      "sha256": "2565812fd4ffd3d265b504527d3a16f99a56b113cd3112a30c20ff65edd8aae5",
+      "git_blob_sha1": "cf1be5791856f5a496327f4aeff113927d151b3b"
+    },
+    {
+      "path": "TournamentHamiltonian/PreconditionedMarginalBudgets.lean",
+      "bytes": 4618,
+      "sha256": "6812bfc615f1bbe53db00f82c30a8ae11b4582ac21615d81b1553d8143734064",
+      "git_blob_sha1": "7a04e36cd1f73eb503be9f3760be54aa7b36df9e"
+    },
+    {
+      "path": "TournamentHamiltonian/PreconditionedRetainedMassBudget.lean",
+      "bytes": 3375,
+      "sha256": "cb502bdc39ad9d6cd5213f6f725d818560d289c2f524964be9d9747504d17b9e",
+      "git_blob_sha1": "f908f227d7f8df3b38df36681fae5836d5057855"
+    },
+    {
+      "path": "TournamentHamiltonian/PreconditioningBounds.lean",
+      "bytes": 11897,
+      "sha256": "55dca87321bd2d175e32ffd91299d32786ff846d0c112f277e016bb50eb25ff1",
+      "git_blob_sha1": "5a8b2b2e2c9e2022ac3be58936a2deab595c8411"
+    },
+    {
+      "path": "TournamentHamiltonian/PreconditioningDisplacement.lean",
+      "bytes": 10926,
+      "sha256": "9a7e82d26040ef57b1c7df98efcec63dd4f8e2a529769926b168c3452679d170",
+      "git_blob_sha1": "6951658bec6b9913c56f4b8a6a9c64dd9ab852e5"
+    },
+    {
+      "path": "TournamentHamiltonian/PreconditioningMarginals.lean",
+      "bytes": 9154,
+      "sha256": "ed158d22fcec95790f330ea3a1973184b648767bdd14a8eb77adfa6bf28fc82e",
+      "git_blob_sha1": "b71ce5652eef8ed19a0fcbb05ab4e9a21a107521"
+    },
+    {
+      "path": "TournamentHamiltonian/PreconditioningNormalization.lean",
+      "bytes": 5900,
+      "sha256": "27d0b4bcaad5e7a8dd8eaf68898db979901e819cd8093793d8d502a63efba3d3",
+      "git_blob_sha1": "68d36416c20d23e7dfb672b3dd04294384c75434"
+    },
+    {
+      "path": "TournamentHamiltonian/PrincipalGenerating.lean",
+      "bytes": 2757,
+      "sha256": "4e78ff1f3a567461a9dbbdb9f38f29e66e466172abf55e35ab24c441ba49173c",
+      "git_blob_sha1": "bf5e6d2c980e89fcb1b33e1f70dea29fd33b22db"
+    },
+    {
+      "path": "TournamentHamiltonian/PrincipalLowerMoments.lean",
+      "bytes": 7111,
+      "sha256": "dee68fe3bc2838e61292158744328616c2d65b55b7a829677be878bceb6ead2c",
+      "git_blob_sha1": "f5e09a16ad99be981f31eb98b4f9d2d6e8d692ee"
+    },
+    {
+      "path": "TournamentHamiltonian/ProjectionPermanentEnvelope.lean",
+      "bytes": 1650,
+      "sha256": "e5f4ef511675e012ba133a378dfcdfa6f8a38c818eccec9a78f9a1d65015311b",
+      "git_blob_sha1": "5b012488d41bd9c91ea5c810c6f55db107ab3f66"
+    },
+    {
+      "path": "TournamentHamiltonian/RankOneGramFactor.lean",
+      "bytes": 5430,
+      "sha256": "9f1922378c0235c962898bd5b920b6dcc310cdb5dff5b698e87fe0e94a0ec86e",
+      "git_blob_sha1": "1a91e9fc330ef2c0786e1ef97218b7819191b8e1"
+    },
+    {
+      "path": "TournamentHamiltonian/RealPermanentAnalyticTail.lean",
+      "bytes": 3018,
+      "sha256": "59f9a3e0b9982e3854ba1a089447bcc33ac9d26fc29416a970525577c0ca6680",
+      "git_blob_sha1": "8d04f4e2b725a110fa8bbea140d7879e1b1082e2"
+    },
+    {
+      "path": "TournamentHamiltonian/RectangularGramAMGM.lean",
+      "bytes": 5114,
+      "sha256": "53150c765f7a8ec6f22e43da5fe8aa841724fdc02df84ff84c8bfb8db44079c4",
+      "git_blob_sha1": "9abbb30d6e2400b33f2c9830d21004b58cdcadea"
+    },
+    {
+      "path": "TournamentHamiltonian/RectangularKernelBridge.lean",
+      "bytes": 3222,
+      "sha256": "64f93fef887cd5d2a1f1d0c6d366bf8704402475db12fcffebde60c3801c537e",
+      "git_blob_sha1": "2fa85159017ed8a2d90eba739cd7fc7d1476c160"
+    },
+    {
+      "path": "TournamentHamiltonian/RectangularPermanentApproximation.lean",
+      "bytes": 6987,
+      "sha256": "8f0b03c7667fc986d877b8f7f772520707b897f70b9e3c44287dfebb85d7939d",
+      "git_blob_sha1": "02b630cea90a980d32db061d9f92221b6258ff5a"
+    },
+    {
+      "path": "TournamentHamiltonian/RectangularPermanentBridge.lean",
+      "bytes": 1225,
+      "sha256": "1e95234641f79c390e6b5f999be439625f4e099c2e38ea4916b7ccfee4cf711a",
+      "git_blob_sha1": "3dc0a4b90a7d0c2321ca119c2a821d6d0219b043"
+    },
+    {
+      "path": "TournamentHamiltonian/RectangularPermanentRelative.lean",
+      "bytes": 4838,
+      "sha256": "a31b0f2a653a253bf609aa608e89d3de995feff9038bbef1f4469bc96ee26fe4",
+      "git_blob_sha1": "630e6dc3b400173b34d54fa2e84a4f2fbfdbb4e5"
+    },
+    {
+      "path": "TournamentHamiltonian/RectangularPermanentUnconditional.lean",
+      "bytes": 5065,
+      "sha256": "fe74ac1662dffc54175c4ddd2ac9f4f95e7a4c7879da5176b5603a15f9a69662",
+      "git_blob_sha1": "7490d0e9e9f41e084467515972971ea0dae9b6a0"
+    },
+    {
+      "path": "TournamentHamiltonian/RectangularReindexing.lean",
+      "bytes": 5829,
+      "sha256": "08d3b93ef3d6abade84394ea91808b221c3993f17b083d61d351e41bfda097a6",
+      "git_blob_sha1": "f8941731609b46368404c8172a076b40c447bd99"
+    },
+    {
+      "path": "TournamentHamiltonian/RectangularScaling.lean",
+      "bytes": 12379,
+      "sha256": "e8bcc9796eefeff8ca8a865e21fcced19d005143183a655cb27836a3eb41e87a",
+      "git_blob_sha1": "41f7b0976c8a3911a8a29f4f4db6330aa69d4c11"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularContainment/Approximation.lean",
+      "bytes": 4565,
+      "sha256": "7b096c51c094d71a38e7d8aa70781231167834fd5546721025e4e306dfaf82fa",
+      "git_blob_sha1": "71f4ce529828e339da6b10257a9d59e51ff8264f"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularContainment/Boundary.lean",
+      "bytes": 3541,
+      "sha256": "9bba7668b35a5368190196b4dc13371f5e9d5c76266b9c8026344095867e3c5a",
+      "git_blob_sha1": "4843dda4a068d88b2d06b7d7ebb93556562edf1a"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularContainment/Bridge.lean",
+      "bytes": 5418,
+      "sha256": "b4875eab0504f3a1974edf1bd7a34646d4c8ebc3cc80ac069a41a65edd7edc93",
+      "git_blob_sha1": "0b9b609e87ef0eb55e79e6322d704150a83fe09c"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularContainment/Endpoint.lean",
+      "bytes": 5033,
+      "sha256": "e5443d78264b5005a13255fe9890a03228f7b53add9f99310d8cf09f3a39a715",
+      "git_blob_sha1": "69c71e0477150cd4491f6f577b28cb1cfe333a29"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularContainment/Gaussian.lean",
+      "bytes": 4236,
+      "sha256": "f4bbf6b82eaea6de156e61d24acb12be14f38aabbf76d757b22d8118cbea6973",
+      "git_blob_sha1": "9afc310a1bf7e5236ff7a4b70ea6814a37671d80"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularContainment/Local.lean",
+      "bytes": 4574,
+      "sha256": "513d670ff119ad08f352e32894dfff74ee1adb286851724970f47ebab0fa3603",
+      "git_blob_sha1": "d397818ac122127a1f4aeb508b9660f533ff0ae7"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularContainment/Quadratic.lean",
+      "bytes": 3430,
+      "sha256": "b04dfb07eb31a26ebbc0ede6d9b5e8734e583caa55cfccc5d28338897c1f56b2",
+      "git_blob_sha1": "16e9117e83211db14e7670221c6577f6a3f26cf9"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularContainment/Relative.lean",
+      "bytes": 3647,
+      "sha256": "a20f2dc2ed9c66254872aea37f351780a292271be29676f4aaec1985b78403c8",
+      "git_blob_sha1": "9827202926c3781fbb2d12cdb0f63a897b0cee68"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularContainment/Scalar.lean",
+      "bytes": 4055,
+      "sha256": "87caacb37a696dec11be71cb0d3aa76f6c29f6e750691bbea62d6eddd29cbdfd",
+      "git_blob_sha1": "59e0e60e327fa02d0909b48d99b4185e4ae4712c"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularExpectation/Averages.lean",
+      "bytes": 5523,
+      "sha256": "c1a0edfd098b1bca572ce9e10c2b7e56e8d1c0f737e89231d60c7eb26034408e",
+      "git_blob_sha1": "62ab1d73f1d60a2fa5af745c5fa0310d63cf2f05"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularExpectation/Endpoint.lean",
+      "bytes": 3495,
+      "sha256": "7eff24c27e04a6cb15cd57bf140794ce38f530b999c96e709feee0f2a35f12e5",
+      "git_blob_sha1": "fade80f2458dce2a1cb23cc87dceffcf58640105"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularExpectation/Limits.lean",
+      "bytes": 4375,
+      "sha256": "651737b64adceb40f70aef2d38d863c8b5aa67eb200571a51e323cacc0891f02",
+      "git_blob_sha1": "2a352408d5971fef4cb0c9a301422d8b8262fb08"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularExpectation/Product.lean",
+      "bytes": 2757,
+      "sha256": "18e56b03f2de70676634d0ec7f55d56793f1a1b1849a2c57edf0a64c9179a427",
+      "git_blob_sha1": "482f6191914b0c0d5ab4dc94a6e82db80c770592"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Arcs.lean",
+      "bytes": 4965,
+      "sha256": "50437e185938778d256dfb8f4d09f398649707e5b40cd0c983259a64538fb0b1",
+      "git_blob_sha1": "c1da3bb5518801a9c1e5037084cafed2fa6aabe5"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Boundary.lean",
+      "bytes": 4385,
+      "sha256": "707b9faf8712e84e5ee3ed6bdea1489bb03c32bdee3ea27f76edbf974db99cd7",
+      "git_blob_sha1": "94a9f1ee8f1b931f2d55c97f3d7c6c4ec6fbb9c7"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Characters.lean",
+      "bytes": 7011,
+      "sha256": "e64c582f595f16c25df21e743f93610df7ce9b79f897abf342652aab356f3e58",
+      "git_blob_sha1": "4bf4e671acb35533d9bec29d914a645ca85fa010"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Endpoint.lean",
+      "bytes": 5564,
+      "sha256": "96c46fdb7b8977061c31eb60974a598ec425230dabb086fd8b3d5591aa71889e",
+      "git_blob_sha1": "884c03053088c755d8ce54a1ae1fae4216581b63"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Factorization.lean",
+      "bytes": 6839,
+      "sha256": "0a61242e6f1f98ecf1ac26815315afd8ac84e851b6ef3cec36ac0880a23fe45d",
+      "git_blob_sha1": "0ab0cc906d3dc8ffb8dbbeca7193124563ecab0e"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Forest.lean",
+      "bytes": 5835,
+      "sha256": "f599715f10def133725da05351c052bfa7d03c01115b8950bc5ff4deb364fa9c",
+      "git_blob_sha1": "b74a11f44036df04f2adc29dd5801decd8c4cd0f"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Integral.lean",
+      "bytes": 6385,
+      "sha256": "e5a9f58f9b5c7a57da7609d76f551cb8d27c3a2e81490519881f8a8eb97da71d",
+      "git_blob_sha1": "8898e61d23343e4d1884e6d6033a9cb2ee372686"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Parity.lean",
+      "bytes": 3078,
+      "sha256": "2e0b99c613261df88793b7e0e911a23fbf9b699dc642a3e374ddfc5aa81fb2fa",
+      "git_blob_sha1": "23d78b20c4650d689fc594c254e59297d27cb7d4"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Polynomial.lean",
+      "bytes": 3451,
+      "sha256": "c6e7dca2305d38f8134c88ea6360705e844f180738c5da15d27ef215fa723fe6",
+      "git_blob_sha1": "a888988fa30e84d3ed80dc9d815b36857e28a701"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Rates.lean",
+      "bytes": 4973,
+      "sha256": "f2fc1e2fca245eb7b25e06b69fa2a133651897eb16c82e098a8aedad3e58bcf6",
+      "git_blob_sha1": "ba6c88282df8e05d5b4158d4b5b96275c17a86ea"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularFourier/Small.lean",
+      "bytes": 3798,
+      "sha256": "7b2e3eda3593f4b44ffe116c93ab22955ad19893fce9c904e992ed6ebc080817",
+      "git_blob_sha1": "011bcb1d5a47722abb917474039ebcf113b0fce4"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularOrientation/Blowup.lean",
+      "bytes": 1653,
+      "sha256": "a7f658c4b7f4a01b2485d25fe186bf998824dfa4e09915de4d85c3b1c58822f8",
+      "git_blob_sha1": "88a106e3de36eb7204d5189123f10e9b30e7a071"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularOrientation/Boundary.lean",
+      "bytes": 2150,
+      "sha256": "d08e3ff2c4d2c17465ba988c476290e1e3129a14c07c4a5726e0ba2299ccde1b",
+      "git_blob_sha1": "1c1fc2da28a9690c1182d298d1c9e61a433e40e7"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularOrientation/Constraints.lean",
+      "bytes": 5401,
+      "sha256": "a99e25610830701aecac02a672ad25e4fbf5461b170185319aaf9fe2b1a5a2b1",
+      "git_blob_sha1": "cb3b0f500c0be63c1507671ab5388c4adcc74cc4"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularOrientation/Degrees.lean",
+      "bytes": 5134,
+      "sha256": "e5ccc02d6568c3a9e7c140d82da7f0a615436a847eed5947d690694092a643d4",
+      "git_blob_sha1": "1095c714e0bfed4895f2d1e7ef10ec164a8772fa"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularOrientation/Polynomial.lean",
+      "bytes": 2092,
+      "sha256": "59440151f61a62c1090522e2ce4e1d4003f58836d3b46fbf460a1c5a8c1c1189",
+      "git_blob_sha1": "6848288779ab03d3dc125ce78bdb1ba5b1378c1e"
+    },
+    {
+      "path": "TournamentHamiltonian/RegularOrientation/Regular.lean",
+      "bytes": 4159,
+      "sha256": "b27d0d8704e03de02a69d39e0a2215645491395106987d0f35fa13314baa11cf",
+      "git_blob_sha1": "cc390fb25745c1ac1867db8ca06a3f3924f14fca"
+    },
+    {
+      "path": "TournamentHamiltonian/RetainedMassPower.lean",
+      "bytes": 3794,
+      "sha256": "2e2d04c63a80b8f4b2b23b858879eb29fcfa75e1054b8b17170396c352ab8adb",
+      "git_blob_sha1": "8864e227485af68cc83f1949044a18ad54b39f9b"
+    },
+    {
+      "path": "TournamentHamiltonian/RootGaussianTail/Anchor.lean",
+      "bytes": 3985,
+      "sha256": "9293a419a4832cba9a92436fd85d914f7c9e1f7a01019c4eadc9c428af724888",
+      "git_blob_sha1": "4c33d8450f0b8e7c79de4b460e73f27fa724f25f"
+    },
+    {
+      "path": "TournamentHamiltonian/RootGaussianTail/AnchorBad.lean",
+      "bytes": 3931,
+      "sha256": "041978b919445ea28459eb2af425b1a171287768a3c4f689bd896d639dfa2fed",
+      "git_blob_sha1": "19d32b55e1a57c042844fb83fa91008be87cd3cd"
+    },
+    {
+      "path": "TournamentHamiltonian/RootGaussianTail/Base.lean",
+      "bytes": 2363,
+      "sha256": "23554bd540d41fe29c9432fa5095b7113544a17961ef6f91fca0868665ab6155",
+      "git_blob_sha1": "9842dc17ae30f871952250072c2bc0785029ea68"
+    },
+    {
+      "path": "TournamentHamiltonian/RootGaussianTail/Boundary.lean",
+      "bytes": 2812,
+      "sha256": "6667cadee96735ace782cf05176b958479868644e95d31a7ebc5b690477a56fb",
+      "git_blob_sha1": "66dd7afa22a1a1c9f967322bf314e4c6fac1e514"
+    },
+    {
+      "path": "TournamentHamiltonian/RootGaussianTail/Coordinates.lean",
+      "bytes": 3332,
+      "sha256": "200934759f79aa9800d00e5da58884bc7bbeb25f190546bfc12d9f25d72ea775",
+      "git_blob_sha1": "1eda35c957e3add852387157586d7736b2440e93"
+    },
+    {
+      "path": "TournamentHamiltonian/RootGaussianTail/DimensionRatio.lean",
+      "bytes": 3588,
+      "sha256": "bc46dbb77cad86ca86994431c51d5f4f86e35ccef723f2e06579b1f54868f2c7",
+      "git_blob_sha1": "a23d8eb89b6b4439c98b5cd582d2528732c72f3a"
+    },
+    {
+      "path": "TournamentHamiltonian/RootGaussianTail/Normalization.lean",
+      "bytes": 3645,
+      "sha256": "ebfaf60910aef4eb941b3034570508ea03bf4c6115d80a8ae73e8a4784123094",
+      "git_blob_sha1": "da2b71fbff349424199b04a1236a6c089d180fa7"
+    },
+    {
+      "path": "TournamentHamiltonian/RootGaussianTail/Tail.lean",
+      "bytes": 6684,
+      "sha256": "7c52897cf63dc7fc6b84c10481a587be3a23160e40ae22842cf8f3fd2a95838b",
+      "git_blob_sha1": "fb22bc9f0b70d5691ff86545479c70c160a72b76"
+    },
+    {
+      "path": "TournamentHamiltonian/RootObservable/Boundary.lean",
+      "bytes": 3999,
+      "sha256": "3162a5f65394b6a6d444d9076b61ac875e8b6841879023706bdb13827a2c356c",
+      "git_blob_sha1": "c263a1dae9efaf8bf35e638eb39fef2bbd56d854"
+    },
+    {
+      "path": "TournamentHamiltonian/RootObservable/Coordinates.lean",
+      "bytes": 4879,
+      "sha256": "ecd638c0f8256e97ee2ee51bb9faa9bec2f89e2e0a19d58fad8290a5b23b478c",
+      "git_blob_sha1": "f9a5bbc2f6af197c5fcaa216da03118dc1fdc788"
+    },
+    {
+      "path": "TournamentHamiltonian/RootObservable/Fubini.lean",
+      "bytes": 4952,
+      "sha256": "66d97aee39895944f18dd4a81c3a230c24cf08bde571c8957801d3ccc3d05044",
+      "git_blob_sha1": "a90ea6e9c28e9b582ed79ba06c88cb9abcc7e21e"
+    },
+    {
+      "path": "TournamentHamiltonian/RootObservable/Quartic.lean",
+      "bytes": 5636,
+      "sha256": "31a3f182738a12580dd9d4d89b5ee62e7560438ba7da7cc942ab8f46a2e867d7",
+      "git_blob_sha1": "377d4c3b789c4b829b5cc02562b5df1c6ff2e985"
+    },
+    {
+      "path": "TournamentHamiltonian/RootObservable/Transport.lean",
+      "bytes": 3997,
+      "sha256": "f7528ddb6e5bad4388f979aa5d4347e930b9bd0177d5076f0b1f9e71c0736a9b",
+      "git_blob_sha1": "18364b34d3e709b983f0fb9fb8728353e1092177"
+    },
+    {
+      "path": "TournamentHamiltonian/ScaledGaussianComparison.lean",
+      "bytes": 3196,
+      "sha256": "a3fe0c10c756ab9fb967fee40e78982cab0cc806ad54e91561a4652ff89e799a",
+      "git_blob_sha1": "e031053ede2e5f5cba067d80a508ddeefd360222"
+    },
+    {
+      "path": "TournamentHamiltonian/ScaledPermanentGaussian.lean",
+      "bytes": 3838,
+      "sha256": "8ce933a87225e353a834cf7abc2746a4f1b59f80799ff16144614dd5d26f51eb",
+      "git_blob_sha1": "f005299e78e1620aeed948ee5da813786f422090"
+    },
+    {
+      "path": "TournamentHamiltonian/ScalingIdentities.lean",
+      "bytes": 4095,
+      "sha256": "55cd695d36c2e41dd8ce8fb273502a40416dfd8209744668f74f5dbf49368ace",
+      "git_blob_sha1": "d5bca739c0bae9e062da76c4625df92baf53b639"
+    },
+    {
+      "path": "TournamentHamiltonian/ScalingKernelBridge.lean",
+      "bytes": 3882,
+      "sha256": "2b4ed45cfce8735fd76a2ce1fd251a1f3f673c16b51b4954322e182c7bbf7440",
+      "git_blob_sha1": "1fbd829337d88e588d2103b4a72cd5c19bd91d36"
+    },
+    {
+      "path": "TournamentHamiltonian/ScoreAbsorption.lean",
+      "bytes": 4918,
+      "sha256": "780546bc6a2b381ee7209cf3f260455ccd4f898b50f1f24fc68b0d19f274caf8",
+      "git_blob_sha1": "d372dd06f3c04363d8a4f1c7a78ed1d593126bff"
+    },
+    {
+      "path": "TournamentHamiltonian/SelectedMinorEmbeddings.lean",
+      "bytes": 2800,
+      "sha256": "38beb09836acfc3f6ee85199b303a2679bb24361ad613a4f7b3084c7ff75c8cf",
+      "git_blob_sha1": "76e21d6d3ed1d9f27ea05d89cf72f8291cc6cb33"
+    },
+    {
+      "path": "TournamentHamiltonian/SharpAssembly.lean",
+      "bytes": 3359,
+      "sha256": "02bc43e572de954c32fb095a6c89c9a69c1a6fc930091755d93d10795005641d",
+      "git_blob_sha1": "7e7bca50e6af75efa06acae963bf44218292f8ba"
+    },
+    {
+      "path": "TournamentHamiltonian/SharpMain.lean",
+      "bytes": 2012,
+      "sha256": "4cb4636f0b099a419f844f020a935db697a187746726fe321d37a90caa21241d",
+      "git_blob_sha1": "7ec5ad5dcd831c736c8ee359db69e4177b3b7e90"
+    },
+    {
+      "path": "TournamentHamiltonian/SharpSpectralMoments.lean",
+      "bytes": 4572,
+      "sha256": "b8b630784cb26bad3948498167d33c116353f249fbe97e8cd83de37d9e358092",
+      "git_blob_sha1": "93eed718dbc83f792929550b5c33049bb1eadb07"
+    },
+    {
+      "path": "TournamentHamiltonian/ShortQuadraticConvolution.lean",
+      "bytes": 6389,
+      "sha256": "b610c4c57567e042fe17854531b3144e563447b0d8f0e1db798bd3d094a8cbf0",
+      "git_blob_sha1": "cea28099fb45f20ad563b5e12a0622a375a1cb73"
+    },
+    {
+      "path": "TournamentHamiltonian/ShortWeightedConvolution.lean",
+      "bytes": 5659,
+      "sha256": "bec0a2cdc4e55a478a0b96cd5f28d12e00d7ab81aeb66c54ac8630281127961e",
+      "git_blob_sha1": "2c8a8f3ecff8c7ef6b95a0b288ea4034e2d8f92c"
+    },
+    {
+      "path": "TournamentHamiltonian/SignedIndicatorBound.lean",
+      "bytes": 8417,
+      "sha256": "d6745e9ffb3815a9b2334d2c11035172c060bb9cb1281561a7ce9f0928f9e226",
+      "git_blob_sha1": "fe0efcf9f12ac8a09d129d2516f6cd7adaaa376f"
+    },
+    {
+      "path": "TournamentHamiltonian/SkewGeometry.lean",
+      "bytes": 11209,
+      "sha256": "d55c5ab06c40810ec7565ce422d290bf3a78502daad7f5a5f63de34464e6c9f2",
+      "git_blob_sha1": "b70af053826b2c6759c23742f68637cae9deb827"
+    },
+    {
+      "path": "TournamentHamiltonian/SkewOperatorNorm.lean",
+      "bytes": 9610,
+      "sha256": "1157d3e11d610c9022d217475c8ad713c138032fa77ed0d97c25b4f41e9630f8",
+      "git_blob_sha1": "eb78ecc32e3b7749882a67f9bf8985e0dd773f00"
+    },
+    {
+      "path": "TournamentHamiltonian/SkewSpectrum.lean",
+      "bytes": 29228,
+      "sha256": "2cd7120778d1b087318c690882c77a8b510fc0b2ae896a9e3c80dbd415cfa2a0",
+      "git_blob_sha1": "eb940a97c956bb1fd895a4daf706c313318545ef"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreActualLogBudget.lean",
+      "bytes": 3957,
+      "sha256": "c1ad4d6ba9cea6621596700237bbd12a74bc3a67d1967f55863c96ea475b6f1e",
+      "git_blob_sha1": "5f31dac7ebfb36a181646811265e3bd96d5c384c"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreBudgets.lean",
+      "bytes": 4101,
+      "sha256": "7da35b636bfd6c390f9835529096ba6b6f38dc1ebd513dab048999f94bac3710",
+      "git_blob_sha1": "f32013cca2522db08f82cad5cf6cd1e025c6190b"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreGeneratingLower.lean",
+      "bytes": 16624,
+      "sha256": "8b51ded85e2fb3e564e6939b644af5c83f4589fa325f7bad8b9e2c1c707dcc3d",
+      "git_blob_sha1": "ad9e51bc26978416f4c8839d5e6f817e5688f3a3"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreLogBounds.lean",
+      "bytes": 3044,
+      "sha256": "63125f31de68d9f47eeec0710b8e862a537df545186c8dd022bea8b002562e1e",
+      "git_blob_sha1": "2381d0aa5e544fcfa31e31e2e103b7046715a69d"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreMassBudgets.lean",
+      "bytes": 4828,
+      "sha256": "3f41cb1a003f807935ad59ef043e67330f0e2b8bf7493452377c103e3c07f0d3",
+      "git_blob_sha1": "d15e221f6fc2d662543cb767756c6fb18ebf3de0"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreMassPower.lean",
+      "bytes": 5741,
+      "sha256": "b0a7680ebc05dd75f3b5a571088ba5eceb907a575c504bb43aa87e0d7e35f498",
+      "git_blob_sha1": "d0d60d58b98d243693dee9d21715dcf687d20a5b"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreMinorRestoration.lean",
+      "bytes": 7313,
+      "sha256": "1fbb7cc78b241818e81407a0b473cb93199b3eafa284642803a8fffd1ec5ad92",
+      "git_blob_sha1": "ee20071775ebb7a710b82c3f26e29e41b44d0edf"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScorePathsLower.lean",
+      "bytes": 4166,
+      "sha256": "6ed4b8a2ed222680bb8432461dd89f440413b0a88297d471070ad0fa9583c370",
+      "git_blob_sha1": "3821d44d733044fa2b949f5f14a4949e36f5534c"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreProducts.lean",
+      "bytes": 4276,
+      "sha256": "6517f78cd313397e573f7e6122d131a90ffbe85974a2e06916c1229d22efd742",
+      "git_blob_sha1": "24d67f76a91f2e856f7138525fd4f6d4f7082a75"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreRelativeError.lean",
+      "bytes": 1710,
+      "sha256": "fa0a22ec8325f62de6adf5965605dcd2fc8fa29e20ac26515734b18032b12be6",
+      "git_blob_sha1": "bcce8ef031ab962c026f258be580553a01f1ec94"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreRestorationBudget.lean",
+      "bytes": 4686,
+      "sha256": "19fa9b0d8db05767b4fe27fc67701e8adacc764e879511919eba93f9d7cbcc02",
+      "git_blob_sha1": "e091c087bac0cce828a446d28d5c6ca421e13174"
+    },
+    {
+      "path": "TournamentHamiltonian/SmallScoreRestorationIdentity.lean",
+      "bytes": 1511,
+      "sha256": "6c895ac971ed5c3ec6159ada52a6c56bc24f81443a8f12f650d3c8d26e8c6128",
+      "git_blob_sha1": "2ca1a67d2d3c1ea6c80653971fb86b6d0e4b29d3"
+    },
+    {
+      "path": "TournamentHamiltonian/SpectralPowerMoments.lean",
+      "bytes": 7025,
+      "sha256": "9a763fcd26b6d10e653622953e16730414f6a940b705bc9aed60d4fed2dc6102",
+      "git_blob_sha1": "1ac14a2ed769209fe3341fb38e50057a2a85ca90"
+    },
+    {
+      "path": "TournamentHamiltonian/SpectralRadialMoments.lean",
+      "bytes": 2826,
+      "sha256": "55da4662dfcd72feb643a5e93fe869122f74d432658b9dd58f9736b5064a355c",
+      "git_blob_sha1": "92bcc5a0a3dd2343ea096f25f0964081ec988a98"
+    },
+    {
+      "path": "TournamentHamiltonian/SpectralSupplement/ProductComparison.lean",
+      "bytes": 8342,
+      "sha256": "37967e82c2a0b37161b38b4cb7e88938b7aa22dff17f16742f1bafcd937dae23",
+      "git_blob_sha1": "e8fe65fa4586961aea5b2635c23ac441633b89e9"
+    },
+    {
+      "path": "TournamentHamiltonian/SpectralSupplement/QuantitativeGap.lean",
+      "bytes": 6780,
+      "sha256": "a10395b5a36f1c0ab86ebeac33ad656a83151ad0a608dd8b72908dc5612d4aa1",
+      "git_blob_sha1": "1a61d86286f1c9fd5bf59d3772413959c6569a91"
+    },
+    {
+      "path": "TournamentHamiltonian/SpectralSupplement/TruncatedPrefix.lean",
+      "bytes": 5895,
+      "sha256": "46ccd3551361d30054eb17664aa609600553a3ffd39b3c07701101c7af4af65e",
+      "git_blob_sha1": "fa55b9984d91445852a45adb81eef50bb68b345b"
+    },
+    {
+      "path": "TournamentHamiltonian/StirlingNormalization.lean",
+      "bytes": 11359,
+      "sha256": "d59fa9bb5653de06d52e9dc1304b9e33ca41d16845aa7c00e5235adf98afec5a",
+      "git_blob_sha1": "bc3b4f98c4419c57c4ccb45e2cae81c8119aeb7d"
+    },
+    {
+      "path": "TournamentHamiltonian/StrictStirling/Boundary.lean",
+      "bytes": 1183,
+      "sha256": "122f20a27c607d1948dafeb5278fc27347f906fb00c4406cfa6bb5472a106715",
+      "git_blob_sha1": "d367f28eb479ba5990b14623ec8272a7b1b9d074"
+    },
+    {
+      "path": "TournamentHamiltonian/StrictStirling/Bounds.lean",
+      "bytes": 6233,
+      "sha256": "a874cf99c32eaec4618e97e15aa119efcbf8a49cecd379090969d9116e8224de",
+      "git_blob_sha1": "259e472bbf21191526a4e26d726edf3dd717b8bb"
+    },
+    {
+      "path": "TournamentHamiltonian/SubsetWeights.lean",
+      "bytes": 10164,
+      "sha256": "3ded895f6f3569e12e0311df2546ec94913dad1fb5efd2b5a602b520b845ee83",
+      "git_blob_sha1": "a5dcf5de472b4cb40a71faab2f94f8dce2d94b01"
+    },
+    {
+      "path": "TournamentHamiltonian/TorusCluster/Boundary.lean",
+      "bytes": 1800,
+      "sha256": "d1d69cbf454736c043e5eacec69f209a46bb08e729e5f6c180dbf1ee21a0bd8e",
+      "git_blob_sha1": "ff226e5b88feb42fe7e4e22706a1a615a19df660"
+    },
+    {
+      "path": "TournamentHamiltonian/TorusCluster/Circle.lean",
+      "bytes": 5284,
+      "sha256": "e2840dfc33222109999d91100ea1d185dc9a116e7e405499e1bc74624d4022c8",
+      "git_blob_sha1": "d01cd386e4c691c58988f37c0c603621a06ec5bb"
+    },
+    {
+      "path": "TournamentHamiltonian/TorusCluster/CosineGaussian.lean",
+      "bytes": 2294,
+      "sha256": "58d500479c24c3f51dd1cb2cd8534f54ffc615d0e601add00251e3a7b517c0cb",
+      "git_blob_sha1": "79fba8bc5593c69b5d3f64fddb3135cce6a94d46"
+    },
+    {
+      "path": "TournamentHamiltonian/TorusCluster/Endpoint.lean",
+      "bytes": 3932,
+      "sha256": "dd447da8d404502d729a289876371090bc4ffd8dde26fe66eee8d4f5d98a0f0b",
+      "git_blob_sha1": "98591da83a32951aa8bc15da00d4b87e8a831c14"
+    },
+    {
+      "path": "TournamentHamiltonian/TorusCluster/Graph.lean",
+      "bytes": 5666,
+      "sha256": "79cec26b727637299fa684bc5b17dad64d73fa1e22eee8f711bd0d315c7aa36c",
+      "git_blob_sha1": "fa3f6c7448d24be0ca55f4fe352e18af25b8b5ef"
+    },
+    {
+      "path": "TournamentHamiltonian/TorusCluster/LocalProduct.lean",
+      "bytes": 4787,
+      "sha256": "3a052e479dc61a2fdd3c80e3d18227671e58f5a001fe82ee421bff236a084d4b",
+      "git_blob_sha1": "0355daf94bdc8b7a9d9c97cd74d056524de40f6d"
+    },
+    {
+      "path": "TournamentHamiltonian/TorusCluster/Product.lean",
+      "bytes": 6955,
+      "sha256": "4764b387d75d4556065931248005fc2eb24ac43bd36a9945812ff98c1e5ef07b",
+      "git_blob_sha1": "03d44086cae610651687e23611eb8bf9c73581e4"
+    },
+    {
+      "path": "TournamentHamiltonian/TorusCluster/Quadratic.lean",
+      "bytes": 7407,
+      "sha256": "10844c4b99215a49776fe9685eb0ffa2fa48b37910b24ee8d42d9d17eee1acf8",
+      "git_blob_sha1": "cd4cd6d0ae5e64383af95b90efea421479dea3aa"
+    },
+    {
+      "path": "TournamentHamiltonian/TorusCluster/Regions.lean",
+      "bytes": 6001,
+      "sha256": "7dbc2cf2b07b5820dd026012bc9a4145ed38dbf32fb9fef9fce282e8e565bbf1",
+      "git_blob_sha1": "95f6df37034d529b4a62d7c83d34e7dea1b95fc9"
+    },
+    {
+      "path": "TournamentHamiltonian/TournamentGaussianLoss.lean",
+      "bytes": 20134,
+      "sha256": "a4698400b57a32b862ca861bc147242a6102ca063263fc574251b89cdcc614f7",
+      "git_blob_sha1": "66b0e1b5d11535f8d3a6929fcada5a8137f9f346"
+    },
+    {
+      "path": "TournamentHamiltonian/TournamentWeightDisplacement.lean",
+      "bytes": 2519,
+      "sha256": "8cae3805e7d7d1186d31d8fa7e4eb617282b55275e02e2fcc86b1ea3f8295b11",
+      "git_blob_sha1": "5ae877246ae61f24406eacde1fb6a1985df64fa9"
+    },
+    {
+      "path": "TournamentHamiltonian/TransitiveCotSpectrum.lean",
+      "bytes": 16339,
+      "sha256": "8cd9890148f270b7d050675060c897b46bfbfc21a4fa7e989ee404650eafe2f8",
+      "git_blob_sha1": "a2b49fd6dcedfb484f4e62cf3effa365b4e5d6e8"
+    },
+    {
+      "path": "TournamentHamiltonian/TransitiveDeterminant.lean",
+      "bytes": 10231,
+      "sha256": "14c7255018f70aed873dea1a2ff2a3ede7cf7462ac6e7b0e827b61994e754d19",
+      "git_blob_sha1": "519e54c97b5ee16cf744a607f9af84d516d72f5a"
+    },
+    {
+      "path": "TournamentHamiltonian/TransitiveShift.lean",
+      "bytes": 9625,
+      "sha256": "6d6630ea361e768f7a2fc1471cf7f1938102bf2b9845863e7478fe9c842d27ff",
+      "git_blob_sha1": "9ef39a8140e8949b8ead62c93f8d8f67c6538f94"
+    },
+    {
+      "path": "TournamentHamiltonian/TripleContraction/Double.lean",
+      "bytes": 6124,
+      "sha256": "49df5fb06981ee61e605842ee3b8f4e114679d8e232e365916df272ae2ad470a",
+      "git_blob_sha1": "1578fedf54b1d66d3a6ed5ea4bcb9458ca8d9c40"
+    },
+    {
+      "path": "TournamentHamiltonian/TripleContraction/PathBridge.lean",
+      "bytes": 4739,
+      "sha256": "485f91a740268718c07fc544543d39b706fa33fcc05c3c9960ec0af225536767",
+      "git_blob_sha1": "c3d2bb7322b27a519253e58b9ac10797302f9558"
+    },
+    {
+      "path": "TournamentHamiltonian/TripleContraction/PathEvents.lean",
+      "bytes": 7321,
+      "sha256": "5f3527024fbb671669e0126d6ac86930b38c05c5df0393ca3012cce4265d71f5",
+      "git_blob_sha1": "8044661464545cf2a8011c7b2393d4aa0deeee71"
+    },
+    {
+      "path": "TournamentHamiltonian/TripleContraction/Principal.lean",
+      "bytes": 4524,
+      "sha256": "a28bc09032a1e5eaa82c97849b36f56227594c9bdb1ca84b48826b468ef67cfa",
+      "git_blob_sha1": "f3caf3e2b3afdbda216cc5f63711c0ff37cd864e"
+    },
+    {
+      "path": "TournamentHamiltonian/TripleContraction/Reindex.lean",
+      "bytes": 4932,
+      "sha256": "49c8f869e70b166cd0af5a8c70ed61146ea5169bb60faa364b70b14bdac39921",
+      "git_blob_sha1": "2abcbdbaaafcbd5106396dd331fd304b4280b3f9"
+    },
+    {
+      "path": "TournamentHamiltonian/TripleContraction/Sentinel.lean",
+      "bytes": 5002,
+      "sha256": "0dcebe776f9bb4620ade15ae1f53eb7df1463f4091c9b6f95669702145cf53c3",
+      "git_blob_sha1": "5e53020713360dbc2642e98a1e353c88549f5fce"
+    },
+    {
+      "path": "TournamentHamiltonian/TripleContraction/Splice.lean",
+      "bytes": 6613,
+      "sha256": "884a78fc308f8452c320c7398e2fa5843b57d0a51fce53c0a0d5b9a60acd7396",
+      "git_blob_sha1": "1d92487ff7ab83d8281a96d35429ca1af978196a"
+    },
+    {
+      "path": "TournamentHamiltonian/TripleContraction/Triple.lean",
+      "bytes": 4963,
+      "sha256": "6becb4ed7990233c40fa4383d60de35b907573e86c3fc2894f7f83f6d65c53dc",
+      "git_blob_sha1": "8141d572c56ac9b2830bf87ab919a97dc44d9040"
+    },
+    {
+      "path": "TournamentHamiltonian/TripleContraction/Uniform.lean",
+      "bytes": 4834,
+      "sha256": "1d62092644f6672c65ac3b4cfb2e6aa0932f475688e1b546f7e3561943035445",
+      "git_blob_sha1": "f34476e9480f8acb15b889b563d07f2a2e7c0f28"
+    },
+    {
+      "path": "TournamentHamiltonian/TripleContraction/Weight.lean",
+      "bytes": 3447,
+      "sha256": "7eb28f66e1a2cfd1b8ddb08c223966951b11cd67a6bcbae559250d953b4f70bf",
+      "git_blob_sha1": "e910a4656d3bcf49398f851467e4c800fd2b984c"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformBlowup/BlockDistribution.lean",
+      "bytes": 3528,
+      "sha256": "45c401e211d41da02de7bc47796b551e2c0060694cba4a1977ad47d3e3fed53a",
+      "git_blob_sha1": "c75ffebf5fbd737a44255def7f16746d3ba8f102"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformBlowup/Boundary.lean",
+      "bytes": 2828,
+      "sha256": "22f047a4b18e36eb906b63d9afcc148d2b1ded170735be5f311ac7d9e570196e",
+      "git_blob_sha1": "082f5614f31290f06e3bb7fc34e8f125da478e74"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformBlowup/Cycle.lean",
+      "bytes": 8469,
+      "sha256": "7e9f6e0c36d5e3cd4d29753c1cfd5e197150cbd11e39f456985bf959c6373bdb",
+      "git_blob_sha1": "fcbfba458d93741bdcd4db29faefdcd6587e398e"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformBlowup/ExistingPathCount.lean",
+      "bytes": 2150,
+      "sha256": "eb9a744c124b28d2ab3c89fcd0139eec9579aef839d2ac00a37f7289efb6b151",
+      "git_blob_sha1": "9738c9d4df4d4e769ec00d1a7a36d941872321ba"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformBlowup/Expectation.lean",
+      "bytes": 3725,
+      "sha256": "f380527aba8dc9bad7af1f166500f8ef0ec1b4255cae28f9a4a6ceaa96567ee4",
+      "git_blob_sha1": "40bdb2f9b5a8b8ffd7556f2279511a36765dbff7"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformBlowup/FiniteCube.lean",
+      "bytes": 1573,
+      "sha256": "a675e80305a8c6410d0f0fc1a0be8fcd908f386153d7d5c361cc105445cf2f58",
+      "git_blob_sha1": "5fe6e14f48aef66f1a922dc85c7b15c977eadb1b"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformBlowup/Marginal.lean",
+      "bytes": 2264,
+      "sha256": "2999e54a611bb7940bfb013aa12f6c926ae4c83ecf433059b41ac10c7f68b830",
+      "git_blob_sha1": "9a49b69bbba000178a143cabf5977ca92e773d69"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformBlowup/Model.lean",
+      "bytes": 4316,
+      "sha256": "8d3858b1c81b4a4a8c41cce2efb084e1ece47487c824eb04bbd15c0a8f79f806",
+      "git_blob_sha1": "436bde061a4ac8f40420e438e21e0c060eac1b93"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformBlowup/Normalization.lean",
+      "bytes": 3923,
+      "sha256": "ea279c86a9d90061df7a211318bb6cd05967d788e566c52ea57bd891971413c0",
+      "git_blob_sha1": "f84d580b6892088efded6bd2719ef40f1508e6d3"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformBlowup/PathConstraints.lean",
+      "bytes": 6603,
+      "sha256": "832322db04ca17b41d6a4ac0aac735ba4cd65c362bf04894464b2fa153af3918",
+      "git_blob_sha1": "62dfff50a4200653c452204b383912b056647c9b"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformDeletedMarginals.lean",
+      "bytes": 8742,
+      "sha256": "747fb54994b6d18d42b24f6682931263deb84fecb112610e4e9833de1436f2f1",
+      "git_blob_sha1": "58646865776e1f29a13923d07f82c5f43d689164"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformDeletion/Homogeneity.lean",
+      "bytes": 7254,
+      "sha256": "8149e7af791fc4446f698226032fd5c7cdd6826ee6ab0990b32b9d2613b93a11",
+      "git_blob_sha1": "97bb6e33bdd3ba5c9d30fdf9dc10726184d9f203"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformDeletion/PositiveScale.lean",
+      "bytes": 3879,
+      "sha256": "1c6a4e28b589c14e963cf93eca792f56d1053b55709c218a00c48aaf4b18786b",
+      "git_blob_sha1": "0ed27342b082a99f04ec90d9ab90a84905dae261"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformDeletion/Ratios.lean",
+      "bytes": 6370,
+      "sha256": "f0316aef0a4ecffe5da2e125e24bb0e055513a9ee65dcccd755b1ff702bc67e6",
+      "git_blob_sha1": "5a62473f7a3e344d6e143a8f3cb6aa7ddce40841"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformDeletionBudgets.lean",
+      "bytes": 8763,
+      "sha256": "57c8dd3c8cd8e85d331136fc4fbd160b08acd8fa5c6267f8c64ca35cadffcab0",
+      "git_blob_sha1": "31ffa15f1380dd1626661927d98907a05c72a70c"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformFinal/CountingNormalization.lean",
+      "bytes": 3497,
+      "sha256": "22a7c8fe362f247c3288298d8ca889720646b4a2218a78c41f18fe1affb50d48",
+      "git_blob_sha1": "01b3c69449feabe5df38afbf130a89066644f9cf"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformFinal/ScalarLimits.lean",
+      "bytes": 2659,
+      "sha256": "3486027a44a0c8d430e2b1d48e5effe279a089c5418c0682fb15a8fb3cbd46e6",
+      "git_blob_sha1": "16ac030e50d64d54bbfd59ee0406d38ab620c664"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformFinal/UniformDenseCountLimit.lean",
+      "bytes": 4201,
+      "sha256": "98fea67b917e30c53e68aa38cdac842372000286fc7ec3d08c21d7c1ba735da3",
+      "git_blob_sha1": "01ef3c5312d7e4a55f478db4cd72a9dc74a01639"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformFinal/UniformExpectationLimit.lean",
+      "bytes": 2962,
+      "sha256": "593b502398952faa24e606e0055e04fb88f643a849267204502a4ba450e97834",
+      "git_blob_sha1": "d31c4e15195629c7b99adc6faba6ef60b619b4c0"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformFinal/UniformNormalization.lean",
+      "bytes": 6691,
+      "sha256": "4cd40b378596ba94ecdf5e0b8bd219dea5b72d7517cb2c1316d16ccd9f57973e",
+      "git_blob_sha1": "ce9f7620f4a9fbc6a9465b57f5e5f6d53ab7ca5c"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformGaussianCost.lean",
+      "bytes": 7089,
+      "sha256": "497a5a11a115a077139f7283559c1eea48c8352319facf9622886808c386264e",
+      "git_blob_sha1": "1aeb3c62cf4eea3b67cfb55bc5802fe83479e6d0"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformNonprincipalScaling.lean",
+      "bytes": 5882,
+      "sha256": "7029fa034a20e54e0f49b01e8c0c5beac9b1d4c5ef6ff63eaf861b5df5120baa",
+      "git_blob_sha1": "781bbd74e00c74b83970fd46a66aef5a1e300c4e"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformPairedPermanentGaussian.lean",
+      "bytes": 4174,
+      "sha256": "5fc4d3f9fe17882185b6012101962789196102a685d430bf447e982b8ad786f4",
+      "git_blob_sha1": "651750663d361199175e044e9a89e65cc1fddde4"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformPairedShortUpper.lean",
+      "bytes": 5553,
+      "sha256": "68309140d2909f6950e8d2cb4a43c4bb63203bbe11fe3b373e26a0e17f893415",
+      "git_blob_sha1": "303aaa1968540fdd632a139708d145fef6b5b1d7"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformPermanentFromActivities.lean",
+      "bytes": 3985,
+      "sha256": "ab75710f078c119a41e04b825d2e8f4e4dc051fc914bf19db2f919cba9020a65",
+      "git_blob_sha1": "d2c1fb39612eaccc1ac2ba7f8f1e1b3c5a4b3e66"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformPreconditioningBudgets.lean",
+      "bytes": 7164,
+      "sha256": "eef71621b2ee02512148b70ac26a5eb8aad96fb45627ce140b5690a1da4c1235",
+      "git_blob_sha1": "0501df17b6646a4b2c9d4f9377a3e928ba495eab"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformPreconditioningGap.lean",
+      "bytes": 3298,
+      "sha256": "ab512956d2bd18e18f7496d83d0bda513dfeacb6d7ddce3fa5fca957f5f5959f",
+      "git_blob_sha1": "31b892ea69ed8ca244c877acb9ad63f675cb8c3a"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformRetainedMassHalf.lean",
+      "bytes": 2867,
+      "sha256": "6fe659e1854b931b39e4a1f7d718aa83faa3f265197cd03a2bf49511e47f0fa2",
+      "git_blob_sha1": "42892bb9d92a2cfb8b1ecf0d1a397b7618d085af"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformScaledGaussian.lean",
+      "bytes": 4284,
+      "sha256": "20dc4defeb224265c031fef11912f7885f2abbc2b3339833ad8bdd818e90dc34",
+      "git_blob_sha1": "8a2d3be6d31fcb51c0a59508846da768763bc14d"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformScalingDisplacement.lean",
+      "bytes": 5388,
+      "sha256": "172500ef91a8e7635a26fc425fadefe6e40af4a5737f09045c96881f383e1b71",
+      "git_blob_sha1": "7bbbde58a77aec015ea3ce70ff2cf44a4238c158"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformSmallScoreMinor.lean",
+      "bytes": 9501,
+      "sha256": "7e61b700f97d4267d9cb07f648204424f5aff356f8c98a9b617d31ccab0130a3",
+      "git_blob_sha1": "a0bf8c2834a78bdc11dd735017e7af772ff57253"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformSpectralUpper.lean",
+      "bytes": 4369,
+      "sha256": "035f63b78a12a03f1033bbcbb732849f6a77e14bcd9094377e4771ca401aa165",
+      "git_blob_sha1": "6e545016e5e653b21d55220742a25af2d329807f"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformTorusTail/Boundary.lean",
+      "bytes": 2890,
+      "sha256": "2a18f1fd65e5c0fc9c10139cee55d553ce9125e734536f05b5fe075232d2ddbb",
+      "git_blob_sha1": "e82d4b6d761ea9566942887c7467a40c63ab3aa2"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformTorusTail/Cover.lean",
+      "bytes": 9852,
+      "sha256": "ab902e14ddffcb3db088985eedb1397adb751acadb4ae8e1627151dcf338f513",
+      "git_blob_sha1": "386ad4e779712570811b700322ab05733e0f8fcf"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformTorusTail/Endpoint.lean",
+      "bytes": 4977,
+      "sha256": "d0ad5dc8d97b0d86a0407a484c5e8d7c6f1d411be91ba56bcf1fa1011544618b",
+      "git_blob_sha1": "b505ec68a2003965330db41fa1ca05f62fff7b2b"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformTorusTail/Integration.lean",
+      "bytes": 4643,
+      "sha256": "cbe06d2a1e392a7e7a5abcb029fa10a25d3179b235501c53fbf6f44faf794249",
+      "git_blob_sha1": "45f7716ef23230d31b721662f6f3d2f6395a13ff"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformTorusTail/Limits.lean",
+      "bytes": 7165,
+      "sha256": "ce627ff45e0f617ae41a25a66d03fe7c47a2a8b5fd4405e7b6aaee5b7533606f",
+      "git_blob_sha1": "b2b1c07d35229d98b67081b83a51acb52bcef1a2"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformTorusTail/Local.lean",
+      "bytes": 6375,
+      "sha256": "44d592a9bb5315d216b227ee5e904b1a85fd546e59352d700acee67b71cde07a",
+      "git_blob_sha1": "c85c2fdffeafabe7dceca07c6fb86027a416e616"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformTorusTail/Subsets.lean",
+      "bytes": 9861,
+      "sha256": "3565de76c41fb0c6f61a0d2b75c18c47b5262456b10d54016310f7ffadb68b66",
+      "git_blob_sha1": "2f4e1849300dcdf922da0d2ac095403c421830e6"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformTorusTail/Sum.lean",
+      "bytes": 5879,
+      "sha256": "ae9c67d32cb53e2017207d91c292cac1afe810663f4ce00afa9ff16ea7684993",
+      "git_blob_sha1": "288dcb2ddceea1a4f7a27f9a7f114de10623ecf6"
+    },
+    {
+      "path": "TournamentHamiltonian/UniformUnitScoreMinors.lean",
+      "bytes": 6631,
+      "sha256": "bcb38c80144d80d51637cf6fba7a6647c020de54bb885b7f9998421b6c000e7e",
+      "git_blob_sha1": "bf59e9a09c8c8c2fc408d6e75783c41cf411fff6"
+    },
+    {
+      "path": "TournamentHamiltonian/UnitScorePathsApproximation.lean",
+      "bytes": 1584,
+      "sha256": "2dac5fe67cde2e18cbcc9c9b88925ad9e79a5fc761c85a05c1adb6e00d7124b7",
+      "git_blob_sha1": "b5725281f46560c068b5bb873100b4aad47d223e"
+    },
+    {
+      "path": "TournamentHamiltonian/UnitScorePathsLower.lean",
+      "bytes": 2741,
+      "sha256": "ebdf11ae3bd87f69eb62b5278362758989fdf6bc67fea56bbc4fb8f3763fc472",
+      "git_blob_sha1": "1cf2f8286d481fb286fcd345710257b182f7bf3a"
+    },
+    {
+      "path": "TournamentHamiltonian/UnitScorePathsUpper.lean",
+      "bytes": 10321,
+      "sha256": "d5a852e0d46d391566ca6a7d5b661311bd15e7b005e6ce5b4c4503cfac27603d",
+      "git_blob_sha1": "467d57a7b28d651d70a7fa85a839db2bc82dd0b9"
+    },
+    {
+      "path": "TournamentHamiltonian/VectorDomination.lean",
+      "bytes": 7162,
+      "sha256": "c4d0083e3c5ae474c6394c5011eb5ffd3b9e5f87475dad6debfbaa6d5329fab1",
+      "git_blob_sha1": "b7184e8050ce101d2dbe039cfff1ba6f31c78b6f"
+    },
+    {
+      "path": "TournamentHamiltonian/WeakMajorization.lean",
+      "bytes": 2963,
+      "sha256": "f2539998f5a93ccff5d49ca0664446dc8912cc989f4722287b4e80875715dd14",
+      "git_blob_sha1": "31ee4690763dfb04a61b53fc5e5737992952d19b"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedCycle/Core.lean",
+      "bytes": 9709,
+      "sha256": "54c30450be81d3cdbec1f2522a8714f5f2ce8205d015e28a362d7ba9aacbde90",
+      "git_blob_sha1": "8c06d4bc8522cd9b254bb5b61750050df401f2b0"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedCycle/Integration.lean",
+      "bytes": 2347,
+      "sha256": "ff2064a368169fd5fae9d56d58885ee54369e72b3db62fb250beaa1fbcce3261",
+      "git_blob_sha1": "9d206ebd9190f7d4711559d303833d254ae83c1a"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedCycle/MainTerm.lean",
+      "bytes": 5946,
+      "sha256": "f6587a791f8d9cee73563c3b3fe1b33f547d0e35dcb06f22bafa92b87daaa4b9",
+      "git_blob_sha1": "d821768dd41063f2858f384aa6fc5dac2cf26835"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedCycle/PathIntegration.lean",
+      "bytes": 8129,
+      "sha256": "69a00df45fc41d59058d1764d2774c3fc228eaeb62c47e8d422548a6cdaaf1e3",
+      "git_blob_sha1": "7a8320af7f6627f4a310eb97ec957606ef8db975"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedCycle/PathMainTerm.lean",
+      "bytes": 2710,
+      "sha256": "4be9df86222c7138ff772e01fa87ef53a1e649278c3406b7a04cc3b327a730d2",
+      "git_blob_sha1": "cd1c70f8a9f1fdb0c934020092d6ccee904b0182"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedCycle/PathReindex.lean",
+      "bytes": 2057,
+      "sha256": "f66abb6529c6bcfe51ca0a596ddb890bd6de78b5787ffa92973e5468cc141f35",
+      "git_blob_sha1": "65349568821a9caa7ba05fd285ade8cd6af8d980"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedCycle/UniformBridge.lean",
+      "bytes": 2080,
+      "sha256": "6649a18875609904399102b5d2c247d0f90f0d555442ff8f82bf3a8f2c0caf9a",
+      "git_blob_sha1": "da9f096b9b57527cc3735543b6ac09011b60b329"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedKernelInflation.lean",
+      "bytes": 2290,
+      "sha256": "95fdbcd988d44009c45eb780adc54491ae7e668285c0bdaafb873bdef8723a7a",
+      "git_blob_sha1": "aa32e596b24996dd7907a60dcfd8b9f5c619e7ef"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedMotif/ActualLaw.lean",
+      "bytes": 3418,
+      "sha256": "ecb3c6ddb148f1e28910fa3734f01f31345e7904c6ceba7f8474e531f2cc31a7",
+      "git_blob_sha1": "dd27c46f7f3d9351b847f8b04db36ce6ba4a6e15"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedMotif/Estimates.lean",
+      "bytes": 5437,
+      "sha256": "8c44157db7f918949f9923b3dd86afdd17f1f0b242ec07d7c5ae9b2f433f12bf",
+      "git_blob_sha1": "e189b97c3363a2a751060c3c2fd90447ec4ff440"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedMotif/Events.lean",
+      "bytes": 3852,
+      "sha256": "4f58e796871fde8e0cb2fc3b693a47897ea2357a803a6a20352fc2faf6a65e6d",
+      "git_blob_sha1": "53d7ae833513e886687b4a1a6c551420797c8012"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedMotif/Law.lean",
+      "bytes": 4375,
+      "sha256": "eeb961f7ac2fd7df17236907b2bfe928464545ee1f3717a3c6e7eac79d895933",
+      "git_blob_sha1": "ce7de046d0e0b27fb7fc15824016b0c49bd84ed4"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedMotif/Limits.lean",
+      "bytes": 5956,
+      "sha256": "e1649def18079ac391dec47771c71713181d9f01288052b9460d316afe40bb2c",
+      "git_blob_sha1": "4d1fc05fbf3f88ea5ad5e2662dc300bec6747739"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedMotif/Moments.lean",
+      "bytes": 7508,
+      "sha256": "0336969254c4b4479b70675a23df39044119de98470c39edddb639654ae8353b",
+      "git_blob_sha1": "9906ee26ef03344be5d2f2fb49d1db55c6c7ab5f"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedMotif/Scalars.lean",
+      "bytes": 3578,
+      "sha256": "b10fcb4d0ecfaf344f8d6063c17a998876c380a7c2119d843a736d39a1418c5e",
+      "git_blob_sha1": "7ce714fda9489d649f3167f61c5062df3f646796"
+    },
+    {
+      "path": "TournamentHamiltonian/WeightedPrincipalGenerating.lean",
+      "bytes": 10070,
+      "sha256": "af9f854cce7e6c7abcc0c00294df4f4fb5cc1b450ced5b7d53d973bf0a5fd4e5",
+      "git_blob_sha1": "093b70e068d3c39a87c8122799f1edf836c0570c"
+    },
+    {
+      "path": "coverage.json",
+      "bytes": 403703,
+      "sha256": "aa9f58a1b1adc0a999dc463dfbf96ed518de6ba262f25cac7ee09ced07097147",
+      "git_blob_sha1": "c9a829d44a57a8ad4d23ee3516d023b5e21f5f9e"
+    },
+    {
+      "path": "lake-manifest.json",
+      "bytes": 3178,
+      "sha256": "7fbc9767e523ce1c9d59770614cf739ec3f4cb63f8de2d6254736bc46a227451",
+      "git_blob_sha1": "baa3e694ccab110d4ec07894cfaf4853be312e07"
+    },
+    {
+      "path": "lakefile.toml",
+      "bytes": 307,
+      "sha256": "bf7a9bf87aafd5a9ed0f7710a69a2e54cb12434cb27120d0532559d4a8d26a94",
+      "git_blob_sha1": "e3b5c715b692a81cfee31d7463ef73b9bbbac9f9"
+    },
+    {
+      "path": "lean-toolchain",
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "git_blob_sha1": "a6aff065db2882c535684f8c5bcd4f16e9a23915"
+    },
+    {
+      "path": "scripts/audit_axioms.py",
+      "bytes": 2261,
+      "sha256": "43b777dde6449f6034a92d0c51f8a04ce3a65680416ad927d09b21e93c68dc2a",
+      "git_blob_sha1": "4e3006b6764345d51562287788312093f817063c"
+    },
+    {
+      "path": "scripts/check_release_manifest.py",
+      "bytes": 3872,
+      "sha256": "19b84c394eff1b559749ef9935aee948b72f980d16bf63005d2e3383449c4e33",
+      "git_blob_sha1": "dff6f7d537f05ce2958742a44b99ef72f4d34d0f"
+    },
+    {
+      "path": "scripts/check_sources.py",
+      "bytes": 2415,
+      "sha256": "324d69cb46129dd2d47f9213f3648b3913234ac69dee60abec4af0330be453f7",
+      "git_blob_sha1": "1dd2bd70326c287b963e5b76088513781e78e340"
+    },
+    {
+      "path": "scripts/verify.sh",
+      "bytes": 286,
+      "sha256": "7d8dc34786e1a5514306334ae41e773c87d7a24ebd6aa53d9bdb50225c20b958",
+      "git_blob_sha1": "d2c28b21a30e232fd0ef707c61734443337f6249"
+    },
+    {
+      "path": "scripts/verify_release.py",
+      "bytes": 6843,
+      "sha256": "94f70695826c483afcae7d7f0d32fc2b7d3791f94048822100bacdf91a04d426",
+      "git_blob_sha1": "e9af5b31669f4c6ae28ee23456a8214f1745b10b"
+    },
+    {
+      "path": "theorems.json",
+      "bytes": 142977,
+      "sha256": "c3cf93a48a0e1790066c50e0d61dc177884882adb13df709fdbac3d5fc26c53f",
+      "git_blob_sha1": "14aa70378dafdc049ca0c26f1930cd34566798f2"
+    },
+    {
+      "path": "verification/release/DefinitionsAudit.lean",
+      "bytes": 1859,
+      "sha256": "de296fd1f2029a1eadab92285941f2570ae0ba93f2955f575b4b3f0715f4b949",
+      "git_blob_sha1": "95df16062661438e1749643d6c7f0f4bee8eaa41"
+    },
+    {
+      "path": "verification/release/KeyEndpointAudit.lean",
+      "bytes": 26732,
+      "sha256": "110c46df1f474f5c4aef73f7a7256fc4241a72160d980ba931951d483f285ec1",
+      "git_blob_sha1": "7fc4b08f374d6de6a4ec85729e89020358a6176b"
+    },
+    {
+      "path": "verification/release/definition_names.json",
+      "bytes": 1664,
+      "sha256": "49e606bad5440bf88361c0c8c44bca287328d88cc84264f75694feade5187cec",
+      "git_blob_sha1": "4ccf3a8da05fe75e78c7688016dc08bc0dfac152"
+    },
+    {
+      "path": "verification/release/key_endpoints.json",
+      "bytes": 12073,
+      "sha256": "52dd4d080b9b92370992137342bc63de3cb9ad69ee0d498aaa368fedde888cf2",
+      "git_blob_sha1": "628482f66904cc6bf4a58079362fc304aa890b75"
+    },
+    {
+      "path": "verification/release/provenance.json",
+      "bytes": 300015,
+      "sha256": "e51a93764cb196336f4550ae50a66f76d811d68c0a6cb4aeeb8c1691e3300c47",
+      "git_blob_sha1": "ee426472f87b95c679f89ea0d12930a60ce63128"
+    }
+  ],
+  "public_source_and_driver_count": 628,
+  "no_current_results_self_reference": true,
+  "history_policy": "Unlisted base history/evidence preserved; this manifest does not rewrite old source metadata."
+}

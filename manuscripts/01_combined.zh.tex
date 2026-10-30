@@ -5710,7 +5710,11 @@ Young 不等式在本文只是配方：\(0\le(u-v)^2\) 给出 \(2uv\le u^2+v^2\)
 \Needspace{5\baselineskip}
 \section{作者说明}\label{ux4f5cux8005ux8bf4ux660e}
 
-路径部分旧版主界的配套 Lean 形式化由叶祥宇完成，其上界首项常数为 \(C_*>L\)，精确陈述和版本见\href{https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md}{旧仓库核验记录}。当前仓库的 \texttt{formal/} 另覆盖 Wormald 原角函数的实际二阶导数、Hessian 矩阵公式、正定性、行列式和正有理平方根，以及覆盖表列明的辅助结果。合稿定理 1.1 的锐常数定量渐近式尚未获得端到端 Lean 形式化；未列入覆盖表的结论亦不在本工程的认证范围内。文字整理及部分证明检查使用了 AI 辅助。这些检查不表示整篇现稿已经机器认证，详见 \texttt{formal/COVERAGE.zh.md} 与相应版本的核验记录。
+路径部分旧版主界的配套 Lean 形式化由叶祥宇完成，其上界首项常数为 \(C_*>L\)，精确陈述和版本见\href{https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md}{旧仓库核验记录}。
+
+本工程对覆盖表所列的 30 个编号结果提供与原文对象、前提和量词对应的 Lean 端点，涵盖锐常数定量渐近、实际原角 Hessian、精确路径卷积、谱比较及等号分类，以及四种吹胀计数期望的极限和极值。吹胀期望的最终极值比较覆盖每个固定奇数阶 \(d\ge3\) 的全部基图，不限于正则基图。
+
+文字整理及部分证明检查使用了 AI 辅助。形式化覆盖不等于逐句认证，也不表示全部替代证明或完整的 SVD、矩形矩阵核范数背景均已形式化。吹胀期望极值的阈值在固定基图阶 \(d\) 下存在；不宣称给出可计算或最小数值阈值，或对增长 \(d\) 的一致结论。上述固定基图阶的限定只涉及吹胀期望极值；全局锐常数主定理按其自身量词陈述。期望结论也不是样本级或几乎必然结论。具体端点、对应方式及核验版本见 \texttt{formal/COVERAGE.zh.md} 与相应核验记录；历史记录及其来源哈希仍只描述各自快照。
 
 \Needspace{5\baselineskip}
 \begingroup\small\linespread{1}\selectfont

@@ -1,0 +1,151 @@
+{
+  "status": "PASS_CANDIDATE_PRODUCTION_FRESH_AND_PORTABLE_RELEASE_GATES",
+  "experiment": "publication_candidate_20261030_production_fresh_v1",
+  "base_commit": "cd8a0e1cf99165263167865c1201fc8b2c94cc01",
+  "source_archive_sha256": "3dca24e5a38a1938fdb7f150a4fa820dceed51c05fa763fc41dc0777c0bcd92a",
+  "input_manifest_sha256": "0b48df5c078cfc5a7042c515b3f93c1ffd976d0012b1eaf203f1e43c931d352e",
+  "production_module_count": 609,
+  "registered_endpoint_count": 3067,
+  "numbered_statements": 30,
+  "initial_production_objects": 0,
+  "fresh_compiled_modules": 609,
+  "fresh_created_olean_and_ilean": 1218,
+  "fresh_started": "2026-10-30T04:28:40.319470+00:00",
+  "fresh_build_and_full_registry_finished": "2026-10-30T04:53:19.863058+00:00",
+  "bounded_project_target_width": 2,
+  "fresh_build_batches": 312,
+  "fresh_batch_command_log": "fresh_build_batches.json",
+  "bare_default_build_after_fresh_commands": [
+    {
+      "name": "default_build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "started": "2026-10-30T04:52:48.309841+00:00",
+      "finished": "2026-10-30T04:52:50.099978+00:00",
+      "elapsed_seconds": 1.79,
+      "exit_code": 0
+    },
+    {
+      "name": "source_scan",
+      "command": [
+        "python3",
+        "scripts/check_sources.py"
+      ],
+      "started": "2026-10-30T04:52:50.100133+00:00",
+      "finished": "2026-10-30T04:52:50.822857+00:00",
+      "elapsed_seconds": 0.723,
+      "exit_code": 0
+    },
+    {
+      "name": "all_registry_axioms",
+      "command": [
+        "python3",
+        "scripts/audit_axioms.py"
+      ],
+      "started": "2026-10-30T04:52:50.823071+00:00",
+      "finished": "2026-10-30T04:52:57.176523+00:00",
+      "elapsed_seconds": 6.353,
+      "exit_code": 0
+    }
+  ],
+  "final_portable_gate_commands": [
+    {
+      "name": "lean_version",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "started": "2026-10-30T04:53:37.836678+00:00",
+      "finished": "2026-10-30T04:53:38.551909+00:00",
+      "elapsed_seconds": 0.715,
+      "exit_code": 0
+    },
+    {
+      "name": "default_build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "started": "2026-10-30T04:53:38.552581+00:00",
+      "finished": "2026-10-30T04:53:40.489864+00:00",
+      "elapsed_seconds": 1.937,
+      "exit_code": 0
+    },
+    {
+      "name": "source_scan",
+      "command": [
+        "python3",
+        "scripts/check_sources.py"
+      ],
+      "started": "2026-10-30T04:53:40.490437+00:00",
+      "finished": "2026-10-30T04:53:41.274296+00:00",
+      "elapsed_seconds": 0.784,
+      "exit_code": 0
+    },
+    {
+      "name": "registry_axioms",
+      "command": [
+        "python3",
+        "scripts/audit_axioms.py"
+      ],
+      "started": "2026-10-30T04:53:41.274866+00:00",
+      "finished": "2026-10-30T04:53:45.925314+00:00",
+      "elapsed_seconds": 4.65,
+      "exit_code": 0
+    },
+    {
+      "name": "key_endpoint_types",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/release/KeyEndpointAudit.lean"
+      ],
+      "started": "2026-10-30T04:53:45.929235+00:00",
+      "finished": "2026-10-30T04:53:49.953213+00:00",
+      "elapsed_seconds": 4.024,
+      "exit_code": 0
+    },
+    {
+      "name": "actual_definitions",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/release/DefinitionsAudit.lean"
+      ],
+      "started": "2026-10-30T04:53:49.953864+00:00",
+      "finished": "2026-10-30T04:53:52.739292+00:00",
+      "elapsed_seconds": 2.785,
+      "exit_code": 0
+    }
+  ],
+  "all_3067_registered_complete_types_printed": true,
+  "additional_full_registry_type_evidence": {
+    "driver_sha256": "61894197c5cc29177795ed237c690457c7274a52263d07b07685f42cdb55b25a",
+    "log_sha256": "4b16d2584fd7d1d38ed13c74d7eaab870e9b8f943ac8d0009c1c1acf0a7e95e4",
+    "separate_archive_sha256": "ec22485cc7b06d19b4a29bbc95c98e341de51827e7ff2f913f7f630f4d3e8855",
+    "repository_payload": false
+  },
+  "key_complete_type_and_recursive_axiom_count": 223,
+  "key_output_identical_to_fixed_mathematical_source_review": true,
+  "actual_definition_count": 44,
+  "allowed_foundational_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "all_source_inputs_unchanged": true,
+  "all_dependencies_pinned_tracked_clean": true,
+  "upstream_cache_reused": true,
+  "not_all_mathlib_cold_build": true,
+  "legacy_warnings_record": "warnings.json",
+  "coverage_scope": "30 numbered mathematical conclusions with exact hypotheses or explicit proved equivalent bridges, not every sentence/background/alternative route",
+  "remote_write_performed": false,
+  "candidate_validation_finished": "2026-10-30T04:54:43.992123+00:00",
+  "original_internal_review_reports_in_publication": false
+}

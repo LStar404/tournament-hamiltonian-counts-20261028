@@ -1,0 +1,4043 @@
+[
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.AsymptoticTransfer",
+      "Tournament.Deletion"
+    ],
+    "started": "2026-10-30T04:28:40.373962+00:00",
+    "finished": "2026-10-30T04:28:44.962195+00:00",
+    "elapsed_seconds": 4.588,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.HessianAlgebra",
+      "Tournament.HessianBranch"
+    ],
+    "started": "2026-10-30T04:28:44.963587+00:00",
+    "finished": "2026-10-30T04:28:48.665042+00:00",
+    "elapsed_seconds": 3.701,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.HessianCoordinates",
+      "Tournament.HessianDerivatives"
+    ],
+    "started": "2026-10-30T04:28:48.666520+00:00",
+    "finished": "2026-10-30T04:28:54.972473+00:00",
+    "elapsed_seconds": 6.306,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.HessianCoordinateBridge",
+      "Tournament.HessianDeterminant"
+    ],
+    "started": "2026-10-30T04:28:54.974438+00:00",
+    "finished": "2026-10-30T04:28:59.790849+00:00",
+    "elapsed_seconds": 4.817,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.HessianLogNormalization",
+      "Tournament.HessianRationality"
+    ],
+    "started": "2026-10-30T04:28:59.792809+00:00",
+    "finished": "2026-10-30T04:29:03.046580+00:00",
+    "elapsed_seconds": 3.254,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.HessianPositiveRatio",
+      "Tournament.Paths"
+    ],
+    "started": "2026-10-30T04:29:03.048396+00:00",
+    "finished": "2026-10-30T04:29:06.323874+00:00",
+    "elapsed_seconds": 3.276,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.RankOneEquation",
+      "Tournament.ScorePenalty"
+    ],
+    "started": "2026-10-30T04:29:06.325828+00:00",
+    "finished": "2026-10-30T04:29:10.646182+00:00",
+    "elapsed_seconds": 4.32,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.ResolventDerivatives",
+      "Tournament.SignMatrix"
+    ],
+    "started": "2026-10-30T04:29:10.647974+00:00",
+    "finished": "2026-10-30T04:29:15.149257+00:00",
+    "elapsed_seconds": 4.501,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.ScalarTwoJet",
+      "Tournament.StochasticZero.Core"
+    ],
+    "started": "2026-10-30T04:29:15.151072+00:00",
+    "finished": "2026-10-30T04:29:19.760362+00:00",
+    "elapsed_seconds": 4.609,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.OriginalCoordinates",
+      "Tournament.StochasticZero.Counterexamples"
+    ],
+    "started": "2026-10-30T04:29:19.761822+00:00",
+    "finished": "2026-10-30T04:29:23.649686+00:00",
+    "elapsed_seconds": 3.888,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.HessianMain",
+      "TournamentHamiltonian.AccretiveInverse.Coercivity"
+    ],
+    "started": "2026-10-30T04:29:23.651152+00:00",
+    "finished": "2026-10-30T04:29:28.233539+00:00",
+    "elapsed_seconds": 4.582,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.HessianTheorem",
+      "TournamentHamiltonian.AccretiveInverse.Inverse"
+    ],
+    "started": "2026-10-30T04:29:28.235316+00:00",
+    "finished": "2026-10-30T04:29:31.720912+00:00",
+    "elapsed_seconds": 3.486,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.AccretiveInverse.Boundary",
+      "TournamentHamiltonian.BlockMatrix.TensorNorm"
+    ],
+    "started": "2026-10-30T04:29:31.722607+00:00",
+    "finished": "2026-10-30T04:29:35.007298+00:00",
+    "elapsed_seconds": 3.285,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMatrix.Determinant",
+      "TournamentHamiltonian.Carousel.ScalarCot"
+    ],
+    "started": "2026-10-30T04:29:35.009076+00:00",
+    "finished": "2026-10-30T04:29:38.332897+00:00",
+    "elapsed_seconds": 3.324,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.TangentLower",
+      "TournamentHamiltonian.ComplexMatrixBounds.Hadamard"
+    ],
+    "started": "2026-10-30T04:29:38.334407+00:00",
+    "finished": "2026-10-30T04:29:41.421133+00:00",
+    "elapsed_seconds": 3.087,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ComplexMatrixBounds.Schur",
+      "TournamentHamiltonian.CompressedCoreMajorant"
+    ],
+    "started": "2026-10-30T04:29:41.422667+00:00",
+    "finished": "2026-10-30T04:29:45.667696+00:00",
+    "elapsed_seconds": 4.245,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ComplexMatrixBounds.Boundary",
+      "TournamentHamiltonian.ExponentialRadialMoments"
+    ],
+    "started": "2026-10-30T04:29:45.669742+00:00",
+    "finished": "2026-10-30T04:29:48.750151+00:00",
+    "elapsed_seconds": 3.08,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteExcessWindow",
+      "TournamentHamiltonian.FinitePhaseOrthogonality"
+    ],
+    "started": "2026-10-30T04:29:48.752094+00:00",
+    "finished": "2026-10-30T04:29:52.222729+00:00",
+    "elapsed_seconds": 3.471,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CircularRadialMoments",
+      "TournamentHamiltonian.ForestGaussian.Edges"
+    ],
+    "started": "2026-10-30T04:29:52.224291+00:00",
+    "finished": "2026-10-30T04:29:56.242049+00:00",
+    "elapsed_seconds": 4.018,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussian.Laplacian",
+      "TournamentHamiltonian.ForestGaussian.OperatorNorm"
+    ],
+    "started": "2026-10-30T04:29:56.243733+00:00",
+    "finished": "2026-10-30T04:30:00.121231+00:00",
+    "elapsed_seconds": 3.878,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussian.SpectralEstimate",
+      "TournamentHamiltonian.FrobeniusCp.Algebra"
+    ],
+    "started": "2026-10-30T04:30:00.123117+00:00",
+    "finished": "2026-10-30T04:30:04.252475+00:00",
+    "elapsed_seconds": 4.129,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FrobeniusCp.Norm",
+      "TournamentHamiltonian.GaussianMoments"
+    ],
+    "started": "2026-10-30T04:30:04.254231+00:00",
+    "finished": "2026-10-30T04:30:11.865292+00:00",
+    "elapsed_seconds": 7.611,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FrobeniusCp.Estimate",
+      "TournamentHamiltonian.GaussianQuartic.Base"
+    ],
+    "started": "2026-10-30T04:30:11.867143+00:00",
+    "finished": "2026-10-30T04:30:15.641795+00:00",
+    "elapsed_seconds": 3.775,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FrobeniusCp.Boundary",
+      "TournamentHamiltonian.GaussianQuartic.Local"
+    ],
+    "started": "2026-10-30T04:30:15.643954+00:00",
+    "finished": "2026-10-30T04:30:20.583553+00:00",
+    "elapsed_seconds": 4.94,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.GaussianQuartic.Edges",
+      "TournamentHamiltonian.JacobiPath.Differential"
+    ],
+    "started": "2026-10-30T04:30:20.585462+00:00",
+    "finished": "2026-10-30T04:30:24.976394+00:00",
+    "elapsed_seconds": 4.391,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.GaussianQuartic.Sums",
+      "TournamentHamiltonian.JacobiPath.Path"
+    ],
+    "started": "2026-10-30T04:30:24.978870+00:00",
+    "finished": "2026-10-30T04:30:29.382551+00:00",
+    "elapsed_seconds": 4.404,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.GaussianQuartic.Moments",
+      "TournamentHamiltonian.JacobiPath.Boundary"
+    ],
+    "started": "2026-10-30T04:30:29.385779+00:00",
+    "finished": "2026-10-30T04:30:34.006311+00:00",
+    "elapsed_seconds": 4.621,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.GaussianQuartic.Limit",
+      "TournamentHamiltonian.LogTaylorAtOne.Derivatives"
+    ],
+    "started": "2026-10-30T04:30:34.008407+00:00",
+    "finished": "2026-10-30T04:30:38.231112+00:00",
+    "elapsed_seconds": 4.223,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.GaussianQuartic.SmallOrders",
+      "TournamentHamiltonian.LogTaylorAtOne.Bounds"
+    ],
+    "started": "2026-10-30T04:30:38.232882+00:00",
+    "finished": "2026-10-30T04:30:41.849022+00:00",
+    "elapsed_seconds": 3.616,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LogTaylorAtOne.Remainders",
+      "TournamentHamiltonian.NonregularNormalization.FineStirling"
+    ],
+    "started": "2026-10-30T04:30:41.851226+00:00",
+    "finished": "2026-10-30T04:30:45.446495+00:00",
+    "elapsed_seconds": 3.595,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LogTaylorAtOne.Boundary",
+      "TournamentHamiltonian.NuclearPolar.Base"
+    ],
+    "started": "2026-10-30T04:30:45.448744+00:00",
+    "finished": "2026-10-30T04:30:49.141117+00:00",
+    "elapsed_seconds": 3.692,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NuclearPolar.Spectral",
+      "TournamentHamiltonian.Packing"
+    ],
+    "started": "2026-10-30T04:30:49.143155+00:00",
+    "finished": "2026-10-30T04:30:53.884567+00:00",
+    "elapsed_seconds": 4.741,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Definitions",
+      "TournamentHamiltonian.NuclearPolar.Polar"
+    ],
+    "started": "2026-10-30T04:30:53.886582+00:00",
+    "finished": "2026-10-30T04:30:57.555543+00:00",
+    "elapsed_seconds": 3.669,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.StochasticZero.TournamentBridge",
+      "TournamentHamiltonian.Bregman"
+    ],
+    "started": "2026-10-30T04:30:57.558096+00:00",
+    "finished": "2026-10-30T04:31:01.460820+00:00",
+    "elapsed_seconds": 3.903,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.StochasticZero.OriginalZero",
+      "TournamentHamiltonian.BregmanRanks"
+    ],
+    "started": "2026-10-30T04:31:01.463824+00:00",
+    "finished": "2026-10-30T04:31:05.061800+00:00",
+    "elapsed_seconds": 3.598,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BregmanBound",
+      "TournamentHamiltonian.Equality.PfaffianFour"
+    ],
+    "started": "2026-10-30T04:31:05.063815+00:00",
+    "finished": "2026-10-30T04:31:09.080920+00:00",
+    "elapsed_seconds": 4.017,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DegreeBalancing",
+      "TournamentHamiltonian.NuclearPolar.Dual"
+    ],
+    "started": "2026-10-30T04:31:09.082946+00:00",
+    "finished": "2026-10-30T04:31:13.379266+00:00",
+    "elapsed_seconds": 4.296,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DegreeVariance",
+      "TournamentHamiltonian.NuclearInequalities.Algebra"
+    ],
+    "started": "2026-10-30T04:31:13.381189+00:00",
+    "finished": "2026-10-30T04:31:20.929798+00:00",
+    "elapsed_seconds": 7.549,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NuclearInequalities.Frobenius",
+      "TournamentHamiltonian.NuclearPolar.Boundary"
+    ],
+    "started": "2026-10-30T04:31:20.932564+00:00",
+    "finished": "2026-10-30T04:31:24.607455+00:00",
+    "elapsed_seconds": 3.675,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NuclearInequalities.Products",
+      "TournamentHamiltonian.Orientation"
+    ],
+    "started": "2026-10-30T04:31:24.609890+00:00",
+    "finished": "2026-10-30T04:31:28.068258+00:00",
+    "elapsed_seconds": 3.458,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NuclearInequalities.RankOne",
+      "TournamentHamiltonian.PathConvolutionCoefficients"
+    ],
+    "started": "2026-10-30T04:31:28.070462+00:00",
+    "finished": "2026-10-30T04:31:32.512709+00:00",
+    "elapsed_seconds": 4.442,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NuclearInequalities.Boundary",
+      "TournamentHamiltonian.PeriodicBox.Basic"
+    ],
+    "started": "2026-10-30T04:31:32.515649+00:00",
+    "finished": "2026-10-30T04:31:36.854743+00:00",
+    "elapsed_seconds": 4.339,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NuclearDeterminant.Compression",
+      "TournamentHamiltonian.PermanentPolarization"
+    ],
+    "started": "2026-10-30T04:31:36.857896+00:00",
+    "finished": "2026-10-30T04:31:41.667818+00:00",
+    "elapsed_seconds": 4.81,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NuclearDeterminant.Generating",
+      "TournamentHamiltonian.PSDGaussianAMGM"
+    ],
+    "started": "2026-10-30T04:31:41.670713+00:00",
+    "finished": "2026-10-30T04:31:45.508702+00:00",
+    "elapsed_seconds": 3.838,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NuclearDeterminant.Perturbation",
+      "TournamentHamiltonian.PositiveDeterminant"
+    ],
+    "started": "2026-10-30T04:31:45.510857+00:00",
+    "finished": "2026-10-30T04:31:49.892245+00:00",
+    "elapsed_seconds": 4.381,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteDetPerturbation.Perturbation",
+      "TournamentHamiltonian.Hadamard"
+    ],
+    "started": "2026-10-30T04:31:49.894931+00:00",
+    "finished": "2026-10-30T04:31:54.092323+00:00",
+    "elapsed_seconds": 4.197,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteDetPerturbation.Real",
+      "TournamentHamiltonian.NuclearDeterminant.Boundary"
+    ],
+    "started": "2026-10-30T04:31:54.095521+00:00",
+    "finished": "2026-10-30T04:31:57.303460+00:00",
+    "elapsed_seconds": 3.208,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteDetPerturbation.Boundary",
+      "TournamentHamiltonian.PathConvolution"
+    ],
+    "started": "2026-10-30T04:31:57.305957+00:00",
+    "finished": "2026-10-30T04:32:02.231550+00:00",
+    "elapsed_seconds": 4.926,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PathConvolutionGenerating",
+      "TournamentHamiltonian.PrincipalGenerating"
+    ],
+    "started": "2026-10-30T04:32:02.244767+00:00",
+    "finished": "2026-10-30T04:32:07.389878+00:00",
+    "elapsed_seconds": 5.145,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.PathConvolution",
+      "TournamentHamiltonian.RegularFourier.Characters"
+    ],
+    "started": "2026-10-30T04:32:07.392810+00:00",
+    "finished": "2026-10-30T04:32:11.195055+00:00",
+    "elapsed_seconds": 3.802,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.SharpBound",
+      "TournamentHamiltonian.ScalingIdentities"
+    ],
+    "started": "2026-10-30T04:32:11.197769+00:00",
+    "finished": "2026-10-30T04:32:15.010374+00:00",
+    "elapsed_seconds": 3.813,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PermanentExpansion",
+      "TournamentHamiltonian.SpectralRadialMoments"
+    ],
+    "started": "2026-10-30T04:32:15.013025+00:00",
+    "finished": "2026-10-30T04:32:19.766741+00:00",
+    "elapsed_seconds": 4.754,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PartitionExpansion",
+      "TournamentHamiltonian.PermanentAnalyticTail"
+    ],
+    "started": "2026-10-30T04:32:19.769257+00:00",
+    "finished": "2026-10-30T04:32:23.804915+00:00",
+    "elapsed_seconds": 4.036,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PartitionWeights",
+      "TournamentHamiltonian.PolynomialFloorTail"
+    ],
+    "started": "2026-10-30T04:32:23.807538+00:00",
+    "finished": "2026-10-30T04:32:27.678021+00:00",
+    "elapsed_seconds": 3.871,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PairingCardinality",
+      "TournamentHamiltonian.PartitionChromatic"
+    ],
+    "started": "2026-10-30T04:32:27.681326+00:00",
+    "finished": "2026-10-30T04:32:31.639782+00:00",
+    "elapsed_seconds": 3.958,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreCompressionInvolutions",
+      "TournamentHamiltonian.GaussianWick"
+    ],
+    "started": "2026-10-30T04:32:31.642513+00:00",
+    "finished": "2026-10-30T04:32:35.922094+00:00",
+    "elapsed_seconds": 4.28,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CircularWickFinite",
+      "TournamentHamiltonian.GaussianWickFinite"
+    ],
+    "started": "2026-10-30T04:32:35.924378+00:00",
+    "finished": "2026-10-30T04:32:39.935394+00:00",
+    "elapsed_seconds": 4.011,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CircularPermanentMoment",
+      "TournamentHamiltonian.PolynomialSeriesComparison"
+    ],
+    "started": "2026-10-30T04:32:39.937886+00:00",
+    "finished": "2026-10-30T04:32:43.886710+00:00",
+    "elapsed_seconds": 3.949,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CircularPSDComparison",
+      "TournamentHamiltonian.StirlingNormalization"
+    ],
+    "started": "2026-10-30T04:32:43.888991+00:00",
+    "finished": "2026-10-30T04:32:54.071004+00:00",
+    "elapsed_seconds": 10.182,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DegreeDeletion",
+      "TournamentHamiltonian.HomogeneousGeometricBound"
+    ],
+    "started": "2026-10-30T04:32:54.074314+00:00",
+    "finished": "2026-10-30T04:32:58.562551+00:00",
+    "elapsed_seconds": 4.488,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FourBlockPermanent",
+      "TournamentHamiltonian.PaperEndpointWrappersB.Variance"
+    ],
+    "started": "2026-10-30T04:32:58.564863+00:00",
+    "finished": "2026-10-30T04:33:03.401538+00:00",
+    "elapsed_seconds": 4.837,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CrossPermanentBounds",
+      "TournamentHamiltonian.PermanentSpectralEnvelope"
+    ],
+    "started": "2026-10-30T04:33:03.404454+00:00",
+    "finished": "2026-10-30T04:33:08.283686+00:00",
+    "elapsed_seconds": 4.879,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CrossFactorialNormalization",
+      "TournamentHamiltonian.PairedCrossProducts"
+    ],
+    "started": "2026-10-30T04:33:08.286793+00:00",
+    "finished": "2026-10-30T04:33:12.773778+00:00",
+    "elapsed_seconds": 4.487,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DeletionFactorial",
+      "TournamentHamiltonian.FourBlockBounds"
+    ],
+    "started": "2026-10-30T04:33:12.776048+00:00",
+    "finished": "2026-10-30T04:33:17.398642+00:00",
+    "elapsed_seconds": 4.623,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LowerDeletionFactorial",
+      "TournamentHamiltonian.PolarSpectralBound"
+    ],
+    "started": "2026-10-30T04:33:17.401269+00:00",
+    "finished": "2026-10-30T04:33:21.819517+00:00",
+    "elapsed_seconds": 4.418,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.OrthogonalPolarBridge",
+      "TournamentHamiltonian.RectangularGramAMGM"
+    ],
+    "started": "2026-10-30T04:33:21.822070+00:00",
+    "finished": "2026-10-30T04:33:26.120513+00:00",
+    "elapsed_seconds": 4.298,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RankOneGramFactor",
+      "TournamentHamiltonian.SelectedMinorEmbeddings"
+    ],
+    "started": "2026-10-30T04:33:26.123568+00:00",
+    "finished": "2026-10-30T04:33:30.029814+00:00",
+    "elapsed_seconds": 3.906,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.StrictStirling.Bounds",
+      "TournamentHamiltonian.SubsetWeights"
+    ],
+    "started": "2026-10-30T04:33:30.033147+00:00",
+    "finished": "2026-10-30T04:33:34.795497+00:00",
+    "elapsed_seconds": 4.762,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseTailKernel",
+      "TournamentHamiltonian.DenseTailScalars"
+    ],
+    "started": "2026-10-30T04:33:34.797861+00:00",
+    "finished": "2026-10-30T04:33:38.970691+00:00",
+    "elapsed_seconds": 4.173,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LongTail",
+      "TournamentHamiltonian.StrictStirling.Boundary"
+    ],
+    "started": "2026-10-30T04:33:38.973947+00:00",
+    "finished": "2026-10-30T04:33:42.945754+00:00",
+    "elapsed_seconds": 3.972,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NormalizedConvolution",
+      "TournamentHamiltonian.TorusCluster.Circle"
+    ],
+    "started": "2026-10-30T04:33:42.948574+00:00",
+    "finished": "2026-10-30T04:33:47.082502+00:00",
+    "elapsed_seconds": 4.134,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.HighVariance",
+      "TournamentHamiltonian.TorusCluster.CosineGaussian"
+    ],
+    "started": "2026-10-30T04:33:47.085297+00:00",
+    "finished": "2026-10-30T04:33:52.376537+00:00",
+    "elapsed_seconds": 5.291,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.TorusCluster.Graph",
+      "TournamentHamiltonian.TransitiveDeterminant"
+    ],
+    "started": "2026-10-30T04:33:52.379818+00:00",
+    "finished": "2026-10-30T04:33:56.393254+00:00",
+    "elapsed_seconds": 4.013,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Equality.SwitchingBasics",
+      "TournamentHamiltonian.PowerApproximation"
+    ],
+    "started": "2026-10-30T04:33:56.396311+00:00",
+    "finished": "2026-10-30T04:34:00.301944+00:00",
+    "elapsed_seconds": 3.906,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.AlternatingTournament",
+      "TournamentHamiltonian.Equality.PivotClassification"
+    ],
+    "started": "2026-10-30T04:34:00.304689+00:00",
+    "finished": "2026-10-30T04:34:04.864574+00:00",
+    "elapsed_seconds": 4.56,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel",
+      "TournamentHamiltonian.Equality.SignedPermutationClassification"
+    ],
+    "started": "2026-10-30T04:34:04.867415+00:00",
+    "finished": "2026-10-30T04:34:09.124838+00:00",
+    "elapsed_seconds": 4.257,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Equality.SignedPermutationMatrix",
+      "TournamentHamiltonian.SkewSpectrum"
+    ],
+    "started": "2026-10-30T04:34:09.127564+00:00",
+    "finished": "2026-10-30T04:34:14.077225+00:00",
+    "elapsed_seconds": 4.95,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CrudeSpectralDeterminant",
+      "TournamentHamiltonian.Equality.RegularCarousel"
+    ],
+    "started": "2026-10-30T04:34:14.081131+00:00",
+    "finished": "2026-10-30T04:34:18.864073+00:00",
+    "elapsed_seconds": 4.783,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.GeneratingDeterminant",
+      "TournamentHamiltonian.SharpSpectralMoments"
+    ],
+    "started": "2026-10-30T04:34:18.866890+00:00",
+    "finished": "2026-10-30T04:34:23.394415+00:00",
+    "elapsed_seconds": 4.528,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreGenerating",
+      "TournamentHamiltonian.SkewOperatorNorm"
+    ],
+    "started": "2026-10-30T04:34:23.397895+00:00",
+    "finished": "2026-10-30T04:34:28.127489+00:00",
+    "elapsed_seconds": 4.73,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.GramDeletion",
+      "TournamentHamiltonian.MatrixComplexification"
+    ],
+    "started": "2026-10-30T04:34:28.130618+00:00",
+    "finished": "2026-10-30T04:34:33.393505+00:00",
+    "elapsed_seconds": 5.263,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.GaussianMGF",
+      "TournamentHamiltonian.GramCentering"
+    ],
+    "started": "2026-10-30T04:34:33.396489+00:00",
+    "finished": "2026-10-30T04:34:38.365424+00:00",
+    "elapsed_seconds": 4.969,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussian.MatrixBridge",
+      "TournamentHamiltonian.GaussianAnalytic"
+    ],
+    "started": "2026-10-30T04:34:38.368954+00:00",
+    "finished": "2026-10-30T04:34:42.979574+00:00",
+    "elapsed_seconds": 4.611,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussian.Factor",
+      "TournamentHamiltonian.GaussianCoreCoefficients"
+    ],
+    "started": "2026-10-30T04:34:42.982770+00:00",
+    "finished": "2026-10-30T04:34:47.217659+00:00",
+    "elapsed_seconds": 4.235,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussian.Boundary",
+      "TournamentHamiltonian.ForestGaussianIntegral.Coordinates"
+    ],
+    "started": "2026-10-30T04:34:47.221463+00:00",
+    "finished": "2026-10-30T04:34:50.933703+00:00",
+    "elapsed_seconds": 3.712,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussianIntegral.Inverse",
+      "TournamentHamiltonian.GaussianCoreGraph"
+    ],
+    "started": "2026-10-30T04:34:50.936476+00:00",
+    "finished": "2026-10-30T04:34:55.488212+00:00",
+    "elapsed_seconds": 4.552,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussianIntegral.Determinant",
+      "TournamentHamiltonian.GaussianChains"
+    ],
+    "started": "2026-10-30T04:34:55.491559+00:00",
+    "finished": "2026-10-30T04:34:59.712005+00:00",
+    "elapsed_seconds": 4.22,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussianIntegral.Actual",
+      "TournamentHamiltonian.GaussianChainWords"
+    ],
+    "started": "2026-10-30T04:34:59.715334+00:00",
+    "finished": "2026-10-30T04:35:03.629847+00:00",
+    "elapsed_seconds": 3.915,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussianIntegral.FactorBridge",
+      "TournamentHamiltonian.GaussianCoreComponents"
+    ],
+    "started": "2026-10-30T04:35:03.633277+00:00",
+    "finished": "2026-10-30T04:35:07.742807+00:00",
+    "elapsed_seconds": 4.11,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussianIntegral.CompleteRoot",
+      "TournamentHamiltonian.GaussianCoreExcess"
+    ],
+    "started": "2026-10-30T04:35:07.745644+00:00",
+    "finished": "2026-10-30T04:35:11.838510+00:00",
+    "elapsed_seconds": 4.093,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestGaussianIntegral.Boundary",
+      "TournamentHamiltonian.GaussianSeries"
+    ],
+    "started": "2026-10-30T04:35:11.841549+00:00",
+    "finished": "2026-10-30T04:35:15.568657+00:00",
+    "elapsed_seconds": 3.728,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FactorialRecovery",
+      "TournamentHamiltonian.GaussianAnalyticTail"
+    ],
+    "started": "2026-10-30T04:35:15.602939+00:00",
+    "finished": "2026-10-30T04:35:19.684024+00:00",
+    "elapsed_seconds": 4.081,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.GramLipschitz",
+      "TournamentHamiltonian.OperatorCap"
+    ],
+    "started": "2026-10-30T04:35:19.687395+00:00",
+    "finished": "2026-10-30T04:35:24.607722+00:00",
+    "elapsed_seconds": 4.92,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ComplexSpectralFrobenius",
+      "TournamentHamiltonian.PDGaussian.Spectral"
+    ],
+    "started": "2026-10-30T04:35:24.611000+00:00",
+    "finished": "2026-10-30T04:35:28.711440+00:00",
+    "elapsed_seconds": 4.1,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PDGaussian.Integral",
+      "TournamentHamiltonian.PaperGaussianRecovery.Series"
+    ],
+    "started": "2026-10-30T04:35:28.714790+00:00",
+    "finished": "2026-10-30T04:35:33.021129+00:00",
+    "elapsed_seconds": 4.306,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PDGaussian.PhaseMGF",
+      "TournamentHamiltonian.PartitionComponentSplit"
+    ],
+    "started": "2026-10-30T04:35:33.026066+00:00",
+    "finished": "2026-10-30T04:35:37.644099+00:00",
+    "elapsed_seconds": 4.618,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestQuartic.Density",
+      "TournamentHamiltonian.PDGaussian.Forest"
+    ],
+    "started": "2026-10-30T04:35:37.647459+00:00",
+    "finished": "2026-10-30T04:35:41.508569+00:00",
+    "elapsed_seconds": 3.861,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestQuartic.Weight",
+      "TournamentHamiltonian.PDGaussian.Boundary"
+    ],
+    "started": "2026-10-30T04:35:41.512182+00:00",
+    "finished": "2026-10-30T04:35:46.407110+00:00",
+    "elapsed_seconds": 4.895,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestQuartic.TiltBridge",
+      "TournamentHamiltonian.PartitionComponentAssembly"
+    ],
+    "started": "2026-10-30T04:35:46.410450+00:00",
+    "finished": "2026-10-30T04:35:50.402045+00:00",
+    "elapsed_seconds": 3.992,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestQuartic.Transfer",
+      "TournamentHamiltonian.GaussianCoreDecomposition"
+    ],
+    "started": "2026-10-30T04:35:50.405625+00:00",
+    "finished": "2026-10-30T04:35:54.309811+00:00",
+    "elapsed_seconds": 3.904,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestQuartic.Removed",
+      "TournamentHamiltonian.GaussianCoreConvolution"
+    ],
+    "started": "2026-10-30T04:35:54.312902+00:00",
+    "finished": "2026-10-30T04:35:58.873083+00:00",
+    "elapsed_seconds": 4.56,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestQuartic.Concentration",
+      "TournamentHamiltonian.PartitionEdgeRelabel"
+    ],
+    "started": "2026-10-30T04:35:58.876768+00:00",
+    "finished": "2026-10-30T04:36:02.659175+00:00",
+    "elapsed_seconds": 3.782,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestQuartic.Law",
+      "TournamentHamiltonian.GaussianCoreCoefficientConvolution"
+    ],
+    "started": "2026-10-30T04:36:02.662594+00:00",
+    "finished": "2026-10-30T04:36:06.642226+00:00",
+    "elapsed_seconds": 3.98,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ForestQuartic.Boundary",
+      "TournamentHamiltonian.GaussianCoreExcessCoefficients"
+    ],
+    "started": "2026-10-30T04:36:06.646240+00:00",
+    "finished": "2026-10-30T04:36:10.717854+00:00",
+    "elapsed_seconds": 4.072,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteGaussianCoreWindow",
+      "TournamentHamiltonian.PartitionHalfEdges"
+    ],
+    "started": "2026-10-30T04:36:10.721520+00:00",
+    "finished": "2026-10-30T04:36:14.654710+00:00",
+    "elapsed_seconds": 3.933,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreCompressionCoverage",
+      "TournamentHamiltonian.CoreCompressionWeights"
+    ],
+    "started": "2026-10-30T04:36:14.658382+00:00",
+    "finished": "2026-10-30T04:36:18.758799+00:00",
+    "elapsed_seconds": 4.101,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreCompressionPaths",
+      "TournamentHamiltonian.ProjectionPermanentEnvelope"
+    ],
+    "started": "2026-10-30T04:36:18.774758+00:00",
+    "finished": "2026-10-30T04:36:22.772098+00:00",
+    "elapsed_seconds": 3.997,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CenteredComplexPermanent",
+      "TournamentHamiltonian.CoreCompressionVertices"
+    ],
+    "started": "2026-10-30T04:36:22.775210+00:00",
+    "finished": "2026-10-30T04:36:27.196650+00:00",
+    "elapsed_seconds": 4.421,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreCompressionEndpoints",
+      "TournamentHamiltonian.CoreDecorationCoordinates"
+    ],
+    "started": "2026-10-30T04:36:27.201549+00:00",
+    "finished": "2026-10-30T04:36:30.985579+00:00",
+    "elapsed_seconds": 3.784,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreCompressionTensor",
+      "TournamentHamiltonian.CoreDecorationPaths"
+    ],
+    "started": "2026-10-30T04:36:30.990031+00:00",
+    "finished": "2026-10-30T04:36:34.957721+00:00",
+    "elapsed_seconds": 3.968,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CompressedCoreTensorBounds",
+      "TournamentHamiltonian.CorePathReversal"
+    ],
+    "started": "2026-10-30T04:36:34.960938+00:00",
+    "finished": "2026-10-30T04:36:39.161464+00:00",
+    "elapsed_seconds": 4.201,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreDecorationVertices",
+      "TournamentHamiltonian.CoreExcessDecorationMass"
+    ],
+    "started": "2026-10-30T04:36:39.164667+00:00",
+    "finished": "2026-10-30T04:36:43.659058+00:00",
+    "elapsed_seconds": 4.494,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreDecorationIncidence",
+      "TournamentHamiltonian.CoreEncodingData"
+    ],
+    "started": "2026-10-30T04:36:43.662720+00:00",
+    "finished": "2026-10-30T04:36:47.740743+00:00",
+    "elapsed_seconds": 4.078,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreEncodingCount",
+      "TournamentHamiltonian.CoreEncodingDecoder"
+    ],
+    "started": "2026-10-30T04:36:47.744726+00:00",
+    "finished": "2026-10-30T04:36:52.034835+00:00",
+    "elapsed_seconds": 4.29,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreEncodingTerminals",
+      "TournamentHamiltonian.RegularContainment.Scalar"
+    ],
+    "started": "2026-10-30T04:36:52.038752+00:00",
+    "finished": "2026-10-30T04:36:56.425421+00:00",
+    "elapsed_seconds": 4.387,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreEncodingInjectivity",
+      "TournamentHamiltonian.RootGaussianTail.Base"
+    ],
+    "started": "2026-10-30T04:36:56.428880+00:00",
+    "finished": "2026-10-30T04:37:00.993866+00:00",
+    "elapsed_seconds": 4.565,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ActualCoreActivity",
+      "TournamentHamiltonian.RootGaussianTail.Coordinates"
+    ],
+    "started": "2026-10-30T04:37:00.998222+00:00",
+    "finished": "2026-10-30T04:37:05.218534+00:00",
+    "elapsed_seconds": 4.22,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperEndpointsA.Activity32",
+      "TournamentHamiltonian.RootGaussianTail.Tail"
+    ],
+    "started": "2026-10-30T04:37:05.222010+00:00",
+    "finished": "2026-10-30T04:37:09.440532+00:00",
+    "elapsed_seconds": 4.219,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RootGaussianTail.Normalization",
+      "TournamentHamiltonian.RootObservable.Coordinates"
+    ],
+    "started": "2026-10-30T04:37:09.444068+00:00",
+    "finished": "2026-10-30T04:37:13.784111+00:00",
+    "elapsed_seconds": 4.34,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RootGaussianTail.DimensionRatio",
+      "TournamentHamiltonian.RootObservable.Fubini"
+    ],
+    "started": "2026-10-30T04:37:13.789615+00:00",
+    "finished": "2026-10-30T04:37:18.219328+00:00",
+    "elapsed_seconds": 4.43,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RootGaussianTail.Anchor",
+      "TournamentHamiltonian.RootObservable.Transport"
+    ],
+    "started": "2026-10-30T04:37:18.222860+00:00",
+    "finished": "2026-10-30T04:37:22.273334+00:00",
+    "elapsed_seconds": 4.051,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RootGaussianTail.AnchorBad",
+      "TournamentHamiltonian.RootObservable.Quartic"
+    ],
+    "started": "2026-10-30T04:37:22.277568+00:00",
+    "finished": "2026-10-30T04:37:26.204441+00:00",
+    "elapsed_seconds": 3.927,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LocalLogCos.Derivatives",
+      "TournamentHamiltonian.RootGaussianTail.Boundary"
+    ],
+    "started": "2026-10-30T04:37:26.208278+00:00",
+    "finished": "2026-10-30T04:37:30.274576+00:00",
+    "elapsed_seconds": 4.066,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LocalLogCos.Scalar",
+      "TournamentHamiltonian.RootObservable.Boundary"
+    ],
+    "started": "2026-10-30T04:37:30.278858+00:00",
+    "finished": "2026-10-30T04:37:34.518742+00:00",
+    "elapsed_seconds": 4.24,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LocalLogCos.Product",
+      "TournamentHamiltonian.SkewGeometry"
+    ],
+    "started": "2026-10-30T04:37:34.522257+00:00",
+    "finished": "2026-10-30T04:37:39.319808+00:00",
+    "elapsed_seconds": 4.798,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DeletionMass",
+      "TournamentHamiltonian.LocalLogCos.Error"
+    ],
+    "started": "2026-10-30T04:37:39.324120+00:00",
+    "finished": "2026-10-30T04:37:43.292437+00:00",
+    "elapsed_seconds": 3.968,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LocalLogCos.Scale",
+      "TournamentHamiltonian.LocalScaling"
+    ],
+    "started": "2026-10-30T04:37:43.296080+00:00",
+    "finished": "2026-10-30T04:37:48.361374+00:00",
+    "elapsed_seconds": 5.065,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LocalLogCos.Integral",
+      "TournamentHamiltonian.LocalScalingExistence"
+    ],
+    "started": "2026-10-30T04:37:48.365127+00:00",
+    "finished": "2026-10-30T04:37:54.076388+00:00",
+    "elapsed_seconds": 5.711,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LocalLogCos.Boundary",
+      "TournamentHamiltonian.LocalScalingEstimates"
+    ],
+    "started": "2026-10-30T04:37:54.080070+00:00",
+    "finished": "2026-10-30T04:37:58.586668+00:00",
+    "elapsed_seconds": 4.507,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LocalScalingDisplacement",
+      "TournamentHamiltonian.MeanProjectionComplex"
+    ],
+    "started": "2026-10-30T04:37:58.590178+00:00",
+    "finished": "2026-10-30T04:38:04.333272+00:00",
+    "elapsed_seconds": 5.743,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ActualPermanentCircleTail",
+      "TournamentHamiltonian.LocalScalingCapacity"
+    ],
+    "started": "2026-10-30T04:38:04.337466+00:00",
+    "finished": "2026-10-30T04:38:09.149275+00:00",
+    "elapsed_seconds": 4.812,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ActualPermanentFloorTail",
+      "TournamentHamiltonian.PairedPreconditioning"
+    ],
+    "started": "2026-10-30T04:38:09.153643+00:00",
+    "finished": "2026-10-30T04:38:13.271590+00:00",
+    "elapsed_seconds": 4.118,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PreconditioningBounds",
+      "TournamentHamiltonian.RealPermanentAnalyticTail"
+    ],
+    "started": "2026-10-30T04:38:13.275147+00:00",
+    "finished": "2026-10-30T04:38:18.474751+00:00",
+    "elapsed_seconds": 5.2,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ExceptionalDegrees",
+      "TournamentHamiltonian.PreconditioningDisplacement"
+    ],
+    "started": "2026-10-30T04:38:18.478435+00:00",
+    "finished": "2026-10-30T04:38:26.347721+00:00",
+    "elapsed_seconds": 7.869,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DeletedExceptionalCore",
+      "TournamentHamiltonian.ExceptionalCrossProfiles"
+    ],
+    "started": "2026-10-30T04:38:26.351400+00:00",
+    "finished": "2026-10-30T04:38:33.875746+00:00",
+    "elapsed_seconds": 7.524,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DeletedExceptionalProfiles",
+      "TournamentHamiltonian.PreconditioningMarginals"
+    ],
+    "started": "2026-10-30T04:38:33.880219+00:00",
+    "finished": "2026-10-30T04:38:38.934166+00:00",
+    "elapsed_seconds": 5.054,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NormalizationBounds",
+      "TournamentHamiltonian.PairedWeightL1"
+    ],
+    "started": "2026-10-30T04:38:38.937758+00:00",
+    "finished": "2026-10-30T04:38:43.334350+00:00",
+    "elapsed_seconds": 4.397,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DeletionBounds",
+      "TournamentHamiltonian.LocalScalingNormalization"
+    ],
+    "started": "2026-10-30T04:38:43.338358+00:00",
+    "finished": "2026-10-30T04:38:47.862487+00:00",
+    "elapsed_seconds": 4.524,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LocalScalingComplete",
+      "TournamentHamiltonian.PreconditioningNormalization"
+    ],
+    "started": "2026-10-30T04:38:47.866620+00:00",
+    "finished": "2026-10-30T04:38:52.145517+00:00",
+    "elapsed_seconds": 4.279,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PreconditionedRetainedMassBudget",
+      "TournamentHamiltonian.SmallScoreGeneratingLower"
+    ],
+    "started": "2026-10-30T04:38:52.150350+00:00",
+    "finished": "2026-10-30T04:38:58.526263+00:00",
+    "elapsed_seconds": 6.376,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.TorusCluster.Regions",
+      "TournamentHamiltonian.TournamentGaussianLoss"
+    ],
+    "started": "2026-10-30T04:38:58.530396+00:00",
+    "finished": "2026-10-30T04:39:05.405968+00:00",
+    "elapsed_seconds": 6.876,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CenteredPreconditioning",
+      "TournamentHamiltonian.TorusCluster.Product"
+    ],
+    "started": "2026-10-30T04:39:05.414014+00:00",
+    "finished": "2026-10-30T04:39:10.343963+00:00",
+    "elapsed_seconds": 4.93,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMatrix.Core",
+      "TournamentHamiltonian.FrobeniusGeometry"
+    ],
+    "started": "2026-10-30T04:39:10.348286+00:00",
+    "finished": "2026-10-30T04:39:15.398933+00:00",
+    "elapsed_seconds": 5.051,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMatrix.ConstantDet",
+      "TournamentHamiltonian.BlockMatrix.Gap"
+    ],
+    "started": "2026-10-30T04:39:15.405265+00:00",
+    "finished": "2026-10-30T04:39:20.155016+00:00",
+    "elapsed_seconds": 4.75,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMatrix.Reindex",
+      "TournamentHamiltonian.BlockMatrix.ScalarRatio"
+    ],
+    "started": "2026-10-30T04:39:20.158916+00:00",
+    "finished": "2026-10-30T04:39:24.706321+00:00",
+    "elapsed_seconds": 4.547,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockRatio.Gram",
+      "TournamentHamiltonian.BlockRatio.Numerator"
+    ],
+    "started": "2026-10-30T04:39:24.711056+00:00",
+    "finished": "2026-10-30T04:39:29.145227+00:00",
+    "elapsed_seconds": 4.434,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockRatio.Denominator",
+      "TournamentHamiltonian.BlockRatio.SpectralBridge"
+    ],
+    "started": "2026-10-30T04:39:29.149295+00:00",
+    "finished": "2026-10-30T04:39:34.138861+00:00",
+    "elapsed_seconds": 4.99,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockRatio.Decomposition",
+      "TournamentHamiltonian.EtaBounds"
+    ],
+    "started": "2026-10-30T04:39:34.143726+00:00",
+    "finished": "2026-10-30T04:39:38.505242+00:00",
+    "elapsed_seconds": 4.362,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockRatio.ScalarLimit",
+      "TournamentHamiltonian.GaussianFactorialRecovery"
+    ],
+    "started": "2026-10-30T04:39:38.509742+00:00",
+    "finished": "2026-10-30T04:39:43.434311+00:00",
+    "elapsed_seconds": 4.925,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockRatio.BaseLimit",
+      "TournamentHamiltonian.GaussianTailBudget"
+    ],
+    "started": "2026-10-30T04:39:43.438520+00:00",
+    "finished": "2026-10-30T04:39:47.298806+00:00",
+    "elapsed_seconds": 3.86,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperGaussianRecovery.Factorial",
+      "TournamentHamiltonian.PaperGaussianRecovery.Spectrum"
+    ],
+    "started": "2026-10-30T04:39:47.302724+00:00",
+    "finished": "2026-10-30T04:39:51.563649+00:00",
+    "elapsed_seconds": 4.261,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperGaussianRecovery.Calculus",
+      "TournamentHamiltonian.PeriodicBox.Cosine"
+    ],
+    "started": "2026-10-30T04:39:51.567389+00:00",
+    "finished": "2026-10-30T04:39:55.531802+00:00",
+    "elapsed_seconds": 3.964,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperGaussianRecovery.GramDerivatives",
+      "TournamentHamiltonian.PeriodicBox.Local"
+    ],
+    "started": "2026-10-30T04:39:55.537086+00:00",
+    "finished": "2026-10-30T04:39:59.322322+00:00",
+    "elapsed_seconds": 3.785,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperGaussianRecovery.Bounds",
+      "TournamentHamiltonian.PeriodicBox.Tests"
+    ],
+    "started": "2026-10-30T04:39:59.327323+00:00",
+    "finished": "2026-10-30T04:40:03.672510+00:00",
+    "elapsed_seconds": 4.345,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperGaussianRecovery.Recovery",
+      "TournamentHamiltonian.PermanentApproximationWindow"
+    ],
+    "started": "2026-10-30T04:40:03.676730+00:00",
+    "finished": "2026-10-30T04:40:08.645688+00:00",
+    "elapsed_seconds": 4.969,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PermanentApproximationFromActivities",
+      "TournamentHamiltonian.PermanentEntryFrobenius"
+    ],
+    "started": "2026-10-30T04:40:08.650029+00:00",
+    "finished": "2026-10-30T04:40:16.327904+00:00",
+    "elapsed_seconds": 7.678,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperGaussianRecovery.Window",
+      "TournamentHamiltonian.PermanentAnalyticDefaults"
+    ],
+    "started": "2026-10-30T04:40:16.332119+00:00",
+    "finished": "2026-10-30T04:40:20.139678+00:00",
+    "elapsed_seconds": 3.808,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperGaussianRecovery.Approximation",
+      "TournamentHamiltonian.PermanentApproximationRate"
+    ],
+    "started": "2026-10-30T04:40:20.143765+00:00",
+    "finished": "2026-10-30T04:40:27.558244+00:00",
+    "elapsed_seconds": 7.415,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ScalingKernelBridge",
+      "TournamentHamiltonian.TorusCluster.Endpoint"
+    ],
+    "started": "2026-10-30T04:40:27.563283+00:00",
+    "finished": "2026-10-30T04:40:31.413944+00:00",
+    "elapsed_seconds": 3.851,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseMinorBounds",
+      "TournamentHamiltonian.RectangularReindexing"
+    ],
+    "started": "2026-10-30T04:40:31.418413+00:00",
+    "finished": "2026-10-30T04:40:36.417103+00:00",
+    "elapsed_seconds": 4.999,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMatrix.DenseBridge",
+      "TournamentHamiltonian.DenseHadamardLayers"
+    ],
+    "started": "2026-10-30T04:40:36.421645+00:00",
+    "finished": "2026-10-30T04:40:41.277024+00:00",
+    "elapsed_seconds": 4.855,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockRatio.Reindex",
+      "TournamentHamiltonian.DenseMinorKernel"
+    ],
+    "started": "2026-10-30T04:40:41.281949+00:00",
+    "finished": "2026-10-30T04:40:46.544986+00:00",
+    "elapsed_seconds": 5.263,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockRatio.Limit",
+      "TournamentHamiltonian.DenseMinorWitness"
+    ],
+    "started": "2026-10-30T04:40:46.549284+00:00",
+    "finished": "2026-10-30T04:40:51.179086+00:00",
+    "elapsed_seconds": 4.63,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseMinorQuantitative",
+      "TournamentHamiltonian.DensePathHadamard"
+    ],
+    "started": "2026-10-30T04:40:51.185124+00:00",
+    "finished": "2026-10-30T04:40:56.224832+00:00",
+    "elapsed_seconds": 5.04,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseGramDeletion",
+      "TournamentHamiltonian.DenseSubstochastic"
+    ],
+    "started": "2026-10-30T04:40:56.229052+00:00",
+    "finished": "2026-10-30T04:41:00.606883+00:00",
+    "elapsed_seconds": 4.378,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseGramNormalization",
+      "TournamentHamiltonian.RectangularScaling"
+    ],
+    "started": "2026-10-30T04:41:00.611786+00:00",
+    "finished": "2026-10-30T04:41:05.582806+00:00",
+    "elapsed_seconds": 4.971,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonprincipalScaling",
+      "TournamentHamiltonian.RectangularKernelBridge"
+    ],
+    "started": "2026-10-30T04:41:05.588103+00:00",
+    "finished": "2026-10-30T04:41:09.841451+00:00",
+    "elapsed_seconds": 4.253,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RectangularPermanentBridge",
+      "TournamentHamiltonian.TorusCluster.Quadratic"
+    ],
+    "started": "2026-10-30T04:41:09.845912+00:00",
+    "finished": "2026-10-30T04:41:13.588290+00:00",
+    "elapsed_seconds": 3.742,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.TorusCluster.LocalProduct",
+      "TournamentHamiltonian.TournamentWeightDisplacement"
+    ],
+    "started": "2026-10-30T04:41:13.592710+00:00",
+    "finished": "2026-10-30T04:41:17.855770+00:00",
+    "elapsed_seconds": 4.263,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.TorusCluster.Boundary",
+      "TournamentHamiltonian.TransitiveCotSpectrum"
+    ],
+    "started": "2026-10-30T04:41:17.860025+00:00",
+    "finished": "2026-10-30T04:41:22.210467+00:00",
+    "elapsed_seconds": 4.35,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.CarouselConstants",
+      "TournamentHamiltonian.UniformBlowup.FiniteCube"
+    ],
+    "started": "2026-10-30T04:41:22.215987+00:00",
+    "finished": "2026-10-30T04:41:25.873085+00:00",
+    "elapsed_seconds": 3.657,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.Asymptotic.BetaRemainder",
+      "TournamentHamiltonian.Carousel.ClosedValues"
+    ],
+    "started": "2026-10-30T04:41:25.877640+00:00",
+    "finished": "2026-10-30T04:41:29.742287+00:00",
+    "elapsed_seconds": 3.865,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.Asymptotic.AlphaRemainder",
+      "TournamentHamiltonian.Carousel.Asymptotic.PRemainder"
+    ],
+    "started": "2026-10-30T04:41:29.749846+00:00",
+    "finished": "2026-10-30T04:41:33.906934+00:00",
+    "elapsed_seconds": 4.157,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.Asymptotic.RealFormBridge",
+      "TournamentHamiltonian.Carousel.LogCancellation"
+    ],
+    "started": "2026-10-30T04:41:33.911508+00:00",
+    "finished": "2026-10-30T04:41:37.665982+00:00",
+    "elapsed_seconds": 3.755,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.Asymptotic.CompositeTaylor",
+      "TournamentHamiltonian.Carousel.SharpRemainders.SharpRemainders"
+    ],
+    "started": "2026-10-30T04:41:37.670731+00:00",
+    "finished": "2026-10-30T04:41:41.537466+00:00",
+    "elapsed_seconds": 3.867,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.Asymptotic.SequenceBounds",
+      "TournamentHamiltonian.Carousel.SharpRemainders.ActualSharpBounds"
+    ],
+    "started": "2026-10-30T04:41:41.542684+00:00",
+    "finished": "2026-10-30T04:41:45.738236+00:00",
+    "elapsed_seconds": 4.196,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.Asymptotic.CompositeSequence",
+      "TournamentHamiltonian.UniformBlowup.Model"
+    ],
+    "started": "2026-10-30T04:41:45.743107+00:00",
+    "finished": "2026-10-30T04:41:49.835654+00:00",
+    "elapsed_seconds": 4.093,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.Asymptotic.QuotientAlgebra",
+      "TournamentHamiltonian.UniformBlowup.BlockDistribution"
+    ],
+    "started": "2026-10-30T04:41:49.841155+00:00",
+    "finished": "2026-10-30T04:41:54.462874+00:00",
+    "elapsed_seconds": 4.622,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.Asymptotic.ActualExpansion",
+      "TournamentHamiltonian.RegularOrientation.Degrees"
+    ],
+    "started": "2026-10-30T04:41:54.467796+00:00",
+    "finished": "2026-10-30T04:41:59.195327+00:00",
+    "elapsed_seconds": 4.728,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.Asymptotic.ExpansionCertificate",
+      "TournamentHamiltonian.RegularOrientation.Polynomial"
+    ],
+    "started": "2026-10-30T04:41:59.200109+00:00",
+    "finished": "2026-10-30T04:42:03.348174+00:00",
+    "elapsed_seconds": 4.148,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularOrientation.Constraints",
+      "TournamentHamiltonian.UniformBlowup.PathConstraints"
+    ],
+    "started": "2026-10-30T04:42:03.353060+00:00",
+    "finished": "2026-10-30T04:42:07.949205+00:00",
+    "elapsed_seconds": 4.596,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularOrientation.Regular",
+      "TournamentHamiltonian.UniformBlowup.Expectation"
+    ],
+    "started": "2026-10-30T04:42:07.954438+00:00",
+    "finished": "2026-10-30T04:42:11.998285+00:00",
+    "elapsed_seconds": 4.044,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularFourier.Polynomial",
+      "TournamentHamiltonian.RegularOrientation.Boundary"
+    ],
+    "started": "2026-10-30T04:42:12.003701+00:00",
+    "finished": "2026-10-30T04:42:15.992516+00:00",
+    "elapsed_seconds": 3.989,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularFourier.Factorization",
+      "TournamentHamiltonian.RegularOrientation.Blowup"
+    ],
+    "started": "2026-10-30T04:42:15.997296+00:00",
+    "finished": "2026-10-30T04:42:19.976444+00:00",
+    "elapsed_seconds": 3.979,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularFourier.Integral",
+      "TournamentHamiltonian.UniformBlowup.Cycle"
+    ],
+    "started": "2026-10-30T04:42:19.982077+00:00",
+    "finished": "2026-10-30T04:42:24.163799+00:00",
+    "elapsed_seconds": 4.182,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BaseRelabel.Samples",
+      "TournamentHamiltonian.RegularFourier.Arcs"
+    ],
+    "started": "2026-10-30T04:42:24.168939+00:00",
+    "finished": "2026-10-30T04:42:28.436931+00:00",
+    "elapsed_seconds": 4.268,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BaseRelabel.Candidates",
+      "TournamentHamiltonian.RegularFourier.Forest"
+    ],
+    "started": "2026-10-30T04:42:28.441786+00:00",
+    "finished": "2026-10-30T04:42:32.880705+00:00",
+    "elapsed_seconds": 4.439,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularFourier.Rates",
+      "TournamentHamiltonian.UniformBlowup.ExistingPathCount"
+    ],
+    "started": "2026-10-30T04:42:32.885640+00:00",
+    "finished": "2026-10-30T04:42:36.955607+00:00",
+    "elapsed_seconds": 4.07,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularFourier.Parity",
+      "TournamentHamiltonian.UniformBlowup.Marginal"
+    ],
+    "started": "2026-10-30T04:42:36.961894+00:00",
+    "finished": "2026-10-30T04:42:41.384909+00:00",
+    "elapsed_seconds": 4.423,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMatrix.UniformBridge",
+      "TournamentHamiltonian.RegularFourier.Boundary"
+    ],
+    "started": "2026-10-30T04:42:41.389550+00:00",
+    "finished": "2026-10-30T04:42:46.086427+00:00",
+    "elapsed_seconds": 4.697,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMatrix.UniformDenseBridge",
+      "TournamentHamiltonian.RegularFourier.Small"
+    ],
+    "started": "2026-10-30T04:42:46.091513+00:00",
+    "finished": "2026-10-30T04:42:50.782009+00:00",
+    "elapsed_seconds": 4.691,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockRatio.UniformBridge",
+      "TournamentHamiltonian.RegularFourier.Endpoint"
+    ],
+    "started": "2026-10-30T04:42:50.786729+00:00",
+    "finished": "2026-10-30T04:42:54.888916+00:00",
+    "elapsed_seconds": 4.102,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockRatio.UniformLimit",
+      "TournamentHamiltonian.UniformBlowup.Normalization"
+    ],
+    "started": "2026-10-30T04:42:54.893316+00:00",
+    "finished": "2026-10-30T04:42:59.055695+00:00",
+    "elapsed_seconds": 4.162,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonregularDecay.Variance",
+      "TournamentHamiltonian.UniformBlowup.Boundary"
+    ],
+    "started": "2026-10-30T04:42:59.060383+00:00",
+    "finished": "2026-10-30T04:43:02.927079+00:00",
+    "elapsed_seconds": 3.867,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonregularDecay.CycleBound",
+      "TournamentHamiltonian.NonregularDecay.PathDecay"
+    ],
+    "started": "2026-10-30T04:43:02.932153+00:00",
+    "finished": "2026-10-30T04:43:06.850371+00:00",
+    "elapsed_seconds": 3.918,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonregularDecay.CycleDecay",
+      "TournamentHamiltonian.NonregularKappa.LogLoss"
+    ],
+    "started": "2026-10-30T04:43:06.855952+00:00",
+    "finished": "2026-10-30T04:43:11.463745+00:00",
+    "elapsed_seconds": 4.608,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonregularDecay.ExpectationDecay",
+      "TournamentHamiltonian.NonregularKappa.OddGap"
+    ],
+    "started": "2026-10-30T04:43:11.469297+00:00",
+    "finished": "2026-10-30T04:43:15.789651+00:00",
+    "elapsed_seconds": 4.32,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BaseRelabel.Expectations",
+      "TournamentHamiltonian.UniformFinal.ScalarLimits"
+    ],
+    "started": "2026-10-30T04:43:15.794649+00:00",
+    "finished": "2026-10-30T04:43:20.655723+00:00",
+    "elapsed_seconds": 4.861,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BaseRelabel.Boundary",
+      "TournamentHamiltonian.UniformPermanentFromActivities"
+    ],
+    "started": "2026-10-30T04:43:20.661120+00:00",
+    "finished": "2026-10-30T04:43:24.580602+00:00",
+    "elapsed_seconds": 3.92,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CoreActivityPredicate",
+      "TournamentHamiltonian.PaperGaussianRecovery.Endpoint"
+    ],
+    "started": "2026-10-30T04:43:24.585608+00:00",
+    "finished": "2026-10-30T04:43:30.143983+00:00",
+    "elapsed_seconds": 5.558,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ActualCoreActivityPredicate",
+      "TournamentHamiltonian.PaperGaussianRecovery.Boundary"
+    ],
+    "started": "2026-10-30T04:43:30.148631+00:00",
+    "finished": "2026-10-30T04:43:34.246199+00:00",
+    "elapsed_seconds": 4.098,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PermanentApproximationConstant",
+      "TournamentHamiltonian.UniformPreconditioningBudgets"
+    ],
+    "started": "2026-10-30T04:43:34.251791+00:00",
+    "finished": "2026-10-30T04:43:38.476133+00:00",
+    "elapsed_seconds": 4.224,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ExceptionalBudgets",
+      "TournamentHamiltonian.ExceptionalConvolution"
+    ],
+    "started": "2026-10-30T04:43:38.481047+00:00",
+    "finished": "2026-10-30T04:43:43.548589+00:00",
+    "elapsed_seconds": 5.068,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.AmbientCoreWeights",
+      "TournamentHamiltonian.DisjointConvolution"
+    ],
+    "started": "2026-10-30T04:43:43.554070+00:00",
+    "finished": "2026-10-30T04:43:47.961482+00:00",
+    "elapsed_seconds": 4.407,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.AmbientCoreMinors",
+      "TournamentHamiltonian.CrudeExceptionalExclusion"
+    ],
+    "started": "2026-10-30T04:43:47.967129+00:00",
+    "finished": "2026-10-30T04:43:52.367303+00:00",
+    "elapsed_seconds": 4.4,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DeletedExceptionalCrossBounds",
+      "TournamentHamiltonian.RectangularPermanentApproximation"
+    ],
+    "started": "2026-10-30T04:43:52.372552+00:00",
+    "finished": "2026-10-30T04:43:56.990929+00:00",
+    "elapsed_seconds": 4.618,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DeletedFourBlockBounds",
+      "TournamentHamiltonian.PaperEndpointsA.Permanent31"
+    ],
+    "started": "2026-10-30T04:43:56.996774+00:00",
+    "finished": "2026-10-30T04:44:02.145868+00:00",
+    "elapsed_seconds": 5.149,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ExceptionalCoreAssembly",
+      "TournamentHamiltonian.PaperEndpointsA.Boundary"
+    ],
+    "started": "2026-10-30T04:44:02.151825+00:00",
+    "finished": "2026-10-30T04:44:07.153521+00:00",
+    "elapsed_seconds": 5.002,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ScaledPermanentGaussian",
+      "TournamentHamiltonian.UniformDeletionBudgets"
+    ],
+    "started": "2026-10-30T04:44:07.160047+00:00",
+    "finished": "2026-10-30T04:44:13.196859+00:00",
+    "elapsed_seconds": 6.037,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RectangularPermanentRelative",
+      "TournamentHamiltonian.UniformPreconditioningGap"
+    ],
+    "started": "2026-10-30T04:44:13.201793+00:00",
+    "finished": "2026-10-30T04:44:17.901552+00:00",
+    "elapsed_seconds": 4.7,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RectangularPermanentUnconditional",
+      "TournamentHamiltonian.UniformDeletedMarginals"
+    ],
+    "started": "2026-10-30T04:44:17.906559+00:00",
+    "finished": "2026-10-30T04:44:22.931764+00:00",
+    "elapsed_seconds": 5.025,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PreconditionedGaussianComparison",
+      "TournamentHamiltonian.UniformNonprincipalScaling"
+    ],
+    "started": "2026-10-30T04:44:22.937630+00:00",
+    "finished": "2026-10-30T04:44:27.760131+00:00",
+    "elapsed_seconds": 4.823,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ScaledGaussianComparison",
+      "TournamentHamiltonian.UniformRetainedMassHalf"
+    ],
+    "started": "2026-10-30T04:44:27.766454+00:00",
+    "finished": "2026-10-30T04:44:32.085212+00:00",
+    "elapsed_seconds": 4.319,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseGramScaling",
+      "TournamentHamiltonian.UniformScalingDisplacement"
+    ],
+    "started": "2026-10-30T04:44:32.090223+00:00",
+    "finished": "2026-10-30T04:44:38.310832+00:00",
+    "elapsed_seconds": 6.221,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DensePermanentInputs",
+      "TournamentHamiltonian.UniformScaledGaussian"
+    ],
+    "started": "2026-10-30T04:44:38.317198+00:00",
+    "finished": "2026-10-30T04:44:42.989214+00:00",
+    "elapsed_seconds": 4.672,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PreconditionedMarginalBudgets",
+      "TournamentHamiltonian.UniformTorusTail.Integration"
+    ],
+    "started": "2026-10-30T04:44:42.996537+00:00",
+    "finished": "2026-10-30T04:44:47.101130+00:00",
+    "elapsed_seconds": 4.105,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularContainment.Quadratic",
+      "TournamentHamiltonian.UniformGaussianCost"
+    ],
+    "started": "2026-10-30T04:44:47.106036+00:00",
+    "finished": "2026-10-30T04:44:53.780017+00:00",
+    "elapsed_seconds": 6.674,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PairedPermanentErrorBudget",
+      "TournamentHamiltonian.PairedPermanentRestoration"
+    ],
+    "started": "2026-10-30T04:44:53.785152+00:00",
+    "finished": "2026-10-30T04:44:58.809383+00:00",
+    "elapsed_seconds": 5.024,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PairedPermanentCoarseBudget",
+      "TournamentHamiltonian.RetainedMassPower"
+    ],
+    "started": "2026-10-30T04:44:58.814914+00:00",
+    "finished": "2026-10-30T04:45:04.182727+00:00",
+    "elapsed_seconds": 5.368,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PairedPermanentGaussian",
+      "TournamentHamiltonian.SmallScoreLogBounds"
+    ],
+    "started": "2026-10-30T04:45:04.188285+00:00",
+    "finished": "2026-10-30T04:45:08.798327+00:00",
+    "elapsed_seconds": 4.61,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseMinorScalars",
+      "TournamentHamiltonian.SmallScoreMassPower"
+    ],
+    "started": "2026-10-30T04:45:08.803503+00:00",
+    "finished": "2026-10-30T04:45:14.593483+00:00",
+    "elapsed_seconds": 5.79,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseRatioAlgebra",
+      "TournamentHamiltonian.SmallScoreBudgets"
+    ],
+    "started": "2026-10-30T04:45:14.599142+00:00",
+    "finished": "2026-10-30T04:45:18.585709+00:00",
+    "elapsed_seconds": 3.987,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseMinorRatio",
+      "TournamentHamiltonian.SmallScoreProducts"
+    ],
+    "started": "2026-10-30T04:45:18.590716+00:00",
+    "finished": "2026-10-30T04:45:23.873480+00:00",
+    "elapsed_seconds": 5.283,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseGlobalRatio",
+      "TournamentHamiltonian.SmallScoreRelativeError"
+    ],
+    "started": "2026-10-30T04:45:23.878627+00:00",
+    "finished": "2026-10-30T04:45:28.002452+00:00",
+    "elapsed_seconds": 4.124,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseErrorBudget",
+      "TournamentHamiltonian.SmallScoreMassBudgets"
+    ],
+    "started": "2026-10-30T04:45:28.008273+00:00",
+    "finished": "2026-10-30T04:45:32.650436+00:00",
+    "elapsed_seconds": 4.642,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.SmallScoreRestorationBudget",
+      "TournamentHamiltonian.UniformPairedPermanentGaussian"
+    ],
+    "started": "2026-10-30T04:45:32.656012+00:00",
+    "finished": "2026-10-30T04:45:37.607125+00:00",
+    "elapsed_seconds": 4.951,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ActualExceptionalExclusion",
+      "TournamentHamiltonian.SmallScoreRestorationIdentity"
+    ],
+    "started": "2026-10-30T04:45:37.614060+00:00",
+    "finished": "2026-10-30T04:45:42.653303+00:00",
+    "elapsed_seconds": 5.039,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.SmallScoreMinorRestoration",
+      "TournamentHamiltonian.UniformTorusTail.Local"
+    ],
+    "started": "2026-10-30T04:45:42.659757+00:00",
+    "finished": "2026-10-30T04:45:47.631055+00:00",
+    "elapsed_seconds": 4.971,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.SmallScoreActualLogBudget",
+      "TournamentHamiltonian.UniformTorusTail.Subsets"
+    ],
+    "started": "2026-10-30T04:45:47.637860+00:00",
+    "finished": "2026-10-30T04:45:52.315827+00:00",
+    "elapsed_seconds": 4.678,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.UniformSmallScoreMinor",
+      "TournamentHamiltonian.UniformTorusTail.Cover"
+    ],
+    "started": "2026-10-30T04:45:52.322776+00:00",
+    "finished": "2026-10-30T04:46:02.180864+00:00",
+    "elapsed_seconds": 9.858,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperEndpointWrappersB.SmallScore",
+      "TournamentHamiltonian.UniformTorusTail.Sum"
+    ],
+    "started": "2026-10-30T04:46:02.194908+00:00",
+    "finished": "2026-10-30T04:46:06.992539+00:00",
+    "elapsed_seconds": 4.798,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperEndpointWrappersB.Relative",
+      "TournamentHamiltonian.UniformTorusTail.Limits"
+    ],
+    "started": "2026-10-30T04:46:06.998919+00:00",
+    "finished": "2026-10-30T04:46:10.987501+00:00",
+    "elapsed_seconds": 3.989,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.UniformTorusTail.Endpoint",
+      "TournamentHamiltonian.UniformUnitScoreMinors"
+    ],
+    "started": "2026-10-30T04:46:10.992597+00:00",
+    "finished": "2026-10-30T04:46:15.691117+00:00",
+    "elapsed_seconds": 4.699,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularContainment.Gaussian",
+      "TournamentHamiltonian.UniformTorusTail.Boundary"
+    ],
+    "started": "2026-10-30T04:46:15.698325+00:00",
+    "finished": "2026-10-30T04:46:19.781671+00:00",
+    "elapsed_seconds": 4.083,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularContainment.Bridge",
+      "TournamentHamiltonian.WeakMajorization"
+    ],
+    "started": "2026-10-30T04:46:19.787860+00:00",
+    "finished": "2026-10-30T04:46:23.502199+00:00",
+    "elapsed_seconds": 3.714,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ComparisonMatrix",
+      "TournamentHamiltonian.RegularContainment.Local"
+    ],
+    "started": "2026-10-30T04:46:23.508310+00:00",
+    "finished": "2026-10-30T04:46:28.025102+00:00",
+    "elapsed_seconds": 4.517,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ComparisonBudget",
+      "TournamentHamiltonian.ComparisonConjugation"
+    ],
+    "started": "2026-10-30T04:46:28.032428+00:00",
+    "finished": "2026-10-30T04:46:33.048923+00:00",
+    "elapsed_seconds": 5.017,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteVectorOrder",
+      "TournamentHamiltonian.MatrixPowerDefs"
+    ],
+    "started": "2026-10-30T04:46:33.055617+00:00",
+    "finished": "2026-10-30T04:46:36.732330+00:00",
+    "elapsed_seconds": 3.677,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Equality.FourthMomentAlgebra",
+      "TournamentHamiltonian.Equality.PrefixEquality"
+    ],
+    "started": "2026-10-30T04:46:36.738756+00:00",
+    "finished": "2026-10-30T04:46:40.702824+00:00",
+    "elapsed_seconds": 3.964,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Equality.FourthMomentCriterion",
+      "TournamentHamiltonian.Equality.SixthMomentDivisibility"
+    ],
+    "started": "2026-10-30T04:46:40.707925+00:00",
+    "finished": "2026-10-30T04:46:45.249545+00:00",
+    "elapsed_seconds": 4.542,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteComparisonOrder",
+      "TournamentHamiltonian.NonregularRate.RowRounding"
+    ],
+    "started": "2026-10-30T04:46:45.254803+00:00",
+    "finished": "2026-10-30T04:46:48.519782+00:00",
+    "elapsed_seconds": 3.265,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Equality.KPrefixEquality",
+      "TournamentHamiltonian.NonregularRate.PermanentRows"
+    ],
+    "started": "2026-10-30T04:46:48.526006+00:00",
+    "finished": "2026-10-30T04:46:52.173673+00:00",
+    "elapsed_seconds": 3.648,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonregularRate.WeightedBregman",
+      "TournamentHamiltonian.RegularContainment.Approximation"
+    ],
+    "started": "2026-10-30T04:46:52.179286+00:00",
+    "finished": "2026-10-30T04:46:56.234957+00:00",
+    "elapsed_seconds": 4.056,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonregularNormalization.Targets",
+      "TournamentHamiltonian.RegularContainment.Relative"
+    ],
+    "started": "2026-10-30T04:46:56.241267+00:00",
+    "finished": "2026-10-30T04:47:00.487456+00:00",
+    "elapsed_seconds": 4.246,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonregularNormalization.ScalarRate",
+      "TournamentHamiltonian.RegularContainment.Endpoint"
+    ],
+    "started": "2026-10-30T04:47:00.493480+00:00",
+    "finished": "2026-10-30T04:47:06.333457+00:00",
+    "elapsed_seconds": 5.84,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonregularNormalization.CycleRate",
+      "TournamentHamiltonian.RegularContainment.Boundary"
+    ],
+    "started": "2026-10-30T04:47:06.339596+00:00",
+    "finished": "2026-10-30T04:47:10.495725+00:00",
+    "elapsed_seconds": 4.156,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonregularNormalization.AugmentedPath",
+      "TournamentHamiltonian.SignedIndicatorBound"
+    ],
+    "started": "2026-10-30T04:47:10.501072+00:00",
+    "finished": "2026-10-30T04:48:05.064592+00:00",
+    "elapsed_seconds": 54.564,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.NonregularNormalization.AugmentedScalar",
+      "TournamentHamiltonian.SpectralPowerMoments"
+    ],
+    "started": "2026-10-30T04:48:05.069880+00:00",
+    "finished": "2026-10-30T04:48:11.567568+00:00",
+    "elapsed_seconds": 6.498,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.CotMoments",
+      "TournamentHamiltonian.NonregularNormalization.PathRate"
+    ],
+    "started": "2026-10-30T04:48:11.573155+00:00",
+    "finished": "2026-10-30T04:48:15.537973+00:00",
+    "elapsed_seconds": 3.965,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.PositiveMoments",
+      "TournamentHamiltonian.PaperAugmentationNormalization.Endpoint"
+    ],
+    "started": "2026-10-30T04:48:15.543822+00:00",
+    "finished": "2026-10-30T04:48:19.263350+00:00",
+    "elapsed_seconds": 3.72,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Carousel.Monotonicity",
+      "TournamentHamiltonian.SpectralSupplement.TruncatedPrefix"
+    ],
+    "started": "2026-10-30T04:48:19.268970+00:00",
+    "finished": "2026-10-30T04:48:23.007437+00:00",
+    "elapsed_seconds": 3.738,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.TransitiveShift",
+      "TournamentHamiltonian.VectorDomination"
+    ],
+    "started": "2026-10-30T04:48:23.012722+00:00",
+    "finished": "2026-10-30T04:48:26.514634+00:00",
+    "elapsed_seconds": 3.502,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FrobeniusComparison",
+      "TournamentHamiltonian.WeightedCycle.Core"
+    ],
+    "started": "2026-10-30T04:48:26.520398+00:00",
+    "finished": "2026-10-30T04:48:30.503501+00:00",
+    "elapsed_seconds": 3.983,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Equality.PowerEqualityDescent",
+      "TournamentHamiltonian.TripleContraction.Splice"
+    ],
+    "started": "2026-10-30T04:48:30.509068+00:00",
+    "finished": "2026-10-30T04:48:34.560855+00:00",
+    "elapsed_seconds": 4.052,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Equality.SpectralEqualityDescent",
+      "TournamentHamiltonian.WeightedCycle.MainTerm"
+    ],
+    "started": "2026-10-30T04:48:34.566455+00:00",
+    "finished": "2026-10-30T04:48:38.438430+00:00",
+    "elapsed_seconds": 3.872,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.Equality.SpectralRatioEquality",
+      "TournamentHamiltonian.WeightedCycle.Integration"
+    ],
+    "started": "2026-10-30T04:48:38.444482+00:00",
+    "finished": "2026-10-30T04:48:41.899740+00:00",
+    "elapsed_seconds": 3.455,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseCycleConvergence",
+      "TournamentHamiltonian.Equality.SpectralClassification"
+    ],
+    "started": "2026-10-30T04:48:41.906019+00:00",
+    "finished": "2026-10-30T04:48:45.762572+00:00",
+    "elapsed_seconds": 3.857,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperSpectralOrbit.Endpoint",
+      "TournamentHamiltonian.SpectralSupplement.ProductComparison"
+    ],
+    "started": "2026-10-30T04:48:45.768727+00:00",
+    "finished": "2026-10-30T04:48:49.314582+00:00",
+    "elapsed_seconds": 3.546,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.SpectralSupplement.QuantitativeGap",
+      "TournamentHamiltonian.WeightedCycle.PathMainTerm"
+    ],
+    "started": "2026-10-30T04:48:49.320273+00:00",
+    "finished": "2026-10-30T04:48:53.052131+00:00",
+    "elapsed_seconds": 3.732,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteFamilyGap.Scores",
+      "TournamentHamiltonian.WeightedCycle.PathReindex"
+    ],
+    "started": "2026-10-30T04:48:53.058979+00:00",
+    "finished": "2026-10-30T04:48:56.933256+00:00",
+    "elapsed_seconds": 3.874,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteFamilyGap.Finite",
+      "TournamentHamiltonian.WeightedCycle.PathIntegration"
+    ],
+    "started": "2026-10-30T04:48:56.939304+00:00",
+    "finished": "2026-10-30T04:49:01.205978+00:00",
+    "elapsed_seconds": 4.267,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DensePathConvergence",
+      "TournamentHamiltonian.FiniteFamilyGap.Boundary"
+    ],
+    "started": "2026-10-30T04:49:01.213472+00:00",
+    "finished": "2026-10-30T04:49:06.356726+00:00",
+    "elapsed_seconds": 5.143,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseScaleBounds",
+      "TournamentHamiltonian.FixedDeletion.Budget"
+    ],
+    "started": "2026-10-30T04:49:06.363867+00:00",
+    "finished": "2026-10-30T04:49:10.959691+00:00",
+    "elapsed_seconds": 4.596,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.DenseScaleConvergence",
+      "TournamentHamiltonian.FixedDeletion.Reindex"
+    ],
+    "started": "2026-10-30T04:49:10.966547+00:00",
+    "finished": "2026-10-30T04:49:15.057379+00:00",
+    "elapsed_seconds": 4.091,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FixedDeletion.Convolution",
+      "TournamentHamiltonian.FixedDeletion.HitLayers"
+    ],
+    "started": "2026-10-30T04:49:15.063781+00:00",
+    "finished": "2026-10-30T04:49:19.227532+00:00",
+    "elapsed_seconds": 4.164,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FixedDeletion.Estimates",
+      "TournamentHamiltonian.UniformFinal.UniformDenseCountLimit"
+    ],
+    "started": "2026-10-30T04:49:19.234568+00:00",
+    "finished": "2026-10-30T04:49:23.031781+00:00",
+    "elapsed_seconds": 3.797,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.UniformDeletion.PositiveScale",
+      "TournamentHamiltonian.WeightedCycle.UniformBridge"
+    ],
+    "started": "2026-10-30T04:49:23.038081+00:00",
+    "finished": "2026-10-30T04:49:27.101155+00:00",
+    "elapsed_seconds": 4.063,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.UniformDeletion.Ratios",
+      "TournamentHamiltonian.UniformFinal.CountingNormalization"
+    ],
+    "started": "2026-10-30T04:49:27.107161+00:00",
+    "finished": "2026-10-30T04:49:31.224086+00:00",
+    "elapsed_seconds": 4.117,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.UniformDeletion.Homogeneity",
+      "TournamentHamiltonian.UniformFinal.UniformNormalization"
+    ],
+    "started": "2026-10-30T04:49:31.230369+00:00",
+    "finished": "2026-10-30T04:49:35.508756+00:00",
+    "elapsed_seconds": 4.278,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.TripleContraction.Weight",
+      "TournamentHamiltonian.UniformFinal.UniformExpectationLimit"
+    ],
+    "started": "2026-10-30T04:49:35.514630+00:00",
+    "finished": "2026-10-30T04:49:39.223759+00:00",
+    "elapsed_seconds": 3.709,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.TripleContraction.Triple",
+      "TournamentHamiltonian.WeightedPrincipalGenerating"
+    ],
+    "started": "2026-10-30T04:49:39.230798+00:00",
+    "finished": "2026-10-30T04:49:43.296911+00:00",
+    "elapsed_seconds": 4.066,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ShortWeightedConvolution",
+      "TournamentHamiltonian.TripleContraction.Reindex"
+    ],
+    "started": "2026-10-30T04:49:43.303578+00:00",
+    "finished": "2026-10-30T04:49:48.445962+00:00",
+    "elapsed_seconds": 5.142,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.LowerShortConvolution",
+      "TournamentHamiltonian.PairedConvolutionWeights"
+    ],
+    "started": "2026-10-30T04:49:48.452048+00:00",
+    "finished": "2026-10-30T04:49:54.225597+00:00",
+    "elapsed_seconds": 5.774,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PairedErrorWeights",
+      "TournamentHamiltonian.PrincipalLowerMoments"
+    ],
+    "started": "2026-10-30T04:49:54.232823+00:00",
+    "finished": "2026-10-30T04:49:58.961545+00:00",
+    "elapsed_seconds": 4.729,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.ScoreAbsorption",
+      "TournamentHamiltonian.ShortQuadraticConvolution"
+    ],
+    "started": "2026-10-30T04:49:58.967484+00:00",
+    "finished": "2026-10-30T04:50:03.963858+00:00",
+    "elapsed_seconds": 4.996,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FullScoreAbsorption",
+      "TournamentHamiltonian.SmallScorePathsLower"
+    ],
+    "started": "2026-10-30T04:50:03.971760+00:00",
+    "finished": "2026-10-30T04:50:08.420376+00:00",
+    "elapsed_seconds": 4.449,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.GeneralScoreLowerConvolution",
+      "TournamentHamiltonian.TripleContraction.Double"
+    ],
+    "started": "2026-10-30T04:50:08.426186+00:00",
+    "finished": "2026-10-30T04:50:13.247825+00:00",
+    "elapsed_seconds": 4.822,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.TripleContraction.Principal",
+      "TournamentHamiltonian.TripleContraction.Sentinel"
+    ],
+    "started": "2026-10-30T04:50:13.254084+00:00",
+    "finished": "2026-10-30T04:50:17.456533+00:00",
+    "elapsed_seconds": 4.202,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.TripleContraction.PathBridge",
+      "TournamentHamiltonian.UnitScorePathsLower"
+    ],
+    "started": "2026-10-30T04:50:17.462688+00:00",
+    "finished": "2026-10-30T04:50:21.127005+00:00",
+    "elapsed_seconds": 3.664,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.CarouselPathLower",
+      "TournamentHamiltonian.TripleContraction.PathEvents"
+    ],
+    "started": "2026-10-30T04:50:21.133434+00:00",
+    "finished": "2026-10-30T04:50:25.280011+00:00",
+    "elapsed_seconds": 4.147,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.TripleContraction.Uniform",
+      "TournamentHamiltonian.UnitScorePathsUpper"
+    ],
+    "started": "2026-10-30T04:50:25.286772+00:00",
+    "finished": "2026-10-30T04:50:31.270496+00:00",
+    "elapsed_seconds": 5.984,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteMotif.Basic",
+      "TournamentHamiltonian.GeneralScoreShortConvolution"
+    ],
+    "started": "2026-10-30T04:50:31.276492+00:00",
+    "finished": "2026-10-30T04:50:38.059248+00:00",
+    "elapsed_seconds": 6.783,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteMotif.Counts",
+      "TournamentHamiltonian.UnitScorePathsApproximation"
+    ],
+    "started": "2026-10-30T04:50:38.066088+00:00",
+    "finished": "2026-10-30T04:50:42.419434+00:00",
+    "elapsed_seconds": 4.353,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteMotif.Occurrences",
+      "TournamentHamiltonian.GeneralSmallScorePaths"
+    ],
+    "started": "2026-10-30T04:50:42.425862+00:00",
+    "finished": "2026-10-30T04:50:50.513438+00:00",
+    "elapsed_seconds": 8.088,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteMotif.Overlap",
+      "TournamentHamiltonian.GeneralSmallScoreAsymptotic"
+    ],
+    "started": "2026-10-30T04:50:50.519382+00:00",
+    "finished": "2026-10-30T04:50:54.602280+00:00",
+    "elapsed_seconds": 4.083,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteMotif.Actual",
+      "TournamentHamiltonian.PaperCarouselPath.Endpoint"
+    ],
+    "started": "2026-10-30T04:50:54.608454+00:00",
+    "finished": "2026-10-30T04:50:58.700872+00:00",
+    "elapsed_seconds": 4.092,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMotif.Edges",
+      "TournamentHamiltonian.PaperCarouselPath.Boundary"
+    ],
+    "started": "2026-10-30T04:50:58.707470+00:00",
+    "finished": "2026-10-30T04:51:02.258244+00:00",
+    "elapsed_seconds": 3.551,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMotif.Count",
+      "TournamentHamiltonian.WeightedKernelInflation"
+    ],
+    "started": "2026-10-30T04:51:02.266314+00:00",
+    "finished": "2026-10-30T04:51:06.866235+00:00",
+    "elapsed_seconds": 4.6,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMotif.Actual",
+      "TournamentHamiltonian.PairedShortSpectral"
+    ],
+    "started": "2026-10-30T04:51:06.872416+00:00",
+    "finished": "2026-10-30T04:51:13.699432+00:00",
+    "elapsed_seconds": 6.827,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMotif.Regular",
+      "TournamentHamiltonian.UniformPairedShortUpper"
+    ],
+    "started": "2026-10-30T04:51:13.707664+00:00",
+    "finished": "2026-10-30T04:51:19.117994+00:00",
+    "elapsed_seconds": 5.41,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMotif.Native",
+      "TournamentHamiltonian.BlockMotif.Weights"
+    ],
+    "started": "2026-10-30T04:51:19.125433+00:00",
+    "finished": "2026-10-30T04:51:23.847644+00:00",
+    "elapsed_seconds": 4.722,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.BlockMotif.Endpoint",
+      "TournamentHamiltonian.UniformSpectralUpper"
+    ],
+    "started": "2026-10-30T04:51:23.855084+00:00",
+    "finished": "2026-10-30T04:51:28.428740+00:00",
+    "elapsed_seconds": 4.574,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperEndpointWrappersB.MainBound",
+      "TournamentHamiltonian.RegularExpectation.Product"
+    ],
+    "started": "2026-10-30T04:51:28.435604+00:00",
+    "finished": "2026-10-30T04:51:32.541555+00:00",
+    "elapsed_seconds": 4.106,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.PaperEndpointWrappersB.Boundary",
+      "TournamentHamiltonian.SharpAssembly"
+    ],
+    "started": "2026-10-30T04:51:32.548762+00:00",
+    "finished": "2026-10-30T04:51:36.756034+00:00",
+    "elapsed_seconds": 4.207,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.SharpAsymptoticComponents",
+      "TournamentHamiltonian.SharpMain"
+    ],
+    "started": "2026-10-30T04:51:36.762763+00:00",
+    "finished": "2026-10-30T04:51:40.322314+00:00",
+    "elapsed_seconds": 3.56,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.SmallScoreApproximation",
+      "Tournament.SpectralCap"
+    ],
+    "started": "2026-10-30T04:51:40.328747+00:00",
+    "finished": "2026-10-30T04:51:43.864986+00:00",
+    "elapsed_seconds": 3.536,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament.SpectralClassification",
+      "TournamentHamiltonian.WeightedMotif.Law"
+    ],
+    "started": "2026-10-30T04:51:43.870969+00:00",
+    "finished": "2026-10-30T04:51:47.854562+00:00",
+    "elapsed_seconds": 3.984,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.WeightedMotif.ActualLaw"
+    ],
+    "started": "2026-10-30T04:51:47.860708+00:00",
+    "finished": "2026-10-30T04:51:51.792258+00:00",
+    "elapsed_seconds": 3.932,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.WeightedMotif.Events"
+    ],
+    "started": "2026-10-30T04:51:51.799802+00:00",
+    "finished": "2026-10-30T04:51:55.654579+00:00",
+    "elapsed_seconds": 3.855,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.WeightedMotif.Moments"
+    ],
+    "started": "2026-10-30T04:51:55.662312+00:00",
+    "finished": "2026-10-30T04:51:59.760006+00:00",
+    "elapsed_seconds": 4.098,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.WeightedMotif.Estimates"
+    ],
+    "started": "2026-10-30T04:51:59.766988+00:00",
+    "finished": "2026-10-30T04:52:03.971251+00:00",
+    "elapsed_seconds": 4.204,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.WeightedMotif.Scalars"
+    ],
+    "started": "2026-10-30T04:52:03.978467+00:00",
+    "finished": "2026-10-30T04:52:08.373578+00:00",
+    "elapsed_seconds": 4.395,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.WeightedMotif.Limits"
+    ],
+    "started": "2026-10-30T04:52:08.379463+00:00",
+    "finished": "2026-10-30T04:52:12.081697+00:00",
+    "elapsed_seconds": 3.702,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.MotifExp.Endpoint"
+    ],
+    "started": "2026-10-30T04:52:12.088022+00:00",
+    "finished": "2026-10-30T04:52:16.045669+00:00",
+    "elapsed_seconds": 3.958,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularExpectation.Averages"
+    ],
+    "started": "2026-10-30T04:52:16.051924+00:00",
+    "finished": "2026-10-30T04:52:20.058663+00:00",
+    "elapsed_seconds": 4.007,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularExpectation.Limits"
+    ],
+    "started": "2026-10-30T04:52:20.065594+00:00",
+    "finished": "2026-10-30T04:52:24.278263+00:00",
+    "elapsed_seconds": 4.213,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.RegularExpectation.Endpoint"
+    ],
+    "started": "2026-10-30T04:52:24.284596+00:00",
+    "finished": "2026-10-30T04:52:28.401538+00:00",
+    "elapsed_seconds": 4.117,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteExtremum.Limits"
+    ],
+    "started": "2026-10-30T04:52:28.407997+00:00",
+    "finished": "2026-10-30T04:52:32.093926+00:00",
+    "elapsed_seconds": 3.686,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteExtremum.Comparison"
+    ],
+    "started": "2026-10-30T04:52:32.100785+00:00",
+    "finished": "2026-10-30T04:52:36.357658+00:00",
+    "elapsed_seconds": 4.257,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteExtremum.Endpoint"
+    ],
+    "started": "2026-10-30T04:52:36.365045+00:00",
+    "finished": "2026-10-30T04:52:40.484088+00:00",
+    "elapsed_seconds": 4.119,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "TournamentHamiltonian.FiniteExtremum.Boundary"
+    ],
+    "started": "2026-10-30T04:52:40.492042+00:00",
+    "finished": "2026-10-30T04:52:44.578633+00:00",
+    "elapsed_seconds": 4.087,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "Tournament"
+    ],
+    "started": "2026-10-30T04:52:44.587047+00:00",
+    "finished": "2026-10-30T04:52:48.291377+00:00",
+    "elapsed_seconds": 3.704,
+    "exit_code": 0
+  }
+]

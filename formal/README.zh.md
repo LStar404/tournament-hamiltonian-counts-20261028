@@ -1,65 +1,44 @@
-# 竞赛图 Hamilton 计数：Lean 形式化
+# Lean 形式化验证与复现
 
-本目录包含 Wormald 原角函数 Hessian 主定理、精确有限行列式—永久式路径卷积，以及路径增点计数、删集恒等式和有限族极限比较的形式化。现稿全局 Hamilton 路径计数的锐常数量化渐近定理尚未在本工程形式化，具体覆盖范围见 `COVERAGE.zh.md`。
+> 固定版本：609 个生产模块、3067 个登记端点，及覆盖表中 30 个编号数学结论。生产源已在隔离目录从零本项目编译产物开始构建；固定上游缓存复用。登记数不是论文定理数，也不是所有辅助声明的数量。精确运行时间、命令退出码、关键类型与公理记录见 [实验结果](verification/release/RESULTS.json)。
 
-核对的论文快照与源文件哈希见 `SOURCE.json`。原论文的编号在该快照中固定；后续正文修订需要重新核对对应关系。
+## 范围
 
-## 从哪里读
+本工程以真实竞赛图、Hamilton 路径/圈计数、原始矩阵和归一化为对象。具体编号与 Lean 完整名称、前提及量词对应以最终 `COVERAGE.zh.md` 为准；不要仅凭相似定理名推断覆盖。谱 signed-permutation 等号分类和正则奇阶普通圆环同构分类不同；谱等同不推出 Hamilton 计数不变。
 
-- `Tournament/HessianTheorem.lean`：完整 Hessian 主结论，入口是 `Tournament.wormald_original_angle_hessian`。
-- `Tournament/HessianMain.lean`：原角函数与其实际二阶导数的定义，以及 Hessian 等于矩阵公式的证明。
-- `Tournament/OriginalCoordinates.lean`：原论文的 `A+I/2`、`z=2/d` 与归一化计算之间的精确连接。
-- `Tournament/Paths.lean`：真正的有限路径、圈与随机增点计数模型。
-- `Tournament/PathConvolution.lean`：全阶数路径计数、新旧类型与计数桥接、精确卷积及零阶/单点边界。
-- `TournamentHamiltonian/`：从固定旧提交复用的八文件依赖闭包，仅作 Lean 4.35 模块格式适配；来源、许可和哈希见 `CONVOLUTION_SOURCE.json`。
-- `COVERAGE.zh.md`：原文编号、机器定理与未覆盖部分的对应表。
-
-主定理只要求一个实际竞赛图及其正则性。局部函数存在、非退化、导数公式、正定性以及正有理平方根均由证明导出，没有把需要证明的 Hessian 公式当作假设。原角函数的 Hessian 先保留复数值，再证明它等于实矩阵的复化。
-
-## 验证结果的含义
-
-1. **无额外数学假设的形式化定理。** Lean 中写清对象、结构和适用范围，证明使用 Lean 与 mathlib 的既有基础。证明项不含 `sorry`，不增加未证明的公理。
-2. **条件形式化定理。** 例如，已知一组函数具有指定极限且极限严格比较，可以推出共同的最终比较阈值。这只验证由假设到结论的推理，不能替代这些极限的证明。
-3. **有限算例或普通审读。** 它们可以发现错误、核对翻译和边界，但不能代替一般性机器证明。数值结果不作为形式化定理的前提。
-
-Lean 的 `Classical.choice`、`propext` 与 `Quot.sound` 是常见基础依赖；验收记录需要列明。`sorryAx`、临时增加的数学公理以及未经内核验证的计算结果均不作为合格证明。
-
-## 与其余论文结果的关系
-
-论文定理 1.1 的全局路径计数误差依赖统一永久式估计、对角缩放、删集求和、度差分类以及谱比较。若只验证删集中的有限求和恒等式，不能宣称该全局渐近定理已经形式化。
-
-论文定理 9.2 的对象是原隐式角函数的 Hessian。本目录贯通了原局部函数、对数分支、二阶导数、矩阵表达式、正定性、行列式和正有理平方根；并非只对预先定义的矩阵检验正定性。
-
-论文附录 A.6 的有限基图共同阈值原理可以在任意滤子上表达，因此能够同时处理所有块大小与仅取奇数块大小的情形。形式化该原理不会自动证明 Wormald 的计数极限或谱比较的等号分类。
-
-## 开发约定
-
-- 固定 Lean 与 mathlib 版本，不依赖浮动 `master`。
-- 证明、编译结果、信任依赖与原文对应表一起验收。
-- 所有未完成义务明确列出，不用 `axiom` 或 `sorry` 填补空白。
-- 不改动论文的结论来迎合可证明的较弱命题；较弱命题单独命名和说明。
-- 本目录的构建不需要用户密钥、模型 API、远程付费服务或任何论文以外的私人数据。
+“四种计数期望”指两种块内抽样方式（uniform / regular）×路径/圈两种计数。计数期望不是样本级或几乎必然结论。吹胀期望的最终极值比较使用固定奇数基图阶；不宣称给出数值最小阈值或对增长基图阶的一致性。全局锐常数主定理按其自身量词陈述，不受这一吹胀限定替代。这也不是全文逐句、所有替代证明或全部外部文献背景的形式化。
 
 ## 复现
 
-固定 Lean 4.35.0；mathlib 固定提交 `56a005855ea17e0b0958f73ec801ae140b0a1679`，其他依赖提交写在 `lake-manifest.json`。
+固定配置是 `lean-toolchain`、`lakefile.toml` 和 `lake-manifest.json`：Lean 4.35.0，mathlib revision `56a005855ea17e0b0958f73ec801ae140b0a1679`，其余依赖按 manifest 中的 **rev**，不以 `inputRev` 的标签代替锁定 revision。
 
-已有匹配 Lean/Lake 的环境，在本目录运行：
+在可用的固定官方工具链与依赖缓存环境内，从本目录运行：
 
 ```bash
-lake exe cache get
-bash scripts/verify.sh
+python3 scripts/check_release_manifest.py
+python3 scripts/verify_release.py
 ```
 
-Linux x86_64 可先运行 `bash scripts/setup-local-lean.sh`。它从 Lean 官方发布页下载固定版本，核对 SHA-256，仅安装到本目录的 `.toolchain`，并打印应在当前 shell 设置的环境变量。Windows/macOS 可使用官方 Lean 工具链管理器安装 `lean-toolchain` 中的版本，再运行相同 Lake 命令。
+从没有本项目编译产物的新目录进行 production fresh 验证：
 
-`verify.sh` 依次检查本地证明占位符、构建整个模块集合，并对 `theorems.json` 中的公开定理逐项执行 `#print axioms`。允许的基础依赖只有 `propext`、`Classical.choice`、`Quot.sound`。输出在 `.lake/verification`；任何编译错误、缺失定理或额外公理都会使脚本返回非零状态。
+```bash
+python3 scripts/verify_release.py --fresh --width 2
+```
 
-mathlib 使用官方已编译缓存，并固定其源代码版本。这不等于独立从源代码重建、审计所有上游基础库；编译器与依赖缓存属于复现时需要信任的软件供应链。
+`--fresh` 拒绝已有 `.lake/build`，不会自行删除文件。它先以最多两个拓扑就绪项目目标从源编译全部生产模块，再运行无目标参数的默认 `lake build`；随后源扫描、全部登记端点递归公理审计、关键完整类型及真实定义打印。日志明确区分从零项目编译与后续 aggregate root 检查。固定 mathlib/其他上游缓存可以复用，**这不等于冷重建全部上游库**。
 
-可选回归检查：安装 SymPy 后运行 `python3 scripts/check_hessian_examples.py`。它对几个指定正则图，从原隐式行列式直接计算有理二阶导数并与矩阵公式比较。这些有限例子用于检查实现，不参与 Lean 主定理证明。
+所有新运行结果写入 `.lake/verification/release-runs/`，不会改生产源。`verification/release/` 保存发布时固定输入和结果，新的运行不会覆盖它。源扫描是辅助检查，不能代替 Lean 内核和递归公理审计。允许的基础公理仅为 `propext`、`Classical.choice`、`Quot.sound`。
 
-`python3 scripts/check_convolution_examples.py` 只用 Python 标准库，对 0 至 5 阶的全部 1100 个标号竞赛图作精确整数回归，包括空永久式/行列式取值 1。一般卷积的证明来自 Lean；这些枚举不是定理假设。迁移边界和本轮命令见 `CONVOLUTION_MIGRATION.zh.md`。
+若只有最小核心环境，也可运行原来的 `bash scripts/verify.sh`；它执行源扫描、默认构建和全登记公理检查，但不代替发布 manifest 与关键类型门。依赖准备时应保持 manifest 锁定，不运行会浮动版本的更新流程。
 
-仓库附带的 GitHub Actions 工作流只允许手动启动，不会因推送或拉取请求自动运行。
+## 历史与来源
 
+此候选是以 main `cd8a0e1cf99165263167865c1201fc8b2c94cc01` 为基准的文件白名单增量，不替换未列出的既存文稿、来源记录或历史失败证据。历史 Hessian / 卷积来源和核验说明继续描述各自版本，不改写其哈希或历史结论。当前发布结果另行保存；旧日志中的宿主路径不复制进新的实验记录。
+
+保留 `TournamentHamiltonian/LICENSE` 中的来源许可。机器认证支持的是明确的数学陈述，不改变文稿中的学术来源、作者信用及辅助工具披露。
+
+## 构建诊断的解释
+
+“production fresh”指起始没有本项目 `.olean` / `.ilean`，不表示没有旧 linter 警告。原有 deprecated import、unused tactic 等警告如实记录，不为消除警告修改冻结证明。默认根汇总检查与从零项目模块编译分开记时；允许复用的仅为锁定上游依赖缓存。
+
+原核心公理脚本及其 JSON 中的历史字段名 `theorem_count` 按 `theorems.json` 的登记声明计数；本说明统一称登记端点，不将定义或辅助声明冒称论文定理。
