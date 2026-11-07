@@ -2,17 +2,17 @@
 
 Xingchen Liu and Xiangyu Ye
 
-28 October 2026
+7 November 2026
 
 ## Abstract
 
-Divoux and Wang determined the leading constant $L=\cosh1/\cos1$ for the maximum number of Hamiltonian paths in a tournament. We prove the quantitative refinement
+We prove that the maximum number of directed Hamiltonian paths in an $n$-vertex tournament satisfies
 
 $$
 P(n)=\left(\frac{\cosh1}{\cos1}+O(n^{-1})\right)\frac{n!}{2^{n-1}}.
 $$
 
-We also compute the full angular Hessian in Wormald's fixed-base formula and prove that it is positive definite for every regular base. Its determinant recovers the spectral ratio used by Divoux and Wang. Combining this identity with their counting and spectral results, the equality conditions of Fang and Huang, and Wormald's model comparisons yields the fixed-base expectation extrema. We give the additional equality analysis and nonregular-base estimates, and derive strict monotonicity of the carousel constants from the known spectrum. The original Hessian and carousel limit overlap with Bhattacharjee's work.
+The proof builds on our earlier constant-factor counting framework, combining uniform permanent estimates, local diagonal scaling for nonprincipal submatrices, and a score-sensitive path bound with the spectral comparison of Fang and Huang. Divoux and Wang established the sharp leading asymptotic constant for cycles and paths. We also give an independent derivation of the full angular Hessian in Wormald's random blow-up formula and prove its positive definiteness for every regular base. The overlap with Bhattacharjee's results is stated explicitly. For each fixed odd base order, we prove eventual uniqueness of the carousel base for the expected path and cycle counts in both blow-up models, and establish strict monotonicity of the regular-block constants.
 
 ## 1. Introduction
 
@@ -30,9 +30,9 @@ Adler, Alon and Ross [9] improved the random lower bound by choosing an almost c
 
 The upper bounds developed through permanent estimates. If $A$ is the adjacency matrix of a tournament, then $\operatorname{per}A$ counts its spanning unions of vertex-disjoint directed cycles. In particular, it bounds the number of Hamiltonian cycles. Alon [2] applied Brégman's inequality to this permanent and optimized the resulting expression over the outdegrees, obtaining $P(n)=O(n^{3/2}\mu_n)$. Friedgut and Kahn [7] used an entropy argument to improve the polynomial exponent; their cycle bound is $O(n^{\alpha}\nu_n)$ with $\alpha\approx1.249$. These estimates identify the correct exponential scale, but leave a polynomial gap between the upper and lower bounds. At the scale of a leading constant, one must retain information that a bound in terms of the degrees alone discards.
 
-Divoux and Wang [12] closed this gap. They proved that the maximum cycle count is $(L+o(1))\nu_n$ and the maximum path count is $(L+o(1))\mu_n$, where $L=\cosh1/\cos1$. Their proof still uses permanents, but replaces a degree bound by a determinant approximation for nearly doubly stochastic matrices. After separating vertices with large degree imbalance, they classify a Hamiltonian cycle by the directed path segments that it induces on the exceptional set. These segments are encoded in modified adjacency matrices of the remaining tournament. Sinkhorn scaling and a determinant–permanent inclusion-exclusion formula then reduce the count to a ratio of determinants of a skew-symmetric matrix. A matrix comparison of Fang and Huang [11] bounds this ratio by its value for a transitive tournament. Odd carousels, and their one-vertex deletions at even orders, attain the bound asymptotically; a separate argument transfers the cycle result to paths.
+Divoux and Wang [12] determined the sharp leading constant. They proved that the maximum cycle count is $(L+o(1))\nu_n$ and the maximum path count is $(L+o(1))\mu_n$, where $L=\cosh1/\cos1$. Their proof still uses permanents, but replaces a degree bound by a determinant approximation for nearly doubly stochastic matrices. After separating vertices with large degree imbalance, they classify a Hamiltonian cycle by the directed path segments that it induces on the exceptional set. These segments are encoded in modified adjacency matrices of the remaining tournament. Sinkhorn scaling and a determinant–permanent inclusion-exclusion formula then reduce the count to a ratio of determinants of a skew-symmetric matrix. A matrix comparison of Fang and Huang [11] bounds this ratio by its value for a transitive tournament. Odd carousels, and their one-vertex deletions at even orders, attain the bound asymptotically; a separate argument transfers the cycle result to paths.
 
-Our first result refines the path asymptotic of Divoux and Wang [12, Theorem 1.4] by bounding the normalized error by $O(n^{-1})$ uniformly in the order. The leading constant and the carousel constructions are those of [12]. The proof below tracks the error through the permanent approximation, deletion, diagonal scaling, and the sum over deletion sets.
+The first author's path-counting preprint [14], publicly archived on 8 October 2026, had already established $(L-O(n^{-1}))\mu_n\le P(n)\le(C_*+O(n^{-1}))\mu_n$ and the analytic framework used below. Thus it closed the polynomial gap, while leaving a gap between the two leading constants $L<C_*$. That archive contains the positive path convolution, uniform permanent estimate, nonprincipal scaling and exceptional-vertex analysis; it predates the arXiv v1 submission of [12] on 16 October 2026. The present sharp estimate combines that framework with the spectral moment comparison of Fang and Huang [11]. It refines the leading asymptotic in [12, Theorem 1.4] and retains a uniform $O(n^{-1})$ normalized error through deletion, scaling and summation. We make no claim that this error order is optimal.
 
 **Theorem 1.1.** There are absolute constants $K',n_1$ such that every integer $n\ge n_1$ satisfies
 
@@ -82,11 +82,24 @@ Along odd integers $d\ge3$, the sequence $\mathfrak r_d$ increases strictly to $
 
 Theorem 1.2 directly proves Wormald's Hessian conjecture [6, Conjecture 6]. Corollary 1.3 combines existing counting and spectral results with the equality and nonregular-base arguments given here. The limit in Conjecture 2 follows from the closed form in [12] and Wormald's factor $e^{1/d}$; Corollary 1.4 adds strict monotonicity. Section 10 retains the expansion through $d^{-5}$, with remainder $O(d^{-6})$, as a calculation from that closed form.
 
-Bhattacharjee [13, Theorems 1.1 and 1.3, Proposition 3.1, Lemma 3.2 and Corollary 3.3] also treats Wormald's Conjectures 2 and 6. His original angular Hessian, positivity, determinant/rational-square formulas, carousel value, limit and low-order expansion overlap with the corresponding results here. We retain direct derivations without claiming these as new relative to that work. We separately discuss monotonicity, equality, nonregular bases and eventual uniqueness at fixed base order. The global quantitative path problem in Theorem 1.1 is distinct.
+Bhattacharjee [13, Theorems 1.1 and 1.3, Proposition 3.1, Lemma 3.2 and Corollary 3.3] also treats Wormald's Conjectures 2 and 6. The original angular Hessian, positivity, determinant/rational-square formulas and carousel limit were obtained independently in our Wormald project [15] and in his work. We retain our direct derivation and record the overlap. Our October 8 path archive [14] concerns a different part of the paper and is not used to date the Hessian result. Bhattacharjee's public release dated 14 October [16] already contains the full Hessian; the fixed Liu--Ye manuscript revision cited in [15] is dated 19 October. Git commit dates and public-release dates have different meanings, and these records do not establish priority for our Hessian calculation.
+
+The contribution and dependency structure is as follows.
+
+| Component | Scope and relation to prior work |
+|---|---|
+| Constant-factor path framework | Independently archived in [14]; the upper constant there was $C_*>L$. |
+| Sharp global path estimate | Uniform final $O(n^{-1})$ error, obtained by combining the counting estimates with [11]; the sharp leading asymptotic is in [12]. |
+| Signed permanent estimate | The independent proof from [14] is retained; the counting applications use its nonnegative specialization. |
+| Angular Hessian and carousel limit | Independent derivation overlapping [13,16]; no priority claim is based on the earlier path archive. |
+| Fixed-base extremality | Equality analysis, nonregular-base decay and a finite-class comparison complete eventual uniqueness for expectations. |
+| Regular-block monotonicity | A strict monotonicity consequence of the known carousel spectrum. |
+
+For Corollary 1.3 the order $d$ is fixed first. There are finitely many base isomorphism classes; regular noncarousel bases have a strict limiting gap, and the normalized expectations of nonregular bases tend to zero. A common threshold can therefore be chosen for all four expectations and all bases of that fixed order. The statement concerns expectations, and the regular-block model only allows odd $m$.
 
 ### 1.1 The counting estimates and their relation to earlier methods
 
-McCullagh [5] obtained the determinant approximation with an $O(n^{-1})$ relative error under moderate-deviation assumptions. Divoux and Wang [12, Proposition 3.1] prove a uniform $1+o(1)$ version for nonnegative doubly stochastic matrices; their coefficient estimates and Gamma averaging can be refined to retain $O(n^{-1})$ in that setting. Section 3 gives the form needed here, with fixed entry and operator-norm bounds, and includes the detailed proof. The quantitative assertion of Theorem 1.1 concerns the final path count after deletion, scaling and summation; it does not assert a new determinant main term or a first $O(n^{-1})$ permanent approximation.
+McCullagh [5] obtained the determinant approximation with an $O(n^{-1})$ relative error under moderate-deviation assumptions. Divoux and Wang [12, Proposition 3.1] prove a uniform $1+o(1)$ version for nonnegative doubly stochastic matrices; their coefficient estimates and Gamma averaging can be refined to retain $O(n^{-1})$ in that setting. Section 3 gives the form needed here, with fixed entry and operator-norm bounds, and includes the detailed proof. The quantitative contribution of Theorem 1.1 is the final path count after deletion, scaling and summation; the determinant main term and earlier $O(n^{-1})$ approximations provide its analytic background.
 
 The proof expands the permanent by imposing distinct row and column indices separately. Double centering eliminates terms with a vertex of degree one. Components in which every vertex has degree two give Gaussian pairings and hence the determinant main term; the other components are estimated after contracting their degree-two chains. The resulting coefficient estimates hold over a range growing with the matrix order. For the tail, permanent polarization reduces the required complex-matrix bound to a positive semidefinite one. The complex Gaussian identity and arithmetic–geometric mean estimate used by Han and Niles-Weed [3, Lemmas 4.3–4.4] provide this bound; we then apply Cauchy's coefficient estimate. Together, the coefficient estimates and the tail bound give the uniform $O(n^{-1})$ error.
 
@@ -106,7 +119,7 @@ $$
 \rho_n(S)=\frac{\det(I+S/n)}{\det(I+iS/n)},\qquad S=A-A^T.
 $$
 
-As in [12], the comparison of Fang and Huang [11] bounds this ratio by its value at the sign matrix of a transitive tournament. That value is $L+O(n^{-1})$. For the lower bound, the two-sided path estimate applies to odd carousels and to their even-order one-vertex deletions: the degree imbalances are respectively zero and of absolute value one. These arguments give Theorem 1.1. Using only the spectral-radius bound and the sum of squared frequencies in the last step gives Proposition 7.1; its role is to isolate what follows from the analytic counting estimates before the full moment comparison is used.
+As in [12], the comparison of Fang and Huang [11] bounds this ratio by its value at the sign matrix of a transitive tournament. That value is $L+O(n^{-1})$. For the lower bound, the two-sided path estimate applies to odd carousels and to their even-order one-vertex deletions: the degree imbalances are respectively zero and of absolute value one. These arguments give Theorem 1.1 directly. Proposition 6.6 supplies the all-order spectral comparison; Proposition 7.3 isolates the uniform score penalty, and Corollary 8.2a gives the resulting degree-variance stability estimate.
 
 ### 1.2 Wormald's models
 
@@ -114,13 +127,13 @@ Wormald [6] obtains the fixed-base counting formula by projecting a Hamiltonian 
 
 We differentiate the original implicit equation to obtain Theorem 1.2, including positive definiteness of the full Hessian. This supplies an unconditional justification for Wormald's nondegeneracy assumption. The identity $\sqrt{d/\det\mathbf H}=\rho_d(S)$ also links the Hessian to the existing spectral theory. The model limit $\rho_d(S)$ itself is already a direct application of [12, Proposition 5.1]; using Wormald's conditional Hessian formula to infer nondegeneracy would not be a valid substitute for the calculation.
 
-For regular bases, we supplement the comparison in [12] with the equality classification from Fang and Huang [11]. Signed similarity together with zero row sums forces the carousel. Nonregular bases are bounded separately by Brégman's inequality. Since only finitely many bases occur at fixed order, the strict limiting gaps give Corollary 1.3. The short spectral proof of Corollary 1.4 and the detailed real-variable calculation are both included. The base order is fixed before the block order tends to infinity.
+For regular bases, we supplement the comparison in [12] with the equality classification from Fang and Huang [11]. Signed similarity together with zero row sums forces the carousel. Nonregular bases are bounded separately by Brégman's inequality. Since only finitely many bases occur at fixed order, the strict limiting gaps give Corollary 1.3. The short spectral proof gives Corollary 1.4; the separate expansion records higher-order terms. The base order is fixed before the block order tends to infinity.
 
 ### 1.3 Further questions and organization
 
-Theorem 1.1 does not identify the path maximizers at every finite order or determine the coefficient of the first correction term. It would also be useful to estimate $M_d$ in terms of $d$. Allowing the base order and the block order to grow together would require error bounds uniform in the base order, beyond the fixed-base asymptotics used here.
+The path maximizers at each finite order and the coefficient of the first correction term remain open problems. It would also be useful to estimate $M_d$ in terms of $d$. Allowing the base order and the block order to grow together would require error bounds uniform in the base order, beyond the fixed-base asymptotics used here.
 
-Section 2 introduces notation. Sections 3 and 4 prove the permanent and scaling estimates, Section 5 establishes the path-counting identity, and Section 6 proves the spectral comparison. Sections 7 and 8 prove the auxiliary Proposition 7.1. Sections 9–11 concern the Hessian and the random blow-up models, and Section 12 completes the proof of Theorem 1.1. The appendices contain the auxiliary calculations and proofs of the standard tools used in the argument.
+Section 2 fixes notation. Sections 3 and 4 give the permanent and nonprincipal scaling estimates; Section 5 records the positive path convolution, summable weights and uniform tail. Section 6 proves the spectral comparison for all orders. Sections 7 and 8 establish the sharp path bound directly, followed by degree-variance stability. Sections 9--11 treat the original angular Hessian and fixed-base model extrema. The detailed proof companion retains the original section and equation numbers for the analytic estimates and auxiliary algebra. This concise main text states their precise hypotheses and develops the counting and model arguments; the companion supplies the longer technical derivations.
 
 ## 2. Preliminaries and notation
 
@@ -148,24 +161,7 @@ $$
 
 The constants $K,n_0$ are uniform over tournaments and deletion sets. They may depend on additional fixed parameters $b,A_0,B_0$, when present.
 
-Setting $p=\pi^2$, we have
 
-$$
-\begin{aligned}
-C_*&=\frac{1+4/p}{1-4/p}\frac{3/2-4/p}{1/2+4/p}\\
-&=\frac{p+4}{p-4}\frac{3p-8}{p+8}
-=\frac{3p^2+4p-32}{p^2+4p-32}\\
-&=\frac{3\pi^4+4\pi^2-32}{\pi^4+4\pi^2-32}.
-\end{aligned}
-$$
-
-The relative difference between the constants is
-
-$$
-100\frac{C_*-L}{L}
-=100\left(\frac{C_*\cos1}{\cosh1}-1\right)
-=0.0505359379058\ldots\%.
-$$
 
 ### 2.2 Sign matrices and spectral factors
 
@@ -279,12 +275,9 @@ Similarly, $\log(1+x)\le x$ gives $\log\rho_n(S)<3/2$. Multiplication by $D_n(S)
 
 ## 3. A uniform permanent approximation
 
-In this section we prove a uniform estimate for permanents. Write a matrix with unit row and column sums as $(J_n+E)/n$, where $E\mathbf1=E^{\mathsf T}\mathbf1=0$. If the entries of $E$ are bounded and $\|E/n\|_{\mathrm{op}}\le q<1$, the main term is a determinant. Section 4 applies this estimate to scaled tournament submatrices.
+The counting argument needs a permanent estimate uniform under scaling and logarithmically many independent row and column deletions. We state the analytic theorem with its exact parameters; its full coefficient proof is in **Detailed proof companion, §§3.2–3.6**, retaining the original numbering. This section gives the proof structure and the estimates that close it. The supplement forms an integral part of the proof.
 
-McCullagh [5] obtained the determinant main term under moderate-deviation conditions. Here we give a self-contained version for a fixed entry bound $C$ and singular-value spectral gap $q$, with an error uniform over the matrix class determined by these parameters. The proof controls the coefficients and the tail separately, so that the conclusion applies uniformly to the deletions and scalings in Section 4. A recent related approximation of Li [8, Theorem 2.1] assumes that the maximum absolute row or column sum of the centered perturbation is $o(n)$; this condition does not cover dense kernels whose corresponding sums have order $n$.
-
-### 3.1 The theorem and the proof strategy
-
+McCullagh [5] obtained the determinant main term under moderate-deviation assumptions. The argument retained here comes from the earlier path project [14]. It allows signed inputs, although Sections 4–8 use only the nonnegative case. Divoux–Wang [12] give a related nonnegative theorem with an $o(1)$ error; extracting the $O(n^{-1})$ rate uses the uniform coefficient and tail estimates recorded below.
 
 **Theorem 3.1 (Uniform permanent approximation).**
 
@@ -308,1341 +301,35 @@ $$
 
 [Equation (3.1)](#eq-uniform-permanent) can also be written as the determinant factor times the relative error $1+O_{C,q}(n^{-1})$. The subscript $C,q$ means that the error constant and the threshold dimension may depend on these two parameters fixed in advance, but must apply simultaneously to every admissible matrix.
 
+**Proof with the coefficient estimates delegated to the supplement.** Choose fixed $1<\sigma<R<1/q$ (omit the upper restriction if $q=0$), and put
 
-All determinant square roots in this section are the positive square roots on the relevant real intervals. The assumptions give $\|B\|_{\mathrm F}^2\le C^2$. Thus the determinant factor is at least one and is uniformly bounded by a constant depending only on $C,q$.
-
-Inclusion-exclusion for the row and column indices expresses each coefficient of the permanent as a sum over bipartite multigraphs. Centering eliminates degree-one vertices. The degree-two components correspond to Gaussian pairings and give the determinant main term. We classify the remaining components by their excess, the number of edges minus vertices; each unit of excess contributes a factor $n^{-1}$. We first estimate coefficients of degree at most $\alpha n$, then use a complex-analytic bound for the remaining coefficients.
-
-The proof uses the Gaussian series $G(t)$, which is a different object from the numerical bound $G=100/19$ in Section 7.4. Put
-
-$$
-f(t)=\frac{\operatorname{per}(J_n+tE)}{n!},
-\qquad G(t)=\det(I-t^2BB^{\mathsf T})^{-1/2}.
-$$
-
-Choose $1<\sigma<R<1/q$; when $q=0$, no upper restriction is imposed. For example, take
-
-$$
-R=\frac{3+q}{2(1+q)},\qquad \sigma=\frac{1+R}{2}.
-$$
-
-In this section we define a separate control function $\Gamma(r)$, which is distinct from the score product $\Gamma$ in Section 7:
-
-$$
-\Gamma(r)=\exp\left(\frac{C^2r^2}{2(1-q^2r^2)}\right),
-\qquad r\ge0,\ rq<1.
-$$
-
-Throughout this section, when $q=0$, upper restrictions involving $1/q$ are omitted. All constants depend only on $C,q$ and the chosen radii. Section 3.6 combines them into an explicit error bound.
-
-
-For these radii,
-
-$$
-R-1=\frac{1-q}{2(1+q)}>0,\qquad
-1-Rq=\frac{2-q-q^2}{2(1+q)}=\frac{(1-q)(q+2)}{2(1+q)}>0,
-$$
-
-$$
-\sigma-1=(R-1)/2>0,\qquad R-\sigma=(R-1)/2>0.
-$$
-
-In this section, let $s_i$ denote the singular values of $B$. Then
-
-$$
-\sum_i s_i^2=\sum_{i,j}B_{ij}^2\le n^2(C/n)^2=C^2,\qquad
-0\le s_i\le q.
-$$
-
-Using $-\log(1-u)=\int_0^u(1-v)^{-1}\,dv\le u/(1-u)$,
-
-$$
-\begin{aligned}
-\log G(r)&=-\frac12\sum_i\log(1-r^2s_i^2)\\
-&\le\frac12\sum_i\frac{r^2s_i^2}{1-r^2s_i^2}
-\le\frac{r^2\sum_i s_i^2}{2(1-r^2q^2)}
-\le\frac{C^2r^2}{2(1-r^2q^2)}.
-\end{aligned}
-$$
-
-Consequently $1\le G(1)\le\Gamma(1)$. If $|f(1)-G(1)|\le K/n$, then
-
-$$
-\left|\frac{f(1)}{G(1)}-1\right|
-=\frac{|f(1)-G(1)|}{G(1)}\le K/n,
-$$
-
-Thus the absolute error estimate also gives a relative error of the same order.
-
-### 3.2 Coefficients and Gaussian pairing
-
-
-**Definition 3.1 (Permanent coefficients and rescaling).**
-
-Write $f(t)=\sum_{k=0}^n a_kt^k$. Expanding according to the entries taken from $E$ gives
-
-$$
-a_k=\frac1{(n)_k}
-\sum_{\substack{I,J\subseteq[n]\\|I|=|J|=k}}
-\operatorname{per}E[I,J],
-$$
-
-Here $0\le k\le n$, so the denominator $(n)_k$ is nonzero. For $k>n$, define $a_k=0$ directly, without using an expression containing $1/(n)_k$. Define
-
-$$
-F_k=\frac{(n)_k}{n^k}a_k
-=\frac1{k!}
-\sum_{\substack{i_1,\ldots,i_k\ \mathrm{distinct}\\
-j_1,\ldots,j_k\ \mathrm{distinct}}}
-\prod_{\ell=1}^kB_{i_\ell j_\ell},
-\qquad
-F(t)=\sum_{k=0}^nF_kt^k.
-$$
-
-The sum on the right remains meaningful when $k>n$: its indexing set is empty, so its value is zero. The formal identities below use this convention.
-
-
-**Definition 3.2 (Set partitions and weights).**
-
-For a finite set $E$, let $\mathfrak P(E)$ be the set of all partitions of $E$ into disjoint nonempty blocks, and put $\mathfrak P_k=\mathfrak P([k])$. The indicator that the $k$ coordinates are distinct has a standard inclusion-exclusion expansion on the partition lattice. The permanent calculation in [5, Section 8] also uses an expansion over pairs of partitions. A block of size $d$ has Möbius weight $(-1)^{d-1}(d-1)!$; here the weight of an entire partition is defined as $\mu(\pi)=\prod_{D\in\pi}(-1)^{|D|-1}(|D|-1)!$. Apply this expansion separately to the row and column coordinates of $F_k$. Each partition pair determines a bipartite multigraph: its edges have distinct labels $1,\ldots,k$, the vertices on the two sides are the blocks of the row and column partitions, and each block of size $d$ receives the weight above.
-
-
-The numerical label of each vertex is summed independently over $[n]$; different vertices may have the same numerical label. If a row vertex has degree one, summing its label gives a column sum of $B$, which is zero. A column vertex of degree one similarly gives a zero row sum. Thus only graphs in which every vertex has degree at least two contribute.
-
-For example, in degrees two and three, each surviving row or column partition has a single block. The products of the Möbius weights on the two sides are $1$ and $4$, respectively. Dividing by $k!$ gives
-
-$$
-F_2=\frac12\sum_{i,j}B_{ij}^2,
-\qquad
-F_3=\frac23\sum_{i,j}B_{ij}^3,
-\qquad |F_3|\le\frac{2C^3}{3n}.
-$$
-
-The quadratic term is part of the Gaussian main term, whereas the cubic term is $O(n^{-1})$.
-
-A connected component whose vertices all have degree two is called a pure degree-two component. Their total exponential generating function is $G(t)$. This can be checked directly with two independent standard real Gaussian vectors $X,Y$. By Wick's formula,
-
-$$
-\mathbb E\exp(tX^{\mathsf T}BY)
-$$
-
-the coefficient of $t^k$ in this expression is the sum over pairing partitions on the two sides of the edge labels, precisely the graphs whose vertices all have degree two. Integrating first with respect to the conditional Gaussian distribution and then diagonalizing $BB^{\mathsf T}$ gives
-
-$$
-\mathbb E\exp(tX^{\mathsf T}BY)
-=\mathbb E\exp\!\left(\frac{t^2}{2}X^{\mathsf T}BB^{\mathsf T}X\right)
-=\det(I-t^2BB^{\mathsf T})^{-1/2}.
-$$
-
-This analytic identity holds when $|t|\|B\|_{\mathrm{op}}<1$ and determines all formal coefficients. In particular, the coefficients of $G$ are nonnegative, and
-
-$$
-G(r)\le\Gamma(r)\qquad(r\ge0,\ rq<1),
-$$
-
-because $-\log(1-x)\le x/(1-x)$ and $\sum_i s_i^2=\|B\|_{\mathrm F}^2\le C^2$; here $s_i$ are the singular values of $B$.
-
-Remove all pure degree-two components from every contributing graph, and call what remains its core. A core need not be connected. If it has $h$ edges and $v$ vertices, define its excess as $j=h-v$. Every nonempty core satisfies $j\ge1$. Decomposition into components with labeled edges gives the coefficientwise identity
-
-$$
-F(t)=G(t)\left(1+\sum_{j\ge1}C_j(t)\right),
-$$
-
-Here $C_j$ is the generating series for cores of excess $j$, with the Möbius signs and matrix contractions included in its coefficients. The identity is formal: a fixed degree $k$ involves only finitely many $j<k$, so no convergence in $j$ at nonzero $t$ is required. The distinct-index definition of $F_k$ makes all coefficients above degree $n$ vanish.
-
-
-**Definition 3.3 (Core series).**
-
-For $\pi,\sigma\in\mathfrak P_h$, let $D_\pi(a)$ and $D_\sigma(a)$ denote the two partition blocks containing edge label $a$. Give the row blocks labels $x_D\in[n]$ and the column blocks labels $y_E\in[n]$, and define the contraction
-
-$$
-\mathcal W_B(\pi,\sigma)
-=\sum_{x:\pi\to[n]}\sum_{y:\sigma\to[n]}
-\prod_{a=1}^hB_{x_{D_\pi(a)},y_{D_\sigma(a)}}.
-$$
-
-Both sums run over all functions, with no injectivity requirement. Define $\mathcal K_{j,h}$ to be the set of partition pairs satisfying the following conditions: every block has size at least two; every connected component of the associated bipartite multigraph contains a block of size at least three; and $h-|\pi|-|\sigma|=j$. Here $|\pi|$ counts blocks, not elements of the original set. A connected component is a maximal set of vertices connected by successive edges. Degree counts incident half-edges, with parallel edges counted separately; after compression, a loop contributes two to the degree of its vertex. Define the core series by
-
-$$
-C_j(t)=\sum_{h=0}^{\infty}c_{j,h}t^h,\qquad
-c_{j,h}=\frac1{h!}\sum_{(\pi,\sigma)\in\mathcal K_{j,h}}
-\mu(\pi)\mu(\sigma)\mathcal W_B(\pi,\sigma).
-$$
-
-For fixed $h$, the sum is finite. A nonempty core has at least one block on either side, so $j\le h-2$ and $c_{j,h}=0$ for $h\le j+1$. We shall also use the weaker condition $j<h$. The empty graph contributes $F_0=G(0)=1$ and is not included in $C_j$.
-
-
-Write $g_k=[t^k]G(t)$ for $k\ge0$, where $[t^k]$ denotes coefficient extraction. Thus $g_0=1$ and $g_k=0$ for odd $k$. Lemma 3.2 will show that the weighted norm $\|C_j\|_R=\sum_h|c_{j,h}|R^h$ is finite.
-
-
-Fix the entries selected from $E$ by specifying the row set $I$ and image set $J$, both of size $k$. The total weight of bijections at these positions is $\operatorname{per}E[I,J]$. The remaining $n-k$ rows can be bijected arbitrarily to the remaining columns in $(n-k)!$ ways. Hence
-
-$$
-[t^k]\operatorname{per}(J+tE)
-=(n-k)!\sum_{|I|=|J|=k}\operatorname{per}E[I,J],
-$$
-
-$$
-a_k=\frac{(n-k)!}{n!}\sum_{|I|=|J|=k}\operatorname{per}E[I,J]
-=\frac1{(n)_k}\sum_{|I|=|J|=k}\operatorname{per}E[I,J].
-$$
-
-Given the row set, column set, and a bijection, labeling its $k$ matching edges successively by $1,\ldots,k$ can be done in $k!$ ways. Thus
-
-$$
-\sum_{\boldsymbol i,\boldsymbol j\ \mathrm{distinct}}\prod_{h=1}^kB_{i_hj_h}
-=k!\sum_{|I|=|J|=k}\operatorname{per}B[I,J]
-=\frac{k!}{n^k}\sum_{|I|=|J|=k}\operatorname{per}E[I,J].
-$$
-
-
-For a condition $\mathcal A$, $\mathbf1\{\mathcal A\}$ equals one when the condition holds and zero otherwise. It is a scalar indicator, distinct from the all-ones vector $\mathbf1_p$. For a partition $\pi$, define
-
-$$
-\mu(\pi)=\prod_{D\in\pi}(-1)^{|D|-1}(|D|-1)!,\quad
-\mathbf1_\pi(\boldsymbol i)=\prod_{D\in\pi}\mathbf1\{i_h\text{ constant on }D\text{}\}.
-$$
-
-Then
-
-$$
-\mathbf1\{i_1,\ldots,i_k\text{ distinct}\}
-=\sum_{\pi\in\mathfrak P_k}\mu(\pi)\mathbf1_\pi(\boldsymbol i).
-$$
-
-To verify this, let $D_1,\ldots,D_r$ be the equality classes of the given coordinates. The right-hand side factors as
-
-$$
-\prod_{a=1}^r\left(\sum_{\pi\in\mathfrak P(D_a)}\mu(\pi)\right).
-$$
-
-The permutation sign is $\operatorname{sgn}(\pi)=(-1)^{\#\{(i,j):i<j,\ \pi(i)>\pi(j)\}}$: it is one for an even number of inversions and minus one for an odd number. A block of size $d$ can be arranged into a directed cycle in $(d-1)!$ ways, and such a cycle has sign $(-1)^{d-1}$. Thus each parenthesis is the sum of the signs of all permutations of that set. This equals one for a singleton. For size at least two, multiplication by a fixed transposition bijects positive and negative terms, so they cancel and the sum is zero.
-
-Substituting on both sides gives
-
-$$
-F_k=\frac1{k!}\sum_{\pi,\sigma\in\mathfrak P_k}\mu(\pi)\mu(\sigma)
-\sum_{\boldsymbol i,\boldsymbol j}\mathbf1_\pi(\boldsymbol i)\mathbf1_\sigma(\boldsymbol j)
-\prod_{h=1}^kB_{i_hj_h}.
-$$
-
-If $\pi$ has a singleton block $\{h\}$, summing the label $i_h$, which appears only once, gives $\sum_iB_{ij_h}=0$. The column side is identical. For $k=2$ only one pair of two-element blocks survives, with weight $(-1)(-1)=1$; for $k=3$ only one pair of three-element blocks survives, with weight $2\cdot2=4$. Hence
-
-$$
-F_2=\frac1{2!}\sum_{i,j}B_{ij}^2,\quad
-F_3=\frac4{3!}\sum_{i,j}B_{ij}^3,\quad
-|F_3|\le\frac23n^2(C/n)^3=\frac{2C^3}{3n}.
-$$
-
-Put $K=BB^{\mathsf T}$ and $Q=B^{\mathsf T}B$. The fourth-order term is
-
-$$
-\begin{aligned}
-F_4={}&\frac18(\operatorname{tr}K)^2+\frac14\operatorname{tr}(K^2)\\
-&-\frac34\sum_i\left(\sum_jB_{ij}^2\right)^2
--\frac34\sum_j\left(\sum_iB_{ij}^2\right)^2
-+\frac32\sum_{i,j}B_{ij}^4.
-\end{aligned}
-$$
-
-The first three classes of partition pairs are: both sides have type $2+2$ ($3\cdot3=9$ pairs); one side has type $4$ and the other type $2+2$ (three pairs in each orientation, with block weight $-6$); and both sides have type $4$ (weight $36$). Dividing by $4!=24$ gives the stated coefficients. The three identical pairing pairs give $3/24=1/8$, and the six distinct pairing pairs give $6/24=1/4$. This also directly confirms the separation of the main term $g_4$ from the non-Gaussian correction.
-
-
-A standard real Gaussian variable $X$ has density $(2\pi)^{-1/2}e^{-x^2/2}$. For $u\in\mathbb R$, completing the square gives
-
-$$
-\mathbb Ee^{uX}=\frac1{\sqrt{2\pi}}\int_{\mathbb R}e^{-x^2/2+ux}\,dx
-=e^{u^2/2}\frac1{\sqrt{2\pi}}\int_{\mathbb R}e^{-(x-u)^2/2}\,dx=e^{u^2/2}.
-$$
-
-For $v\in\mathbb R^n$, independence gives the multivariate generating function $\mathbb Ee^{v^{\mathsf T}X}=e^{\|v\|^2/2}$. Differentiating with respect to the coordinates gives
-
-$$
-\mathbb E\prod_{h=1}^{2r}X_{i_h}
-=\sum_{\mathcal P\text{ a pairing}}\prod_{\{a,b\}\in\mathcal P}\mathbf1\{i_a=i_b\},
-\qquad \mathbb E\prod_{h=1}^{2r+1}X_{i_h}=0.
-$$
-
-We record the real Gaussian moment calculation. A standard real Gaussian vector has independent coordinates with density $(2\pi)^{-1/2}e^{-x^2/2}$. Put
-
-$$
-m_r=\frac1{\sqrt{2\pi}}\int_{\mathbb R}x^re^{-x^2/2}\,dx.
-$$
-
-Normalization gives $m_0=1$, and symmetry of the integral of an odd function gives $m_{2r+1}=0$. Integration by parts for $r\ge1$ gives
-
-$$
-\begin{aligned}
-m_{2r}
-&=-\frac1{\sqrt{2\pi}}\int_{\mathbb R}x^{2r-1}\,d(e^{-x^2/2})\\
-&=\frac{2r-1}{\sqrt{2\pi}}\int_{\mathbb R}x^{2r-2}e^{-x^2/2}\,dx\\
-&=(2r-1)m_{2r-2}
-=(2r-1)(2r-3)\cdots1.
-\end{aligned}
-$$
-
-The boundary term vanishes because $|x|^ae^{-x^2/2}\to0$ for every fixed integer $a\ge0$. With $(-1)!!=1$, this can be written uniformly as $m_{2r}=(2r-1)!!$, including $r=0$.
-
-For an index list $i_1,\ldots,i_k$, define the multiplicity $c_a=\#\{h:i_h=a\}$. Independence gives the finite product
-
-$$
-\mathbb E\prod_{h=1}^kX_{i_h}=\prod_{a=1}^n m_{c_a}.
-$$
-
-If any $c_a$ is odd, the right-hand side is zero. If all $c_a$ are even, every admissible pairing must pair positions with equal indices. The number of pairings of $c_a$ positions satisfies
-
-$$
-p_0=1,\qquad p_{2r}=(2r-1)p_{2r-2}
-=(2r-1)!!.
-$$
-
-Thus the total number of admissible pairings is $\prod_a(c_a-1)!!$, exactly the moment computed above. Defining the Kronecker symbol $\delta_{ab}=\mathbf1\{a=b\}$ gives
-
-$$
-\mathbb E\prod_{h=1}^{2r}X_{i_h}
-=\sum_{\mathcal P}\prod_{\{a,b\}\in\mathcal P}\delta_{i_ai_b}.
-$$
-
-Here $\mathcal P$ ranges over pairings of $[2r]$. The empty pairing contributes one when $r=0$, and odd moments vanish.
-
-First take a real $t$ satisfying $|t|q<1$. Integrate with respect to $Y$, and then orthogonally diagonalize $BB^{\mathsf T}$. The standard-vector density is $(2\pi)^{-n/2}e^{-\|x\|_2^2/2}$. An orthogonal transformation preserves $\|x\|_2$ and has absolute Jacobian one, so the transformed density is unchanged and still factors into the coordinate densities. Therefore,
-
-$$
-\begin{aligned}
-\mathbb Ee^{tX^{\mathsf T}BY}
-&=\mathbb E_Xe^{t^2\|B^{\mathsf T}X\|^2/2}\\
-&=\prod_i\frac1{\sqrt{2\pi}}\int_{\mathbb R}
-e^{-(1-t^2s_i^2)x^2/2}\,dx\\
-&=\prod_i(1-t^2s_i^2)^{-1/2}=G(t).
-\end{aligned}
-$$
-
-To extend the identity to the complex disk, put $U=X^{\mathsf T}BY$ and choose a real $r$ with $|t|<r<1/q$. If $q=0$, then $B=0$ and the result is immediate. For real $u$,
-
-$$
-e^{r|u|}\le e^{ru}+e^{-ru}.
-$$
-
-Since $Y$ has the same distribution as $-Y$, $U$ has the same distribution as $-U$. Hence
-
-$$
-\mathbb E e^{r|U|}
-\le\mathbb E e^{rU}+\mathbb E e^{-rU}
-=2G(r)<\infty.
-$$
-
-Nonnegativity of the terms in the exponential series gives, for $k\ge0$,
-
-$$
-\frac{r^k|U|^k}{k!}\le e^{r|U|}
-\quad\Longrightarrow\quad
-\mathbb E|U|^k\le\frac{k!}{r^k}\mathbb Ee^{r|U|}
-\le\frac{2k!}{r^k}G(r)<\infty.
-$$
-
-Consequently, for every integer $N\ge0$, expectation can be taken term by term in the finite sum:
-
-$$
-\sum_{k=0}^{N}\frac{r^k}{k!}\mathbb E|U|^k
-=\mathbb E\sum_{k=0}^{N}\frac{r^k|U|^k}{k!}
-\le\mathbb Ee^{r|U|}\le2G(r).
-$$
-
-Next let $s=|t|/r<1$. Bound the remainder of the exponential series pointwise:
-
-$$
-\left|e^{tU}-\sum_{k=0}^{N}\frac{t^kU^k}{k!}\right|
-\le\sum_{k>N}s^k\frac{r^k|U|^k}{k!}
-\le s^{N+1}e^{r|U|}.
-$$
-
-Taking expectations yields the explicit error
-
-$$
-\left|\mathbb Ee^{tU}-\sum_{k=0}^{N}\frac{t^k}{k!}\mathbb EU^k\right|
-\le2G(r)s^{N+1}\longrightarrow0.
-$$
-
-This proves that, for every complex $t$ with $|t|<1/q$,
-
-$$
-\mathbb E e^{tU}
-=\sum_{k=0}^{\infty}\frac{t^k}{k!}\mathbb E U^k,
-\qquad
-\sum_{k=0}^{\infty}\frac{|t|^k}{k!}|\mathbb E U^k|
-\le2G(r)<\infty.
-$$
-
-We compare these coefficients with those of $G(t)$. Let $s_i$ be the singular values of $B$. The series for each factor is determined by $c_0=1$ and the recurrence
-
-$$
-c_{m+1}=\frac{2m+1}{2m+2}c_m,
-\qquad
-c_m=\frac{(2m)!}{4^m(m!)^2},
-\qquad
-(1-z)^{-1/2}=\sum_{m\ge0}c_mz^m\quad(|z|<1).
-$$
-
-The recurrence follows by coefficientwise comparison in $(1-z)f'(z)=f(z)/2$; since $c_{m+1}/c_m<1$, the series on the right converges absolutely for $|z|<1$. Further,
-
-$$
-\frac{d}{dz}\bigl[(1-z)f(z)^2\bigr]
-=-f(z)^2+2(1-z)f(z)f'(z)
-=-f(z)^2+f(z)^2=0.
-$$
-
-Its value at zero is one, so $(1-z)f(z)^2=1$, which selects the branch taking value one at zero. Multiplying the finitely many factors gives
-
-$$
-G(t)=\prod_i\left(\sum_{m\ge0}c_m s_i^{2m}t^{2m}\right),
-\qquad |t|q<1.
-$$
-
-On the real interval this agrees with the Gaussian integral already computed. If one coefficient differed from that of $\mathbb E U^k/k!$, choose the least differing degree $k_0$, divide the difference of the two series by $t^{k_0}$, and let $t\to0$ along the real axis. This would give
-
-$$
-0=\lim_{t\to0}\frac{\mathbb Ee^{tU}-G(t)}{t^{k_0}}
-=\frac{\mathbb E U^{k_0}}{k_0!}-[t^{k_0}]G(t)\ne0,
-$$
-
-a contradiction. Hence all coefficients agree. Both sides are represented by absolutely convergent series on the stated complex disk, so the identity also holds there. The exponential factor $1/k!$ matches the factor $1/k!$ in the exponential generating function for labeled edges; Wick pairings correspond to partitions whose blocks on both sides all have size two. We interchange convergent series only within the fixed spectral-gap disk. The infinite sum over core excess $j$ is still used only as a formal coefficient identity.
-
-In any contributing graph every degree is at least two, so
-
-$$
-2(h-v)=\sum_{u}(\deg u-2)\ge0.
-$$
-
-If $h-v=0$, all vertices have degree exactly two and every connected component is pure degree two. After removing those components, any nonempty core has $j=h-v\ge1$. Splitting the edge-label set between the pure degree-two part and the core gives a factor $\binom kh$; multiplying by $1/k!$ gives $1/[h!(k-h)!]$, so the generating functions multiply exactly.
-
-
-Put $K=BB^{\mathsf T}$. The matrix eigendecomposition and $-\log(1-u)=\sum_{r\ge1}u^r/r$ give
-
-$$
-\log G(t)=\frac12\sum_{r=1}^{\infty}\frac{t^{2r}}r\operatorname{tr}(K^r)
-=A_st^2+B_st^4+C_st^6+O(t^8),
-$$
-
-Within this paragraph define the scalars $A_s=\operatorname{tr}K/2$, $B_s=\operatorname{tr}(K^2)/4$, and $C_s=\operatorname{tr}(K^3)/6$. Exponentiating coefficient by coefficient gives
-
-$$
-\begin{aligned}
-G(t)
-&=1+(A_st^2+B_st^4+C_st^6)
-+\frac12(A_st^2+B_st^4)^2+\frac16(A_st^2)^3+O(t^8)\\
-&=1+A_st^2+(B_s+A_s^2/2)t^4
-+(C_s+A_sB_s+A_s^3/6)t^6+O(t^8).
-\end{aligned}
-$$
-
-Therefore
-
-$$
-\begin{aligned}
-g_2&=\tfrac12\operatorname{tr}K,\\
-g_4&=\tfrac14\operatorname{tr}(K^2)+\tfrac18(\operatorname{tr}K)^2,\\
-g_6&=\tfrac16\operatorname{tr}(K^3)
-+\tfrac18\operatorname{tr}K\operatorname{tr}(K^2)
-+\tfrac1{48}(\operatorname{tr}K)^3.
-\end{aligned}
-$$
-
-All odd coefficients are zero because $G(t)$ contains only $t^2$. The scalars $A_s,B_s,C_s$ are used only in this exponential expansion.
-
-
-There are three two-element partitions $12|34,13|24,14|23$. Choosing one on each side gives nine pairs: three identical and six distinct. Identical pairings give the matrix-label sum $(\sum_{ij}B_{ij}^2)^2=(\operatorname{tr}K)^2$; distinct pairings give $\operatorname{tr}(K^2)$. Thus the pure degree-two contribution is
-
-$$
-\frac3{4!}(\operatorname{tr}K)^2+\frac6{4!}\operatorname{tr}(K^2)=g_4.
-$$
-
-If one side is a four-element block, its Möbius weight is $-6$. The other side has three possible pairings into two-element blocks, each with weight $(-1)^2=1$. The row-colored degree-four term is therefore
-
-$$
-\frac{3(-6)}{24}\sum_i\sum_{j,k}B_{ij}^2B_{ik}^2
-=-\frac34\sum_i\left(\sum_jB_{ij}^2\right)^2.
-$$
-
-Exchanging row and column colors gives the column-colored degree-four term
-
-$$
--\frac34\sum_j\sum_{i,k}B_{ij}^2B_{kj}^2
-=-\frac34\sum_j\left(\sum_iB_{ij}^2\right)^2.
-$$
-
-If both sides are four-element blocks, the product of the weights is $(-6)^2=36$. The last term is therefore
-
-$$
-\frac{36}{24}\sum_{i,j}B_{ij}^4=\frac32\sum_{i,j}B_{ij}^4.
-$$
-
-The four classes sum to the expression for $F_4$ above. Partitions containing degree-one vertices contribute zero by centering.
-
-### 3.3 Estimating non-Gaussian cores
-
-We first sum over the internal indices of each degree-two chain and bound the resulting matrix product by its operator norm. After these chains are compressed, a graph of excess $j$ has at most $2j$ vertices. Put
-
-$$
-W=\max\left\{1,CR+\frac{C^2R^2}{1-Rq}\right\},
-\qquad D=710W^3,\qquad
-T_1=\frac32W^2+\frac{10}{3}W^3.
-$$
-
-
-**Lemma 3.2 (Compressed core activity).**
-
-With the notation above,
-
-<a id="eq-core-activity"></a>
-
-$$
-\|C_j\|_R\le(Dj/n)^j\qquad(j\ge1),
-\tag{3.2}
-$$
-
-and the first excess satisfies the sharper bound
-
-$$
-\|C_1\|_R\le T_1/n.
-$$
-
-Here $\|H\|_R=\sum_{k\ge0}|[t^k]H|R^k$.
-
-
-**Proof.**
-
-Compress all maximal paths whose internal vertices have degree two. Each compressed edge represents a chain of positive length whose endpoints have degree at least three. Loops, parallel edges, and disconnected compressed graphs are allowed. If $b$ is the number of vertices of degree at least three and $e$ is the number of compressed edges, compression preserves excess and gives
-
-$$
-e=b+j,\qquad
-2j=\sum_{i=1}^b(d_i-2),\qquad
-1\le b\le2j,\qquad e\le3j.
-$$
-
-**The decoration counting identity.** Fix the excess and the original number of edges. Sum over all ordered degree sequences $(d_1,\ldots,d_b)$, assignments of the two vertex colors, pairings of labeled half-edges, and positive chain lengths compatible with the colors. After removing the temporary labels, the absolute Möbius compensation is $1/(b!\prod_i d_i)$. For a chain contraction, its internal numerical indices must be summed before taking the absolute value.
-
-The structural vertices are the blocks of the two partitions of the edge labels, and their numerical indices lie in $[n]$. Distinct blocks remain distinct vertices even when their numerical indices coincide. Möbius inversion has already accounted for the original distinctness constraints, so we count partition pairs directly. Temporarily label the $b$ vertices of high degree and the $d_i$ half-edges at each vertex, and use these labels to choose a unique reading direction for every chain. After summing over all ordered degree sequences, every original core with labeled edges has $b!\prod_i d_i!$ decorations. For any fixed degree sequence, only compatible vertex labelings occur; summing over all sequences produces exactly the full $b!$ factor. Every structural vertex is identifiable by its color and incident original edge labels, and every incident half-edge by its original edge label. There is therefore no additional automorphism stabilizer. Conversely, a decorated half-edge pairing and all positive chain lengths determine every chain position. The original $h$ edge labels can be assigned to these positions in $h!$ ways. When the bipartite color-parity conditions hold, the internal vertices and their colors are then determined as well.
-
-Removing the $h!$ factor from the original exponential generating function and the temporary decorations, and restoring the absolute Möbius weights $\prod_i(d_i-1)!$ of the high-degree vertices, gives the compensation
-
-$$
-\frac1{b!\prod_i d_i}.
-$$
-
-This step includes loops and chain reversal. Order the two distinct labeled half-edges in each pair, and read the chain starting from the smaller one. Reversal changes the list of original edge labels occupying these positions; it does not supply an additional free factor of two. The two half-edges of a loop follow the same convention. Internal degree-two vertices have absolute Möbius weight one, and there is no additional factorial for chain length. Chains with endpoints of different colors have odd length; those with endpoints of the same color have even length. In particular, every loop has even length at least two. These restrictions are part of the exact identity.
-
-For example, take one row-colored vertex of degree four and two loops of length two, each passing through its own column-colored vertex of degree two. Then $j=b=1$ and $h=4$. There are three ways to split the four original edge labels into two pairs. The degree-four vertex has Möbius weight $(-1)^3 3!=-6$, whereas the product of the two degree-two weights is $+1$. After division by $4!$, the signed contribution is
-
-$$
--\frac34\sum_i\left(\sum_k B_{ik}^2\right)^2.
-$$
-
-Even if numerical indices coincide in some summands, the two structural column vertices remain distinct. Exchanging colors gives $-\tfrac34\sum_k(\sum_i B_{ik}^2)^2$. The absolute compensation bound uses the absolute values of these terms. As an example with parallel edges, take three chains of length one between a row vertex and a column vertex. Their contribution is $\tfrac{(2!)^2}{3!}\sum_{i,k}B_{ik}^3=\tfrac23\sum_{i,k}B_{ik}^3$, exactly the cubic term above. These examples include loops, parallel edges, and the reversal convention, while the original graph remains bipartite.
-
-We discard color restrictions only when taking an upper bound. For fixed $j,b$, the resulting total compensation is
-
-$$
-U_{j,b}=
-\frac{2^b}{b!}\frac{(2e)!}{2^e e!}
-\sum_{\substack{d_1+\cdots+d_b=2e\\d_i\ge3}}
-\frac1{d_1\cdots d_b},
-\qquad e=b+j.
-$$
-
-In the following estimate, each chain's internal numerical indices must be summed before taking absolute values. Replacing $B$ by $|B|$ entry by entry at the outset would lose the operator spectral-gap control. A chain of length one is a matrix entry, whose absolute value is at most $C/n$. For a chain of length $\ell\ge2$, first sum its internal labels. Its contraction is an entry of an alternating product of $B,B^{\mathsf T}$. The Euclidean norms of the row or column vectors at the ends are at most $C/\sqrt n$, and the operator norms of the intervening factors are at most $q$. Thus the absolute value of the contraction is at most
-
-$$
-\frac{C^2}{n}q^{\ell-2}.
-$$
-
-Summing over lengths with weight $R$ bounds the total activity of each chain by $W/n$. Summing the labels of the $b$ high-degree vertices contributes at most $n^b$. Hence
-
-$$
-\|C_j\|_R\le n^{-j}
-\sum_{b=1}^{2j}U_{j,b}W^{b+j}.
-$$
-
-The number of degree compositions is $\binom{2j-1}{b-1}\le4^j$: write $d_i=3+x_i$, so that $\sum_i x_i=2j-b$. In addition, $\prod_i d_i^{-1}\le3^{-b}$, and the number of half-edge pairings is at most $(6j)^{b+j}$. Therefore
-
-$$
-\sum_{b=1}^{2j}U_{j,b}W^{b+j}
-\le(24jW)^j
-\sum_{b=1}^{2j}\frac{(4jW)^b}{b!}.
-$$
-
-Taking $\theta=1/(2W)\le1/2$ gives
-
-$$
-\sum_{b=0}^{2j}\frac{(4jW)^b}{b!}
-\le\theta^{-2j}\exp(4jW\theta)
-=(2\mathrm e W)^{2j}.
-$$
-
-Thus the activity is at most $(96\mathrm e^2W^3j)^j\le(710W^3j)^j$. For the last inequality, use $\mathrm e<87/32$, obtained by summing the exponential series through degree six and bounding its tail by $8/(7\cdot7!)$.
-
-For $j=1$ only $b=1,2$ are possible. The compensation formula gives, respectively,
-
-$$
-U_{1,1}=\frac32,\qquad U_{1,2}=\frac{10}{3}.
-$$
-
-Combining this with the chain bound gives $\|C_1\|_R\le T_1/n$.
-
-
-Compressing one degree-two vertex removes one vertex and one edge, so $h-v$ is unchanged. The compressed graph satisfies
-
-$$
-2e=\sum_{i=1}^bd_i,\quad e-b=j,\quad
-2j=\sum_{i=1}^b(d_i-2)\ge b,
-$$
-
-Consequently $b\le2j$ and $e=b+j\le3j$. The numbers of temporary decorations and original edge labels cancel against the Möbius weights exactly as follows:
-
-$$
-\frac1{h!}\cdot\frac{h!}{b!\prod_i d_i!}\cdot\prod_i(d_i-1)!
-=\frac1{b!}\prod_i\frac{(d_i-1)!}{d_i!}
-=\frac1{b!\prod_i d_i}.
-$$
-
-For $2e$ half-edges, the number of pairings follows from $p_{2e}=(2e-1)p_{2e-2}$ and $p_0=1$:
-
-$$
-p_{2e}=(2e-1)(2e-3)\cdots1=\frac{(2e)!}{2^ee!}.
-$$
-
-There are $2^b$ color assignments. Ignoring compatibility restrictions on colors and chain lengths therefore gives $U_{j,b}$. A chain of length one has contraction $B_{ij}$. For length $\ell\ge2$, write the contraction as $r^{\mathsf T}M_1\cdots M_{\ell-2}c$, where $r,c$ are rows or columns of $B$. Then
-
-$$
-\|r\|_2^2,\|c\|_2^2\le n(C/n)^2=C^2/n,
-$$
-
-$$
-|r^{\mathsf T}M_1\cdots M_{\ell-2}c|
-\le\|r\|_2\prod_a\|M_a\|_{\rm op}\|c\|_2
-\le(C^2/n)q^{\ell-2}.
-$$
-
-Weighting by length gives
-
-$$
-R\frac Cn+\sum_{\ell=2}^{\infty}R^\ell\frac{C^2}nq^{\ell-2}
-=\frac1n\left(CR+\frac{C^2R^2}{1-Rq}\right)\le W/n.
-$$
-
-The $b$ remaining vertices have at most $n^b$ numerical labelings, giving $n^b(W/n)^e=n^{-j}W^{b+j}$. Summing the internal chain indices preserves the factor $q^{\ell-2}$.
-
-To count degree compositions, put $x_i=d_i-3\ge0$. Then $\sum_ix_i=2j-b$, so
-
-$$
-\#\{(d_1,\ldots,d_b)\}=\binom{(2j-b)+b-1}{b-1}
-=\binom{2j-1}{b-1}\le2^{2j-1}\le4^j.
-$$
-
-Moreover, $\prod_i1/d_i\le3^{-b}$ and the number of pairings is at most $(2e)^e\le(6j)^{b+j}$. Thus
-
-$$
-\begin{aligned}
-U_{j,b}W^{b+j}
-&\le\frac{2^b}{b!}(6j)^{b+j}4^j3^{-b}W^{b+j}\\
-&=(24jW)^j\frac{(4jW)^b}{b!}.
-\end{aligned}
-$$
-
-If $0<\theta\le1$ and $b\le2j$, then $\theta^b\ge\theta^{2j}$. Hence
-
-$$
-\sum_{b=0}^{2j}\frac{(4jW)^b}{b!}
-\le\theta^{-2j}\sum_{b=0}^{\infty}\frac{(4jW\theta)^b}{b!}
-=\theta^{-2j}e^{4jW\theta}.
-$$
-
-Taking $\theta=1/(2W)$ gives $(2W)^{2j}e^{2j}$. Multiplication by $(24jW)^j$ yields $(96e^2W^3j)^j$. The numerical estimate follows from
-
-$$
-e<\sum_{h=0}^6\frac1{h!}+\frac1{7!}\sum_{r=0}^{\infty}8^{-r}
-=\frac{1957}{720}+\frac1{4410}<\frac{87}{32},
-$$
-
-$$
-96(87/32)^2=\frac{22707}{32}=709.59375<710.
-$$
-
-When $j=1$, $b=1,e=2,d_1=4$. Thus
-
-$$
-U_{1,1}=\frac2{1!}\frac{4!}{2^2\,2!}\frac14=\frac32.
-$$
-
-When $b=2,e=3$, the only degree sequence is $(3,3)$. Hence
-
-$$
-U_{1,2}=\frac{2^2}{2!}\frac{6!}{2^3\,3!}\frac1{3\cdot3}=\frac{10}{3}.
-$$
-
-This gives $T_1=(3/2)W^2+(10/3)W^3$ term by term.
-
-
-Fix a compressed core and assign numerical labels to its $b$ remaining high-degree vertices. Its $e$ compressed edges have internal structural vertex sets $V_1,\ldots,V_e$, respectively; these sets are pairwise disjoint. Numerical labels may coincide, but each structural vertex has its own independent summation variable. The distributive law for finite sums therefore gives
-
-$$
-\sum_{\text{all internal labels}}\prod_{r=1}^e
-\left(\prod_{a\in\mathrm{chain}_r}B_{i_aj_a}\right)
-=\prod_{r=1}^e\left[
-\sum_{\text{internal labels of chain }r\text{}}
-\prod_{a\in\mathrm{chain}_r}B_{i_aj_a}\right].
-$$
-
-Each bracket is a single entry of an alternating matrix product; only now do we take its absolute value. Summation over positive chain lengths also separates into $e$ geometric series. With the high-degree labels fixed, the total absolute activity is thus at most $(W/n)^e$. Summing over the $n^b$ choices of high-degree labels then gives
-
-$$
-n^b(W/n)^e=W^en^{b-e}=W^{b+j}n^{-j}.
-$$
-
-The internal vertex sets of the chains are disjoint, so their summation variables are independent; numerical labels may still coincide.
-
-
-When $j=1,b=1$, there is one degree-four vertex with four half-edges. The only pairings are
-
-$$
-(12)(34),\quad(13)(24),\quad(14)(23).
-$$
-
-Each pairing gives two loops. There are two colors and the compensation denominator is $b!d_1=4$, giving a total of $2\cdot3/4=3/2$.
-
-When $j=1,b=2$, both vertices have degree three. Half-edge pairings fall into two classes. If all three edges join the vertices, there are $3!=6$ pairings. If each vertex has one loop and the remaining two half-edges form an edge, there are $3\cdot3=9$ pairings. The two counts sum to fifteen. There are four vertex-color assignments and the compensation denominator is $2!\cdot3\cdot3=18$. Therefore
-
-$$
-\frac4{18}(6+9)=\frac{10}{3}.
-$$
-
-Dropping the color and length compatibility conditions gives an upper bound. The two cases give the two terms of $T_1$. $\square$
-
-### 3.4 A linear coefficient window and factorial restoration
-
-The activity bound [in (3.2)](#eq-core-activity) is useful when $j/n$ is small. Take
-
-$$
-\alpha=\min\left\{\frac14,\frac1{16D},\frac{\log\sigma}{2}\right\},
-\qquad M=\lfloor\alpha n\rfloor.
-$$
-
-and put $v_j=(Dj/n)^j$. When $j+1\le M$,
-
-$$
-\frac{v_{j+1}}{v_j}
-=\frac{D(j+1)}n\left(1+\frac1j\right)^j
-\le\frac{\mathrm e D(j+1)}n
-\le3D\alpha<\frac12.
-$$
-
-Hence, for $n\ge4/\alpha$,
-
-$$
-\sum_{j=2}^{M}v_j\le2v_2=\frac{8D^2}{n^2}.
-$$
-
-In the formal core identity, contributions of degree at most $M$ can come only from excess $j\le M$. Combining nonnegativity of the coefficients of $G$, the activity lemma, and the convolution inequality for weighted coefficient sums gives
-
-$$
-\sum_{k=0}^{M}|F_k-[t^k]G|R^k
-\le\Gamma(R)\left(\frac{T_1}n+\frac{8D^2}{n^2}\right).
-$$
-
-This estimate concerns only coefficients of degree at most $M$.
-
-Write $g_k=[t^k]G$ and, for $0\le k\le M$, put $r_k=n^k/(n)_k$. Since $\alpha\le1/4$,
-
-$$
-\log r_k
-=\sum_{\ell=0}^{k-1}-\log(1-\ell/n)
-\le\frac{k(k-1)}{2n(1-\alpha)}
-\le\frac{k^2}n
-\le\alpha k.
-$$
-
-The condition $\alpha\le(\log\sigma)/2$ implies $r_k\le\sigma^k$. Moreover,
-
-$$
-0\le r_k-1
-\le\frac{k(k-1)}{2n(1-\alpha)}r_k.
-$$
-
-Since $a_k=r_kF_k$, we can decompose
-
-$$
-a_k-g_k=r_k(F_k-g_k)+(r_k-1)g_k.
-$$
-
-The preceding $R$-weighted estimate bounds the first part. For the second part we use the second moment of the Gaussian coefficients:
-
-$$
-\sum_{k\ge0}k(k-1)g_k\sigma^k
-=\left((t\partial_t)^2-t\partial_t\right)G(t)\big|_{t=\sigma}.
-$$
-
-Put $a_i=\sigma^2s_i^2$. Differentiating $G(t)=\prod_i(1-t^2s_i^2)^{-1/2}$ gives
-
-$$
-\frac{\left((t\partial_t)^2-t\partial_t\right)G(t)}{G(t)}
-\bigg|_{t=\sigma}
-=\left(\sum_i\frac{a_i}{1-a_i}\right)^2
-+\sum_i\frac{a_i(1+a_i)}{(1-a_i)^2}.
-$$
-
-Define
-
-$$
-u_\sigma=\frac{\sigma^2C^2}{1-\sigma^2q^2},
-\qquad
-v_\sigma=\frac{\sigma^2C^2(1+\sigma^2q^2)}
-{(1-\sigma^2q^2)^2},
-$$
-
-$$
-K_G=\frac{\Gamma(\sigma)}{2(1-\alpha)}
-\left(u_\sigma^2+v_\sigma\right).
-$$
-
-The two terms in the derivative formula are at most $u_\sigma^2$ and $v_\sigma$, respectively. Therefore,
-
-$$
-\sum_{k=0}^{M}(r_k-1)g_k\le K_G/n.
-$$
-
-This gives the first two terms in the error bound.
-
-
-Since $e<3$ and $\alpha\le1/(16D)$,
-
-$$
-\frac{v_{j+1}}{v_j}\le3D\alpha\le3/16<1/2,
-\quad
-\sum_{j=2}^Mv_j\le v_2\sum_{r=0}^{\infty}2^{-r}
-=2(2D/n)^2=8D^2/n^2.
-$$
-
-If $H(t)=\sum h_kt^k$ and $K(t)=\sum k_kt^k$, then
-
-$$
-\sum_{r=0}^M|[t^r](HK)|R^r
-\le\sum_{a,b\ge0}|h_a||k_b|R^{a+b}
-=\|H\|_R\|K\|_R.
-$$
-
-In coefficients with $r\le M$, only $j\le M$ are needed. We therefore truncate to a finite excess sum before applying this inequality; we do not evaluate $\sum_{j\ge1}C_j(R)$.
-
-The integral estimate for factorial restoration is
-
-$$
--\log(1-u)=\int_0^u\frac{dv}{1-v}\le\frac{u}{1-\alpha}
-\quad(0\le u\le\alpha).
-$$
-
-Summing over $u=0,1/n,\ldots,(k-1)/n$ gives
-
-$$
-\log r_k\le\frac{k(k-1)}{2n(1-\alpha)}\le k^2/n\le\alpha k,
-\quad r_k\le e^{\alpha k}\le\sigma^k.
-$$
-
-The inequality $e^x-1\le xe^x$ gives $r_k-1\le[k(k-1)/(2n(1-\alpha))]r_k$. Consequently,
-
-$$
-\begin{aligned}
-\sum_{k=0}^M|a_k-g_k|
-&\le\sum_{k=0}^Mr_k|F_k-g_k|+\sum_{k=0}^M(r_k-1)g_k\\
-&\le\sum_{k=0}^MR^k|F_k-g_k|
-+\frac1{2n(1-\alpha)}\sum_{k\ge0}k(k-1)g_k\sigma^k.
-\end{aligned}
-$$
-
-Put $D_t=t\partial_t$ and $a_i(t)=t^2s_i^2$. Successive differentiation gives
-
-$$
-\begin{aligned}
-D_t\log G&=\sum_i\frac{a_i}{1-a_i}=:A(t),\\
-D_tA&=\sum_i\frac{2a_i}{(1-a_i)^2},\\
-D_tG&=GA,\\
-D_t^2G&=G\left[A^2+\sum_i\frac{2a_i}{(1-a_i)^2}\right],\\
-\frac{(D_t^2-D_t)G}{G}
-&=A^2+\sum_i\left[\frac{2a_i}{(1-a_i)^2}-\frac{a_i}{1-a_i}\right]\\
-&=A^2+\sum_i\frac{a_i(1+a_i)}{(1-a_i)^2}.
-\end{aligned}
-$$
-
-At $t=\sigma$ we have $a_i\le\sigma^2q^2$, so
-
-$$
-A(\sigma)\le\frac{\sigma^2C^2}{1-\sigma^2q^2}=u_\sigma,
-\quad
-\sum_i\frac{a_i(1+a_i)}{(1-a_i)^2}
-\le\frac{\sigma^2C^2(1+\sigma^2q^2)}{(1-\sigma^2q^2)^2}=v_\sigma.
-$$
-
-Together with $G(\sigma)\le\Gamma(\sigma)$, this gives exactly $K_G/n$.
-
-
-Define the projection $\mathcal P_M\sum_kh_kt^k=\sum_{k=0}^Mh_kt^k$. A nonempty core of excess $j$ has at least $j+1$ original edges, so in degrees at most $M$ no $j>M$ occurs. Thus, exactly,
-
-$$
-\mathcal P_M(F-G)=\mathcal P_M\left(G\sum_{j=1}^MC_j\right).
-$$
-
-The right-hand side involves only finitely many core series, so its weighted coefficient norm is legitimate. The triangle inequality and the convolution bound give
-
-$$
-\begin{aligned}
-\sum_{k=0}^M|F_k-g_k|R^k
-&=\|\mathcal P_M(F-G)\|_R\\
-&\le\left\|G\sum_{j=1}^MC_j\right\|_R\\
-&\le\|G\|_R\sum_{j=1}^M\|C_j\|_R\\
-&\le\Gamma(R)\left[T_1/n+\sum_{j=2}^M(Dj/n)^j\right]\\
-&\le\Gamma(R)(T_1/n+8D^2/n^2).
-\end{aligned}
-$$
-
-Only finitely many weighted norms of $C_j$ occur. On restoring $a_k$, the first part satisfies
-
-$$
-\sum_{k=0}^Mr_k|F_k-g_k|
-\le\sum_{k=0}^M\sigma^k|F_k-g_k|
-\le\sum_{k=0}^MR^k|F_k-g_k|.
-$$
-
-The second part, $(r_k-1)g_k$, is bounded by the Gaussian derivative moment above.
-
-### 3.5 Controlling the remaining coefficients
-
-We have controlled coefficients through degree $M$, where $M$ is proportional to $n$. To estimate higher coefficients by Cauchy's inequality, it suffices, on the fixed circle $|t|=R>1$, to bound $f$ by $\exp(O(\sqrt n))$. The next two lemmas give this bound while retaining the normalization factor $n!/n^n$.
-
-
-**Lemma 3.3 (Permanent polarization).**
-
-For a complex square matrix $Z$, its singular values are the nonnegative square roots of the eigenvalues of $Z^*Z$, and the corresponding norms are computed as in Definition 2.3. Write $|Z|=(Z^*Z)^{1/2}$ for its operator absolute value, taking the Hermitian positive semidefinite square root, rather than the absolute values of individual entries. For a Hermitian matrix, $H\ge0$ means that $x^*Hx\ge0$ holds for every vector. Then
-
-$$
-|\operatorname{per}Z|
-\le\sqrt{\operatorname{per}|Z|\,
-\operatorname{per}|Z^*|}.
-$$
-
-
-**Proof.**
-
-On complex vector spaces we use the inner product $\langle x,y\rangle=x^*y$. In $(\mathbb C^n)^{\otimes n}$, put
-
-$$
-\xi=(n!)^{-1/2}
-\sum_{\pi\in \mathfrak S_n}
-e_{\pi(1)}\otimes\cdots\otimes e_{\pi(n)}.
-$$
-
-Then $\|\xi\|=1$ and $\langle\xi,Z^{\otimes n}\xi\rangle=\operatorname{per}Z$. Take the polar decomposition $Z=U|Z|$. If $Z$ is singular, extend the partial isometry in its polar decomposition to a unitary matrix $U$. Write $T=|Z|^{\otimes n}$ and $V=U^{\otimes n}$. Applying Cauchy–Schwarz in the semi-inner product induced by the positive semidefinite operator $T$ gives
-
-$$
-|\langle\xi,VT\xi\rangle|
-\le\sqrt{\langle V^*\xi,TV^*\xi\rangle
-\langle\xi,T\xi\rangle}.
-$$
-
-The two factors are $\operatorname{per}(U|Z|U^*)=\operatorname{per}|Z^*|$ and $\operatorname{per}|Z|$, respectively. Both are nonnegative because they are diagonal matrix elements of positive semidefinite tensor powers. $\square$
-
-
-**Lemma 3.4 (A positive semidefinite permanent bound).**
-
-Let $n\ge1$, and let $H$ be an $n\times n$ Hermitian positive semidefinite matrix with eigenvalues $\lambda_1,\ldots,\lambda_n$. Then
-
-$$
-\operatorname{per}H\le\frac{n!}{n^n}h_n(\lambda_1,\ldots,\lambda_n),
-$$
-
-Here $h_n$ is the complete homogeneous symmetric polynomial of degree $n$, defined by
-
-$$
-h_n(\lambda_1,\ldots,\lambda_n)
-=\sum_{\substack{k_1,\ldots,k_n\ge0\\k_1+\cdots+k_n=n}}
-\prod_{i=1}^n\lambda_i^{k_i}.
-$$
-
-All $k_i$ are integers. Every zeroth power in this polynomial equals one, including, when $\lambda_i=0$, the expression $\lambda_i^0$. This polynomial is a different object from the scalar weight $h_k=((k+1)/2)^{k/2}$ in Section 2. If $\lambda_1=1$ and $0\le\lambda_i<1$ for $i\ge2$, then
-
-$$
-\operatorname{per}H\le\frac{n!}{n^n}
-\prod_{i=2}^n(1-\lambda_i)^{-1}.
-$$
-
-
-**Proof.**
-
-Let $Z$ be a circularly symmetric complex Gaussian vector with covariance matrix $H$. The complex Wick formula gives $\operatorname{per}H=\mathbb E\prod_i|Z_i|^2$. Pointwise AM–GM bounds this product by $n^{-n}\|Z\|^{2n}$. After unitary diagonalization, $\|Z\|^2$ has the same distribution as $\sum_i\lambda_i|\zeta_i|^2$, where $\zeta_i$ are independent standard circularly symmetric complex Gaussian variables satisfying $\mathbb E|\zeta_i|^{2k}=k!$. Expanding the polynomial therefore gives
-
-$$
-\mathbb E\left(\sum_i\lambda_i|\zeta_i|^2\right)^n
-=n!h_n(\lambda_1,\ldots,\lambda_n).
-$$
-
-Finally, $h_n(1,\lambda_2,\ldots,\lambda_n)$ is the sum of all monomials in $\lambda_2,\ldots,\lambda_n$ of total degree at most $n$. It is bounded by the product of the corresponding infinite geometric series. $\square$
-
-The Gaussian identity and AM–GM comparison in Lemma 3.4 are the tools used by Han–Niles-Weed [3, arXiv v2, Lemmas 4.3–4.4] for positive semidefinite inputs. Lemma 3.3 connects them to the general matrices needed here.
-
-Put $\beta=RC/(1-Rq)$ and write $P_n=J_n/n$ for the orthogonal projection onto the all-ones direction. In general, $u^\perp=\{v:u^*v=0\}$ denotes the orthogonal complement of the vector $u$. Double centering gives $P_nB=BP_n=0$. Consequently, on $|t|=R$,
-
-$$
-|P_n+tB|=P_n+R(B^{\mathsf T}B)^{1/2},
-\qquad
-|(P_n+tB)^*|=P_n+R(BB^{\mathsf T})^{1/2}.
-$$
-
-Both have eigenvalue $1$ in the all-ones direction and, on $\mathbf1^\perp$, eigenvalues $Rs_i$, including zero singular values when needed. Since $Rq<1$, the two lemmas and the exact identity $f(t)=(n^n/n!)\operatorname{per}(P_n+tB)$ give
-
-$$
-|f(t)|\le\prod_i(1-Rs_i)^{-1}
-\le\exp\!\left(\frac{R}{1-Rq}\sum_i s_i\right)
-\le\exp(\beta\sqrt n).
-$$
-
-The last step uses $\sum_i s_i\le\sqrt n\,\|B\|_{\mathrm F}\le C\sqrt n$. Cauchy's coefficient estimate therefore gives
-
-$$
-\sum_{k>M}|a_k|
-\le\frac{R}{R-1}
-\exp\!\left(\beta\sqrt n-\alpha n\log R\right).
-$$
-
-For the Gaussian tail, nonnegativity of the coefficients gives the slightly weaker but convenient bound
-
-$$
-\sum_{k>M}g_k
-\le \Gamma(\sigma)\sigma^{-M}
-\le\sigma\Gamma(\sigma)\exp\!\left(-\alpha n\log\sigma\right).
-$$
-
-Both tails decay exponentially in $n$. Combining them with the $O(n^{-1})$ estimate in the finite window proves Theorem 3.1.
-
-
-For any $M$,
-
-$$
-\begin{aligned}
-\langle\xi,M^{\otimes n}\xi\rangle
-&=\frac1{n!}\sum_{\pi,\sigma\in \mathfrak S_n}\prod_{h=1}^nM_{\pi(h),\sigma(h)}\\
-&=\frac1{n!}\sum_{\pi\in \mathfrak S_n}\sum_{\tau\in \mathfrak S_n}\prod_{i=1}^nM_{i,\tau(i)}
-=\operatorname{per}M.
-\end{aligned}
-$$
-
-Here $\tau=\sigma\circ\pi^{-1}$; for fixed $\pi$, $\sigma\mapsto\tau$ is a bijection. The $n!$ basis tensors are mutually orthogonal, so $\|\xi\|^2=(n!)^{-1}n!=1$. If $T\ge0$,
-
-$$
-|\langle a,Tb\rangle|^2
-=|\langle T^{1/2}a,T^{1/2}b\rangle|^2
-\le\langle a,Ta\rangle\langle b,Tb\rangle.
-$$
-
-Taking $a=V^*\xi,b=\xi$ and using $VTV^*=(U|Z|U^*)^{\otimes n}=|Z^*|^{\otimes n}$ gives Lemma 3.3.
-
-
-A standard circularly symmetric complex variable $\zeta=x+iy$ has density $\pi^{-1}e^{-|z|^2}$. Integration in polar coordinates gives
-
-$$
-\begin{aligned}
-\mathbb E|\zeta|^{2k}
-&=\pi^{-1}\int_0^{2\pi}\!d\theta\int_0^{\infty}r^{2k}e^{-r^2}r\,dr\\
-&=\int_0^{\infty}u^ke^{-u}\,du=k!.
-\end{aligned}
-$$
-
-Writing $I_k=\int_0^\infty u^ke^{-u}\,du$, integration by parts gives $I_k=kI_{k-1}$ and $I_0=1$.
-
-For integers $a,b\ge0$, polar integration gives the one-dimensional mixed moment
-
-$$
-\begin{aligned}
-\mathbb E[\zeta^a(\overline\zeta)^b]
-&=\frac1\pi\int_0^\infty r^{a+b+1}e^{-r^2}\,dr
-\int_0^{2\pi}e^{i(a-b)\theta}\,d\theta\\
-&=\begin{cases}a!,&a=b,\\0,&a\ne b.\end{cases}
-\end{aligned}
-$$
-
-If $a\ne b$, the angular integral is $[e^{i(a-b)\theta}/(i(a-b))]_0^{2\pi}=0$. If $a=b$, the angular integral is $2\pi$; the substitution $u=r^2$ then gives $\int_0^\infty u^ae^{-u}\,du=a!$.
-
-Let $\zeta_1,\ldots,\zeta_n$ be independent, and put $Z=L\zeta$ and $H=LL^*$. For index lists $\boldsymbol a,\boldsymbol b\in[n]^n$, the preceding identity and independence imply that the mixed moment is zero if some numerical index has different multiplicities in the two lists. If every multiplicity agrees and is $c_j$, the mixed moment is $\prod_jc_j!$. This is exactly the number of bijective pairings that match every position in the first list to a position of equal value in the second. Thus
-
-$$
-\mathbb E\prod_{i=1}^n\zeta_{a_i}\prod_{j=1}^n\overline\zeta_{b_j}
-=\sum_{\sigma\in \mathfrak S_n}\prod_{i=1}^n\delta_{a_i,b_{\sigma(i)}}.
-$$
-
-Expanding the product and interchanging the finite sums gives
-
-$$
-\begin{aligned}
-\mathbb E\prod_{i=1}^n|Z_i|^2
-&=\sum_{\boldsymbol a,\boldsymbol b}
-\prod_iL_{i,a_i}\prod_j\overline L_{j,b_j}
-\sum_{\sigma\in \mathfrak S_n}\prod_i\delta_{a_i,b_{\sigma(i)}}\\
-&=\sum_{\sigma\in \mathfrak S_n}\sum_{\boldsymbol a}
-\prod_i L_{i,a_i}\overline L_{\sigma(i),a_i}\\
-&=\sum_{\sigma\in \mathfrak S_n}\prod_i
-\left(\sum_{a=1}^nL_{i,a}\overline L_{\sigma(i),a}\right)\\
-&=\sum_{\sigma\in \mathfrak S_n}\prod_iH_{i,\sigma(i)}
-=\operatorname{per}H.
-\end{aligned}
-$$
-
-The second line uses $b_{\sigma(i)}=a_i$ to sum out all $b$ indices. The third line uses the independent summation of each $a_i$. The matrix $L$ may be singular: take $L=H^{1/2}$. Thus the proof includes positive semidefinite matrices with zero eigenvalues. The same second-moment calculation also determines the meaning of covariance: $\mathbb EZ_i\overline Z_j=H_{ij}$ and $\mathbb EZ_iZ_j=0$.
-
-For every sample $|Z_i|^2\ge0$. AM–GM gives
-
-$$
-\prod_i|Z_i|^2\le\left(\frac{\sum_i|Z_i|^2}{n}\right)^n,
-\qquad \operatorname{per}H\le n^{-n}\mathbb E\|Z\|_2^{2n}.
-$$
-
-A unitary transformation preserves $\|Z\|$. Applying the multinomial theorem term by term gives
-
-$$
-\begin{aligned}
-\mathbb E\left(\sum_i\lambda_i|\zeta_i|^2\right)^n
-&=\sum_{k_1+\cdots+k_n=n}\frac{n!}{\prod_i k_i!}
-\prod_i\lambda_i^{k_i}\mathbb E|\zeta_i|^{2k_i}\\
-&=n!\sum_{k_1+\cdots+k_n=n}\prod_i\lambda_i^{k_i}
-=n!h_n(\lambda).
-\end{aligned}
-$$
-
-If $\lambda_1=1$, eliminate the first variable using $k_1=n-\sum_{i\ge2}k_i$:
-
-$$
-h_n(1,\lambda_2,\ldots,\lambda_n)
-=\sum_{\substack{k_2,\ldots,k_n\ge0\\\sum k_i\le n}}\prod_{i\ge2}\lambda_i^{k_i}
-\le\prod_{i=2}^n\sum_{k_i=0}^{\infty}\lambda_i^{k_i}
-=\prod_{i=2}^n(1-\lambda_i)^{-1}.
-$$
-
-
-Write $P=P_n$. Since $P^2=P$ and $PB=B^{\mathsf T}P=BP=PB^{\mathsf T}=0$,
-
-$$
-(P+tB)^*(P+tB)=P+R^2B^{\mathsf T}B
-\quad(|t|=R).
-$$
-
-These two parts act on orthogonal subspaces, so the square root is $P+R(B^{\mathsf T}B)^{1/2}$. The two polarization factors have the same eigenvalues $1,Rs_1,\ldots$. The zero singular value corresponding to the all-ones direction may be omitted from the product because its factor is one. Define $A_R=\prod_i(1-Rs_i)^{-1}>0$. Take logarithms only of this positive upper bound, avoiding, when $f(t)=0$, the undefined expression $\log|f(t)|$. Retaining the normalization exactly gives
-
-$$
-\begin{aligned}
-|f(t)|&=\frac{n^n}{n!}|\operatorname{per}(P+tB)|
-\le\prod_i(1-Rs_i)^{-1},\\
-\log A_R&=-\sum_i\log(1-Rs_i)\le\sum_i\frac{Rs_i}{1-Rs_i}
-\le\frac R{1-Rq}\sum_i s_i
-\le\frac{RC}{1-Rq}\sqrt n=\beta\sqrt n.
-\end{aligned}
-$$
-
-Hence $|f(t)|\le A_R\le e^{\beta\sqrt n}$, including the case $f(t)=0$. Zeros are possible for admissible inputs: take $n=3$ and
-
-$$
-E=\begin{pmatrix}0&1&-1\\-1&0&1\\1&-1&0\end{pmatrix},\qquad B=E/3.
-$$
-
-This matrix is doubly centered, and
-
-$$
-B^{\mathsf T}B=\frac19(3I_3-J_3).
-$$
-
-The eigenvalue of $J_3$ is three in the all-ones direction and zero on the zero-sum subspace. The eigenvalues of $B^{\mathsf T}B$ are therefore $0,1/3,1/3$, giving $\|B\|_{\rm op}=1/\sqrt3\le3/5=:q<1$. The six permanent terms come from the identity permutation, three transpositions, and two three-cycles. Hence
-
-$$
-\begin{aligned}
-6f(t)&=1+3(1-t^2)+(1+t)^3+(1-t)^3\\
-&=1+3-3t^2+2+6t^2=6+3t^2,\\
-f(i\sqrt2)&=1+(i\sqrt2)^2/2=0.
-\end{aligned}
-$$
-
-Taking $R=\sqrt2<5/3=1/q$ and $\sigma=(1+\sqrt2)/2$ gives a zero of $f$ on the chosen circle $|t|=R$. Thus $\log|f(t)|$ is not defined everywhere on this circle.
-
-Cauchy's coefficient formula on the circle $t=Re^{i\theta}$ is
-
-$$
-a_k=\frac1{2\pi R^k}\int_0^{2\pi}f(Re^{i\theta})e^{-ik\theta}\,d\theta,
-\qquad |a_k|\le e^{\beta\sqrt n}R^{-k}.
-$$
-
-Thus
-
-$$
-\sum_{k>M}|a_k|\le e^{\beta\sqrt n}\frac{R^{-M}}{R-1}
-\le\frac R{R-1}e^{\beta\sqrt n-\alpha n\log R}.
-$$
-
-Here $M\ge\alpha n-1$. The coefficients on the Gaussian side are nonnegative, so
-
-$$
-\sum_{k>M}g_k\le\sigma^{-M}\sum_{k>M}g_k\sigma^k
-\le\sigma\Gamma(\sigma)e^{-\alpha n\log\sigma}.
-$$
-
-Put $c=\alpha\log R>0$. For $n\ge(2\beta/c)^2$, we have $\beta\sqrt n-cn\le-cn/2$. Since $ne^{-cn/2}\to0$, the first tail is $o(n^{-1})$, and the same argument applies to the second. Here we use the linear growth of $M=\lfloor\alpha n\rfloor$.
-
-### 3.6 Combining the error bounds
-
-
-**Proposition 3.5 (An explicit error bound).**
-
-For every integer $n\ge4/\alpha$,
-
-$$
-|f(1)-G(1)|
-\le \frac{\Gamma(R)T_1+K_G}{n}
-+\frac{8\Gamma(R)D^2}{n^2}
-+\frac{R}{R-1}\exp\!\left(\beta\sqrt n-\alpha n\log R\right)
-+\sigma\Gamma(\sigma)\exp\!\left(-\alpha n\log\sigma\right).
-$$
-
-
-The first two terms come from the coefficient window and factorial-restoration errors in Section 3.4. The last two come from the tail bounds in Section 3.5. Both exponential terms are $o(n^{-1})$, giving the uniform error rate in Theorem 3.1.
-
-
-Put $c_1=\alpha\log R>0$, $c_2=\alpha\log\sigma>0$, and $\beta=RC/(1-Rq)\ge0$. For
-
-$$
-n\ge N_1:=\max\{1,(2\beta/c_1)^2\},
-$$
-
-we have
-
-$$
-\sqrt n\ge2\beta/c_1
-\ \Longrightarrow\ 
-\beta\sqrt n\le(c_1/2)n
-\ \Longrightarrow\ 
-\beta\sqrt n-c_1n\le-c_1n/2.
-$$
-
-For any fixed $c>0$, the function $u(x)=xe^{-cx}$ satisfies, on $x\ge0$,
-
-$$
-u'(x)=e^{-cx}(1-cx),\qquad
-\max_{x\ge0}u(x)=u(1/c)=1/(ec).
-$$
-
-Thus, for $n\ge N_1$,
-
-$$
-\frac R{R-1}\exp(\beta\sqrt n-c_1n)
-\le\frac R{R-1}e^{-c_1n/2}
-\le\frac{2R}{ec_1(R-1)}\frac1n,
-$$
-
-$$
-\sigma\Gamma(\sigma)e^{-c_2n}
-\le\frac{\sigma\Gamma(\sigma)}{ec_2}\frac1n.
-$$
-
-If we also require $n\ge4/\alpha$, the right-hand side of Proposition 3.5 is at most
-
-$$
-\frac1n\left[
-\Gamma(R)T_1+K_G+8\Gamma(R)D^2
-+\frac{2R}{ec_1(R-1)}
-+\frac{\sigma\Gamma(\sigma)}{ec_2}\right].
-$$
-
-Every quantity in brackets depends only on $C,q,R,\sigma$ fixed in advance, and not on the matrix being estimated. To obtain one constant valid for all $n\ge1$, the finitely many smaller dimensions must also be covered. From $|1+E_{ij}|\le1+C$,
-
-$$
-|f(1)|\le\frac1{n!}\sum_{\pi\in \mathfrak S_n}(1+C)^n=(1+C)^n,
-\qquad 1\le G(1)\le\Gamma(1).
-$$
-
-Let $N=\lceil\max\{N_1,4/\alpha\}\rceil$ and enlarge the uniform constant to at least
-
-$$
-\max_{1\le n<N}n\left[(1+C)^n+\Gamma(1)\right]
 $$
-
-covers the remaining orders as well; the maximum of an empty set is taken to be zero. $\square$
-
-**Quantifying the existing permanent proof.**
-
-Divoux and Wang [12, Proposition 3.1] prove a uniform permanent approximation with relative error $o(1)$ for nonnegative doubly stochastic matrices. In the nonnegative setting used in our counting argument, their proof can be refined to give an $O(N^{-1})$ error. This rate is a refinement of their estimates, rather than the statement of their proposition. Theorem 3.1 here allows an arbitrary real doubly centered matrix $E$, without requiring $J+E$ to be nonnegative. We retain that formulation and its detailed proof; the two theorem statements do not have identical hypotheses.
-
-The refinement concerns two estimates in [12, Sections 3.2–3.3]. Their finite coefficient sum is already bounded by
-
-$$
-\sum_{1\le E\le K\sqrt N}
-\frac{(cE/N)^{\lceil E/3\rceil}}{1-cE/N}.
-$$
-
-Put $\eta_N=cK/\sqrt N$. For sufficiently large $N$, this is at most
-
-$$
-\frac{c}{N(1-\eta_N)}
-\sum_{E\ge1}E\eta_N^{\lceil E/3\rceil-1}
-=O(N^{-1}).
-$$
-
-The remaining coefficients satisfy the exponential tail estimate in their proof. In the subsequent Gamma average, $G\sim\Gamma(N+1,1)$ and $Z=N/G$ satisfy
-
-$$
-\mathbb E(Z-1)=0,\qquad
-\mathbb E(Z-1)^2=\frac1{N-1}.
-$$
-
-For $\Delta(s)=\det(I-s^2B^TB)^{-1/2}$, the fixed operator-norm gap and Frobenius-norm bound give a uniform bound on $\Delta''$ over the fixed window used there. A second-order Taylor expansion, together with their estimate outside the window, gives an $O(N^{-1})$ error. Thus this permanent error in the nonnegative doubly stochastic case can be obtained by refining the earlier proof. The global path estimate still requires control of the errors from scaling, degree imbalance, and exceptional vertices.
-
-## 4. Diagonal scaling and nonprincipal submatrices
-
-This section returns to the graph notation: $s=S\mathbf1$ is the score vector, $a=s/(n-1)$, and we assume $n\ge2$. Theorem 3.1 applies to matrices whose row and column sums agree after scalar normalization. Tournament matrices generally have different row and column sums: if $C=2A/(n-1)$, then
-
-$$
-C\mathbf1=\mathbf1+a,\qquad C^{\mathsf T}\mathbf1=\mathbf1-a.
+f(z)=\frac{\operatorname{per}(J_n+zE)}{n!},\qquad
+G(z)=\det(I-z^2BB^{\mathsf T})^{-1/2},\qquad
+\Gamma(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right).
 $$
-
-We must therefore control the permanent and its Gaussian factor while correcting the marginals. We first construct a local diagonal scaling and estimate its total logarithmic cost. We then compare Gram matrices to control the effects of deleting rows and columns. Finally, paired score corrections bring tournament submatrices within the hypotheses of the local theorem, thereby proving Lemma 4.4.
-
-For a general order $p\ge1$, retain $P_p=J_p/p=\mathbf1_p\mathbf1_p^{\mathsf T}/p$ and set $\Pi_p=I_p-P_p$, the orthogonal projection that removes the all-ones direction. The total mass of a matrix is $\mathfrak m(X)=\sum_{i,j}X_{ij}$. A doubly stochastic matrix is a square matrix with nonnegative entries and every row sum and column sum equal to one. Constants in this section are uniform once the density and centered-kernel spectral-gap parameters have been fixed.
-
-
-**Definition 4.1 (Marginal errors).**
 
-For any real $p\times p$ matrix $Q$ ($p\ge1$; its mass need not yet equal $p$), define
+Since $\|B\|_F^2\le C^2$, $1\le G(1)\le\Gamma(1)$ and $|G(z)|\le\Gamma(|z|)$ on the fixed disk. The positive square-root branch is determined at zero.
 
-$$
-\alpha(Q)=Q\mathbf1_p-\mathbf1_p,\qquad
-\beta(Q)=Q^{\mathsf T}\mathbf1_p-\mathbf1_p,
-$$
+Separate inclusion–exclusion for row and column indices expresses coefficients as bipartite multigraph sums. Double centering eliminates degree-one vertices. Degree-two components are exactly the Gaussian pairings and sum to $G$. For the remaining components, contract degree-two chains **before taking absolute values**: the alternating products of $B,B^{\mathsf T}$ retain the spectral gap. A chain of length $\ell\ge2$ has contraction bounded by $C^2q^{\ell-2}/n$. The residual core is classified by excess (edges minus vertices), giving one factor $n^{-1}$ per excess. The exact labeling compensation and the core activity bound are proved in supplement §§3.2–3.3. This order of contraction preserves the operator-norm control.
 
-$$
-g(Q)=(\alpha(Q),\beta(Q))\in\mathbb R^{2p},\qquad
-\varepsilon(Q)=\|g(Q)\|_\infty,
-$$
+For some fixed $\alpha>0$, set $M=\lfloor\alpha n\rfloor$. The finite coefficient window, including restoration of $n^k/(n)_k$, has error $K_1/n+K_2/n^2$ (supplement §3.4). Its deviation is of order $k^2/n$, and the Gaussian coefficients are summed with a fixed radius greater than one to absorb this weight. Permanent polarization and the positive-semidefinite permanent estimate give $\max_{|z|=R}|f(z)|\le\exp(\beta\sqrt n)$, up to a fixed factor, where $\beta=RC/(1-Rq)$; Cauchy's estimate then controls the coefficients above $M$ (supplement §3.5). Together these bounds yield
 
 $$
-\|g(Q)\|_2^2=\sum_i\alpha(Q)_i^2+\sum_j\beta(Q)_j^2.
+|f(1)-G(1)|\le\frac{K_1}{n}+\frac{K_2}{n^2}
++K_3e^{\beta\sqrt n-\alpha n\log R}
++K_4e^{-\alpha n\log\sigma}.
 $$
 
-Likewise, $(x,y)$ denotes concatenation of two vectors, so $\|(x,y)\|_\infty=\max(\|x\|_\infty,\|y\|_\infty)$. When the mass is $p$, the errors on each side sum to zero. When the mass differs from $p$, these definitions still apply, but normalization is required before invoking Lemma 4.1.
-
-
-Write $n$ for the full order and $m=n-t$ for the retained order. In Lemmas 4.1 and 4.2, $p$ denotes a general matrix order; in the application we take $p=m$. The matrices $C,C^{\prime},\widehat C$ have order $n$, while $X,\widetilde X,B_X,Z$ have order $m$. Their total masses are
-
-$$
-\mathfrak m(C')=n+\nu,\quad \mathfrak m(\widehat C)=n,\quad
-\mathfrak m(X)=m+\kappa,\quad
-\mathfrak m(\widetilde X)=\mathfrak m(B_X)=m.
-$$
+Every constant and the threshold depend only on $C,q$ and the radii fixed from them. Both exponential terms are $o(n^{-1})$. Finitely many smaller orders are covered using $|f(1)|\le(1+C)^n$ and $G(1)\le\Gamma(1)$. This proves the uniform absolute bound; $G(1)\ge1$ gives the relative form. $\square$
 
-Here $Z=\Pi_m[(S-I)/(n-1)][R,T]\Pi_m$, and $B_X$ is the scaled doubly stochastic matrix. In Theorem 3.1, the perturbation is $mB_X-J_m$ and its normalization is $B_X-P_m$.
+The supplement also records the signed example with fixed parameters at arbitrarily large orders and the two estimates needed to quantify the nonnegative proof of [12]. The applications use the stated nonnegative specialization.
 
-### 4.1 Local Scaling and Its Cost
+## 4. Scaling and nonprincipal submatrices
 
-We seek a matrix of the form $B_{ij}=X_{ij}e^{x_i+y_j}$ with every row sum and column sum equal to one. Replacing $(x,y)$ by $(x+c\mathbf1,y-c\mathbf1)$ leaves $B$ unchanged; the condition $\sum x_i=\sum y_j$ removes this one-dimensional freedom. The singular-value spectral gap controls the linearized balancing equations on the remaining subspace. The entry bound further provides dimension-independent control in the infinity norm, making a contraction argument applicable.
+Write $a=S\mathbf1/(n-1)$, $\tau=\sum a_i^2$, $P_p=J_p/p$ and $\Pi_p=I_p-P_p$. For a matrix $X$ of order $p$, let $\mathfrak m(X)=\sum X_{ij}$ and $g(X)=(X\mathbf1-\mathbf1,X^{\mathsf T}\mathbf1-\mathbf1)$. The normalization $C=2A/(n-1)$ has marginals $\mathbf1+a$ and $\mathbf1-a$. The three estimates below control balancing, its logarithmic cost, and the Gaussian factor. Their parameter dependence is the input to the uniform bounds in Lemmas 4.4–4.5.
 
+### 4.1 Scaling and Gaussian factors
 
 **Lemma 4.1 (Local scaling).**
 
@@ -1676,76 +363,6 @@ $$
 
 If $X$ is entrywise nonnegative, then $B$ is doubly stochastic and has the same zero pattern as $X$.
 
-
-**Proof.**
-
-The entries of each marginal-error vector sum to zero. Consequently, every row sum and column sum of $X_0$ is $1$, and $E$ is doubly centered. Set $u=(\mathbf 1_p,-\mathbf 1_p)$ and $N=uu^{\mathsf T}/(2p)$. The balanced Hessian $\mathsf H_0$ has diagonal blocks $I$ and off-diagonal blocks $X_0,X_0^{\mathsf T}$, respectively. Its gauge-fixed inverse can be written explicitly. Put
-
-$$
-R_L=(I-EE^{\mathsf T})^{-1},\qquad R_R=(I-E^{\mathsf T}E)^{-1},\qquad O=ER_R.
-$$
-
-The four blocks of $(\mathsf H_0+N)^{-1}$ are then
-
-$$
-M_{LL}=R_L-P_p/4,\qquad M_{RR}=R_R-P_p/4,
-$$
-
-$$
-M_{LR}=-O-P_p/4,\qquad M_{RL}=-O^{\mathsf T}-P_p/4.
-$$
-
-Indeed, on the common constant direction, the inverse eigenvalue is $1/2$; on the gauge direction, it is $1$; and on the two zero-sum subspaces, the usual block inverse applies. The dense entry bound gives
-
-$$
-|(R_L-I)_{ij}|,\ |(R_R-I)_{ij}|\le\frac{C_0^2}{p(1-q^2)},
-$$
-
-$$
-|O_{ij}|\le\frac{C_0}{p}+\frac{C_0^2q}{p(1-q^2)}.
-$$
-
-For the last estimate, decompose $O=E+EE^{\mathsf T}ER_R$ and control the two-norms of the row and column at the two ends. The vector one-norm is
-
-$$
-\|x\|_1=\sum_i|x_i|,
-$$
-
-The corresponding induced matrix one-norm and infinity norm are $\|M\|_{1\to1}=\max_j\sum_i|M_{ij}|$ and $\|M\|_{\infty\to\infty}=\max_i\sum_j|M_{ij}|$, respectively. Both induced norms of the inverse above are therefore at most $L_0$.
-
-Let $\mathsf H_X$ have diagonal blocks $\operatorname{diag}(X\mathbf 1_p)$ and $\operatorname{diag}(X^{\mathsf T}\mathbf 1_p)$, respectively, and off-diagonal blocks $X,X^{\mathsf T}$. Both induced norms of the difference $\mathsf H_X-\mathsf H_0$ are at most $3\varepsilon$. The Neumann series shows that both induced norms of $(\mathsf H_X+N)^{-1}$ are at most $2L_0$.
-
-Write $z=(x,y)$ and $g=(\alpha,\beta)$. The balancing equation is
-
-$$
-0=g+\mathsf H_Xz+\mathcal N_X(z).
-$$
-
-Here $\mathcal N_X(z)$ is the concatenation of the row sums and column sums of $X_{ij}(e^{x_i+y_j}-1-x_i-y_j)$. On the ball $\|z\|_\infty\le R\le1/4$, the absolute marginal bounds give
-
-$$
-\|\mathcal N_X(z)\|_\infty\le8R^2,\qquad \|D\mathcal N_X(z)\|_{\infty\to\infty}\le16R.
-$$
-
-All these vectors are orthogonal to $u$. On the gauge subspace $u^\perp$, consider
-
-$$
-\mathcal T(z)=-(\mathsf H_X+N)^{-1}(g+\mathcal N_X(z)).
-$$
-
-Take $R=4L_0\varepsilon$. The norm of the image of the origin is at most $R/2$, and the Lipschitz constant is at most $128L_0^2\varepsilon\le1/2$. Thus the map preserves the gauge ball and is a contraction, yielding the required finite potential vectors. If $\varepsilon=0$, simply take $z=0$.
-
-Finally, $R\le1/4$ gives the entry bound. The assumptions on absolute row and column sums imply
-
-$$
-\|B-X\|_{1\to1},\ \|B-X\|_{\infty\to\infty}\le32L_0\varepsilon.
-$$
-
-We also have $\|X-X_0\|_{\rm op}\le2\varepsilon$, so the second condition in $\varepsilon_0$ establishes the spectral gap of the centered kernel. Positive diagonal factors preserve both nonnegativity and the zero pattern. This proves the lemma.
-
-Finding a balanced point alone does not suffice to estimate the permanent: restoring the diagonal factors requires multiplying the permanent by $\exp(-\sum x_i-\sum y_j)$. The next lemma controls this total cost and also gives the Frobenius displacement bound needed to compare Gaussian factors.
-
-
 **Lemma 4.2 (Displacement and capacity).**
 
 Under the preceding hypotheses, assume in addition that $X\ge0$. Let $\theta_X=\sum_i x_i+\sum_j y_j$ denote the total scaling potential. There is a constant depending only on the fixed density and spectral-gap parameters such that
@@ -1766,366 +383,17 @@ $$
 
 In particular, if $\kappa=\mathfrak m(X)-p$, then $\operatorname{per}X\le e^\kappa\operatorname{per}B$. When the mass differs from $p$, $\theta_X$ itself need not be nonnegative.
 
+**Proof mechanism.** Fix the gauge $\sum x_i=\sum y_j$. The reference matrix $\mathsf H_0$ has diagonal blocks $I$ and off-diagonal blocks $X_0,X_0^{\mathsf T}$, while the actual linearization $\mathsf H_X$ has diagonal blocks $\operatorname{diag}(X\mathbf1),\operatorname{diag}(X^{\mathsf T}\mathbf1)$ and off-diagonal blocks $X,X^{\mathsf T}$. Put $u=(\mathbf1,-\mathbf1)$ and $N=uu^{\mathsf T}/(2p)$ to fix the gauge. On the zero-sum subspaces, the inverse of $\mathsf H_0+N$ is expressed through $(I-EE^{\mathsf T})^{-1}$ and $(I-E^{\mathsf T}E)^{-1}$. The dense entry bound and operator gap give its induced $1$- and $\infty$-norms at most $L_0$. Both corresponding norms of $\mathsf H_X-\mathsf H_0$ are at most $3\varepsilon$; hence the Neumann series bounds the inverse of $\mathsf H_X+N$ by $2L_0$. The stated threshold then makes the nonlinear map a contraction in the radius $4L_0\varepsilon$ ball. This proves existence and the stated entry and spectral bounds. The block inverse and contraction estimates are supplied in Detailed proof companion §4.1.
 
-**Proof.**
+For nonnegative $X$, apply this construction to the convex potential
 
-The convex potential is
-
-$$
-\Phi_X(x,y)=\sum_{i,j}X_{ij}e^{x_i+y_j}-\sum_i x_i-\sum_j y_j.
-$$
-
-Its gradient at the origin is $g=(\alpha,\beta)$, and a balanced point is a minimizer. If $R=\|(x,y)\|_\infty$, then the Hessian along $tz$, $0\le t\le1$, is bounded below by the Hessian at the balanced matrix $B$ multiplied by $e^{-2R}$. On the gauge subspace, the smallest eigenvalue of the latter is at least $1-\|B-P_p\|_{\rm op}$. Thus there is a fixed positive lower bound $\lambda$ along the entire segment. Integrating the gradient gives $\|z\|_2\le\lambda^{-1}\|g\|_2$. The dense entry bound together with $|e^{x_i+y_j}-1|\le K|x_i+y_j|$ then gives the Frobenius displacement estimate.
-
-Since $\Phi_X(0)=p$ and $\Phi_X(z)=p-\theta_X$, convexity gives $\theta_X\ge0$. Strong convexity gives $\theta_X\le\|g\|_2^2/(2\lambda)$. The general-mass identity follows by absorbing the scalar $p/\mathfrak m(X)$ into the two diagonal potentials. Finally, $p\log(\mathfrak m(X)/p)\le\kappa$ gives the permanent upper bound.
-
-
-From the mass identity $\sum_{ij}X_{ij}=p$,
-
-$$
-\sum_i\alpha_i=\sum_j\beta_j=0,
-\quad X_0\mathbf1=X\mathbf1-\alpha-\mathbf1\frac{\sum_j\beta_j}p=\mathbf1,
-\quad X_0^{\mathsf T}\mathbf1=\mathbf1.
-$$
-
-Since $P_p\mathbf1=\mathbf1$, we have $E\mathbf1=E^{\mathsf T}\mathbf1=0$. The same calculation also gives
-
-$$
-\Pi_pX\Pi_p=X-P_p-\frac{\alpha\mathbf1^{\mathsf T}+\mathbf1\beta^{\mathsf T}}p=E.
-$$
-
-On the constant subspace, set $c=(\mathbf1,\mathbf1)$ and $u=(\mathbf1,-\mathbf1)$. Then
-
-$$
-\mathsf H_0c=2c,\quad\mathsf H_0u=0,\quad Nc=0,\quad Nu=u.
-$$
-
-The inverse therefore has eigenvalues $1/2,1$ on these two lines, respectively. On the two zero-sum subspaces, direct multiplication verifies
-
-$$
-\begin{pmatrix}I&E\\E^{\mathsf T}&I\end{pmatrix}
-\begin{pmatrix}R_L&-ER_R\\-E^{\mathsf T}R_L&R_R\end{pmatrix}
-=\begin{pmatrix}I&0\\0&I\end{pmatrix},
-$$
-
-where we use
-
-$$
-R_L-ER_RE^{\mathsf T}=I,\quad R_R-E^{\mathsf T}R_LE=I,
-\quad R_LE=ER_R.
-$$
-
-The last identity can be checked term by term using the Neumann series. Writing the projection onto the constant subspace back in block form gives the four blocks, including $R_L-P_p/4$ and $-ER_R-P_p/4$.
-
-Because every row and column of $E$ has two-norm at most $C_0/\sqrt p$,
-
-$$
-R_L-I=E(I-E^{\mathsf T}E)^{-1}E^{\mathsf T},
-\quad |(R_L-I)_{ij}|\le\frac{C_0^2}{p(1-q^2)},
-$$
-
-$$
-O-E=EE^{\mathsf T}E(I-E^{\mathsf T}E)^{-1},
-\quad |(O-E)_{ij}|\le\frac{C_0^2q}{p(1-q^2)}.
-$$
-
-The absolute sum of each $2p$-dimensional block row is therefore at most
-
-$$
-1+\frac14+\frac14+C_0+
-\frac{C_0^2(1+q)}{1-q^2}
-=\frac32+C_0+\frac{C_0^2}{1-q}=L_0.
-$$
-
-The matrix is symmetric, so its induced one-norm is the same. Also,
-
-$$
-\|X-X_0\|_{\infty\to\infty},\|X-X_0\|_{1\to1}\le2\varepsilon,
-\quad\|\mathsf H_X-\mathsf H_0\|_{\infty\to\infty},
-\|\mathsf H_X-\mathsf H_0\|_{1\to1}\le3\varepsilon.
-$$
-
-Set $M=(\mathsf H_0+N)^{-1}$ and $D=\mathsf H_X-\mathsf H_0$. Then
-
-$$
-(\mathsf H_X+N)^{-1}=(I+MD)^{-1}M
-=\sum_{h=0}^{\infty}(-MD)^hM,
-$$
-
-$$
-\|(\mathsf H_X+N)^{-1}\|\le\frac{L_0}{1-3L_0\varepsilon}\le2L_0.
-$$
-
-Here either the one-norm or the infinity norm above may be used; $\varepsilon\le1/(256L_0^2)$ guarantees $3L_0\varepsilon<1/2$.
-
-
-For $|h|\le2R\le1/2$, the Taylor integral remainder is
-
-$$
-e^h-1-h=h^2\int_0^1(1-t)e^{th}\,dt,
-\qquad |e^h-1-h|\le\tfrac12e^{1/2}h^2.
-$$
-
-Each absolute row sum is at most two, and $|x_i+y_j|\le2R$, so
-
-$$
-\|\mathcal N_X(z)\|_\infty\le2\cdot\tfrac12e^{1/2}(2R)^2\le8R^2.
-$$
-
-In the derivative, the sum of absolute coefficients for a given row potential and all column potentials is at most
-
-$$
-2\sum_j|X_{ij}|\,|e^{x_i+y_j}-1|
-\le2\cdot2\cdot2Re^{1/2}\le16R.
-$$
-
-The totals on the two sides agree, so $u^{\mathsf T}g=u^{\mathsf T}\mathcal N_X(z)=0$. Also, $\mathsf H_Xu=0$, and hence the inverse preserves $u^\perp$. Setting $R=4L_0\varepsilon$ gives
-
-$$
-\|\mathcal T(0)\|_\infty\le2L_0\varepsilon=R/2,
-\quad\operatorname{Lip}(\mathcal T)\le2L_0\cdot16R
-=128L_0^2\varepsilon\le1/2.
-$$
-
-Consequently, $\|\mathcal T(z)\|_\infty\le R/2+\|z\|_\infty/2\le R$. Starting from $z_0=0$ and $z_{h+1}=\mathcal T(z_h)$,
-
-$$
-\|z_{h+1}-z_h\|_\infty\le2^{-h}\|z_1-z_0\|_\infty,
-\quad\sum_{h=0}^{\infty}\|z_{h+1}-z_h\|_\infty<\infty.
-$$
-
-The iteration therefore converges to a finite real vector, and its limit satisfies the balancing equation. Since $R\le1/4$, we have $e^{x_i+y_j}\le e^{1/2}<2$, giving $|B_{ij}|\le2C/p$. At the same time,
-
-$$
-\|B-X\|_{\infty\to\infty},\|B-X\|_{1\to1}
-\le2\cdot2Re^{1/2}\le8R=32L_0\varepsilon,
-$$
-
-$$
-\|B-P_p\|_{\rm op}\le q+(32L_0+2)\varepsilon\le(1+q)/2.
-$$
-
-
-For nonnegative $X$, the Hessian quadratic form in any direction $h=(v,w)$ is
-
-$$
-h^{\mathsf T}\nabla^2\Phi_X(z)h
-=\sum_{ij}X_{ij}e^{x_i+y_j}(v_i+w_j)^2\ge0.
-$$
-
-At the balanced point $z_*$, the Hessian is $\left(\begin{smallmatrix}I&B\\B^{\mathsf T}&I\end{smallmatrix}\right)$. On the gauge subspace, decompose into the constant direction and the zero-sum directions. The former has eigenvalue two, and the latter have lower bound $1-\|B-P_p\|_{\rm op}$. If $0\le t\le1$,
-
-$$
-X_{ij}e^{t(x_i+y_j)}=B_{ij}e^{-(1-t)(x_i+y_j)}\ge e^{-2R}B_{ij}.
-$$
-
-We may therefore take $\lambda=e^{-2R}(1-\|B-P_p\|_{\rm op})>0$. Integrating the gradient along the segment gives
-
-$$
-0=\nabla\Phi_X(z_*)=g+\int_0^1\nabla^2\Phi_X(tz_*)z_*\,dt,
-$$
-
-$$
-\lambda\|z_*\|_2^2\le-\langle g,z_*\rangle\le\|g\|_2\|z_*\|_2,
-\quad\|z_*\|_2\le\lambda^{-1}\|g\|_2.
-$$
-
-For the Frobenius displacement,
-
-$$
-\begin{aligned}
-\|B-X\|_F^2
-&=\sum_{ij}X_{ij}^2(e^{x_i+y_j}-1)^2\\
-&\le K\frac{C^2}{p^2}\sum_{ij}(x_i+y_j)^2\\
-&\le K\frac{C^2}{p^2}\left(2p\sum_ix_i^2+2p\sum_jy_j^2\right)
-\le\frac{K'}p\|g\|_2^2.
-\end{aligned}
-$$
-
-At balance, $\sum_{ij}B_{ij}=p$, so $\Phi_X(z_*)=p-\theta_X$. Strong convexity gives
-
-$$
-p-\theta_X\ge p+\langle g,z_*\rangle+\frac\lambda2\|z_*\|_2^2,
-$$
-
-$$
-0\le\theta_X\le-\langle g,z_*\rangle-\frac\lambda2\|z_*\|_2^2
-\le\frac{\|g\|_2^2}{2\lambda}.
-$$
-
-The last inequality follows from $0\le\|\sqrt\lambda z_*+g/\sqrt\lambda\|_2^2$. If the mass is $p+\kappa$, set $c=p/(p+\kappa)$; add $\tfrac12\log c$ to the potentials on both sides to obtain
-
-$$
-\theta_X=\theta_{\widetilde X}+p\log c,\qquad
-\operatorname{per}X=e^{-\theta_X}\operatorname{per}B,
-$$
-
-$$
--\theta_X\le p\log(1+\kappa/p)\le\kappa.
-$$
-
-Here $\kappa$ may be negative, but $p+\kappa>0$ is required.
-
-
-To shorten the formulas in this calculation, temporarily write $P=P_p$, $L=R_L$, $R=R_R$, and $O=ER_R$. Centering gives
-
-$$
-EP=PE=E^{\mathsf T}P=PE^{\mathsf T}=0,\quad
-LP=PL=RP=PR=P,\quad OP=PO=O^{\mathsf T}P=PO^{\mathsf T}=0.
-$$
-
-After adding the gauge projection, the matrix is
-
-$$
-\mathsf H_0+N=\begin{pmatrix}I+P/2&E+P/2\\E^{\mathsf T}+P/2&I+P/2\end{pmatrix},
-$$
-
-The proposed inverse is $M=\left(\begin{smallmatrix}L-P/4&-O-P/4\\-O^{\mathsf T}-P/4&R-P/4\end{smallmatrix}\right)$. Multiplying the upper-left block term by term gives
-
-$$
-\begin{aligned}
-[(\mathsf H_0+N)M]_{LL}
-={}&(I+P/2)(L-P/4)+(E+P/2)(-O^{\mathsf T}-P/4)\\
-={}&L-P/4+P/2-P/8-EO^{\mathsf T}-P/8\\
-={}&L-EO^{\mathsf T}.
-\end{aligned}
-$$
-
-Since $O^{\mathsf T}=E^{\mathsf T}L$,
-
-$$
-L-EO^{\mathsf T}=L-EE^{\mathsf T}L=(I-EE^{\mathsf T})L=I.
-$$
-
-The upper-right block is
-
-$$
-\begin{aligned}
-[(\mathsf H_0+N)M]_{LR}
-={}&(I+P/2)(-O-P/4)+(E+P/2)(R-P/4)\\
-={}&-O-P/4-P/8+ER+P/2-P/8\\
-={}&-O+ER=0.
-\end{aligned}
-$$
-
-The lower-left block is
-
-$$
-\begin{aligned}
-[(\mathsf H_0+N)M]_{RL}
-={}&(E^{\mathsf T}+P/2)(L-P/4)+(I+P/2)(-O^{\mathsf T}-P/4)\\
-={}&E^{\mathsf T}L+P/2-P/8-O^{\mathsf T}-P/4-P/8\\
-={}&E^{\mathsf T}L-O^{\mathsf T}=0.
-\end{aligned}
-$$
-
-The lower-right block is
-
-$$
-\begin{aligned}
-[(\mathsf H_0+N)M]_{RR}
-={}&(E^{\mathsf T}+P/2)(-O-P/4)+(I+P/2)(R-P/4)\\
-={}&-E^{\mathsf T}O-P/8+R-P/4+P/2-P/8\\
-={}&R-E^{\mathsf T}O\\
-={}&R-E^{\mathsf T}ER=(I-E^{\mathsf T}E)R=I.
-\end{aligned}
-$$
-
-Thus $M$ is the required inverse.
-
-
-The row-side and column-side remainders are, respectively,
-
-$$
-\mathcal N_{L,i}(x,y)=\sum_jX_{ij}(e^{x_i+y_j}-1-x_i-y_j),
-$$
-
-$$
-\mathcal N_{R,j}(x,y)=\sum_iX_{ij}(e^{x_i+y_j}-1-x_i-y_j).
-$$
-
-Its row-side partial derivatives are
-
-$$
-\frac{\partial\mathcal N_{L,i}}{\partial x_k}
-=\mathbf1\{i=k\}\sum_jX_{ij}(e^{x_i+y_j}-1),\quad
-\frac{\partial\mathcal N_{L,i}}{\partial y_j}=X_{ij}(e^{x_i+y_j}-1).
-$$
-
-The column-side partial derivatives are
-
-$$
-\frac{\partial\mathcal N_{R,j}}{\partial x_i}=X_{ij}(e^{x_i+y_j}-1),\quad
-\frac{\partial\mathcal N_{R,j}}{\partial y_k}
-=\mathbf1\{j=k\}\sum_iX_{ij}(e^{x_i+y_j}-1).
-$$
-
-Thus the absolute sum of each row-side Jacobian row is at most
-
-$$
-\left|\sum_jX_{ij}(e^{x_i+y_j}-1)\right|
-+\sum_j|X_{ij}||e^{x_i+y_j}-1|
-\le2\sum_j|X_{ij}||e^{x_i+y_j}-1|.
-$$
-
-When $\|(x,y)\|_\infty\le R\le1/4$, the right-hand side is at most
-
-$$
-2\sum_j|X_{ij}|\cdot2Re^{2R}\le8Re^{1/2}\le16R.
-$$
-
-The column side has the same bound, using the assumption that each absolute column sum is at most two. Integrating the vector-valued function along the segment joining the two points gives
-
-$$
-\mathcal N(z)-\mathcal N(w)=\int_0^1D\mathcal N(w+t(z-w))(z-w)\,dt,
-$$
-
-Its Lipschitz constant is therefore at most $16R$. Multiplication by the gauge-fixed inverse bound $2L_0$ gives the contraction constant $32L_0R=128L_0^2\varepsilon$.
-
-
-Set $E_B=B-P_p$, where $P_p=J_p/p$. For $h=(v,w)\in u^\perp$, we have $\sum_iv_i=\sum_jw_j$, so there is a unique decomposition
-
-$$
-v=c\mathbf1+v_0,\quad w=c\mathbf1+w_0,\quad
-\mathbf1^{\mathsf T}v_0=\mathbf1^{\mathsf T}w_0=0.
-$$
-
-Its squared norm is
-
-$$
-\|h\|_2^2=2pc^2+\|v_0\|_2^2+\|w_0\|_2^2.
-$$
-
-Since $B\mathbf1=B^{\mathsf T}\mathbf1=\mathbf1$, the mixed constant terms vanish. Computing term by term gives
-
-$$
-\begin{aligned}
-h^{\mathsf T}\begin{pmatrix}I&B\\B^{\mathsf T}&I\end{pmatrix}h
-&=\|v\|^2+\|w\|^2+2v^{\mathsf T}Bw\\
-&=4pc^2+\|v_0\|^2+\|w_0\|^2+2v_0^{\mathsf T}E_Bw_0\\
-&\ge4pc^2+\|v_0\|^2+\|w_0\|^2-2q_B\|v_0\|\|w_0\|\\
-&\ge4pc^2+(1-q_B)(\|v_0\|^2+\|w_0\|^2)\\
-&\ge(1-q_B)\|h\|^2,
-\end{aligned}
-$$
-
-Here $q_B=\|E_B\|_{\rm op}<1$, and the penultimate step uses $2ab\le a^2+b^2$. This gives the strong-convexity constant used in the displacement and capacity lemma.
-
-### 4.2 Gaussian Deletion and Centering
-
-Deleting $t$ rows from a dense normalized matrix removes a total squared row norm of order $t/n$. Applying the log-determinant derivative to the corresponding Gram-matrix loss preserves this order. Switching to the Gram matrix on the other side then handles column deletion. This yields a linear deletion error even when the retained submatrix is nonprincipal.
-
-
-**Definition 4.2 (Gaussian determinant factor).**
-
-Whenever $\|Z\|_{\rm op}<1$ for a real matrix $Z$, define
-
 $$
-\mathcal G(Z)=\det(I-Z^{\mathsf T}Z)^{-1/2}.
+\Phi_X(x,y)=\sum_{ij}X_{ij}e^{x_i+y_j}-\sum x_i-\sum y_j.
 $$
 
-Using $ZZ^{\mathsf T}$ gives the same value; adjoining zero rows or zero columns also leaves this value unchanged.
+Along the segment to the balanced point, its Hessian on the gauge subspace has a positive lower bound depending only on the fixed parameters. Integration gives the two-norm bound, and the entry bound gives the Frobenius displacement. Comparing the potential at zero and at its minimum gives $0\le\theta_X\le K\|g(X)\|_2^2$. Scalar normalization proves the general-mass identity and $-\theta_X\le\kappa$. In particular, the nonnegativity of the potential cost is used at total mass $p$; the general-mass argument uses the one-sided bound $-\theta_X\le\kappa$.
 
+Define $\mathcal G(Z)=\det(I-Z^{\mathsf T}Z)^{-1/2}$ for $\|Z\|_{\rm op}<1$; zero padding and changing to $ZZ^{\mathsf T}$ preserve its value.
 
 **Lemma 4.3 (Gram deletion and stability).**
 
@@ -2147,617 +415,9 @@ $$
 |\log\mathcal G(U)-\log\mathcal G(V)|\le\frac{\|U\|_F+\|V\|_F}{2(1-q_*^2)}\|U-V\|_F.
 $$
 
+**Proof.** Integrate the derivative of $-\tfrac12\log\det(I-H)$ along the positive-semidefinite Gram loss caused by deleting rows. Its trace is the sum of the deleted squared row norms. Switch Gram sides for column deletion and apply the same argument to the constant-direction projections. The stability inequality follows along the Gram segment from $\|U^{\mathsf T}U-V^{\mathsf T}V\|_*\le(\|U\|_F+\|V\|_F)\|U-V\|_F$. $\square$
 
-**Proof.**
-
-Let $P_R$ be the diagonal projection onto the retained row coordinates. Deleting rows reduces the column-side Gram matrix by the positive semidefinite matrix $Z^{\mathsf T}(I-P_R)Z$, whose trace is the sum of squared norms of the deleted rows. For $F(H)=-\tfrac12\log\det(I-H)$ and a positive semidefinite direction $D$,
-
-$$
-DF(H)[D]=\tfrac12\operatorname{tr}((I-H)^{-1}D)\le\frac{\operatorname{tr}D}{2(1-q_*^2)}.
-$$
-
-Integrate this bound, and then use the row-side Gram matrix to handle column deletion. Projecting away the two all-ones directions in turn gives the centering bound by the same method. For the final conclusion, integrate along the segment joining the two Gram matrices and use
-
-$$
-\|U^{\mathsf T}U-V^{\mathsf T}V\|_*\le(\|U\|_F+\|V\|_F)\|U-V\|_F,
-$$
-
-where $\|\cdot\|_*$ denotes the trace norm. The required operator spectral gap holds along the entire Gram-matrix segment.
-
-Now let $S$ be a tournament sign matrix of order $n\ge4$, with $s=S\mathbf 1_n$ and $\tau=\|s\|_2^2/(n-1)^2$. Set
-
-$$
-Y=\frac{S-I}{n-1},\qquad D_n(S)=\det(I-S^{\mathsf T}S/n^2)^{-1/2}.
-$$
-
-Skew-symmetry and the paired singular values give
-
-$$
-\|Y\|_{\rm op}^2\le q_Y^2=\frac{n(n-1)/2+1}{(n-1)^2}<1.
-$$
-
-Take an integer $0\le t<n$, delete any $t$ rows and $t$ columns, and write $m=n-t\ge1$ and $Z=\Pi_mY[R,T]\Pi_m$. Every row and column of $Y$ has squared two-norm $n/(n-1)^2$. Moreover,
-
-$$
-\|Y\mathbf 1_n\|_2^2=\|Y^{\mathsf T}\mathbf 1_n\|_2^2=\tau+\frac n{(n-1)^2},
-$$
-
-Here $\mathbf1_I,\mathbf1_J\in\mathbb R^n$ are indicator column vectors in the original vertex universe $[n]$, for the sets $I,J$: a coordinate is one when it belongs to the corresponding set and zero otherwise.
-
-$$
-\|Y\mathbf 1_J\|_2^2,\ \|Y^{\mathsf T}\mathbf 1_I\|_2^2\le\frac{t^2n}{(n-1)^2}.
-$$
-
-The preceding lemma therefore gives
-
-$$
-0\le\log\mathcal G(Y)-\log\mathcal G(Z)\le\frac{t n/(n-1)^2+2[\tau+n(1+t^2)/(n-1)^2]/m}{1-q_Y^2}.
-$$
-
-The full-matrix Gram identity is $Y^{\mathsf T}Y=(S^{\mathsf T}S+I)/(n-1)^2$. Its difference from $S^{\mathsf T}S/n^2$ is positive semidefinite and has trace
-
-$$
-\vartheta_n=\frac{2n-1}{n(n-1)}+\frac n{(n-1)^2}.
-$$
-
-Consequently, $0\le\log\mathcal G(Y)-\log D_n(S)\le43/(4n)$. If $m\ge n/2$, the first loss is at most $(24t+18\tau+8)/n$. Both are nonnegative losses relative to the same full-matrix kernel, so
-
-$$
-|\log\mathcal G(Z)-\log D_n(S)|\le\frac{24t+18\tau+11}{n}.
-$$
-
-To make the constants explicit, note that $1-q_Y^2=n(n-3)/(2(n-1)^2)$. Substitution and $t\le n/2$ directly verify the constants above. The estimate applies to independently chosen row and column deletion sets $I,J$; skew-symmetry is used only for the original full matrix $S$.
-
-
-For $0\le H\le q_*^2I$, spectral decomposition or the determinant derivative formula gives
-
-$$
-\frac{d}{dt}\left[-\frac12\log\det(I-H-tD)\right]
-=\frac12\operatorname{tr}((I-H-tD)^{-1}D).
-$$
-
-If $D\ge0$ and the entire segment remains bounded above by $q_*^2I$, the right-hand side lies in $[0,\operatorname{tr}D/(2(1-q_*^2))]$. For row deletion,
-
-$$
-H_0=Z^{\mathsf T}P_RZ,\quad
-D=Z^{\mathsf T}(I-P_R)Z\ge0,\quad
-\operatorname{tr}D=\sum_{i\in I}\sum_jZ_{ij}^2.
-$$
-
-For column deletion, switch to $(P_RZ)(P_RZ)^{\mathsf T}$. The squared norms of the deleted columns are no larger than their original squared norms, so the two losses can be added. Centering uses the projection $I-uu^{\mathsf T}$; the first corresponding Gram loss is $W^{\mathsf T}uu^{\mathsf T}W$, with trace $\|W^{\mathsf T}u\|^2$. The other step contributes at most $\|Wu\|^2$.
-
-For arbitrary $U,V$,
-
-$$
-U^{\mathsf T}U-V^{\mathsf T}V
-=U^{\mathsf T}(U-V)+(U-V)^{\mathsf T}V,
-$$
-
-$$
-\|U^{\mathsf T}U-V^{\mathsf T}V\|_*
-\le\|U\|_F\|U-V\|_F+\|U-V\|_F\|V\|_F.
-$$
-
-Along the Gram segment $H_t=(1-t)V^{\mathsf T}V+tU^{\mathsf T}U$, we still have $0\le H_t\le q_*^2I$. Using $|\operatorname{tr}(AB)|\le\|A\|_{\rm op}\|B\|_*$ and integrating then gives the Lipschitz constant in the lemma.
-
-
-Since $S^{\mathsf T}=-S$,
-
-$$
-(S-I)^{\mathsf T}(S-I)=(-S-I)(S-I)=-S^2+I=S^{\mathsf T}S+I.
-$$
-
-Consequently,
-
-$$
-q_Y^2=\frac{n(n-1)/2+1}{(n-1)^2},\qquad
-1-q_Y^2=\frac{n(n-3)}{2(n-1)^2}>0\quad(n\ge4).
-$$
-
-Each row has exactly $n$ entries of modulus $1/(n-1)$, and its squared norm is $n/(n-1)^2$. Also,
-
-$$
-Y\mathbf1=(s-\mathbf1)/(n-1),\quad
-Y^{\mathsf T}\mathbf1=(-s-\mathbf1)/(n-1),
-$$
-
-$$
-\|s\mp\mathbf1\|^2=\|s\|^2+n\mp2\sum_i s_i=\|s\|^2+n.
-$$
-
-For the indicator vector of the deleted columns, each row satisfies $|(Y\mathbf1_J)_i|\le t/(n-1)$, so the squared norm is at most $nt^2/(n-1)^2$. The all-ones direction of the retained matrix $W=Y[R,T]$ satisfies
-
-$$
-\begin{aligned}
-\|W\mathbf1_m/\sqrt m\|^2
-&\le\frac1m\|Y(\mathbf1_n-\mathbf1_J)\|^2\\
-&\le\frac2m\left[\tau+\frac n{(n-1)^2}+\frac{nt^2}{(n-1)^2}\right].
-\end{aligned}
-$$
-
-The other direction is analogous. Substitution into the deletion and centering bounds gives the loss $L$ above. Multiply it by $n$ and substitute the spectral gap:
-
-$$
-nL\le\frac{2nt}{n-3}
-+\frac{4(n-1)^2\tau}{m(n-3)}
-+\frac{4n(1+t^2)}{m(n-3)}.
-$$
-
-When $m=n-t\ge n/2$,
-
-$$
-\frac n{n-3}\le4,\quad
-\frac{4(n-1)^2}{m(n-3)}\le18,\quad
-\frac{4n}{m(n-3)}\le8,
-$$
-
-$$
-\frac{4nt^2}{m(n-3)}\le16t.
-$$
-
-The last inequality follows from $t/m\le1$ and $n/(n-3)\le4$. Hence $nL\le24t+18\tau+8$.
-
-The difference between the full-order Gram matrices is
-
-$$
-\left(\frac1{(n-1)^2}-\frac1{n^2}\right)S^{\mathsf T}S
-+\frac I{(n-1)^2}\ge0,
-$$
-
-Its trace is $\vartheta_n$. The logarithmic loss is at most
-
-$$
-\frac{\vartheta_n}{2(1-q_Y^2)}
-=\frac{3n^2-3n+1}{n^2(n-3)}\le\frac{43}{4n}.
-$$
-
-The last inequality is equivalent to $31n^2-117n-4\ge0$; at $n=4$, its left-hand side is $24>0$, and it increases thereafter. If $a,b\ge0$, then $|a-b|\le\max(a,b)$. Both losses are relative to $\mathcal G(Y)$, so
-
-$$
-|\log\mathcal G(Z)-\log D_n(S)|
-\le\max\left(\frac{24t+18\tau+8}n,\frac{43}{4n}\right)
-\le\frac{24t+18\tau+11}n.
-$$
-
-### 4.3 Preprocessing Tournament Submatrices
-
-The row and column errors of $C=2A/(n-1)$ have opposite signs. Multiplying row $i$ by $(1+a_i)^{-1}$ corrects the original row sum; multiplying column $i$ by $(1-a_i)^{-1}$ corrects the original column sum. Applying both corrections simultaneously leaves marginal residuals, which we estimate below. The main effect is to cancel the first-order change in total mass and produce the score penalty $\Gamma$ in the restored product.
-
-Fix $0\le a_0<1$ and finite positive parameters $A_0,B_0$. In this subsection, assume
-
-$$
-a_i=\frac{s_i}{n-1},\qquad \max_i|a_i|\le a_0,\qquad \tau=\sum_i a_i^2\le A_0\log n,\qquad t\le B_0\log n.
-$$
-
-Define
-
-$$
-C=\frac{J-I+S}{n-1}=\frac{2A}{n-1},\qquad \ell_i=\frac1{1+a_i},\qquad r_i=\frac1{1-a_i},\qquad g_i=\frac1{1-a_i^2}.
-$$
-
-Set $C'=\operatorname{diag}(\ell)C\operatorname{diag}(r)$, $F=C'-C$, and $\nu=\mathfrak m(C')-n$. To compute the total mass, write $v_i=a_i/(1-a_i^2)$, $w_i=a_i^2/(1-a_i^2)$, and also $V=\sum_i v_i$, $W=\sum_i w_i$. Expanding $\ell=\mathbf 1-v+w$ and $r=\mathbf 1+v+w$ gives the exact identity
-
-$$
-\nu=\frac{W^2-V^2+W+2w^{\mathsf T}Sv}{n-1}.
-$$
-
-More precisely, $\mathbf 1^{\mathsf T}Sv=-(n-1)W$ cancels the first-order mass change. The fixed score bound gives $W\le K\tau$, $|V|\le K\tau$, and $\|v\|_2\le K\sqrt\tau$. Estimating $Sv$ row by row yields
-
-$$
-|\nu|\le K\mathcal M_\tau,\qquad \mathcal M_\tau=\frac{\tau+\tau^2}{n}+\frac{\tau^{3/2}}{\sqrt n}=o(1).
-$$
-
-The marginal identities are
-
-$$
-C'\mathbf 1_n-\mathbf 1_n=\operatorname{diag}(\ell)C(r-\mathbf 1_n),
-$$
-
-$$
-(C')^{\mathsf T}\mathbf 1_n-\mathbf 1_n=\operatorname{diag}(r)C^{\mathsf T}(\ell-\mathbf 1_n).
-$$
-
-Every row and column of $C$ has two-norm $O(n^{-1/2})$, and $\|C\|_{\rm op}=O(1)$. Thus the marginal error is $O(\sqrt{\tau/n})$ in the infinity norm and $O(\sqrt\tau)$ in the two-norm. A direct entrywise estimate also gives
-
-$$
-\|F\|_F\le K\sqrt{\tau/n}.
-$$
-
-Normalize $\widehat C=nC'/\mathfrak m(C')$. Denote its row and column errors by $e_i,f_j$, so $\sum e_i=\sum f_j=0$. For arbitrary deletion sets of common size $t$, denoted by $I,J$, write $R=[n]\setminus I$, $T=[n]\setminus J$, $m=n-t$, and set
-
-$$
-X=\frac n m\widehat C[R,T],\qquad \kappa=\mathfrak m(X)-m,\qquad \widetilde X=\frac m{\mathfrak m(X)}X.
-$$
-
-The exact mass identity for deleting rows and columns is
-
-<a id="eq-deletion-mass"></a>
-
-$$
-\kappa=\frac n m\left[-\sum_{i\in I}e_i-\sum_{j\in J}f_j+\sum_{i\in I,j\in J}\widehat C_{ij}-\frac{t^2}{n}\right].
-\tag{4.1}
-$$
-
-The marginal error in each retained row before the final normalization is
-
-$$
-(X\mathbf 1_m)_i-1=\frac n m\left[e_i+\frac t n-\sum_{j\in J}\widehat C_{ij}\right],
-$$
-
-The column side has the corresponding identity of the same form. Consequently,
-
-$$
-|\kappa|\le K\left[t\sqrt{\tau/n}+t^2/n\right],
-$$
-
-$$
-\varepsilon(\widetilde X)\le K(\sqrt{\tau/n}+t/n),\qquad \|g(\widetilde X)\|_2\le K(\sqrt\tau+t/\sqrt n).
-$$
-
-Here $g(\widetilde X)$ is the concatenated vector of row and column marginal errors. The entries of $\widetilde X$ lie in $[0,K/m]$.
-
-To apply Lemma 4.1, we now verify the centered-kernel conditions for $\widetilde X$. Write
-
-$$
-\eta=\frac{n^2}{\mathfrak m(C')\mathfrak m(X)}=1+O((t+1)/n),
-$$
-
-Then
-
-$$
-\Pi_m\widetilde X\Pi_m=\eta\left[Z+\Pi_mF[R,T]\Pi_m\right].
-$$
-
-Since $\mathfrak m(C^{\prime})=n+o(1)$ and $\mathfrak m(X)=m+o(1)$, we have $\eta=(n/m)(1+o(1))$. Compression does not increase the operator norm of $Y$, and the Frobenius estimate above bounds the second term. The centered kernel therefore has operator norm at most $1/\sqrt2+o(1)$ and entries $O(1/m)$. The marginal error of the original matrix $\widetilde X$ tends to zero in the infinity norm. Since $\widetilde X$ has mass $m$, the matrix $E$ in Lemma 4.1 equals $\Pi_m\widetilde X\Pi_m$. Fix $q=3/4$ and entry bounds $C,C_0$. The resulting $L_0,\varepsilon_0$ depend only on $a_0,A_0,B_0$. Lemma 4.1 thus applies uniformly for sufficiently large $n$, giving a doubly stochastic matrix $B_X$ and the spectral-norm bound $7/8$.
-
-The two-norm displacement lemma gives
-
-$$
-\|B_X-\widetilde X\|_F\le K(\sqrt{\tau/n}+t/n).
-$$
-
-Combined with the stronger centered-kernel bound, this shows that the centered operator norm of $B_X$ is still at most $1/\sqrt2+o(1)$; for example, it is eventually at most $4/5$. The entries continue to satisfy the bound $K/m$.
-
-Apply the Gaussian deletion estimate to $Z$ and use the logarithmic Lipschitz bound for the perturbations due to prescaling, normalization, and diagonal scaling. Since $B_X-P_m=\Pi_mB_X\Pi_m$, this gives
-
-$$
-|\log\mathcal G(B_X-P_m)-\log D_n(S)|\le K\left[\sqrt{\tau/n}+(t+1)/n\right].
-$$
-
-The term $\tau/n$ from centering has been absorbed into $\sqrt{\tau/n}$. The deletion error is linear in $t/n$, as needed for summing against the subsequent subset weights.
-
-We can now collect the errors under the fixed dimension conventions. All constants and the final applicability threshold depend only on the fixed parameters $a_0,A_0,B_0$. The full-order mass error contributes $O(|\nu|)\le K\mathcal M_\tau$ to the restoration logarithm. The mass change from deletion is at most $K[t\sqrt{\tau/n}+t^2/n]$, and the Gaussian logarithmic error is $K[\sqrt{\tau/n}+(t+1)/n]$. Applying Theorem 3.1 at order $m\ge n/2$ adds $O(1/m)=O(1/n)$. The final scalar restoration contributes $e^{-1}\exp(O((t+1)/n))$. With total mass $m+\kappa$, the matrix $X$ uses the capacity estimate only in the form $e^{-\theta_X}\le e^\kappa$; one cannot assert that $\theta_X$ is nonnegative for this general mass. Section 4.4 restores these factors exactly and obtains the error exponent in Lemma 4.4.
-
-
-Verify entry by entry that
-
-$$
-1-v_i+w_i=1-\frac{a_i}{1-a_i^2}+\frac{a_i^2}{1-a_i^2}
-=\frac1{1+a_i}=\ell_i,
-$$
-
-$$
-1+v_i+w_i=\frac1{1-a_i}=r_i,\qquad
-a_iv_i=w_i,\quad \ell_ir_i=g_i=1+w_i.
-$$
-
-Set $L=\mathbf1-v+w$ and $R=\mathbf1+v+w$ (here $L,R$ denote vectors only within this calculation). Then
-
-$$
-L^{\mathsf T}JR=(n-V+W)(n+V+W)=(n+W)^2-V^2,
-$$
-
-$$
-L^{\mathsf T}IR=\sum_i g_i=n+W.
-$$
-
-Expand the skew-symmetric part term by term:
-
-$$
-\begin{aligned}
-L^{\mathsf T}SR
-={}&\mathbf1^{\mathsf T}Sv+\mathbf1^{\mathsf T}Sw
--v^{\mathsf T}S\mathbf1-v^{\mathsf T}Sv-v^{\mathsf T}Sw\\
-&+w^{\mathsf T}S\mathbf1+w^{\mathsf T}Sv+w^{\mathsf T}Sw\\
-={}&-2(n-1)W+2w^{\mathsf T}Sv.
-\end{aligned}
-$$
-
-Here $\mathbf1^{\mathsf T}Sv=-(n-1)a^{\mathsf T}v=-(n-1)W$; $\mathbf1^{\mathsf T}Sw+w^{\mathsf T}S\mathbf1=0$; $v^{\mathsf T}Sv=w^{\mathsf T}Sw=0$; and $-v^{\mathsf T}Sw=w^{\mathsf T}Sv$. Thus
-
-$$
-\begin{aligned}
-\mathfrak m(C')&=\frac{(n+W)^2-V^2-(n+W)-2(n-1)W+2w^{\mathsf T}Sv}{n-1}\\
-&=n+\frac{W^2-V^2+W+2w^{\mathsf T}Sv}{n-1}.
-\end{aligned}
-$$
-
-Since $\sum_i a_i=0$,
-
-$$
-V=\sum_i\left(a_i+\frac{a_i^3}{1-a_i^2}\right)
-=\sum_i\frac{a_i^3}{1-a_i^2},\quad
-|V|\le\frac{a_0}{1-a_0^2}\tau,
-\quad W\le\frac\tau{1-a_0^2},
-$$
-
-$$
-\|v\|_2\le\frac{\sqrt\tau}{1-a_0^2},\quad
-\|Sv\|_\infty\le\sqrt n\|v\|_2,\quad
-|w^{\mathsf T}Sv|\le\|w\|_1\|Sv\|_\infty\le K\sqrt n\tau^{3/2}.
-$$
-
-Substitution gives $|\nu|\le K[(\tau+\tau^2)/n+\tau^{3/2}/\sqrt n]$.
-
-
-Since $\operatorname{diag}(\ell)C\mathbf1=\mathbf1$,
-
-$$
-C'\mathbf1-\mathbf1=\operatorname{diag}(\ell)C(r-\mathbf1).
-$$
-
-Moreover, $|r_i-1|\le K|a_i|$, $|\ell_i-1|\le K|a_i|$, and $\|C_{i,\cdot}\|_2\le K/\sqrt n$. Hence
-
-$$
-\|C'\mathbf1-\mathbf1\|_\infty\le K\sqrt{\tau/n},\quad
-\|C'\mathbf1-\mathbf1\|_2\le K\|C\|_{\rm op}\sqrt\tau\le K'\sqrt\tau.
-$$
-
-The column side is analogous. Entry by entry,
-
-$$
-F_{ij}=C_{ij}(\ell_ir_j-1),\quad
-|\ell_ir_j-1|\le K(|a_i|+|a_j|),
-$$
-
-$$
-\|F\|_F^2\le\frac K{n^2}\sum_{ij}(a_i^2+a_j^2)
-=\frac{2K\tau}n.
-$$
-
-At total mass $n$, the normalized matrix $\widehat C$ has retained-block mass given directly by inclusion–exclusion:
-
-$$
-\begin{aligned}
-\sum_{i\in R,j\in T}\widehat C_{ij}
-&=n-\sum_{i\in I}(1+e_i)-\sum_{j\in J}(1+f_j)
-+\sum_{i\in I,j\in J}\widehat C_{ij}\\
-&=n-2t-\sum_Ie_i-\sum_Jf_j+\sum_{I,J}\widehat C_{ij}.
-\end{aligned}
-$$
-
-Since $m^2/n=n-2t+t^2/n$, multiplying by $n/m$ and then subtracting $m$ gives equation (4.1). By $\widehat C_{ij}\le K/n$,
-
-$$
-|\kappa|\le\frac nm\left(2t\max(\|e\|_\infty,\|f\|_\infty)
-+(K+1)t^2/n\right)
-\le K'[t\sqrt{\tau/n}+t^2/n].
-$$
-
-The error in a retained row likewise satisfies, term by term,
-
-$$
-\frac nm\left(1+e_i-\sum_{j\in J}\widehat C_{ij}\right)-1
-=\frac nm\left(e_i+t/n-\sum_{j\in J}\widehat C_{ij}\right).
-$$
-
-The normalization multiplier $m/(m+\kappa)$ differs from one by $O(|\kappa|/m)$. Thus the marginal infinity norm and two-norm are $K(\sqrt{\tau/n}+t/n)$ and $K(\sqrt\tau+t/\sqrt n)$, respectively.
-
-
-Successive substitution of the definitions gives
-
-$$
-\widetilde X=\frac m{m+\kappa}\frac nm\frac n{n+\nu}C'[R,T]
-=\frac{n^2}{(n+\nu)(m+\kappa)}C'[R,T]=\eta C'[R,T].
-$$
-
-Also, $C=J/(n-1)+Y$. Multiplying on the left and right by $\Pi_m$ removes $J$ and yields the centered-kernel identity. Since $m=n-t$,
-
-$$
-\eta=\frac nm(1+\nu/n)^{-1}(1+\kappa/m)^{-1}
-=1+O((t+1)/n).
-$$
-
-Consequently,
-
-$$
-\|\Pi_m\widetilde X\Pi_m-Z\|_F
-\le|\eta-1|\|Z\|_F+|\eta|\|F[R,T]\|_F
-\le K[(t+1)/n+\sqrt{\tau/n}].
-$$
-
-Adding the displacement from diagonal scaling gives
-
-$$
-\|(B_X-P_m)-Z\|_F
-\le K[(t+1)/n+\sqrt{\tau/n}].
-$$
-
-All the matrices above have Frobenius norms $O(1)$, and their operator norms are eventually at most the fixed value $4/5<1$. Adding the Gram Lipschitz bound and the deletion bound gives
-
-$$
-\begin{aligned}
-|\log\mathcal G(B_X-P_m)-\log D_n(S)|
-&\le K\left[\frac{t+\tau+1}n+\sqrt{\tau/n}\right]\\
-&\le K'\left[\frac{t+1}n+\sqrt{\tau/n}\right],
-\end{aligned}
-$$
-
-For sufficiently large $n$, we have $\tau/n\le1$, and hence $\tau/n\le\sqrt{\tau/n}$.
-
-
-First write
-
-$$
-e'=C'\mathbf1-\mathbf1,\quad
-f'=(C')^{\mathsf T}\mathbf1-\mathbf1,\quad
-\widehat C=\frac n{n+\nu}C'.
-$$
-
-Coordinatewise,
-
-$$
-\begin{aligned}
-e_i&=(\widehat C\mathbf1)_i-1
-=\frac n{n+\nu}(1+e'_i)-1
-=\frac{ne'_i-\nu}{n+\nu},\\
-f_j&=(\widehat C^{\mathsf T}\mathbf1)_j-1
-=\frac n{n+\nu}(1+f'_j)-1
-=\frac{nf'_j-\nu}{n+\nu}.
-\end{aligned}
-$$
-
-Since $\sum_ie'_i=\sum_jf'_j=\nu$, these formulas also verify
-
-$$
-\sum_ie_i=\frac{n\nu-n\nu}{n+\nu}=0,\quad
-\sum_jf_j=0.
-$$
-
-When $|\nu|\le n/2$,
-
-$$
-\|e\|_\infty\le2\|e'\|_\infty+2|\nu|/n,\quad
-\|e\|_2\le2\|e'\|_2+2|\nu|/\sqrt n,
-$$
-
-$$
-\|f\|_\infty\le2\|f'\|_\infty+2|\nu|/n,\quad
-\|f\|_2\le2\|f'\|_2+2|\nu|/\sqrt n.
-$$
-
-For $0<\tau\le A_0\log n$, divide $|\nu|/n$ by $\sqrt{\tau/n}$. The mass bound already obtained gives at most a constant times
-
-$$
-\frac{\sqrt\tau+\tau^{3/2}}{n^{3/2}}+\frac\tau n=o(1).
-$$
-
-Dividing $|\nu|/\sqrt n$ by $\sqrt\tau$ gives the same expression. When $\tau=0$, we have $a=0$, so $\nu=0$, and no division is needed. This yields the infinity-norm bound $K\sqrt{\tau/n}$ and the two-norm bound $K\sqrt\tau$ on both sides, respectively.
-
-
-Suppose
-
-$$
-h=X\mathbf1_m-\mathbf1_m,\quad
-k=X^{\mathsf T}\mathbf1_m-\mathbf1_m,\quad
-\widetilde X=\frac m{m+\kappa}X.
-$$
-
-The normalized errors on the two sides are then exactly
-
-$$
-\widetilde\alpha_i=\frac{mh_i-\kappa}{m+\kappa},\qquad
-\widetilde\beta_j=\frac{mk_j-\kappa}{m+\kappa}.
-$$
-
-Using $\sum_ih_i=\sum_jk_j=\kappa$ again verifies $\sum_i\widetilde\alpha_i=\sum_j\widetilde\beta_j=0$. When $|\kappa|\le m/2$,
-
-$$
-\|\widetilde\alpha\|_\infty\le2\|h\|_\infty+2|\kappa|/m,
-\quad\|\widetilde\alpha\|_2\le2\|h\|_2+2|\kappa|/\sqrt m,
-$$
-
-$$
-\|\widetilde\beta\|_\infty\le2\|k\|_\infty+2|\kappa|/m,
-\quad\|\widetilde\beta\|_2\le2\|k\|_2+2|\kappa|/\sqrt m.
-$$
-
-Here $k$ denotes the column-error vector. The retained row and column errors are, respectively,
-
-$$
-h_i=\frac nm\left(e_i+t/n-\sum_{j\in J}\widehat C_{ij}\right),\qquad
-k_j=\frac nm\left(f_j+t/n-\sum_{i\in I}\widehat C_{ij}\right).
-$$
-
-Since $\widehat C_{ij}\le K/n$,
-
-$$
-\|h\|_\infty,\|k\|_\infty\le K'[\sqrt{\tau/n}+t/n],
-$$
-
-$$
-\|h\|_2,\|k\|_2\le K'[\sqrt\tau+t/\sqrt n].
-$$
-
-The mass term $|\kappa|/\sqrt m\le K[t\sqrt\tau/n+t^2/n^{3/2}]$ is absorbed into the two-norm bound above because $t/n\to0$; the infinity-norm mass term is likewise absorbed into its corresponding bound. This verifies all the marginal-error hypotheses of the local scaling lemma, one marginal at a time.
-
-
-The normalized mass is $m$, so the centered matrix is exactly
-
-$$
-E=\widetilde X-P_m-\frac{\widetilde\alpha\mathbf1^{\mathsf T}
-+\mathbf1\widetilde\beta^{\mathsf T}}m
-=\Pi_m\widetilde X\Pi_m.
-$$
-
-If $0\le\widetilde X_{ij}\le C_1/m$ and the infinity norms of both marginal error vectors are at most $\epsilon_n$, then
-
-$$
-|E_{ij}|\le\frac{C_1+1+2\epsilon_n}{m}\le\frac{C_1+3}{m}
-\quad(\epsilon_n\le1).
-$$
-
-Nonnegativity makes each absolute row sum or column sum equal to the corresponding row sum or column sum, which is at most $1+\epsilon_n\le2$. Also,
-
-$$
-\|E\|_{\rm op}\le|\eta|\|Z\|_{\rm op}+|\eta|\|F[R,T]\|_F
-\le\frac1{\sqrt2}+o(1).
-$$
-
-First fix $q=3/4$ and the entry bound $C_0=C_1+3$; these determine $L_0,\varepsilon_0$. Then choose a uniform order threshold such that
-
-$$
-\|E\|_{\rm op}\le3/4,\quad
-\epsilon_n\le\varepsilon_0,\quad m\ge n/2,
-\quad |\nu|\le n/2,\quad |\kappa|\le m/2.
-$$
-
-All these conditions follow from bounds involving only fixed parameters and $n$, so the threshold is fixed before choosing the particular graph and deletion sets. The local theorem initially gives $\|B_X-P_m\|_{\rm op}\le7/8$; more precisely,
-
-$$
-\|B_X-P_m\|_{\rm op}
-\le\|\Pi_m\widetilde X\Pi_m\|_{\rm op}
-+\|B_X-\widetilde X\|_F
-\le1/\sqrt2+o(1)\le4/5.
-$$
-
-This estimate is again uniform over tournaments and deletion sets.
-
-
-Take a sufficiently large odd integer $n$ and the corresponding regular carousel tournament, with adjacency matrix $A_n$ and sign matrix $S_n^{\mathrm{cir}}$. All scores are then zero, all the preceding prescaling factors are one, and
-
-$$
-C=\frac{2A_n}{n-1}=\frac{J_n-I_n+S_n^{\mathrm{cir}}}{n-1},
-\qquad C\mathbf1_n=C^{\mathsf T}\mathbf1_n=\mathbf1_n.
-$$
-
-Consequently, $C'=X=\widetilde X=C$ (here no rows or columns are deleted, so $t=0$). The potential vectors $x=y=0$ already satisfy the balancing equation; the unique small solution in local scaling gives $B_X=C$. On the constant-vector direction, $C-P_n$ vanishes; on its orthogonal complement,
-
-$$
-(C-P_n)|_{\mathbf1_n^\perp}
-=\left.\frac{S_n^{\mathrm{cir}}-I_n}{n-1}\right|_{\mathbf1_n^\perp},\qquad
-(S_n^{\mathrm{cir}}-I_n)^{\mathsf T}(S_n^{\mathrm{cir}}-I_n)=I_n-(S_n^{\mathrm{cir}})^2.
-$$
-
-The carousel transformation in Section 8.2 preserves all frequencies of the sign matrix, and the largest positive frequency is $\cot(\pi/(2n))$. Therefore,
-
-$$
-\begin{aligned}
-\|B_X-P_n\|_{\rm op}
-&=\frac{\sqrt{1+\cot^2(\pi/(2n))}}{n-1}\\
-&=\frac1{(n-1)\sin(\pi/(2n))}\\
-&=\frac{2n}{\pi(n-1)}
-\frac{\pi/(2n)}{\sin(\pi/(2n))}
-\longrightarrow\frac2\pi<\frac1{\sqrt2}.
-\end{aligned}
-$$
-
-Here we use $\sin u/u\to1$. Thus the centered norm need not tend to zero; the fixed bound $4/5$ suffices for Theorem 3.1.
-
-### 4.4 Proof of the Nonprincipal Permanent Bound
-
-We apply the scaling and deletion estimates to tournament submatrices. The deleted row and column sets may differ, since a cycle cover can enter and leave the exceptional set through different core vertices.
-
+### 4.2 Uniform deletion bounds
 
 **Lemma 4.4 (Nonprincipal permanent bound).**
 
@@ -2795,99 +455,57 @@ $$
 For every sufficiently large $N$, this estimate holds simultaneously for every admissible tournament and every pair $I,J$. The constant $K$ and the threshold depend only on $b,A_0,B_0$.
 
 
-The factor $\Gamma$ records the cost of degree imbalance. For a principal deleted set $I=J=U$, the restored vertex weight is $\ell_i r_i=(1-a_i^2)^{-1}$; when the deleted sets differ, the row and column factors are retained separately. The error contains a term of order $\sqrt{\tau/N}$. In the final case, it is therefore essential to retain $\Gamma\le e^{-\tau}$.
-
-
-We now prove Lemma 4.4, using $n$ for the full core order $N$ and taking $a_0=b$. The preceding construction has already produced the scaled matrix $B_X$. It remains to restore all diagonal factors and scalar factors and then compare the resulting Gaussian determinant with $D_n(S)$.
-
-**Proof.**
-
-The construction above gives the entry bound and spectral gap required by Theorem 3.1. Hence
+**Proof.** Use $n=N$ and $m=n-t$. Perform paired score correction and mass normalization:
 
 $$
-\operatorname{per}B_X=\frac{m!}{m^m}\mathcal G(B_X-P_m)(1+O(1/m)).
+\begin{aligned}
+C&=\frac{2A}{n-1}, & C'&=\operatorname{diag}(\ell)C\operatorname{diag}(r),\\
+\nu&=\mathfrak m(C')-n, & \widehat C&=\frac{nC'}{n+\nu},\\
+X&=\frac nm\widehat C[R,T], & \kappa&=\mathfrak m(X)-m.
+\end{aligned}
 $$
 
-The row and column scaling factors are restored exactly as
+Put $v_i=a_i/(1-a_i^2)$, $w_i=a_i^2/(1-a_i^2)$, $V=\sum v_i$, $W=\sum w_i$. The cancellation of the first-order mass change is recorded by the exact identity
 
 $$
-\prod_{i\in R}(1+a_i)\prod_{j\in T}(1-a_j)=\Gamma\prod_{i\in I}\ell_i\prod_{j\in J}r_j.
+\nu=\frac{W^2-V^2+W+2w^{\mathsf T}Sv}{n-1},\qquad |\nu|\le K\mathcal M_\tau.
 $$
 
-Thus deleting rows restores the $\ell$ factors, and deleting columns restores the $r$ factors. The complete scalar identity is
+If $e,f$ are the marginal errors of $\widehat C$, deleting the independent row and column sets gives
+
+<a id="eq-deletion-mass"></a>
+
+$$
+\kappa=\frac nm\left[-\sum_{i\in I}e_i-\sum_{j\in J}f_j
++\sum_{i\in I,j\in J}\widehat C_{ij}-\frac{t^2}{n}\right].\tag{4.1}
+$$
+
+Normalize $\widetilde X=mX/(m+\kappa)$. The preprocessing estimates in Detailed proof companion §4.3 give, uniformly,
+
+$$
+|\kappa|\le K(t\sqrt{\tau/n}+t^2/n),\quad
+\|g(\widetilde X)\|_\infty\le K(\sqrt{\tau/n}+t/n),\quad
+\|g(\widetilde X)\|_2\le K(\sqrt\tau+t/\sqrt n).
+$$
+
+The entries of $\widetilde X$ lie in $[0,K/m]$ and its doubly centered kernel has operator norm at most $1/\sqrt2+o(1)$. Fixing the gap $q=3/4$ therefore makes Lemma 4.1 applicable above a common threshold. Its scaling $B_X$ has entries $O(1/m)$, with centered norm eventually at most $4/5$. Lemmas 4.2–4.3 and the same preprocessing give
+
+$$
+-\theta_X\le\kappa,\qquad
+\log\mathcal G(B_X-P_m)\le\log D_n(S)+K\bigl(\sqrt{\tau/n}+(t+1)/n\bigr).
+$$
+
+The exact restoration is
 
 <a id="eq-exact-restoration"></a>
 
 $$
-\operatorname{per}A[R,T]=\Gamma\prod_{i\in I}\ell_i\prod_{j\in J}r_j\left[\frac{m(n-1)\mathfrak m(C')}{2n^2}\right]^m e^{-\theta_X}\operatorname{per}B_X.
-\tag{4.2}
+\operatorname{per}A[R,T]=\Gamma\prod_{i\in I}\ell_i\prod_{j\in J}r_j
+\left[\frac{m(n-1)(n+\nu)}{2n^2}\right]^m
+ e^{-\theta_X}\operatorname{per}B_X.\tag{4.2}
 $$
 
-After substituting $m!/m^m$ into [equation (4.2)](#eq-exact-restoration), the remaining scalar factor is
-
-$$
-\frac{m!}{2^m}(1-1/n)^m\left[\frac{\mathfrak m(C')}{n}\right]^m.
-$$
-
-The difference between its logarithm and the logarithm of $e^{-1}m!/2^m$ is $O((t+1)/n+|\nu|)$. The capacity bound gives $e^{-\theta_X}\le e^\kappa$. Substituting the mass error, Gaussian error, and baseline permanent approximation error gives the required exponent bound. The following calculation gives the restoration factors in detail, uniformly over the tournament and deletion sets.
-
-
-The factors associated with the deleted rows and columns are, respectively,
-
-$$
-\begin{aligned}
-\operatorname{per}C[R,T]
-&=\left(\prod_{i\in R}\ell_i^{-1}\right)
-\left(\prod_{j\in T}r_j^{-1}\right)\operatorname{per}C'[R,T]\\
-&=\left(\prod_{i=1}^n(1+a_i)\prod_{j=1}^n(1-a_j)\right)
-\left(\prod_{i\in I}(1+a_i)^{-1}\right)
-\left(\prod_{j\in J}(1-a_j)^{-1}\right)\operatorname{per}C'[R,T]\\
-&=\Gamma\prod_{i\in I}\ell_i\prod_{j\in J}r_j\operatorname{per}C'[R,T].
-\end{aligned}
-$$
-
-From $X=n^2C'[R,T]/[m(n+\nu)]$, we obtain
-
-$$
-\operatorname{per}C'[R,T]=[m(n+\nu)/n^2]^m\operatorname{per}X.
-$$
-
-Using $A=(n-1)C/2$ and $\operatorname{per}X=e^{-\theta_X}\operatorname{per}B_X$ then gives equation (4.2). After substituting the permanent approximation, the scalar factor is
-
-$$
-\left[\frac{m(n-1)(n+\nu)}{2n^2}\right]^m\frac{m!}{m^m}
-=\frac{m!}{2^m}(1-1/n)^m(1+\nu/n)^m.
-$$
-
-Set $u=1/n$. Since
-
-$$
-|\log(1-u)+u|\le\frac{u^2}{2(1-u)},
-$$
-
-$$
-\left|m\log(1-1/n)+1\right|
-\le\left|1-\frac mn\right|+\frac{m}{2n^2(1-1/n)}
-\le\frac tn+\frac1{2(n-1)}.
-$$
-
-When $|\nu|/n\le1/2$, we have $|m\log(1+\nu/n)|\le2|\nu|$. The capacity contribution satisfies $-\theta_X\le\kappa$. The Gaussian factor satisfies $\mathcal G(B_X-P_m)\le D_n(S)e^{K[\sqrt{\tau/n}+(t+1)/n]}$. Finally, $1+O(1/m)\le e^{K/n}$ after increasing the uniform threshold. Thus the error exponent is bounded term by term as follows:
-
-$$
-\begin{aligned}
-\varepsilon_{\tau,t}\le K\bigg[&\underbrace{\mathcal M_\tau}_{\text{full-order mass}}
-+\underbrace{t\sqrt{\tau/n}+t^2/n}_{\text{deletion mass}}\\
-&+\underbrace{\sqrt{\tau/n}+(t+1)/n}_{\text{Gaussian and scalar}}
-+\underbrace{1/n}_{\text{permanent error}}\bigg].
-\end{aligned}
-$$
-
-Combining terms of the same order gives Lemma 4.4. $\square$
-
-### 4.5 Two-Sided Estimates for Small Scores
-
-When every score is $o(\sqrt n)$, the original marginals are already sufficiently close to one for local scaling to apply directly. The capacity bound then controls the restoration factor from both sides and gives the approximation needed in Theorem 8.1.
-
+Theorem 3.1 gives $\operatorname{per}B_X=(m!/m^m)\mathcal G(B_X-P_m)(1+O(m^{-1}))$. The remaining scalar is $(m!/2^m)(1-1/n)^m(1+\nu/n)^m$, whose logarithmic deviation from $e^{-1}m!/2^m$ is $O((t+1)/n+|\nu|)$. Combining these bounds proves the displayed error exponent. All gaps, densities and thresholds were fixed from $b,A_0,B_0$, which establishes the stated uniform quantifiers. $\square$
 
 **Lemma 4.5 (Permanent approximation for small scores).**
 
@@ -2902,141 +520,28 @@ $$
 
 More precisely, for fixed $B_0>0$ there are constants $C_{\mathrm{err}},\delta>0$ and an integer $N_0\ge4$ such that the following holds uniformly for $n\ge N_0$. Let $S$ be a tournament sign matrix and let $I,J\subseteq[n]$ satisfy $|I|=|J|=t\le B_0\log n$. Put $d=\|S\mathbf1_n\|_\infty$ and $\eta=(d+t+1)^2/n$. If $\eta\le\delta$, the absolute relative error in [equation (4.3)](#eq-small-score-permanent) is at most $C_{\mathrm{err}}\eta$. Here $R=[n]\setminus I$, $T=[n]\setminus J$, and $m=n-t$; the two deleted sets may be chosen independently. In the asymptotic range of the lemma, $\eta\to0$.
 
-
-**Proof.**
-
-Increase $N_0$ so that $2t\le n$ throughout the logarithmic deletion window, giving $m\ge n/2>0$. Paired prescaling is not needed here. Set $C=2A/(n-1)$ and $X=(n/m)C[R,T]$. The row and column errors of the full matrix $C$ are $s_i/(n-1)$ and $-s_i/(n-1)$, respectively. Thus the exact mass identity [equation (4.1)](#eq-deletion-mass) and the marginal formulas in Section 4.3 give
+**Proof.** Take $X=(n/m)C[R,T]$ directly, without paired score correction. Equation (4.1) and the marginal identities give
 
 $$
-|\kappa|=O(t(d+t)/n),\qquad \varepsilon(X)=O((d+t)/n),\qquad \|g(X)\|_2=O((d+t)/\sqrt n).
+|\kappa|=O(t(d+t)/n),\quad
+\|g(X)\|_\infty=O((d+t)/n),\quad
+\|g(X)\|_2=O((d+t)/\sqrt n).
 $$
 
-The mass error satisfies $|\kappa|\le K\eta$. Decreasing $\delta$ if necessary uniformly ensures $\mathfrak m(X)=m+\kappa>0$. Normalize $\widetilde X=mX/\mathfrak m(X)$. Its density and centered-kernel spectral-gap parameters are fixed, so the local scaling lemma applies. The two-norm displacement and capacity estimates give
+After normalizing to mass $m$, Lemmas 4.1–4.2 give $|\theta_X|=O((d+t)^2/n)$ and scaling displacement $O((d+t)/n)$. To compare the full Gaussian factors, set $Y=(S-I)/(n-1)$ and use skew-symmetry to obtain
 
 $$
-\|B_X-\widetilde X\|_F=O((d+t)/n),\qquad 0\le\theta_{\widetilde X}=O((d+t)^2/n).
+Y^{\mathsf T}Y=\frac{S^{\mathsf T}S+I}{(n-1)^2},\qquad
+Y^{\mathsf T}Y-\frac{S^{\mathsf T}S}{n^2}\succeq0.
 $$
 
-The correction for general mass then gives $|\theta_X|=O((d+t)^2/n)$. We also have $\tau\le nd^2/(n-1)^2$. The finite-deletion estimate, normalization factors, and diagonal-scaling perturbation together give
+The last positive-semidefinite difference has trace $O(n^{-1})$, since $\operatorname{tr}(S^{\mathsf T}S)=n(n-1)$. Integrating the log-determinant derivative across this Gram difference, with a fixed spectral gap, gives $|\log\mathcal G(Y)-\log D_n(S)|=O(n^{-1})$. Thus the $O(n^{-1})$ comparison concerns the logarithmic Gaussian factors. Combining it with Lemma 4.3, deletion, centering and scalar normalization gives
 
 $$
-|\log\mathcal G(B_X-P_m)-\log D_n(S)|=O((d+t+1)^2/n).
+|\log\mathcal G(B_X-P_m)-\log D_n(S)|=O(\eta).
 $$
 
-The exact restoration now contains no score product and is
-
-$$
-\operatorname{per}A[R,T]=\left[\frac{m(n-1)}{2n}\right]^m e^{-\theta_X}\operatorname{per}B_X.
-$$
-
-Apply the uniform permanent theorem and use $(1-1/n)^m=e^{-1}\exp(O((t+1)/n))$. Every logarithmic error is controlled by a fixed multiple of $\eta=(d+t+1)^2/n$. Choose $\delta$ sufficiently small and exponentiate these bounds. Throughout the preceding finite range, this uniformly bounds the absolute value of the relative error by $C_{\mathrm{err}}\eta$. In the asymptotic range $d=o(\sqrt n)$, $t\le B_0\log n$, we have $\eta\to0$. This proves the uniform approximation for submatrices with few deletions used in Theorem 8.1.
-
-
-Since $|s_i|\le d$, the absolute marginal error of the full matrix is at most $d/(n-1)$. The deletion-mass formula gives
-
-$$
-|\kappa|\le\frac nm\left[\frac{2td}{n-1}+\frac{2t^2}{n-1}+\frac{t^2}n\right]
-\le K\frac{t(d+t)}n.
-$$
-
-The error in a retained row is at most $K(d+t)/n$. There are $2m$ row and column errors in total, so
-
-$$
-\|g(X)\|_2\le\sqrt{2m}\,K(d+t)/n
-\le K'(d+t)/\sqrt n.
-$$
-
-Normalization preserves this order. Capacity and displacement give
-
-$$
-0\le\theta_{\widetilde X}\le K(d+t)^2/n,
-\quad
-\|B_X-\widetilde X\|_F\le\frac K{\sqrt m}\frac{d+t}{\sqrt n}
-\le K'(d+t)/n.
-$$
-
-Since $|\kappa|/m\le1/2$,
-
-$$
-\left|m\log\frac m{m+\kappa}\right|
-=m|\log(1+\kappa/m)|\le2|\kappa|,
-$$
-
-It follows that $|\theta_X|\le K[(d+t)^2+t(d+t)]/n\le K'(d+t)^2/n$. If $d=t=0$, all these quantities are zero.
-
-Gaussian deletion gives $K(t+\tau+1)/n$, while
-
-$$
-\tau=\frac{\sum_i s_i^2}{(n-1)^2}\le\frac{nd^2}{(n-1)^2}\le\frac{4d^2}n.
-$$
-
-The centered-kernel displacement is $K(d+t+1)/n$, so the total Gaussian logarithmic error is at most
-
-$$
-K\left[\frac{t+1}n+\frac{d^2}{n^2}+\frac{d+t+1}n\right]
-\le K'\frac{(d+t+1)^2}n=K'\eta.
-$$
-
-After complete restoration, we may write
-
-$$
-\frac{\operatorname{per}A[R,T]}{e^{-1}D_n(S)m!/2^m}
-=e^u(1+v),\qquad |u|\le K\eta,\quad |v|\le K/n\le K\eta.
-$$
-
-After choosing a fixed $\delta\le1/(2K)$,
-
-$$
-|e^u(1+v)-1|
-\le|e^u-1|+e^{|u|}|v|
-\le e^{K\delta}(|u|+|v|)
-\le2Ke^{K\delta}\eta.
-$$
-
-Here $K,\delta,N_0$ depend only on $B_0$ and the fixed analytic parameters.
-
-
-There is no paired prescaling here: $C=J/(n-1)+Y$, $X=(n/m)C[R,T]$, and $\widetilde X=mX/(m+\kappa)$. Therefore,
-
-$$
-\widetilde X=\frac n{m+\kappa}C[R,T],\qquad
-\Pi_m\widetilde X\Pi_m=\frac n{m+\kappa}Z.
-$$
-
-The scalar displacement is
-
-$$
-\left|\frac n{m+\kappa}-1\right|
-=\frac{|t-\kappa|}{|m+\kappa|}
-\le\frac{4(t+|\kappa|)}n
-\quad(m\ge n/2,\ |\kappa|\le m/2).
-$$
-
-Hence
-
-$$
-\begin{aligned}
-\|(B_X-P_m)-Z\|_F
-&\le\|\Pi_m(B_X-\widetilde X)\Pi_m\|_F
-+\left|\frac n{m+\kappa}-1\right|\|Z\|_F\\
-&\le K\frac{d+t}{n}+K\frac{t+|\kappa|}{n}\\
-&\le K'\left[\frac{d+t}{n}+\frac{t(d+t)}{n^2}\right].
-\end{aligned}
-$$
-
-Since $t/n\le1/2$, the last term is absorbed into $K(d+t)/n$. If $d=t=0$, this displacement is zero. Including the $O(n^{-1})$ difference between $Y$ and $S/n$ gives the uniform error bound $O((d+t+1)^2/n)$.
-
-For $d,t\ge0$, each of the following terms is at most a fixed multiple of $\eta=(d+t+1)^2/n$:
-
-$$
-\frac{t+1}n\le\eta,\quad
-\frac{d+t}n\le\eta,\quad
-\frac{(d+t)^2}n\le\eta,\quad
-\frac{t(d+t)}n\le\eta,\quad
-\frac{d^2}{n^2}\le\eta.
-$$
-
-Thus each logarithmic error is $O(\eta)$. The inequality $|e^u-1|\le e^{|u|}|u|$ gives the same order for the relative error. $\square$
+The restoration identity is now $\operatorname{per}A[R,T]=[m(n-1)/(2n)]^m e^{-\theta_X}\operatorname{per}B_X$. Insert Theorem 3.1 and $(1-1/n)^m=e^{-1}\exp(O((t+1)/n))$. The normalized ratio is $e^u(1+v)$ with $|u|\le K\eta$, $|v|\le K/n\le K\eta$. Choose a fixed sufficiently small $\delta$ and use $|e^u-1|\le e^{|u|}|u|$ to obtain the claimed finite, uniform relative-error bound. $\square$
 
 ## 5. Path convolution and a determinant representation
 
@@ -3086,201 +591,38 @@ $$
 0<\det(I+A[U])\le h_k,\qquad h_k=\left(\frac{k+1}{2}\right)^{k/2}.
 $$
 
+This proves the convolution and positivity claims. $\square$
+
 Set $h_0=1$ and define
 
 $$
 w_k=\frac{2^k h_k}{k!}.
 $$
 
-For every fixed $c>0$ and nonnegative integer $r$,
+
+**Lemma 5.1a (Fixed moments and a uniform tail).** For every fixed $c>0$ and integer $r\ge0$,
 
 $$
-\sum_{k\ge0}k^r c^k w_k<\infty.
+\sum_{k\ge0}(k+1)^r c^kw_k<\infty.
 $$
 
-Indeed, Stirling's formula gives $\log(c^kw_k)=-(k/2)\log k+O_c(k)$, where the subscript $c$ allows the implicit constant to depend on the value of $c$ fixed in advance. Write $\lceil x\rceil$ for the least integer at least $x$. For sufficiently large $n$, choose
+For sufficiently large $n$, put $k_n=\lceil4\log n/\log\log n\rceil$. There is an absolute constant $C$ such that the normalized contribution of $|U|>k_n$ to (5.1) is bounded uniformly by
 
 $$
-k_n=\left\lceil\frac{4\log n}{\log\log n}\right\rceil,
-$$
-
-Then $\sum_{k>k_n}c^kw_k=n^{-2+o(1)}$.
-
-The Brégman bound stated in [2, Lemma 2.1], the degree-balancing argument of [2, Corollary 2.3], and Stirling's formula give a uniform constant $C$ such that every $m$-vertex tournament satisfies
-
-$$
-\operatorname{per}A_T\le C\sqrt{m+1}\,\frac{m!}{2^m}.
-$$
-
-Increasing $C$ also covers $m=0$. Lemma 7.2 will prove a version with a variance penalty. Consequently, the contribution from $|U|>k_n$ in the path convolution, after division by $\mu_n$, is at most
-
-$$
-\frac C2\sqrt{n+1}\sum_{k>k_n}w_k
+B_n:=\frac C2\sqrt{n+1}\sum_{k>k_n}w_k
 =n^{-3/2+o(1)}=o(n^{-1}).
 $$
 
-This bound is uniform over all tournaments. We call the terms with $|U|\le k_n$ short terms. The permanents in the path convolution need to be estimated accurately only for these terms.
-
-
-Below, $[m]F$ denotes a coefficient in the formal series $F$, namely the coefficient of the monomial $m$, and we abbreviate $z_U=\prod_{i\in U}z_i$. The formal inverse matrix expands as
+**Proof.** Stirling's formula gives $\log(c^kw_k)=-(k/2)\log k+O_c(k)$, and the exact ratio of successive terms is at most $K_c/\sqrt{k+1}$. Hence every fixed moment converges and $\sum_{k>k_n}c^kw_k=n^{-2+o(1)}$. Brégman's bound and degree balancing [2, Lemma 2.1 and Corollary 2.3] give $\operatorname{per}A_T\le C\sqrt{m+1}m!/2^m$ for every tournament of order $m$; enlarge $C$ to include $m=0$. Consequently, the normalized convolution terms of size $k$ are at most
 
 $$
-(I-XA)^{-1}=\sum_{r\ge0}(XA)^r,
+\frac{\binom nk h_k C\sqrt{n-k+1}(n-k)!2^{-(n-k)}}{n!2^{-(n-1)}}
+\le\frac C2\sqrt{n+1}\,w_k.
 $$
 
-$$
-\mathbf1^{\mathsf T}(XA)^rX\mathbf1
-=\sum_{v_0,\ldots,v_r}
-z_{v_0}A_{v_0v_1}z_{v_1}\cdots A_{v_{r-1}v_r}z_{v_r}.
-$$
+Summing proves the assertion. $\square$
 
-In the monomial $z_1\cdots z_n$, each variable appears exactly once. It therefore requires $r=n-1$ and distinct vertices $v_0,\ldots,v_{n-1}$. Its coefficient is precisely $H(T)$. Set $M=I-XA$. Then
-
-$$
-\begin{aligned}
-M+X\mathbf1\mathbf1^{\mathsf T}
-&=I+X(J-A)=I+X\overline A,\\
-\det(M+X\mathbf1\mathbf1^{\mathsf T})
-&=\det M\,[1+\mathbf1^{\mathsf T}M^{-1}X\mathbf1].
-\end{aligned}
-$$
-
-The principal-minor expansion gives
-
-$$
-\det(I+X\overline A)=\sum_{U\subseteq[n]}
-\left(\prod_{i\in U}z_i\right)\det\overline A[U].
-$$
-
-In $\operatorname{tr}((XA)^r)/r$, a directed cycle on $r$ distinct vertices has $r$ starting points and receives weight one after division by $r$. The factor $1/h!$ in the exponential expansion removes the orderings of $h$ disjoint cycles. Thus, for any $W$,
-
-$$
-\left[\prod_{i\in W}z_i\right]\det(I-XA)^{-1}
-=\sum_{\sigma:W\to W\ \mathrm{bijection}}
-\prod_{i\in W}A_{i,\sigma(i)}=\operatorname{per}A[W].
-$$
-
-Therefore
-
-$$
-\begin{aligned}
-H(T)&=[z_1\cdots z_n]
-\left(\sum_Uz_U\det\overline A[U]\right)
-\det(I-XA)^{-1}\\
-&=\sum_U\det\overline A[U]\operatorname{per}A[U^c]\\
-&=\sum_U\det(I+A[U]^{\mathsf T})\operatorname{per}A[U^c]\\
-&=\sum_U\det(I+A[U])\operatorname{per}A[U^c].
-\end{aligned}
-$$
-
-
-For $k=0$, the empty-determinant convention immediately gives $\det(I+A[\varnothing])=h_0=w_0=1$. All subsequent calculations involving $1/k$ assume $k\ge1$. Set $M=I+A[U]$. Here $\operatorname{Re}z$ denotes the real part of a complex number, and the superscript $*$ denotes conjugate transpose; real matrices satisfy $M^*=M^{\mathsf T}$. For any nonzero complex vector $z$,
-
-$$
-\operatorname{Re}(z^*Mz)=z^*\frac{M+M^{\mathsf T}}2z
-=\frac12(\|z\|_2^2+|\mathbf1^{\mathsf T}z|^2)>0.
-$$
-
-If $Mz=\lambda z$, then $\operatorname{Re}\lambda>0$. The real eigenvalues are positive, and each nonreal conjugate pair has product $|\lambda|^2>0$. Hence $\det M>0$. On the other hand,
-
-$$
-\begin{aligned}
-|\det M|&\le\prod_{i\in U}\|M_{i,\cdot}\|_2
-=\prod_{i\in U}(1+d_i^+(T[U]))^{1/2}\\
-&\le\left(\frac1k\sum_{i\in U}(1+d_i^+(T[U]))\right)^{k/2}\\
-&=\left(\frac{k+k(k-1)/2}{k}\right)^{k/2}
-=\left(\frac{k+1}{2}\right)^{k/2}=h_k.
-\end{aligned}
-$$
-
-Using $k!\ge(k/e)^k$, for $k\ge1$ we have
-
-$$
-c^kw_k\le\left(\frac{2ec}{k}\sqrt{\frac{k+1}{2}}\right)^k
-\le\left(\frac{2ec}{\sqrt k}\right)^k.
-$$
-
-For fixed $r$ and sufficiently large $k$, the right-hand side multiplied by $k^r$ is at most $2^{-k}$. Every fixed moment therefore converges. More precisely,
-
-$$
-\log(c^kw_k)=-\tfrac12k\log k+O_c(k),\qquad
-k_n\log k_n=(4+o(1))\log n.
-$$
-
-The ratio of successive terms follows directly from the definition:
-
-$$
-\frac{c^{k+1}w_{k+1}}{c^kw_k}
-=\frac{2c}{k+1}\sqrt{\frac{k+2}{2}}
-\left(1+\frac1{k+1}\right)^{k/2}
-\le\frac{K_c}{\sqrt{k+1}}.
-$$
-
-The tail sum is therefore at most twice its first term and hence is $n^{-2+o(1)}$. The number of vertex subsets of size $k$ is $\binom nk$, where for integers $0\le k\le n$ we define
-
-$$
-\binom nk=\frac{n!}{k!(n-k)!}.
-$$
-
-After normalization, the convolution terms of size $k$ satisfy
-
-$$
-\begin{aligned}
-\frac{\binom nk h_k\,C\sqrt{n-k+1}(n-k)!2^{-(n-k)}}{n!2^{-(n-1)}}
-&=\frac C2\sqrt{n-k+1}\frac{2^kh_k}{k!}\\
-&\le\frac C2\sqrt{n+1}\,w_k.
-\end{aligned}
-$$
-
-Here $\binom nk(n-k)!/n!=1/k!$, and the power of two is $2^{k-1}$. Summation gives the asserted error from long terms.
-
-
-We now derive the formal identity used above. Temporarily introduce another variable $t$ and write $M=XA$. A determinant with constant term one has a formal logarithm. Differentiation of the determinant gives
-
-$$
-\frac{d}{dt}\log\det(I-tM)
-=-\operatorname{tr}[(I-tM)^{-1}M].
-$$
-
-Substitute the formal geometric series into the right-hand side:
-
-$$
-\begin{aligned}
--\operatorname{tr}[(I-tM)^{-1}M]
-&=-\operatorname{tr}\left[\left(\sum_{h=0}^{\infty}t^hM^h\right)M\right]\\
-&=-\sum_{h=0}^{\infty}t^h\operatorname{tr}(M^{h+1})\\
-&=-\sum_{r=1}^{\infty}t^{r-1}\operatorname{tr}(M^r).
-\end{aligned}
-$$
-
-Formal integration term by term, with $\log\det(I-0M)=0$, gives
-
-$$
-\log\det(I-tM)=-\sum_{r=1}^{\infty}\frac{t^r}{r}\operatorname{tr}(M^r).
-$$
-
-Rearranging, exponentiating and setting $t=1$, as a formal series in the variables $z_i$, yields
-
-$$
-\det(I-XA)^{-1}
-=\exp\left(\sum_{r=1}^{\infty}\frac{\operatorname{tr}((XA)^r)}r\right).
-$$
-
-The index expansion of each trace term is
-
-$$
-\operatorname{tr}((XA)^r)
-=\sum_{i_1,\ldots,i_r}
-z_{i_1}A_{i_1i_2}z_{i_2}A_{i_2i_3}\cdots z_{i_r}A_{i_ri_1}.
-$$
-
-In a squarefree monomial, $i_1,\ldots,i_r$ must be distinct. The same cycle has $r$ cyclic starting points, each giving the same product, so the factor $1/r$ counts them as one cycle. Selecting exactly $h$ disjoint cycles in the exponential produces
-
-$$
-\frac1{h!}\left(\sum_{\mathcal C}\mathrm{weight}(\mathcal C)\right)^h
-$$
-
-The same collection of $h$ cycles is selected in $h!$ orders. The factor $1/h!$ cancels this repetition exactly. If two cycles intersect, the variable at a common vertex occurs at least twice and cannot contribute to a squarefree coefficient. This gives the cycle-cover count term by term.
+We call $|U|\le k_n$ the short terms. In the error estimates below, retaining the fixed moments of $c^kw_k$ instead of bounding $k$ by $k_n$ avoids logarithmic losses.
 
 ### 5.2 The emergence of the spectral factor
 
@@ -3333,156 +675,48 @@ To obtain an upper bound for all tournaments, Section 7 separately handles large
 The spectral-ratio bound in this section is due to Divoux and Wang [12, Proposition 7.1], using the comparison of Fang and Huang [11]. The determinant polynomial and the carousel switching are also in [12, Section 7 and Lemma 9.1]. We give the details and follow the equality conditions needed for the fixed-base corollary.
 
 
-### 6.1 The spectral radius and convex optimization
+### 6.1 The spectral radius and an elementary uniform bound
 
-
-**Lemma 6.1 (Spectral cap).**
-
-Every tournament sign matrix satisfies
+**Lemma 6.1 (Spectral cap).** Every tournament sign matrix of order $n$ satisfies
 
 $$
-\|S\|_{\rm op}\le\cot\left(\frac{\pi}{2n}\right)<\frac{2n}{\pi},
-\qquad \rho_n(S)\le C_*.
+\|S\|_{\rm op}\le\cot\left(\frac\pi{2n}\right)<\frac{2n}\pi,
+\qquad \rho_n(S)\le\frac{3n-1}{n+1}<3.
 $$
 
-
-**Proof.**
-
-We first give the phase-ordering proof of the operator bound [4, Theorem 3.1] and then carry out the required convex optimization. A Hermitian matrix is a complex square matrix satisfying $H^*=H$. The Hermitian matrix $iS$ has spectrum symmetric about zero, so its largest eigenvalue is $\|S\|_{\rm op}$. For an arbitrary complex vector $z$, apply the same signed permutation to $z,S$ so that the phases of the nonzero coordinates lie in $[0,\pi)$ and occur in increasing order. Zero coordinates may be placed arbitrarily. For $i<j$, we then have $c_{ij}=\operatorname{Im}(\overline z_i z_j)\ge0$, where $\operatorname{Im}$ takes the imaginary part and $\overline z_i$ is the complex conjugate of $z_i$. Let $T_n^0$ be the transitive sign matrix with every entry above the diagonal equal to one. Then
+**Proof.** The phase-ordering argument [4, Theorem 3.1] gives the operator bound as follows. Apply a simultaneous signed permutation to $z$ and $S$ so that the phases of the nonzero entries of $z$ lie in increasing order in $[0,\pi)$. Then $c_{ij}=\operatorname{Im}(\overline z_i z_j)\ge0$ for $i<j$, and, for the transitive sign matrix $T_n^0$,
 
 $$
 z^*iSz=-2\sum_{i<j}S_{ij}c_{ij}
-\le2\sum_{i<j}c_{ij}=z^*(-iT_n^0)z.
+\le 2\sum_{i<j}c_{ij}=z^*(-iT_n^0)z.
 $$
 
-Maximizing the Rayleigh quotient gives $\|S\|_{\rm op}\le\|T_n^0\|_{\rm op}$. To compute the latter norm, subtract consecutive row eigenvalue equations to obtain $(\lambda-1)v_i=(\lambda+1)v_{i+1}$. The first row equation shows that the geometric ratio $r=(\lambda-1)/(\lambda+1)$ satisfies $r^n=-1$. Hence all eigenvalues are $i\cot((2j-1)\pi/(2n))$, $1\le j\le n$, giving the stated norm. For $n\ge2$, the final strict inequality uses $\tan u>u$; the case $n=1$ follows directly.
+Rayleigh's principle reduces the bound to $T_n^0$. Subtracting consecutive row eigenvalue equations gives $(\lambda-1)v_i=(\lambda+1)v_{i+1}$. The geometric ratio $r=(\lambda-1)/(\lambda+1)$ satisfies $r^n=-1$ by the first row equation. Thus the eigenvalues are $i\cot((2j-1)\pi/(2n))$, $1\le j\le n$. Their largest modulus is $\cot(\pi/(2n))$, and $\tan u>u$ gives the strict inequality (the case $n=1$ is immediate).
 
-Define $a_*=4/\pi^2$. The operator bound above gives $0\le x_j\le a_*$ and $\sum_jx_j<1/2$. The function
+For the ratio bound, write the eigenvalues in nonzero pairs $\pm i\lambda_j$ and put $x_j=\lambda_j^2/n^2$. The Frobenius identity gives $\sum_jx_j=(n-1)/(2n)<1/2$. With $\phi(x)=\log((1+x)/(1-x))$, the derivative $\phi'(x)=2/(1-x^2)$ is increasing on $[0,1)$ and $\phi(0)=0$. Hence $\phi(a+b)\ge\phi(a)+\phi(b)$ for $a,b\ge0$, $a+b<1$. Repeatedly merging the $x_j$ gives
 
 $$
-\phi(x)=\log\frac{1+x}{1-x}
+\log\rho_n(S)=\sum_j\phi(x_j)
+\le\phi\left(\frac{n-1}{2n}\right),
 $$
 
-is increasing and convex on $[0,1)$. Moving mass from two interior coordinates toward one capped coordinate and one remainder coordinate cannot decrease $\sum_j\phi(x_j)$. Add zero coordinates when necessary and relax the total mass to $1/2$. Since $1/4<a_*<1/2$, the relaxed maximum is attained at $a_*,1/2-a_*,0,\ldots$. Exponentiating gives $C_*$. Every spectrum realizable by a tournament matrix lies in this relaxed region, so its maximum is an upper bound for $\rho_n(S)$.
+which proves the stated bound, including $n=1$.
 
-The same eigenvalue calculation also gives the following identity; see also [4, Theorem 2.1]:
+The eigenvalue calculation also yields
 
 $$
 \det(I+zT_n^0)=\frac{(1+z)^n+(1-z)^n}{2}.
 $$
 
-Section 8 will use this determinant polynomial to compute the spectral factor of the carousel construction.
+Indeed, each even transitive principal determinant equals one: the positive cotangent frequencies pair with their reciprocals at complementary angles. Odd principal determinants vanish by skew-symmetry. The principal-minor expansion is therefore $\sum_h\binom n{2h}z^{2h}$. $\square$
 
-
-Write $T=T_n^0$ and suppose $Tv=\lambda v$. The equations for row $i$ and row $i+1$, respectively, are
-
-$$
-\lambda v_i=\sum_{j>i}v_j-\sum_{j<i}v_j,\qquad
-\lambda v_{i+1}=\sum_{j>i+1}v_j-\sum_{j<i+1}v_j.
-$$
-
-Subtracting gives
+**Historical remark.** Combining the stronger cap $x_j\le4/\pi^2$ with $\sum_jx_j\le1/2$ gives the earlier constant
 
 $$
-\lambda(v_i-v_{i+1})=v_i+v_{i+1},\qquad
-(\lambda-1)v_i=(\lambda+1)v_{i+1}.
+C_* =\frac{3\pi^4+4\pi^2-32}{\pi^4+4\pi^2-32}>L.
 $$
 
-A skew-symmetric matrix has purely imaginary eigenvalues, so $\lambda+1\ne0$. Set $r=(\lambda-1)/(\lambda+1)$. Then $v_i=v_1r^{i-1}$ and $v_1\ne0$. Since $r=1$ would imply $-1=1$,
-
-$$
-\lambda=\sum_{h=1}^{n-1}r^h=\frac{r-r^n}{1-r},\qquad
-\lambda=\frac{1+r}{1-r}.
-$$
-
-Comparison yields $r-r^n=1+r$, or $r^n=-1$. Set $\theta_j=(2j-1)\pi/(2n)$. Then
-
-$$
-r_j=e^{2i\theta_j},\qquad
-\lambda_j=\frac{1+e^{2i\theta_j}}{1-e^{2i\theta_j}}
-=\frac{2e^{i\theta_j}\cos\theta_j}{-2ie^{i\theta_j}\sin\theta_j}
-=i\cot\theta_j.
-$$
-
-These $n$ roots are distinct and therefore give all eigenvalues. The largest modulus is $\cot(\pi/(2n))$. For $0<u<\pi/2$,
-
-$$
-\tan u-u=\int_0^u(\sec^2v-1)\,dv=\int_0^u\tan^2v\,dv>0,
-$$
-
-Thus $\cot u<1/u$.
-
-
-After the signed permutation, write $z_i=r_ie^{i\theta_i}$ with $r_i\ge0$ and $0\le\theta_1\le\cdots\le\theta_n<\pi$. A signed permutation is an orthogonal matrix $Q$. Simultaneously replacing $S$ by $Q^{\mathsf T}SQ$ and $z$ by $Q^{\mathsf T}z$ preserves the quadratic form and norms. Expanding pair by pair gives
-
-$$
-\begin{aligned}
-z^*iSz&=\sum_{i<j}iS_{ij}(\overline z_i z_j-\overline z_jz_i)\\
-&=-2\sum_{i<j}S_{ij}r_ir_j\sin(\theta_j-\theta_i)\\
-&\le2\sum_{i<j}r_ir_j\sin(\theta_j-\theta_i)=z^*(-iT_n^0)z.
-\end{aligned}
-$$
-
-Differentiate $\phi$ twice:
-
-$$
-\phi'(x)=\frac2{1-x^2}>0,\qquad
-\phi''(x)=\frac{4x}{(1-x^2)^2}\ge0.
-$$
-
-If $0<x\le y<a_*$, choose $0\le t\le\min(x,a_*-y)$. Then
-
-$$
-\frac{d}{dt}[\phi(x-t)+\phi(y+t)]
-=-\phi'(x-t)+\phi'(y+t)\ge0.
-$$
-
-Taking $t=\min(x,a_*-y)$ sends at least one coordinate to $0$ or $a_*$. After finitely many such steps, at most one coordinate remains in the interior. Since $2a_*>1/2$ and $a_*<1/2$, at total mass $1/2$ the final vector is
-
-$$
-(a_*,1/2-a_*,0,\ldots),\qquad
-\rho_n(S)\le e^{\phi(a_*)+\phi(1/2-a_*)}=C_*.
-$$
-
-Finally, consider the determinant polynomial. If $p_n(z)=\det(I+zT_n^0)$, the eigenvalues above show that it has the same complex roots and degree as $q_n(z)=((1+z)^n+(1-z)^n)/2$. Alternatively, applying the same eigenvalue calculation to each even-order principal minor gives $\det T_{2h}^0=1$ and $\det T_{2h+1}^0=0$. With $\lfloor x\rfloor$ denoting the greatest integer at most $x$, the principal-minor expansion directly gives
-
-$$
-p_n(z)=\sum_{h=0}^{\lfloor n/2\rfloor}\binom n{2h}z^{2h}
-=\frac12\sum_{k=0}^n\binom nk(z^k+(-z)^k)=q_n(z).
-$$
-
-The even-order determinant can also be obtained as one from the roots of $q_{2h}$: $\det T_{2h}^0=\prod_{j=1}^{2h}i\cot\theta_j=1$. Pair the positive-frequency $\cot$ factors with $\tan$ factors at complementary angles to obtain this product.
-
-
-For order $2m$, the positive frequencies are
-
-$$
-\lambda_j=\cot\theta_j,\quad
-\theta_j=\frac{(2j-1)\pi}{4m},\quad1\le j\le m.
-$$
-
-The index of the complementary angle is $m+1-j$, because
-
-$$
-\theta_{m+1-j}=\frac{(2m+1-2j)\pi}{4m}
-=\frac\pi2-\theta_j.
-$$
-
-Hence $\cot\theta_{m+1-j}=\tan\theta_j=(\cot\theta_j)^{-1}$, and therefore
-
-$$
-\left(\prod_{j=1}^m\cot\theta_j\right)^2
-=\prod_{j=1}^m\cot\theta_j\cot\theta_{m+1-j}=1.
-$$
-
-Since each $\lambda_j>0$, their product is one. Pairing the eigenvalues as $i\lambda_j,-i\lambda_j$ gives
-
-$$
-\det T_{2m}^0=\prod_{j=1}^m(i\lambda_j)(-i\lambda_j)
-=\prod_{j=1}^m\lambda_j^2=1.
-$$
-
-For odd order $2m+1$, the middle eigenvalue is $i\cot(\pi/2)=0$, so the determinant vanishes. Every principal submatrix retains the transitive form with ones above the diagonal. Thus all even-order principal minors equal one, and all odd-order principal minors equal zero. $\square$
+It is the relaxed convex maximum attained at $4/\pi^2,1/2-4/\pi^2,0,\ldots$. The present proof uses the elementary bound $\rho_n<3$ to exclude exceptional vertices and the all-order sharp comparison in Proposition 6.6 for the final upper bound.
 
 ### 6.2 Product comparison and equality
 
@@ -3546,8 +780,6 @@ $$
 $$
 
 Suppose the squared norms are equal. The function $g(t)=\sum_i(v_i-t)_+-\sum_i(u_i-t)_+$ is continuous and nonnegative, with integral zero. If $g(t_0)>0$, then $g(t)>g(t_0)/2$ on an interval of positive length, a contradiction. Thus $g\equiv0$. Comparing right derivatives gives
-
-Here $\#U$ denotes the cardinality of a finite set $U$, and $\mathbf1_{\mathcal E}$ is the indicator of the condition $\mathcal E$.
 
 $$
 \#\{i:u_i>t\}=\#\{i:v_i>t\}=:N(t).
@@ -3630,7 +862,7 @@ $$
 =\|K_d^pe_1\|_2^2.
 $$
 
-The signed cyclic shift $Z$ in Appendix A.2 satisfies $Z^TT_dZ=T_d$, and therefore $Z^TT_d^{2p}Z=T_d^{2p}$. Comparing diagonal entries gives $(T_d^{2p})_{j+1,j+1}=(T_d^{2p})_{jj}$ for $j<d$. At $j=d$, the two signs cancel and give $(T_d^{2p})_{11}=(T_d^{2p})_{dd}$. Thus all diagonal entries agree, and
+The signed cyclic shift $Z$ in the proof companion, Appendix A.2 satisfies $Z^TT_dZ=T_d$, and therefore $Z^TT_d^{2p}Z=T_d^{2p}$. Comparing diagonal entries gives $(T_d^{2p})_{j+1,j+1}=(T_d^{2p})_{jj}$ for $j<d$. At $j=d$, the two signs cancel and give $(T_d^{2p})_{11}=(T_d^{2p})_{dd}$. Thus all diagonal entries agree, and
 
 $$
 \begin{aligned}
@@ -3704,7 +936,7 @@ $$
 =\|T_d^2\|_F^2=\operatorname{tr}T_d^4.
 $$
 
-By Appendix A.3, equality of the fourth moments is equivalent to $S=\Omega^TT_d\Omega$ for a signed permutation matrix $\Omega$. Conversely, $\Omega^T\Omega=I$ implies
+By the proof companion, Appendix A.3, equality of the fourth moments is equivalent to $S=\Omega^TT_d\Omega$ for a signed permutation matrix $\Omega$. Conversely, $\Omega^T\Omega=I$ implies
 
 $$
 I+tS=\Omega^T(I+tT_d)\Omega,\qquad
@@ -3741,7 +973,7 @@ $$
 0=(T_d\varepsilon)_i-(T_d\varepsilon)_{i+1}=\varepsilon_i+\varepsilon_{i+1}.
 $$
 
-It follows that $\varepsilon_i=(-1)^{i-1}\varepsilon_1$. The common sign $\varepsilon_1$ cancels in $D_{\varepsilon}T_dD_{\varepsilon}$, leaving the alternating switching. Appendix A.2 identifies this tournament with $\mathrm{Car}_d$. Thus, among regular tournaments, equality holds only for the carousel, up to isomorphism.
+It follows that $\varepsilon_i=(-1)^{i-1}\varepsilon_1$. The common sign $\varepsilon_1$ cancels in $D_{\varepsilon}T_dD_{\varepsilon}$, leaving the alternating switching. the proof companion, Appendix A.2 identifies this tournament with $\mathrm{Car}_d$. Thus, among regular tournaments, equality holds only for the carousel, up to isomorphism.
 
 
 ### 6.5 A gap from the sixth moment
@@ -3749,8 +981,6 @@ It follows that $\varepsilon_i=(-1)^{i-1}\varepsilon_1$. The common sign $\varep
 
 ![Reversing all arcs between $U=\{1,2\}$ and its complement in $\mathrm{Car}_5$ gives the transitive order $(3,1,4,2,0)$. Circled vertices belong to $U$. This switching conjugates the sign matrix as $S\mapsto DSD$ and preserves the spectral ratio; it need not preserve the Hamiltonian path count.](figures/carousel_switching.png){width=94%}
 
-
-$\binom nk=n!/(k!(n-k)!)$, with value 0 for $k>n$.
 
 **Lemma 6.5 (Strict sixth-moment deficit).**
 
@@ -3799,47 +1029,84 @@ r_d-\rho_d(S)\ge r_d(1-e^{-16/(3d^6)})>0.
 $$
 
 
-The gap depends on the base order $d$. Section 11.7 obtains a corresponding block threshold by comparing the limits.
+The gap depends on the base order $d$. Section 11.2 obtains a corresponding block threshold by comparing the limits.
+
+### 6.6 The sharp comparison at every order
+
+**Proposition 6.6 (All-order spectral comparison).** For every tournament sign matrix $S$ of order $n$, $\rho_n(S)\le r_n$, where $r_n=L+O(n^{-1})$ is the explicit quotient below. The $O(n^{-1})$ constant is absolute and uniform over tournaments.
+
+**Proof.**
+
+For $n=1$ the ratio equals one. The regular equality classification in Section 6 concerns odd orders, but the preceding spectral inequality does not require regularity. To make its use at every order explicit, let $n\ge2$ and write the permutation in Section 6.3 as all odd indices in increasing order followed by all even indices in decreasing order. At odd order this is the original permutation. At even order it is $(1,3,\ldots,n-1,n,n-2,\ldots,2)$. The same entrywise computation gives
+
+$$
+T_n=\Lambda^TD_0K_nR_0\Lambda,\qquad
+T_n^2=-U^TK_n^2U,\qquad U=D_0\Lambda,
+\qquad Ue_1=e_1.
+$$
+
+The signed wrap-around shift satisfies $Z^TT_nZ=T_n$ at either parity. Consequently, all diagonal entries of $T_n^{2p}$ coincide. For every integer $p\ge1$, the columnwise Fang–Huang comparison and these identities give
+
+$$
+\|S^p\|_F^2\le n\|K_n^pe_1\|_2^2=\|T_n^p\|_F^2.
+$$
+
+Substitution into the absolutely convergent logarithmic series of Section 6.4 yields, at every order,
+
+$$
+\log\rho_n(S)
+=\sum_{r\ge0}\frac{\|S^{2r+1}\|_F^2}{(2r+1)n^{4r+2}}
+\le\log\rho_n(T_n).
+$$
+
+The determinant polynomial in Lemma 6.1 also holds at both parities. Hence
+
+$$
+\rho_n(S)\le r_n
+=\frac{(1+1/n)^n+(1-1/n)^n}
+{(1+i/n)^n+(1-i/n)^n}
+=L+O(n^{-1}).
+$$
+
+For the last step, the Taylor estimate for the logarithm gives, for $z\in\{1,-1,i,-i\}$, $n\log(1+z/n)=z+O(n^{-1})$, while the denominator tends to $2\cos1>0$. The quotient therefore has an $O(n^{-1})$ error. These estimates depend on the order alone, not on the tournament. $\square$
 
 ## 7. The upper bound for arbitrary tournaments
 
-In this section, $V(T)$ denotes the real-valued variance below. In the earlier expression $U\subseteq V(T)$, the symbol $V(T)$ denotes the vertex set; its use within a set-inclusion relation distinguishes the two meanings. Write
+Write $V_{\rm deg}(T)$ for degree variance, reserving $V(T)$ for the vertex set:
 
 $$
-V(T)=\sum_i\left(d_i^+-\frac{n-1}{2}\right)^2
+V_{\rm deg}(T)=\sum_i\left(d_i^+-\frac{n-1}{2}\right)^2
 =\frac14\|S\mathbf1\|_2^2,
 \qquad
-\tau=\frac{4V(T)}{(n-1)^2}.
+\tau=\frac{4V_{\rm deg}(T)}{(n-1)^2}.
 $$
 
-The proof has three cases. If $V(T)\ge16n^2\log n$, the variance penalty in Brégman's inequality makes the path count negligible. Otherwise, vertices with degrees outside $[(n-1)/20,19(n-1)/20]$ number at most $O(\log n)$. If any such vertices exist, separating them from the rest gives a path count below the random expectation. In the remaining tournaments, normalized scores stay a fixed distance from $\pm1$, and $\tau=O(\log n)$. For them, the permanent estimate below retains the factor $e^{-\tau}$ and controls the final error by $O(n^{-1})$.
+The proof has three cases. If $V_{\rm deg}(T)\ge16n^2\log n$, the variance penalty in Brégman's inequality makes the path count negligible. Otherwise, vertices with degrees outside $[(n-1)/20,19(n-1)/20]$ number at most $O(\log n)$. If any such vertices exist, separating them from the rest gives a path count below the random expectation. In the remaining tournaments, normalized scores stay a fixed distance from $\pm1$, and $\tau=O(\log n)$. For them, the permanent estimate below retains the factor $e^{-\tau}$ and controls the final error by $O(n^{-1})$.
 
 The constant $K$ in this section may increase from one occurrence to the next; after the degree thresholds above are fixed, it is absolute. Section 5.1 has already bounded the long terms by $o(n^{-1})\mu_n$, so here we estimate only short terms $|U|\le k_n$.
 
-The next bound records the counting estimates with the elementary spectral-radius bound. Its upper constant exceeds the leading constant already established in [12]; it is used only as an intermediate estimate.
+The three cases require different precision: the high-variance class contributes $o(n^{-1})$ after normalization; the exceptional-vertex class only needs a fixed gap below the baseline $1$; the remaining class carries the sharp $O(n^{-1})$ estimate. All constants in the local scaling lemmas are fixed before taking the common large-order threshold.
 
-**Proposition 7.1 (Auxiliary counting bound).** There are absolute constants $K,n_0$ such that every $n\ge n_0$ satisfies
+**Proposition 7.1 (Uniform sharp upper bound).** There are absolute constants $K,n_0$ such that every tournament $T$ of order $n\ge n_0$ satisfies
 
 $$
-(L-K/n)\mu_n\le P(n)\le(C_*+K/n)\mu_n,
-\qquad
-C_* =\frac{3\pi^4+4\pi^2-32}{\pi^4+4\pi^2-32}.
+H(T)\le (L+K/n)\mu_n.
 $$
 
 ### 7.1 Applying the nonprincipal permanent estimate
 
-The estimate of Section 4.4 allows different deleted row and column sets. We use it below to control edges between the exceptional set and the core. When the deleted sets agree, the score product is retained outside the path convolution.
+The estimate of Lemma 4.4 allows different deleted row and column sets. We use it below to control edges between the exceptional set and the core. When the deleted sets agree, the score product is retained outside the path convolution.
 
 ### 7.2 Large score variance
 
 
 **Lemma 7.2 (Permanent bound with a variance penalty).**
 
-There is an absolute constant $K$ such that, for every order $m\ge1$, a tournament $Q$ with outdegrees $d_i$ and degree variance $V(Q)=\sum_i(d_i-(m-1)/2)^2$ satisfies
+There is an absolute constant $K$ such that, for every order $m\ge1$, a tournament $Q$ with outdegrees $d_i$ and degree variance $V_{\rm deg}(Q)=\sum_i(d_i-(m-1)/2)^2$ satisfies
 
 $$
 \operatorname{per}A_Q\le
-K\sqrt{m+1}\frac{m!}{2^m}\exp\left(-\frac{V(Q)}{8m^2}\right).
+K\sqrt{m+1}\frac{m!}{2^m}\exp\left(-\frac{V_{\rm deg}(Q)}{8m^2}\right).
 $$
 
 
@@ -3856,7 +1123,7 @@ Applying the arithmetic–geometric mean inequality to $1,\ldots,k-1$ gives $\lo
 
 $$
 \sum_i f(d_i)
-\le m\widetilde f(\eta)-\frac{V(Q)}{8m^2}+\frac{1}{32m},
+\le m\widetilde f(\eta)-\frac{V_{\rm deg}(Q)}{8m^2}+\frac{1}{32m},
 $$
 
 Here $\widetilde f$ is the linear interpolation. The last term handles a half-integer mean and can be omitted when the mean is an integer. Stirling's formula gives
@@ -3872,19 +1139,19 @@ We apply this bound to the tournament associated with each short deleted set. We
 After deleting a size-$k$ set $U$, each remaining centered degree changes by at most $k/2$, and the sum of the original squared deviations at deleted vertices is at most $kn^2/4$. Applying Cauchy–Schwarz to the cross term gives
 
 $$
-V(T-U)\ge V(T)-\frac{kn^2}{4}-k\sqrt{nV(T)}.
+V_{\rm deg}(T-U)\ge V_{\rm deg}(T)-\frac{kn^2}{4}-k\sqrt{nV_{\rm deg}(T)}.
 $$
 
-If $V(T)\ge16n^2\log n$, then uniformly for every $k\le k_n$,
+If $V_{\rm deg}(T)\ge16n^2\log n$, then uniformly for every $k\le k_n$,
 
 $$
-V(T-U)\ge(1-o(1))V(T).
+V_{\rm deg}(T-U)\ge(1-o(1))V_{\rm deg}(T).
 $$
 
 Thus the variance penalty in every short permanent is at most $n^{-2+o(1)}$, absorbing the preceding $\sqrt n$ factor. Summation with the summable determinant weights bounds the total normalized short contribution by $n^{-3/2+o(1)}$. Adding the long-deletion tail gives, uniformly over this graph class,
 
 $$
-V(T)\ge16n^2\log n\quad\Longrightarrow\quad
+V_{\rm deg}(T)\ge16n^2\log n\quad\Longrightarrow\quad
 H(T)/\mu_n=o(1/n).
 $$
 
@@ -3963,10 +1230,10 @@ Thus
 
 $$
 \begin{aligned}
-V(T-U)&=\sum_{i\notin U}(b_i+\delta_i)^2\\
-&\ge V(T)-\sum_{i\in U}b_i^2-2\left|\sum_{i\notin U}b_i\delta_i\right|\\
-&\ge V(T)-kn^2/4-k\sum_{i\notin U}|b_i|\\
-&\ge V(T)-kn^2/4-k\sqrt{nV(T)}.
+V_{\rm deg}(T-U)&=\sum_{i\notin U}(b_i+\delta_i)^2\\
+&\ge V_{\rm deg}(T)-\sum_{i\in U}b_i^2-2\left|\sum_{i\notin U}b_i\delta_i\right|\\
+&\ge V_{\rm deg}(T)-kn^2/4-k\sum_{i\notin U}|b_i|\\
+&\ge V_{\rm deg}(T)-kn^2/4-k\sqrt{nV_{\rm deg}(T)}.
 \end{aligned}
 $$
 
@@ -3977,10 +1244,10 @@ $$
 k\sqrt{n/V}\le\frac{k}{4\sqrt{n\log n}}=o(1).
 $$
 
-It follows that $V(T-U)/(8(n-k)^2)\ge(2-o(1))\log n$, so the penalty is $n^{-2+o(1)}$. Multiplying by $\sqrt n$ and $\sum_kw_k<\infty$ gives $n^{-3/2+o(1)}$.
+It follows that $V_{\rm deg}(T-U)/(8(n-k)^2)\ge(2-o(1))\log n$, so the penalty is $n^{-2+o(1)}$. Multiplying by $\sqrt n$ and $\sum_kw_k<\infty$ gives $n^{-3/2+o(1)}$.
 
 
-To estimate the factorial factor in the variance bound, apply the Stirling formula from Appendix B.3. With $c$ denoting its constant,
+To estimate the factorial factor in the variance bound, apply the Stirling formula from the proof companion, Appendix B.3. With $c$ denoting its constant,
 
 $$
 f(r)=\log r-1+\frac{\log r}{2r}+\frac cr+O(r^{-2}).
@@ -4063,14 +1330,14 @@ The finitely many values of $m$ outside the expansion range are covered by incre
 ![A directed five-cycle in a permanent term and its row-column matching. Shaded vertices form the exceptional set $F=\{f_1,f_2\}$. Cross-block arcs occupy core rows $I=\{x_2,x_3\}$ and core columns $J=\{x_1,x_3\}$, leaving the nonprincipal entry $A[x_1,x_2]$ shown in bold. Only the arcs of this permanent term are drawn.](figures/nonprincipal_matching.png){width=94%}
 
 
-Assume from now on that $V(T)<16n^2\log n$. Define the exceptional set
+Assume from now on that $V_{\rm deg}(T)<16n^2\log n$. Define the exceptional set
 
 $$
 F=\left\{i:\frac{d_i^+}{n-1}\notin[1/20,19/20]\right\},
 \qquad f=|F|,\qquad M=T-F,\qquad N=n-f.
 $$
 
-Each exceptional vertex contributes to $V(T)$ at least a fixed positive multiple of $n^2$, so $f=O(\log n)$. A nonexceptional vertex originally has absolute score at most $0.9(n-1)$, and deleting $F$ changes its score by at most $f$. Consequently, uniformly for all sufficiently large $n$,
+Each exceptional vertex contributes to $V_{\rm deg}(T)$ at least a fixed positive multiple of $n^2$, so $f=O(\log n)$. A nonexceptional vertex originally has absolute score at most $0.9(n-1)$, and deleting $F$ changes its score by at most $f$. Consequently, uniformly for all sufficiently large $n$,
 
 $$
 \max_i|(S_M\mathbf1)_i/(N-1)|<0.95,\qquad
@@ -4199,7 +1466,7 @@ Restoring the falling factorial for short subsets contributes $\exp(O(k_n^2/n))=
 $$
 \frac{H(T)}{\mu_n}
 \le(1/4)^f\rho_N(S_M)+o(1)
-\le C_*/4+o(1)<1,\qquad f\ge1.
+\le 3/4+o(1)<1,\qquad f\ge1.
 $$
 
 Since $P(n)\ge\mu_n$, a tournament with exceptional vertices cannot maximize the path count once $n$ is sufficiently large. A weaker bound for short convolution terms avoiding $F$ is $(10/3)4^{-f}(1+\varepsilon_n)$. Denote the combined contribution of the other short terms and the long terms by $\delta_n$. Then
@@ -4226,7 +1493,7 @@ An exceptional vertex satisfies
 
 $$
 |d_i^+-(n-1)/2|>\frac9{20}(n-1),\quad
-f\frac{81}{400}(n-1)^2\le V(T)<16n^2\log n,
+f\frac{81}{400}(n-1)^2\le V_{\rm deg}(T)<16n^2\log n,
 $$
 
 Hence $f<(6400/81)(n/(n-1))^2\log n$. For the core,
@@ -4392,6 +1659,16 @@ The constants are independent of the tournament and deletion sets, so the result
 
 ### 7.4 The score penalty in the remaining class
 
+**Proposition 7.3 (Uniform score-sensitive bound).** Fix $K_0>0$. There are constants $K,N$ depending only on $K_0$ such that, for $n\ge N$, every tournament with $a=S\mathbf1/(n-1)$, $\|a\|_\infty\le0.9$, and $\tau=\sum_i a_i^2\le K_0\log n$ satisfies
+
+$$
+\frac{H(T)}{\mu_n}\le\rho_n(S)\exp\left(-\frac\tau2+\frac K n\right)+B_n,
+$$
+
+where $B_n\ge0$ is the graph-independent tail from Lemma 5.1a and $B_n=o(n^{-1})$.
+
+**Proof.**
+
 The remaining tournaments satisfy
 
 $$
@@ -4399,7 +1676,7 @@ $$
 a=s/(n-1),\qquad \tau=\sum_i a_i^2\le K\log n.
 $$
 
-Fix an absolute constant $K_0$ such that $\tau\le K_0\log n$. The paired product satisfies
+For the fixed $K_0$ in the statement, all subsequent constants may depend on $K_0$. The paired product satisfies
 
 $$
 \Gamma=\prod_i(1-a_i^2)\le e^{-\tau}.
@@ -4479,7 +1756,7 @@ $$
 \rho_n(S)\exp\left\{-\tau+
 K\left[\frac{1+\tau+\tau^2}{n}
 +\frac{\tau^{3/2}+\tau}{\sqrt n}+\sqrt{\tau/n}\right]\right\}
-+o(1/n).
++B_n.
 \tag{7.2}
 $$
 
@@ -4489,96 +1766,21 @@ $$
 K\sqrt{\tau/n}\le\tau/4+K^2/n.
 $$
 
-The total exponent in [equation (7.2)](#eq-score-penalty) is therefore at most $-\tau/2+K/n$. Applying the spectral cap gives
+The total exponent in [equation (7.2)](#eq-score-penalty) is therefore at most $-\tau/2+K/n$. Applying Proposition 6.6 gives
 
 $$
-H(T)/\mu_n\le C_*e^{K/n}+o(1/n)=C_*+O(1/n).
+H(T)/\mu_n\le r_ne^{K/n}+B_n=L+O(1/n).
 $$
 
+This proves Proposition 7.3 and the sharp bound in the remaining class. $\square$
 
-Since $g_i-1=a_i^2/(1-a_i^2)$,
-
-$$
-\sum_i(g_i-1)\le\frac{\tau}{1-0.9^2}=\frac{100}{19}\tau,
-\qquad
-c_k\le(2/n)^k\binom nk h_kG^k\le G^kw_k.
-$$
-
-For $k\le k_n=o(\sqrt n)$,
-
-$$
-0\le\log\frac{n^k}{(n)_k}
-=\sum_{h=0}^{k-1}-\log(1-h/n)
-\le\frac{k(k-1)}{2n(1-k_n/n)}\le Kk^2/n.
-$$
-
-When $0\le r_k\le1$, $e^{r_k}-1=\int_0^{r_k}e^u\,du\le er_k$, so
-
-$$
-\sum_{k\le k_n}c_k(e^{r_k}-1)
-\le K\delta_n\sum_{k\ge0}G^kw_k(k+k^2)=K'\delta_n.
-$$
-
-Write $C=\sum_{k=0}^nc_k\ge1$. Then $C+K'\delta_n\le C(1+K'\delta_n)\le Ce^{K'\delta_n}$. The weighted principal-minor expansion gives, term by term,
-
-$$
-\sum_{k=0}^nc_k
-=\sum_U(2/n)^{|U|}\det(I+A[U])\prod_{i\in U}g_i
-=\det(I+(2/n)\operatorname{diag}(g)(I+A)).
-$$
-
-Write $r_i^{\mathsf T}$ for row $i$ of $I+A$, and let $e_i$ be the $i$th standard basis vector. Then
-
-$$
-\Delta=\frac2n\sum_i(g_i-1)e_ir_i^{\mathsf T},\quad
-\|\Delta\|_*\le\frac2n\sum_i(g_i-1)\|e_i\|_2\|r_i\|_2
-\le\frac2{\sqrt n}\sum_i(g_i-1)\le K\tau/\sqrt n.
-$$
-
-If the singular values of $E$ are $\sigma_j(E)$, then
-
-$$
-|\det(I+E)|\le\prod_j(1+\sigma_j(E))
-\le\exp\left(\sum_j\sigma_j(E)\right)=e^{\|E\|_*}.
-$$
-
-Use $W+\Delta=W(I+W^{-1}\Delta)$ and $\|W^{-1}\|_{\rm op}\le1$ to obtain the stated comparison.
-
-Finally, set
-
-$$
-E_n(\tau)=K\left[\frac{\tau+\tau^2}{n}
-+\frac{\tau^{3/2}+\tau}{\sqrt n}\right].
-$$
-
-For $0\le\tau\le K_0\log n$,
-
-$$
-E_n(\tau)\le\tau K\left[\frac{1+K_0\log n}{n}
-+\frac{\sqrt{K_0\log n}+1}{\sqrt n}\right]\le\tau/4
-$$
-
-uniformly for all sufficiently large $n$. Completing the square gives
-
-$$
-0\le\left(\frac{\sqrt\tau}{2}-\frac K{\sqrt n}\right)^2
-=\frac\tau4-K\sqrt{\tau/n}+\frac{K^2}n,
-$$
-
-The total exponent is therefore at most $-\tau+\tau/4+\tau/4+(K+K^2)/n$. Also,
-
-$$
-0\le e^{K'/n}-1=\int_0^{K'/n}e^u\,du\le K'e^{K'}/n,
-$$
-
-This yields $C_*+O(n^{-1})$, with a constant entirely independent of $\tau$ and of the tournament.
 
 ### 7.5 Completion of the upper bound
 
-The three classes cover all tournaments. High-variance tournaments have normalized path count $o(1/n)$; low-variance tournaments containing exceptional vertices have count strictly below one; and every remaining tournament satisfies the bound $C_*+O(1/n)$ just proved. Hence
+The three classes cover all tournaments. High-variance tournaments have normalized path count $o(1/n)$; low-variance tournaments containing exceptional vertices have count strictly below one; and every remaining tournament satisfies the bound $L+O(1/n)$ just proved. Hence
 
 $$
-{P(n)\le\bigl(C_*+O(1/n)\bigr)\mu_n.}
+{P(n)\le\bigl(L+O(1/n)\bigr)\mu_n.}
 $$
 
 The threshold in each case is independent of the particular tournament. Taking a common threshold proves the upper bound in Proposition 7.1.
@@ -4709,7 +1911,7 @@ $$
 \le\frac1{n+1}+\frac{d^2}{(n+1)^2}.
 $$
 
-Multiplying in order and using $D_n(S)\det(I+S/n)\le C_*$ gives the absolute error in Theorem 8.1. $\square$
+Multiplying in order and using $D_n(S)\det(I+S/n)<3$ gives the absolute error in Theorem 8.1. $\square$
 
 ### 8.2 Carousel tournaments
 
@@ -4746,7 +1948,7 @@ $$
 P(n)\ge(L-O(n^{-1}))\mu_n.
 $$
 
-The transition from signed similarity to the path count uses Theorem 8.1, with $d=0$ and $d=1$, respectively. Let the constants and thresholds for the lower and upper bounds be $K_l,N_l$ and $K_u,N_u$. Taking $K=K_l+K_u$ and $n_0=\max(N_l,N_u,2)$ proves Proposition 7.1.
+The transition from signed similarity to the path count uses Theorem 8.1, with $d=0$ and $d=1$, respectively. Let the constants and thresholds for the lower and upper bounds be $K_l,N_l$ and $K_u,N_u$. Taking $K=\max(K_l,K_u)$ and $n_0=\max(N_l,N_u,2)$ completes Theorem 1.1.
 
 
 Write $n=2m+1$, with original indices $i=0,\ldots,2m$. Let $D_{ii}=(-1)^i$. For $i<j$,
@@ -4767,7 +1969,7 @@ $$
 2^{-1}(j-i)\pmod n=h+m+1\in\{m+1,\ldots,2m\}.
 $$
 
-In the new indices, edges with differences $1,\ldots,m$ point forward, and those with differences $m+1,\ldots,2m$ point backward, exactly as in the carousel tournament. A one-vertex deletion selects the corresponding principal submatrix. The restricted $D$ is still a diagonal sign matrix, and the transitive principal submatrix on the remaining ordered indices is still $T_n^0$. This proves that both parity constructions have the stated spectrum; it does not assert that signed transformations preserve the path count.
+In the new indices, edges with differences $1,\ldots,m$ point forward, and those with differences $m+1,\ldots,2m$ point backward, exactly as in the carousel tournament. A one-vertex deletion selects the corresponding principal submatrix. The restricted $D$ is still a diagonal sign matrix, and the transitive principal submatrix on the remaining ordered indices is still $T_n^0$. This identifies the spectrum of both parity constructions. Their path counts are then estimated separately by Theorem 8.1.
 
 By $D_n(S)=\det(I+iS/n)^{-1}$ and the principal-minor polynomial,
 
@@ -4810,7 +2012,7 @@ $$
 r_n=L[1-1/n+O(n^{-2})].
 $$
 
-Theorem 8.1 gives only an $O(n^{-1})$ error for the path count itself. Thus $-L/n$ here is a correction to the spectral ratio and cannot directly be taken as the correction to the path count. Finally,
+The term $-L/n$ is the first correction to the spectral ratio. Identifying the corresponding coefficient for the path count requires an error smaller than the $O(n^{-1})$ estimate in Theorem 8.1. Finally,
 
 $$
 H(\mathrm{Car}_n)/\mu_n=r_n+O(n^{-1})=L+O(n^{-1}),
@@ -4818,2531 +2020,288 @@ $$
 
 there is therefore a fixed $K_l$ such that $P(n)\ge(L-K_l/n)\mu_n$. $\square$
 
+
+### 8.3 Degree stability near the maximum
+
+**Corollary 8.2a (Degree-variance stability).** There are absolute constants $C,N$ such that, for $n\ge N$ and $0\le\varepsilon\le(L-1)/2$, any tournament satisfying $H(T)/\mu_n\ge L-\varepsilon$ has
+
+$$
+\tau(T)\le C(\varepsilon+n^{-1}),\qquad
+V_{\rm deg}(T)\le C(\varepsilon n^2+n).
+$$
+
+In particular, every tournament maximizing $H(T)$ has $V_{\rm deg}(T)=O(n)$.
+
+**Proof.** The assumption gives $H(T)/\mu_n\ge(L+1)/2>1$. The first two classes of Section 7 are therefore excluded by a uniform threshold. Proposition 7.3 and Proposition 6.6 give
+
+$$
+L-\varepsilon-B_n\le(L+K_r/n)\exp(-\tau/2+K/n).
+$$
+
+For sufficiently large $n$, $B_n\le1/n$ and the left-hand side is bounded below by $(L+1)/4$. Taking logarithms and using $\log(1+x)\le x$ proves $\tau\le C(\varepsilon+1/n)$. Multiply by $(n-1)^2/4$ for the variance estimate. After enlarging the threshold so that $K_l/n\le(L-1)/2$, Corollary 8.2 permits $\varepsilon=K_l/n$ for an exact maximizer. $\square$
+
+The conclusion controls mean square degree deviation and gives a maximum single-vertex deviation of order $\sqrt n$. Eventual regularity, carousel uniqueness, edit-distance stability, and the $o(\sqrt n)$ condition in Theorem 8.1 each require further arguments.
+
 ## 9. The Hessian of the original angular function
 
-### 9.1 The angular function and the Hessian formula
-
-We continue to write $I_r,J_r,\mathbf1_r$ for the identity matrix, the all-one matrix and the all-one column vector, omitting subscripts when their dimensions are clear.
-
-**Definition 9.1 (Sign matrix and original angular function).**
-
-Let $d\ge3$ be odd and let $A$ be the adjacency matrix of a regular tournament of order $d$.
+Let $A$ be the adjacency matrix of a regular tournament of odd order $d\ge3$, and put
 
 $$
-S=2A+I-J,\quad S^T=-S,\quad S\mathbf1=0,\qquad
-C=S/d,\quad P_0=J/d.
+S=2A+I-J,\quad C=S/d,\quad P_0=J/d,\quad z=2/d.
 $$
 
-We write $\operatorname{diag}(a_1,\ldots,a_r)$ for the diagonal matrix with diagonal entries $a_1,\ldots,a_r$.
-
-Set
+Thus $C^T=-C$ and $C\mathbf1=0$. Define
 
 $$
-B(y)=I-(A+\tfrac12I)\operatorname{diag}(y_1,\ldots,y_d),
-\quad K(y)=\det B(y),\quad z=2/d.
+B(y)=I-(A+\tfrac12I)\operatorname{diag}(y),\qquad K(y)=\det B(y).
 $$
 
-Complex logarithms use the local analytic branches specified below and agree with the real logarithm on the positive axis.
-
-Near $y=z\mathbf1$, solve $K(y)=0$ for $y_d=h(y_1,\ldots,y_{d-1})$. Wormald's angular function is
+Near $z\mathbf1$, eliminate $y_d$ from $K(y)=0$, writing $y_d=h(y_1,\ldots,y_{d-1})$. The angular function uses the local logarithm with value $\log z$ at the base point:
 
 $$
-\widetilde f(\theta)=\log h(ze^{i\theta_1},\ldots,ze^{i\theta_{d-1}})
+\widetilde f(\theta)=\log h(ze^{i\theta_1},\ldots,ze^{i\theta_{d-1}}).
 $$
 
-
-Write $e_j$ for the $j$th standard basis column vector.
-
-Write $\mathbf H=\nabla^2\widetilde f(0)$ and $\mathcal H=\det\mathbf H$. Throughout this section, $C=S/d$ denotes a matrix.
-
-**Theorem 9.2 (The Hessian formula).**
-
-The function $h$ and the chosen logarithm branch are analytic in a neighborhood of the specified point, and
+**Theorem 9.2 (Original angular Hessian).** The elimination and logarithm are analytic near the base point. With $E=(e_1-e_d,\ldots,e_{d-1}-e_d)$,
 
 $$
-{
-\mathbf H=E^T(I+C^2)(I-C^2)^{-1}E,\qquad
-E=(e_1-e_d,\ldots,e_{d-1}-e_d).}
+\mathbf H:=\nabla^2\widetilde f(0)=E^TQE\succ0,\qquad
+Q=(I+C^2)(I-C^2)^{-1}.
 $$
 
-Consequently,
+In particular, writing $\mathcal H=\det\mathbf H$,
 
 $$
-{
-\mathcal H
-=d\,\frac{\det(I+C^2)}{\det(I-C^2)}>0,\qquad
-\sqrt{\frac d{\mathcal H}}
-=\frac{\det(I+C)}{\det(I+iC)}=:\rho_d(S).}
+\mathcal H=d\frac{\det(I+C^2)}{\det(I-C^2)},\qquad
+\sqrt{d/\mathcal H}=\frac{\det(I+C)}{\det(I+iC)}=\rho_d(S)\in\mathbb Q_{>0}.
 $$
 
-The right-hand side is positive and rational, so these identities prove Conjecture 6.
-
-
-### 9.2 Spectral gap, the constant direction and restricted determinants
-
-**Proof.**
-
-By the tournament identities and regularity,
+**Proof.** Let $u=\mathbf1/\sqrt d$, and let the columns of $V$ be an orthonormal basis of $u^\perp$. Every nonzero frequency $\lambda$ of $C$ satisfies
 
 $$
-A+A^T=J-I,\qquad
-A\mathbf1=\frac{d-1}{2}\mathbf1,
+\lambda^2\le\tfrac12\|C\|_F^2=\frac{d-1}{2d}<\frac12.
 $$
 
-$$
-S^T=2A^T+I-J
-=2(J-I-A)+I-J=-S,
-$$
+Set $P=(2A+I)/d=P_0+C$ and introduce $y_j=ze^{t_j}$. In the orthonormal basis $(u,V)$ write
 
 $$
-S\mathbf1
-=2\frac{d-1}{2}\mathbf1+\mathbf1-d\mathbf1=0.
+(u,V)^T[I-P\operatorname{diag}(e^t)](u,V)
+=\begin{pmatrix}a&b\\c&D\end{pmatrix}.
 $$
 
-We first bound the spectral radius of $C$.
-
-For a real vector $v=(v_1,\ldots,v_r)^T$, its Euclidean norm is $\|v\|_2=(\sum_{j=1}^r v_j^2)^{1/2}$.
-
-For a real matrix $M$, the two norms are
-
-$$
-\|M\|_F^2=\sum_{j,k}M_{jk}^2,\qquad
-\|M\|_{\rm op}=\sup_{v\ne0}\frac{\|Mv\|_2}{\|v\|_2}.
-$$
-
-Since the $d(d-1)$ off-diagonal entries $s_{ij}$ of $S$ all belong to $\{\pm1\}$,
-
-$$
-\|S\|_F^2=\sum_{i\ne j}s_{ij}^2=d(d-1),
-\qquad \|C\|_F^2=\frac{d-1}{d}.
-$$
-
-Apply a real orthogonal basis change to the normalized skew-symmetric matrix $C$. Its canonical form consists of zero blocks and two-dimensional blocks
-
-$$
-J_\lambda=\begin{pmatrix}0&\lambda\\-\lambda&0\end{pmatrix}
-$$
-
-Each two-dimensional block contributes $2\lambda^2$ to the squared Frobenius norm. Therefore every frequency satisfies
-
-$$
-2\lambda^2\le\sum_{\text{all two-dimensional blocks}}2\lambda_j^2
-=\|C\|_F^2=\frac{d-1}{d},
-$$
-
-$$
-\|C\|_{\rm op}^2=\max_j\lambda_j^2
-\le\frac{d-1}{2d}<\frac12.
-$$
-
-Put $u=\mathbf1/\sqrt d$, $P_0=uu^T=J/d$ and $\Pi=I-P_0$. Then
-
-$$
-u^Tu=1,\quad P_0^2=P_0,\quad
-\Pi^2=I-2P_0+P_0^2=\Pi,
-$$
-
-$$
-Cu=0,\qquad u^TC=-(Cu)^T=0,
-\qquad CP_0=(Cu)u^T=0,\quad P_0C=u(u^TC)=0.
-$$
-
-We also have
-
-$$
-P:=\frac{2A+I}{d}=P_0+C,\qquad
-Pu=P_0u+Cu=u.
-$$
-
-If $u^Tv=0$, then $P_0v=u(u^Tv)=0$, and hence $Pv=Cv$. At the critical point,
-
-$$
-B(z\mathbf1)=I-P=\Pi-C,\qquad
-B(z\mathbf1)u=0.
-$$
-
-The space $u^\perp$ is orthogonal to the real vector $u$. The notation $\det_{u^\perp}$ means the determinant of the restriction to this invariant subspace, computed in an orthonormal basis.
-
-On $u^\perp$ this matrix is $I-C$. If $x\in u^\perp$ satisfies $(I-C)x=0$, then
-
-$$
-0=x^T(I-C)x=\|x\|_2^2-x^TCx=\|x\|_2^2,
-$$
-
-where $x^TCx=-x^TCx$ implies $x^TCx=0$. Thus $x=0$, and the restricted matrix is invertible.
-
-On a two-dimensional block,
-
-$$
-\det(I-J_\lambda)
-=\det\begin{pmatrix}1&-\lambda\\\lambda&1\end{pmatrix}
-=1+\lambda^2>0.
-$$
-
-The eigenvalue of $I-C$ in the constant direction is 1. Therefore
-
-$$
-q:=\det_{u^\perp}(I-C)
-=\det(I-C)
-=\prod_j(1+\lambda_j^2)>0.
-$$
-
-Taking transposes gives
-
-$$
-\det(I+C)=\det((I+C)^T)=\det(I-C)=q.
-$$
-
-### 9.3 Logarithmic variables, block matrices and Schur elimination
-
-To differentiate the angular function, first introduce logarithmic variables $t\in\mathbb C^d$ near the origin and set $y_j=ze^{t_j}$. Then
-
-$$
-\mathscr B(t)=B(ze^{t_1},\ldots,ze^{t_d})
-=I-P\operatorname{diag}(e^{t_1},\ldots,e^{t_d}).
-$$
-
-Choose an orthonormal basis of $u^\perp$ as the columns of $V$. The matrix $O=(u,V)$ satisfies
-
-$$
-V^TV=I_{d-1},\quad V^Tu=0,\quad VV^T=\Pi,
-\quad O^TO=OO^T=I_d.
-$$
-
-In this basis write
-
-$$
-O^T\mathscr B(t)O=
-\begin{pmatrix}a(t)&b(t)\\c(t)&D(t)\end{pmatrix},
-$$
-
-$$
-a=u^T\mathscr Bu,\quad b=u^T\mathscr BV,\quad
-c=V^T\mathscr Bu,\quad D=V^T\mathscr BV.
-$$
-
-Here $a$ is a scalar, $b$ and $c$ have dimensions $1\times(d-1)$ and $(d-1)\times1$, and $D$ has order $d-1$. Skew symmetry also gives
-
-$$
-u^TP=u^T(P_0+C)=u^Tuu^T+u^TC=u^T+0=u^T.
-$$
-
-Since $\det(O)^2=1$, this basis change preserves the determinant. At $t=0$,
-
-$$
-a(0)=0,\quad b(0)=0,\quad c(0)=0,
-\qquad D(0)=V^T(I-C)V.
-$$
-
-By Section 9.2, $\det D(0)=q>0$. Hence $D(t)$ is invertible in a neighborhood of the origin.
-
-Let $\operatorname{adj}D$ be the adjugate matrix, with $(\operatorname{adj}D)_{ij}=(-1)^{i+j}\det D^{(j|i)}$, where $D^{(j|i)}$ deletes row $j$ and column $i$. Expansion of the determinant gives $D\operatorname{adj}D=(\det D)I$, and hence
-
-$$
-D(t)^{-1}=\frac{\operatorname{adj}D(t)}{\det D(t)}
-$$
-
-This also shows that the entries of $D(t)^{-1}$ are analytic in this neighborhood.
-
-Block elimination gives
-
-$$
-\begin{pmatrix}1&-bD^{-1}\\0&I\end{pmatrix}
-\begin{pmatrix}a&b\\c&D\end{pmatrix}
-=
-\begin{pmatrix}a-bD^{-1}c&0\\c&D\end{pmatrix}.
-$$
-
-The left multiplier has determinant 1, and the resulting matrix is block triangular. Defining
+At zero, $a=b=c=0$ and $D(0)=V^T(I-C)V$ is invertible. Thus the analytic Schur complement
 
 $$
 \psi(t)=a(t)-b(t)D(t)^{-1}c(t)
 $$
 
-therefore gives the exact identity
+has the same local zero set as $K(ze^t)$. Put $U=(I-C)^{-1}$. Differentiation at zero gives
 
 $$
-\det\mathscr B(t)=\det D(t)\,\psi(t).
+a_j=-1/d,\quad a_{jk}=-\delta_{jk}/d,\quad
+b_j=-e_j^TV/\sqrt d,\quad c_k=-V^TCe_k/\sqrt d.
 $$
 
-On this neighborhood, $\det\mathscr B(t)=0$ and $\psi(t)=0$ are equivalent because the factor $\det D(t)$ is nonzero.
-
-### 9.4 First and second derivatives
-
-For a scalar function $F(t_1,\ldots,t_d)$, subscripts $F_j,F_{jk}$ denote $\partial F/\partial t_j$ and $\partial^2F/(\partial t_j\partial t_k)$; matrix, row and column derivatives are taken entry by entry. When differentiating in the original variables $y$, we write $K_{y_j}$. The matrix $\nabla^2F$ consists of the entries $F_{jk}$.
-
-The symbol $\delta_{jk}$ is 1 when $j=k$ and 0 otherwise.
-
-Write $F_j=e_je_j^T$ and $R(t)=D(t)^{-1}$. Only column $j$ of the exponential matrix depends on $t_j$, so at the origin
-
-$$
-\mathscr B_j=-PF_j,\qquad
-\mathscr B_{jk}=-\delta_{jk}PF_j.
-$$
-
-Differentiating $DR=I$ twice gives
-
-$$
-D_jR+DR_j=0,\qquad R_j=-RD_jR,
-$$
-
-$$
-R_{jk}=RD_kRD_jR-RD_{jk}R+RD_jRD_kR.
-$$
-
-These identities hold throughout the neighborhood where $D$ is invertible.
-
-Using $u^TP=u^T$ and $e_j^Tu=1/\sqrt d$,
-
-$$
-a_j(0)=-u^TPF_ju=-u_j^2=-1/d,
-\qquad a_{jk}(0)=-\delta_{jk}/d.
-$$
-
-The product rule gives
-
-$$
-\partial_j(bRc)=b_jRc+bR_jc+bRc_j.
-$$
-
-Differentiating once more with respect to $t_k$, we obtain
-
-$$
-\begin{aligned}
-\partial_k\partial_j(bRc)
-={}&b_{jk}Rc+b_jR_kc+b_jRc_k\\
-&+b_kR_jc+bR_{jk}c+bR_jc_k\\
-&+b_kRc_j+bR_kc_j+bRc_{jk}.
-\end{aligned}
-$$
-
-At the origin, $b=c=0$, so the seven terms containing an undifferentiated factor $b$ or $c$ vanish. Thus
-
-$$
-\partial_k\partial_j(bRc)(0)=b_j(0)R(0)c_k(0)+b_k(0)R(0)c_j(0).
-$$
-
-We now calculate these factors:
-
-$$
-b_j(0)=-u^TPe_je_j^TV
-=-\frac1{\sqrt d}e_j^TV,
-$$
-
-$$
-c_k(0)=-V^TPe_ke_k^Tu
-=-\frac1{\sqrt d}V^TCe_k,
-$$
-
-Here $V^TP=V^TC$ follows from $V^Tu=0$. Put $U=(I-C)^{-1}$. Since $C$ preserves $u^\perp$, we have $(I-C)V=VD(0)$. Multiplying on the left by $U$ and on the right by $R(0)$, and using $\Pi C=C$, gives
-
-$$
-(I-C)V=VD(0),\qquad UV=VR(0),
-$$
-
-$$
-UC=U\Pi C=UVV^TC=VR(0)V^TC.
-$$
-
-Consequently,
-
-$$
-VR(0)V^TC=UC.
-$$
-
-The two second-order products are therefore
-
-$$
-b_jR(0)c_k=\frac1d e_j^TUC e_k=\frac{(UC)_{jk}}d,
-$$
-
-$$
-b_kR(0)c_j=\frac1d e_k^TUC e_j=\frac{(UC)_{kj}}d.
-$$
-
-The first derivative of the product vanishes at the origin. Thus
+Since $b=c=0$, only $b_jD^{-1}c_k+b_kD^{-1}c_j$ survives from the second derivative of $bD^{-1}c$. Using $VD(0)^{-1}V^TC=UC$, we obtain
 
 $$
 \psi_j(0)=-1/d,\qquad
-\psi_{jk}(0)=-\frac{\delta_{jk}+(UC)_{jk}+(UC)_{kj}}d.
+\psi_{jk}(0)=-\frac{\delta_{jk}+(UC)_{jk}+(UC)_{kj}}d=-Q_{jk}/d,
 $$
 
-From $C(I-C)=(I-C)C$, multiplying on the left and right by the inverse gives $CU=UC$. Also,
+where $I+UC+(UC)^T=(I+C^2)(I-C^2)^{-1}$. Moreover, with $q=\det(I-C)>0$,
 
 $$
-(UC)^T=C^TU^T=-C(I+C)^{-1}.
+K_{y_d}(z\mathbf1)=-q/(dz)=-q/2\ne0.
 $$
 
-The difference of the two inverses expands as
+The analytic implicit function theorem therefore supplies $h$, with $h(z,\ldots,z)=z$. Choose the logarithm locally and set
 
 $$
-\begin{aligned}
-(I-C)^{-1}-(I+C)^{-1}
-&=(I-C)^{-1}[(I+C)-(I-C)](I+C)^{-1}\\
-&=2C(I-C)^{-1}(I+C)^{-1}\\
-&=2C(I-C^2)^{-1}.
-\end{aligned}
+g(t')=\log[h(ze^{t'})/z],\qquad \psi(t',g(t'))=0.
 $$
 
-It follows that
+Implicit differentiation yields $g_j(0)=-1$ and
 
 $$
-\begin{aligned}
-I+UC+(UC)^T
-&=I+C[(I-C)^{-1}-(I+C)^{-1}]\\
-&=I+2C^2(I-C^2)^{-1}\\
-&=(I+C^2)(I-C^2)^{-1}=:Q.
-\end{aligned}
+g_{jk}(0)=-(Q_{jk}-Q_{jd}-Q_{dk}+Q_{dd}).
 $$
 
-Thus the first and second derivatives of $\psi$ at the origin are
+The substitution $t'=i\theta$ gives $\widetilde f(\theta)=\log z+g(i\theta)$ and $\nabla^2\widetilde f(0)=-\nabla^2g(0)=E^TQE$, with the sign supplied by $i^2=-1$.
 
-$$
-{\psi_j(0)=-1/d,\qquad
-\nabla^2\psi(0)=-Q/d.}
-$$
-
-Differentiate the determinant product. Since $\psi(0)=0$ and $\det D(0)=q$,
-
-$$
-\begin{aligned}
-\partial_{t_j}\det\mathscr B(0)
-&=\partial_{t_j}(\det D)(0)\,\psi(0)+\det D(0)\psi_j(0)\\
-&=0+q(-1/d)=-q/d.
-\end{aligned}
-$$
-
-At the origin $\partial y_j/\partial t_j=z$, so
-
-$$
-zK_{y_j}(z\mathbf1)=-q/d,\qquad
-K_{y_j}(z\mathbf1)=-\frac{q}{dz}=-q/2\ne0.
-$$
-
-In particular, $K_{y_d}(z\mathbf1)\ne0$, so $y_d$ can be eliminated locally.
-
-### 9.5 Eliminating the last variable
-
-Write $y'=(y_1,\ldots,y_{d-1})$ and $t'=(t_1,\ldots,t_{d-1})$.
-
-The determinant is linear in column $d$, and this column is affine in $y_d$. Hence
-
-$$
-K(y)=K_0(y_1,\ldots,y_{d-1})
-+y_dK_1(y_1,\ldots,y_{d-1}).
-$$
-
-where
-
-$$
-K_0(y')=K(y',0),\qquad
-K_1(y')=K(y',1)-K(y',0)=K_{y_d}(y',y_d).
-$$
-
-The last partial derivative does not depend on $y_d$, because the displayed expression is affine in $y_d$.
-
-The derivative calculation in Section 9.4 gives
-
-$$
-K_1(z,\ldots,z)=K_{y_d}(z\mathbf1)=-q/2\ne0.
-$$
-
-On a sufficiently small neighborhood, $K_1(y')\ne0$, and therefore
-
-$$
-h(y')=-\frac{K_0(y')}{K_1(y')}.
-$$
-
-Since $K(z\mathbf1)=0$,
-
-$$
-K_0(z,\ldots,z)+zK_1(z,\ldots,z)=0,
-\qquad h(z,\ldots,z)=z.
-$$
-
-Define
-
-$$
-g(t')=\log\!\left[
-\frac{h(ze^{t_1},\ldots,ze^{t_{d-1}})}z\right].
-$$
-
-Since $h(z,\ldots,z)=z>0$, we may shrink the neighborhood so that $|h(ze^{t'})/z-1|<1/2$, with exponentiation taken coordinatewise. On this disk, choose the analytic logarithm with $\log1=0$. Then
-
-$$
-g(0)=\log1=0,\qquad
-t_d=g(t'),\qquad \psi(t',g(t'))=0.
-$$
-
-The resulting function $g$ is analytic and satisfies the required implicit equation near the origin.
-
-### 9.6 Implicit differentiation and angular variables
-
-Let $1\le j,k\le d-1$. Differentiate the identity $\psi(t',g(t'))=0$, then evaluate at $t'=0$ using Section 9.4. The first derivative gives
-
-$$
-0=\psi_j+\psi_dg_j,\qquad
-g_j(0)=-\frac{\psi_j(0)}{\psi_d(0)}
-=-\frac{-1/d}{-1/d}=-1.
-$$
-
-Differentiating again with respect to $t_k$ gives five terms:
-
-$$
-0=\psi_{jk}+\psi_{jd}g_k+\psi_{dk}g_j
-+\psi_{dd}g_jg_k+\psi_dg_{jk}.
-$$
-
-At the origin, substitute the derivatives from Section 9.4 and $g_j(0)=g_k(0)=-1$ to obtain
-
-$$
-0=-\frac{Q_{jk}}d+\frac{Q_{jd}}d
-+\frac{Q_{dk}}d-\frac{Q_{dd}}d-\frac{g_{jk}}d.
-$$
-
-Multiply by $d$ and isolate the last derivative:
-
-$$
-\begin{aligned}
-g_{jk}(0)
-&=-Q_{jk}+Q_{jd}+Q_{dk}-Q_{dd}\\
-&=-(e_j-e_d)^TQ(e_k-e_d).
-\end{aligned}
-$$
-
-Choose the local branch of $\log h$ whose value at $(z,\ldots,z)$ is $\log z$. By the definition of $g$, Wormald's angular function satisfies
-
-$$
-\widetilde f(\theta)=\log z+g(i\theta_1,\ldots,i\theta_{d-1}).
-$$
-
-Its first angular derivative is $i g_j(i\theta)$ and its second angular derivative is $i^2g_{jk}(i\theta)$. Therefore
-
-$$
-\mathbf H_{jk}
-=i^2g_{jk}(0)=-g_{jk}(0)
-=(e_j-e_d)^TQ(e_k-e_d),
-$$
-
-$$
-{\mathbf H=E^TQE.}
-$$
-
-### 9.7 Positive definiteness and the determinant
-
-The notation $M\succ0$ means that $M$ is real symmetric and, for every nonzero real vector $v$, we have $v^TMv>0$.
-
-On each two-dimensional block from Section 9.2, $J_\lambda^2=-\lambda^2I_2$. Therefore
-
-$$
-(I+J_\lambda^2)(I-J_\lambda^2)^{-1}
-=\frac{1-\lambda^2}{1+\lambda^2}I_2.
-$$
-
-The coefficient is positive because $\lambda^2<1/2$. On zero blocks, $Q$ is the identity, so $Q\succ0$. For $v\in\mathbb R^{d-1}$,
-
-$$
-Ev=(v_1,\ldots,v_{d-1},-\textstyle\sum_{j=1}^{d-1}v_j)^T.
-$$
-
-If $v\ne0$, its first $d-1$ components are not all zero, so $Ev\ne0$. Consequently,
-
-$$
-v^T\mathbf Hv=(Ev)^TQ(Ev)>0.
-$$
-
-We next compute the Gram determinant of $E$. The inner product of its columns $j,k$ is
-
-$$
-(e_j-e_d)^T(e_k-e_d)=\delta_{jk}+1.
-$$
-
-Thus $E^TE=I_{d-1}+J_{d-1}$. Its eigenvalue in the all-one direction is $1+(d-1)=d$; each direction orthogonal to the all-one vector has eigenvalue 1. Therefore
-
-$$
-\det(E^TE)=d\cdot1^{d-2}=d.
-$$
-
-Write $E=VL$, where $V$ is an orthonormal basis of $u^\perp$ and $L$ is invertible:
-
-$$
-E^TQE=L^T(V^TQV)L,\qquad
-E^TE=L^TL.
-$$
-
-Taking determinants gives, respectively,
-
-$$
-\det(E^TQE)=\det(L)^2\det(V^TQV),\qquad
-\det(L)^2=d.
-$$
-
-Using $Cu=0$,
-
-$$
-Qu=(I+C^2)(I-C^2)^{-1}u=u.
-$$
-
-In the real orthogonal basis of Section 9.2, every block of $Q$ is a real scalar multiple of the identity. Thus $Q$ is real symmetric, and $u^TQV=(Qu)^TV=u^TV=0$. Hence
-
-$$
-(u,V)^TQ(u,V)=
-\begin{pmatrix}1&0\\0&V^TQV\end{pmatrix},
-\qquad \det Q=\det(V^TQV).
-$$
-
-Restore the two determinant factors:
-
-$$
-\mathcal H=d\det Q
-=d\,\frac{\det(I+C^2)}{\det(I-C^2)}>0.
-$$
-
-Matrix multiplication and transposition give
-
-$$
-(I+iC)(I-iC)=I+C^2,\qquad
-\det(I-iC)=\det((I-iC)^T)=\det(I+iC),
-$$
-
-$$
-(I+C)(I-C)=I-C^2,\qquad \det(I-C)=\det(I+C).
-$$
-
-Therefore
-
-$$
-\det(I+C^2)=\det(I+iC)^2,\qquad
-\det(I-C^2)=\det(I+C)^2.
-$$
-
-On each skew-symmetric two-dimensional block,
-
-$$
-\det(I+J_\lambda)=1+\lambda^2>0,\qquad
-\det(I+iJ_\lambda)=1-\lambda^2>0.
-$$
-
-Thus
-
-$$
-\sqrt{\frac d{\mathcal H}}
-=\frac{\det(I+C)}{\det(I+iC)}>0.
-$$
-
-Write $[d]=\{1,\ldots,d\}$. The principal submatrix $M[U]$ uses the rows and columns in $U$, with convention $\det M[\varnothing]=1$.
-
-Write $\lfloor a\rfloor$ for the largest integer at most $a$. To prove rationality, expand the determinant by multilinearity, choosing in each column either the identity column or the corresponding column of $C$:
-
-$$
-\det(I+tC)=\sum_{U\subseteq[d]}t^{|U|}\det C[U].
-$$
-
-For odd $r=|U|$,
-
-$$
-\det C[U]=\det(C[U]^T)=\det(-C[U])
-=(-1)^r\det C[U]=-\det C[U],
-$$
-
-so this principal determinant is zero. Since $C$ has rational entries,
+On each skew block of frequency $\lambda$, $Q$ acts by $(1-\lambda^2)/(1+\lambda^2)>0$, and $Qu=u$. Therefore $Q\succ0$ and $E^TQE\succ0$. The columns of $E$ are not orthonormal: $E^TE=I_{d-1}+J_{d-1}$ has determinant $d$. Consequently
 
 $$
-\det(I+iC)
-=\sum_{k=0}^{\lfloor d/2\rfloor}\sum_{\substack{U\subseteq[d]\\|U|=2k}}
-(-1)^k\det C[U]\in\mathbb Q.
+\det(E^TQE)=d\det_{u^\perp}Q=d\det Q.
 $$
 
-The number $\det(I+C)$ is rational as well. We have already shown that numerator and denominator are positive, so their ratio is a positive rational number. $\square$
+Finally, $\det(I+C^2)=\det(I+iC)^2$ and $\det(I-C^2)=\det(I+C)^2$. Both unsquared determinants are positive, as follows blockwise from $1-\lambda^2>0$ and $1+\lambda^2>0$. Odd principal minors of the rational skew matrix $C$ vanish; hence $\det(I+iC)$ is rational, proving the last assertion. $\square$
 
+The calculation identifies the full Hessian in the original angular coordinates. The expanded Schur-complement calculations and the explicit local elimination are retained in Detailed proof companion §9.
 
 ## 10. Model limits and the carousel constants
 
-### 10.1 Limits in the random models
+### 10.1 Four fixed-base limits
 
-Set $0!=1$ and $n!=1\cdot2\cdots n$.
-
-A vertex of type $j$ belongs to the block replacing base vertex $j$, which contains $m$ vertices.
-
-**Definition 10.1 (Normalization of the random models).**
-
-We now substitute the Hessian formula into Wormald's Theorems 1, 4 and 5. Fix a regular base of order $d$ and let the internal block order $m$ tend to infinity, with $N=dm$. The blocks are chosen independently and uniformly from the admissible labeled tournaments. The subscripts $\mathcal T,\mathcal R$ denote independent random internal blocks and regular internal blocks, respectively; $\mathbb EC$ and $\mathbb EH$ denote the expected cycle and path counts. Define
-
-$$
-\nu_N=\frac{(N-1)!}{2^N},\qquad
-\mu_N=\frac{N!}{2^{N-1}}.
-$$
-
-
-**Corollary 10.2 (The four expectation limits).**
-
-When $\mathcal H\ne0$, Wormald's Theorem 4 gives
-
-$$
-\frac{\mathbb EC_{\mathcal T}}{\nu_N}
-\longrightarrow\sqrt{d/\mathcal H}.
-$$
-
-Section 9.7 gives $\mathcal H>0$ and identifies the positive square root. Hence
-
-$$
-\lim_{m\to\infty}\frac{\mathbb EC_{\mathcal T}}{\nu_N}
-=\sqrt{\frac d{d\det(I+C^2)/\det(I-C^2)}}
-=\rho_d(S).
-$$
-
-Theorem 5 replaces cycle counts in Theorem 4 by path counts. Thus
-
-$$
-\lim_{m\to\infty}\frac{\mathbb EH_{\mathcal T}}{\mu_N}
-=\sqrt{d/\mathcal H}=\rho_d(S).
-$$
-
-Theorem 1 gives the expectation ratio between regular internal blocks and independent random internal blocks:
-
-$$
-\frac{\mathbb EC_{\mathcal R}}{\mathbb EC_{\mathcal T}}
-\longrightarrow e^{1/d}.
-$$
-
-For sufficiently large $m$ the denominator is positive, because its normalized limit is $\rho_d(S)>0$. Multiplication gives
-
-$$
-\lim_{\substack{m\to\infty\\m\ {\rm odd}}}
-\frac{\mathbb EC_{\mathcal R}}{\nu_N}
-=\lim_{\substack{m\to\infty\\m\ {\rm odd}}}
-\left(\frac{\mathbb EC_{\mathcal R}}{\mathbb EC_{\mathcal T}}
-\frac{\mathbb EC_{\mathcal T}}{\nu_N}\right)
-=e^{1/d}\rho_d(S).
-$$
-
-Theorem 5 also replaces the counts in Theorem 1 by path counts, giving
-
-$$
-\frac{\mathbb EH_{\mathcal R}}{\mathbb EH_{\mathcal T}}
-\longrightarrow e^{1/d}.
-$$
-
-The fourth limit is therefore
-
-$$
-\lim_{\substack{m\to\infty\\m\ {\rm odd}}}
-\frac{\mathbb EH_{\mathcal R}}{\mu_N}
-=\lim_{\substack{m\to\infty\\m\ {\rm odd}}}
-\left(\frac{\mathbb EH_{\mathcal R}}{\mathbb EH_{\mathcal T}}
-\frac{\mathbb EH_{\mathcal T}}{\mu_N}\right)
-=e^{1/d}\rho_d(S).
-$$
-
-In all four limits, $d$ is fixed. For regular internal blocks, $m$ tends to infinity through odd integers.
-
-
-**A direct application of the Divoux–Wang counting formula.** The same model constants follow from [12, Proposition 5.1], without introducing Wormald's angle function. Fix a regular base tournament of order $d$, put $N=dm$, and let $J_r$ denote the all-one matrix of order $r$. The expected adjacency matrix of the model with independent uniform internal tournaments is
-
-$$
-W=\frac{J_N-I_N+S\otimes J_m}{2},\qquad
-D=\frac{2W}{N-1},\qquad
-B=D-\frac{J_N}{N}.
-$$
-
-A Hamilton cycle or path uses each unordered pair at most once. Independence of the random internal edges therefore gives
-
-$$
-\mathbb EC_{\mathcal T}=\operatorname{cyc}(W),\qquad
-\mathbb EH_{\mathcal T}=\operatorname{path}(W).
-$$
-
-Here $\operatorname{cyc}$ and $\operatorname{path}$ denote the corresponding weighted sums. Since $S\mathbf1=0$, the matrix $D$ is doubly stochastic, and its entries are at most $2/(N-1)$.
-
-Decompose $\mathbb R^N$ orthogonally into the constant direction, the space of block-constant vectors with total sum zero, and the space of vectors whose sum in each block is zero. On these spaces, $B$ acts respectively as
-
-$$
-0,\qquad
-B_0=\left.\frac{mS-I_d}{N-1}\right|_{\mathbf1_d^\perp},
-\qquad -\frac{I_{N-d}}{N-1}.
-$$
-
-The bound $\|S\|_{\rm op}^2\le d(d-1)/2$ implies
-
-$$
-\limsup_{m\to\infty}\|B\|_{\rm op}
-\le\sqrt{\frac{d-1}{2d}}<1.
-$$
-
-Thus the hypotheses of Divoux–Wang's proposition hold, and
-
-$$
-\frac{N^N\operatorname{cyc}(D)}{(N-1)!}
-=(1+o(1))\frac{\det(I-B)}{\sqrt{\det(I-B^TB)}}.
-$$
-
-Write $R_N$ for the determinant ratio. The orthogonal decomposition gives
-
-$$
-R_N=
-\frac{\det(I-B_0)}{\sqrt{\det(I-B_0^TB_0)}}
-\frac{\bigl(1+(N-1)^{-1}\bigr)^{N-d}}
-{\bigl(1-(N-1)^{-2}\bigr)^{(N-d)/2}}.
-$$
-
-The second factor tends to $e$. On the fixed-dimensional first space, $B_0\to C|_{\mathbf1_d^\perp}$, where $C=S/d$. Restoring the constant direction contributes a factor of one to each determinant. Consequently,
-
-$$
-R_N\longrightarrow
-e\,\frac{\det(I-C)}{\sqrt{\det(I+C^2)}}
-=e\,\frac{\det(I+C)}{\det(I+iC)}
-=e\rho_d(S).
-$$
-
-The square root is positive: an eigenvalue pair $\pm i\lambda$ of $C$ contributes $1-\lambda^2>0$. Homogeneity now yields
-
-$$
-\frac{\mathbb EC_{\mathcal T}}{\nu_N}
-=\left(\frac{N-1}{N}\right)^N
-\frac{N^N\operatorname{cyc}(D)}{(N-1)!}
-\longrightarrow e^{-1}\,e\rho_d(S)=\rho_d(S).
-$$
-
-For paths, apply the auxiliary-vertex argument of [12, Section 10] to
-
-$$
-\widehat D=
-\begin{pmatrix}
-0&\mathbf1_N^T/N\\
-\mathbf1_N/N&(1-1/N)D
-\end{pmatrix}.
-$$
-
-This matrix is doubly stochastic. Closing a path through the new vertex gives
-
-$$
-\operatorname{cyc}(\widehat D)
-=N^{-2}(1-1/N)^{N-1}\operatorname{path}(D).
-$$
-
-For $\widehat B=\widehat D-J_{N+1}/(N+1)$, we have $\|\widehat B-\operatorname{diag}(0,B)\|_F=O(N^{-1})$, and both matrices have trace $-1$. Since $\|B\|_F$ is bounded and its operator norm stays below one, the determinant comparison in [12, Section 10] shows that their factors in Proposition 5.1 have ratio $1+o(1)$. Hence
-
-$$
-\frac{\operatorname{cyc}(\widehat D)}{\operatorname{cyc}(D)}
-=(1+o(1))\left(\frac{N}{N+1}\right)^{N+1},
-\qquad
-\operatorname{path}(D)=(1+o(1))N^2\operatorname{cyc}(D).
-$$
-
-Rescaling to $W=(N-1)D/2$, we obtain
-
-$$
-\frac{\mathbb EH_{\mathcal T}}{\mu_N}
-=(1+o(1))\frac{N}{N-1}
-\frac{\mathbb EC_{\mathcal T}}{\nu_N}
-\longrightarrow\rho_d(S).
-$$
-
-Wormald's Theorems 1 and 5 multiply these limits by $e^{1/d}$ for regular internal blocks. All four model constants therefore follow from existing counting results. This argument does not determine the Hessian of the original angle function; its positive definiteness and its full matrix formula require the differentiation carried out earlier.
-
-### 10.2 A closed form for the carousel base
-
-The following closed form is the determinant evaluation of Divoux and Wang [12, Section 7 and Lemma 9.1], combined with Wormald's regular-block factor [6, Theorem 1].
-
-**Proposition 10.3 (Closed forms for the carousel model).**
-
-Let $T_d$ be the transitive tournament sign matrix. The carousel sign matrix is similar to $T_d$ by a signed permutation, as shown in Appendix A.2. By Appendix A.1, every even-order principal determinant of $T_d$ is $1$, and every odd-order principal determinant is $0$. Therefore
-
-$$
-\det(I+tT_d)=\frac{(1+t)^d+(1-t)^d}{2}.
-$$
-
-When a tournament is used as the argument of $\rho_d$, we mean its sign matrix. The value is invariant under relabeling. Thus
-
-$$
-{
-\rho_d(\mathrm{Car}_d)
-=\frac{(1+1/d)^d+(1-1/d)^d}
-{(1+i/d)^d+(1-i/d)^d}.}
-$$
-
-At the first three odd orders, this gives the values $2,44/19,3032/1231,\ldots$ in Wormald's table. The constant for regular internal blocks is
-
-$$
-\mathfrak r_d=e^{1/d}r_d,\qquad r_d:=\rho_d(\mathrm{Car}_d).
-$$
-
-
-### 10.3 Real-function form and strict monotonicity
-
-A prime on a function of one variable denotes differentiation in its argument.
-
-**Definition 10.4 (Real functions and auxiliary variables).**
-
-We use the following elementary functions:
-
-$$
-\cosh y=\frac{e^y+e^{-y}}2,\quad
-\sinh y=\frac{e^y-e^{-y}}2,\quad
-\tanh y=\frac{\sinh y}{\cosh y},\quad
-\operatorname{sech}y=\frac1{\cosh y},\quad
-\sec y=\frac1{\cos y}.
-$$
-
-Set $x=1/d$ and define on $0<x\le1/3$
-
-$$
-\alpha(x)=\frac{\arctan x}{x},\qquad
-\beta(x)=\frac{\operatorname{artanh}x}{x},\qquad
-\operatorname{artanh}x=\frac12\log\frac{1+x}{1-x}.
-$$
-
-
-**Corollary 10.5 (Monotonicity and the limit).** Along odd integers $d\ge3$, the sequence $\mathfrak r_d$ increases strictly to $L=\cosh1/\cos1$.
-
-**Proof from the explicit spectrum.** By Fang–Huang [11, Lemma 4.2], the positive frequencies of the normalized transitive sign matrix, for odd $d$, are
-
-$$
-a_{j,d}=\frac1d\cot\frac{(2j-1)\pi}{2d},
-\qquad 1\le j\le\frac{d-1}{2}.
-$$
-
-The logarithmic expansion in Divoux–Wang [12, Section 7], together with $\|T_d\|_F^2=d(d-1)$, gives
-
-$$
-\log r_d
-=2\sum_{j=1}^{(d-1)/2}\sum_{r=0}^{\infty}
-\frac{a_{j,d}^{\,4r+2}}{2r+1},
-\qquad
-2\sum_{j=1}^{(d-1)/2}a_{j,d}^2=1-\frac1d.
-$$
-
-The regular-block factor cancels the term $-1/d$, leaving
-
-$$
-\log\mathfrak r_d
-=1+2\sum_{j=1}^{(d-1)/2}\sum_{r=1}^{\infty}
-\frac{a_{j,d}^{\,4r+2}}{2r+1}.
-$$
-
-For fixed $j$, put $c_j=(2j-1)\pi/2$ and $x=c_j/d$. Then $a_{j,d}=x\cot x/c_j$, while
-
-$$
-\frac{d}{dx}(x\cot x)
-=\frac{\sin x\cos x-x}{\sin^2x}<0
-\qquad(0<x<\pi/2).
-$$
-
-The strict inequality follows from $\sin(2x)<2x$. Each existing frequency therefore increases strictly as $d$ increases. Passing from $d$ to $d+2$ also adds a positive frequency. All coefficients in the convergent series above are positive, so $\mathfrak r_{d+2}>\mathfrak r_d$. Finally, the known closed form gives
-
-$$
-\mathfrak r_d
-=e^{1/d}\frac{(1+1/d)^d+(1-1/d)^d}
-{(1+i/d)^d+(1-i/d)^d}
-\longrightarrow\frac{\cosh1}{\cos1}.
-$$
-
-$\square$
-
-**A second proof by real-variable calculation.** First express the numerator and denominator as real functions. The sum and difference of the real logarithms give
-
-$$
-\log(1\pm x)=\frac12\log(1-x^2)
-\ \pm\operatorname{artanh}x.
-$$
-
-Exponentiating and adding gives
-
-$$
-(1+x)^{1/x}+(1-x)^{1/x}
-=2(1-x^2)^{1/(2x)}\cosh\beta(x).
-$$
-
-For $0\le x\le1/3$, the points $1\pm ix$ lie in the right half-plane. Taking the analytic logarithm there that agrees with the real logarithm on the positive axis gives
-
-$$
-\log(1\pm ix)=\frac12\log(1+x^2)\pm i\arctan x,
-$$
-
-$$
-(1+ix)^{1/x}+(1-ix)^{1/x}
-=2(1+x^2)^{1/(2x)}\cos\alpha(x).
-$$
-
-Therefore
-
-$$
-\mathfrak r(x)
-=e^{p(x)}\frac{\cosh\beta(x)}{\cos\alpha(x)},\qquad
-p(x)=x+\frac{\log(1-x^2)-\log(1+x^2)}{2x}.
-$$
-
-When $x=1/d$, the exponent $1/x=d$ is an integer, so these complex powers equal the original polynomial powers. Also $0<\alpha(x)\le1<\pi/2$, so the cosine in the denominator is strictly positive.
-
-Subtract the two logarithmic series:
-
-$$
-\begin{aligned}
-\log(1-x^2)-\log(1+x^2)
-&=-2\sum_{j=0}^\infty\frac{x^{4j+2}}{2j+1},\\
-p(x)&=x-\sum_{j=0}^\infty\frac{x^{4j+1}}{2j+1}
-=-\sum_{j=1}^\infty\frac{x^{4j+1}}{2j+1},\\
-p'(x)&=-\sum_{j=1}^\infty
-\frac{4j+1}{2j+1}x^{4j}<0.
-\end{aligned}
-$$
-
-Changing variables in the integrals for the arctangent and inverse hyperbolic tangent gives
-
-$$
-\alpha(x)=\int_0^1\frac{dt}{1+x^2t^2},\qquad
-\beta(x)=\int_0^1\frac{dt}{1-x^2t^2}.
-$$
-
-Set $v=1-\alpha$ and differentiate under the integral:
-
-$$
-\beta'(x)=\int_0^1\frac{2xt^2}{(1-x^2t^2)^2}\,dt,
-\qquad
-v'(x)=\int_0^1\frac{2xt^2}{(1+x^2t^2)^2}\,dt>0.
-$$
-
-For each $t\in[0,1]$,
-
-$$
-\frac{2xt^2}{(1-x^2t^2)^2}
-\le\left(\frac{1+x^2}{1-x^2}\right)^2
-\frac{2xt^2}{(1+x^2t^2)^2},
-$$
-
-$$
-\left(\frac{1+x^2}{1-x^2}\right)^2
-\le\left(\frac{1+1/9}{1-1/9}\right)^2
-=\left(\frac54\right)^2=\frac{25}{16}.
-$$
-
-Hence $\beta'(x)\le(25/16)v'(x)$. Since $\beta'(x)>0$,
-
-$$
-\beta(x)\le\beta(1/3)
-=3\cdot\frac12\log\frac{1+1/3}{1-1/3}
-=\frac32\log2,
-$$
-
-$$
-\tanh\beta(x)
-\le\frac{e^{3\log2}-1}{e^{3\log2}+1}
-=\frac{8-1}{8+1}=\frac79.
-$$
-
-Use $(1+z)^{-1}\ge1-z$ and integrate:
-
-$$
-\alpha(x)\ge\int_0^1(1-x^2t^2)\,dt
-=1-\frac{x^2}{3}\ge\frac{26}{27}.
-$$
-
-Appendix A.7 gives $\tan y\ge y+y^3/3$. Since $y+y^3/3$ is strictly increasing for $y\ge0$, the bound $\alpha(x)\ge26/27$ implies
-
-$$
-\tan\alpha(x)
-\ge\frac{26}{27}+\frac13\left(\frac{26}{27}\right)^3.
-$$
-
-The difference between these constants is
-
-$$
-\frac{26}{27}+\frac{26^3}{3\cdot27^3}
--\frac79\frac{25}{16}
-=\frac{1191008-1148175}{944784}
-=\frac{42833}{944784}>0.
-$$
-
-Consequently, differentiation of $\log\mathfrak r$ yields
-
-$$
-\begin{aligned}
-\frac d{dx}\log\mathfrak r(x)
-&=p'(x)+\tanh\beta(x)\,\beta'(x)
--\tan\alpha(x)\,v'(x)\\
-&\le p'(x)
-+\left(\frac79\frac{25}{16}
--\frac{26}{27}-\frac{26^3}{3\cdot27^3}\right)v'(x)\\
-&=p'(x)-\frac{42833}{944784}v'(x)<0.
-\end{aligned}
-$$
-
-
-The inequality $d_1<d_2$ implies $1/d_1>1/d_2$, hence $\mathfrak r_{d_1}<\mathfrak r_{d_2}$. As $x\downarrow0$,
-
-$$
-\alpha(x)\to1,\qquad \beta(x)\to1,\qquad p(x)\to0,
-$$
-
-$$
-\lim_{d\to\infty,\ d\ {\rm odd}}\mathfrak r_d
-=e^0\frac{\cosh1}{\cos1}
-=L.
-$$
-
-
-$\square$
-
-### 10.4 The asymptotic expansion of the carousel constants
-
-All expansions below are taken near $x=0$, with absolute constants in the remainders. After substituting $x=1/d$, the corresponding estimates are understood as $d\to\infty$.
-
-For $0<|x|<1$, integrate the geometric series:
-
-$$
-\frac{\arctan x}{x}
-=1-\frac{x^2}{3}+\frac{x^4}{5}+O(x^6),
-\qquad
-\frac{\operatorname{artanh}x}{x}
-=1+\frac{x^2}{3}+\frac{x^4}{5}+O(x^6).
-$$
-
-For example, the remainder in the second identity satisfies
-
-$$
-\left|\sum_{k=3}^\infty\frac{x^{2k}}{2k+1}\right|
-\le\frac{|x|^6}{7}\sum_{j=0}^\infty|x|^{2j}
-=\frac{|x|^6}{7(1-x^2)}.
-$$
-
-The absolute remainder of the first, alternating series is bounded by the same positive series. The series for $p$ in Section 10.3 gives
-
-$$
-p(x)=-x^5/3+R_p(x),\qquad
-|R_p(x)|\le\frac{|x|^9}{5(1-|x|^4)}.
-$$
-
-Put $b=\tanh1$, $h=\tan1$, $\delta_\beta=\beta-1$ and $\delta_\alpha=\alpha-1$. The first and second derivatives used below are
-
-$$
-(\log\cosh y)'=\tanh y,\quad
-(\log\cosh y)''=1-\tanh^2y,
-$$
-
-$$
-(-\log\cos y)'=\tan y,\quad
-(-\log\cos y)''=1+\tan^2y.
-$$
-
-Differentiating once more,
-
-$$
-(\log\cosh y)'''=-2\tanh y\,\operatorname{sech}^2y,\qquad
-(-\log\cos y)'''=2\tan y\,\sec^2y.
-$$
-
-The absolute value of the first expression is at most 2. The second needs to be bounded only between $\alpha$ and 1. Since $0\le\alpha\le1$, its absolute value is at most $2\tan1\,\sec^21$. Write $R_\beta,R_\alpha$ for the two Taylor integral remainders. Then
-
-$$
-|R_\beta|\le\frac{2}{6}|\delta_\beta|^3,\qquad
-|R_\alpha|\le\frac{2\tan1\,\sec^21}{6}|\delta_\alpha|^3.
-$$
-
-Here the factor $1/6$ comes from $\frac12\int_0^{|\delta|}(|\delta|-t)^2dt=|\delta|^3/6$. The expansions are
-
-$$
-\log\cosh(1+\delta_\beta)-\log\cosh1
-=b\delta_\beta+\frac{1-b^2}{2}\delta_\beta^2
-+O(\delta_\beta^3),
-$$
-
-$$
--\log\cos(1+\delta_\alpha)+\log\cos1
-=h\delta_\alpha+\frac{1+h^2}{2}\delta_\alpha^2
-+O(\delta_\alpha^3).
-$$
-
-Since
-
-$$
-\delta_\beta=x^2/3+x^4/5+O(x^6),\quad
-\delta_\alpha=-x^2/3+x^4/5+O(x^6),
-$$
-
-$$
-\delta_\beta^2=x^4/9+O(x^6),\quad
-\delta_\alpha^2=x^4/9+O(x^6),\quad
-\delta_\beta^3=O(x^6),\quad\delta_\alpha^3=O(x^6),
-$$
-
-substitution gives
-
-$$
-\log\cosh\beta-\log\cosh1
-=\frac b3x^2+
-\left(\frac b5+\frac{1-b^2}{18}\right)x^4+O(x^6),
-$$
-
-$$
--\log\cos\alpha+\log\cos1
-=-\frac h3x^2+
-\left(\frac h5+\frac{1+h^2}{18}\right)x^4+O(x^6).
-$$
-
-Add $p(x)$ and put $L=\cosh1/\cos1$:
-
-$$
-\log\frac{\mathfrak r(x)}L
-=a_2x^2+\ell_4x^4-\frac{x^5}{3}+O(x^6),
-$$
-
-$$
-a_2=\frac{b-h}{3},\qquad
-\ell_4=\frac{b+h}{5}+\frac{2+h^2-b^2}{18}.
-$$
-
-Denote the right-hand side by $z(x)$. Since $z=O(x^2)$,
-
-$$
-e^z=1+z+\frac{z^2}{2}+O(z^3),\qquad
-\frac{z^2}{2}=\frac{a_2^2}{2}x^4+O(x^6),\quad z^3=O(x^6).
-$$
-
-Therefore
-
-$$
-\mathfrak r(x)
-=L\left[1+a_2x^2+
-\left(\ell_4+\frac{a_2^2}{2}\right)x^4
--\frac{x^5}{3}+O(x^6)\right].
-$$
-
-Define $a_4=\ell_4+a_2^2/2$ and substitute $x=1/d$:
-
-$$
-{\mathfrak r_d
-=L\left[1+\frac{a_2}{d^2}+\frac{a_4}{d^4}
--\frac1{3d^5}+O(d^{-6})\right].}
-$$
-
-The first- and third-order terms vanish, while the fifth-order term is $-L/(3d^5)$. Numerically,
-
-$$
-La_2\approx-0.757603347512237,\qquad
-La_4\approx2.035222101370122.
-$$
-
-Here the block limit $m\to\infty$ is taken at fixed $d$, followed by $d\to\infty$. The expansion describes the resulting base constants as the base order grows.
-
-## 11. The unique expected extremum for a fixed base order
-
-### 11.1 The random blow-up models
-
-**Definition 11.1 (The two fixed-base blow-up models).**
-
-Fix an odd integer $d\ge3$. For any order-$d$ tournament $T^*$, replace each vertex by a random tournament of order $m$. All edges between blocks follow $T^*$. The total order is $N=dm$.
-
-Write $\mathcal T(T^*,m)$ for independent uniform random internal blocks, and $\mathcal R(T^*,m)$ for independent uniform regular internal blocks; the latter requires odd $m$. The expected cycle and path counts are denoted by $\mathbb EC,\mathbb EH$ and normalized by
+Fix a regular base tournament of odd order $d\ge3$. Replace its vertices by independent uniform labeled tournaments of order $m$ (model $\mathcal T$), or by independent uniform labeled regular tournaments of odd order $m$ (model $\mathcal R$). Edges between blocks follow the base. With $N=dm$, normalize cycle and path expectations by
 
 $$
 \nu_N=(N-1)!/2^N,\qquad \mu_N=N!/2^{N-1}.
 $$
 
-
-This consequence combines [12, Proposition 7.1 and Lemma 9.1], the equality classification of Fang and Huang [11, Theorem 1.4 and Corollary 3.4], and the model comparisons of Wormald [6, Theorems 1, 4 and 5]. The proof below supplies the regular-base isomorphism argument and excludes nonregular bases.
-
-**Corollary 11.2 (The unique expected extremum).**
-
-For every fixed odd $d\ge3$, there exists $M_d$ such that, for $m\ge M_d$, the carousel base uniquely maximizes the expected cycle and path counts in both models, up to isomorphism. In model $\mathcal R$, $m$ is restricted to odd integers.
-
-The cycle conclusion for independent internal blocks proves and strengthens Wormald's Conjecture 1. The regular-block and path conclusions are corresponding extensions.
-
-
-### 11.2 Limiting constants for regular bases
-
-For a regular base, Sections 9 and 10 give
+**Corollary 10.2.** For fixed $d$, the two limits for model $\mathcal T$ are $\rho_d(S)$, and those for model $\mathcal R$ are $e^{1/d}\rho_d(S)$:
 
 $$
-\lim_{m\to\infty}\frac{\mathbb EC_{\mathcal T}}{\nu_N}
-=\lim_{m\to\infty}\frac{\mathbb EH_{\mathcal T}}{\mu_N}
-=\rho_d(S),
+\frac{\mathbb EC_{\mathcal T}}{\nu_N},\ 
+\frac{\mathbb EH_{\mathcal T}}{\mu_N}\longrightarrow\rho_d(S),
+\qquad
+\frac{\mathbb EC_{\mathcal R}}{\nu_N},\ 
+\frac{\mathbb EH_{\mathcal R}}{\mu_N}\longrightarrow e^{1/d}\rho_d(S).
+$$
+
+The regular-block limits are taken through odd $m$.
+
+**Proof.** Wormald's Theorem 4 gives the first cycle limit as $\sqrt{d/\mathcal H}$ when $\mathcal H\ne0$, now established by Theorem 9.2. His Theorem 5 transfers it to paths, and Theorems 1 and 5 supply the regular-block factor $e^{1/d}$. $\square$
+
+For comparison, Divoux–Wang [12, Proposition 5.1] gives the same constants directly. For $W=(J_N-I_N+S\otimes J_m)/2$, put $D=2W/(N-1)$ and $B=D-J_N/N$. On the constant direction, the block-constant zero-sum space, and the within-block zero-sum space, $B$ acts respectively as
+
+$$
+0,\qquad B_0=\left.\frac{mS-I_d}{N-1}\right|_{\mathbf1_d^\perp},\qquad -I/(N-1).
+$$
+
+Consequently its operator norm stays below one, and the determinant ratio in their counting formula satisfies
+
+$$
+R_N=\frac{\det(I-B)}{\sqrt{\det(I-B^TB)}}\longrightarrow e\rho_d(S).
+$$
+
+Rescaling $D$ to $W$ contributes $((N-1)/N)^N\to e^{-1}$. Their auxiliary-vertex construction gives $\operatorname{path}(D)=(1+o(1))N^2\operatorname{cyc}(D)$, and Wormald's comparison supplies $e^{1/d}$ for regular blocks. Detailed proof companion §10.1 records the determinant factors and the auxiliary-vertex normalization. Theorem 9.2 additionally identifies the original angular Hessian itself.
+
+### 10.2 Closed form and monotonicity
+
+**Proposition 10.3.** For odd $d\ge3$, put $r_d=\rho_d(\mathrm{Car}_d)$ and $\mathfrak r_d=e^{1/d}r_d$. Then
+
+$$
+r_d=\frac{(1+1/d)^d+(1-1/d)^d}
+{(1+i/d)^d+(1-i/d)^d}.
+$$
+
+Indeed, the carousel sign matrix is signed-permutation similar to the transitive sign matrix $T_d$. Its determinant polynomial is
+
+$$
+\det(I+tT_d)=\frac{(1+t)^d+(1-t)^d}{2};
+$$
+
+taking $t=1/d$ and $i/d$ proves the formula. These determinant evaluations are from [12, Section 7 and Lemma 9.1]; the elementary calculations are recorded in Detailed proof companion Appendix A.1–A.2.
+
+**Corollary 10.5.** The sequence $\mathfrak r_d$, over odd $d\ge3$, is strictly increasing and tends to $L=\cosh1/\cos1$.
+
+**Proof.** The positive frequencies of $T_d/d$ are [11, Lemma 4.2]
+
+$$
+a_{j,d}=d^{-1}\cot\frac{(2j-1)\pi}{2d},\qquad 1\le j\le(d-1)/2.
+$$
+
+Expanding the logarithmic determinant ratio and using $2\sum_j a_{j,d}^2=1-1/d$ gives
+
+$$
+\log\mathfrak r_d
+=1+2\sum_{j=1}^{(d-1)/2}\sum_{r\ge1}\frac{a_{j,d}^{4r+2}}{2r+1}.
+$$
+
+For fixed $j$, $a_{j,d}$ increases with $d$: writing $c_j=(2j-1)\pi/2$ and $x=c_j/d$, it equals $x\cot x/c_j$, and
+
+$$
+(x\cot x)'=\frac{\sin x\cos x-x}{\sin^2x}<0\quad(0<x<\pi/2).
+$$
+
+Passing from $d$ to $d+2$ increases every existing frequency and adds a positive one. The displayed convergent series has positive coefficients, proving strict increase. The closed form gives the limit $L$. $\square$
+
+For completeness, the higher-order expansion is
+
+$$
+\mathfrak r_d=L\left[1+\frac{a_2}{d^2}+\frac{a_4}{d^4}-\frac1{3d^5}+O(d^{-6})\right],
 $$
 
 $$
-\lim_{\substack{m\to\infty\\m\ {\rm odd}}}
-\frac{\mathbb EC_{\mathcal R}}{\nu_N}
-=\lim_{\substack{m\to\infty\\m\ {\rm odd}}}
-\frac{\mathbb EH_{\mathcal R}}{\mu_N}
-=e^{1/d}\rho_d(S),
+a_2=\frac{\tanh1-\tan1}{3},\qquad
+a_4=\frac{\tanh1+\tan1}{5}+\frac{2+\tan^21-\tanh^21}{18}+\frac{a_2^2}{2}.
 $$
 
-$$
-\rho_d(S)=\frac{\det(I+S/d)}{\det(I+iS/d)}.
-$$
+This follows by expanding the closed form at $x=1/d=0$; uniform Taylor remainder bounds are retained in Detailed proof companion §10.4. The order of limits matters: the block limit is first taken at fixed $d$, and only then does $d$ tend to infinity.
 
-Thus regular bases are compared by their determinant ratios $\rho_d(S)$. For nonregular bases, the model limits are not given by this formula. We instead estimate the expected cycle and path counts directly and show that both normalized expectations tend to zero.
+## 11. The unique expected extremum for a fixed base order
 
-### 11.3 Nonregular scores and exponential loss
+The models of §10 are now defined for *every* tournament base of a fixed odd order $d\ge3$, without assuming regularity. The normalization is unchanged.
 
-**Definition 11.3 (Degree parameters for a nonregular base).**
+**Corollary 11.2.** There is a threshold $M_d$ such that, for every $m\ge M_d$, the carousel base uniquely maximizes each of the four expected counts (cycles and paths in $\mathcal T$ and $\mathcal R$), up to ordinary tournament isomorphism. In $\mathcal R$, only odd $m$ are admissible.
 
-Let $d_i$ be the base outdegrees, put $b_i=d_i+1/2$, and define
+The assertion concerns expected counts. The threshold depends on $d$, but is common to all bases of that order and all four admissible comparisons.
 
-$$
-a_i=\frac{2b_i}{d},\qquad
-\kappa=\left(\prod_{i=1}^d a_i\right)^{1/d},\qquad
-s_i=2d_i-(d-1).
-$$
+### 11.1 Nonregular bases have exponentially small normalized expectations
 
-
-Put $s=(s_1,\ldots,s_d)^T$, so that $\|s\|_2^2=\sum_{i=1}^d s_i^2$. Each edge contributes exactly one outdegree. Therefore
+Let $d_i$ be the base outdegrees. Set
 
 $$
-\sum_i d_i=\binom d2,\qquad
-\sum_i a_i=\frac{2\binom d2+d}{d}=d,\qquad
-a_i=1+\frac{s_i}{d}\in(0,2),\qquad \sum_i s_i=0.
+b_i=d_i+\tfrac12,\quad a_i=2b_i/d=1+s_i/d,\quad
+s_i=2d_i-(d-1),\quad \kappa=(\prod_i a_i)^{1/d}.
 $$
 
-The function $f(a)=a-1-\log a$ satisfies $f'(a)=(a-1)/a$, so its unique minimum occurs at $a=1$ with value $f(1)=0$. Hence
+Here $0<a_i<2$ and $\sum_i a_i=d$. The bound $\log a\le a-1-(a-1)^2/8$ on $(0,2)$ implies
 
 $$
-\log\kappa=\frac1d\sum_i\log a_i
-\le\frac1d\sum_i(a_i-1)=0.
+\log\kappa\le-\frac{\sum_i s_i^2}{8d^3}.
 $$
 
-Equality requires $a_i=1$ for every index, equivalently $d_i=(d-1)/2$ for every index. For a nonregular base, $\kappa<1$. To quantify the loss, use a second-order expansion with integral remainder:
+For a nonregular base, the zero-sum even integers $s_i$ have squared sum at least $8$, so $\kappa<1$ and $\kappa^N\le e^{-N/d^3}$.
+
+In model $\mathcal T$, the expected adjacency matrix $W$ has row sum $r_i=mb_i-1/2$ for each row of type $i$. A Hamilton cycle uses distinct unordered pairs, so independence of internal edges gives $\mathbb EC_{\mathcal T}=C(W)\le\operatorname{per}W$.
+
+For a matrix with entries in $[0,1]$, rowwise linear optimization shows that its permanent is bounded by that of a zero–one matrix whose row sums are the rounded-up original sums. Indeed, first increase a row to the target integer sum, then maximize its linear permanent functional on the corresponding hypersimplex; a maximum occurs at a zero–one vertex. Apply this successively to all rows. Brégman's inequality consequently gives
 
 $$
-\log a=(a-1)-(a-1)^2\int_0^1
-\frac{1-t}{[1+t(a-1)]^2}\,dt.
+\operatorname{per}W\le\prod_{i=1}^d(R_i!)^{m/R_i},
+\qquad R_i=\lceil mb_i-\tfrac12\rceil.
 $$
 
-Since $0<1+t(a-1)<2$,
-
-$$
-\int_0^1\frac{1-t}{[1+t(a-1)]^2}\,dt
-\ge\frac14\int_0^1(1-t)\,dt=\frac18.
-$$
-
-Substitute $a_i$ and sum:
-
-$$
-\begin{aligned}
-\log\kappa
-&\le\frac1d\sum_i\left(\frac{s_i}{d}-\frac{s_i^2}{8d^2}\right)
-=-\frac{\|s\|_2^2}{8d^3}.
-\end{aligned}
-$$
-
-For odd $d$ each $s_i$ is even. Nonregularity implies that some $s_i\ne0$; the zero-sum condition then requires nonzero terms of opposite signs, each with absolute value at least 2. Thus $\|s\|_2^2\ge2^2+2^2=8$ and
-
-$$
-\kappa^N\le\exp[-N\|s\|_2^2/(8d^3)]\le e^{-N/d^3}.
-$$
-
-In model $\mathcal T$, let $W$ be the entrywise expectation of the adjacency matrix. Write $\operatorname{Sym}(N)$ for the permutations of $[N]$ and $\mathcal C_N$ for its $N$-cycles. For a nonnegative matrix of order $N$, define
-
-$$
-\operatorname{per}W=\sum_{\sigma\in\operatorname{Sym}(N)}
-\prod_{v=1}^N W_{v,\sigma(v)},\qquad
-C(W)=\sum_{\sigma\in\mathcal C_N}\prod_{v=1}^N W_{v,\sigma(v)}.
-$$
-
-Each directed Hamiltonian cycle corresponds to one $N$-cycle and uses distinct unordered vertex pairs. Its random internal edges are independent, so its occurrence probability is the product of the corresponding entries of $W$. Summing over cycles gives
-
-$$
-\mathbb EC_{\mathcal T}=C(W)\le\operatorname{per}W.
-$$
-
-The inequality follows from $\mathcal C_N\subseteq\operatorname{Sym}(N)$ and nonnegativity of the weights. Independence is used only for a single cycle; it need not hold for a permutation containing a two-cycle.
-
-### 11.4 Rounding row sums and Brégman's bound
-
-Write $\lceil a\rceil$ for the smallest integer at least $a$.
-
-**Definition 11.4 (Integral targets for row sums).**
-
-Assume $m\ge2$, with $m$ odd for regular internal blocks. Each row of type $i$ in $W$ has sum
-
-$$
-r_i=md_i+\frac{m-1}{2}=mb_i-\frac12,\qquad
-R_i=\lceil r_i\rceil.
-$$
-
-
-For a row of length $L$, denoted $w$, assume $0\le w_j\le1$. Its current sum is $r=\sum_{j=1}^Lw_j$, and its target integer sum $R$ satisfies $r\le R\le L$. The amount to add is $s_0=R-r$, and the available capacity is $\sum_j(1-w_j)=L-r\ge s_0$. Starting at $j=1$, choose successively
-
-$$
-\delta_j=\min(1-w_j,s_{j-1}),\qquad
-s_j=s_{j-1}-\delta_j,\qquad w'_j=w_j+\delta_j.
-$$
-
-At each step the remaining mass satisfies
-
-$$
-s_j=\max(0,s_{j-1}-(1-w_j))
-=\max\left(0,s_0-\sum_{h=1}^j(1-w_h)\right).
-$$
-
-The first equality subtracts the smaller of two quantities; the second follows by substitution starting at $j=1$.
-
-The recursion gives $s_L=\max(0,s_0-\sum_j(1-w_j))=0$, so $0\le w'_j\le1$ and $\sum_jw'_j=R$. Every coefficient of the permanent is nonnegative, so these entrywise increases cannot decrease it.
-
-Fix the other rows and write the permanent as $\sum_jw_jc_j$, where $c_j$ is the permanent obtained by deleting the current row and column $j$; thus $c_j\ge0$. If entries $w_a,w_b$ both lie strictly between 0 and 1, label them so that $c_a\ge c_b$ and take
-
-$$
-\eta=\min(1-w_a,w_b)>0,\qquad
-w_a'=w_a+\eta,\qquad w_b'=w_b-\eta.
-$$
-
-The row sum is preserved, and
-
-$$
-\sum_jw_j'c_j-\sum_jw_jc_j=\eta(c_a-c_b)\ge0.
-$$
-
-At least one coordinate becomes 0 or 1, reducing the number of nonintegral coordinates. After at most $L-1$ steps there is at most one nonintegral coordinate. Since all other coordinates and the row sum $R$ are integers, the remaining coordinate must also be integral. Perform this operation on every row to obtain a zero–one matrix $W^\sharp$. Each row of type $i$ has $R_i$ ones, and $\operatorname{per}W\le\operatorname{per}W^\sharp$.
-
-The resulting matrix $W^\sharp$ has entries in $\{0,1\}$ and the specified row sums. Its diagonal entries may be $1$, which is allowed in Brégman's inequality.
-
-Now invoke [Brégman's inequality, as stated in Lemma 2.1 of Alon's paper](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf): for a zero–one matrix with row sums $q_1,\ldots,q_L>0$,
-
-$$
-\operatorname{per}W^\sharp\le\prod_{\ell=1}^L(q_\ell!)^{1/q_\ell}.
-$$
-
-Since $r_i\ge(m-1)/2>0$, we have $R_i\ge1$. There are $m$ rows of each type, so
-
-$$
-\operatorname{per}W\le\prod_{i=1}^d(R_i!)^{m/R_i}.
-$$
-
-Together with $\operatorname{per}W\le\operatorname{per}W^\sharp$, this gives the required bound for the weighted matrix.
-
-### 11.5 Normalization with explicit constants
-
-The desired bound is immediate if the permanent is zero. We may therefore assume it is positive when taking logarithms. Let $m\ge2$, $N=dm$, and write $R_i=mb_i+\xi_i$. The rounding definition gives $|\xi_i|\le1/2$ and
-
-$$
-R_i\ge m/2-1/2\ge m/4,\qquad R_i\le N.
-$$
-
-Indeed,
-
-$$
-0\le R_i-r_i<1,\qquad
-\xi_i=R_i-mb_i=(R_i-r_i)-\frac12
-\in[-1/2,1/2).
-$$
-
-Use the remainder form of Stirling's bound for integers $R\ge1$:
-
-$$
-\log(R!)=R\log R-R+\frac12\log(2\pi R)
-+\frac{\theta_R}{12R},\qquad 0<\theta_R<1.
-$$
-
-Therefore
-
-$$
-\begin{aligned}
-m\sum_{i=1}^d\frac{\log(R_i!)}{R_i}
-&\le m\sum_i\log R_i-N
-+m\sum_i\frac{\log(2\pi R_i)}{2R_i}
-+m\sum_i\frac1{12R_i^2}\\
-&\le m\sum_i\log R_i-N
-+2d\log(2\pi N)+\frac{4d}{3m}.
-\end{aligned}
-$$
-
-For the last two terms we used $m/(2R_i)\le2$ and $m/(12R_i^2)\le4/(3m)$, respectively. The lower Stirling bound also gives
-
-$$
-\log(N!/2^N)\ge N\log(N/2)-N.
-$$
-
-Subtracting yields
+For fixed $d$, $R_i=mb_i+O(1)$ and $R_i\ge m/4$ when $m\ge2$. Stirling's bounds therefore yield
 
 $$
 \log\frac{\operatorname{per}W}{N!/2^N}
-\le m\sum_i\log\frac{2R_i}{N}
-+2d\log(2\pi N)+\frac{4d}{3m}.
+\le N\log\kappa+O_d(\log N).
 $$
 
-Set $y_i=\xi_i/(mb_i)$. Because $b_i\ge1/2$, we have $|y_i|\le1/m\le1/2$ and
+Thus $\mathbb EC_{\mathcal T}/\nu_N\le N^{O_d(1)}\kappa^N\to0$. In model $\mathcal R$, internal edges are not independent; instead every sample has row sum exactly $mb_i-1/2$. Apply Brégman's inequality to each sample adjacency matrix, then average, obtaining the same bound. Explicit constants are retained in Detailed proof companion §§11.4–11.5.
+
+To treat paths, add a vertex with independent fair edges to every old vertex. For every tournament $G$ of order $N\ge2$,
 
 $$
-\frac{2R_i}{N}=a_i(1+y_i),\qquad
-|\log(1+y_i)|
-=\left|\int_0^{y_i}\frac{dt}{1+t}\right|
-\le\frac{|y_i|}{1-|y_i|}\le\frac2m.
+\mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad 4\nu_{N+1}=\mu_N.
 $$
 
-Thus
+The two closing edges of a path are distinct, which is why the factor is exactly $1/4$. In the augmented expectation matrix for $\mathcal T$, old rows have sum $mb_i$; in every augmented sample of $\mathcal R$, they have sum at most $mb_i+1/2$. The common rounded targets $R_i'=\lceil mb_i+1/2\rceil=mb_i+O(1)$, together with target $N$ for the new row, again allow Brégman's inequality. The old rows contribute $N\log\kappa+O_d(\log N)$ after normalization, and the one new row changes only the polynomial factor. Hence
 
 $$
-m\sum_i\log\frac{2R_i}{N}
-\le m\sum_i\log a_i+2d=N\log\kappa+2d.
-$$
-
-Use $4d/(3m)\le2d/3$ and $N!/2^N=N\nu_N$ to obtain the explicit bound
-
-$$
-\frac{\mathbb EC_{\mathcal T}}{\nu_N}
-\le e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N.
-$$
-
-With regular internal blocks, every sample has the positive integer row sum $mb_i-1/2$ in each row of type $i$. For its adjacency matrix $A_G$, we have $C(G)\le\operatorname{per}A_G$. Apply Brégman's bound and the preceding estimates to $A_G$, then average to obtain
-
-$$
-\frac{\mathbb EC_{\mathcal R}}{\nu_N}
-\le e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N.
-$$
-
-The regular model uses only admissible odd $m$. For a nonregular base, $\kappa<1$. Take the logarithm of the right-hand side and divide by $N$:
-
-$$
-\frac{\log(e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N)}{N}
-=\log\kappa+
-\frac{8d/3+2d\log(2\pi)+(2d+1)\log N}{N}
-\longrightarrow\log\kappa<0,
-$$
-
-Here we use $\log N/N\to0$, which follows from
-
-$$
-0\le\frac{\log N}{N}
-=\frac1N\int_1^N\frac{dt}{t}
-\le\frac1N\int_1^N\frac{dt}{\sqrt t}
-=\frac{2(\sqrt N-1)}N\longrightarrow0.
-$$
-
-Denote the upper bound by $B_N$ and put $c=-\tfrac12\log\kappa>0$. Since $\log B_N/N\to-2c$, we have $B_N\le e^{-cN}$ for all sufficiently large $N$. The same argument applies to $\kappa^N$ times any fixed-degree polynomial, as will be needed for paths in the next section.
-
-Both normalized cycle expectations therefore tend to zero.
-
-### 11.6 The added-vertex construction and path expectations
-
-**Lemma 11.5 (Random augmentation and path counts).**
-
-Fix a tournament $G$ on $N\ge2$ vertices. Add a vertex $v$ whose edges to the old vertices are independently and fairly oriented. Each path $x_1\to\cdots\to x_N$ corresponds to the unique candidate cycle $v\to x_1\to\cdots\to x_N\to v$. Since $x_1\ne x_N$, the two required new edges are distinct and have joint probability $(1/2)^2=1/4$. Represent each cycle with $v$ as its starting vertex; deleting $v$ reverses the correspondence. The condition $N\ge2$ is necessary: for $N=1$, $H(G)=1$ but the augmented tournament has no directed 2-cycle. It is automatic in the blow-up applications here, where $d\ge3$ is fixed. Therefore
-
-$$
-\mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
-4\nu_{N+1}=\frac{4N!}{2^{N+1}}=\frac{N!}{2^{N-1}}=\mu_N,
-$$
-
-$$
-\frac{\mathbb EH}{\mu_N}
-=\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
-$$
-
-
-Write $G_{\rm aug}$ for the augmented random tournament and $C_{\rm aug}=C(G_{\rm aug})$. For $\mathcal T$, let $W_{\rm aug}$ be the entrywise expected augmented adjacency matrix. For $\mathcal R$, first fix an augmented sample and let $A_{\rm aug}$ be its adjacency matrix. Apply the row completion and rounding of Section 11.4 to each matrix, obtaining a zero-one matrix $W^\sharp_{\rm aug}$ of order $N+1$. Then
-
-$$
-\mathbb EC_{{\rm aug},\mathcal T}
-=C(W_{\rm aug})\le\operatorname{per}W_{\rm aug}
-\le\operatorname{per}W^\sharp_{\rm aug},
-$$
-
-$$
-C(G_{\rm aug})\le\operatorname{per}A_{\rm aug}
-\le\operatorname{per}W^\sharp_{\rm aug}
-\qquad(\text{each sample of }\mathcal R).
-$$
-
-The first line uses independence of the internal edges. The second holds for each sample with regular internal blocks.
-
-For the augmented expectation matrix of $\mathcal T$, the old row sum is $mb_i$. For each actual augmented sample of $\mathcal R$, the old row sum is at most $mb_i+1/2$. Use the common choice
-
-$$
-R_i'=\lceil mb_i+1/2\rceil=mb_i+\xi_i',
-\qquad \frac12\le\xi_i'<\frac32.
-$$
-
-Take the target sum of the new row to be $R_0=N$. Since $b_i\le d-1/2$ and $m\ge2$, we have $mb_i+1/2\le N-1/2$, and hence $m/2\le R_i'\le N$. All target sums are at most the number of columns $N+1$, so the rounding in Section 11.4 applies. Brégman's bound gives
-
-$$
-\log\operatorname{per}W^\sharp_{\rm aug}
-\le m\sum_i\frac{\log(R_i'!)}{R_i'}
-+\frac{\log(N!)}N.
-$$
-
-Use $R_i'\ge m/4$ and $R_i'\le N+1$ to estimate the remainders for the old rows, keeping the new row separate:
-
-$$
-\begin{aligned}
-\log\operatorname{per}W^\sharp_{\rm aug}
-&\le m\sum_i\log R_i'-N+\log N-1\\
-&\quad+2d\log(2\pi(N+1))+\frac{4d}{3m}
-+\frac{\log(2\pi N)}{2N}+\frac1{12N^2}\\
-&\le m\sum_i\log R_i'-N+\log N-1\\
-&\quad+(2d+1)\log(2\pi(N+1))+\frac{4d}{3m}+\frac1{12}.
-\end{aligned}
-$$
-
-Subtract the Stirling lower bound $\log((N+1)!/2^{N+1})\ge(N+1)\log((N+1)/2)-(N+1)$. The leading terms satisfy
-
-$$
-\begin{aligned}
-&m\sum_i\log R_i'+\log N-(N+1)\log((N+1)/2)\\
-&=m\sum_i\log(2R_i'/N)
-+N\log(N/(N+1))+\log(2N/(N+1)).
-\end{aligned}
-$$
-
-The second term is at most zero, and the third is at most $\log2$. The inequality $\log(1+y)\le y$, valid for $y\ge0$, follows from the integral $\int_0^y(1+t)^{-1}dt\le y$. Thus
-
-$$
-\begin{aligned}
-m\sum_i\log(2R_i'/N)
-&=N\log\kappa+
-m\sum_i\log(1+\xi_i'/(mb_i))\\
-&\le N\log\kappa+\sum_i\frac{\xi_i'}{b_i}
-\le N\log\kappa+3d.
-\end{aligned}
-$$
-
-Using $4d/(3m)\le2d/3$ now gives
-
-$$
-\begin{aligned}
-\log\frac{\operatorname{per}W^\sharp_{\rm aug}}{(N+1)!/2^{N+1}}
-&\le N\log\kappa+\frac{11d}{3}+\frac1{12}+\log2\\
-&\quad +(2d+1)\log(2\pi(N+1)).
-\end{aligned}
-$$
-
-Exponentiate and substitute $(N+1)!/2^{N+1}=(N+1)\nu_{N+1}$. The two models satisfy, respectively,
-
-$$
-\frac{\mathbb EH_{\mathcal T}}{\mu_N}
-\le 2e^{11d/3+1/12}(2\pi)^{2d+1}(N+1)^{2d+2}\kappa^N,
-$$
-
-$$
+\frac{\mathbb EH_{\mathcal T}}{\mu_N},\quad
 \frac{\mathbb EH_{\mathcal R}}{\mu_N}
-\le 2e^{11d/3+1/12}(2\pi)^{2d+1}(N+1)^{2d+2}\kappa^N.
+\le (N+1)^{O_d(1)}\kappa^N\longrightarrow0.
 $$
 
-The second estimate follows by averaging the bound for each augmented sample. For a fixed nonregular base, the logarithm of either right-hand side, divided by $N$, tends to $\log\kappa<0$. Thus both normalized path expectations tend to zero.
+For a fully explicit normalization of this augmentation bound, see Detailed proof companion §11.6. The degree-based bounds above cover every nonregular base.
 
-### 11.7 The expected extremum and a common threshold
+### 11.2 Strict comparison and one common threshold
 
-**Proof.**
+For regular bases, Corollary 10.2 and the equality classification in §6 show that the carousel has strictly larger limiting constants than every nonisomorphic regular base. For regular tournaments, the equality classification yields ordinary isomorphism, which is the equivalence relevant to the blow-up models. Nonregular bases have limit zero by §11.1, whereas the carousel limits $r_d$ and $e^{1/d}r_d$ are positive.
 
-For fixed $d$, there are at most $2^{\binom d2}$ labeled bases and hence finitely many isomorphism classes. The carousel limit is $r_d$ or $e^{1/d}r_d$. By Section 6.5, every other regular base has a strictly smaller limit, while the normalized expectation for a nonregular base tends to zero.
-
-Thus, for each noncarousel base, its normalized expectation is strictly smaller than the carousel's for all sufficiently large $m$. Taking the maximum of these finitely many thresholds gives $M_d$.
-
-Finally, the expectations are invariant under base isomorphism. If $\pi$ is an isomorphism of bases and the blow-up vertices are written as $(i,a)$, then the map
-
-$$
-(i,a)\longmapsto(\pi(i),a)
-$$
-
-preserves all directions between blocks and permutes the independent identically distributed internal blocks, preserving the sample probabilities. It also induces bijections on paths and cycles, so the corresponding expectations agree. Together with the strict inequalities above, this proves uniqueness up to isomorphism. $\square$
-
-
-## 12. Proof of Theorem 1.1
-
-We combine the uniform path estimates of Sections 7 and 8 with the spectral comparison of Section 6 to prove Theorem 1.1.
-
-### 12.1 The determinant ratio
-
-In the path argument the factor is written as
-
-$$
-\rho_n(S)=\det(I-S^TS/n^2)^{-1/2}\det(I+S/n).
-$$
-
-Let the nonzero eigenvalues of $S$ occur in pairs $\pm i\lambda_j$, and put $x_j=\lambda_j^2/n^2$. Each $x_j<1/2$, so all the following factors are positive and
-
-$$
-\det(I-S^TS/n^2)^{1/2}=\prod_j(1-x_j)
-=\det(I+iS/n).
-$$
-
-Thus the factor is exactly $\det(I+S/n)/\det(I+iS/n)$ from the Hessian argument. The square root is the positive one; the sign of $\det(I+iS/n)$ has not been suppressed.
-
-### 12.2 Applying the spectral comparison at both parities
-
-The regular equality classification in Section 6 concerns odd orders, but the preceding spectral inequality does not require regularity. To make its use at every order explicit, let $n\ge2$ and write the permutation in Section 6.3 as all odd indices in increasing order followed by all even indices in decreasing order. At odd order this is the original permutation. At even order it is $(1,3,\ldots,n-1,n,n-2,\ldots,2)$. The same entrywise computation gives
-
-$$
-T_n=\Lambda^TD_0K_nR_0\Lambda,\qquad
-T_n^2=-U^TK_n^2U,\qquad U=D_0\Lambda,
-\qquad Ue_1=e_1.
-$$
-
-The signed wrap-around shift satisfies $Z^TT_nZ=T_n$ at either parity. Consequently, all diagonal entries of $T_n^{2p}$ coincide. For every integer $p\ge1$, the columnwise Fang–Huang comparison and these identities give
-
-$$
-\|S^p\|_F^2\le n\|K_n^pe_1\|_2^2=\|T_n^p\|_F^2.
-$$
-
-Substitution into the absolutely convergent logarithmic series of Section 6.4 yields, at every order,
-
-$$
-\log\rho_n(S)
-=\sum_{r\ge0}\frac{\|S^{2r+1}\|_F^2}{(2r+1)n^{4r+2}}
-\le\log\rho_n(T_n).
-$$
-
-The determinant polynomial in Appendix A.1 also holds at both parities. Hence
-
-$$
-\rho_n(S)\le r_n
-=\frac{(1+1/n)^n+(1-1/n)^n}
-{(1+i/n)^n+(1-i/n)^n}
-=L+O(n^{-1}).
-$$
-
-The last step follows directly from the complex-exponential estimates of Section 8.2: for $z\in\{1,-1,i,-i\}$, we have $n\log(1+z/n)=z+O(n^{-1})$, while the denominator tends to $2\cos1>0$. The quotient therefore has an $O(n^{-1})$ error. These estimates depend on the order alone, not on the tournament.
-
-### 12.3 The upper bound
-
-Section 7 divides all tournaments into three classes. The large-variance class has $H(T)/\mu_n=o(n^{-1})$. The low-variance class with exceptional vertices eventually has normalized count below one. In the remaining class, $\tau=\|S\mathbf1/(n-1)\|_2^2\le K_0\log n$ and
-
-$$
-\frac{H(T)}{\mu_n}\le\rho_n(S)
-\exp\left\{-\tau+K\left[\frac{1+\tau+\tau^2}{n}
-+\frac{\tau^{3/2}+\tau}{\sqrt n}+\sqrt{\tau/n}\right]\right\}
-+o(n^{-1}).
-$$
-
-For all sufficiently large $n$, the polynomial error terms containing $\tau$ are at most $\tau/4$, while
-
-$$
-K\sqrt{\tau/n}\le\tau/4+K^2/n.
-$$
-
-Thus the total exponent is at most $-\tau/2+K_1/n$ for an absolute constant $K_1$. The spectral comparison gives
-
-$$
-\frac{H(T)}{\mu_n}\le r_n e^{K_1/n}+o(n^{-1})
-=L+O(n^{-1}).
-$$
-
-Since $L>1$, the first two classes satisfy this final upper bound as well. Taking the largest of the three absolute thresholds and then maximizing over $T$ yields $P(n)\le(L+K_2/n)\mu_n$. The odd carousels and even deletion constructions in Section 8 give $P(n)\ge(L-K_3/n)\mu_n$. Taking $K'=\max(K_2,K_3)$ proves Theorem 1.1.
-
-The constants are independent of the tournament, as required. $\square$
-
-## A. Auxiliary algebra and model calculations
-
-### A.1 The determinant polynomial of the transitive sign matrix
-
-Let $T_n$ be the transitive tournament sign matrix and set $F_n(t)=\det(I+tT_n)$. We compute $F_n$ by row operations and then recover its principal determinants.
-
-For $n=1$, $F_1(t)=1=((1+t)+(1-t))/2$, proving the formula in that case. Now assume $n\ge2$. For the first $n-1$ rows simultaneously perform $R_i\leftarrow R_i-R_{i+1}$. The operation is implemented by an upper-triangular matrix with diagonal 1, so the determinant is preserved. In the resulting matrix the only potentially nonzero entries in the first $n-1$ rows are
-
-$$
-M_{ii}=1+t,\qquad M_{i,i+1}=t-1
-$$
-
-The last row is $(-t,\ldots,-t,1)$. Temporarily assume $t\ne-1,0$ and put
-
-$$
-r=\frac{1-t}{1+t}.
-$$
-
-Denote the top-left block of order $(n-1)$ by $B$. Its determinant is $(1+t)^{n-1}$. The top-right column $b$ has only its last entry nonzero, equal to $t-1$. Solve $Bx=b$ from the last row upwards:
-
-$$
-x_{n-1}=\frac{t-1}{1+t}=-r,
-$$
-
-$$
-(1+t)x_i+(t-1)x_{i+1}=0
-\quad\Longrightarrow\quad x_i=rx_{i+1}=-r^{n-i}.
-$$
-
-The Schur complement gives
-
-$$
-F_n(t)=(1+t)^{n-1}\left(1-t\sum_{k=1}^{n-1}r^k\right).
-$$
-
-First multiply the finite geometric sum by $1-r$; adjacent terms cancel:
-
-$$
-(1-r)\sum_{k=1}^{n-1}r^k
-=(r+r^2+\cdots+r^{n-1})-(r^2+\cdots+r^n)
-=r-r^n.
-$$
-
-Thus $\sum_{k=1}^{n-1}r^k=r(1-r^{n-1})/(1-r)$. Using $1-r=2t/(1+t)$, the expression in parentheses becomes
-
-$$
-\begin{aligned}
-1-t\sum_{k=1}^{n-1}r^k
-&=1-\frac{tr(1-r^{n-1})}{1-r}\\
-&=1-\frac{1-t}{2}(1-r^{n-1})\\
-&=\frac{1+t}{2}+\frac{1-t}{2}r^{n-1}.
-\end{aligned}
-$$
-
-Multiply the bracket by $(1+t)^{n-1}$ and substitute $r=(1-t)/(1+t)$:
-
-$$
-\begin{aligned}
-F_n(t)
-&=\frac{(1+t)^n}{2}
-+\frac{(1+t)^{n-1}(1-t)}2
-\left(\frac{1-t}{1+t}\right)^{n-1}\\
-&=\frac{(1+t)^n}{2}+\frac{(1-t)^n}{2}.
-\end{aligned}
-$$
-
-Both sides are polynomials and agree for every $t$ except two values. They therefore also agree at $t=-1,0$. Substitute $t=1/d$ and $t=i/d$ to obtain the determinant ratio for the carousel model.
-
-For nonempty $U$, put $k=|U|$. In the original vertex order, $T_d[U]=T_k$. The coefficient of $t^k$ in $F_k(t)=\det(I+tT_k)$ is $\det T_k$, and hence
-
-$$
-\det T_d[U]=\det T_k=[t^k]F_k(t)
-=\frac{1+(-1)^k}{2}
-=\begin{cases}1,&k\ \text{even},\\0,&k\ \text{odd}.\end{cases}
-$$
-
-The empty principal determinant is $1$ by convention.
-
-### A.2 Alternating switching and ordinary carousel isomorphism
-
-Let $d=2q+1$. Switch the transitive matrix by alternating signs $\varepsilon_i=(-1)^{i-1}$ and $D_{\varepsilon}=\operatorname{diag}(\varepsilon_i)$. For $i<j$ and $\Delta=j-i$,
-
-$$
-(D_{\varepsilon}T_dD_{\varepsilon})_{ij}=(-1)^\Delta.
-$$
-
-Define the carousel labeling map
-
-$$
-\phi(i)=(q+1)i\pmod d.
-$$
-
-Since $2(q+1)=d+1$, the numbers $q+1$ and $d$ are coprime, making $\phi$ a permutation.
-
-If $\Delta=2r$, then $1\le r\le q$ and
-
-$$
-\phi(j)-\phi(i)\equiv(q+1)2r\equiv r\pmod d.
-$$
-
-This difference belongs to $\{1,\ldots,q\}$, precisely the condition for $\phi(i)\to\phi(j)$ in the carousel. The switched matrix entry is also 1.
-
-If $\Delta=2r+1$, then $0\le r\le q-1$ and
-
-$$
-\phi(j)-\phi(i)\equiv q+1+r\pmod d.
-$$
-
-This difference belongs to $\{q+1,\ldots,2q\}$, so the direction is reversed; the switched matrix entry is $-1$. Skew symmetry handles $i>j$, and all diagonal entries are zero. Thus the map preserves each directed edge and is an ordinary isomorphism.
-
-Sections 6 and 11 also use equality of the diagonal entries of powers of the transitive matrix. Define $Ze_j=e_{j+1}$ for $j<d$ and $Ze_d=-e_1$. When $i,j<d$,
-
-$$
-(Z^TT_dZ)_{ij}=(T_d)_{i+1,j+1}=(T_d)_{ij}.
-$$
-
-When $i<d,j=d$,
-
-$$
-(Z^TT_dZ)_{i,d}=-(T_d)_{i+1,1}=1=(T_d)_{i,d}.
-$$
-
-When $i=d,j<d$,
-
-$$
-(Z^TT_dZ)_{d,j}=-(T_d)_{1,j+1}=-1=(T_d)_{d,j}.
-$$
-
-The remaining diagonal entry is zero in both matrices. Therefore $Z^TT_dZ=T_d$, and for every integer $p\ge0$,
-
-$$
-Z^TT_d^{2p}Z=T_d^{2p}.
-$$
-
-Taking diagonal entries makes adjacent diagonal entries equal, with the two wraparound minus signs canceling.
-
-### A.3 Fourth-order determinants and fourth-moment equality
-
-Let $a,b,c,g,e,f\in\mathbb R$ and set
-
-$$
-M=\begin{pmatrix}
-0&a&b&c\\
--a&0&g&e\\
--b&-g&0&f\\
--c&-e&-f&0
-\end{pmatrix}.
-$$
-
-Write $M_{1j}$ for the order-three determinant obtained by deleting row 1 and column $j$, without the cofactor sign. Expanding along the first row gives the following separate calculations:
-
-$$
-\begin{aligned}
-M_{12}
-&=\det\begin{pmatrix}-a&g&e\\-b&0&f\\-c&-f&0\end{pmatrix}\\
-&=(-a)(0-f(-f))-g((-b)0-f(-c))+e((-b)(-f)-0(-c))\\
-&=-af^2-cgf+bef,\\
-M_{13}
-&=\det\begin{pmatrix}-a&0&e\\-b&-g&f\\-c&-e&0\end{pmatrix}\\
-&=(-a)((-g)0-f(-e))-0+e((-b)(-e)-(-g)(-c))\\
-&=-aef+be^2-cge,\\
-M_{14}
-&=\det\begin{pmatrix}-a&0&g\\-b&-g&0\\-c&-e&-f\end{pmatrix}\\
-&=(-a)((-g)(-f)-0(-e))-0+g((-b)(-e)-(-g)(-c))\\
-&=-agf+bge-cg^2.
-\end{aligned}
-$$
-
-Substituting these minors into the first-row expansion gives
-
-$$
-\begin{aligned}
-\det M
-&=-aM_{12}+bM_{13}-cM_{14}\\
-&=(a^2f^2+acgf-abef)
-+(-abef+b^2e^2-bcge)
-+(acgf-bcge+c^2g^2)\\
-&=a^2f^2+b^2e^2+c^2g^2-2abef+2acgf-2bcge\\
-&=(af-be+cg)^2.
-\end{aligned}
-$$
-
-When all six variables are $\pm1$, the expression $af-be+cg$ is a sum of three numbers in $\pm1$, taking values $\pm1$ or $\pm3$. Thus the determinant is 1 or 9. Let $D_4(S)$ count four-vertex principal determinants equal to 9. Expand by column multilinearity, choosing in each column either the identity column or the corresponding column of $tS$:
-
-$$
-\det(I+tS)=\sum_{U\subseteq[d]}t^{|U|}\det S[U].
-$$
-
-An odd-order skew-symmetric matrix $B$ satisfies $\det B=\det B^T=\det(-B)=-\det B$, so its determinant vanishes. Every second-order principal determinant is 1. Among fourth-order determinants, $D_4$ are 9 and all others are 1. Therefore
-
-$$
-\det(I+tS)=1+e_2t^2+e_4t^4+O(t^6),
-$$
-
-$$
-e_2=\binom d2,\qquad
-e_4=(\binom d4-D_4)+9D_4=\binom d4+8D_4.
-$$
-
-Use the following expansion only near $t=0$. Choose $|t|\,\|S\|_{\rm op}<1/2$. Every eigenvalue $\mu$ then satisfies $|t\mu|<1/2$. Define $\log(1+t\mu)$ by the logarithmic series with value 0 at 1. Interchanging the power series with a finite eigenvalue sum is valid, and
-
-$$
-\det(I+tS)=\prod_\mu(1+t\mu),\qquad
-\operatorname{tr}S^k=\sum_\mu\mu^k.
-$$
-
-Eigenvalues are counted with multiplicity. The real skew-symmetric canonical form gives diagonalizability over the complex numbers; zero eigenvalues are included.
-
-The logarithmic series for each eigenvalue gives
-
-$$
-\log\det(I+tS)
-=\sum_{k\ge1}\frac{(-1)^{k+1}t^k}{k}\operatorname{tr}S^k
-=-\frac{t^2}{2}\operatorname{tr}S^2
--\frac{t^4}{4}\operatorname{tr}S^4+O(t^6).
-$$
-
-Odd traces vanish because $\operatorname{tr}S^{2j+1}=\operatorname{tr}(S^{2j+1})^T=-\operatorname{tr}S^{2j+1}$. On the other hand, substitute $z=e_2t^2+e_4t^4+O(t^6)$ into $\log(1+z)=z-z^2/2+O(z^3)$. Since $z^2=e_2^2t^4+O(t^6)$ and $z^3=O(t^6)$, this gives
-
-$$
-\log\det(I+tS)=e_2t^2+(e_4-e_2^2/2)t^4+O(t^6).
-$$
-
-Comparing the coefficients of $t^4$ gives
-
-$$
--\operatorname{tr}S^4/4=e_4-e_2^2/2,\qquad
-\operatorname{tr}S^4=2e_2^2-4e_4
-=2\left(\binom d2\right)^2-4\binom d4-32D_4(S).
-$$
-
-In the transitive matrix, any four vertices in increasing order have $a=b=c=g=e=f=1$, giving determinant $(1-1+1)^2=1$. Thus $D_4(T_d)=0$. Subtracting yields
-
-$$
-\operatorname{tr}T_d^4-\operatorname{tr}S^4=32D_4(S).
-$$
-
-If the fourth moments agree, $D_4(S)=0$. Choose $\varepsilon_1=1,\varepsilon_j=s_{1j}$ for $j>1$, and define $D_{\varepsilon}=\operatorname{diag}(\varepsilon_1,\ldots,\varepsilon_d)$ and $S'=D_{\varepsilon} S D_{\varepsilon}$. Then $s'_{1j}=\varepsilon_1s_{1j}\varepsilon_j=s_{1j}^2=1$. Each principal determinant is multiplied by $(\det D_{\varepsilon}[U])^2=1$, so $D_4$ is unchanged. Choose any $i<j<k$ all different from 1:
-
-$$
-\det S'[\{1,i,j,k\}]
-=(s'_{jk}-s'_{ik}+s'_{ij})^2.
-$$
-
-If these three vertices form a directed triangle, $s'_{ij}=s'_{jk}=-s'_{ik}$, making the expression in parentheses $3s'_{ij}$ and its square 9, a contradiction. Thus the remaining vertices contain no directed triangle. If $i\to j$ and $j\to k$ but $i\not\to k$, then $k\to i$, producing a triangle. The direction relation is therefore a strict total order, and we can label vertices in this order. Vertex 1 dominates all remaining vertices, making the entire switched tournament transitive. Conversely, signed permutation similarity preserves traces, so it gives fourth-moment equality. For $d=3$, two vertices remain after switching; order them according to their unique edge.
-
-### A.4 Termination of the row-rounding procedure
-
-**Definition A.1 (A termination count for rounding).**
-
-To prove termination of the two-coordinate rounding in Section 11.4, define
-
-$$
-q(w)=\#\{j:0<w_j<1\},\qquad
-q(W)=\sum_{\ell=1}^L q(W_{\ell,\cdot}).
-$$
-
-
-Each two-coordinate movement preserves the integer row sum, makes at least one nonintegral coordinate integral, and leaves other integral coordinates unchanged. Thus $q(w)$ decreases by at least 1. Initially $q(w)\le L$, so it cannot decrease indefinitely. If it stopped at $q(w)=1$, the unique nonintegral coordinate would satisfy
-
-$$
-w_a=R-\sum_{j\ne a}w_j\in\mathbb Z,
-$$
-
-This contradicts nonintegrality, so termination occurs at $q(w)=0$. Each row requires at most $L-1$ movements and no other row is changed; the total is at most $L(L-1)$. By Section 11.4, each movement increases the permanent by $\eta(c_a-c_b)\ge0$.
-
-### A.5 Normalization in the added-vertex bound
-
-We give the normalization calculation used in Section 11.6. Since $md=N$,
-
-$$
-m\sum_i\log R_i'
-=m\sum_i\log(2R_i'/N)+N\log(N/2).
-$$
-
-We obtain
-
-$$
-\begin{aligned}
-&N\log(N/2)+\log N-(N+1)\log((N+1)/2)\\
-&=N\log N-N\log2+\log N
--(N+1)\log(N+1)+(N+1)\log2\\
-&=N[\log N-\log(N+1)]
-+[\log N+\log2-\log(N+1)]\\
-&=N\log(N/(N+1))+\log(2N/(N+1)).
-\end{aligned}
-$$
-
-The denominator in the ensuing exponential bound is initially $(N+1)!/2^{N+1}$. On changing to the cycle-expectation denominator,
-
-$$
-\frac{(N+1)!/2^{N+1}}{\nu_{N+1}}
-=\frac{(N+1)!}{N!}=N+1.
-$$
-
-The polynomial degree changes from $2d+1$ to $2d+2$. The added-vertex identity also gives
-
-$$
-\frac{\mathbb EH}{\mu_N}
-=\frac{4\mathbb EC_{\rm aug}}{4\nu_{N+1}}
-=\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
-$$
-
-Thus the normalized path expectation equals the normalized cycle expectation after augmentation.
-
-### A.6 A common threshold for finitely many bases
-
-**Definition A.2 (Normalized functions on isomorphism classes).**
-
-Let $T$ range over the isomorphism classes of bases, choosing a representative for each random blow-up. By Section 11.7, the expectation is independent of the representative. Fix a model $\mathcal M\in\{\mathcal T,\mathcal R\}$ and one of the two counts, and define
-
-$$
-f_T(m)=
-\begin{cases}
-\mathbb EC_{\mathcal M}(T,m)/\nu_{dm},&\text{cycles},\\
-\mathbb EH_{\mathcal M}(T,m)/\mu_{dm},&\text{paths},
-\end{cases}
-\qquad f_*(m)=f_{\mathrm{Car}_d}(m).
-$$
-
-Write $\ell_T=\lim_{m\to\infty}f_T(m)$ and $\ell_*=\lim_{m\to\infty}f_*(m)$. In model $\mathcal R$, both limits are restricted to odd $m$.
-
-
-For this model and count, the carousel limit is $\ell_*>0$, and every other class satisfies $\ell_T<\ell_*$. The set of noncarousel classes is finite and nonempty: for $d\ge3$, the transitive base is nonregular whereas the carousel is regular. Hence
-
-$$
-\delta=\min_{T\not\cong\mathrm{Car}_d}(\ell_*-\ell_T)>0.
-$$
-
-Nonregular classes have limit zero; regular noncarousel classes are handled by the strict spectral gap. For each class choose $M_T$ so that whenever $m\ge M_T$ its normalized expectation $f_T(m)$ satisfies
-
-$$
-|f_T(m)-\ell_T|<\delta/3.
-$$
-
-Impose the same error requirement on the carousel. Let $M$ be the maximum of these finitely many thresholds. Then
-
-$$
-f_*(m)-f_T(m)
->(\ell_*-\delta/3)-(\ell_T+\delta/3)
-\ge\delta/3>0.
-$$
-
-Taking the maximum of the four thresholds, one for each model and count, gives a common $M_d$. In the regular internal-block model, $m$ remains restricted to odd integers.
-
-### A.7 A calculus proof of the trigonometric inequality used in monotonicity
-
-Section 10.3 uses $\tan y\ge y+y^3/3$ for $0\le y<\pi/2$. Set $f(y)=\tan y-y$. Then
-
-$$
-f'(y)=\tan^2y\ge0,\qquad f(0)=0.
-$$
-
-Thus $\tan y\ge y$. Next set $g(y)=\tan y-y-y^3/3$. We have
-
-$$
-g'(y)=\tan^2y-y^2\ge0,\qquad g(0)=0.
-$$
-
-The desired inequality follows. Moreover,
-
-$$
-\alpha(x)=\int_0^1\frac{dt}{1+x^2t^2}
-\ge\int_0^1(1-x^2t^2)\,dt=1-x^2/3,
-$$
-
-Here we used $(1+z)^{-1}-(1-z)=z^2/(1+z)\ge0$.
-
-## B. Expanded proofs of standard tools
-
-This appendix gives proofs of the standard estimates used in the paper.
-
-### B.1 Determinant tools
-**Principal-minor expansion.** For $I+tM$, in column $j$ choose either the identity column $e_j$ or the matrix column $tM_{\cdot j}$. Multilinearity of the determinant gives $2^n$ choices. If $U$ is the set of columns for which the matrix column is selected, expansion along the remaining identity columns leaves $M[U]$ with a positive sign. Therefore
-
-$$
-\det(I+tM)=\sum_{U\subseteq[n]}t^{|U|}\det M[U].
-$$
-
-**Rank-one lemma.** For vectors $a,b$, any two columns of $ab^{\mathsf T}$ are linearly dependent. Thus, when $M=ab^{\mathsf T}$, only the terms of orders zero and one remain in the preceding expansion:
-
-$$
-\det(I+ab^{\mathsf T})=1+\sum_i a_ib_i=1+b^{\mathsf T}a.
-$$
-
-If $M$ is invertible, then
-
-$$
-\det(M+ab^{\mathsf T})=\det M\det(I+M^{-1}ab^{\mathsf T})
-=\det M(1+b^{\mathsf T}M^{-1}a).
-$$
-
-**Hadamard's inequality.** Apply Gram-Schmidt orthogonalization to the rows $r_1,\ldots,r_n$ of the matrix to obtain orthogonal vectors $q_1,\ldots,q_n$. Subtracting linear combinations of earlier rows leaves the determinant unchanged, so
-
-$$
-|\det M|^2=\det(MM^*)=\prod_i\|q_i\|_2^2
-\le\prod_i\|r_i\|_2^2.
-$$
-
-The inequality also holds when the rows are dependent, since its left-hand side is then zero. Taking square roots yields $|\det M|\le\prod_i\|r_i\|_2$.
-
-We also use differentiation of the determinant. First apply the principal-minor expansion to a small matrix perturbation $K$:
-
-$$
-\det(I+K)=1+\operatorname{tr}K+
-\sum_{\substack{U\subseteq[p]\\|U|\ge2}}\det K[U]
-=1+\operatorname{tr}K+O(\|K\|_F^2),\qquad K\to0.
-$$
-
-The last remainder can be bounded directly, term by term. Write $\delta=\|K\|_F\le1$; every entry then satisfies $|K_{ij}|\le\delta$. If $|U|=r\ge2$, the permutation definition of the determinant gives
-
-$$
-|\det K[U]|
-\le\sum_{\pi\in \mathfrak S_r}\prod_{i=1}^r|K[U]_{i,\pi(i)}|
-\le r!\delta^r\le r!\delta^2.
-$$
-
-For a fixed order $p$, set $C_p=\sum_{r=2}^p\binom pr r!$ (the empty sum is zero when $p=1$). Then
-
-$$
-\left|\det(I+K)-1-\operatorname{tr}K\right|
-\le\sum_{r=2}^p\binom pr r!\delta^2=C_p\|K\|_F^2.
-$$
-
-Here $C_p$ may depend on the dimension. Suppose that $M$ is differentiable at $t$ and $M(t)$ is invertible. Then
-
-$$
-M(t+h)=M(t)+hM'(t)+R(h),\qquad
-\|R(h)\|_F=o(|h|).
-$$
-
-The estimate $R(h)=o(h)$ is sufficient. Set
-
-$$
-K(h)=hM(t)^{-1}M'(t)+M(t)^{-1}R(h).
-$$
-
-Since $M(t)^{-1}$ is a fixed matrix, we obtain, term by term,
-
-$$
-\|M(t)^{-1}R(h)\|_F
-\le\|M(t)^{-1}\|_{\rm op}\|R(h)\|_F=o(|h|),
-\qquad \|K(h)\|_F=O(|h|).
-$$
-
-Factor out $M(t)$ and expand the determinant:
-
-$$
-\begin{aligned}
-\det M(t+h)
-&=\det M(t)\det(I+K(h))\\
-&=\det M(t)\left[1+\operatorname{tr}K(h)+O(\|K(h)\|_F^2)\right]\\
-&=\det M(t)\left[
-1+h\operatorname{tr}(M(t)^{-1}M'(t))+o(|h|)\right].
-\end{aligned}
-$$
-
-The remainder terms in the third line satisfy
-
-$$
-\begin{aligned}
-\left|\operatorname{tr}(M(t)^{-1}R(h))\right|
-&\le\sqrt p\,\|M(t)^{-1}R(h)\|_F=o(|h|),\\
-C_p\|K(h)\|_F^2&=O(h^2)=o(|h|).
-\end{aligned}
-$$
-
-The first inequality applies Cauchy-Schwarz to the $p$ diagonal entries; the second line uses $h^2/|h|=|h|\to0$.
-
-Subtract $\det M(t)$, divide by $h\ne0$, and let $h\to0$. This gives
-
-$$
-\frac{d}{dt}\det M(t)
-=\det M(t)\operatorname{tr}[M(t)^{-1}M'(t)].
-$$
-
-A real logarithm may be taken directly only when the real matrix path satisfies $\det M(t)>0$ throughout the interval in question. Under this condition, the chain rule gives
-
-$$
-\frac{d}{dt}\log\det M(t)
-=\frac{(\det M(t))'}{\det M(t)}
-=\operatorname{tr}[M(t)^{-1}M'(t)].
-$$
-
-The Gram comparison in the main text uses $M(t)=I-H(t)>0$, so this condition is satisfied. The formal-series argument instead uses determinants with constant term one and their formal logarithms; it assumes no common logarithm branch for arbitrary complex numbers.
-
-A scalar counterexample distinguishes differentiability from a second-order remainder. Let $M(t)$ be the one-by-one matrix $[1+|t|^{3/2}]$. At $t=0$,
-
-$$
-M'(0)=\lim_{h\to0}\frac{|h|^{3/2}}h=0,
-\qquad
-\frac{|M(h)-M(0)-hM'(0)|}{h^2}=|h|^{-1/2}\longrightarrow\infty.
-$$
-
-Thus differentiability alone does not guarantee a second-order remainder. The linear matrix paths used in the main text do satisfy the hypotheses of the differential formula above.
-
-### B.2 Matrix norm tools
-The Euclidean vector norm is $\|x\|_2=(\sum_i|x_i|^2)^{1/2}$. When $y=0$, the inequality $|x^*y|\le\|x\|_2\|y\|_2$ is immediate. When $y\ne0$, choose the complex scalar $c=(y^*x)/\|y\|_2^2$ and expand term by term:
-
-$$
-0\le\|x-cy\|_2^2
-=\|x\|_2^2-cx^*y-\overline c\,y^*x+|c|^2\|y\|_2^2
-=\|x\|_2^2-\frac{|y^*x|^2}{\|y\|_2^2}.
-$$
-
-Multiply by $\|y\|_2^2$ and take the nonnegative square root to obtain the complex Cauchy-Schwarz inequality: $|x^*y|\le\|x\|_2\|y\|_2$.
-
-The operator norm measures the largest stretching factor of a matrix:
-
-$$
-\|M\|_{\rm op}=\max_{\|x\|_2=1}\|Mx\|_2.
-$$
-
-The Frobenius norm treats the entries of a matrix as one long vector:
-
-$$
-\|M\|_F^2=\sum_{ij}|M_{ij}|^2=\operatorname{tr}(M^*M).
-$$
-
-The trace $\operatorname{tr}M$ is the sum of the diagonal entries. Interchanging two compatible factors leaves the trace of their product unchanged, because
-
-$$
-\operatorname{tr}(AB)=\sum_i\sum_jA_{ij}B_{ji}
-=\sum_j\sum_iB_{ji}A_{ij}=\operatorname{tr}(BA).
-$$
-
-This elementary rule for finite sums is used when passing between row-side and column-side Gram matrices.
-
-Since $M^*M$ is Hermitian positive semidefinite, it admits a unitary diagonalization with nonnegative eigenvalues. Write these eigenvalues as $s_i^2$; the numbers $s_i\ge0$ are the singular values. Then
-
-$$
-\|M\|_{\rm op}=\max_i s_i,\qquad \|M\|_F^2=\sum_i s_i^2.
-$$
-
-If $M^*Mv_i=s_i^2v_i$ and $s_i>0$, set $u_i=Mv_i/s_i$. Then
-
-$$
-u_i^*u_j=\frac{v_i^*M^*Mv_j}{s_is_j}=\mathbf1\{i=j\}.
-$$
-
-Completing the orthonormal bases gives the singular value decomposition $M=U\operatorname{diag}(s_i)V^*$. This defines the trace norm $\|M\|_*=\sum_i s_i$, and yields
-
-$$
-\|M\|_{\rm op}\le\|M\|_F\le\|M\|_*,\qquad
-\sum_i s_i\le\sqrt n\left(\sum_i s_i^2\right)^{1/2}.
-$$
-
-When both $a,b$ are nonzero, the only nonzero singular value of the rank-one matrix $ab^*$ is $\|a\|\|b\|$, because
-
-$$
-(ab^*)^*(ab^*)=\|a\|^2bb^*.
-$$
-
-If $a=0$ or $b=0$, the matrix and all its singular values are zero. Hence $\|ab^*\|_*=\|a\|\|b\|$ in every case. For arbitrary matrices $A,B$, expansion over the intermediate index gives
-
-$$
-AB=\sum_kA_{\cdot k}B_{k\cdot},\qquad
-\|AB\|_*\le\sum_k\|A_{\cdot k}\|_2\|B_{k\cdot}\|_2
-\le\|A\|_F\|B\|_F.
-$$
-
-The triangle inequality for the trace norm follows from the dual formula
-
-$$
-\|M\|_*=\max_{\|Q\|_{\rm op}\le1}|\operatorname{tr}(Q^*M)|.
-$$
-
-Substituting $M=U\operatorname{diag}(s_i)V^*$ bounds the right-hand side by $\sum_i s_i$, and $Q=UV^*$ attains equality. The triangle inequality, $\|AM\|_*\le\|A\|_{\rm op}\|M\|_*$, and $|\operatorname{tr}(AM)|\le\|A\|_{\rm op}\|M\|_*$ all follow from the same formula.
-
-The induced one-norm and infinity-norm used in this paper are, respectively,
-
-$$
-\|M\|_{1\to1}=\max_j\sum_i|M_{ij}|,\qquad
-\|M\|_{\infty\to\infty}=\max_i\sum_j|M_{ij}|.
-$$
-
-Their relation to the Euclidean operator norm has a direct proof:
-
-$$
-\begin{aligned}
-\|Mx\|_2^2
-&=\sum_i\left|\sum_jM_{ij}x_j\right|^2\\
-&\le\sum_i\left(\sum_j|M_{ij}|\right)
-\left(\sum_j|M_{ij}||x_j|^2\right)\\
-&\le\|M\|_{\infty\to\infty}\|M\|_{1\to1}\|x\|_2^2.
-\end{aligned}
-$$
-
-Thus $\|M\|_{\rm op}\le\sqrt{\|M\|_{1\to1}\|M\|_{\infty\to\infty}}$.
-
-Set $u=\mathbf1/\sqrt n$, $P=uu^{\mathsf T}=J/n$, and $\Pi=I-P$. Then
-
-$$
-P^2=P,\quad Px=\frac{\sum_ix_i}{n}\mathbf1,\quad
-\Pi x=x-\frac{\sum_ix_i}{n}\mathbf1.
-$$
-
-The projection $P$ extracts the mean direction, while $\Pi$ removes it. Both are orthogonal projections and therefore have norm at most one. Double centering, $B\mathbf1=B^{\mathsf T}\mathbf1=0$, is equivalent to $PB=BP=0$.
-
-### B.3 Remainders and Stirling order estimates
-The notation $f_n=O(g_n)$ means that fixed $K,n_0$ exist such that, for $n\ge n_0$, we have $|f_n|\le K|g_n|$; $f_n=o(g_n)$ means $f_n/g_n\to0$. If there is also a graph parameter $T$, uniformity requires the same $K,n_0$ to work for every admissible $T$.
-
-For example, $\log n/n=o(1)$ but is not $O(1/n)$. Summability of the deletion weights is therefore needed to retain an $O(1/n)$ error.
-
-Calculus gives the exact remainder formulas
-
-$$
-\log(1+x)-x=-\int_0^x\frac{u}{1+u}\,du,\qquad
-|\log(1+x)-x|\le\frac{x^2}{2(1-|x|)}\quad(|x|<1),
-$$
-
-$$
-e^x-1=x\int_0^1e^{tx}\,dt,\qquad |e^x-1|\le|x|e^{|x|}.
-$$
-
-Consequently, $|x_n|\le K/n$ implies $e^{x_n}=1+O(1/n)$. For complex exponentials, $e^z-1=z\int_0^1e^{tz}\,dt$ holds as well, with the same absolute-value bound.
-
-The paper only needs Stirling's estimate in the form
-
-$$
-\log(n!)=(n+1/2)\log n-n+c+O(1/n),
-$$
-
-The value of $c$ is immaterial for the applications. To prove its existence, set $f(x)=\log x$ and define the trapezoidal error on $[k,k+1]$ by
-
-$$
-E_k=\frac{f(k)+f(k+1)}2-\int_k^{k+1}f(x)\,dx.
-$$
-
-Put $w(x)=(x-k)(k+1-x)$. Then $w(k)=w(k+1)=0$, $w^{\prime}(k)=1$, $w^{\prime}(k+1)=-1$, and $w^{\prime\prime}=-2$. Integrating by parts twice gives
-
-$$
-\begin{aligned}
-\int_k^{k+1}wf''
-&=[wf']_k^{k+1}-\int_k^{k+1}w'f'\\
-&=-[w'f]_k^{k+1}+\int_k^{k+1}w''f\\
-&=f(k)+f(k+1)-2\int_k^{k+1}f.
-\end{aligned}
-$$
-
-Hence
-
-$$
-E_k=\frac12\int_k^{k+1}(x-k)(k+1-x)f''(x)\,dx,
-\quad |E_k|\le\frac1{12k^2}.
-$$
-
-Thus $\sum_{k\ge1}E_k$ converges absolutely; define the fixed real number $c=1+\sum_{k=1}^\infty E_k$. For $n\ge2$,
-
-$$
-\left|\sum_{k=n}^\infty E_k\right|
-\le\frac1{12}\sum_{k=n}^\infty k^{-2}
-\le\frac1{12}\int_{n-1}^\infty x^{-2}\,dx
-=\frac1{12(n-1)}\le\frac1{6n}.
-$$
-
-This gives an explicit $K/n$ bound on the tail sum. Summing over $k=1,\ldots,n-1$,
-
-$$
-\sum_{k=1}^{n-1}\frac{\log k+\log(k+1)}2
-=\log(n!)-\frac12\log n,
-$$
-
-$$
-\int_1^n\log x\,dx=n\log n-n+1.
-$$
-
-Therefore
-
-$$
-\log(n!)=(n+1/2)\log n-n+1+\sum_{k=1}^{n-1}E_k
-=(n+1/2)\log n-n+c+O(1/n).
-$$
-
-Exponentiation gives $n!=e^c\sqrt n(n/e)^n[1+O(1/n)]$. This suffices to track the $\sqrt n$ factors and fixed constants in the main text.
-
-### B.4 Convexity tools
-A function $f$ is convex on an interval if $f((1-t)x+ty)\le(1-t)f(x)+tf(y)$ for $0\le t\le1$. If its second derivative exists and $f''\ge0$, then $f'$ is increasing and each tangent lies below the graph:
-
-$$
-f(y)-f(x)-f'(x)(y-x)
-=\int_x^y[f'(u)-f'(x)]\,du\ge0.
-$$
-
-For weights $p_i\ge0$ with $\sum_ip_i=1$, set $\bar x=\sum_ip_ix_i$. Multiply the tangent bound by the weights and sum:
-
-$$
-\sum_ip_if(x_i)\ge\sum_ip_i[f(\bar x)+f'(\bar x)(x_i-\bar x)]=f(\bar x).
-$$
-
-This is Jensen's inequality; the direction reverses for concave functions. For an integer $n\ge1$ and positive real numbers $x_1,\ldots,x_n>0$, the second derivative of $\log x$ is $-1/x^2<0$, so
-
-$$
-\frac1n\sum_i\log x_i\le\log\left(\frac1n\sum_ix_i\right),\qquad
-\prod_ix_i\le\left(\frac{\sum_ix_i}{n}\right)^n.
-$$
-
-This is AM-GM. The product inequality extends to $x_i\ge0$: if some $x_i=0$, the left-hand side is zero and the right-hand side is nonnegative, so no logarithm of that element is needed.
-
-Young's inequality here is simply completion of a square: $0\le(u-v)^2$ gives $2uv\le u^2+v^2$. With $u=\sqrt\tau/2$ and $v=K/\sqrt n$, we obtain
-
-$$
-K\sqrt{\tau/n}\le\tau/4+K^2/n.
-$$
-
-An error such as $\sqrt{\tau/n}$, which appears larger than $1/n$, can therefore be absorbed by the existing negative term $-\tau$. If $-\tau$ is discarded, this inequality no longer yields a uniform $O(1/n)$ bound.
-
-Discrete concavity also requires only slopes. If the values $h(k)$ at integer points satisfy $h(k+1)-h(k)\le h(k)-h(k-1)$, the piecewise linear interpolation has decreasing slopes and is therefore concave; Jensen's inequality can then be used at noninteger means. The half-integer correction $1/(32m)$ in the paper comes precisely from the quadratic term in this interpolation.
-
-### B.5 Brégman's bound
-This is the standard permanent inequality needed for the high-variance reduction. Let $A$ be a zero-one matrix whose row $i$ contains $r_i$ ones. If a row is zero, the permanent is zero. Otherwise we must prove
-
-$$
-\operatorname{per}A\le\prod_i(r_i!)^{1/r_i}.
-$$
-
-Let $\Omega$ be the set of admissible matching permutations and $N=|\Omega|=\operatorname{per}A$. The result is immediate when $N=0$. Henceforth assume $N>0$; choose a permutation uniformly from $\Omega$ and denote it $\sigma$.
-
-We need one tool from finite probability. The entropy of a variable $X$ is $\mathsf H(X)=-\sum_xp_x\log p_x$, with the convention $0\log0=0$. If it has at most $d$ possible values, concavity of $\log$ gives
-
-$$
-\mathsf H(X)=\sum_{p_x>0}p_x\log(1/p_x)
-\le\log\left(\sum_{p_x>0}p_x/p_x\right)\le\log d.
-$$
-
-Equality holds for a uniform distribution, so $\mathsf H(\sigma)=\log N$. Only when $p(x)>0$ do we define the conditional probabilities $p(y\mid x)=p(x,y)/p(x)$. Conditional entropy is defined by
-
-$$
-\mathsf H(Y\mid X)=\sum_{x:p(x)>0}p(x)
-\left[-\sum_{y:p(x,y)>0}p(y\mid x)\log p(y\mid x)\right].
-$$
-
-In the following logarithmic decomposition, sum over $p(x,y)>0$. Then $p(x)>0$ and $p(y\mid x)>0$, so $p(x,y)=p(x)p(y\mid x)$ gives
-
-$$
-\begin{aligned}
-\mathsf H(X,Y)&=-\sum_{(x,y):p(x,y)>0}p(x,y)[\log p(x)+\log p(y\mid x)]\\
-&=\mathsf H(X)+\mathsf H(Y\mid X).
-\end{aligned}
-$$
-
-Iteration gives the chain rule. Independently of $\sigma$, choose a reveal order $\rho$ uniformly from all row permutations, and reveal $\sigma(i)$ in that order. When row $i$ is revealed, it can choose only among the admissible columns not already occupied by earlier rows. Let $N_i(\sigma,\rho)$ be their number. The conditional entropy bound gives
-
-$$
-\log N\le\sum_i\mathbb E_{\sigma,\rho}\log N_i(\sigma,\rho).
-$$
-
-Fix $\sigma$ and row $i$, and set $R_i=\{j:A_{ij}=1\}$, with $|R_i|=r_i$. Each column $j\in R_i$ is used by the unique row $\sigma^{-1}(j)$ in the matching. These $r_i$ rows are distinct and include $i$. In the random reveal order, the position of row $i$ among these $r_i$ rows is uniform.
-
-If it is revealed when $k$ of these rows remain, exactly $k$ columns in $R_i$ remain unoccupied. Thus
-
-$$
-N_i\mid\sigma\text{ is uniform on }\{1,2,\ldots,r_i\}\text{},\qquad
-\mathbb E_\rho\log N_i=\frac1{r_i}\sum_{k=1}^{r_i}\log k=\frac{\log(r_i!)}{r_i}.
-$$
-
-This does not depend on the fixed matching $\sigma$. Substitution and exponentiation give
-
-$$
-\log\operatorname{per}A\le\sum_i\frac{\log(r_i!)}{r_i},\qquad
-\operatorname{per}A\le\prod_i(r_i!)^{1/r_i}.
-$$
-
-In Section 7.2, discrete concavity of $f(k)=\log(k!)/k$ strengthens this estimate by a variance penalty.
-
-### B.6 Gram and determinant perturbations
-For a real symmetric or Hermitian matrix, $H\ge0$ means that $x^*Hx\ge0$ for every vector; $H\le K$ means $K-H\ge0$. If $0\le H\le q^2I$ and $0\le q<1$, then $I-H>0$, and the eigenvalues of its inverse are at most $1/(1-q^2)$.
-
-Two meanings of nonnegativity must be distinguished. In matrix scaling, $X\ge0$ means that every entry satisfies $X_{ij}\ge0$. In a Gram comparison, $H\ge0$ for a symmetric matrix means that the preceding quadratic form is nonnegative, namely positive semidefiniteness. These conditions are not equivalent. In each of the following two examples, denote the displayed matrix by $H$:
-
-$$
-\begin{pmatrix}0&1\\1&0\end{pmatrix}
-\text{ has nonnegative entries, but for }x=(1,-1)^{\mathsf T}\text{ we have }x^{\mathsf T}Hx=-2<0;
-$$
-
-$$
-\begin{pmatrix}1&-1\\-1&1\end{pmatrix}
-\text{ has negative entries, but }x^{\mathsf T}Hx=(x_1-x_2)^2\ge0.
-$$
-
-Each subsequent argument states which meaning it uses.
-
-For a matrix satisfying $\|Z\|_{\rm op}<1$, define $\mathcal G(Z)=\det(I-Z^*Z)^{-1/2}$ using the positive square root. Then $I-Z^*Z$ is positive definite and its real logarithm is defined. This quantity depends only on the singular values, so deleting zero rows or columns, or interchanging $Z^*Z$ and $ZZ^*$, leaves it unchanged. If the current matrix has $n$ rows, let $I\subseteq[n]$ be the deleted row set, $R=[n]\setminus I$ the retained row set, and $t=|I|$. The projection $P_R$ onto the retained row coordinates gives
-
-$$
-Z^*Z-Z^*P_RZ=Z^*(I-P_R)Z\ge0.
-$$
-
-Log-determinant differentiation and the integral formula in the determinant tools bound the change by the sum of the squared norms of the deleted rows. For an order-$n$ dense kernel with a fixed spectral gap and $|Z_{ij}|\le C/n$, we have $\sum_{i\in I,j}|Z_{ij}|^2\le tn(C/n)^2=C^2t/n$, so the loss is $O(t/n)$. Using only the square root of the Frobenius displacement would often give the weaker $O(\sqrt{t/n})$. This explains the separate deletion lemma in the main text.
-
-Finally, we prove $|\det(I+E)|\le e^{\|E\|_*}$. Write $E=UDV^*$, where $D=\operatorname{diag}(s_i)$. A unitary similarity gives
-
-$$
-\det(I+E)=\det[V^*(I+E)V]=\det(I+QD),\qquad Q=V^*U.
-$$
-
-The principal-minor expansion gives
-
-$$
-\det(I+QD)=\sum_{I\subseteq[n]}\det Q[I]\prod_{i\in I}s_i.
-$$
-
-Each $Q[I]$ is a compression of a unitary matrix, so its operator norm and all its column norms are at most one. Hadamard's inequality gives $|\det Q[I]|\le1$. Therefore
-
-$$
-|\det(I+E)|\le\sum_I\prod_{i\in I}s_i
-=\prod_i(1+s_i)\le e^{\sum_i s_i}=e^{\|E\|_*}.
-$$
-
-Another useful fact is the following: if a square matrix $M$ satisfies $(M+M^*)/2\ge I$ (for real matrices, its symmetric part is at least $I$), then $\|M^{-1}\|_{\rm op}\le1$. Indeed,
-
-$$
-\|Mx\|\|x\|\ge|x^*Mx|\ge\operatorname{Re}(x^*Mx)\ge\|x\|^2,
-$$
-
-Thus $\|Mx\|\ge\|x\|$. The matrix has trivial nullspace and, being square, is invertible. Setting $y=Mx$ gives $\|M^{-1}y\|\le\|y\|$.
+There are finitely many bases at fixed order $d$. For each noncarousel base and each of the four expectations, strict separation of the limits supplies an eventual strict inequality. Taking the maximum of this finite set of thresholds gives $M_d$, with odd $m$ used for $\mathcal R$. Finally, a base isomorphism merely relabels the blocks and preserves their independent identical distributions and all path and cycle counts. Thus carousel-isomorphic bases give equal expectations, and only those do. This proves Corollary 11.2. $\square$
 
 ## Author statement
 
-Xiangyu Ye completed the companion Lean formalization of the earlier path bound, whose upper leading constant is $C_*>L$; its precise statement and revision are recorded in the [earlier repository](https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md).
+The paper incorporates two independently developed projects. The path framework and its $L/C_*$ bound are in the version-specific archive [14]; the Wormald project and its overlap with [13,16] are described in the introduction. Xiangyu Ye completed the companion Lean formalization of the earlier path bound, whose precise statement is recorded in the [earlier fixed repository revision](https://github.com/LStar404/tournament-hamiltonian-paths/blob/a01680d39647bc4fa2f88d56b4e01a4b8dc98d48/formalization/VERIFICATION.md).
 
-For the 30 numbered results listed in the coverage table, this project provides Lean endpoints corresponding to the objects, hypotheses and quantifiers in the manuscript. They cover the sharp quantitative asymptotic, the Hessian of the original angular function, the exact path convolution, spectral comparison and its equality cases, and limit and extremal results for the four blow-up counting expectations. The eventual comparison of blow-up expectations ranges over all base tournaments of each fixed odd order $d\ge3$, not only regular ones.
+The repository snapshot [17] documents Lean endpoints for 30 numbered results of the pre-revision manuscript, including the sharp path bound, original angular Hessian, path convolution, spectral comparison and fixed-base expectation extrema. Its [coverage table](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/c678e9ee24fb304cad755a27c99f511c8640f75e/formal/COVERAGE.zh.md) specifies objects, hypotheses, quantifiers and coverage boundaries. The associated [reproduction instructions](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/c678e9ee24fb304cad755a27c99f511c8640f75e/formal/README.zh.md) fix the toolchain and audit procedure.
 
-AI assistance was used in the exposition and parts of the proof checking. This coverage is not sentence-by-sentence certification and does not assert that every alternative proof or the full background on SVD and rectangular nuclear norms has been formalized. The thresholds for eventual extremality of blow-up expectations are existential at fixed base order $d$; no computable or minimal numerical threshold, or uniformity for growing $d$, is asserted. The fixed-base-order qualification concerns blow-up extremality; the global sharp theorem retains its own stated quantifiers. Expectation statements are not samplewise or almost-sure statements. See `formal/COVERAGE.zh.md` and the corresponding verification records for the precise endpoints, correspondence and revisions; historical records and source hashes continue to describe their own snapshots only.
+This revision changes the exposition and adds explicitly identified corollaries. The Lean coverage and source hashes refer to the historical snapshots above. Logs and scope notes for the present rerun of the fixed project accompany this revision; a new endpoint mapping for the concise manuscript remains to be completed. AI assistance was used in exposition and parts of proof checking. The blow-up extremality threshold is existential for each fixed odd base order; neither a computable threshold nor uniformity in growing base order is asserted.
 
 ## References
 
@@ -7357,7 +2316,7 @@ AI assistance was used in the exposition and parts of the proof checking. This c
 
 [5] Peter McCullagh. An asymptotic approximation for the permanent of a doubly stochastic matrix. Journal of Statistical Computation and Simulation 84(2) (2014), 404–414. [DOI: 10.1080/00949655.2012.712122](https://doi.org/10.1080/00949655.2012.712122). [arXiv:1205.5723](https://arxiv.org/abs/1205.5723).
 
-[6] N. C. Wormald. Tournaments with many Hamilton cycles. arXiv:2610.16245v1 (2026). [Fixed version](https://arxiv.org/html/2610.16245v1).
+[6] N. C. Wormald. Tournaments with many Hamilton cycles. arXiv:2610.16245v1 (2026). [Version](https://arxiv.org/html/2610.16245v1).
 
 [7] Ehud Friedgut and Jeff Kahn. On the Number of Hamiltonian Cycles in a Tournament. Combinatorics, Probability and Computing 14(5–6) (2005), 769–781. [DOI: 10.1017/S0963548305006863](https://doi.org/10.1017/S0963548305006863).
 
@@ -7367,9 +2326,18 @@ AI assistance was used in the exposition and parts of the proof checking. This c
 
 [10] Tibor Szele. Kombinatorikai vizsgálatok az irányított teljes gráffal kapcsolatban. Matematikai és Fizikai Lapok 50 (1943), 223–256. [Original volume archive](https://real-j.mtak.hu/7300/).
 
-[11] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3).
+[11] Yijia Fang and Hao Huang. Maximizing directed cycles in tournaments. arXiv:2608.06238v1 (2026). [arXiv version](https://arxiv.org/html/2608.06238v1#S3).
 
-[12] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [Full text](https://arxiv.org/html/2610.23755v1).
+[12] Alexander Divoux and Shouda Wang. The maximum number of Hamiltonian cycles in tournaments. arXiv:2610.23755v1 (2026). [arXiv version](https://arxiv.org/html/2610.23755v1).
 
-[13] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. Hexagon preprint 2610.00460v2 (2026). [Fixed version](https://hexagonmath.org/2610.00460v2).
+[13] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*. Hexagon preprint 2610.00460v2 (2026). [Version](https://hexagonmath.org/2610.00460v2).
 
+
+
+[14] Xingchen Liu. *Constant-factor bounds for Hamiltonian paths in tournaments*, v1.0 (8 October 2026). [Version DOI: 10.5281/zenodo.23233166](https://doi.org/10.5281/zenodo.23233166). Later archive: v1.2, [10.5281/zenodo.23288896](https://doi.org/10.5281/zenodo.23288896).
+
+[15] Xingchen Liu and Xiangyu Ye. Wormald tournament project, manuscript revision `2fd6a2c30260b826feef71049d7d593527fd7a42` (19 October 2026). [Fixed manuscript](https://github.com/LStar404/wormald-tournament-conjectures/blob/2fd6a2c30260b826feef71049d7d593527fd7a42/docs/paper.zh.md).
+
+[16] Deep Bhattacharjee. *Two conjectures of Wormald on Hamilton cycles in tournaments*, release v1.0.0 (14 October 2026). [Release and source archive](https://github.com/creelie/Breakthrough-problems-1/releases/tag/v1.0.0).
+
+[17] Liu--Ye. *Tournament Hamiltonian counts*: source and formal-coverage snapshot `c678e9ee24fb304cad755a27c99f511c8640f75e`. [Fixed repository revision](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/tree/c678e9ee24fb304cad755a27c99f511c8640f75e).

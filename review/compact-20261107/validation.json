@@ -1,0 +1,16 @@
+{
+  "01_combined.zh": {
+    "pages": 38,
+    "sha256": "005f9d59c9f45f43eec4592a9580a458cdb0f075dbf61cf87a27ea88d26de457",
+    "duplicate_labels": [],
+    "missing_labels": [],
+    "final_log_issues": []
+  },
+  "02_combined.en": {
+    "pages": 42,
+    "sha256": "872bab37fbb902159ba8f46027bd0cfe594ec33a0372ecd679567fb73a253779",
+    "duplicate_labels": [],
+    "missing_labels": [],
+    "final_log_issues": []
+  }
+}
