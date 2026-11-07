@@ -75,7 +75,7 @@ The upper bounds developed through permanent estimates. If \(A\) is the adjacenc
 
 Divoux and Wang {[}12{]} determined the sharp leading constant. They proved that the maximum cycle count is \((L+o(1))\nu_n\) and the maximum path count is \((L+o(1))\mu_n\), where \(L=\cosh1/\cos1\). Their proof still uses permanents, but replaces a degree bound by a determinant approximation for nearly doubly stochastic matrices. After separating vertices with large degree imbalance, they classify a Hamiltonian cycle by the directed path segments that it induces on the exceptional set. These segments are encoded in modified adjacency matrices of the remaining tournament. Sinkhorn scaling and a determinant--permanent inclusion-exclusion formula then reduce the count to a ratio of determinants of a skew-symmetric matrix. A matrix comparison of Fang and Huang {[}11{]} bounds this ratio by its value for a transitive tournament. Odd carousels, and their one-vertex deletions at even orders, attain the bound asymptotically; a separate argument transfers the cycle result to paths.
 
-The first author's path-counting preprint {[}14{]}, publicly archived on 8 October 2026, had already established \((L-O(n^{-1}))\mu_n\le P(n)\le(C_*+O(n^{-1}))\mu_n\) and the analytic framework used below. Thus it closed the polynomial gap, while leaving a gap between the two leading constants \(L<C_*\). That archive contains the positive path convolution, uniform permanent estimate, nonprincipal scaling and exceptional-vertex analysis; it predates the arXiv v1 submission of {[}12{]} on 16 October 2026. The present sharp estimate combines that framework with the spectral moment comparison of Fang and Huang {[}11{]}. It refines the leading asymptotic in {[}12, Theorem 1.4{]} and retains a uniform \(O(n^{-1})\) normalized error through deletion, scaling and summation. We make no claim that this error order is optimal.
+The first author's path-counting preprint {[}14{]}, publicly archived on 8 October 2026, had already established \((L-O(n^{-1}))\mu_n\le P(n)\le(C_*+O(n^{-1}))\mu_n\) and the analytic framework used below. Thus it closed the polynomial gap, while leaving a gap between the two leading constants \(L<C_*\). That archive contains the positive path convolution, uniform permanent estimate, nonprincipal scaling and exceptional-vertex analysis; it predates the arXiv v1 submission of {[}12{]} on 16 October 2026. The present sharp estimate combines that framework with the spectral moment comparison of Fang and Huang {[}11{]}. It refines the leading asymptotic in {[}12, Theorem 1.4{]} and retains a uniform \(O(n^{-1})\) normalized error through deletion, scaling and summation. Determining the optimal error order remains open.
 
 \textbf{Theorem 1.1.} There are absolute constants \(K',n_1\) such that every integer \(n\ge n_1\) satisfies
 
@@ -130,7 +130,7 @@ Along odd integers \(d\ge3\), the sequence \(\mathfrak r_d\) increases strictly 
 
 Theorem 1.2 directly proves Wormald's Hessian conjecture {[}6, Conjecture 6{]}. Corollary 1.3 combines existing counting and spectral results with the equality and nonregular-base arguments given here. The limit in Conjecture 2 follows from the closed form in {[}12{]} and Wormald's factor \(e^{1/d}\); Corollary 1.4 adds strict monotonicity. Section 10 retains the expansion through \(d^{-5}\), with remainder \(O(d^{-6})\), as a calculation from that closed form.
 
-Bhattacharjee {[}13, Theorems 1.1 and 1.3, Proposition 3.1, Lemma 3.2 and Corollary 3.3{]} also treats Wormald's Conjectures 2 and 6. The original angular Hessian, positivity, determinant/rational-square formulas and carousel limit were obtained independently in our Wormald project {[}15{]} and in his work. We retain our direct derivation and record the overlap. Our October 8 path archive {[}14{]} concerns a different part of the paper and is not used to date the Hessian result. Bhattacharjee's public release dated 14 October {[}16{]} already contains the full Hessian; the fixed Liu--Ye manuscript revision cited in {[}15{]} is dated 19 October. Git commit dates and public-release dates have different meanings, and these records do not establish priority for our Hessian calculation.
+Bhattacharjee's public release of 14 October 2026 {[}16{]} contains the full original angular Hessian, its positive definiteness, and the associated determinant results. Our Wormald project is cited through the Liu--Ye Git manuscript revision dated 19 October {[}15{]}; the later version {[}13{]} also acknowledges the independent work. We retain a direct derivation and identify the overlapping results. These records distinguish a public release date from a Git manuscript revision date. The separate single-author path archive of 8 October {[}14{]} concerns the \(L/C_*\) counting framework described above.
 
 The contribution and dependency structure is as follows.
 
@@ -157,37 +157,15 @@ Regular-block monotonicity & A strict monotonicity consequence of the known caro
 
 For Corollary 1.3 the order \(d\) is fixed first. There are finitely many base isomorphism classes; regular noncarousel bases have a strict limiting gap, and the normalized expectations of nonregular bases tend to zero. A common threshold can therefore be chosen for all four expectations and all bases of that fixed order. The statement concerns expectations, and the regular-block model only allows odd \(m\).
 
-\subsection{1.1 The counting estimates and their relation to earlier methods}\label{the-counting-estimates-and-their-relation-to-earlier-methods}
+\subsection{1.1 Counting strategy}\label{counting-strategy}
 
-McCullagh {[}5{]} obtained the determinant approximation with an \(O(n^{-1})\) relative error under moderate-deviation assumptions. Divoux and Wang {[}12, Proposition 3.1{]} prove a uniform \(1+o(1)\) version for nonnegative doubly stochastic matrices; their coefficient estimates and Gamma averaging can be refined to retain \(O(n^{-1})\) in that setting. Section 3 gives the form needed here, with fixed entry and operator-norm bounds, and includes the detailed proof. The quantitative contribution of Theorem 1.1 is the final path count after deletion, scaling and summation; the determinant main term and earlier \(O(n^{-1})\) approximations provide its analytic background.
+McCullagh {[}5{]} obtained a determinant approximation with relative error \(O(n^{-1})\) under moderate-deviation assumptions. Divoux and Wang {[}12, Proposition 3.1{]} give a uniform \(1+o(1)\) version for nonnegative doubly stochastic matrices. Theorem 3.1 states the quantitative estimate used here under fixed entry and operator-norm bounds; its coefficient and tail estimates are supplied in the detailed proof companion. The contribution of Theorem 1.1 is the uniform error for the final path count after deletion, scaling and summation.
 
-The proof expands the permanent by imposing distinct row and column indices separately. Double centering eliminates terms with a vertex of degree one. Components in which every vertex has degree two give Gaussian pairings and hence the determinant main term; the other components are estimated after contracting their degree-two chains. The resulting coefficient estimates hold over a range growing with the matrix order. For the tail, permanent polarization reduces the required complex-matrix bound to a positive semidefinite one. The complex Gaussian identity and arithmetic--geometric mean estimate used by Han and Niles-Weed {[}3, Lemmas 4.3--4.4{]} provide this bound; we then apply Cauchy's coefficient estimate. Together, the coefficient estimates and the tail bound give the uniform \(O(n^{-1})\) error.
+The positive path convolution in Lemma 5.1 converts the counting problem into permanent estimates. Its deletion-size weights have summable fixed moments, which preserve the \(O(n^{-1})\) error after summation. The treatment of exceptional vertices uses a four-block matching expansion, producing independently deleted rows and columns; Lemma 4.4 supplies the required nonprincipal estimate. Section 7 separates large variance, exceptional vertices and the remaining class. In the last class, Proposition 7.3 retains the score penalty needed to absorb the square-root errors. The all-order spectral comparison in Proposition 6.6 then gives the sharp upper constant. Section 8 obtains the matching lower bound from odd carousels and their even-order one-vertex deletions, and derives degree-variance stability.
 
-For paths, we use the identity
+\subsection{1.2 Hessian and model strategy}\label{hessian-and-model-strategy}
 
-\[
-H(T)=\sum_{U\subseteq V(T)}\det(I+A[U])\operatorname{per}A[U^c].
-\]
-
-This is a specialization of the determinant--permanent identities discussed by Irving and Omar {[}1{]}. All its summands are nonnegative for a tournament. We can therefore estimate the permanent in each term without controlling cancellation in the final sum. The terms with large \(U\) have a sufficiently small factorial tail. For the remaining terms, the task is to apply the permanent approximation with an error uniform in both the tournament and the deletion set. We also retain the weights associated with each deletion-set size: their fixed moments are summable. Replacing every size by the largest permitted value would introduce unnecessary logarithmic losses.
-
-The exceptional vertices require a further estimate. We split the adjacency matrix into four blocks according to the exceptional set and its complement, and expand the permanent over the matchings between these blocks. A cross-block matching removes core rows and core columns that need not have the same indices. Thus estimates restricted to principal submatrices do not suffice. Section 4 treats these nonprincipal submatrices, performs the diagonal scaling, and records the change in the Gaussian determinant factor. This four-block expansion is the way exceptional vertices are counted here; the directed-segment classification in {[}12{]} concerns the cycle count.
-
-It remains to ensure that these estimates give the claimed error for every tournament. We may assume \(H(T)\ge\mu_n\). Brégman's inequality first bounds the sum of squared degree imbalances. Tournaments with a sufficiently large value of this sum are bounded directly; those with an exceptional vertex are handled by the cross-block expansion. For the remaining tournaments, the scaling calculation retains an exponential penalty for degree imbalance. Some intermediate errors have square-root size, which would be too large if estimated in isolation. Together with the penalty, they contribute only \(O(n^{-1})\) to the upper bound. The main term is
-
-\[
-\rho_n(S)=\frac{\det(I+S/n)}{\det(I+iS/n)},\qquad S=A-A^T.
-\]
-
-As in {[}12{]}, the comparison of Fang and Huang {[}11{]} bounds this ratio by its value at the sign matrix of a transitive tournament. That value is \(L+O(n^{-1})\). For the lower bound, the two-sided path estimate applies to odd carousels and to their even-order one-vertex deletions: the degree imbalances are respectively zero and of absolute value one. These arguments give Theorem 1.1 directly. Proposition 6.6 supplies the all-order spectral comparison; Proposition 7.3 isolates the uniform score penalty, and Corollary 8.2a gives the resulting degree-variance stability estimate.
-
-\subsection{1.2 Wormald's models}\label{wormalds-models}
-
-Wormald {[}6{]} obtains the fixed-base counting formula by projecting a Hamiltonian cycle onto a closed walk in the base tournament. Inside each block, the cycle induces a collection of directed paths. Generating functions for these walks and paths lead to a multivariate coefficient problem, to which smooth-point asymptotics apply. For a regular base, the remaining constant involves the determinant of an angular Hessian defined through an implicit equation. This leaves both a nondegeneracy question and a comparison problem between different bases.
-
-We differentiate the original implicit equation to obtain Theorem 1.2, including positive definiteness of the full Hessian. This supplies an unconditional justification for Wormald's nondegeneracy assumption. The identity \(\sqrt{d/\det\mathbf H}=\rho_d(S)\) also links the Hessian to the existing spectral theory. The model limit \(\rho_d(S)\) itself is already a direct application of {[}12, Proposition 5.1{]}; using Wormald's conditional Hessian formula to infer nondegeneracy would not be a valid substitute for the calculation.
-
-For regular bases, we supplement the comparison in {[}12{]} with the equality classification from Fang and Huang {[}11{]}. Signed similarity together with zero row sums forces the carousel. Nonregular bases are bounded separately by Brégman's inequality. Since only finitely many bases occur at fixed order, the strict limiting gaps give Corollary 1.3. The short spectral proof gives Corollary 1.4; the separate expansion records higher-order terms. The base order is fixed before the block order tends to infinity.
+For a regular base, Wormald's coefficient asymptotics involve an angular Hessian defined by an implicit equation. Section 9 differentiates that equation directly and proves positive definiteness, including the angular sign and the determinant factor from the nonorthonormal coordinates. Section 10 identifies the four model constants and their carousel values. Section 11 combines the regular equality classification with exponential decay for nonregular bases; finiteness of the base classes at fixed \(d\) gives one common threshold. The base order is fixed before the block order tends to infinity.
 
 \subsection{1.3 Further questions and organization}\label{further-questions-and-organization}
 
@@ -331,6 +309,7 @@ The counting argument needs a permanent estimate uniform under scaling and logar
 
 McCullagh {[}5{]} obtained the determinant main term under moderate-deviation assumptions. The argument retained here comes from the earlier path project {[}14{]}. It allows signed inputs, although Sections 4--8 use only the nonnegative case. Divoux--Wang {[}12{]} give a related nonnegative theorem with an \(o(1)\) error; extracting the \(O(n^{-1})\) rate uses the uniform coefficient and tail estimates recorded below.
 
+\Needspace{5\baselineskip}
 \textbf{Theorem 3.1 (Uniform permanent approximation).}
 
 Fix \(0\le C<\infty\) and \(0\le q<1\). Let \(n\ge1\), and suppose \(E\in\mathbb R^{n\times n}\) satisfies
@@ -1147,7 +1126,7 @@ K\sqrt{m+1}\frac{m!}{2^m}\exp\left(-\frac{V_{\rm deg}(Q)}{8m^2}\right).
 
 \textbf{Proof.}
 
-Concavity of the row-degree factor strengthens the Brégman bound {[}2{]}. If any \(d_i=0\), the bound is immediate. Otherwise, define \(f(k)=\log(k!)/k\) for positive integers. Direct calculation gives, for \(k\ge2\),
+Concavity of the row-degree factor strengthens the Brégman bound {[}2{]}. If some \(d_i=0\), the adjacency matrix has a zero row and its permanent is zero. Otherwise, define \(f(k)=\log(k!)/k\) for positive integers. Direct calculation gives, for \(k\ge2\),
 
 \[
 2f(k)-f(k-1)-f(k+1)
@@ -1250,7 +1229,7 @@ m f(r)=\frac{2r+1}{r}\left[r\log r-r+\tfrac12\log(2\pi r)+O(1/r)\right],
 \log(m!/2^m)=m\log(m/2)-m+\tfrac12\log(2\pi m)+O(1/m).
 \]
 
-Subtracting and using \(r=(m-1)/2\) gives \(\tfrac12\log m+O(1)\). For \(m=2r\), \(\widetilde f(\eta)=[f(r-1)+f(r)]/2\); applying the same formula to each term gives the same difference. Exponentiating therefore yields \(K\sqrt{m+1}\). If \(d_i=0\), each term in the permanent contains a zero factor. The cases \(m=1,2\) are incorporated directly into the constant.
+Subtracting and using \(r=(m-1)/2\) gives \(\tfrac12\log m+O(1)\). For \(m=2r\), \(\widetilde f(\eta)=[f(r-1)+f(r)]/2\); applying the same formula to each term gives the same difference. Exponentiating therefore yields \(K\sqrt{m+1}\). The cases \(m=1,2\) are incorporated directly into the constant.
 
 Write \(b_i=d_i^+-(n-1)/2\). For a retained vertex, let \(e_i\) count its outgoing edges to \(U\). Then
 
@@ -1503,7 +1482,7 @@ Restoring the falling factorial for short subsets contributes \(\exp(O(k_n^2/n))
 \le 3/4+o(1)<1,\qquad f\ge1.
 \]
 
-Since \(P(n)\ge\mu_n\), a tournament with exceptional vertices cannot maximize the path count once \(n\) is sufficiently large. A weaker bound for short convolution terms avoiding \(F\) is \((10/3)4^{-f}(1+\varepsilon_n)\). Denote the combined contribution of the other short terms and the long terms by \(\delta_n\). Then
+Since \(P(n)\ge\mu_n\), every maximizing tournament of sufficiently large order has no exceptional vertex. A weaker bound for short convolution terms avoiding \(F\) is \((10/3)4^{-f}(1+\varepsilon_n)\). Denote the combined contribution of the other short terms and the long terms by \(\delta_n\). Then
 
 \begin{equation}
 \frac{H(T)}{\mu_n}\le\frac{10}{3}4^{-f}(1+\varepsilon_n)+\delta_n,
@@ -1761,7 +1740,7 @@ e^{R_\tau+K\delta_n}
 \det\left(I+\frac2n\operatorname{diag}(g)(I+A)\right).
 \]
 
-The total error is controlled by the finite moments of \(G^kw_k\), rather than by the maximum deleted-set size \(k_n\). This avoids an extra logarithmic factor in the final error.
+Summing the error against the finite moments of \(G^kw_k\) preserves the stated rate without a logarithmic loss.
 
 We now remove the weights while preserving the score penalty. Set \(W=I+(2/n)(I+A)\) and \(\Delta=(2/n)\operatorname{diag}(g-1)(I+A)\). The symmetric part of \(W\) is at least \(I\), so \(\|W^{-1}\|_{\rm op}\le1\). Each row of \(I+A\) has Euclidean norm at most \(\sqrt n\), and \(\sum_i(g_i-1)\le K\tau\). Decomposing \(\Delta\) as a sum of rank-one row matrices therefore controls its trace norm, the sum of its singular values. Using \(\|uv^{\mathsf T}\|_*=\|u\|_2\|v\|_2\), we obtain
 
@@ -2352,7 +2331,7 @@ This revision changes the exposition and adds explicitly identified corollaries.
 
 {[}13{]} Deep Bhattacharjee. \emph{Two conjectures of Wormald on Hamilton cycles in tournaments}. Hexagon preprint 2610.00460v2 (2026). \href{https://hexagonmath.org/2610.00460v2}{Version}.
 
-{[}14{]} Xingchen Liu. \emph{Constant-factor bounds for Hamiltonian paths in tournaments}, v1.0 (8 October 2026). \href{https://doi.org/10.5281/zenodo.23233166}{Version DOI: 10.5281/zenodo.23233166}. Later archive: v1.2, \href{https://doi.org/10.5281/zenodo.23288896}{10.5281/zenodo.23288896}.
+{[}14{]} Xingchen Liu. \emph{Constant-factor bounds for Hamiltonian paths in tournaments}, v1.0 (8 October 2026). \href{https://doi.org/10.5281/zenodo.23233166}{Version DOI: 10.5281/zenodo.23233166}.
 
 {[}15{]} Xingchen Liu and Xiangyu Ye. Wormald tournament project, manuscript revision \nolinkurl{2fd6a2c30260b826feef71049d7d593527fd7a42} (19 October 2026). \href{https://github.com/LStar404/wormald-tournament-conjectures/blob/2fd6a2c30260b826feef71049d7d593527fd7a42/docs/paper.zh.md}{Fixed manuscript}.
 

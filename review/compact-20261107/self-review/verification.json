@@ -1,0 +1,16 @@
+{
+  "02_combined.en.md": {
+    "display_math_from_section2_unchanged": true,
+    "display_math_blocks": 249,
+    "numbered_statement_sequence_unchanged": true,
+    "missing_markdown_anchors": [],
+    "all_four_figures": true
+  },
+  "01_combined.zh.md": {
+    "display_math_from_section2_unchanged": true,
+    "display_math_blocks": 243,
+    "numbered_statement_sequence_unchanged": true,
+    "missing_markdown_anchors": [],
+    "all_four_figures": true
+  }
+}

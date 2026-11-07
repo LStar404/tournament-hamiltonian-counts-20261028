@@ -6,14 +6,14 @@
 
 本分支保留主分支作为基线，供审查此次论文修订。
 
-- [中文主文](manuscripts/01_combined.zh.pdf)：38页。
-- [英文主文](manuscripts/02_combined.en.pdf)：42页。
+- [中文主文](manuscripts/01_combined.zh.pdf)：37页。
+- [英文主文](manuscripts/02_combined.en.pdf)：41页。
 - [中文详细证明伴随稿](manuscripts/07_detailed_proof.zh.pdf)：精炼前94页归档，保留原编号。
 - [英文详细证明伴随稿](manuscripts/08_detailed_proof.en.pdf)：精炼前98页归档，保留原编号。
 
 每份文稿另有同名 `.md` 与 `.tex` 源文件。主文重写了永久式、局部缩放和模型论证，长技术估计按明确位置引用详细伴随稿；压缩指主文阅读篇幅，不声称合计页数同步下降。专题稿和旧导读保留其原版本。
 
-本轮改写、独立审查、版式和编译记录见 `review/compact-20261107/`。Lean固定工程的本轮执行日志、结果及与新稿的范围区别见 `review/lean-rerun-20261107/` 和 `review/compact-20261107/lean_scope.md`。新增陈述没有自动获得历史端点认证。
+三轮自审逐轮发现、实际修改及核验记录见 `review/compact-20261107/self-review/`。本轮改写、独立审查、版式和编译记录见 `review/compact-20261107/`。Lean固定工程的本轮执行日志、结果及与新稿的范围区别见 `review/lean-rerun-20261107/` 和 `review/compact-20261107/lean_scope.md`。新增陈述没有自动获得历史端点认证。
 
 ## 结果与已有工作的关系
 

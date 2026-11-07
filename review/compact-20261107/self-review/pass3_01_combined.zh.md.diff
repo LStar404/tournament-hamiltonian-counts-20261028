@@ -1,0 +1,20 @@
+--- pass2/01_combined.zh.md
++++ pass3/01_combined.zh.md
+@@ -82,7 +82,7 @@
+ 
+ 定理 1.2 直接证明 Wormald [6] 关于原 Hessian 的猜想 6。推论 1.3 结合已有计数与谱比较，补入等号分析及非正则基图估计。猜想 2 的极限存在性由 [12] 的闭式及 Wormald 的 $e^{1/d}$ 因子即得，推论 1.4 则补充严格单调性。第 10 节保留直至 $d^{-5}$ 项、余项为 $O(d^{-6})$ 的展开，作为该闭式的进一步计算。
+ 
+-Bhattacharjee [13, 定理 1.1、1.3，命题 3.1，引理 3.2 及推论 3.3] 也处理 Wormald 的猜想 2 和 6。原角 Hessian、正定性、行列式／有理平方公式和圆环极限由我们的 Wormald 项目 [15] 与其工作独立得到。本文保留直接推导，并明确记录重合。10 月 8 日路径存档 [14] 属于本文的另一条主线，不用于确定 Hessian 的日期。Bhattacharjee 于 10 月 14 日公开发布的版本 [16] 已有完整 Hessian；[15] 所引本方固定稿件提交日期为 10 月 19 日。Git 提交时间与公开发行时间含义不同，这些记录不支持本方 Hessian 更早的主张。
++Bhattacharjee 于 2026 年 10 月 14 日公开的版本 [16] 已给出原角 Hessian 的完整矩阵公式、正定性及相关行列式结论。本方 Wormald 项目在 [15] 固定至 10 月 19 日的 Liu–Ye Git 稿件版本；[13] 的后续版本也注明了双方的独立工作。本文保留直接推导，并逐项说明重合结果。这里分别记录公开发行日期和 Git 稿件版本日期；10 月 8 日的单作者路径存档 [14] 则对应前述 $L/C_*$ 计数框架。
+ 
+ 各项内容的定位和依赖如下。
+ 
+@@ -2271,7 +2271,7 @@
+ 
+ 
+ 
+-[14] Xingchen Liu. *Constant-factor bounds for Hamiltonian paths in tournaments*, v1.0 (8 October 2026). [Version DOI: 10.5281/zenodo.23233166](https://doi.org/10.5281/zenodo.23233166). Later archive: v1.2, [10.5281/zenodo.23288896](https://doi.org/10.5281/zenodo.23288896).
++[14] Xingchen Liu. *Constant-factor bounds for Hamiltonian paths in tournaments*, v1.0 (8 October 2026). [Version DOI: 10.5281/zenodo.23233166](https://doi.org/10.5281/zenodo.23233166).
+ 
+ [15] Xingchen Liu and Xiangyu Ye. Wormald tournament project, manuscript revision `2fd6a2c30260b826feef71049d7d593527fd7a42` (19 October 2026). [Fixed manuscript](https://github.com/LStar404/wormald-tournament-conjectures/blob/2fd6a2c30260b826feef71049d7d593527fd7a42/docs/paper.zh.md).
+ 

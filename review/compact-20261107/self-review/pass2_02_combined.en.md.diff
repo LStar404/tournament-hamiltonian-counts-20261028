@@ -1,0 +1,47 @@
+--- pass1/02_combined.en.md
++++ pass2/02_combined.en.md
+@@ -32,7 +32,7 @@
+ 
+ Divoux and Wang [12] determined the sharp leading constant. They proved that the maximum cycle count is $(L+o(1))\nu_n$ and the maximum path count is $(L+o(1))\mu_n$, where $L=\cosh1/\cos1$. Their proof still uses permanents, but replaces a degree bound by a determinant approximation for nearly doubly stochastic matrices. After separating vertices with large degree imbalance, they classify a Hamiltonian cycle by the directed path segments that it induces on the exceptional set. These segments are encoded in modified adjacency matrices of the remaining tournament. Sinkhorn scaling and a determinant–permanent inclusion-exclusion formula then reduce the count to a ratio of determinants of a skew-symmetric matrix. A matrix comparison of Fang and Huang [11] bounds this ratio by its value for a transitive tournament. Odd carousels, and their one-vertex deletions at even orders, attain the bound asymptotically; a separate argument transfers the cycle result to paths.
+ 
+-The first author's path-counting preprint [14], publicly archived on 8 October 2026, had already established $(L-O(n^{-1}))\mu_n\le P(n)\le(C_*+O(n^{-1}))\mu_n$ and the analytic framework used below. Thus it closed the polynomial gap, while leaving a gap between the two leading constants $L<C_*$. That archive contains the positive path convolution, uniform permanent estimate, nonprincipal scaling and exceptional-vertex analysis; it predates the arXiv v1 submission of [12] on 16 October 2026. The present sharp estimate combines that framework with the spectral moment comparison of Fang and Huang [11]. It refines the leading asymptotic in [12, Theorem 1.4] and retains a uniform $O(n^{-1})$ normalized error through deletion, scaling and summation. We make no claim that this error order is optimal.
++The first author's path-counting preprint [14], publicly archived on 8 October 2026, had already established $(L-O(n^{-1}))\mu_n\le P(n)\le(C_*+O(n^{-1}))\mu_n$ and the analytic framework used below. Thus it closed the polynomial gap, while leaving a gap between the two leading constants $L<C_*$. That archive contains the positive path convolution, uniform permanent estimate, nonprincipal scaling and exceptional-vertex analysis; it predates the arXiv v1 submission of [12] on 16 October 2026. The present sharp estimate combines that framework with the spectral moment comparison of Fang and Huang [11]. It refines the leading asymptotic in [12, Theorem 1.4] and retains a uniform $O(n^{-1})$ normalized error through deletion, scaling and summation. Determining the optimal error order remains open.
+ 
+ **Theorem 1.1.** There are absolute constants $K',n_1$ such that every integer $n\ge n_1$ satisfies
+ 
+@@ -1090,7 +1090,7 @@
+ 
+ **Proof.**
+ 
+-Concavity of the row-degree factor strengthens the Brégman bound [2]. If any $d_i=0$, the bound is immediate. Otherwise, define $f(k)=\log(k!)/k$ for positive integers. Direct calculation gives, for $k\ge2$,
++Concavity of the row-degree factor strengthens the Brégman bound [2]. If some $d_i=0$, the adjacency matrix has a zero row and its permanent is zero. Otherwise, define $f(k)=\log(k!)/k$ for positive integers. Direct calculation gives, for $k\ge2$,
+ 
+ $$
+ 2f(k)-f(k-1)-f(k+1)
+@@ -1194,7 +1194,7 @@
+ \log(m!/2^m)=m\log(m/2)-m+\tfrac12\log(2\pi m)+O(1/m).
+ $$
+ 
+-Subtracting and using $r=(m-1)/2$ gives $\tfrac12\log m+O(1)$. For $m=2r$, $\widetilde f(\eta)=[f(r-1)+f(r)]/2$; applying the same formula to each term gives the same difference. Exponentiating therefore yields $K\sqrt{m+1}$. If $d_i=0$, each term in the permanent contains a zero factor. The cases $m=1,2$ are incorporated directly into the constant.
++Subtracting and using $r=(m-1)/2$ gives $\tfrac12\log m+O(1)$. For $m=2r$, $\widetilde f(\eta)=[f(r-1)+f(r)]/2$; applying the same formula to each term gives the same difference. Exponentiating therefore yields $K\sqrt{m+1}$. The cases $m=1,2$ are incorporated directly into the constant.
+ 
+ 
+ Write $b_i=d_i^+-(n-1)/2$. For a retained vertex, let $e_i$ count its outgoing edges to $U$. Then
+@@ -1447,7 +1447,7 @@
+ \le 3/4+o(1)<1,\qquad f\ge1.
+ $$
+ 
+-Since $P(n)\ge\mu_n$, a tournament with exceptional vertices cannot maximize the path count once $n$ is sufficiently large. A weaker bound for short convolution terms avoiding $F$ is $(10/3)4^{-f}(1+\varepsilon_n)$. Denote the combined contribution of the other short terms and the long terms by $\delta_n$. Then
++Since $P(n)\ge\mu_n$, every maximizing tournament of sufficiently large order has no exceptional vertex. A weaker bound for short convolution terms avoiding $F$ is $(10/3)4^{-f}(1+\varepsilon_n)$. Denote the combined contribution of the other short terms and the long terms by $\delta_n$. Then
+ 
+ <a id="eq-exceptional-bound"></a>
+ 
+@@ -1709,7 +1709,7 @@
+ \det\left(I+\frac2n\operatorname{diag}(g)(I+A)\right).
+ $$
+ 
+-The total error is controlled by the finite moments of $G^kw_k$, rather than by the maximum deleted-set size $k_n$. This avoids an extra logarithmic factor in the final error.
++Summing the error against the finite moments of $G^kw_k$ preserves the stated rate without a logarithmic loss.
+ 
+ We now remove the weights while preserving the score penalty. Set $W=I+(2/n)(I+A)$ and $\Delta=(2/n)\operatorname{diag}(g-1)(I+A)$. The symmetric part of $W$ is at least $I$, so $\|W^{-1}\|_{\rm op}\le1$. Each row of $I+A$ has Euclidean norm at most $\sqrt n$, and $\sum_i(g_i-1)\le K\tau$. Decomposing $\Delta$ as a sum of rank-one row matrices therefore controls its trace norm, the sum of its singular values. Using $\|uv^{\mathsf T}\|_*=\|u\|_2\|v\|_2$, we obtain
+ 
