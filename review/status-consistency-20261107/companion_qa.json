@@ -1,0 +1,26 @@
+{
+  "01_combined.zh": {
+    "pages": 94,
+    "old_pages": 94,
+    "changed_pages": [
+      93
+    ],
+    "sha256": "17c51c96b1f9687f85989c574ccf88d84c34af61d3a445b60be583956a3037cd",
+    "outside_pages": [],
+    "questions": [],
+    "visual_status": "pass",
+    "scope": "All pages raster-compared against packaged old companion; only changed author-statement page visually inspected. No clipping or overlap. Other pages pixel-identical."
+  },
+  "02_combined.en": {
+    "pages": 98,
+    "old_pages": 98,
+    "changed_pages": [
+      97
+    ],
+    "sha256": "9c176ef7d6c419f1bf039c39a602c6d8fc2b593dc75b45014ac88d2fb88227df",
+    "outside_pages": [],
+    "questions": [],
+    "visual_status": "pass",
+    "scope": "All pages raster-compared against packaged old companion; only changed author-statement page visually inspected. No clipping or overlap. Other pages pixel-identical."
+  }
+}
