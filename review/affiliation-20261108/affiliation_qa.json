@@ -1,0 +1,29 @@
+{
+  "zh": {
+    "pages": 38,
+    "baseline_pages": 38,
+    "pixel_changed_pages": [
+      1
+    ],
+    "sha256": "6eb06c0e1303a0ca306a994e88f610f2fc9441d75319f421f619298bd1ed2e72",
+    "md_from_abstract_unchanged": true,
+    "tex_from_abstract_unchanged": true
+  },
+  "en": {
+    "pages": 40,
+    "baseline_pages": 40,
+    "pixel_changed_pages": [
+      1
+    ],
+    "sha256": "9dd157973b99194213c8cfdea3f8676a4ffd07a720d4135d0e20abb7381a2f4b",
+    "md_from_abstract_unchanged": true,
+    "tex_from_abstract_unchanged": true
+  },
+  "inspection": {
+    "result": "pass",
+    "visual_scope": "Both first pages at full size; all 78 pages compared pixel-for-pixel to affiliation_before. Only first page in each language changed; other 76 pages identical.",
+    "authors": "Liu first, superscript 1; Ye second, superscript 2. Chinese and English affiliations correctly assigned and fully visible.",
+    "logs": "No overfull, missing character, undefined reference or error found; harmless Chinese xeCJK package-name warning remains.",
+    "source_edits_by_qa": false
+  }
+}

@@ -1,6 +1,10 @@
 # Quantitative Hamiltonian path counts and Wormald's angular Hessian
 
-Xingchen Liu and Xiangyu Ye
+Xingchen Liu$^{1}$ and Xiangyu Ye$^{2}$
+
+$^{1}$ School of Mathematics, Sichuan University
+
+$^{2}$ Glasgow College, University of Electronic Science and Technology of China
 
 7 November 2026
 
