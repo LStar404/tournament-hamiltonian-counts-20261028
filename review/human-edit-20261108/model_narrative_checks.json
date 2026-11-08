@@ -1,0 +1,18 @@
+{
+  "en": {
+    "display_equations_before": 31,
+    "display_equations_after": 29,
+    "removed": "Only two higher-order carousel expansion displays; referenced companion §10.4",
+    "added_display_equations": 0,
+    "outside_owned_region_unchanged": true,
+    "rerun_record_read_and_verified": true
+  },
+  "zh": {
+    "display_equations_before": 31,
+    "display_equations_after": 29,
+    "removed": "Only two higher-order carousel expansion displays; referenced companion §10.4",
+    "added_display_equations": 0,
+    "outside_owned_region_unchanged": true,
+    "rerun_record_read_and_verified": true
+  }
+}

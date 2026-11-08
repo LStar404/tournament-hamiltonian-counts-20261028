@@ -1,0 +1,49 @@
+--- before/02_combined.en.md
++++ pass1/02_combined.en.md
+@@ -97,37 +97,15 @@
+ 
+ For Corollary 1.3 the order $d$ is fixed first. There are finitely many base isomorphism classes; regular noncarousel bases have a strict limiting gap, and the normalized expectations of nonregular bases tend to zero. A common threshold can therefore be chosen for all four expectations and all bases of that fixed order. The statement concerns expectations, and the regular-block model only allows odd $m$.
+ 
+-### 1.1 The counting estimates and their relation to earlier methods
+-
+-McCullagh [5] obtained the determinant approximation with an $O(n^{-1})$ relative error under moderate-deviation assumptions. Divoux and Wang [12, Proposition 3.1] prove a uniform $1+o(1)$ version for nonnegative doubly stochastic matrices; their coefficient estimates and Gamma averaging can be refined to retain $O(n^{-1})$ in that setting. Section 3 gives the form needed here, with fixed entry and operator-norm bounds, and includes the detailed proof. The quantitative contribution of Theorem 1.1 is the final path count after deletion, scaling and summation; the determinant main term and earlier $O(n^{-1})$ approximations provide its analytic background.
+-
+-The proof expands the permanent by imposing distinct row and column indices separately. Double centering eliminates terms with a vertex of degree one. Components in which every vertex has degree two give Gaussian pairings and hence the determinant main term; the other components are estimated after contracting their degree-two chains. The resulting coefficient estimates hold over a range growing with the matrix order. For the tail, permanent polarization reduces the required complex-matrix bound to a positive semidefinite one. The complex Gaussian identity and arithmetic–geometric mean estimate used by Han and Niles-Weed [3, Lemmas 4.3–4.4] provide this bound; we then apply Cauchy's coefficient estimate. Together, the coefficient estimates and the tail bound give the uniform $O(n^{-1})$ error.
+-
+-For paths, we use the identity
+-
+-$$
+-H(T)=\sum_{U\subseteq V(T)}\det(I+A[U])\operatorname{per}A[U^c].
+-$$
+-
+-This is a specialization of the determinant–permanent identities discussed by Irving and Omar [1]. All its summands are nonnegative for a tournament. We can therefore estimate the permanent in each term without controlling cancellation in the final sum. The terms with large $U$ have a sufficiently small factorial tail. For the remaining terms, the task is to apply the permanent approximation with an error uniform in both the tournament and the deletion set. We also retain the weights associated with each deletion-set size: their fixed moments are summable. Replacing every size by the largest permitted value would introduce unnecessary logarithmic losses.
+-
+-The exceptional vertices require a further estimate. We split the adjacency matrix into four blocks according to the exceptional set and its complement, and expand the permanent over the matchings between these blocks. A cross-block matching removes core rows and core columns that need not have the same indices. Thus estimates restricted to principal submatrices do not suffice. Section 4 treats these nonprincipal submatrices, performs the diagonal scaling, and records the change in the Gaussian determinant factor. This four-block expansion is the way exceptional vertices are counted here; the directed-segment classification in [12] concerns the cycle count.
+-
+-It remains to ensure that these estimates give the claimed error for every tournament. We may assume $H(T)\ge\mu_n$. Brégman's inequality first bounds the sum of squared degree imbalances. Tournaments with a sufficiently large value of this sum are bounded directly; those with an exceptional vertex are handled by the cross-block expansion. For the remaining tournaments, the scaling calculation retains an exponential penalty for degree imbalance. Some intermediate errors have square-root size, which would be too large if estimated in isolation. Together with the penalty, they contribute only $O(n^{-1})$ to the upper bound. The main term is
+-
+-$$
+-\rho_n(S)=\frac{\det(I+S/n)}{\det(I+iS/n)},\qquad S=A-A^T.
+-$$
+-
+-As in [12], the comparison of Fang and Huang [11] bounds this ratio by its value at the sign matrix of a transitive tournament. That value is $L+O(n^{-1})$. For the lower bound, the two-sided path estimate applies to odd carousels and to their even-order one-vertex deletions: the degree imbalances are respectively zero and of absolute value one. These arguments give Theorem 1.1 directly. Proposition 6.6 supplies the all-order spectral comparison; Proposition 7.3 isolates the uniform score penalty, and Corollary 8.2a gives the resulting degree-variance stability estimate.
+-
+-### 1.2 Wormald's models
+-
+-Wormald [6] obtains the fixed-base counting formula by projecting a Hamiltonian cycle onto a closed walk in the base tournament. Inside each block, the cycle induces a collection of directed paths. Generating functions for these walks and paths lead to a multivariate coefficient problem, to which smooth-point asymptotics apply. For a regular base, the remaining constant involves the determinant of an angular Hessian defined through an implicit equation. This leaves both a nondegeneracy question and a comparison problem between different bases.
+-
+-We differentiate the original implicit equation to obtain Theorem 1.2, including positive definiteness of the full Hessian. This supplies an unconditional justification for Wormald's nondegeneracy assumption. The identity $\sqrt{d/\det\mathbf H}=\rho_d(S)$ also links the Hessian to the existing spectral theory. The model limit $\rho_d(S)$ itself is already a direct application of [12, Proposition 5.1]; using Wormald's conditional Hessian formula to infer nondegeneracy would not be a valid substitute for the calculation.
+-
+-For regular bases, we supplement the comparison in [12] with the equality classification from Fang and Huang [11]. Signed similarity together with zero row sums forces the carousel. Nonregular bases are bounded separately by Brégman's inequality. Since only finitely many bases occur at fixed order, the strict limiting gaps give Corollary 1.3. The short spectral proof gives Corollary 1.4; the separate expansion records higher-order terms. The base order is fixed before the block order tends to infinity.
++### 1.1 Counting strategy
++
++McCullagh [5] obtained a determinant approximation with relative error $O(n^{-1})$ under moderate-deviation assumptions. Divoux and Wang [12, Proposition 3.1] give a uniform $1+o(1)$ version for nonnegative doubly stochastic matrices. Theorem 3.1 states the quantitative estimate used here under fixed entry and operator-norm bounds; its coefficient and tail estimates are supplied in the detailed proof companion. The contribution of Theorem 1.1 is the uniform error for the final path count after deletion, scaling and summation.
++
++The positive path convolution in Lemma 5.1 converts the counting problem into permanent estimates. Its deletion-size weights have summable fixed moments, which preserve the $O(n^{-1})$ error after summation. The treatment of exceptional vertices uses a four-block matching expansion, producing independently deleted rows and columns; Lemma 4.4 supplies the required nonprincipal estimate. Section 7 separates large variance, exceptional vertices and the remaining class. In the last class, Proposition 7.3 retains the score penalty needed to absorb the square-root errors. The all-order spectral comparison in Proposition 6.6 then gives the sharp upper constant. Section 8 obtains the matching lower bound from odd carousels and their even-order one-vertex deletions, and derives degree-variance stability.
++
++### 1.2 Hessian and model strategy
++
++For a regular base, Wormald's coefficient asymptotics involve an angular Hessian defined by an implicit equation. Section 9 differentiates that equation directly and proves positive definiteness, including the angular sign and the determinant factor from the nonorthonormal coordinates. Section 10 identifies the four model constants and their carousel values. Section 11 combines the regular equality classification with exponential decay for nonregular bases; finiteness of the base classes at fixed $d$ gives one common threshold. The base order is fixed before the block order tends to infinity.
+ 
+ ### 1.3 Further questions and organization
+ 

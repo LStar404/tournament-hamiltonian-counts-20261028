@@ -1,0 +1,24 @@
+{
+  "zh": {
+    "display_math_unchanged": true,
+    "pdf_sha256": "17c51c96b1f9687f85989c574ccf88d84c34af61d3a445b60be583956a3037cd",
+    "pages": 94
+  },
+  "en": {
+    "display_math_unchanged": true,
+    "pdf_sha256": "9c176ef7d6c419f1bf039c39a602c6d8fc2b593dc75b45014ac88d2fb88227df",
+    "pages": 98
+  },
+  "manifest": {
+    "changed_entries": [
+      "COVERAGE.zh.md",
+      "README.zh.md"
+    ],
+    "unchanged_entries": 626,
+    "lean_proof_or_driver_changed": false,
+    "current_manifest_check_exit_code": 0,
+    "cached_build_exit_code": 0,
+    "source_scan_exit_code": 0,
+    "fresh_run_repeated": false
+  }
+}

@@ -1,3 +1,5 @@
+> **2026-11-07运行更新：** 固定工程fresh构建与审计已实际通过，完整日志见[本轮报告](../review/lean-rerun-20261107/README.zh.md)。精炼稿新增结论及旧编号差异见[范围说明](../review/compact-20261107/lean_scope.md)。下列既有发布记录对应其原快照；文档状态校正不改变Lean证明源码。
+
 # Lean 形式化验证与复现
 
 > 固定版本：609 个生产模块、3067 个登记端点，及覆盖表中 30 个编号数学结论。生产源已在隔离目录从零本项目编译产物开始构建；固定上游缓存复用。登记数不是论文定理数，也不是所有辅助声明的数量。精确运行时间、命令退出码、关键类型与公理记录见 [实验结果](verification/release/RESULTS.json)。
@@ -42,3 +44,4 @@ python3 scripts/verify_release.py --fresh --width 2
 “production fresh”指起始没有本项目 `.olean` / `.ilean`，不表示没有旧 linter 警告。原有 deprecated import、unused tactic 等警告如实记录，不为消除警告修改冻结证明。默认根汇总检查与从零项目模块编译分开记时；允许复用的仅为锁定上游依赖缓存。
 
 原核心公理脚本及其 JSON 中的历史字段名 `theorem_count` 按 `theorems.json` 的登记声明计数；本说明统一称登记端点，不将定义或辅助声明冒称论文定理。
+

@@ -1,0 +1,20 @@
+--- pass2/02_combined.en.md
++++ pass3/02_combined.en.md
+@@ -82,7 +82,7 @@
+ 
+ Theorem 1.2 directly proves Wormald's Hessian conjecture [6, Conjecture 6]. Corollary 1.3 combines existing counting and spectral results with the equality and nonregular-base arguments given here. The limit in Conjecture 2 follows from the closed form in [12] and Wormald's factor $e^{1/d}$; Corollary 1.4 adds strict monotonicity. Section 10 retains the expansion through $d^{-5}$, with remainder $O(d^{-6})$, as a calculation from that closed form.
+ 
+-Bhattacharjee [13, Theorems 1.1 and 1.3, Proposition 3.1, Lemma 3.2 and Corollary 3.3] also treats Wormald's Conjectures 2 and 6. The original angular Hessian, positivity, determinant/rational-square formulas and carousel limit were obtained independently in our Wormald project [15] and in his work. We retain our direct derivation and record the overlap. Our October 8 path archive [14] concerns a different part of the paper and is not used to date the Hessian result. Bhattacharjee's public release dated 14 October [16] already contains the full Hessian; the fixed Liu--Ye manuscript revision cited in [15] is dated 19 October. Git commit dates and public-release dates have different meanings, and these records do not establish priority for our Hessian calculation.
++Bhattacharjee's public release of 14 October 2026 [16] contains the full original angular Hessian, its positive definiteness, and the associated determinant results. Our Wormald project is cited through the Liu--Ye Git manuscript revision dated 19 October [15]; the later version [13] also acknowledges the independent work. We retain a direct derivation and identify the overlapping results. These records distinguish a public release date from a Git manuscript revision date. The separate single-author path archive of 8 October [14] concerns the $L/C_*$ counting framework described above.
+ 
+ The contribution and dependency structure is as follows.
+ 
+@@ -2312,7 +2312,7 @@
+ 
+ 
+ 
+-[14] Xingchen Liu. *Constant-factor bounds for Hamiltonian paths in tournaments*, v1.0 (8 October 2026). [Version DOI: 10.5281/zenodo.23233166](https://doi.org/10.5281/zenodo.23233166). Later archive: v1.2, [10.5281/zenodo.23288896](https://doi.org/10.5281/zenodo.23288896).
++[14] Xingchen Liu. *Constant-factor bounds for Hamiltonian paths in tournaments*, v1.0 (8 October 2026). [Version DOI: 10.5281/zenodo.23233166](https://doi.org/10.5281/zenodo.23233166).
+ 
+ [15] Xingchen Liu and Xiangyu Ye. Wormald tournament project, manuscript revision `2fd6a2c30260b826feef71049d7d593527fd7a42` (19 October 2026). [Fixed manuscript](https://github.com/LStar404/wormald-tournament-conjectures/blob/2fd6a2c30260b826feef71049d7d593527fd7a42/docs/paper.zh.md).
+ 

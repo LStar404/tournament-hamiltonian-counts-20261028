@@ -1,0 +1,22 @@
+{
+  "01_combined.zh.pdf": {
+    "pages": 37,
+    "sha256": "221056ebe44b2603305cb8e35727d6dd2f3a8d21c7950bdf6194da8e38a9ad89",
+    "changed_pages": [
+      7,
+      8
+    ],
+    "outside": [],
+    "questions": []
+  },
+  "02_combined.en.pdf": {
+    "pages": 41,
+    "sha256": "bacbf7bebab2460b5e5003b15e6ad132fc982e219ae0a27a42b9a38ba664f23a",
+    "changed_pages": [
+      7,
+      8
+    ],
+    "outside": [],
+    "questions": []
+  }
+}
