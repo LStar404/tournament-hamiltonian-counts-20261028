@@ -2236,6 +2236,20 @@ The repository snapshot [17] documents Lean endpoints for 30 numbered results of
 
 The [actual rerun record](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/f578a34dd43f0af7b7e866f4a2e7fd0e55acda72/review/lean-rerun-20261107/README.zh.md) documents the rebuild and audits of the fixed formal project. Its coverage is tied to the historical source and endpoint statements; a new correspondence for the concise manuscript and its added results remains to be completed. AI assistance was used in exposition and parts of proof checking.
 
+## Acknowledgments
+
+We thank Alexander Divoux, Shouda Wang, Professor Noga Alon of Princeton University, and Professor Nicholas Wormald of Monash University for our email exchanges.
+
+The following are personal acknowledgments from the first author, Xingchen Liu.
+
+I thank my coauthor Xiangyu Ye for the care and effort he put into the Lean formalization of the related results; the scope of machine verification is specified in the author statement. He has been my friend for many years and is my closest companion. Having made this journey with him is something I treasure beyond the paper itself.
+
+I thank Tomasz Jan for sharing a Polish probability problem collection in our course discussion group. It gave me a direction for this research. I also thank Xue Peng of the School of Mathematics, Sichuan University, for guidance on academic standards.
+
+I thank the doctors, nurses, and fellow patients in PICU at West China Hospital, Sichuan University. You changed me profoundly. This gratitude reaches beyond the paper, but it belongs to the person who wrote it.
+
+Finally, I thank Ms. Q.M.T. Although we are no longer part of each other's lives, to me, the beauty and the pain of that time nearly killed me, and changed me.
+
 ## References
 
 

@@ -1,0 +1,36 @@
+{
+  "zh": {
+    "pages": 38,
+    "changed_pages": [
+      37,
+      38
+    ],
+    "sha256": "5c1b85f9d66ec93d8b600ca065549a9bff2f72a07354a2a55bd06944b79f7a94",
+    "md_only_added_acknowledgments": true,
+    "outside_page": [],
+    "PICU_present": true,
+    "QMT_present": true,
+    "first_page_pixel_identical": true
+  },
+  "en": {
+    "pages": 40,
+    "changed_pages": [
+      39,
+      40
+    ],
+    "sha256": "e6dc7ab92b8bcccfbc28d2bdb573994e5ac0058ee6b5884f3839fa4dc4448024",
+    "md_only_added_acknowledgments": true,
+    "outside_page": [],
+    "PICU_present": true,
+    "QMT_present": true,
+    "first_page_pixel_identical": true
+  },
+  "inspection": {
+    "status": "pass",
+    "scope": "All 78 final pages pixel-compared with thanks_before; only zh37-38 and en39-40 changed, all four final pages visually reviewed again after last sentence removal. First pages unchanged.",
+    "completeness": "Six acknowledgment paragraphs visually checked in each language; PICU and Q.M.T. visible; English duplicate period fixed. Placement after author statement and before references verified. Final shortened last paragraph verified in both languages.",
+    "logs": "Both built in two passes; no Overfull, missing character, undefined reference or error found. Chinese xeCJK package-name warning remains nonblocking.",
+    "limitations": "Layout/addition consistency check, not a new mathematical review. No unprinted personal background included.",
+    "source_edited": false
+  }
+}
