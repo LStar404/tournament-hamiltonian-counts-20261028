@@ -6,14 +6,16 @@
 
 本分支保留主分支作为基线，供审查此次论文修订。
 
-- [中文主文](manuscripts/01_combined.zh.pdf)：37页。
-- [英文主文](manuscripts/02_combined.en.pdf)：41页。
+- [中文主文](manuscripts/01_combined.zh.pdf)：38页。
+- [英文主文](manuscripts/02_combined.en.pdf)：40页。
 - [中文详细证明伴随稿](manuscripts/07_detailed_proof.zh.pdf)：精炼前94页详细论证，保留原编号；作者说明同步本轮运行状态。
 - [英文详细证明伴随稿](manuscripts/08_detailed_proof.en.pdf)：精炼前98页详细论证，保留原编号；作者说明同步本轮运行状态。
 
 每份文稿另有同名 `.md` 与 `.tex` 源文件。主文重写了永久式、局部缩放和模型论证，长技术估计按明确位置引用详细伴随稿；压缩指主文阅读篇幅，不声称合计页数同步下降。专题稿和旧导读保留其原版本。
 
 三轮自审逐轮发现、实际修改及核验记录见 `review/compact-20261107/self-review/`。本轮改写、独立审查、版式和编译记录见 `review/compact-20261107/`。Lean固定工程的本轮执行日志、结果及与新稿的范围区别见 `review/lean-rerun-20261107/` 和 `review/compact-20261107/lean_scope.md`。新增陈述没有自动获得历史端点认证。
+
+本次按问题、主结果、相关工作与证明安排重组引言，正文补动机与过渡、删已核实重复推导；记录见 `review/human-edit-20261108/`。
 
 ## 结果与已有工作的关系
 
@@ -73,5 +75,6 @@ python tools/create_graph_figures.py
 各编号结果的精确对应、完整类型和核验版本见[覆盖表](formal/COVERAGE.zh.md)；工具链、构建及递归公理审计步骤见[复现说明](formal/README.zh.md#复现)。旧 Hessian 核验及[卷积迁移记录](formal/CONVOLUTION_MIGRATION.zh.md)仍只描述各自版本，历史记录和来源哈希不改写。
 
 GitHub Actions 检查为手动触发，不会因推送或拉取请求自动运行。
+
 
 

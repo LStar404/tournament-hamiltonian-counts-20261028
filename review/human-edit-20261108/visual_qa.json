@@ -1,0 +1,29 @@
+{
+  "01_combined.zh.pdf": {
+    "pages": 38,
+    "sha256": "786b84f2da017f56b7b9a57add05a802cf62b593209f8770a343cbfdfeb7510b",
+    "key_pages": [
+      16,
+      31
+    ],
+    "outside": [],
+    "questions": []
+  },
+  "02_combined.en.pdf": {
+    "pages": 40,
+    "sha256": "49eca64dc95fa268ba88fdcfe695752574dd6cd590ace2a41af328ff7bdb8cc0",
+    "key_pages": [
+      17,
+      33
+    ],
+    "outside": [],
+    "questions": []
+  },
+  "_inspection": {
+    "status": "pass_no_blocking_layout_defect",
+    "scope": "All 78 pages viewed as contact sheets; Chinese pp16/31 and English pp17/33 viewed at full size for revised sections 6.4 and 8.2. All-page extracted-text bounds and ?? checks performed. Final compilation logs checked.",
+    "logs": "No Overfull, Missing character, undefined references or errors detected. Chinese log retains xeCJK package-name warning; English clean for checked patterns. Both documents built in two passes.",
+    "limitations": "Visual and layout QA only; does not certify mathematical validity or source/reference accuracy.",
+    "source_edited": false
+  }
+}

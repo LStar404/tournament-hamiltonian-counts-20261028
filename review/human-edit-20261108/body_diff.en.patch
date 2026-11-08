@@ -1,0 +1,267 @@
+--- before/sections2-8
++++ after/sections2-8
+@@ -3,7 +3,7 @@
+ ### 2.1 The random baseline and error conventions
+ 
+ 
+-Let $\mathfrak S_n$ be the symmetric group on $[n]$, and let $I_\pi$ indicate that the consecutive edges of $\pi$ all point forward. Each ordering uses $n-1$ distinct undirected edges, so
++To fix the normalization, let $I_\pi$ indicate that the ordering $\pi\in\mathfrak S_n$ is a directed Hamiltonian path. Its $n-1$ edges are oriented independently in a random tournament, giving
+ 
+ $$
+ H(T)=\sum_{\pi\in\mathfrak S_n}I_\pi(T),\qquad
+@@ -138,7 +138,7 @@
+ 
+ ## 3. A uniform permanent approximation
+ 
+-The counting argument needs a permanent estimate uniform under scaling and logarithmically many independent row and column deletions. We state the analytic theorem with its exact parameters; its full coefficient proof is in **Detailed proof companion, §§3.2–3.6**, retaining the original numbering. This section gives the proof structure and the estimates that close it. The supplement forms an integral part of the proof.
++Balancing a submatrix changes both its entries and its dimension. The permanent approximation must therefore have constants controlled by fixed density and spectral-gap bounds, rather than by the particular matrix. The theorem below provides this uniformity for the deletions used in Section 4. Its proof uses the coefficient and tail estimates established in **Detailed proof companion, §§3.2–3.6**, with the original numbering retained; those estimates are part of the proof.
+ 
+ McCullagh [5] obtained the determinant main term under moderate-deviation assumptions. The argument retained here comes from the earlier path project [14]. It allows signed inputs, although Sections 4–8 use only the nonnegative case. Divoux–Wang [12] give a related nonnegative theorem with an $o(1)$ error; extracting the $O(n^{-1})$ rate uses the uniform coefficient and tail estimates recorded below.
+ 
+@@ -164,7 +164,7 @@
+ 
+ [Equation (3.1)](#eq-uniform-permanent) can also be written as the determinant factor times the relative error $1+O_{C,q}(n^{-1})$. The subscript $C,q$ means that the error constant and the threshold dimension may depend on these two parameters fixed in advance, but must apply simultaneously to every admissible matrix.
+ 
+-**Proof with the coefficient estimates delegated to the supplement.** Choose fixed $1<\sigma<R<1/q$ (omit the upper restriction if $q=0$), and put
++**Proof.** Choose fixed $1<\sigma<R<1/q$ (omit the upper restriction if $q=0$), and put
+ 
+ $$
+ f(z)=\frac{\operatorname{per}(J_n+zE)}{n!},\qquad
+@@ -190,6 +190,8 @@
+ 
+ ## 4. Scaling and nonprincipal submatrices
+ 
++Deleting different row and column sets disturbs both the marginals and the total mass. We must balance the remaining matrix while tracking the scalar factor needed to recover its permanent.
++
+ Write $a=S\mathbf1/(n-1)$, $\tau=\sum a_i^2$, $P_p=J_p/p$ and $\Pi_p=I_p-P_p$. For a matrix $X$ of order $p$, let $\mathfrak m(X)=\sum X_{ij}$ and $g(X)=(X\mathbf1-\mathbf1,X^{\mathsf T}\mathbf1-\mathbf1)$. The normalization $C=2A/(n-1)$ has marginals $\mathbf1+a$ and $\mathbf1-a$. The three estimates below control balancing, its logarithmic cost, and the Gaussian factor. Their parameter dependence is the input to the uniform bounds in Lemmas 4.4–4.5.
+ 
+ ### 4.1 Scaling and Gaussian factors
+@@ -218,7 +220,7 @@
+ \varepsilon_0=\min\left\{\frac1{256L_0^2},\frac{1-q}{2(32L_0+2)}\right\}.
+ $$
+ 
+-If $\varepsilon\le\varepsilon_0$, the condition $\sum_i x_i=\sum_j y_j$ is satisfied by finite real potential vectors $x,y$ such that every row sum and column sum of $B=\operatorname{diag}(e^x)X\operatorname{diag}(e^y)$ equals $1$. Moreover,
++If $\varepsilon\le\varepsilon_0$, there exist finite real vectors $x,y$ with $\sum_i x_i=\sum_j y_j$ such that every row sum and column sum of $B=\operatorname{diag}(e^x)X\operatorname{diag}(e^y)$ equals $1$. Moreover,
+ 
+ $$
+ \|(x,y)\|_\infty\le4L_0\varepsilon,\qquad |B_{ij}|\le2C/p,\qquad \|B-P_p\|_{\rm op}\le(1+q)/2.
+@@ -246,7 +248,7 @@
+ 
+ In particular, if $\kappa=\mathfrak m(X)-p$, then $\operatorname{per}X\le e^\kappa\operatorname{per}B$. When the mass differs from $p$, $\theta_X$ itself need not be nonnegative.
+ 
+-**Proof mechanism.** Fix the gauge $\sum x_i=\sum y_j$. The reference matrix $\mathsf H_0$ has diagonal blocks $I$ and off-diagonal blocks $X_0,X_0^{\mathsf T}$, while the actual linearization $\mathsf H_X$ has diagonal blocks $\operatorname{diag}(X\mathbf1),\operatorname{diag}(X^{\mathsf T}\mathbf1)$ and off-diagonal blocks $X,X^{\mathsf T}$. Put $u=(\mathbf1,-\mathbf1)$ and $N=uu^{\mathsf T}/(2p)$ to fix the gauge. On the zero-sum subspaces, the inverse of $\mathsf H_0+N$ is expressed through $(I-EE^{\mathsf T})^{-1}$ and $(I-E^{\mathsf T}E)^{-1}$. The dense entry bound and operator gap give its induced $1$- and $\infty$-norms at most $L_0$. Both corresponding norms of $\mathsf H_X-\mathsf H_0$ are at most $3\varepsilon$; hence the Neumann series bounds the inverse of $\mathsf H_X+N$ by $2L_0$. The stated threshold then makes the nonlinear map a contraction in the radius $4L_0\varepsilon$ ball. This proves existence and the stated entry and spectral bounds. The block inverse and contraction estimates are supplied in Detailed proof companion §4.1.
++**Proof of the scaling estimates.** Fix the gauge $\sum x_i=\sum y_j$. The reference matrix $\mathsf H_0$ has diagonal blocks $I$ and off-diagonal blocks $X_0,X_0^{\mathsf T}$, while the actual linearization $\mathsf H_X$ has diagonal blocks $\operatorname{diag}(X\mathbf1),\operatorname{diag}(X^{\mathsf T}\mathbf1)$ and off-diagonal blocks $X,X^{\mathsf T}$. Put $u=(\mathbf1,-\mathbf1)$ and $N=uu^{\mathsf T}/(2p)$ to fix the gauge. On the zero-sum subspaces, the inverse of $\mathsf H_0+N$ is expressed through $(I-EE^{\mathsf T})^{-1}$ and $(I-E^{\mathsf T}E)^{-1}$. The dense entry bound and operator gap give its induced $1$- and $\infty$-norms at most $L_0$. Both corresponding norms of $\mathsf H_X-\mathsf H_0$ are at most $3\varepsilon$; hence the Neumann series bounds the inverse of $\mathsf H_X+N$ by $2L_0$. The stated threshold then makes the nonlinear map a contraction in the radius $4L_0\varepsilon$ ball. This proves existence and the stated entry and spectral bounds. The block inverse and contraction estimates are supplied in Detailed proof companion §4.1.
+ 
+ For nonnegative $X$, apply this construction to the convex potential
+ 
+@@ -398,7 +400,7 @@
+ Y^{\mathsf T}Y-\frac{S^{\mathsf T}S}{n^2}\succeq0.
+ $$
+ 
+-The last positive-semidefinite difference has trace $O(n^{-1})$, since $\operatorname{tr}(S^{\mathsf T}S)=n(n-1)$. Integrating the log-determinant derivative across this Gram difference, with a fixed spectral gap, gives $|\log\mathcal G(Y)-\log D_n(S)|=O(n^{-1})$. Thus the $O(n^{-1})$ comparison concerns the logarithmic Gaussian factors. Combining it with Lemma 4.3, deletion, centering and scalar normalization gives
++The last positive-semidefinite difference has trace $O(n^{-1})$, since $\operatorname{tr}(S^{\mathsf T}S)=n(n-1)$. Integrating the log-determinant derivative across this Gram difference, with a fixed spectral gap, gives $|\log\mathcal G(Y)-\log D_n(S)|=O(n^{-1})$. Combining it with Lemma 4.3, deletion, centering and scalar normalization gives
+ 
+ $$
+ |\log\mathcal G(B_X-P_m)-\log D_n(S)|=O(\eta).
+@@ -427,7 +429,7 @@
+ 
+ The permanent of the adjacency matrix counts directed cycle covers. The convolution [equation (5.1)](#eq-path-convolution) converts cycle-cover counts on complementary vertex sets into the path count. It is the tournament specialization of Proposition 2 of Irving and Omar [1], where the complementary adjacency matrix is $\overline A=J-A=I+A^{\mathsf T}$ and includes the diagonal entries.
+ 
+-The identity can also be checked directly using generating functions. Set $X=\operatorname{diag}(z_1,\ldots,z_n)$, the diagonal matrix with diagonal entries $z_1,\ldots,z_n$ and zero off-diagonal entries. More generally, $\operatorname{diag}(v)$ has the entries of the vector $v$ on its diagonal. Multiplying by the corresponding variable whenever a vertex is visited gives the generating function for all walks:
++For a direct generating-function proof, set $X=\operatorname{diag}(z_1,\ldots,z_n)$ and give each visit to vertex $i$ a factor $z_i$. The walk generating function is
+ 
+ $$
+ 1+\mathbf1^{\mathsf T}(I-XA)^{-1}X\mathbf1
+@@ -531,7 +533,7 @@
+ \qquad\text{when }d=o(\sqrt n).
+ $$
+ 
+-To obtain an upper bound for all tournaments, Section 7 separately handles large score variance and extreme degrees, retaining the score penalty in the remaining class. The next lemma controls this same spectral factor for every tournament.
++To obtain an upper bound for all tournaments, Section 7 separately handles large score variance and extreme degrees, retaining the score penalty in the remaining class. Section 6 bounds this spectral factor, culminating in the all-order comparison of Proposition 6.6.
+ 
+ ## 6. The spectral bound and equality
+ 
+@@ -725,7 +727,7 @@
+ =\|K_d^pe_1\|_2^2.
+ $$
+ 
+-The signed cyclic shift $Z$ in the proof companion, Appendix A.2 satisfies $Z^TT_dZ=T_d$, and therefore $Z^TT_d^{2p}Z=T_d^{2p}$. Comparing diagonal entries gives $(T_d^{2p})_{j+1,j+1}=(T_d^{2p})_{jj}$ for $j<d$. At $j=d$, the two signs cancel and give $(T_d^{2p})_{11}=(T_d^{2p})_{dd}$. Thus all diagonal entries agree, and
++The signed cyclic shift $Z$ in Appendix A.2 of the detailed proof companion satisfies $Z^TT_dZ=T_d$, and therefore $Z^TT_d^{2p}Z=T_d^{2p}$. Comparing diagonal entries gives $(T_d^{2p})_{j+1,j+1}=(T_d^{2p})_{jj}$ for $j<d$. At $j=d$, the two signs cancel and give $(T_d^{2p})_{11}=(T_d^{2p})_{dd}$. Thus all diagonal entries agree, and
+ 
+ $$
+ \begin{aligned}
+@@ -749,6 +751,19 @@
+ In particular, the inequality holds for every odd $p$, as required in the next section.
+ 
+ ### 6.4 The extremum of the spectral ratio
++
++**Lemma 6.4 (The spectral ratio and equality).**
++
++Let $S$ be a tournament sign matrix of order $d$, and put $r_d=\rho_d(T_d)$. Then
++
++$$
++\rho_d(S)\le r_d,
++\quad\text{with equality if and only if }S=\Omega^TT_d\Omega.
++$$
++
++Here $\Omega$ is a signed permutation matrix.
++
++**Proof.**
+ 
+ Let $S$ be any tournament sign matrix of order $d$, with nonzero eigenvalues $\pm i\lambda_j$, where $\lambda_j>0$, and put $x_j=\lambda_j^2/d^2$. Since $2\sum_j\lambda_j^2=\|S\|_F^2=d(d-1)$, we have $x_j\le(d-1)/(2d)<1/2$. In the skew-symmetric canonical form, a zero block contributes $1$ to both determinants, while a nonzero two-dimensional block contributes $1+x_j$ and $1-x_j$, respectively. Hence
+ 
+@@ -799,21 +814,16 @@
+ =\|T_d^2\|_F^2=\operatorname{tr}T_d^4.
+ $$
+ 
+-By the proof companion, Appendix A.3, equality of the fourth moments is equivalent to $S=\Omega^TT_d\Omega$ for a signed permutation matrix $\Omega$. Conversely, $\Omega^T\Omega=I$ implies
++The fourth-moment classification in Appendix A.3 of the detailed proof companion shows that equality is equivalent to $S=\Omega^TT_d\Omega$ for a signed permutation matrix $\Omega$. Conversely, $\Omega^T\Omega=I$ implies
+ 
+ $$
+ I+tS=\Omega^T(I+tT_d)\Omega,\qquad
+ \det(I+tS)=(\det \Omega)^2\det(I+tT_d)=\det(I+tT_d).
+ $$
+ 
+-**Lemma 6.4 (The spectral ratio and equality).**
+-
+-Take $t=1/d$ and $t=i/d$ separately to obtain $\rho_d(S)=r_d$. Thus
+-
+-$$
+-\rho_d(S)\le r_d,
+-\quad\text{with equality if and only if }S=\Omega^TT_d\Omega.
+-$$
++Take $t=1/d$ and $t=i/d$ to obtain $\rho_d(S)=r_d$, proving the converse.
++
++
+ 
+ 
+ **Proof (Ordinary isomorphism in the regular case).**
+@@ -836,7 +846,7 @@
+ 0=(T_d\varepsilon)_i-(T_d\varepsilon)_{i+1}=\varepsilon_i+\varepsilon_{i+1}.
+ $$
+ 
+-It follows that $\varepsilon_i=(-1)^{i-1}\varepsilon_1$. The common sign $\varepsilon_1$ cancels in $D_{\varepsilon}T_dD_{\varepsilon}$, leaving the alternating switching. the proof companion, Appendix A.2 identifies this tournament with $\mathrm{Car}_d$. Thus, among regular tournaments, equality holds only for the carousel, up to isomorphism.
++It follows that $\varepsilon_i=(-1)^{i-1}\varepsilon_1$. The common sign $\varepsilon_1$ cancels in $D_{\varepsilon}T_dD_{\varepsilon}$, leaving the alternating switching. Appendix A.2 of the detailed proof companion identifies this tournament with $\mathrm{Car}_d$. Thus, among regular tournaments, equality holds only for the carousel, up to isomorphism.
+ 
+ 
+ ### 6.5 A gap from the sixth moment
+@@ -948,7 +958,7 @@
+ 
+ The constant $K$ in this section may increase from one occurrence to the next; after the degree thresholds above are fixed, it is absolute. Section 5.1 has already bounded the long terms by $o(n^{-1})\mu_n$, so here we estimate only short terms $|U|\le k_n$.
+ 
+-The three cases require different precision: the high-variance class contributes $o(n^{-1})$ after normalization; the exceptional-vertex class only needs a fixed gap below the baseline $1$; the remaining class carries the sharp $O(n^{-1})$ estimate. All constants in the local scaling lemmas are fixed before taking the common large-order threshold.
++The required precision differs across the three classes: a fixed gap below $L$ suffices for the first two, while the last requires the precise main term. The parameters in the scaling lemmas are fixed before taking a common large-order threshold.
+ 
+ **Proposition 7.1 (Uniform sharp upper bound).** There are absolute constants $K,n_0$ such that every tournament $T$ of order $n\ge n_0$ satisfies
+ 
+@@ -956,9 +966,9 @@
+ H(T)\le (L+K/n)\mu_n.
+ $$
+ 
+-### 7.1 Applying the nonprincipal permanent estimate
+-
+-The estimate of Lemma 4.4 allows different deleted row and column sets. We use it below to control edges between the exceptional set and the core. When the deleted sets agree, the score product is retained outside the path convolution.
++### 7.1 The role of nonprincipal deletions
++
++The independent row and column deletions in Lemma 4.4 are needed for the cross-block matchings in Section 7.3: an edge entering the core occupies a column, whereas an edge leaving it occupies a row. The occupied sets can differ. In Section 7.4 the deletions are principal, and the same estimate supplies a common score product that remains outside the path convolution. These two uses explain why a principal-submatrix estimate alone would be insufficient.
+ 
+ ### 7.2 Large score variance
+ 
+@@ -1019,7 +1029,7 @@
+ $$
+ 
+ 
+-Write $L_k=\log(k!)$. Then
++**Concavity and deletion estimates.** We record the calculations supporting the two bounds above. Write $L_k=\log(k!)$. Then
+ 
+ $$
+ \begin{aligned}
+@@ -1069,18 +1079,7 @@
+ \end{aligned}
+ $$
+ 
+-For $m=2r+1$, the logarithmic form of Stirling's formula gives
+-
+-$$
+-m f(r)=\frac{2r+1}{r}\left[r\log r-r+\tfrac12\log(2\pi r)+O(1/r)\right],
+-$$
+-
+-$$
+-\log(m!/2^m)=m\log(m/2)-m+\tfrac12\log(2\pi m)+O(1/m).
+-$$
+-
+-Subtracting and using $r=(m-1)/2$ gives $\tfrac12\log m+O(1)$. For $m=2r$, $\widetilde f(\eta)=[f(r-1)+f(r)]/2$; applying the same formula to each term gives the same difference. Exponentiating therefore yields $K\sqrt{m+1}$. The cases $m=1,2$ are incorporated directly into the constant.
+-
++The factorial estimate for both parities is verified at the end of this proof.
+ 
+ Write $b_i=d_i^+-(n-1)/2$. For a retained vertex, let $e_i$ count its outgoing edges to $U$. Then
+ 
+@@ -1110,7 +1109,7 @@
+ It follows that $V_{\rm deg}(T-U)/(8(n-k)^2)\ge(2-o(1))\log n$, so the penalty is $n^{-2+o(1)}$. Multiplying by $\sqrt n$ and $\sum_kw_k<\infty$ gives $n^{-3/2+o(1)}$.
+ 
+ 
+-To estimate the factorial factor in the variance bound, apply the Stirling formula from the proof companion, Appendix B.3. With $c$ denoting its constant,
++**The factorial factor.** Apply the Stirling formula in Appendix B.3 of the detailed proof companion. With $c$ denoting its constant,
+ 
+ $$
+ f(r)=\log r-1+\frac{\log r}{2r}+\frac cr+O(r^{-2}).
+@@ -1209,7 +1208,7 @@
+ 
+ For the squared score sum, use $\|S_M\mathbf1\|_2\le\|S\mathbf1\|_2+f\sqrt N$ and divide by $N-1$. The same argument remains valid after further deleting a short core subset. Throughout these deletions the original exceptional set $F$ is retained, allowing the constants to be chosen uniformly.
+ 
+-First classify cycle covers according to their connections between $F$ and the core $M$, thereby estimating $\operatorname{per}A_T$. An exceptional vertex has few neighbors in one direction. A cycle cover must use edges in both directions unless that vertex is matched within $F$, and the latter choice incurs a cost of order $1/N$. Use the paired core weights $\ell,r$ from Lemma 4.4, whose total deviation satisfies
++**Cross-block matchings.** Classify cycle covers according to their connections between $F$ and the core $M$, thereby estimating $\operatorname{per}A_T$. An exceptional vertex has few neighbors in one direction. A cycle cover must use edges in both directions unless that vertex is matched within $F$, and the latter choice incurs a cost of order $1/N$. Use the paired core weights $\ell,r$ from Lemma 4.4, whose total deviation satisfies
+ 
+ $$
+ \sum_{i\in M}|\ell_i-1|+\sum_{i\in M}|r_i-1|
+@@ -1349,10 +1348,10 @@
+ =\frac{191}{200}<1.
+ $$
+ 
+-Either choice leaves the final upper-bound constant unchanged.
+-
+-
+-An exceptional vertex satisfies
++Both estimates suffice for the upper bound. The calculations below verify the uniform bounds used in this reduction, including the core weights, the matching multiplicities, and the common large-order threshold.
++
++
++**Core and weight bounds.** An exceptional vertex satisfies
+ 
+ $$
+ |d_i^+-(n-1)/2|>\frac9{20}(n-1),\quad
+@@ -1717,7 +1716,7 @@
+ =2e\det(I+S/n)\left(1+O(n^{-1}+d^2/n^2)\right).
+ $$
+ 
+-Substitution proves the theorem. All estimates use the same absolute constant; only the threshold beyond which the small-score condition holds depends on $d$.
++It remains to justify the uniform constants in the summation and determinant comparison. The following bounds give the required absolute error; only the threshold at which the small-score assumption applies depends on $d$.
+ 
+ 
+ For every $k$, using $d+k+1\le(d+1)(k+1)$ gives
+@@ -1727,7 +1726,7 @@
+ \le\frac{(d+1)^2}{n}\sum_kw_k(k+1)^2.
+ $$
+ 
+-Thus using $k_n$ as a replacement for $k$ is unnecessary, and no $\log n$ loss occurs. For $Q^{\mathsf T}=-Q$,
++The finite moment on the right gives an absolute constant. For the determinant comparison, use $Q^{\mathsf T}=-Q$ to write
+ 
+ $$
+ (I+Q)^{-1}=(I-Q)(I-Q^2)^{-1},\qquad
+@@ -1811,7 +1810,7 @@
+ P(n)\ge(L-O(n^{-1}))\mu_n.
+ $$
+ 
+-The transition from signed similarity to the path count uses Theorem 8.1, with $d=0$ and $d=1$, respectively. Let the constants and thresholds for the lower and upper bounds be $K_l,N_l$ and $K_u,N_u$. Taking $K=\max(K_l,K_u)$ and $n_0=\max(N_l,N_u,2)$ completes Theorem 1.1.
++The passage from the spectrum to the path count uses Theorem 8.1, with $d=0$ and $d=1$, respectively. We give the index calculation for the signed similarity and the uniform expansion of the spectral quotient below.
+ 
+ 
+ Write $n=2m+1$, with original indices $i=0,\ldots,2m$. Let $D_{ii}=(-1)^i$. For $i<j$,
+@@ -1881,7 +1880,7 @@
+ H(\mathrm{Car}_n)/\mu_n=r_n+O(n^{-1})=L+O(n^{-1}),
+ $$
+ 
+-there is therefore a fixed $K_l$ such that $P(n)\ge(L-K_l/n)\mu_n$. $\square$
++there is therefore a fixed $K_l$ such that $P(n)\ge(L-K_l/n)\mu_n$. Combining this with the upper bound, take $K=\max(K_l,K_u)$ and $n_0=\max(N_l,N_u,2)$, where $K_u,N_u$ and $K_l,N_l$ are the respective constants and thresholds. This proves Theorem 1.1. $\square$
+ 
+ 
+ ### 8.3 Degree stability near the maximum

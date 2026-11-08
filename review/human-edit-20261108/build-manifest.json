@@ -1,0 +1,42 @@
+{
+  "source_root": "/workspace/scratch/c027a3e8621a/tournament_recovery",
+  "font_mode": "documented portable alternatives; not the original Microsoft or bundled Noto SC font bytes",
+  "fonts": {
+    "serif": {
+      "source": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "collection_index": 2,
+      "source_sha256": "5d9c31a059600193c9d7968a998bde886ccdc77e934006ad243b41794c496a7d",
+      "output_sha256": "3b57a5d6ed1513825c59eae34b0cd97c262d0f08ad8b35b9720ba4dd618b212f"
+    },
+    "sans_bold": {
+      "source": "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+      "collection_index": 2,
+      "source_sha256": "faa5f3656a78b2e2d450d27fe8382c778bc2b6bb5ea29c986664a6a435056ceb",
+      "output_sha256": "9023d55873ce84a6fcbc8d5ade547ab571563091654a5e854c64e04e0a44f8c5"
+    }
+  },
+  "documents": [
+    {
+      "file": "01_combined.zh.tex",
+      "source_sha256": "49e307482864d61075258ab6682dc4f3fd336c1bee62ac86d7b986b9671b690c",
+      "working_sha256": "06b4dfc8dd369086d80bfc163e9e9336d7750e3e3cb7d26a88a56b57e43ca983",
+      "body_sha256": "2ab5e176e502de46dfec0cad12dcebdb888f7d101638a297709d14376764c60b",
+      "body_unchanged": true,
+      "preamble_compatibility_shims": [],
+      "passes": 2,
+      "pdf_sha256": "786b84f2da017f56b7b9a57add05a802cf62b593209f8770a343cbfdfeb7510b",
+      "underfull_count": 0
+    },
+    {
+      "file": "02_combined.en.tex",
+      "source_sha256": "73af770e61b6d6c3dd6cbb1909b7fc22d282fbbe67351bc900ed8336261d9495",
+      "working_sha256": "6b188e20817507e3dce4fc2140afa6e934282687e48cf25b3b82f00d90bb7d44",
+      "body_sha256": "e86ac86e76c8c9b476ff3a4a7097ed059bd2d008e8a75c35af1d09b61b7ce2fe",
+      "body_unchanged": true,
+      "preamble_compatibility_shims": [],
+      "passes": 2,
+      "pdf_sha256": "49eca64dc95fa268ba88fdcfe695752574dd6cd590ace2a41af328ff7bdb8cc0",
+      "underfull_count": 1
+    }
+  ]
+}
