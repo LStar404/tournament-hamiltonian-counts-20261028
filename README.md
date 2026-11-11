@@ -2,7 +2,9 @@
 
 这份材料收录刘星辰、叶祥宇关于竞赛图 Hamilton 路径计数与 Wormald 随机吹胀模型的稿件。论文保留详细推导，另附面向初学者的中文导读、一页思路说明，以及本轮公式、来源和排版复核记录。
 
-## 2026年11月11日二次审稿修订版
+## 2026年11月11日最终编辑整理版
+
+最终编辑仅在中英文主文的作者声明中增加固定版本的英文覆盖摘要直链，并压缩摘要中的永久式定位措辞。数学内容、必要技术附录和历史形式化记录不变；源稿、生成 TeX 与 PDF 同步检查，见[最终编辑记录](review/final-editorial-20261111/README.md)。
 
 第二轮修订补全摘要中 $0\le\varepsilon\le(L-1)/2$ 的适用范围及 $L,\mu_n$ 的定义，增加偶数阶精确极值图度方差为 $\Theta(n)$ 的观察，以及相对于实际最大值的稳定性推论 8.4。必要技术附录已统一记号与引用，并新增[英文形式化覆盖摘要](review/revision-20261111-round2/lean_coverage.en.md)。
 
@@ -17,7 +19,7 @@
 
 原[英文详细证明伴随稿](manuscripts/08_detailed_proof.en.pdf)和[中文详细证明伴随稿](manuscripts/07_detailed_proof.zh.pdf)、专题稿及导读保留为独立展开阅读材料，不与新正文并列作为投稿版本。主要结论所需的长证明已收入技术附录；旧稿的额外初等计算和高阶展开属于可选阅读。
 
-本轮修改和实际检查见 [review/revision-20261111-round2/](review/revision-20261111-round2/README.md)，上一轮记录保留在 [review/revision-20261111/](review/revision-20261111/README.md)。[英文覆盖摘要](review/revision-20261111-round2/lean_coverage.en.md)补充本次新增陈述；[详细对应表](review/revision-20261111/lean_correspondence.md)继续区分旧端点已覆盖的结论、新书面证明链及无新增端点的结果。本轮未改变 Lean 生产源码，也不把历史构建记录写作本次重新编译。
+第二轮修改和实际检查见 [review/revision-20261111-round2/](review/revision-20261111-round2/README.md)，上一轮记录保留在 [review/revision-20261111/](review/revision-20261111/README.md)。[英文覆盖摘要](review/revision-20261111-round2/lean_coverage.en.md)补充本次新增陈述；[详细对应表](review/revision-20261111/lean_correspondence.md)继续区分旧端点已覆盖的结论、新书面证明链及无新增端点的结果。本轮未改变 Lean 生产源码，也不把历史构建记录写作本次重新编译。
 
 历史精炼、来源和形式化复跑记录继续保留，版本边界见 [review/README.md](review/README.md)。
 

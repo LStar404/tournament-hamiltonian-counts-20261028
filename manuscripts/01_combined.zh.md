@@ -16,7 +16,7 @@ $$
 P(n)=\bigl(L+O(n^{-1})\bigr)\mu_n.
 $$
 
-这将 Divoux–Wang 的尖锐首项渐近式细化为统一的 $O(n^{-1})$ 误差。在非主子阵缩放和路径卷积求和中保留度差惩罚，还得到度稳定性：对 $0\le\varepsilon\le(L-1)/2$ 和充分大的 $n$，若 $H(T)/\mu_n\ge L-\varepsilon$，则一致地有 $\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)$。因此，精确极值图的平均平方度差有界。永久式近似是配有独立定量证明的分析工具，不作为新的行列式主项主张。作为同一谱比值的联系和应用，我们独立于 Bhattacharjee 的重合结果推导 Wormald 原角 Hessian，并得到固定基图阶数的期望极值及正则内部块常数的严格单调性。
+这将 Divoux–Wang 的尖锐首项渐近式细化为统一的 $O(n^{-1})$ 误差。在非主子阵缩放和路径卷积求和中保留度差惩罚，还得到度稳定性：对 $0\le\varepsilon\le(L-1)/2$ 和充分大的 $n$，若 $H(T)/\mu_n\ge L-\varepsilon$，则一致地有 $\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)$。因此，精确极值图的平均平方度差有界。永久式近似作为分析工具使用，并配有独立的定量证明。作为同一谱比值的联系和应用，我们独立于 Bhattacharjee 的重合结果推导 Wormald 原角 Hessian，并得到固定基图阶数的期望极值及正则内部块常数的严格单调性。
 
 ## 1. 引言
 
@@ -2189,7 +2189,7 @@ $$
 
 仓库快照 [17] 记录了修订前稿件 30 个编号结果的 Lean 端点，包括尖锐路径界、原角 Hessian、路径卷积、谱比较及固定基图期望极值。[固定覆盖表](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/c678e9ee24fb304cad755a27c99f511c8640f75e/formal/COVERAGE.zh.md) 说明对象、假设、量词和覆盖边界；配套[复现说明](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/c678e9ee24fb304cad755a27c99f511c8640f75e/formal/README.zh.md) 给出工具链和审计步骤。
 
-[固定版本的稿件对应表](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/1b66d66cd287310c3a85dc3c64816fa319d55af2/review/revision-20261111/lean_correspondence.md)区分既有端点覆盖的结论与修订后的书面证明。定理 1.1、1.3 已有端点；命题 7.3、定理 1.2／推论 8.3、偶数阶方差观察以及推论 8.4 均无新增端点。[历史构建记录](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/1b66d66cd287310c3a85dc3c64816fa319d55af2/review/lean-rerun-20261107/summary.json)记载的是 2026 年 11 月 7 日的运行，不是这些新增陈述的编译。本轮修订不声称重新完成全量 Lean 构建。AI 用于表述和部分证明检查。
+[固定版本的稿件对应表](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/1b66d66cd287310c3a85dc3c64816fa319d55af2/review/revision-20261111/lean_correspondence.md)区分既有端点覆盖的结论与修订后的书面证明。另附[英文覆盖摘要](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/fbe1b67e72c6119d865c801455e829329dea0c2a/review/revision-20261111-round2/lean_coverage.en.md)，便于快速查阅。定理 1.1、1.3 已有端点；命题 7.3、定理 1.2／推论 8.3、偶数阶方差观察以及推论 8.4 均无新增端点。[历史构建记录](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/1b66d66cd287310c3a85dc3c64816fa319d55af2/review/lean-rerun-20261107/summary.json)记载的是 2026 年 11 月 7 日的运行，不是这些新增陈述的编译。本轮修订不声称重新完成全量 Lean 构建。AI 用于表述和部分证明检查。
 
 ## 致谢
 

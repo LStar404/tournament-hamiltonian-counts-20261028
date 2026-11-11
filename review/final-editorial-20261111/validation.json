@@ -1,0 +1,102 @@
+{
+  "run_date": "2026-11-11",
+  "base_commit": "fbe1b67e72c6119d865c801455e829329dea0c2a",
+  "scope": "Two editorial changes in each main manuscript. No mathematical revision.",
+  "source_checks": {
+    "only_two_main_text_replacements_per_language": true,
+    "all_math_spans_unchanged": true,
+    "main_markdown_to_tex_idempotent": true,
+    "compile_tex_input_check": {
+      "passed": true,
+      "documents": 10
+    },
+    "appendix_generator_check": true,
+    "appendices_and_formal_sources_and_historical_records_unchanged": true,
+    "git_diff_check": true
+  },
+  "rerun_regressions": {
+    "stability_examples": "Passed and exactly matches the preceding 1099-example record.",
+    "formal_source_identity": "37 English rows; 85 unchanged endpoint identities; 10 pinned evidence files; 628 historical inputs; 609 production modules; 3067 registered endpoints.",
+    "full_lean_build_performed": false,
+    "new_axiom_audit_performed": false
+  },
+  "pdf_build": {
+    "engine": "XeLaTeX",
+    "font_mode": "Documented portable alternatives; manuscript bodies unchanged by font conversion.",
+    "documents": [
+      {
+        "pdf": "manuscripts/01_combined.zh.pdf",
+        "pages": 38,
+        "pdf_sha256": "390f2ccb8c64ba5890bd358dc3bd6b0248d5eddb084e7a8aec2f69f396342459",
+        "tex_sha256": "51e105e17910ae7fc8fc611d5ff2ac02ea120d919627d2bedde5bab201a6dd6d",
+        "markdown_sha256": "39b8c9579b405be30e066c6384bc62cc3e669a79a231dfc61848a34da8d9cc35",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "final_pass_log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 0,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "new_clickable_link_pages": [
+          37
+        ],
+        "text_outside_page": []
+      },
+      {
+        "pdf": "manuscripts/02_combined.en.pdf",
+        "pages": 41,
+        "pdf_sha256": "ebe74609e1a19dc038cadb2b56b30779c0941f600a03b36c307d8d8dc17606f3",
+        "tex_sha256": "98126ab656a9dcad983e6c62b1dcf2fb4bc8f6fa7489db75ad7817ddf1ef016c",
+        "markdown_sha256": "a2465bc5740c97fe134cecfb19e7177a5b9bcbae9c207044550f1af402183158",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "final_pass_log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 2,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "new_clickable_link_pages": [
+          40
+        ],
+        "text_outside_page": []
+      }
+    ],
+    "unchanged_appendices": [
+      {
+        "pdf": "manuscripts/09_technical_appendix.en.pdf",
+        "pdf_sha256": "473158f4e0d021cf6b9dd8703129dd7a9f406a345680bf6ac2e28e1634c79d0a",
+        "pages": 47,
+        "unchanged_from_base": true
+      },
+      {
+        "pdf": "manuscripts/10_technical_appendix.zh.pdf",
+        "pdf_sha256": "9b2ebaf9522c87650de1b5896f22cd4c07d0058db4c2e1b264118e3b8e38ea8b",
+        "pages": 46,
+        "unchanged_from_base": true
+      }
+    ],
+    "visual_review": {
+      "all_79_main_pages_contact_sheets": true,
+      "high_resolution_pages": {
+        "01_combined.zh.pdf": [
+          1,
+          37
+        ],
+        "02_combined.en.pdf": [
+          1,
+          40
+        ]
+      },
+      "result": "No visible clipping, overlap, overflow or missing glyphs found."
+    }
+  },
+  "english_coverage_link": {
+    "uri": "https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/fbe1b67e72c6119d865c801455e829329dea0c2a/review/revision-20261111-round2/lean_coverage.en.md",
+    "target_verified_through_github_connector": true,
+    "target_blob_sha": "75579858c5ffc87dd5347aa32f4c7b513366fe9c",
+    "pdf_clickable_annotations_verified": true
+  },
+  "github_ci_run_performed": false
+}
