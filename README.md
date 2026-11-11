@@ -2,26 +2,28 @@
 
 这份材料收录刘星辰、叶祥宇关于竞赛图 Hamilton 路径计数与 Wormald 随机吹胀模型的稿件。论文保留详细推导，另附面向初学者的中文导读、一页思路说明，以及本轮公式、来源和排版复核记录。
 
-## 精炼修订版
+## 2026年11月11日审稿修订版
 
-本分支保留主分支作为基线，供审查此次论文修订。
+本轮把全局 $O(n^{-1})$ 路径计数和度方差稳定性作为论文主线。永久式定理明确定位为有独立定量证明的分析工具，不主张首次得到 $O(n^{-1})$ 永久式近似，也不把有符号输入或类一致性本身当作创新区别。
 
-- [中文主文](manuscripts/01_combined.zh.pdf)：38页。
-- [英文主文](manuscripts/02_combined.en.pdf)：40页。
-- [中文详细证明伴随稿](manuscripts/07_detailed_proof.zh.pdf)：精炼前94页详细论证，保留原编号；作者说明同步本轮运行状态。
-- [英文详细证明伴随稿](manuscripts/08_detailed_proof.en.pdf)：精炼前98页详细论证，保留原编号；作者说明同步本轮运行状态。
+唯一的英文投稿组合为：
 
-每份文稿另有同名 `.md` 与 `.tex` 源文件。主文重写了永久式、局部缩放和模型论证，长技术估计按明确位置引用详细伴随稿；压缩指主文阅读篇幅，不声称合计页数同步下降。专题稿和旧导读保留其原版本。
+- [英文正文](manuscripts/02_combined.en.pdf)，主题为定量路径计数与度稳定性。
+- [英文必要技术附录](manuscripts/09_technical_appendix.en.pdf)，收录永久式、非主子阵缩放与恢复、必要谱等号辅助证明。
 
-三轮自审逐轮发现、实际修改及核验记录见 `review/compact-20261107/self-review/`。本轮改写、独立审查、版式和编译记录见 `review/compact-20261107/`。Lean固定工程的本轮执行日志、结果及与新稿的范围区别见 `review/lean-rerun-20261107/` 和 `review/compact-20261107/lean_scope.md`。新增陈述没有自动获得历史端点认证。
+[中文正文](manuscripts/01_combined.zh.pdf)和[中文技术附录](manuscripts/10_technical_appendix.zh.pdf)是同一组合的中文对照。每份均有同名 Markdown 和 TeX 源文件。技术附录保留原章节及公式编号以便核查。
 
-本次按问题、主结果、相关工作与证明安排重组引言，正文补动机与过渡、删已核实重复推导；记录见 `review/human-edit-20261108/`。
+原[英文详细证明伴随稿](manuscripts/08_detailed_proof.en.pdf)和[中文详细证明伴随稿](manuscripts/07_detailed_proof.zh.pdf)、专题稿及导读保留为独立展开阅读材料，不与新正文并列作为投稿版本。主要结论所需的长证明已收入技术附录；旧稿的额外初等计算和高阶展开属于可选阅读。
+
+本轮修改和实际检查见 [review/revision-20261111/](review/revision-20261111/README.md)。[当前稿—Lean对应表](review/revision-20261111/lean_correspondence.md)逐项区分旧端点已覆盖的结论、新书面证明链及无新增端点的结果。本轮未改变 Lean 生产源码，也不把历史构建记录写作本次重新编译。
+
+历史精炼、来源和形式化复跑记录继续保留，版本边界见 [review/README.md](review/README.md)。
 
 ## 结果与已有工作的关系
 
 第一作者的早期路径稿于 2026 年 10 月 8 日公开存档，已给出 $L/C_*$ 常数界及正路径卷积、统一永久式估计、非主子阵缩放和异常点处理框架。该具体首版作者为 Xingchen Liu，版本 DOI 为 [10.5281/zenodo.23233166](https://doi.org/10.5281/zenodo.23233166)。它没有确定两侧共同尖锐常数，也不含 Wormald 原角 Hessian。
 
-当前合稿将上述计数框架与 Fang–Huang 谱比较结合，得到对所有阶数统一的 $O(n^{-1})$ 误差。Divoux–Wang 已确定圈和路径的尖锐首项常数。完整原角 Hessian 等结果与 Bhattacharjee 独立取得；正文准确记录重合及固定版本，不用早期路径存档为 Hessian 主张先后。严格单调性、等号分类、非正则基衰减和固定阶期望唯一性分别说明其依赖。
+当前合稿将上述计数框架与 Fang–Huang 谱比较结合，得到对所有阶数统一的 $O(n^{-1})$ 误差，并推出近极值图的度方差界 $V_{\rm deg}=O(\varepsilon n^2+n)$，特别是精确极值图 $V_{\rm deg}=O(n)$。Divoux–Wang 已确定圈和路径的尖锐首项常数。完整原角 Hessian 等结果与 Bhattacharjee 独立取得；正文准确记录重合及固定版本，不用早期路径存档为 Hessian 主张先后。严格单调性、等号分类、非正则基衰减和固定阶期望唯一性分别说明其依赖。
 
 ## 目录
 
@@ -52,7 +54,7 @@ python tools/compile_tex.py --engine xelatex 01_combined.zh
 
 中文稿通过 `xeCJK` 和相对路径 `../fonts/` 读取 `NotoSerifSC-Regular.ttf`（字重 400，正文）与 `NotoSansSC-SemiBold.ttf`（字重 600，标题及粗体），无需另行安装这两种中文字体。它们由官方变量字体固定字重生成，相应许可分别见 `fonts/OFL-NotoSerifSC.txt`、`fonts/OFL-NotoSansSC.txt`。拉丁文字仍使用系统中的 Times New Roman、Arial、Consolas；数学使用 TeX 字体，扩展拉丁字符使用 `lmroman10-regular.otf`。这些字体依赖以各 TeX 导言为准。替换字体会改变行宽、分页和公式附近留白，应重新检查输出。
 
-这里提供的是直接编译 TeX 的脚本。它不承担 Markdown 到 TeX 的转换，也没有收录原工作区依赖本机环境的 `build.py`。修改 Markdown 后，需要同步修改或重新转换 TeX，再进行编译与排版检查。
+`python tools/render_compact_main.py` 根据主文 Markdown 重建两个主文的 TeX 正文，并保留各自导言。`python tools/build_technical_appendix.py` 从保留的详细稿重建两个必要技术附录。修改后应先运行相应转换，再编译并检查 PDF。编译器缺少原字体时，可用 `python tools/compile_portable_pdfs.py --documents 01_combined.zh 02_combined.en 09_technical_appendix.en 10_technical_appendix.zh` 在独立目录以已安装的替代字体构建；字体变化会影响分页。
 
 ## 重新生成图
 
@@ -70,7 +72,7 @@ python tools/create_graph_figures.py
 
 原固定快照对[覆盖表](formal/COVERAGE.zh.md)所列的 30 个编号结果提供与修订前原文对象、前提和量词对应的 Lean 端点，涵盖全局锐常数量化渐近、实际原角 Hessian、精确路径卷积、谱比较及等号分类，以及四种吹胀计数期望的极限和极值。吹胀期望的最终极值比较覆盖每个固定奇数阶 $d\ge3$ 的全部基图，不限于正则基图。
 
-本轮已对固定 Lean 工程完成 fresh 构建及审计：609个生产模块、3067个登记端点和223个关键端点类型检查通过，318条命令均退出0；实际日志见 `review/lean-rerun-20261107/`。新加的引理5.1a、命题6.6、命题7.3、推论8.2a及改写后的编号仍待建立新的形式化对应。原有范围不是全文逐句认证，也不表示全部替代证明或完整的 SVD、矩形矩阵核范数背景均已形式化。仅对吹胀期望极值而言，阈值是固定基图阶 $d$ 下的存在性结论；不宣称给出可计算或最小数值阈值，或对增长 $d$ 的一致结论。上述固定基图阶的限定只涉及吹胀期望极值；全局锐常数主定理按其自身量词陈述。期望结果也不等于样本级或几乎必然结果。
+2026年11月7日的历史复跑对固定 Lean 工程完成 fresh 构建及审计：609个生产模块、3067个登记端点和223个关键端点类型检查通过，318条命令均退出0；实际日志见 `review/lean-rerun-20261107/`。当前引理5.2（原5.1a）、命题6.6、命题7.3、定理1.2／推论8.3（原8.2a）没有新增组合端点；具体差别和现有结论覆盖见本轮对应表。原有范围不是全文逐句认证，也不表示全部替代证明或完整的 SVD、矩形矩阵核范数背景均已形式化。仅对吹胀期望极值而言，阈值是固定基图阶 $d$ 下的存在性结论；不宣称给出可计算或最小数值阈值，或对增长 $d$ 的一致结论。上述固定基图阶的限定只涉及吹胀期望极值；全局锐常数主定理按其自身量词陈述。期望结果也不等于样本级或几乎必然结果。
 
 各编号结果的精确对应、完整类型和核验版本见[覆盖表](formal/COVERAGE.zh.md)；工具链、构建及递归公理审计步骤见[复现说明](formal/README.zh.md#复现)。旧 Hessian 核验及[卷积迁移记录](formal/CONVOLUTION_MIGRATION.zh.md)仍只描述各自版本，历史记录和来源哈希不改写。
 

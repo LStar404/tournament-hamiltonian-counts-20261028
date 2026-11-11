@@ -38,17 +38,17 @@
 \fancyhead[C]{\small HAMILTONIAN COUNTS IN TOURNAMENTS}
 \fancyfoot[C]{\small\thepage}
 \renewcommand{\headrulewidth}{0pt}
-\hypersetup{pdftitle={Quantitative Hamiltonian path counts and Wormald's angular Hessian},pdfauthor={Xingchen Liu and Xiangyu Ye}}
+\hypersetup{pdftitle={Quantitative Hamiltonian path counts and degree stability},pdfauthor={Xingchen Liu and Xiangyu Ye}}
 \begin{document}
 \thispagestyle{plain}
 \begin{center}
-{\Large\bfseries Quantitative Hamiltonian path counts and Wormald's angular Hessian\par}
+{\Large\bfseries Quantitative Hamiltonian path counts and degree stability\par}
 \vspace{9pt}
 {\normalsize Xingchen Liu\textsuperscript{1} and Xiangyu Ye\textsuperscript{2}\par}
 {\small \textsuperscript{1}School of Mathematics, Sichuan University\par}
 {\small \textsuperscript{2}Glasgow College, University of Electronic Science and Technology of China\par}
 \vspace{5pt}
-{\small 7 November 2026\par}
+{\small 11 November 2026\par}
 \end{center}
 \begin{quote}
 We prove that the maximum number \(P(n)\) of directed Hamiltonian paths in an \(n\)-vertex tournament satisfies
@@ -57,7 +57,7 @@ We prove that the maximum number \(P(n)\) of directed Hamiltonian paths in an \(
 P(n)=\left(\frac{\cosh1}{\cos1}+O(n^{-1})\right)\frac{n!}{2^{n-1}}.
 \]
 
-This gives a uniform \(O(n^{-1})\) refinement of the sharp leading asymptotic established by Divoux and Wang. The proof combines permanent estimates and local diagonal scaling with a score-sensitive path bound and the spectral comparison of Fang and Huang. The same spectral ratio appears in Wormald's random blow-up models. We derive the full angular Hessian independently of Bhattacharjee's overlapping results and prove its positive definiteness for every regular base. For each fixed odd base order, the carousel eventually uniquely maximizes the expected path and cycle counts in both models. The regular-block constants increase strictly to \(\cosh1/\cos1\).
+This refines the sharp leading asymptotic of Divoux and Wang to a uniform \(O(n^{-1})\) error. Retaining the degree-imbalance penalty through nonprincipal scaling and the path convolution also proves degree stability: if \(H(T)/\mu_n\ge L-\varepsilon\), then \(\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)\). Exact maximizers therefore have bounded mean square degree deviation. The permanent approximation is used as an analytic tool with an independent quantitative proof, not as a new determinant main term. As related applications of the same spectral ratio, we derive Wormald's original angular Hessian independently of Bhattacharjee's overlapping result and obtain fixed-base expectation extrema and strict monotonicity of the regular-block constants.
 \end{quote}
 \Needspace{12\baselineskip}
 \section{1. Introduction}\label{introduction}
@@ -94,7 +94,39 @@ For odd \(n\), the carousel \(\mathrm{Car}_n\) has vertex set \(\mathbb Z/n\math
 The issue in the upper bound is uniformity: the error must hold for every tournament, including those with a small set of highly unbalanced vertices. We retain the degree-imbalance penalty while scaling the relevant submatrices and summing the positive path convolution. This yields the same constant for both parities of \(n\).
 
 \Needspace{12\baselineskip}
-\subsection{1.2 Random blow-ups and the angular Hessian}\label{random-blow-ups-and-the-angular-hessian}
+\subsection{1.2 Degree stability and the quantitative mechanism}\label{degree-stability-and-the-quantitative-mechanism}
+
+The rate in Theorem 1.1 has a structural consequence. Write
+
+\[
+V_{\rm deg}(T)=\sum_v\left(d^+(v)-\frac{n-1}{2}\right)^2.
+\]
+
+\textbf{Theorem 1.2 (Degree stability).} There are absolute constants \(C,N\) such that, whenever \(n\ge N\), \(0\le\varepsilon\le(L-1)/2\) and \(H(T)/\mu_n\ge L-\varepsilon\),
+
+\[
+V_{\rm deg}(T)\le C(\varepsilon n^2+n).
+\]
+
+In particular, an exact maximizer has \(V_{\rm deg}(T)=O(n)\), or bounded average squared degree deviation. The proof is Corollary 8.3. This does not give eventual regularity, carousel uniqueness or edit-distance stability: it only bounds the largest degree deviation by \(O(\sqrt n)\), rather than the \(o(\sqrt n)\) required in Theorem 8.1. Divoux--Wang {[}12, Proposition 8.1{]} start from a cycle count at least its random benchmark; our hypothesis is a path count near the sharp maximum. These are different structural assumptions.
+
+The technical point is Proposition 7.3. After large variance and exceptional vertices have been excluded, it gives
+
+\[
+\frac{H(T)}{\mu_n}\le\rho_n(S)\exp(-\tau/2+K/n)+B_n,
+\qquad \tau=\frac{4V_{\rm deg}(T)}{(n-1)^2},\quad B_n=o(n^{-1}).
+\]
+
+Scaling and determinant perturbations produce \(K\sqrt{\tau/n}\), which is not \(O(n^{-1})\) by itself. The retained negative exponent absorbs it through
+
+\[
+K\sqrt{\tau/n}\le\tau/4+K^2/n.
+\]
+
+The deletion-size errors are summed against weights with finite fixed moments, instead of being bounded at the largest cutoff. Together these two steps prevent a square-root or logarithmic loss. A quantitative permanent approximation alone does not settle these global errors. Theorems 1.1 and 1.2 are the main counting and structural results; the remaining introductory results describe connections and consequences of the shared spectral ratio.
+
+\Needspace{12\baselineskip}
+\subsection{1.3 Random blow-ups and the angular Hessian}\label{random-blow-ups-and-the-angular-hessian}
 
 The carousel construction also arises in Wormald's random blow-up models {[}6{]}. These models lead to a second question: how does the choice of a fixed base tournament affect the expected Hamiltonian counts?
 
@@ -108,7 +140,7 @@ Fix an odd integer \(d\ge3\) and a tournament \(T^*\) on \(d\) vertices. Each ve
 
 For a regular base, Theorem 4 of Wormald {[}6{]} expresses the limiting constant in terms of an angular Hessian, subject to its determinant being nonzero. He computes this determinant for several bases and conjectures that the condition always holds. We prove positive definiteness and evaluate the determinant for every regular base.
 
-\textbf{Theorem 1.2.} Let \(T^*\) be regular, with adjacency matrix \(A\). Set \(S=A-A^T\), \(C=S/d\), and \(E=(e_1-e_d,\ldots,e_{d-1}-e_d)\). The Hessian \(\mathbf H\) of Wormald's angular function at the origin is positive definite, and
+\textbf{Theorem 1.3.} Let \(T^*\) be regular, with adjacency matrix \(A\). Set \(S=A-A^T\), \(C=S/d\), and \(E=(e_1-e_d,\ldots,e_{d-1}-e_d)\). The Hessian \(\mathbf H\) of Wormald's angular function at the origin is positive definite, and
 
 \[
 \mathbf H=E^T(I+C^2)(I-C^2)^{-1}E,\qquad
@@ -122,11 +154,11 @@ Here \(\mathcal H=\det\mathbf H\), and the square root is positive. The angular 
 
 Thus the spectral ratio governing the global path bound also determines the blow-up constants. These constants can also be obtained directly from Divoux and Wang {[}12, Proposition 5.1{]}, without the Hessian calculation; Section 10.1 records that derivation. Their Proposition 7.1 and Lemma 9.1 already give the spectral maximum and the carousel value. The next corollary combines these results with the equality conditions of Fang and Huang {[}11{]}, the zero-row-sum condition for a regular base, and a separate bound for nonregular bases.
 
-\textbf{Corollary 1.3.} For each fixed odd \(d\ge3\), there exists \(M_d\) such that, for every \(m\ge M_d\), the carousel \(\mathrm{Car}_d\) is the unique base, up to isomorphism, maximizing the expected number of Hamiltonian cycles and paths in both models. For \(\mathcal R(T^*,m)\), only odd \(m\) are considered.
+\textbf{Corollary 1.4.} For each fixed odd \(d\ge3\), there exists \(M_d\) such that, for every \(m\ge M_d\), the carousel \(\mathrm{Car}_d\) is the unique base, up to isomorphism, maximizing the expected number of Hamiltonian cycles and paths in both models. For \(\mathcal R(T^*,m)\), only odd \(m\) are considered.
 
 The closed form below is the binomial evaluation in Divoux and Wang {[}12, Section 7 and Lemma 9.1{]}, with the factor \(e^{1/d}\) supplied by Wormald {[}6, Theorem 1{]}. The known frequencies in Fang and Huang {[}11, Lemma 4.2{]} give the following further consequence.
 
-\textbf{Corollary 1.4.} Set
+\textbf{Corollary 1.5.} Set
 
 \[
 r_d=\frac{(1+1/d)^d+(1-1/d)^d}{(1+i/d)^d+(1-i/d)^d},
@@ -135,10 +167,10 @@ r_d=\frac{(1+1/d)^d+(1-1/d)^d}{(1+i/d)^d+(1-i/d)^d},
 
 Along odd integers \(d\ge3\), the sequence \(\mathfrak r_d\) increases strictly to \(L\).
 
-Theorem 1.2 proves Wormald's Hessian conjecture {[}6, Conjecture 6{]}. The limit in Conjecture 2 follows from the known closed form; Corollary 1.4 adds strict monotonicity. The expansion through \(d^{-5}\), with remainder \(O(d^{-6})\), is given in the detailed proof companion, §10.4.
+Theorem 1.3 proves Wormald's Hessian conjecture {[}6, Conjecture 6{]}. The limit in Conjecture 2 follows from the known closed form; Corollary 1.5 adds strict monotonicity. The expansion through \(d^{-5}\), with remainder \(O(d^{-6})\), is given in the detailed proof companion, §10.4.
 
 \Needspace{12\baselineskip}
-\subsection{1.3 Earlier bounds and related work}\label{earlier-bounds-and-related-work}
+\subsection{1.4 Earlier bounds and related work}\label{earlier-bounds-and-related-work}
 
 The first bounds determined the exponential scale. Szele {[}10{]} obtained \(P(n)=O(n!2^{-3n/4})\) and conjectured that \((P(n)/n!)^{1/n}\) tends to \(1/2\). Alon {[}2{]} proved \(P(n)=O(n^{3/2}\mu_n)\) by applying Brégman's inequality to the permanent of the adjacency matrix and then transferring the cycle bound to paths by adding a vertex. Friedgut and Kahn {[}7{]} improved the polynomial exponent by an entropy argument, giving a cycle bound \(O(n^\alpha\nu_n)\) with \(\alpha\approx1.249\) and the corresponding path bound.
 
@@ -146,14 +178,14 @@ Lower bounds improve when edge orientations are correlated. Adler, Alon and Ross
 
 The first author's path preprint {[}14{]}, publicly archived on 8 October 2026, established \((L-O(n^{-1}))\mu_n\le P(n)\le(C_*+O(n^{-1}))\mu_n\), with \(L<C_*\). It contains the positive path convolution, uniform permanent estimate, nonprincipal scaling and exceptional-vertex analysis used here. The archive precedes the arXiv v1 submission of Divoux and Wang {[}12{]} on 16 October. Theorem 1.1 combines that counting framework with the spectral moment comparison of Fang and Huang {[}11{]}, refining the sharp leading asymptotic in {[}12, Theorem 1.4{]} to a uniform normalized error \(O(n^{-1})\).
 
-McCullagh {[}5{]} obtained a determinant approximation with relative error \(O(n^{-1})\) under moderate-deviation assumptions. Divoux and Wang {[}12, Proposition 3.1{]} give a uniform \(1+o(1)\) version for nonnegative doubly stochastic matrices. Theorem 3.1 states the signed quantitative estimate used here under fixed entry and operator-norm bounds. Its independent coefficient and tail proof is retained in the detailed proof companion; the counting arguments use its nonnegative specialization.
+McCullagh {[}5, §3{]} already gives an \(O(n^{-1})\) determinant approximation; his §4.1 also considers complex perturbations. Divoux--Wang {[}12, Proposition 3.1 and Remark 2.1{]} explicitly give a uniform \(1+o(1)\) estimate on fixed bounded-input classes. We treat Theorem 3.1 as an analytic tool with an independent proof and explicit control of parameter dependence. Section 3 compares the hypotheses and determinant factors. We claim neither the first permanent \(O(n^{-1})\) approximation nor novelty merely from signed inputs or class-uniform wording. The new quantitative assertion concerns the final path count after scaling, exceptional-vertex removal and summation.
 
 Bhattacharjee's public release of 14 October 2026 {[}16{]} contains the full original angular Hessian, its positive definiteness, and the associated determinant results. Our independent Wormald derivation is recorded in the Liu--Ye Git manuscript revision dated 19 October {[}15{]} and acknowledged in {[}13{]}. These are, respectively, a public-release date and a Git-revision date. The separate single-author path archive {[}14{]} concerns the \(L/C_*\) counting framework.
 
 \Needspace{12\baselineskip}
-\subsection{1.4 Proof outline and further questions}\label{proof-outline-and-further-questions}
+\subsection{1.5 Proof outline and further questions}\label{proof-outline-and-further-questions}
 
-After fixing notation in Section 2, we develop the permanent and nonprincipal scaling estimates in Sections 3 and 4. The positive path convolution in Section 5 has summable deletion-size moments, allowing these estimates to be combined without a logarithmic loss. Section 6 supplies the all-order spectral comparison. Section 7 separates large variance, exceptional vertices and the remaining class; in the last class, the score penalty in Proposition 7.3 absorbs the square-root error terms. Section 8 gives the matching lower bound and degree-variance stability. Sections 9--11 turn to the angular Hessian and the model extrema: regular noncarousel bases have a strict limiting gap, nonregular bases have normalized expectations tending to zero, and the finite number of base classes at fixed \(d\) gives a common threshold. The longer analytic estimates and auxiliary algebra are in the detailed proof companion, with their original section and equation numbers preserved.
+After fixing notation in Section 2, we develop the permanent and nonprincipal scaling estimates in Sections 3 and 4. The positive path convolution in Section 5 has summable deletion-size moments, allowing these estimates to be combined without a logarithmic loss. Section 6 supplies the all-order spectral comparison. Section 7 separates large variance, exceptional vertices and the remaining class; in the last class, the score penalty in Proposition 7.3 absorbs the square-root error terms. Section 8 gives the matching lower bound and degree-variance stability. Sections 9--11 turn to the angular Hessian and the model extrema: regular noncarousel bases have a strict limiting gap, nonregular bases have normalized expectations tending to zero, and the finite number of base classes at fixed \(d\) gives a common threshold. The submission consists of this main text and the Technical appendix, which contains the necessary permanent, scaling and spectral-equality proofs with their original section and equation numbers. The detailed proof companion is separate expanded reading; its elementary calculations and higher-order expansions are optional, not additional proof prerequisites for the main results.
 
 The optimal error order, the first correction coefficient and the exact path maximizers at each finite order remain open. Another question is to estimate the growth of \(M_d\). Letting the base and block orders grow together would require bounds uniform in \(d\), beyond the fixed-base limits used here.
 
@@ -163,19 +195,7 @@ The optimal error order, the first correction coefficient and the exact path max
 \Needspace{12\baselineskip}
 \subsection{2.1 The random baseline and error conventions}\label{the-random-baseline-and-error-conventions}
 
-To fix the normalization, let \(I_\pi\) indicate that the ordering \(\pi\in\mathfrak S_n\) is a directed Hamiltonian path. Its \(n-1\) edges are oriented independently in a random tournament, giving
-
-\[
-H(T)=\sum_{\pi\in\mathfrak S_n}I_\pi(T),\qquad
-\mathbb E I_\pi=\prod_{j=1}^{n-1}\frac12=2^{-(n-1)},
-\]
-
-\[
-\mathbb EH(T)=\sum_{\pi\in\mathfrak S_n}\mathbb EI_\pi
-=n!2^{-(n-1)}=\mu_n.
-\]
-
-The maximum is at least the mean, so \(P(n)\ge\mu_n\). Let \(\mathcal T_n\) denote all tournaments with vertex labels \([n]\). In this paper, a uniform \(O(n^{-1})\) error means
+The random path benchmark is \(\mu_n=n!/2^{n-1}\), as derived in Section 1. Let \(\mathcal T_n\) denote all tournaments with vertex labels \([n]\). In this paper, a uniform \(O(n^{-1})\) error means
 
 \[
 \exists K<\infty\ \exists n_0\ \forall n\ge n_0\ \forall T\in\mathcal T_n:
@@ -205,11 +225,11 @@ Here \(I\) is the identity matrix in the current dimension, \(J=\mathbf1\mathbf1
 We use the notation
 
 \[
-\mathcal E=\|s\|_2^2,\qquad d=\|s\|_\infty,\qquad
+\mathcal E=\|s\|_2^2,\qquad \Delta_s=\|s\|_\infty,\qquad
 a=\frac{s}{n-1},\qquad \tau=\|a\|_2^2.
 \]
 
-The normalized scores \(a\) and \(\tau\) are defined for \(n\ge2\). An odd-order tournament is regular when every vertex has outdegree \((n-1)/2\), equivalently \(s=0\). An even-order tournament is balanced when every outdegree is \(n/2\) or \(n/2-1\), equivalently \(s_i\in\{-1,1\}\). Thus \(d\) measures the largest vertex imbalance, whereas \(\tau\) measures the total squared imbalance after normalization.
+The normalized scores \(a\) and \(\tau\) are defined for \(n\ge2\). An odd-order tournament is regular when every vertex has outdegree \((n-1)/2\), equivalently \(s=0\). An even-order tournament is balanced when every outdegree is \(n/2\) or \(n/2-1\), equivalently \(s_i\in\{-1,1\}\). Thus \(\Delta_s\) measures the largest vertex imbalance, whereas \(\tau\) measures the total squared imbalance after normalization.
 
 \textbf{Definition 2.2 (Submatrices and permanents).}
 
@@ -244,41 +264,7 @@ Therefore \(D_n\) and \(\rho_n\) are positive and bounded by absolute constants.
 D_n(S)=\det(I+iS/n)^{-1}.
 \]
 
-For every \(i\),
-
-\[
-s_i=\sum_{j\ne i}(A_{ij}-A_{ji})
-=d_i^+-[(n-1)-d_i^+]=2d_i^+-(n-1),
-\]
-
-\[
-\sum_i s_i=\sum_{i<j}(S_{ij}+S_{ji})=0,\qquad
-\|S\|_F^2=\sum_{i\ne j}1=n(n-1).
-\]
-
-In a real orthonormal basis, a real skew-symmetric matrix becomes a direct sum of blocks \(\left(\begin{smallmatrix}0&\lambda_j\\-\lambda_j&0\end{smallmatrix}\right)\) and zero blocks. Consequently,
-
-\[
-\det(I+S/n)=\prod_j(1+\lambda_j^2/n^2)=\prod_j(1+x_j),
-\]
-
-\[
-\begin{aligned}
-\det(I-S^{\mathsf T}S/n^2)&=\prod_j(1-x_j)^2,\\
-D_n(S)&=\prod_j(1-x_j)^{-1},\\
-\det(I+iS/n)&=\prod_j(1-\lambda_j/n)(1+\lambda_j/n)
-=\prod_j(1-x_j),\\
-\rho_n(S)&=\prod_j\frac{1+x_j}{1-x_j}.
-\end{aligned}
-\]
-
-Each frequency occurs twice in the squared Frobenius norm, so
-
-\[
-2\sum_j\lambda_j^2=n(n-1),\qquad
-\sum_jx_j=\frac{n-1}{2n},\qquad
-\|S/n\|_{\rm op}^2\le\sum_jx_j<\frac12.
-\]
+These identities follow by decomposing \(S\) into real skew-symmetric \(2\times2\) blocks and using \(\|S\|_F^2=n(n-1)\).
 
 For \(n=1\), we have \(S=[0]\), the frequency sum is empty, and \(D_1(S)=\rho_1(S)=1\).
 
@@ -293,9 +279,26 @@ Similarly, \(\log(1+x)\le x\) gives \(\log\rho_n(S)<3/2\). Multiplication by \(D
 \Needspace{12\baselineskip}
 \section{3. A uniform permanent approximation}\label{a-uniform-permanent-approximation}
 
-Balancing a submatrix changes both its entries and its dimension. The permanent approximation must therefore have constants controlled by fixed density and spectral-gap bounds, rather than by the particular matrix. The theorem below provides this uniformity for the deletions used in Section 4. Its proof uses the coefficient and tail estimates established in \textbf{Detailed proof companion, §§3.2--3.6}, with the original numbering retained; those estimates are part of the proof.
+Balancing a submatrix changes both its entries and its dimension. The permanent approximation must therefore have constants controlled by fixed density and spectral-gap bounds, rather than by the particular matrix. The theorem below provides this uniformity for the deletions used in Section 4. Its proof uses the coefficient and tail estimates established in \textbf{Technical appendix, §§3.2--3.6}, with the original numbering retained; those estimates are part of the proof.
 
-McCullagh {[}5{]} obtained the determinant main term under moderate-deviation assumptions. The argument retained here comes from the earlier path project {[}14{]}. It allows signed inputs, although Sections 4--8 use only the nonnegative case. Divoux--Wang {[}12{]} give a related nonnegative theorem with an \(o(1)\) error; extracting the \(O(n^{-1})\) rate uses the uniform coefficient and tail estimates recorded below.
+\textbf{Role and comparison with earlier work.} Theorem 3.1 is a self-contained version of the permanent tool needed below. We do not use its wording as a separate novelty claim. In the nonnegative case set \(P=J_n/n\), \(B=E/n\) and \(D=P+B\). The hypotheses imply
+
+\[
+\frac1{n^2}\sum_{i,j}|E_{ij}|^p\le C^p\quad(p\ge1),\qquad
+D^{\mathsf T}D=P+B^{\mathsf T}B.
+\]
+
+Thus fixed entry bounds give weak boundedness, and the singular-value bound gives a fixed gap (also for \(D^{\mathsf T}D\)). McCullagh's {[}5, §3{]} factor becomes exactly
+
+\[
+\det(I+P-D^{\mathsf T}D)^{-1/2}
+=\det(I-B^{\mathsf T}B)^{-1/2}
+=\det(I-BB^{\mathsf T})^{-1/2}.
+\]
+
+Class-uniformity alone also does not distinguish a theorem valid for every admissible sequence: if no common \(O(n^{-1})\) constants existed for fixed \(C,q\), one could choose increasing \(n_j\) with \(n_j|\mathrm{error}(E_{n_j})|\to\infty\) and fill other dimensions with \(E_n=0\), contradicting that sequence assertion. This argument concerns the stated fixed class, not a claim of constants uniform over all weakly bounded classes.
+
+Our independent proof tracks constants through contracted non-Gaussian cores, a coefficient window growing with \(n\), and a complex coefficient tail. These estimates make the tool reusable after deletion and scaling. We do not assert that an identified gap in McCullagh's proof is repaired here. Signed inputs alone are not a priority distinction, since {[}5, §4.1{]} already discusses complex perturbations. The graph-counting applications use only nonnegative inputs.
 
 \textbf{Theorem 3.1 (Uniform permanent approximation).}
 
@@ -323,14 +326,14 @@ Put \(B=E/n\). Uniformly over all matrices satisfying these conditions,
 \[
 f(z)=\frac{\operatorname{per}(J_n+zE)}{n!},\qquad
 G(z)=\det(I-z^2BB^{\mathsf T})^{-1/2},\qquad
-\Gamma(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right).
+\mathcal G_{C,q}(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right).
 \]
 
-Since \(\|B\|_F^2\le C^2\), \(1\le G(1)\le\Gamma(1)\) and \(|G(z)|\le\Gamma(|z|)\) on the fixed disk. The positive square-root branch is determined at zero.
+Since \(\|B\|_F^2\le C^2\), \(1\le G(1)\le\mathcal G_{C,q}(1)\) and \(|G(z)|\le\mathcal G_{C,q}(|z|)\) on the fixed disk. The positive square-root branch is determined at zero.
 
-Separate inclusion--exclusion for row and column indices expresses coefficients as bipartite multigraph sums. Double centering eliminates degree-one vertices. Degree-two components are exactly the Gaussian pairings and sum to \(G\). For the remaining components, contract degree-two chains \textbf{before taking absolute values}: the alternating products of \(B,B^{\mathsf T}\) retain the spectral gap. A chain of length \(\ell\ge2\) has contraction bounded by \(C^2q^{\ell-2}/n\). The residual core is classified by excess (edges minus vertices), giving one factor \(n^{-1}\) per excess. The exact labeling compensation and the core activity bound are proved in supplement §§3.2--3.3. This order of contraction preserves the operator-norm control.
+Separate inclusion--exclusion for row and column indices expresses coefficients as bipartite multigraph sums. Double centering eliminates degree-one vertices. Degree-two components are exactly the Gaussian pairings and sum to \(G\). For the remaining components, contract degree-two chains \textbf{before taking absolute values}: the alternating products of \(B,B^{\mathsf T}\) retain the spectral gap. A chain of length \(\ell\ge2\) has contraction bounded by \(C^2q^{\ell-2}/n\). The residual core is classified by excess (edges minus vertices), giving one factor \(n^{-1}\) per excess. The exact labeling compensation and the core activity bound are proved in Technical appendix §§3.2--3.3. This order of contraction preserves the operator-norm control.
 
-For some fixed \(\alpha>0\), set \(M=\lfloor\alpha n\rfloor\). The finite coefficient window, including restoration of \(n^k/(n)_k\), has error \(K_1/n+K_2/n^2\) (supplement §3.4). Its deviation is of order \(k^2/n\), and the Gaussian coefficients are summed with a fixed radius greater than one to absorb this weight. Permanent polarization and the positive-semidefinite permanent estimate give \(\max_{|z|=R}|f(z)|\le\exp(\beta\sqrt n)\), up to a fixed factor, where \(\beta=RC/(1-Rq)\); Cauchy's estimate then controls the coefficients above \(M\) (supplement §3.5). Together these bounds yield
+For some fixed \(\alpha>0\), set \(M=\lfloor\alpha n\rfloor\). The finite coefficient window, including restoration of \(n^k/(n)_k\), has error \(K_1/n+K_2/n^2\) (Technical appendix §3.4). Its deviation is of order \(k^2/n\), and the Gaussian coefficients are summed with a fixed radius greater than one to absorb this weight. Permanent polarization and the positive-semidefinite permanent estimate give \(\max_{|z|=R}|f(z)|\le\exp(\beta\sqrt n)\), up to a fixed factor, where \(\beta=RC/(1-Rq)\); Cauchy's estimate then controls the coefficients above \(M\) (Technical appendix §3.5). Together these bounds yield
 
 \[
 |f(1)-G(1)|\le\frac{K_1}{n}+\frac{K_2}{n^2}
@@ -338,9 +341,9 @@ For some fixed \(\alpha>0\), set \(M=\lfloor\alpha n\rfloor\). The finite coeffi
 +K_4e^{-\alpha n\log\sigma}.
 \]
 
-Every constant and the threshold depend only on \(C,q\) and the radii fixed from them. Both exponential terms are \(o(n^{-1})\). Finitely many smaller orders are covered using \(|f(1)|\le(1+C)^n\) and \(G(1)\le\Gamma(1)\). This proves the uniform absolute bound; \(G(1)\ge1\) gives the relative form. \(\square\)
+Every constant and the threshold depend only on \(C,q\) and the radii fixed from them. Both exponential terms are \(o(n^{-1})\). Finitely many smaller orders are covered using \(|f(1)|\le(1+C)^n\) and \(G(1)\le\mathcal G_{C,q}(1)\). This proves the uniform absolute bound; \(G(1)\ge1\) gives the relative form. \(\square\)
 
-The supplement also records the signed example with fixed parameters at arbitrarily large orders and the two estimates needed to quantify the nonnegative proof of {[}12{]}. The applications use the stated nonnegative specialization.
+Technical appendix §3.6 also records the signed example with fixed parameters at arbitrarily large orders and the two estimates needed to quantify the nonnegative proof of {[}12{]}. The applications use the stated nonnegative specialization.
 
 \Needspace{12\baselineskip}
 \section{4. Scaling and nonprincipal submatrices}\label{scaling-and-nonprincipal-submatrices}
@@ -404,7 +407,7 @@ Under the preceding hypotheses, assume in addition that \(X\ge0\). Let \(\theta_
 
 In particular, if \(\kappa=\mathfrak m(X)-p\), then \(\operatorname{per}X\le e^\kappa\operatorname{per}B\). When the mass differs from \(p\), \(\theta_X\) itself need not be nonnegative.
 
-\textbf{Proof of the scaling estimates.} Fix the gauge \(\sum x_i=\sum y_j\). The reference matrix \(\mathsf H_0\) has diagonal blocks \(I\) and off-diagonal blocks \(X_0,X_0^{\mathsf T}\), while the actual linearization \(\mathsf H_X\) has diagonal blocks \(\operatorname{diag}(X\mathbf1),\operatorname{diag}(X^{\mathsf T}\mathbf1)\) and off-diagonal blocks \(X,X^{\mathsf T}\). Put \(u=(\mathbf1,-\mathbf1)\) and \(N=uu^{\mathsf T}/(2p)\) to fix the gauge. On the zero-sum subspaces, the inverse of \(\mathsf H_0+N\) is expressed through \((I-EE^{\mathsf T})^{-1}\) and \((I-E^{\mathsf T}E)^{-1}\). The dense entry bound and operator gap give its induced \(1\)- and \(\infty\)-norms at most \(L_0\). Both corresponding norms of \(\mathsf H_X-\mathsf H_0\) are at most \(3\varepsilon\); hence the Neumann series bounds the inverse of \(\mathsf H_X+N\) by \(2L_0\). The stated threshold then makes the nonlinear map a contraction in the radius \(4L_0\varepsilon\) ball. This proves existence and the stated entry and spectral bounds. The block inverse and contraction estimates are supplied in Detailed proof companion §4.1.
+\textbf{Proof of the scaling estimates.} Fix the gauge \(\sum x_i=\sum y_j\). The reference matrix \(\mathsf H_0\) has diagonal blocks \(I\) and off-diagonal blocks \(X_0,X_0^{\mathsf T}\), while the actual linearization \(\mathsf H_X\) has diagonal blocks \(\operatorname{diag}(X\mathbf1),\operatorname{diag}(X^{\mathsf T}\mathbf1)\) and off-diagonal blocks \(X,X^{\mathsf T}\). Put \(u=(\mathbf1,-\mathbf1)\) and \(N=uu^{\mathsf T}/(2p)\) to fix the gauge. On the zero-sum subspaces, the inverse of \(\mathsf H_0+N\) is expressed through \((I-EE^{\mathsf T})^{-1}\) and \((I-E^{\mathsf T}E)^{-1}\). The dense entry bound and operator gap give its induced \(1\)- and \(\infty\)-norms at most \(L_0\). Both corresponding norms of \(\mathsf H_X-\mathsf H_0\) are at most \(3\varepsilon\); hence the Neumann series bounds the inverse of \(\mathsf H_X+N\) by \(2L_0\). The stated threshold then makes the nonlinear map a contraction in the radius \(4L_0\varepsilon\) ball. This proves existence and the stated entry and spectral bounds. The block inverse and contraction estimates are supplied in Technical appendix §4.1.
 
 For nonnegative \(X\), apply this construction to the convex potential
 
@@ -500,7 +503,7 @@ If \(e,f\) are the marginal errors of \(\widehat C\), deleting the independent r
 \label{eq-deletion-mass}
 \end{equation}
 
-Normalize \(\widetilde X=mX/(m+\kappa)\). The preprocessing estimates in Detailed proof companion §4.3 give, uniformly,
+Normalize \(\widetilde X=mX/(m+\kappa)\). The preprocessing estimates in Technical appendix §4.3 give, uniformly,
 
 \[
 |\kappa|\le K(t\sqrt{\tau/n}+t^2/n),\quad
@@ -528,25 +531,25 @@ Theorem 3.1 gives \(\operatorname{per}B_X=(m!/m^m)\mathcal G(B_X-P_m)(1+O(m^{-1}
 
 \textbf{Lemma 4.5 (Permanent approximation for small scores).}
 
-Suppose \(d=\|S\mathbf 1_n\|_\infty=o(\sqrt n)\). Fix \(0<B_0<\infty\), delete any \(t\le B_0\log n\) rows and \(t\) columns, and write \(m=n-t\). Uniformly over these choices,
+Suppose \(\Delta_s=\|S\mathbf 1_n\|_\infty=o(\sqrt n)\). Fix \(0<B_0<\infty\), delete any \(t\le B_0\log n\) rows and \(t\) columns, and write \(m=n-t\). Uniformly over these choices,
 
 \begin{equation}
-\operatorname{per}A[R,T]=e^{-1}D_n(S)\frac{m!}{2^m}\left[1+O_{B_0}\left(\frac{(d+t+1)^2}{n}\right)\right].
+\operatorname{per}A[R,T]=e^{-1}D_n(S)\frac{m!}{2^m}\left[1+O_{B_0}\left(\frac{(\Delta_s+t+1)^2}{n}\right)\right].
 \tag{4.3}
 \label{eq-small-score-permanent}
 \end{equation}
 
-More precisely, for fixed \(B_0>0\) there are constants \(C_{\mathrm{err}},\delta>0\) and an integer \(N_0\ge4\) such that the following holds uniformly for \(n\ge N_0\). Let \(S\) be a tournament sign matrix and let \(I,J\subseteq[n]\) satisfy \(|I|=|J|=t\le B_0\log n\). Put \(d=\|S\mathbf1_n\|_\infty\) and \(\eta=(d+t+1)^2/n\). If \(\eta\le\delta\), the absolute relative error in \hyperref[eq-small-score-permanent]{equation (4.3)} is at most \(C_{\mathrm{err}}\eta\). Here \(R=[n]\setminus I\), \(T=[n]\setminus J\), and \(m=n-t\); the two deleted sets may be chosen independently. In the asymptotic range of the lemma, \(\eta\to0\).
+More precisely, for fixed \(B_0>0\) there are constants \(C_{\mathrm{err}},\delta>0\) and an integer \(N_0\ge4\) such that the following holds uniformly for \(n\ge N_0\). Let \(S\) be a tournament sign matrix and let \(I,J\subseteq[n]\) satisfy \(|I|=|J|=t\le B_0\log n\). Put \(\Delta_s=\|S\mathbf1_n\|_\infty\) and \(\eta=(\Delta_s+t+1)^2/n\). If \(\eta\le\delta\), the absolute relative error in \hyperref[eq-small-score-permanent]{equation (4.3)} is at most \(C_{\mathrm{err}}\eta\). Here \(R=[n]\setminus I\), \(T=[n]\setminus J\), and \(m=n-t\); the two deleted sets may be chosen independently. In the asymptotic range of the lemma, \(\eta\to0\).
 
 \textbf{Proof.} Take \(X=(n/m)C[R,T]\) directly, without paired score correction. Equation (4.1) and the marginal identities give
 
 \[
-|\kappa|=O(t(d+t)/n),\quad
-\|g(X)\|_\infty=O((d+t)/n),\quad
-\|g(X)\|_2=O((d+t)/\sqrt n).
+|\kappa|=O(t(\Delta_s+t)/n),\quad
+\|g(X)\|_\infty=O((\Delta_s+t)/n),\quad
+\|g(X)\|_2=O((\Delta_s+t)/\sqrt n).
 \]
 
-After normalizing to mass \(m\), Lemmas 4.1--4.2 give \(|\theta_X|=O((d+t)^2/n)\) and scaling displacement \(O((d+t)/n)\). To compare the full Gaussian factors, set \(Y=(S-I)/(n-1)\) and use skew-symmetry to obtain
+After normalizing to mass \(m\), Lemmas 4.1--4.2 give \(|\theta_X|=O((\Delta_s+t)^2/n)\) and scaling displacement \(O((\Delta_s+t)/n)\). To compare the full Gaussian factors, set \(Y=(S-I)/(n-1)\) and use skew-symmetry to obtain
 
 \[
 Y^{\mathsf T}Y=\frac{S^{\mathsf T}S+I}{(n-1)^2},\qquad
@@ -616,7 +619,7 @@ Set \(h_0=1\) and define
 w_k=\frac{2^k h_k}{k!}.
 \]
 
-\textbf{Lemma 5.1a (Fixed moments and a uniform tail).} For every fixed \(c>0\) and integer \(r\ge0\),
+\textbf{Lemma 5.2 (Fixed moments and a uniform tail).} For every fixed \(c>0\) and integer \(r\ge0\),
 
 \[
 \sum_{k\ge0}(k+1)^r c^kw_k<\infty.
@@ -643,12 +646,12 @@ We call \(|U|\le k_n\) the short terms. In the error estimates below, retaining 
 \Needspace{12\baselineskip}
 \subsection{5.2 The emergence of the spectral factor}\label{the-emergence-of-the-spectral-factor}
 
-First suppose \(d=o(\sqrt n)\). By Lemma 4.5, for \(|U|=k\le k_n\) we have
+First suppose \(\Delta_s=o(\sqrt n)\). By Lemma 4.5, for \(|U|=k\le k_n\) we have
 
 \[
 \operatorname{per}A[U^c]
 =e^{-1}D_n(S)\frac{(n-k)!}{2^{n-k}}
-\left(1+O\left(\frac{(d+k+1)^2}{n}\right)\right).
+\left(1+O\left(\frac{(\Delta_s+k+1)^2}{n}\right)\right).
 \]
 
 For integers \(0\le k\le n\), define the falling factorial by
@@ -675,14 +678,14 @@ Since \(2A=J-I+S\), the rank-one term \(J\) asymptotically contributes a factor 
 
 \[
 \det\left(I+\frac2n(I+A)\right)
-=2e\det(I+S/n)\left(1+O(n^{-1}+d^2/n^2)\right).
+=2e\det(I+S/n)\left(1+O(n^{-1}+\Delta_s^2/n^2)\right).
 \]
 
 The factor \(e^{-1}\) in the permanent estimate comes from restoring \((1-1/n)^{n-k}\) and reflects the zero diagonal. The factor \(1/2\) comes from the path normalization above. They cancel the factor \(2e\) in the generating determinant, leaving \(D_n(S)\det(I+S/n)=\rho_n(S)\). The two determinants have separate origins: the first approximates cycle-cover counts, and the second sums the weights in the path convolution. Theorem 8.1 will complete the error summation and prove
 
 \[
-\frac{H(T)}{\mu_n}=\rho_n(S)+O((d+1)^2/n)
-\qquad\text{when }d=o(\sqrt n).
+\frac{H(T)}{\mu_n}=\rho_n(S)+O((\Delta_s+1)^2/n)
+\qquad\text{when }\Delta_s=o(\sqrt n).
 \]
 
 To obtain an upper bound for all tournaments, Section 7 separately handles large score variance and extreme degrees, retaining the score penalty in the remaining class. Section 6 bounds this spectral factor, culminating in the all-order comparison of Proposition 6.6.
@@ -821,86 +824,25 @@ Equality also forces \((S^pe_j)^*=K_d^pe_1\).
 \Needspace{12\baselineskip}
 \subsection{6.3 Moments of the comparison matrix}\label{moments-of-the-comparison-matrix}
 
-Write \(\operatorname{tr}M=\sum_jM_{jj}\).
-
-Let \(T_d\) be the transitive tournament sign matrix, with all entries above the diagonal equal to \(1\). Let \(R_0\) be the reversal permutation matrix and \(D_0=\operatorname{diag}(1,-1,\ldots)\). By the definition of \(K_d\),
+The following calculation works at either parity. Let \(T_d\) have all upper-triangular entries equal to \(1\), let \(R_0\) reverse the coordinates, and put \(D_0=\operatorname{diag}(1,-1,\ldots)\). Let \(\Lambda\) list the odd indices increasingly, followed by the even indices decreasingly, and set \(U=D_0\Lambda\). The entry formula for \(K_d\) gives
 
 \[
-(D_0K_dR_0)_{ij}
-=(-1)^{i-1}(K_d)_{i,d+1-j}
-=\begin{cases}
-(-1)^{i-1},&i<j,\\
-0,&i=j,\\
-(-1)^j,&i>j.
-\end{cases}
+T_d=\Lambda^TD_0K_dR_0\Lambda,\qquad
+T_d^2=-U^TK_d^2U,\qquad Ue_1=e_1.
 \]
 
-Here \(R_0e_j=e_{d+1-j}\) and \((D_0)_{jj}=(-1)^{j-1}\). Since \((K_d)_{ij}\) depends only on \(i+j\), we have \(K_d^T=K_d\).
-
-Write the sequence of increasing odd indices followed by decreasing even indices as
+Indeed, after this ordering every upper-triangular entry of the first matrix is \(1\); the second identity follows from \(K_d^T=K_d\) and \(T_d^T=-T_d\). The signed cyclic shift in Technical appendix A.2 commutes with \(T_d\), so all diagonal entries of \(T_d^{2p}\) coincide. Hence
 
 \[
-(\ell_1,\ldots,\ell_d)=(1,3,\ldots,d,d-1,d-3,\ldots,2),
-\qquad \Lambda e_j=e_{\ell_j}.
+\|T_d^p\|_F^2=(-1)^p\operatorname{tr}T_d^{2p}
+=d(-1)^p(T_d^{2p})_{11}=d\|K_d^pe_1\|_2^2.
 \]
 
-Each index occurs once. Hence \(\Lambda^T\Lambda=\Lambda\Lambda^T=I\), and \(\ell_1=1\).
-
-Permute the rows and columns in this order. Odd indices are increasing, so the corresponding upper-triangular entries are \((-1)^{i-1}=1\); even indices are decreasing, so those entries are \((-1)^j=1\). An odd index precedes an even index, and the corresponding entry is \((-1)^{i-1}\) if \(i<j\), or \((-1)^j\) if \(i>j\), again equal to \(1\). Hence
+Summing the columnwise consequence of Lemma 6.3 gives, for every \(p\ge1\),
 
 \[
-T_d=\Lambda^TD_0K_dR_0\Lambda.
+\|S^p\|_F^2\le d\|K_d^pe_1\|_2^2=\|T_d^p\|_F^2.
 \]
-
-Set \(U=D_0\Lambda\). Since \(R_0R_0^T=I\), \(\Lambda\Lambda^T=I\) and \(K_d^T=K_d\), multiplication gives
-
-\[
-\begin{aligned}
-T_dT_d^T
-&=\Lambda^TD_0K_dR_0\Lambda
-\Lambda^TR_0^TK_dD_0\Lambda\\
-&=\Lambda^TD_0K_d^2D_0\Lambda=U^TK_d^2U.
-\end{aligned}
-\]
-
-The first index in this ordering is 1, so \(Ue_1=e_1\). Also \(T_d^T=-T_d\), hence
-
-\[
-T_d^2=-U^TK_d^2U,\qquad
-T_d^{2p}=(-1)^pU^TK_d^{2p}U
-\]
-
-because each adjacent pair \(UU^T\) in the product equals \(I\). Consequently,
-
-\[
-(-1)^p(T_d^{2p})_{11}
-=e_1^TK_d^{2p}e_1
-=(K_d^pe_1)^T(K_d^pe_1)
-=\|K_d^pe_1\|_2^2.
-\]
-
-The signed cyclic shift \(Z\) in Appendix A.2 of the detailed proof companion satisfies \(Z^TT_dZ=T_d\), and therefore \(Z^TT_d^{2p}Z=T_d^{2p}\). Comparing diagonal entries gives \((T_d^{2p})_{j+1,j+1}=(T_d^{2p})_{jj}\) for \(j<d\). At \(j=d\), the two signs cancel and give \((T_d^{2p})_{11}=(T_d^{2p})_{dd}\). Thus all diagonal entries agree, and
-
-\[
-\begin{aligned}
-\|T_d^p\|_F^2
-&=\operatorname{tr}((T_d^p)^TT_d^p)
-=(-1)^p\operatorname{tr}T_d^{2p}\\
-&=d(-1)^p(T_d^{2p})_{11}
-=d\|K_d^pe_1\|_2^2.
-\end{aligned}
-\]
-
-Sum the \(d\) column inequalities from the preceding section:
-
-\[
-\|S^p\|_F^2
-=\sum_{j=1}^d\|S^pe_j\|_2^2
-\le d\|K_d^pe_1\|_2^2
-=\|T_d^p\|_F^2\qquad(p\ge1).
-\]
-
-In particular, the inequality holds for every odd \(p\), as required in the next section.
 
 \Needspace{12\baselineskip}
 \subsection{6.4 The extremum of the spectral ratio}\label{the-extremum-of-the-spectral-ratio}
@@ -967,7 +909,7 @@ Take squared norms in the second identity and sum over \(j\):
 =\|T_d^2\|_F^2=\operatorname{tr}T_d^4.
 \]
 
-The fourth-moment classification in Appendix A.3 of the detailed proof companion shows that equality is equivalent to \(S=\Omega^TT_d\Omega\) for a signed permutation matrix \(\Omega\). Conversely, \(\Omega^T\Omega=I\) implies
+The fourth-moment classification in Technical appendix A.3 shows that equality is equivalent to \(S=\Omega^TT_d\Omega\) for a signed permutation matrix \(\Omega\). Conversely, \(\Omega^T\Omega=I\) implies
 
 \[
 I+tS=\Omega^T(I+tT_d)\Omega,\qquad
@@ -994,7 +936,7 @@ The difference between rows \(i\) and \(i+1\) has entry 1 in each of columns \(i
 0=(T_d\varepsilon)_i-(T_d\varepsilon)_{i+1}=\varepsilon_i+\varepsilon_{i+1}.
 \]
 
-It follows that \(\varepsilon_i=(-1)^{i-1}\varepsilon_1\). The common sign \(\varepsilon_1\) cancels in \(D_{\varepsilon}T_dD_{\varepsilon}\), leaving the alternating switching. Appendix A.2 of the detailed proof companion identifies this tournament with \(\mathrm{Car}_d\). Thus, among regular tournaments, equality holds only for the carousel, up to isomorphism.
+It follows that \(\varepsilon_i=(-1)^{i-1}\varepsilon_1\). The common sign \(\varepsilon_1\) cancels in \(D_{\varepsilon}T_dD_{\varepsilon}\), leaving the alternating switching. Technical appendix A.2 identifies this tournament with \(\mathrm{Car}_d\). Thus, among regular tournaments, equality holds only for the carousel, up to isomorphism.
 
 \Needspace{12\baselineskip}
 \subsection{6.5 A gap from the sixth moment}\label{a-gap-from-the-sixth-moment}
@@ -1057,23 +999,7 @@ The gap depends on the base order \(d\). Section 11.2 obtains a corresponding bl
 
 \textbf{Proposition 6.6 (All-order spectral comparison).} For every tournament sign matrix \(S\) of order \(n\), \(\rho_n(S)\le r_n\), where \(r_n=L+O(n^{-1})\) is the explicit quotient below. The \(O(n^{-1})\) constant is absolute and uniform over tournaments.
 
-\textbf{Proof.}
-
-For \(n=1\) the ratio equals one. The regular equality classification in Section 6 concerns odd orders, but the preceding spectral inequality does not require regularity. To make its use at every order explicit, let \(n\ge2\) and write the permutation in Section 6.3 as all odd indices in increasing order followed by all even indices in decreasing order. At odd order this is the original permutation. At even order it is \((1,3,\ldots,n-1,n,n-2,\ldots,2)\). The same entrywise computation gives
-
-\[
-T_n=\Lambda^TD_0K_nR_0\Lambda,\qquad
-T_n^2=-U^TK_n^2U,\qquad U=D_0\Lambda,
-\qquad Ue_1=e_1.
-\]
-
-The signed wrap-around shift satisfies \(Z^TT_nZ=T_n\) at either parity. Consequently, all diagonal entries of \(T_n^{2p}\) coincide. For every integer \(p\ge1\), the columnwise Fang--Huang comparison and these identities give
-
-\[
-\|S^p\|_F^2\le n\|K_n^pe_1\|_2^2=\|T_n^p\|_F^2.
-\]
-
-Substitution into the absolutely convergent logarithmic series of Section 6.4 yields, at every order,
+\textbf{Proof.} Section 6.3 gives the moment comparison at every order, without regularity. Substituting it into the absolutely convergent series of Section 6.4 yields
 
 \[
 \log\rho_n(S)
@@ -1257,7 +1183,7 @@ k\sqrt{n/V}\le\frac{k}{4\sqrt{n\log n}}=o(1).
 
 It follows that \(V_{\rm deg}(T-U)/(8(n-k)^2)\ge(2-o(1))\log n\), so the penalty is \(n^{-2+o(1)}\). Multiplying by \(\sqrt n\) and \(\sum_kw_k<\infty\) gives \(n^{-3/2+o(1)}\).
 
-\textbf{The factorial factor.} Apply the Stirling formula in Appendix B.3 of the detailed proof companion. With \(c\) denoting its constant,
+\textbf{The factorial factor.} Use Stirling's formula \(\log(m!)=(m+1/2)\log m-m+c+O(m^{-1})\). With \(c\) denoting its constant,
 
 \[
 f(r)=\log r-1+\frac{\log r}{2r}+\frac cr+O(r^{-2}).
@@ -1675,7 +1601,7 @@ The constants are independent of the tournament and deletion sets, so the result
 \frac{H(T)}{\mu_n}\le\rho_n(S)\exp\left(-\frac\tau2+\frac K n\right)+B_n,
 \]
 
-where \(B_n\ge0\) is the graph-independent tail from Lemma 5.1a and \(B_n=o(n^{-1})\).
+where \(B_n\ge0\) is the graph-independent tail from Lemma 5.2 and \(B_n=o(n^{-1})\).
 
 \textbf{Proof.}
 
@@ -1799,10 +1725,10 @@ The threshold in each case is independent of the particular tournament. Taking a
 
 \textbf{Theorem 8.1 (Small-score path approximation).}
 
-There is an absolute constant \(C\) with the following property. For every nonnegative function satisfying \(d(n)/\sqrt n\to0\), denoted by \(d=d(n)\), there is a threshold \(n_0(d)\) such that every tournament of order \(n\ge n_0(d)\) with \(\|S\mathbf1\|_\infty\le d(n)\) satisfies
+There is an absolute constant \(C\) with the following property. For every nonnegative function satisfying \(\Delta_s(n)/\sqrt n\to0\), denoted by \(\Delta_s=\Delta_s(n)\), there is a threshold \(n_0(\Delta_s)\) such that every tournament of order \(n\ge n_0(\Delta_s)\) with \(\|S\mathbf1\|_\infty\le \Delta_s(n)\) satisfies
 
 \[
-\left|\frac{H(T)}{\mu_n}-\rho_n(S)\right|\le C\frac{(d(n)+1)^2}{n}.
+\left|\frac{H(T)}{\mu_n}-\rho_n(S)\right|\le C\frac{(\Delta_s(n)+1)^2}{n}.
 \]
 
 \Needspace{12\baselineskip}
@@ -1810,21 +1736,21 @@ There is an absolute constant \(C\) with the following property. For every nonne
 
 \textbf{Proof.}
 
-Write \(d=d(n)\). Apply Lemma 4.5 to every principal deleted set \(|U|=k\le k_n\). Since \(d+k_n+1=o(\sqrt n)\), it applies uniformly over all these subsets. After restoring the falling factorial \((n)_k\), the positive path convolution gives
+Write \(\Delta_s=\Delta_s(n)\). Apply Lemma 4.5 to every principal deleted set \(|U|=k\le k_n\). Since \(\Delta_s+k_n+1=o(\sqrt n)\), it applies uniformly over all these subsets. After restoring the falling factorial \((n)_k\), the positive path convolution gives
 
 \[
 \frac{H(T)}{\mu_n}
 =\frac{e^{-1}D_n(S)}2
 \sum_{k\le k_n}\left(\frac2n\right)^k
 \sum_{|U|=k}\det(I+A[U])
-+O\left(\frac{(d+1)^2}{n}\right).
++O\left(\frac{(\Delta_s+1)^2}{n}\right).
 \]
 
 This error rate has no extra logarithmic factor, because the error is at most a fixed constant times
 
 \[
-\frac1n\sum_{k\ge0}w_k(d+k+1)^2
-=O\left(\frac{(d+1)^2}{n}\right).
+\frac1n\sum_{k\ge0}w_k(\Delta_s+k+1)^2
+=O\left(\frac{(\Delta_s+1)^2}{n}\right).
 \]
 
 Restoring the falling factorial contributes \(O(n^{-1}\sum k^2w_k)\), and Section 5.1 bounds the terms with large deleted sets by \(o(n^{-1})\). Extending the short generating sum above to all \(k\) costs \(n^{-2+o(1)}\), because its coefficients are bounded by \(w_k\). Thus
@@ -1833,7 +1759,7 @@ Restoring the falling factorial contributes \(O(n^{-1}\sum k^2w_k)\), and Sectio
 \frac{H(T)}{\mu_n}
 =\frac{e^{-1}D_n(S)}2
 \det\left(I+\frac2n(I+A)\right)
-+O\left(\frac{(d+1)^2}{n}\right).
++O\left(\frac{(\Delta_s+1)^2}{n}\right).
 \]
 
 Set \(u=\mathbf1/\sqrt n\) and \(Q=S/(n+1)\). The rank-one determinant lemma gives
@@ -1853,23 +1779,23 @@ u^{\mathsf T}(I+Q)^{-1}u=u^{\mathsf T}(I-Q^2)^{-1}u,
 The absolute difference of this quantity from one is at most
 
 \[
-\|Qu\|_2^2\le\frac{d^2}{(n+1)^2}.
+\|Qu\|_2^2\le\frac{\Delta_s^2}{(n+1)^2}.
 \]
 
 Also, \((1+1/n)^n=e(1+O(n^{-1}))\). Replacing \(S/(n+1)\) by \(S/n\) incurs a logarithmic determinant error \(O(n^{-1})\), by the bounded sum of the squared normalized frequencies. Consequently,
 
 \[
 \det\left(I+\frac2n(I+A)\right)
-=2e\det(I+S/n)\left(1+O(n^{-1}+d^2/n^2)\right).
+=2e\det(I+S/n)\left(1+O(n^{-1}+\Delta_s^2/n^2)\right).
 \]
 
-It remains to justify the uniform constants in the summation and determinant comparison. The following bounds give the required absolute error; only the threshold at which the small-score assumption applies depends on \(d\).
+It remains to justify the uniform constants in the summation and determinant comparison. The following bounds give the required absolute error; only the threshold at which the small-score assumption applies depends on \(\Delta_s\).
 
-For every \(k\), using \(d+k+1\le(d+1)(k+1)\) gives
+For every \(k\), using \(\Delta_s+k+1\le(\Delta_s+1)(k+1)\) gives
 
 \[
-\frac1n\sum_kw_k(d+k+1)^2
-\le\frac{(d+1)^2}{n}\sum_kw_k(k+1)^2.
+\frac1n\sum_kw_k(\Delta_s+k+1)^2
+\le\frac{(\Delta_s+1)^2}{n}\sum_kw_k(k+1)^2.
 \]
 
 The finite moment on the right gives an absolute constant. For the determinant comparison, use \(Q^{\mathsf T}=-Q\) to write
@@ -1891,7 +1817,7 @@ Q(I-Q^2)^{-1}\text{ is skew-symmetric},
 Since \(Qu=s/[(n+1)\sqrt n]\),
 
 \[
-\|Qu\|_2^2=\frac{\sum_i s_i^2}{n(n+1)^2}\le\frac{d^2}{(n+1)^2}.
+\|Qu\|_2^2=\frac{\sum_i s_i^2}{n(n+1)^2}\le\frac{\Delta_s^2}{(n+1)^2}.
 \]
 
 The determinant error from changing the normalization satisfies
@@ -1916,7 +1842,7 @@ The difference between the rank-one factor and two is
 
 \[
 \left|1+\frac n{n+1}u^{\mathsf T}(I+Q)^{-1}u-2\right|
-\le\frac1{n+1}+\frac{d^2}{(n+1)^2}.
+\le\frac1{n+1}+\frac{\Delta_s^2}{(n+1)^2}.
 \]
 
 Multiplying in order and using \(D_n(S)\det(I+S/n)<3\) gives the absolute error in Theorem 8.1. \(\square\)
@@ -1934,7 +1860,7 @@ H(\mathrm{Car}_n)/\mu_n=L+O(n^{-1}).
 
 \textbf{Proof.}
 
-For odd \(n\), take the residue classes modulo \(n\) and define the carousel tournament \(\mathrm{Car}_n\) as follows: for \(1\le j\le(n-1)/2\), direct \(i\to i+j\). It is regular, so \(d=0\). For even \(n\), let \(\mathrm{Car}_n\) be obtained by deleting one vertex from \(\mathrm{Car}_{n+1}\). Then \(d=1\).
+For odd \(n\), take the residue classes modulo \(n\) and define the carousel tournament \(\mathrm{Car}_n\) as follows: for \(1\le j\le(n-1)/2\), direct \(i\to i+j\). It is regular, so \(\Delta_s=0\). For even \(n\), let \(\mathrm{Car}_n\) be obtained by deleting one vertex from \(\mathrm{Car}_{n+1}\). Then \(\Delta_s=1\).
 
 Write \(n=2m+1\), with original indices \(i=0,\ldots,2m\). Let \(D_{ii}=(-1)^i\). For \(i<j\),
 
@@ -2008,7 +1934,7 @@ there is therefore a fixed \(K_l\) such that \(P(n)\ge(L-K_l/n)\mu_n\). Combinin
 \Needspace{12\baselineskip}
 \subsection{8.3 Degree stability near the maximum}\label{degree-stability-near-the-maximum}
 
-\textbf{Corollary 8.2a (Degree-variance stability).} There are absolute constants \(C,N\) such that, for \(n\ge N\) and \(0\le\varepsilon\le(L-1)/2\), any tournament satisfying \(H(T)/\mu_n\ge L-\varepsilon\) has
+\textbf{Corollary 8.3 (Degree-variance stability).} There are absolute constants \(C,N\) such that, for \(n\ge N\) and \(0\le\varepsilon\le(L-1)/2\), any tournament satisfying \(H(T)/\mu_n\ge L-\varepsilon\) has
 
 \[
 \tau(T)\le C(\varepsilon+n^{-1}),\qquad
@@ -2183,7 +2109,7 @@ Indeed, the carousel sign matrix is signed-permutation similar to the transitive
 \det(I+tT_d)=\frac{(1+t)^d+(1-t)^d}{2};
 \]
 
-taking \(t=1/d\) and \(i/d\) proves the formula. These determinant evaluations are from {[}12, Section 7 and Lemma 9.1{]}; the elementary calculations are recorded in Detailed proof companion Appendix A.1--A.2.
+taking \(t=1/d\) and \(i/d\) proves the formula. These determinant evaluations are from {[}12, Section 7 and Lemma 9.1{]}; the elementary calculations are recorded in Technical appendix A.1--A.2.
 
 \textbf{Corollary 10.5.} The sequence \(\mathfrak r_d\), over odd \(d\ge3\), is strictly increasing and tends to \(L=\cosh1/\cos1\).
 
@@ -2253,7 +2179,7 @@ For fixed \(d\), \(R_i=mb_i+O(1)\) and \(R_i\ge m/4\) when \(m\ge2\). Stirling's
 \le N\log\kappa+O_d(\log N).
 \]
 
-Thus \(\mathbb EC_{\mathcal T}/\nu_N\le N^{O_d(1)}\kappa^N\to0\). In model \(\mathcal R\), internal edges are not independent; instead every sample has row sum exactly \(mb_i-1/2\). Apply Brégman's inequality to each sample adjacency matrix, then average, obtaining the same bound. Explicit constants are retained in Detailed proof companion §§11.4--11.5.
+Thus \(\mathbb EC_{\mathcal T}/\nu_N\le N^{O_d(1)}\kappa^N\to0\). In model \(\mathcal R\), internal edges are not independent; instead every sample has row sum exactly \(mb_i-1/2\). Apply Brégman's inequality to each sample adjacency matrix, then average, obtaining the same bound. Optional explicit constants are retained in the expanded reading companion §§11.4--11.5.
 
 To treat paths, add a vertex with independent fair edges to every old vertex. For every tournament \(G\) of order \(N\ge2\),
 
@@ -2269,7 +2195,7 @@ The two closing edges of a path are distinct, which is why the factor is exactly
 \le (N+1)^{O_d(1)}\kappa^N\longrightarrow0.
 \]
 
-For a fully explicit normalization of this augmentation bound, see Detailed proof companion §11.6. The degree-based bounds above cover every nonregular base.
+An optional fully explicit normalization of this bound is in the expanded reading companion §11.6. The degree-based bounds above cover every nonregular base.
 
 \Needspace{12\baselineskip}
 \subsection{11.2 Strict comparison and one common threshold}\label{strict-comparison-and-one-common-threshold}
@@ -2285,7 +2211,7 @@ The paper incorporates two independently developed projects. The path framework 
 
 The repository snapshot {[}17{]} documents Lean endpoints for 30 numbered results of the pre-revision manuscript, including the sharp path bound, original angular Hessian, path convolution, spectral comparison and fixed-base expectation extrema. Its \href{https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/c678e9ee24fb304cad755a27c99f511c8640f75e/formal/COVERAGE.zh.md}{coverage table} specifies objects, hypotheses, quantifiers and coverage boundaries. The associated \href{https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/c678e9ee24fb304cad755a27c99f511c8640f75e/formal/README.zh.md}{reproduction instructions} fix the toolchain and audit procedure.
 
-The \href{https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/f578a34dd43f0af7b7e866f4a2e7fd0e55acda72/review/lean-rerun-20261107/README.zh.md}{actual rerun record} documents the rebuild and audits of the fixed formal project. Its coverage is tied to the historical source and endpoint statements; a new correspondence for the concise manuscript and its added results remains to be completed. AI assistance was used in exposition and parts of proof checking.
+The \href{https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/f578a34dd43f0af7b7e866f4a2e7fd0e55acda72/review/lean-rerun-20261107/README.zh.md}{actual rerun record} documents the rebuild and audits of the fixed formal project. Its coverage is tied to the historical source and endpoint statements; the current statement-by-statement correspondence is recorded in the repository file \texttt{review/revision-20261111/lean\_correspondence.md}. It distinguishes conclusions covered by earlier endpoints from the revised written proof and results without a new endpoint. No new full Lean build is claimed for this editorial revision. AI assistance was used in exposition and parts of proof checking.
 
 \Needspace{12\baselineskip}
 \section{Acknowledgments}\label{acknowledgments}
@@ -2294,13 +2220,13 @@ We thank Alexander Divoux, Shouda Wang, Professor Noga Alon of Princeton Univers
 
 The following are personal acknowledgments from the first author, Xingchen Liu.
 
-I thank my coauthor Xiangyu Ye for the care and effort he put into the Lean formalization of the related results; the scope of machine verification is specified in the author statement. He has been my friend for many years and is my closest companion. Having made this journey with him is something I treasure beyond the paper itself.
+I thank my coauthor Xiangyu Ye for the care and effort he put into the Lean formalization of the related results; the scope of machine verification is specified in the author statement. I am also grateful for his longstanding friendship and support.
 
 I thank Tomasz Jan for sharing a Polish probability problem collection in our course discussion group. It gave me a direction for this research. I also thank Xue Peng of the School of Mathematics, Sichuan University, for guidance on academic standards.
 
-I thank the doctors, nurses, and fellow patients in PICU at West China Hospital, Sichuan University. You changed me profoundly. This gratitude reaches beyond the paper, but it belongs to the person who wrote it.
+I thank the doctors, nurses, and fellow patients in PICU at West China Hospital, Sichuan University. Their care and companionship have had a lasting influence on my life.
 
-Finally, I thank Ms.~Q.M.T. Although we are no longer part of each other's lives, to me, the beauty and the pain of that time nearly killed me, and changed me.
+Finally, I thank Ms.~Q.M.T. The time we shared has had a lasting influence on me.
 
 \Needspace{12\baselineskip}
 \section{References}\label{references}

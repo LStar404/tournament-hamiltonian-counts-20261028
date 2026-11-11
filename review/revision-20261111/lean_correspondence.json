@@ -1,0 +1,1053 @@
+{
+  "schema_version": 1,
+  "revision_date": "2026-11-11",
+  "repository_base_commit": "4af732650d7d5724bcab60a80a711d4294d58e2d",
+  "frozen_lean_run_commit": "c678e9ee24fb304cad755a27c99f511c8640f75e",
+  "source_version": "S = unchanged production sources pinned by rerun input_manifest and endpoint SHA256",
+  "historical_build": "H = actual 2026-11-07 run, not a 2026-11-11 compilation",
+  "this_revision_full_lean_build": false,
+  "entries": [
+    {
+      "stable_id": "legacy_1_1",
+      "current_label": "定理 1.1",
+      "legacy_label": "定理 1.1",
+      "statement": "真实全体有标号竞赛图的 Hamilton 线性排列数有限最大值；共同绝对 K,n₀ 对所有 n 统一；上界对该阶所有图统一，下界由指定图构造支撑；μ_n=n!/2^(n−1)。下界实际指定图另由8.2，不用存在选图代替。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.sharp_path_asymptotic",
+        "TournamentHamiltonian.sharp_path_normalized_error",
+        "TournamentPaths.maxPathCountFinite_eq_legacy",
+        "PaperCarouselPath.corollary8_2"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_1_2",
+      "current_label": "定理 1.3（原定理 1.2）",
+      "legacy_label": "定理 1.2",
+      "statement": "实际原角函数二阶实导数等于 Eᵀ(I+C²)(I−C²)⁻¹E；H 正定、det正、原 det 比、正有理平方根同一 witness。只有真实 regular T，正阶由 n+1 内置，不给 Hessian/极限当前提。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "Tournament.wormald_original_angle_hessian"
+      ],
+      "note": "原角 Hessian 结论已有完整形式化；当前主文短 Schur 补推导尚未逐步对应。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_1_3",
+      "current_label": "1.4（四模型，原推论 1.3）",
+      "legacy_label": "推论 1.3",
+      "statement": "固定每个奇 d≥3，∃一个 M_d 在所有基图 T 之前；uniform 所有 m≥M，regular 只奇 m（实际 k=m/2）。四种实际有限期望各自≤carousel，等号 iff普通同构；非正则也在全族内。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "FiniteExtremum.eventual_four_models_of_odd",
+        "FiniteExtremum.UniformMaximumAt",
+        "FiniteExtremum.RegularMaximumAt",
+        "FiniteFamilyGap.CarouselClass",
+        "FiniteExtremum.eventual_four_strict_outside"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_1_4",
+      "current_label": "1.5（单调性，原推论 1.4）",
+      "legacy_label": "推论 1.4",
+      "statement": "实际 regularCarouselConstant(m)=e^(1/(2m+1))ρ(Car_(2m+1))；严格递增并趋 cosh1/cos1，m≥1给原 d≥3。闭式另为真等式。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.regularCarouselConstant_monotone_convergent",
+        "TournamentHamiltonian.regularCarouselConstant_closed_form"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_3_1",
+      "current_label": "定理 3.1（完整证明见技术附录 §3）",
+      "legacy_label": "定理 3.1",
+      "statement": "C≥0,q∈[0,1)预先固定；一个 K(C,q) 对所有正有限维、双中心实 E、|Eij|≤C、真L2 op‖E/n‖≤q。actual core activity已内部放电；BBᵀ与BᵀB行列式桥、绝对及相对误差均在Lean内。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "PaperEndpointsA.paper_3_1_uniform_constant",
+        "PaperEndpointsA.paper_3_1_determinant",
+        "PaperEndpointsA.paper_3_1_relative"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_3_2",
+      "current_label": "技术附录 §3 引理 3.2（主文 §3 调用）",
+      "legacy_label": "引理 3.2",
+      "statement": "真实 actualCoreExcessCoefficient 的绝对加权无限和，含实际 Summable 与 tsum；每个固定 j≥1 的 (710W³j/n)^j，以及首超额 T₁/n；W为原max，不是任意有限部分和或对 j 再求和。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "PaperEndpointsA.paper_3_2",
+        "PaperEndpointsA.paper_3_2_first"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_3_3",
+      "current_label": "技术附录 §3 引理 3.3（主文 §3 调用）",
+      "legacy_label": "引理 3.3",
+      "statement": "任意复方阵，不加normal/invertible；CFC.abs为算子绝对值，永久式极化真上界。PSD permanent真实非负（含虚部0），故实部写法是纸上实数平方根的已证解释。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.permanent_polarization",
+        "TournamentHamiltonian.complex_posSemidef_permanent_nonnegative"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_3_4",
+      "current_label": "技术附录 §3 引理 3.4（主文 §3 调用）",
+      "legacy_label": "引理 3.4",
+      "statement": "n≥1 的实际Hermitian PSD谱，重数保留、零特征值零次幂=1；n!h_n/n^n 上界。几何积版保留一个实际特征值=1、其余<1，不偷换为有序集合或丢重数。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.complex_posSemidef_permanent_le_homogeneous",
+        "TournamentHamiltonian.complex_posSemidef_permanent_le_geometric",
+        "TournamentHamiltonian.complex_posSemidef_permanent_nonnegative"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_3_5",
+      "current_label": "技术附录 §3 命题 3.5（主文 §3 调用）",
+      "legacy_label": "命题 3.5",
+      "statement": "原 E/n 与normalized B接口，原W,D,T₁,α=min(1/4,1/(16D),logσ/2)、Γ,u,v、K_G=Γσ(u²+v)/(2(1−α))及四项误差逐字；真正Gaussian factorial-second HasSum，不是k²或totalized-tsum空真；无调用者活动/moment预算前提。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "PaperGaussianRecovery.paper_3_5",
+        "PaperGaussianRecovery.paper_3_5_normalized",
+        "PaperGaussianRecovery.factorial_second_hasSum"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_4_1",
+      "current_label": "引理 4.1（完整证明见技术附录 §4）",
+      "legacy_label": "引理 4.1",
+      "statement": "signed实矩阵总质量 p，绝对行列和≤2、density/gap、ε的两界；同一实势witness行列和1、sum x=sum y、∞范数/entry/op界；非负性与零支撑保持另外真定理，不把X≥0用于signed结论。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.exists_local_scaling",
+        "TournamentHamiltonian.localScaledMatrix_nonnegative",
+        "TournamentHamiltonian.localScaledMatrix_zero_support"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_4_2",
+      "current_label": "引理 4.2（完整证明见技术附录 §4）",
+      "legacy_label": "引理 4.2",
+      "statement": "X≥0时同一缩放witness具L2/Frobenius位移和0≤capacity≤K‖marginal‖²；任意正质量归一化后精确恢复势与permanent，并给e^(mass−p)界。非单位质量总势不误称非负。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.exists_local_scaling_displacement_capacity",
+        "TournamentHamiltonian.exists_normalized_local_scaling_witness",
+        "TournamentHamiltonian.massRestoredLocalPotentials_capacity"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_4_3",
+      "current_label": "引理 4.3（完整证明见技术附录 §4）",
+      "legacy_label": "引理 4.3",
+      "statement": "真实矩形矩阵、独立行列保留/删除集；真Gram正对数、删除平方质量、双侧中心化及Frobenius-Lipschitz三个端点均带原2(1−q²)分母；不以弱√位移替代删除O(t/n)。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.gramGaussian_deletion_bound",
+        "TournamentHamiltonian.gramGaussian_centering_bound",
+        "TournamentHamiltonian.gramGaussian_log_lipschitz"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_4_4",
+      "current_label": "引理 4.4（完整证明见技术附录 §4）",
+      "legacy_label": "引理 4.4",
+      "statement": "预固定b,A₀,B₀后共同 K,N 先于所有 n,t,T 和两独立删集；真实paired Γ及分别行/列恢复因子、原误差预算；I,J仅同card，不要求I=J。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.adjacency_nonprincipal_gaussian_uniform_log"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_4_5",
+      "current_label": "引理 4.5（完整证明见技术附录 §4）",
+      "legacy_label": "引理 4.5",
+      "statement": "固定 B₀>0，∃Cerr,δ,N 在所有n,t,T,I,J之前；真实score Pi-sup norm、η=(d+t+1)²/n；η≤δ内部消除variance/logbudget；正真实Gaussian中心后的literal相对误差，不仅absolute。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "PaperEndpointWrappersB.lemma4_5",
+        "PaperEndpointWrappersB.lemma4_5_actual_score",
+        "PaperEndpointWrappersB.lemma4_5_relative_actual_score"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_5_1",
+      "current_label": "引理 5.1",
+      "legacy_label": "引理 5.1",
+      "statement": "真实Hamilton路径actual count=det(I+A_U)per(A_Uc)正卷积；全阶pathCountFinite端点覆盖n0空排列=1，且有Lean桥接旧/当前非空pathCount。永久式空矩阵=1，不是重新定义目标为卷积。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentPaths.pathCountFinite_eq_pathConvolutionSum",
+        "TournamentPaths.pathCount_eq_positive_convolution",
+        "TournamentPaths.empty_path_convolution",
+        "TournamentPaths.singleton_path_convolution"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_6_1",
+      "current_label": "引理 6.1（原 cot 界证明见技术附录 §6.1）",
+      "legacy_label": "引理 6.1",
+      "statement": "正阶实际sign矩阵真L2 op≤cot(π/(2n))<2n/π，及ρ≤原C_*；精确cot端点与strict第二步都已命名，不只粗2n/π界。",
+      "status": "partial_conclusion",
+      "endpoints": [
+        "TournamentHamiltonian.signMatrix_complex_opNorm_le_cot",
+        "TournamentHamiltonian.transitive_cot_lt_two_mul_div_pi",
+        "TournamentHamiltonian.spectralRatio_le_upperConstant"
+      ],
+      "note": "cot 界与旧 C_* 界已覆盖；新增 ρ≤(3n−1)/(n+1)<3 没有本轮新端点。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_6_2",
+      "current_label": "定理 6.2",
+      "legacy_label": "定理 6.2",
+      "statement": "任意不同实际Tournament list的真实矩阵乘积，不是单矩阵幂；K^p sortedAbs x 非负降序、所有真实前缀弱主序，最外向量等号传递每个drop后缀；含空list和小维的更强边界。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.Equality.tournament_list_product_comparison_and_suffixes"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_6_3",
+      "current_label": "引理 6.3",
+      "legacy_label": "引理 6.3",
+      "statement": "真截断正部和=实际有限sup′前缀最大值（含r0）；所有实t的链更强于t≥0。平方和比较与等号刚性另真证明；不把max重新定义成截断和。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.Equality.truncated_prefix_max_chain",
+        "TournamentHamiltonian.finite_sum_sq_le_of_prefix_le",
+        "TournamentHamiltonian.eq_of_finPrefix_le_of_sq_sum_eq"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_6_4",
+      "current_label": "引理 6.4",
+      "legacy_label": "引理 6.4",
+      "statement": "无条件ρ≤r及精确等号iff显式±1 signed-permutation Ω，纸上方向S=ΩᵀTΩ由真正转置/逆代数桥；ΩᵀΩ=I。regular奇阶才由独立已证桥变成普通carousel同构；不称switching保持路径数。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "PaperSpectralOrbit.paper_6_4",
+        "PaperSpectralOrbit.signed_class_iff_paper_conjugation",
+        "TournamentHamiltonian.Equality.tournament_exists_signed_permutation_conjugation",
+        "TournamentHamiltonian.Equality.signedPermutationMatrix_orthogonal",
+        "TournamentPaths.regular_pathSpectralRatio_eq_carousel_iff_relabel"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_6_5",
+      "current_label": "引理 6.5",
+      "legacy_label": "引理 6.5",
+      "statement": "实际整矩阵S³ mod2、skew与offdiagonal奇、平方mod8/配对mod16，真Frobenius亏损≥16；regular非普通carousel内部推出严格性。原log gap16/(3d⁶)、exp及正加性gap全在Lean内，非caller strict比较。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.Equality.sixth_moment_gap_sixteen_of_not_signedPermutationTransitive",
+        "TournamentHamiltonian.Equality.sixteen_dvd_intSignMatrix_cube_frob_sub_cube_frob",
+        "TournamentHamiltonian.Equality.regular_noncarousel_quantitative_spectral_gap"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_7_1",
+      "current_label": "历史命题 7.1（仅 C_* 辅助界，不是现命题 7.1）",
+      "legacy_label": "命题 7.1",
+      "statement": "真正证明MainBound而不只声明Prop；全图actual count有限sup上界、原C_*与实际maxPaths下界共用一个绝对K,N。不是用主定理更强sharp bound在文字中替代原辅助结论。",
+      "status": "historical_only",
+      "endpoints": [
+        "PaperEndpointWrappersB.mainBound",
+        "PaperEndpointWrappersB.proposition7_1"
+      ],
+      "note": "此端点上界常数是 C_*，禁止按编号匹配当前尖锐 L 命题。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_7_2",
+      "current_label": "引理 7.2",
+      "legacy_label": "引理 7.2",
+      "statement": "一个K=e⁷覆盖全部n≥1；实际outdegree variance与score variance的1/4关系正确；n≥3界和n1/2实际per=0在同一endpoint内部分支。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "PaperEndpointWrappersB.lemma7_2"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_8_1",
+      "current_label": "定理 8.1",
+      "legacy_label": "定理 8.1",
+      "statement": "绝对常数先于任意非负d(n)=o(√n)，阈值随后可依赖d；之后对全体score∞≤d(n)实际T共同双边路径误差≤C(d+1)²/n，无额外log或regular条件。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.small_score_pathCount_spectral_approximation_eventually",
+        "TournamentHamiltonian.small_score_pathCount_spectral_error_eventually_small"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_8_2",
+      "current_label": "推论 8.2",
+      "legacy_label": "推论 8.2",
+      "statement": "同一C>0,N≥20先于m及两族；实际odd carouselTournament与实际evenCarouselTournament一点删除embedding的真实pathCount/原μ达到L+O(1/n)，不是ρ本身、maxPaths或chosen existential。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "PaperCarouselPath.carousel_pathCounts_error_bound",
+        "PaperCarouselPath.corollary8_2"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_9_2",
+      "current_label": "定理 9.2",
+      "legacy_label": "定理 9.2",
+      "statement": "真实原K(y)=det(I−(A+I/2)diag y)的分支h及其实际log/exp坐标在原点邻域解析；与原角函数为真正邻域相等（非仅mod2πi），并接实际Hessian/正定/det/正有理比。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "Tournament.wormald_original_angle_hessian",
+        "Tournament.OriginalCoordinates.regular_original_branch_analytic",
+        "Tournament.OriginalCoordinates.regular_original_rawLog_analytic",
+        "Tournament.OriginalCoordinates.regular_original_rawLog_exp_analytic"
+      ],
+      "note": "原角 Hessian 结论已有完整形式化；当前主文短 Schur 补推导尚未逐步对应。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_10_2",
+      "current_label": "推论 10.2",
+      "legacy_label": "推论 10.2",
+      "statement": "固定真实regular基图d>0（含d1）；uniform m所有Nat eventually，regular m=2k+1；四个actual circle/path均值除各自ν/μ趋ρ和e^(1/d)ρ；真实regular/uniform比值趋e^(1/d)，分母eventually正。无需未证Wormald渐近前提。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "UniformDenseLimit.uniform_avgCycle_tendsto",
+        "UniformDenseLimit.uniform_avgPath_tendsto",
+        "RegularExpectation.regular_avgCycle_tendsto",
+        "RegularExpectation.regular_avgPath_tendsto",
+        "RegularExpectation.regular_expectations_tendsto",
+        "RegularExpectation.regular_uniform_cycle_ratio_tendsto",
+        "RegularExpectation.regular_uniform_path_ratio_tendsto"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_10_3",
+      "current_label": "命题 10.3",
+      "legacy_label": "命题 10.3",
+      "statement": "真实transitive kernel全参数det二项式、actual odd carousel谱比闭式、实际regular模型常数e^(1/d)ρ；regular常数解释由10.2真实计数极限支撑，不仅把一个数命名成模型常数。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.transitiveKernel_det",
+        "TournamentHamiltonian.carouselTournament_kernel_det",
+        "TournamentHamiltonian.carousel_spectralRatio_eq",
+        "TournamentHamiltonian.transitiveRatio_eq_binomialMean",
+        "TournamentHamiltonian.carouselTournament_score",
+        "TournamentHamiltonian.regularCarouselConstant_closed_form",
+        "TournamentHamiltonian.carousel_spectralRatio_order_three",
+        "TournamentHamiltonian.carousel_spectralRatio_order_five",
+        "TournamentHamiltonian.carousel_spectralRatio_order_seven",
+        "RegularExpectation.regular_avgCycle_tendsto",
+        "RegularExpectation.regular_avgPath_tendsto"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_10_5",
+      "current_label": "推论 10.5",
+      "legacy_label": "推论 10.5",
+      "statement": "与新引言1.5（原1.4）共享实际odd序列严格单调+极限及闭式桥；固定奇d≥3，非连续实参数单调性的替代证明路线。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentHamiltonian.regularCarouselConstant_monotone_convergent",
+        "TournamentHamiltonian.regularCarouselConstant_closed_form"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_11_2",
+      "current_label": "推论 11.2",
+      "legacy_label": "推论 11.2",
+      "statement": "与新引言1.4（原1.3）共享全体固定奇阶基图族的四模型eventual唯一极值；共同阈值在所有T前，equality iff普通同构；不是仅regular基图、极限唯一性或对所有小m均成立。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "FiniteExtremum.eventual_four_models_of_odd",
+        "FiniteExtremum.UniformMaximumAt",
+        "FiniteExtremum.RegularMaximumAt",
+        "FiniteFamilyGap.CarouselClass",
+        "FiniteExtremum.eventual_four_strict_outside"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "legacy_11_5",
+      "current_label": "主文 §11.1（伴随稿引理 11.5）",
+      "legacy_label": "引理 11.5",
+      "statement": "真实固定图公平独立增点条件均值=H/4，N≥2且N1真反例；原μ_N=4ν_(N+1)，正mean内部，literal归一期望等式与任意有限weighted family平均都有可导入Lean桥；不把sentinel权1收缩或双随机augmentation混成随机增点。",
+      "status": "conclusion_with_existing_endpoint",
+      "endpoints": [
+        "TournamentPaths.augmentation_average",
+        "TournamentPaths.one_vertex_average_not_quarter",
+        "NonregularNormalization.meanPaths_eq_four_meanCycles_succ",
+        "PaperAugmentationNormalization.normalized_augmentation",
+        "PaperAugmentationNormalization.normalized_finite_augmentation"
+      ],
+      "note": "既有端点覆盖此数学结论的原精确条件；不认证当前主文逐句或替代证明。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "sharp_upper_bound",
+      "current_label": "命题 7.1（尖锐 L 上界）",
+      "legacy_label": null,
+      "statement": "存在绝对 K,N，使所有 n≥N 及全部 n 阶竞赛图满足 H(T)≤(L+K/n)μ_n。",
+      "status": "same_conclusion_alternative_proof",
+      "endpoints": [
+        "TournamentHamiltonian.sharp_path_asymptotic",
+        "TournamentHamiltonian.sharp_path_normalized_error",
+        "TournamentPaths.maxPathCountFinite_eq_legacy"
+      ],
+      "note": "既有尖锐最大值端点覆盖同一上界结论（结合有限最大值定义）；当前 5.2→6.6→7.3→7.1 的书面证明链没有逐步 Lean 对应。不能借此宣布新链已形式化。",
+      "source_version": "S",
+      "build_record": "H"
+    },
+    {
+      "stable_id": "convolution_moments",
+      "current_label": "引理 5.2（原 5.1a）",
+      "legacy_label": "引理 5.1a",
+      "statement": "任意固定 c>0、整数 r≥0 的加权固定矩可和；k_n=⌈4log n/loglog n⌉ 时统一长删集尾 B_n=n^(−3/2+o(1))=o(n^(−1))。",
+      "status": "no_new_endpoint",
+      "endpoints": [],
+      "note": "卷积已有端点，但本编号固定矩/统一尾界未建立新端点。",
+      "source_version": null,
+      "build_record": null
+    },
+    {
+      "stable_id": "all_order_spectral",
+      "current_label": "命题 6.6",
+      "legacy_label": null,
+      "statement": "所有 n≥2 的竞赛符号矩阵满足 ρ_n(S)≤r_n=L+O(n^(−1))，误差常数绝对。",
+      "status": "composition_not_mapped",
+      "endpoints": [],
+      "note": "已有谱比较及闭式组件，不将人工组合推导冒称本编号及其奇偶统一书面链已有新组合端点。",
+      "source_version": null,
+      "build_record": null
+    },
+    {
+      "stable_id": "score_sensitive_upper",
+      "current_label": "命题 7.3",
+      "legacy_label": null,
+      "statement": "固定 K_0 后，存在仅依赖 K_0 的 K_1,n_0；当 ‖a‖∞≤0.9、τ≤K_0 log n 时，H(T)/μ_n≤ρ_n(S)exp(−τ/2+K_1/n)+B_n。",
+      "status": "no_new_endpoint",
+      "endpoints": [],
+      "note": "这是当前度差修正主链的新增中间命题；已有全局尖锐端点不替代其保留惩罚因子的陈述。",
+      "source_version": null,
+      "build_record": null
+    },
+    {
+      "stable_id": "degree_stability",
+      "current_label": "定理 1.2 / 推论 8.3（原 8.2a）",
+      "legacy_label": "推论 8.2a",
+      "statement": "存在绝对 C,N，对 n≥N、0≤ε≤(L−1)/2，H(T)/μ_n≥L−ε 推出 τ(T)≤C(ε+n^(−1))、V_deg(T)≤C(ε n²+n)；最大化者 V_deg(T)=O(n)。",
+      "status": "no_new_endpoint",
+      "endpoints": [],
+      "note": "新度数方差稳定性结论无登记端点。它不推出正则、圆环同构、编辑距离稳定性，或小度差定理所需 o(√n)。",
+      "source_version": null,
+      "build_record": null
+    }
+  ],
+  "endpoint_catalog": {
+    "TournamentHamiltonian.sharp_path_asymptotic": {
+      "declaration": "TournamentHamiltonian.sharp_path_asymptotic",
+      "source": "TournamentHamiltonian/SharpMain.lean",
+      "source_sha256": "4cb4636f0b099a419f844f020a935db697a187746726fe321d37a90caa21241d",
+      "source_line": 26
+    },
+    "TournamentHamiltonian.sharp_path_normalized_error": {
+      "declaration": "TournamentHamiltonian.sharp_path_normalized_error",
+      "source": "TournamentHamiltonian/SharpMain.lean",
+      "source_sha256": "4cb4636f0b099a419f844f020a935db697a187746726fe321d37a90caa21241d",
+      "source_line": 34
+    },
+    "TournamentPaths.maxPathCountFinite_eq_legacy": {
+      "declaration": "TournamentPaths.maxPathCountFinite_eq_legacy",
+      "source": "Tournament/SharpBound.lean",
+      "source_sha256": "7002dc7558c7e0655d9f9a8555b6c5198e20e3f97af7d39b84c88c2bc650e651",
+      "source_line": 47
+    },
+    "PaperCarouselPath.corollary8_2": {
+      "declaration": "PaperCarouselPath.corollary8_2",
+      "source": "TournamentHamiltonian/PaperCarouselPath/Endpoint.lean",
+      "source_sha256": "c7e6a70f01dc91774c455576ab1b39580d4033151161a039c6bbebd4c2e9481a",
+      "source_line": 56
+    },
+    "Tournament.wormald_original_angle_hessian": {
+      "declaration": "Tournament.wormald_original_angle_hessian",
+      "source": "Tournament/HessianTheorem.lean",
+      "source_sha256": "13baa715f6fd9940127ce438310a201ee4afdf3db6ac37b32463161ff785b508",
+      "source_line": 29
+    },
+    "FiniteExtremum.eventual_four_models_of_odd": {
+      "declaration": "FiniteExtremum.eventual_four_models_of_odd",
+      "source": "TournamentHamiltonian/FiniteExtremum/Endpoint.lean",
+      "source_sha256": "50ae80149d2911280a12ebdd58a6cf62205b41191abd7171a15e58dc20737347",
+      "source_line": 45
+    },
+    "FiniteExtremum.UniformMaximumAt": {
+      "declaration": "FiniteExtremum.UniformMaximumAt",
+      "source": "TournamentHamiltonian/FiniteExtremum/Comparison.lean",
+      "source_sha256": "e4e0a81d86561d1ce783ceb327062cf088630731a9daf2e2174895342972aa5e",
+      "source_line": 64
+    },
+    "FiniteExtremum.RegularMaximumAt": {
+      "declaration": "FiniteExtremum.RegularMaximumAt",
+      "source": "TournamentHamiltonian/FiniteExtremum/Comparison.lean",
+      "source_sha256": "e4e0a81d86561d1ce783ceb327062cf088630731a9daf2e2174895342972aa5e",
+      "source_line": 70
+    },
+    "FiniteFamilyGap.CarouselClass": {
+      "declaration": "FiniteFamilyGap.CarouselClass",
+      "source": "TournamentHamiltonian/FiniteFamilyGap/Scores.lean",
+      "source_sha256": "4f7e8066bfbd5c75dea6ac38ea9bde6ac04e2e366f31cf2f352fa9c156431072",
+      "source_line": 15
+    },
+    "FiniteExtremum.eventual_four_strict_outside": {
+      "declaration": "FiniteExtremum.eventual_four_strict_outside",
+      "source": "TournamentHamiltonian/FiniteExtremum/Endpoint.lean",
+      "source_sha256": "50ae80149d2911280a12ebdd58a6cf62205b41191abd7171a15e58dc20737347",
+      "source_line": 54
+    },
+    "TournamentHamiltonian.regularCarouselConstant_monotone_convergent": {
+      "declaration": "TournamentHamiltonian.regularCarouselConstant_monotone_convergent",
+      "source": "TournamentHamiltonian/Carousel/Monotonicity.lean",
+      "source_sha256": "4ed6440c878fd9a9c98dce2e4aba80a549e42066a2592fa6bd421e7dae767942",
+      "source_line": 39
+    },
+    "TournamentHamiltonian.regularCarouselConstant_closed_form": {
+      "declaration": "TournamentHamiltonian.regularCarouselConstant_closed_form",
+      "source": "TournamentHamiltonian/Carousel/CarouselConstants.lean",
+      "source_sha256": "168385bb1966862e4968b8099e390cfe8f9dce4732f76bc617a3e9b5762dd127",
+      "source_line": 18
+    },
+    "PaperEndpointsA.paper_3_1_uniform_constant": {
+      "declaration": "PaperEndpointsA.paper_3_1_uniform_constant",
+      "source": "TournamentHamiltonian/PaperEndpointsA/Permanent31.lean",
+      "source_sha256": "3f13dd5a1533c7d6683ea355e889e63d0d5ee343ee294884c7167f4d119640a6",
+      "source_line": 59
+    },
+    "PaperEndpointsA.paper_3_1_determinant": {
+      "declaration": "PaperEndpointsA.paper_3_1_determinant",
+      "source": "TournamentHamiltonian/PaperEndpointsA/Permanent31.lean",
+      "source_sha256": "3f13dd5a1533c7d6683ea355e889e63d0d5ee343ee294884c7167f4d119640a6",
+      "source_line": 47
+    },
+    "PaperEndpointsA.paper_3_1_relative": {
+      "declaration": "PaperEndpointsA.paper_3_1_relative",
+      "source": "TournamentHamiltonian/PaperEndpointsA/Permanent31.lean",
+      "source_sha256": "3f13dd5a1533c7d6683ea355e889e63d0d5ee343ee294884c7167f4d119640a6",
+      "source_line": 70
+    },
+    "PaperEndpointsA.paper_3_2": {
+      "declaration": "PaperEndpointsA.paper_3_2",
+      "source": "TournamentHamiltonian/PaperEndpointsA/Activity32.lean",
+      "source_sha256": "e278cbd41146c7c883f0434f1b5077cda86412f08e8e4f0100af5d5ca771edc1",
+      "source_line": 50
+    },
+    "PaperEndpointsA.paper_3_2_first": {
+      "declaration": "PaperEndpointsA.paper_3_2_first",
+      "source": "TournamentHamiltonian/PaperEndpointsA/Activity32.lean",
+      "source_sha256": "e278cbd41146c7c883f0434f1b5077cda86412f08e8e4f0100af5d5ca771edc1",
+      "source_line": 59
+    },
+    "TournamentHamiltonian.permanent_polarization": {
+      "declaration": "TournamentHamiltonian.permanent_polarization",
+      "source": "TournamentHamiltonian/PermanentPolarization.lean",
+      "source_sha256": "60e678cdea65d0ef92e358d24184f7ae3bd5b88cabbdc6893aadc1b274018af8",
+      "source_line": 191
+    },
+    "TournamentHamiltonian.complex_posSemidef_permanent_nonnegative": {
+      "declaration": "TournamentHamiltonian.complex_posSemidef_permanent_nonnegative",
+      "source": "TournamentHamiltonian/PermanentPolarization.lean",
+      "source_sha256": "60e678cdea65d0ef92e358d24184f7ae3bd5b88cabbdc6893aadc1b274018af8",
+      "source_line": 154
+    },
+    "TournamentHamiltonian.complex_posSemidef_permanent_le_homogeneous": {
+      "declaration": "TournamentHamiltonian.complex_posSemidef_permanent_le_homogeneous",
+      "source": "TournamentHamiltonian/CircularPSDComparison.lean",
+      "source_sha256": "68784709a867bcabb0837003ab4378f7f34c76b5b814320194c15eb877d278bb",
+      "source_line": 140
+    },
+    "TournamentHamiltonian.complex_posSemidef_permanent_le_geometric": {
+      "declaration": "TournamentHamiltonian.complex_posSemidef_permanent_le_geometric",
+      "source": "TournamentHamiltonian/HomogeneousGeometricBound.lean",
+      "source_sha256": "d07c7cafdd2e3df49bd3500dbbe23471879dea2c5f340b530b00c4399d36c55a",
+      "source_line": 90
+    },
+    "PaperGaussianRecovery.paper_3_5": {
+      "declaration": "PaperGaussianRecovery.paper_3_5",
+      "source": "TournamentHamiltonian/PaperGaussianRecovery/Endpoint.lean",
+      "source_sha256": "99205633dc65d54541c323e24d5b96d6d459041617bc207a598f4cf6c59b756a",
+      "source_line": 101
+    },
+    "PaperGaussianRecovery.paper_3_5_normalized": {
+      "declaration": "PaperGaussianRecovery.paper_3_5_normalized",
+      "source": "TournamentHamiltonian/PaperGaussianRecovery/Endpoint.lean",
+      "source_sha256": "99205633dc65d54541c323e24d5b96d6d459041617bc207a598f4cf6c59b756a",
+      "source_line": 56
+    },
+    "PaperGaussianRecovery.factorial_second_hasSum": {
+      "declaration": "PaperGaussianRecovery.factorial_second_hasSum",
+      "source": "TournamentHamiltonian/PaperGaussianRecovery/Series.lean",
+      "source_sha256": "f1d330bd85b7ff2abe6153b83e690b5e879529375cfa5714851c22f9dade4998",
+      "source_line": 106
+    },
+    "TournamentHamiltonian.exists_local_scaling": {
+      "declaration": "TournamentHamiltonian.exists_local_scaling",
+      "source": "TournamentHamiltonian/LocalScalingEstimates.lean",
+      "source_sha256": "cf9127242babbf80b2c13a5b3b402885c73678baeed30dc98cd363731e261c17",
+      "source_line": 158
+    },
+    "TournamentHamiltonian.localScaledMatrix_nonnegative": {
+      "declaration": "TournamentHamiltonian.localScaledMatrix_nonnegative",
+      "source": "TournamentHamiltonian/LocalScalingExistence.lean",
+      "source_sha256": "e1564e969d920aec5b629c8f3b6168f42625da3df220105807c95bb3f086f3fd",
+      "source_line": 436
+    },
+    "TournamentHamiltonian.localScaledMatrix_zero_support": {
+      "declaration": "TournamentHamiltonian.localScaledMatrix_zero_support",
+      "source": "TournamentHamiltonian/LocalScalingExistence.lean",
+      "source_sha256": "e1564e969d920aec5b629c8f3b6168f42625da3df220105807c95bb3f086f3fd",
+      "source_line": 441
+    },
+    "TournamentHamiltonian.exists_local_scaling_displacement_capacity": {
+      "declaration": "TournamentHamiltonian.exists_local_scaling_displacement_capacity",
+      "source": "TournamentHamiltonian/LocalScalingCapacity.lean",
+      "source_sha256": "7b6bcc1e8df1a8e3de0acee0a08b67cffabb08f8284dfd626ddda1c7e9468a61",
+      "source_line": 144
+    },
+    "TournamentHamiltonian.exists_normalized_local_scaling_witness": {
+      "declaration": "TournamentHamiltonian.exists_normalized_local_scaling_witness",
+      "source": "TournamentHamiltonian/LocalScalingComplete.lean",
+      "source_sha256": "fad2870cb58234605ac4e9492bb31f81236aab438b4ea14037d7019d5983b332",
+      "source_line": 69
+    },
+    "TournamentHamiltonian.massRestoredLocalPotentials_capacity": {
+      "declaration": "TournamentHamiltonian.massRestoredLocalPotentials_capacity",
+      "source": "TournamentHamiltonian/LocalScalingNormalization.lean",
+      "source_sha256": "69144a0c61354d82f5af96fbcc9f536b44d23838e5ece3dcf41344dbafb2d149",
+      "source_line": 22
+    },
+    "TournamentHamiltonian.gramGaussian_deletion_bound": {
+      "declaration": "TournamentHamiltonian.gramGaussian_deletion_bound",
+      "source": "TournamentHamiltonian/GramDeletion.lean",
+      "source_sha256": "839ebb5b759ef6b8788ec81ada59e00301de67542f31a70783298a12ce6ab39f",
+      "source_line": 310
+    },
+    "TournamentHamiltonian.gramGaussian_centering_bound": {
+      "declaration": "TournamentHamiltonian.gramGaussian_centering_bound",
+      "source": "TournamentHamiltonian/GramCentering.lean",
+      "source_sha256": "b1d42918dbdfa23ec21401603b4c7c8dadd9c90dc669ff961456aad1cacaeca5",
+      "source_line": 196
+    },
+    "TournamentHamiltonian.gramGaussian_log_lipschitz": {
+      "declaration": "TournamentHamiltonian.gramGaussian_log_lipschitz",
+      "source": "TournamentHamiltonian/GramLipschitz.lean",
+      "source_sha256": "d361d45991e19590030d147d6cd0c86398595ae14ac00529f6f79f5c9ec85090",
+      "source_line": 214
+    },
+    "TournamentHamiltonian.adjacency_nonprincipal_gaussian_uniform_log": {
+      "declaration": "TournamentHamiltonian.adjacency_nonprincipal_gaussian_uniform_log",
+      "source": "TournamentHamiltonian/UniformPairedPermanentGaussian.lean",
+      "source_sha256": "5fc4d3f9fe17882185b6012101962789196102a685d430bf447e982b8ad786f4",
+      "source_line": 18
+    },
+    "PaperEndpointWrappersB.lemma4_5": {
+      "declaration": "PaperEndpointWrappersB.lemma4_5",
+      "source": "TournamentHamiltonian/PaperEndpointWrappersB/SmallScore.lean",
+      "source_sha256": "2a6247dd6fbe9c6ded58a0f35da94bbc1e6993d198cbd9bb47e23fc8e8b16b06",
+      "source_line": 30
+    },
+    "PaperEndpointWrappersB.lemma4_5_actual_score": {
+      "declaration": "PaperEndpointWrappersB.lemma4_5_actual_score",
+      "source": "TournamentHamiltonian/PaperEndpointWrappersB/SmallScore.lean",
+      "source_sha256": "2a6247dd6fbe9c6ded58a0f35da94bbc1e6993d198cbd9bb47e23fc8e8b16b06",
+      "source_line": 66
+    },
+    "PaperEndpointWrappersB.lemma4_5_relative_actual_score": {
+      "declaration": "PaperEndpointWrappersB.lemma4_5_relative_actual_score",
+      "source": "TournamentHamiltonian/PaperEndpointWrappersB/Relative.lean",
+      "source_sha256": "d8136a65fdada5a4b7e29dfb1dd40e7b2b9467b025facbe55cc8cfa28ae9e098",
+      "source_line": 26
+    },
+    "TournamentPaths.pathCountFinite_eq_pathConvolutionSum": {
+      "declaration": "TournamentPaths.pathCountFinite_eq_pathConvolutionSum",
+      "source": "Tournament/PathConvolution.lean",
+      "source_sha256": "d02f2457710285a5dfc7e0c270191881c3e1e54514a96372755a79784cecb997",
+      "source_line": 87
+    },
+    "TournamentPaths.pathCount_eq_positive_convolution": {
+      "declaration": "TournamentPaths.pathCount_eq_positive_convolution",
+      "source": "Tournament/PathConvolution.lean",
+      "source_sha256": "d02f2457710285a5dfc7e0c270191881c3e1e54514a96372755a79784cecb997",
+      "source_line": 99
+    },
+    "TournamentPaths.empty_path_convolution": {
+      "declaration": "TournamentPaths.empty_path_convolution",
+      "source": "Tournament/PathConvolution.lean",
+      "source_sha256": "d02f2457710285a5dfc7e0c270191881c3e1e54514a96372755a79784cecb997",
+      "source_line": 112
+    },
+    "TournamentPaths.singleton_path_convolution": {
+      "declaration": "TournamentPaths.singleton_path_convolution",
+      "source": "Tournament/PathConvolution.lean",
+      "source_sha256": "d02f2457710285a5dfc7e0c270191881c3e1e54514a96372755a79784cecb997",
+      "source_line": 116
+    },
+    "TournamentHamiltonian.signMatrix_complex_opNorm_le_cot": {
+      "declaration": "TournamentHamiltonian.signMatrix_complex_opNorm_le_cot",
+      "source": "TournamentHamiltonian/TransitiveCotSpectrum.lean",
+      "source_sha256": "8cd9890148f270b7d050675060c897b46bfbfc21a4fa7e989ee404650eafe2f8",
+      "source_line": 342
+    },
+    "TournamentHamiltonian.transitive_cot_lt_two_mul_div_pi": {
+      "declaration": "TournamentHamiltonian.transitive_cot_lt_two_mul_div_pi",
+      "source": "TournamentHamiltonian/TransitiveCotSpectrum.lean",
+      "source_sha256": "8cd9890148f270b7d050675060c897b46bfbfc21a4fa7e989ee404650eafe2f8",
+      "source_line": 347
+    },
+    "TournamentHamiltonian.spectralRatio_le_upperConstant": {
+      "declaration": "TournamentHamiltonian.spectralRatio_le_upperConstant",
+      "source": "TournamentHamiltonian/OperatorCap.lean",
+      "source_sha256": "64edc272d2129a3fe1cccf115572400e1830722ae6114ac6751ab65010e23992",
+      "source_line": 365
+    },
+    "TournamentHamiltonian.Equality.tournament_list_product_comparison_and_suffixes": {
+      "declaration": "TournamentHamiltonian.Equality.tournament_list_product_comparison_and_suffixes",
+      "source": "TournamentHamiltonian/SpectralSupplement/ProductComparison.lean",
+      "source_sha256": "37967e82c2a0b37161b38b4cb7e88938b7aa22dff17f16742f1bafcd937dae23",
+      "source_line": 160
+    },
+    "TournamentHamiltonian.Equality.truncated_prefix_max_chain": {
+      "declaration": "TournamentHamiltonian.Equality.truncated_prefix_max_chain",
+      "source": "TournamentHamiltonian/SpectralSupplement/TruncatedPrefix.lean",
+      "source_sha256": "46ccd3551361d30054eb17664aa609600553a3ffd39b3c07701101c7af4af65e",
+      "source_line": 93
+    },
+    "TournamentHamiltonian.finite_sum_sq_le_of_prefix_le": {
+      "declaration": "TournamentHamiltonian.finite_sum_sq_le_of_prefix_le",
+      "source": "TournamentHamiltonian/FiniteVectorOrder.lean",
+      "source_sha256": "8751f7fd2b163564ba65999c75106b664ac330edccc31391190da19cfafff62f",
+      "source_line": 117
+    },
+    "TournamentHamiltonian.eq_of_finPrefix_le_of_sq_sum_eq": {
+      "declaration": "TournamentHamiltonian.eq_of_finPrefix_le_of_sq_sum_eq",
+      "source": "TournamentHamiltonian/Equality/PrefixEquality.lean",
+      "source_sha256": "2776a6f12e3004cecff341422e34e765142e64ccb387544b32b2aeb687f7a418",
+      "source_line": 17
+    },
+    "PaperSpectralOrbit.paper_6_4": {
+      "declaration": "PaperSpectralOrbit.paper_6_4",
+      "source": "TournamentHamiltonian/PaperSpectralOrbit/Endpoint.lean",
+      "source_sha256": "b9d43ba4bd02ba96394b41cc5cae725abe2da65702cd0a4c5db6687363e7df39",
+      "source_line": 58
+    },
+    "PaperSpectralOrbit.signed_class_iff_paper_conjugation": {
+      "declaration": "PaperSpectralOrbit.signed_class_iff_paper_conjugation",
+      "source": "TournamentHamiltonian/PaperSpectralOrbit/Endpoint.lean",
+      "source_sha256": "b9d43ba4bd02ba96394b41cc5cae725abe2da65702cd0a4c5db6687363e7df39",
+      "source_line": 40
+    },
+    "TournamentHamiltonian.Equality.tournament_exists_signed_permutation_conjugation": {
+      "declaration": "TournamentHamiltonian.Equality.tournament_exists_signed_permutation_conjugation",
+      "source": "TournamentHamiltonian/Equality/SignedPermutationMatrix.lean",
+      "source_sha256": "624efbea64c70552e0a13cb0eeb317888c876b0840f8a30ab088c4ff481353ea",
+      "source_line": 44
+    },
+    "TournamentHamiltonian.Equality.signedPermutationMatrix_orthogonal": {
+      "declaration": "TournamentHamiltonian.Equality.signedPermutationMatrix_orthogonal",
+      "source": "TournamentHamiltonian/Equality/SignedPermutationMatrix.lean",
+      "source_sha256": "624efbea64c70552e0a13cb0eeb317888c876b0840f8a30ab088c4ff481353ea",
+      "source_line": 32
+    },
+    "TournamentPaths.regular_pathSpectralRatio_eq_carousel_iff_relabel": {
+      "declaration": "TournamentPaths.regular_pathSpectralRatio_eq_carousel_iff_relabel",
+      "source": "Tournament/SpectralClassification.lean",
+      "source_sha256": "eb64d3c5de4e7a5d565ec490eda6e4454d4c8ad0632abe67c27f1cd4b17c2969",
+      "source_line": 67
+    },
+    "TournamentHamiltonian.Equality.sixth_moment_gap_sixteen_of_not_signedPermutationTransitive": {
+      "declaration": "TournamentHamiltonian.Equality.sixth_moment_gap_sixteen_of_not_signedPermutationTransitive",
+      "source": "TournamentHamiltonian/Equality/SpectralClassification.lean",
+      "source_sha256": "883866754f89c3d56727dcf1beb1423b582a9a3e3ba4f836f78830badb7af30a",
+      "source_line": 132
+    },
+    "TournamentHamiltonian.Equality.sixteen_dvd_intSignMatrix_cube_frob_sub_cube_frob": {
+      "declaration": "TournamentHamiltonian.Equality.sixteen_dvd_intSignMatrix_cube_frob_sub_cube_frob",
+      "source": "TournamentHamiltonian/Equality/SixthMomentDivisibility.lean",
+      "source_sha256": "87f66d50c47aecceb57e739fb4bec197144479b7c2c71eb22a6437c3ed30ec3f",
+      "source_line": 167
+    },
+    "TournamentHamiltonian.Equality.regular_noncarousel_quantitative_spectral_gap": {
+      "declaration": "TournamentHamiltonian.Equality.regular_noncarousel_quantitative_spectral_gap",
+      "source": "TournamentHamiltonian/SpectralSupplement/QuantitativeGap.lean",
+      "source_sha256": "a10395b5a36f1c0ab86ebeac33ad656a83151ad0a608dd8b72908dc5612d4aa1",
+      "source_line": 104
+    },
+    "PaperEndpointWrappersB.mainBound": {
+      "declaration": "PaperEndpointWrappersB.mainBound",
+      "source": "TournamentHamiltonian/PaperEndpointWrappersB/MainBound.lean",
+      "source_sha256": "ea993722903d53051a63555dd4580ce74cec744d0ce49913e3575229e692bc93",
+      "source_line": 37
+    },
+    "PaperEndpointWrappersB.proposition7_1": {
+      "declaration": "PaperEndpointWrappersB.proposition7_1",
+      "source": "TournamentHamiltonian/PaperEndpointWrappersB/MainBound.lean",
+      "source_sha256": "ea993722903d53051a63555dd4580ce74cec744d0ce49913e3575229e692bc93",
+      "source_line": 55
+    },
+    "PaperEndpointWrappersB.lemma7_2": {
+      "declaration": "PaperEndpointWrappersB.lemma7_2",
+      "source": "TournamentHamiltonian/PaperEndpointWrappersB/Variance.lean",
+      "source_sha256": "a34fb53bcae941c2f7e600ae3953657f6e74de605c7276543e18efdf9f70675c",
+      "source_line": 23
+    },
+    "TournamentHamiltonian.small_score_pathCount_spectral_approximation_eventually": {
+      "declaration": "TournamentHamiltonian.small_score_pathCount_spectral_approximation_eventually",
+      "source": "TournamentHamiltonian/GeneralSmallScoreAsymptotic.lean",
+      "source_sha256": "563b1ea9cd4eb700659215198ef61e530612fa39b5889c885fb11116e48f7619",
+      "source_line": 70
+    },
+    "TournamentHamiltonian.small_score_pathCount_spectral_error_eventually_small": {
+      "declaration": "TournamentHamiltonian.small_score_pathCount_spectral_error_eventually_small",
+      "source": "TournamentHamiltonian/GeneralSmallScoreAsymptotic.lean",
+      "source_sha256": "563b1ea9cd4eb700659215198ef61e530612fa39b5889c885fb11116e48f7619",
+      "source_line": 83
+    },
+    "PaperCarouselPath.carousel_pathCounts_error_bound": {
+      "declaration": "PaperCarouselPath.carousel_pathCounts_error_bound",
+      "source": "TournamentHamiltonian/PaperCarouselPath/Endpoint.lean",
+      "source_sha256": "c7e6a70f01dc91774c455576ab1b39580d4033151161a039c6bbebd4c2e9481a",
+      "source_line": 15
+    },
+    "Tournament.OriginalCoordinates.regular_original_branch_analytic": {
+      "declaration": "Tournament.OriginalCoordinates.regular_original_branch_analytic",
+      "source": "Tournament/OriginalCoordinates.lean",
+      "source_sha256": "4b74c7840e3f5bd22dda6cc3cdb11db19c7e5d1299e69461a4f2c984e9db3994",
+      "source_line": 202
+    },
+    "Tournament.OriginalCoordinates.regular_original_rawLog_analytic": {
+      "declaration": "Tournament.OriginalCoordinates.regular_original_rawLog_analytic",
+      "source": "Tournament/OriginalCoordinates.lean",
+      "source_sha256": "4b74c7840e3f5bd22dda6cc3cdb11db19c7e5d1299e69461a4f2c984e9db3994",
+      "source_line": 225
+    },
+    "Tournament.OriginalCoordinates.regular_original_rawLog_exp_analytic": {
+      "declaration": "Tournament.OriginalCoordinates.regular_original_rawLog_exp_analytic",
+      "source": "Tournament/OriginalCoordinates.lean",
+      "source_sha256": "4b74c7840e3f5bd22dda6cc3cdb11db19c7e5d1299e69461a4f2c984e9db3994",
+      "source_line": 235
+    },
+    "UniformDenseLimit.uniform_avgCycle_tendsto": {
+      "declaration": "UniformDenseLimit.uniform_avgCycle_tendsto",
+      "source": "TournamentHamiltonian/UniformFinal/UniformExpectationLimit.lean",
+      "source_sha256": "593b502398952faa24e606e0055e04fb88f643a849267204502a4ba450e97834",
+      "source_line": 22
+    },
+    "UniformDenseLimit.uniform_avgPath_tendsto": {
+      "declaration": "UniformDenseLimit.uniform_avgPath_tendsto",
+      "source": "TournamentHamiltonian/UniformFinal/UniformExpectationLimit.lean",
+      "source_sha256": "593b502398952faa24e606e0055e04fb88f643a849267204502a4ba450e97834",
+      "source_line": 38
+    },
+    "RegularExpectation.regular_avgCycle_tendsto": {
+      "declaration": "RegularExpectation.regular_avgCycle_tendsto",
+      "source": "TournamentHamiltonian/RegularExpectation/Endpoint.lean",
+      "source_sha256": "7eff24c27e04a6cb15cd57bf140794ce38f530b999c96e709feee0f2a35f12e5",
+      "source_line": 42
+    },
+    "RegularExpectation.regular_avgPath_tendsto": {
+      "declaration": "RegularExpectation.regular_avgPath_tendsto",
+      "source": "TournamentHamiltonian/RegularExpectation/Endpoint.lean",
+      "source_sha256": "7eff24c27e04a6cb15cd57bf140794ce38f530b999c96e709feee0f2a35f12e5",
+      "source_line": 52
+    },
+    "RegularExpectation.regular_expectations_tendsto": {
+      "declaration": "RegularExpectation.regular_expectations_tendsto",
+      "source": "TournamentHamiltonian/RegularExpectation/Endpoint.lean",
+      "source_sha256": "7eff24c27e04a6cb15cd57bf140794ce38f530b999c96e709feee0f2a35f12e5",
+      "source_line": 60
+    },
+    "RegularExpectation.regular_uniform_cycle_ratio_tendsto": {
+      "declaration": "RegularExpectation.regular_uniform_cycle_ratio_tendsto",
+      "source": "TournamentHamiltonian/RegularExpectation/Endpoint.lean",
+      "source_sha256": "7eff24c27e04a6cb15cd57bf140794ce38f530b999c96e709feee0f2a35f12e5",
+      "source_line": 22
+    },
+    "RegularExpectation.regular_uniform_path_ratio_tendsto": {
+      "declaration": "RegularExpectation.regular_uniform_path_ratio_tendsto",
+      "source": "TournamentHamiltonian/RegularExpectation/Endpoint.lean",
+      "source_sha256": "7eff24c27e04a6cb15cd57bf140794ce38f530b999c96e709feee0f2a35f12e5",
+      "source_line": 31
+    },
+    "TournamentHamiltonian.transitiveKernel_det": {
+      "declaration": "TournamentHamiltonian.transitiveKernel_det",
+      "source": "TournamentHamiltonian/TransitiveDeterminant.lean",
+      "source_sha256": "14c7255018f70aed873dea1a2ff2a3ede7cf7462ac6e7b0e827b61994e754d19",
+      "source_line": 172
+    },
+    "TournamentHamiltonian.carouselTournament_kernel_det": {
+      "declaration": "TournamentHamiltonian.carouselTournament_kernel_det",
+      "source": "TournamentHamiltonian/Carousel.lean",
+      "source_sha256": "91ceb4575a91f728da1287e4ba16ac369eaf08676e9b2d67fa4191a9f9f41060",
+      "source_line": 283
+    },
+    "TournamentHamiltonian.carousel_spectralRatio_eq": {
+      "declaration": "TournamentHamiltonian.carousel_spectralRatio_eq",
+      "source": "TournamentHamiltonian/SkewSpectrum.lean",
+      "source_sha256": "2cd7120778d1b087318c690882c77a8b510fc0b2ae896a9e3c80dbd415cfa2a0",
+      "source_line": 570
+    },
+    "TournamentHamiltonian.transitiveRatio_eq_binomialMean": {
+      "declaration": "TournamentHamiltonian.transitiveRatio_eq_binomialMean",
+      "source": "TournamentHamiltonian/PowerApproximation.lean",
+      "source_sha256": "284da9a7d4a572f15ac58982b6c71f338e907223396fd04d5c5016ef86382c4d",
+      "source_line": 83
+    },
+    "TournamentHamiltonian.carouselTournament_score": {
+      "declaration": "TournamentHamiltonian.carouselTournament_score",
+      "source": "TournamentHamiltonian/Carousel.lean",
+      "source_sha256": "91ceb4575a91f728da1287e4ba16ac369eaf08676e9b2d67fa4191a9f9f41060",
+      "source_line": 209
+    },
+    "TournamentHamiltonian.carousel_spectralRatio_order_three": {
+      "declaration": "TournamentHamiltonian.carousel_spectralRatio_order_three",
+      "source": "TournamentHamiltonian/Carousel/ClosedValues.lean",
+      "source_sha256": "8a3145186ce187a10ddb4f64d7aface13b3328cd74f191383cfbadf9d89b70f5",
+      "source_line": 8
+    },
+    "TournamentHamiltonian.carousel_spectralRatio_order_five": {
+      "declaration": "TournamentHamiltonian.carousel_spectralRatio_order_five",
+      "source": "TournamentHamiltonian/Carousel/ClosedValues.lean",
+      "source_sha256": "8a3145186ce187a10ddb4f64d7aface13b3328cd74f191383cfbadf9d89b70f5",
+      "source_line": 13
+    },
+    "TournamentHamiltonian.carousel_spectralRatio_order_seven": {
+      "declaration": "TournamentHamiltonian.carousel_spectralRatio_order_seven",
+      "source": "TournamentHamiltonian/Carousel/ClosedValues.lean",
+      "source_sha256": "8a3145186ce187a10ddb4f64d7aface13b3328cd74f191383cfbadf9d89b70f5",
+      "source_line": 18
+    },
+    "TournamentPaths.augmentation_average": {
+      "declaration": "TournamentPaths.augmentation_average",
+      "source": "Tournament/Paths.lean",
+      "source_sha256": "9f2edb79bdcf6673e408642b52d613e644c0c3c4672d9c3bf5e2e493d8f08ce3",
+      "source_line": 162
+    },
+    "TournamentPaths.one_vertex_average_not_quarter": {
+      "declaration": "TournamentPaths.one_vertex_average_not_quarter",
+      "source": "Tournament/Paths.lean",
+      "source_sha256": "9f2edb79bdcf6673e408642b52d613e644c0c3c4672d9c3bf5e2e493d8f08ce3",
+      "source_line": 193
+    },
+    "NonregularNormalization.meanPaths_eq_four_meanCycles_succ": {
+      "declaration": "NonregularNormalization.meanPaths_eq_four_meanCycles_succ",
+      "source": "TournamentHamiltonian/NonregularNormalization/PathRate.lean",
+      "source_sha256": "a62f29b55c483885302adb1e888aa25ae4ed3588ac0fa6a0699c59626873dc75",
+      "source_line": 73
+    },
+    "PaperAugmentationNormalization.normalized_augmentation": {
+      "declaration": "PaperAugmentationNormalization.normalized_augmentation",
+      "source": "TournamentHamiltonian/PaperAugmentationNormalization/Endpoint.lean",
+      "source_sha256": "b94323e81d8a4d5d03b5e27745f89f5e680057a19b1f596f571962563d080162",
+      "source_line": 10
+    },
+    "PaperAugmentationNormalization.normalized_finite_augmentation": {
+      "declaration": "PaperAugmentationNormalization.normalized_finite_augmentation",
+      "source": "TournamentHamiltonian/PaperAugmentationNormalization/Endpoint.lean",
+      "source_sha256": "b94323e81d8a4d5d03b5e27745f89f5e680057a19b1f596f571962563d080162",
+      "source_line": 28
+    }
+  },
+  "evidence_sha256": {
+    "formal/coverage.json": "aa9f58a1b1adc0a999dc463dfbf96ed518de6ba262f25cac7ee09ced07097147",
+    "formal/verification/release/input_manifest.json": "3c6c9447712ba0bdea8f6fd150fc29a55d6beb8debf648647e78387dd6967cf3",
+    "review/lean-rerun-20261107/input_manifest.json": "0b48df5c078cfc5a7042c515b3f93c1ffd976d0012b1eaf203f1e43c931d352e",
+    "review/lean-rerun-20261107/summary.json": "81ae00b79acce36d7ce700fd5fae58d6334fe97028ec51095ffdeb65b6395c75",
+    "review/lean-rerun-20261107/verification_logs.zip": "66e81d98c7883dd1cc2bf69d9facb8ff010fda686e36215b2d57b7aff2c73b8c",
+    "formal/lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "formal/lake-manifest.json": "7fbc9767e523ce1c9d59770614cf739ec3f4cb63f8de2d6254736bc46a227451"
+  },
+  "current_technical_appendices": [
+    "manuscripts/09_technical_appendix.en.md",
+    "manuscripts/10_technical_appendix.zh.md"
+  ]
+}

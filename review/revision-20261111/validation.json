@@ -1,0 +1,140 @@
+{
+  "run_date": "2026-11-11",
+  "base_commit": "4af732650d7d5724bcab60a80a711d4294d58e2d",
+  "scope": "Editorial and proof-organization revision. Checks below are not a proof of all manuscript claims.",
+  "source_checks": {
+    "compile_tex_input_check": {
+      "passed": true,
+      "documents": 10
+    },
+    "main_markdown_to_tex_idempotent": true,
+    "technical_appendix_exact_extraction_and_generated_source_check": true,
+    "new_python_scripts_compile": true,
+    "git_diff_check": true,
+    "appendix_whitespace_normalization": "Two line-ending TeX control spaces per language preserve the control space and append an empty group. Raw and normalized source hashes are recorded."
+  },
+  "finite_regressions": {
+    "convolution": {
+      "file": "convolution_checks.json",
+      "passed": true,
+      "all_labelled_tournaments_orders": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "tournaments": 1100
+    },
+    "hessian": {
+      "file": "hessian_checks.json",
+      "passed": true,
+      "cases": 5,
+      "arithmetic": "exact rational"
+    }
+  },
+  "formal_check": {
+    "file": "lean_checks.json",
+    "passed": true,
+    "mapping_rows": 35,
+    "endpoint_source_identities": 85,
+    "frozen_production_sources": 609,
+    "lean_compilation_performed": false,
+    "recursive_axiom_audit_performed": false
+  },
+  "pdf_build": {
+    "engine": "XeLaTeX",
+    "font_mode": "Documented portable alternatives (Liberation and Noto CJK); manuscript bodies unchanged.",
+    "documents": [
+      {
+        "pdf": "manuscripts/01_combined.zh.pdf",
+        "pages": 37,
+        "pdf_sha256": "c10dc332944c87164c06880064b848e08abcd3f9139ec697c1fbdfc4f416756c",
+        "tex_sha256": "0f90ad080ce1346251fe4a05ea817bfa014fc5db07786e9842c6ec3102bfb384",
+        "markdown_sha256": "7c866ae508f9225dcda3dbad275077246d35883e071ef4728f6a997908114a8c",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 0,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "text_outside_page": []
+      },
+      {
+        "pdf": "manuscripts/02_combined.en.pdf",
+        "pages": 40,
+        "pdf_sha256": "5419b6a3d2a484fd2a2e38942f47bc137fe0cf1b19d34bd81f058c9717796471",
+        "tex_sha256": "ec92fc71b8693b74cd84855a94b872dc3e3941d8fab73c3f83e091a2800b1f44",
+        "markdown_sha256": "861d372cd2a25cdb2290cdaef4df80d98b9bb75a136cb5a929cda9f351c677e0",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 1,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "text_outside_page": []
+      },
+      {
+        "pdf": "manuscripts/09_technical_appendix.en.pdf",
+        "pages": 48,
+        "pdf_sha256": "b8c0df8fddf8c443120297a6b89840d138767a8ec2d22e732f3d398d2fbcf6c4",
+        "tex_sha256": "fdbbb2e733713fe5c128850dd0d4b70107d705f4dfed3b5fea3c93c885f35819",
+        "markdown_sha256": "3e4534538d95b4f999fbba6b6c083d4ee1ad816dc1456c3b96a33a74882eb229",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 0,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "text_outside_page": []
+      },
+      {
+        "pdf": "manuscripts/10_technical_appendix.zh.pdf",
+        "pages": 46,
+        "pdf_sha256": "0c69b591561a84eed4283c1a5deaabac0ac4a33606f5335d2dbf20d16655d322",
+        "tex_sha256": "3d1962d2cd5aa6da74f5aef316e30c23493834bbdc50c80c9998943615b53b31",
+        "markdown_sha256": "1a5c3a6546edaa3556296576381864cba6e09419d621a910e96ac999c4f662e8",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 0,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "text_outside_page": []
+      }
+    ],
+    "warning_note": "One underfull hbox in the English main text reordering paragraph on page 32; inspected without clipping. The environment also emits a non-content xeCJK package-name warning.",
+    "visual_review": {
+      "contact_sheets_all_pages": true,
+      "first_pages_at_readable_scale": true,
+      "additional_readable_pages": {
+        "02_combined.en.pdf": [
+          2,
+          7,
+          33
+        ],
+        "01_combined.zh.pdf": [
+          2,
+          31
+        ]
+      },
+      "result": "No clipped text, overlapping equations or missing glyphs observed.",
+      "appendix_pages_pixel_identical_after_control_space_normalization": 94
+    }
+  },
+  "external_comparisons_checked": [
+    "https://arxiv.org/pdf/1205.5723",
+    "https://arxiv.org/html/2610.23755v1"
+  ],
+  "historical_records_changed": false,
+  "ci_run_triggered": false
+}

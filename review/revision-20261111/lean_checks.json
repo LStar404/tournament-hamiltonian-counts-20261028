@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-11-11",
+  "started": "2026-11-11T05:48:32.487869+00:00",
+  "finished": "2026-11-11T05:48:33.787523+00:00",
+  "command": [
+    "python3",
+    "review/revision-20261111/check_lean_correspondence.py"
+  ],
+  "exit_code": 0,
+  "stdout": "PASS: 628 exact input files; 609 root-reachable production modules; 3067 unique registered endpoints.\nPASS: 609 local Lean sources have no forbidden proof placeholders/trust extensions.\nPASS: 35 mapping rows; 85 endpoint source identities; 609 frozen production sources. No Lean compilation performed.\n",
+  "stderr": "",
+  "scope": "Index consistency, exact hashes against frozen historical inputs, existing release-manifest checker and lexical source scan only. No Lean build, no new recursive axiom audit, no new theorem proof.",
+  "lean_compilation_performed": false,
+  "historical_build_record": "review/lean-rerun-20261107/summary.json"
+}
