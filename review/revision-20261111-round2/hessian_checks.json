@@ -1,0 +1,46 @@
+{
+  "kind": "finite exact regression only, not general proof",
+  "sympy_version": "1.14.0",
+  "cases": [
+    {
+      "d": 3,
+      "graph": "carousel",
+      "implicit_partial": "-2/3",
+      "hessian_determinant": "3/4",
+      "positive_ratio": "2",
+      "actual_implicit_two_jet_equals_matrix_formula": true
+    },
+    {
+      "d": 5,
+      "graph": "carousel",
+      "implicit_partial": "-88/125",
+      "hessian_determinant": "1805/1936",
+      "positive_ratio": "44/19",
+      "actual_implicit_two_jet_equals_matrix_formula": true
+    },
+    {
+      "d": 7,
+      "graph": "carousel",
+      "implicit_partial": "-12128/16807",
+      "hessian_determinant": "10607527/9193024",
+      "positive_ratio": "3032/1231",
+      "actual_implicit_two_jet_equals_matrix_formula": true
+    },
+    {
+      "d": 9,
+      "graph": "carousel",
+      "implicit_partial": "-3500672/4782969",
+      "hessian_determinant": "265541304249/191479757056",
+      "positive_ratio": "437584/171769",
+      "actual_implicit_two_jet_equals_matrix_formula": true
+    },
+    {
+      "d": 7,
+      "graph": "Paley7 quadratic residues",
+      "implicit_partial": "-256/343",
+      "hessian_determinant": "5103/4096",
+      "positive_ratio": "64/27",
+      "actual_implicit_two_jet_equals_matrix_formula": true
+    }
+  ]
+}

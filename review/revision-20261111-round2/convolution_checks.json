@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "method": "integer permutation sums, all labelled tournaments of orders 0..5",
+  "empty_determinant": 1,
+  "empty_permanent": 1,
+  "records": [
+    {
+      "order": 0,
+      "tournaments": 1,
+      "min_paths": 1,
+      "max_paths": 1
+    },
+    {
+      "order": 1,
+      "tournaments": 1,
+      "min_paths": 1,
+      "max_paths": 1
+    },
+    {
+      "order": 2,
+      "tournaments": 2,
+      "min_paths": 1,
+      "max_paths": 1
+    },
+    {
+      "order": 3,
+      "tournaments": 8,
+      "min_paths": 1,
+      "max_paths": 3
+    },
+    {
+      "order": 4,
+      "tournaments": 64,
+      "min_paths": 1,
+      "max_paths": 5
+    },
+    {
+      "order": 5,
+      "tournaments": 1024,
+      "min_paths": 1,
+      "max_paths": 15
+    }
+  ]
+}

@@ -10,13 +10,13 @@ $^{2}$ Glasgow College, University of Electronic Science and Technology of China
 
 ## Abstract
 
-We prove that the maximum number $P(n)$ of directed Hamiltonian paths in an $n$-vertex tournament satisfies
+Let $H(T)$ count directed Hamiltonian paths in an $n$-vertex tournament, and put $P(n)=\max_{|V(T)|=n}H(T)$, $\mu_n=n!/2^{n-1}$ and $L=\cosh1/\cos1$. We prove
 
 $$
-P(n)=\left(\frac{\cosh1}{\cos1}+O(n^{-1})\right)\frac{n!}{2^{n-1}}.
+P(n)=\bigl(L+O(n^{-1})\bigr)\mu_n.
 $$
 
-This refines the sharp leading asymptotic of Divoux and Wang to a uniform $O(n^{-1})$ error. Retaining the degree-imbalance penalty through nonprincipal scaling and the path convolution also proves degree stability: if $H(T)/\mu_n\ge L-\varepsilon$, then $\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)$. Exact maximizers therefore have bounded mean square degree deviation. The permanent approximation is used as an analytic tool with an independent quantitative proof, not as a new determinant main term. As related applications of the same spectral ratio, we derive Wormald's original angular Hessian independently of Bhattacharjee's overlapping result and obtain fixed-base expectation extrema and strict monotonicity of the regular-block constants.
+This refines the sharp leading asymptotic of Divoux and Wang to a uniform $O(n^{-1})$ error. Retaining the degree-imbalance penalty through nonprincipal scaling and the path convolution also proves degree stability: uniformly for $0\le\varepsilon\le(L-1)/2$ and sufficiently large $n$, if $H(T)/\mu_n\ge L-\varepsilon$, then $\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)$. Exact maximizers therefore have bounded mean square degree deviation. The permanent approximation is used as an analytic tool with an independent quantitative proof, not as a new determinant main term. As related applications of the same spectral ratio, we derive Wormald's original angular Hessian independently of Bhattacharjee's overlapping result and obtain fixed-base expectation extrema and strict monotonicity of the regular-block constants.
 
 ## 1. Introduction
 
@@ -48,7 +48,7 @@ The issue in the upper bound is uniformity: the error must hold for every tourna
 
 ### 1.2 Degree stability and the quantitative mechanism
 
-The rate in Theorem 1.1 has a structural consequence. Write
+The score-sensitive upper estimate behind Theorem 1.1, together with its quantitative lower bound, gives a structural consequence. Write
 
 $$
 V_{\rm deg}(T)=\sum_v\left(d^+(v)-\frac{n-1}{2}\right)^2.
@@ -60,7 +60,13 @@ $$
 V_{\rm deg}(T)\le C(\varepsilon n^2+n).
 $$
 
-In particular, an exact maximizer has $V_{\rm deg}(T)=O(n)$, or bounded average squared degree deviation. The proof is Corollary 8.3. This does not give eventual regularity, carousel uniqueness or edit-distance stability: it only bounds the largest degree deviation by $O(\sqrt n)$, rather than the $o(\sqrt n)$ required in Theorem 8.1. Divoux--Wang [12, Proposition 8.1] start from a cycle count at least its random benchmark; our hypothesis is a path count near the sharp maximum. These are different structural assumptions.
+In particular, an exact maximizer has $V_{\rm deg}(T)=O(n)$, or bounded average squared degree deviation. The proof is Corollary 8.3.
+
+This linear scale is necessary at even orders. Every degree deviation is then a half-integer, so $V_{\rm deg}(T)\ge n/4$, with equality precisely when all outdegrees are $n/2-1$ or $n/2$. Hence exact maximizers of even order have $V_{\rm deg}(T)=\Theta(n)$. This establishes the order in $n$, not optimal dependence on $\varepsilon$.
+
+The same control holds in a window below the actual maximum. With $\delta_n(T)=(P(n)-H(T))/\mu_n$, Corollary 8.4 gives $V_{\rm deg}(T)\le C(\delta_n(T)n^2+n)$ for $0\le\delta_n(T)\le(L-1)/4$ and sufficiently large $n$. In particular, a path-count deficit $O(\mu_n/n)$ still gives $V_{\rm deg}(T)=O(n)$.
+
+Even for exact maximizers, the bound does not give eventual regularity, carousel uniqueness or edit-distance stability: it only bounds the largest degree deviation by $O(\sqrt n)$, rather than the $o(\sqrt n)$ required in Theorem 8.1. Divoux--Wang [12, Proposition 8.1] start from a cycle count at least its random benchmark; our hypothesis is a path count near the sharp maximum. These are different structural assumptions.
 
 The technical point is Proposition 7.3. After large variance and exceptional vertices have been excluded, it gives
 
@@ -294,7 +300,7 @@ $$
 
 Every constant and the threshold depend only on $C,q$ and the radii fixed from them. Both exponential terms are $o(n^{-1})$. Finitely many smaller orders are covered using $|f(1)|\le(1+C)^n$ and $G(1)\le\mathcal G_{C,q}(1)$. This proves the uniform absolute bound; $G(1)\ge1$ gives the relative form. $\square$
 
-Technical appendix §3.6 also records the signed example with fixed parameters at arbitrarily large orders and the two estimates needed to quantify the nonnegative proof of [12]. The applications use the stated nonnegative specialization.
+Technical appendix §3.1 gives a signed example with fixed parameters at arbitrarily large orders; §3.6 records the two estimates used to quantify the nonnegative proof of [12]. The applications use the stated nonnegative specialization.
 
 ## 4. Scaling and nonprincipal submatrices
 
@@ -1906,7 +1912,38 @@ $$
 
 For sufficiently large $n$, $B_n\le1/n$ and the left-hand side is bounded below by $(L+1)/4$. Taking logarithms and using $\log(1+x)\le x$ proves $\tau\le C(\varepsilon+1/n)$. Multiply by $(n-1)^2/4$ for the variance estimate. After enlarging the threshold so that $K_l/n\le(L-1)/2$, Corollary 8.2 permits $\varepsilon=K_l/n$ for an exact maximizer. $\square$
 
-The conclusion controls mean square degree deviation and gives a maximum single-vertex deviation of order $\sqrt n$. Eventual regularity, carousel uniqueness, edit-distance stability, and the $o(\sqrt n)$ condition in Theorem 8.1 each require further arguments.
+For exact maximizers, the conclusion controls mean square degree deviation and gives a maximum single-vertex deviation of order $\sqrt n$. Eventual regularity, carousel uniqueness, edit-distance stability, and the $o(\sqrt n)$ condition in Theorem 8.1 each require further arguments.
+
+### 8.4 Stability relative to the actual maximum
+
+Put $\delta_0=(L-1)/4$ and define the normalized deficit
+
+$$
+\delta_n(T)=\frac{P(n)-H(T)}{\mu_n}\ge0.
+$$
+
+**Corollary 8.4 (Stability in the extremal window).** There are absolute constants $C,N$ such that every tournament of order $n\ge N$ with $\delta_n(T)\le\delta_0$ satisfies
+
+$$
+V_{\rm deg}(T)\le C\bigl(\delta_n(T)n^2+n\bigr).
+$$
+
+Consequently, for every fixed $A\ge0$, tournaments with $P(n)-H(T)\le A\mu_n/n$ have $V_{\rm deg}(T)=O_A(n)$ as $n\to\infty$.
+
+**Proof.** Choose an absolute $K_0\ge0$ such that the lower bound in Theorem 1.1 gives $P(n)/\mu_n\ge L-K_0/n$ for all sufficiently large $n$. Then
+
+$$
+\frac{H(T)}{\mu_n}\ge L-\varepsilon,
+\qquad \varepsilon=\delta_n(T)+K_0/n.
+$$
+
+Increase the common threshold until $K_0/n\le\delta_0$. Thus $0\le\varepsilon\le2\delta_0=(L-1)/2$, and Corollary 8.3 gives
+
+$$
+V_{\rm deg}(T)\le C_0\bigl(\delta_n(T)n^2+(K_0+1)n\bigr).
+$$
+
+Absorb the fixed factor $K_0+1$ into $C$. For the last assertion, $\delta_n(T)\le A/n\le\delta_0$ once $n\ge A/\delta_0$, giving the bound $C(A+1)n$. $\square$
 
 ## 9. The Hessian of the original angular function
 
@@ -2158,7 +2195,7 @@ The paper incorporates two independently developed projects. The path framework 
 
 The repository snapshot [17] documents Lean endpoints for 30 numbered results of the pre-revision manuscript, including the sharp path bound, original angular Hessian, path convolution, spectral comparison and fixed-base expectation extrema. Its [coverage table](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/c678e9ee24fb304cad755a27c99f511c8640f75e/formal/COVERAGE.zh.md) specifies objects, hypotheses, quantifiers and coverage boundaries. The associated [reproduction instructions](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/c678e9ee24fb304cad755a27c99f511c8640f75e/formal/README.zh.md) fix the toolchain and audit procedure.
 
-The [actual rerun record](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/f578a34dd43f0af7b7e866f4a2e7fd0e55acda72/review/lean-rerun-20261107/README.zh.md) documents the rebuild and audits of the fixed formal project. Its coverage is tied to the historical source and endpoint statements; the current statement-by-statement correspondence is recorded in the repository file `review/revision-20261111/lean_correspondence.md`. It distinguishes conclusions covered by earlier endpoints from the revised written proof and results without a new endpoint. No new full Lean build is claimed for this editorial revision. AI assistance was used in exposition and parts of proof checking.
+The [fixed manuscript correspondence](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/1b66d66cd287310c3a85dc3c64816fa319d55af2/review/revision-20261111/lean_correspondence.md) distinguishes existing endpoint conclusions from revised written proofs. Theorems 1.1 and 1.3 have existing endpoints; Proposition 7.3, Theorem 1.2 / Corollary 8.3, the even-order variance observation and Corollary 8.4 have no new endpoints. The [historical build record](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/1b66d66cd287310c3a85dc3c64816fa319d55af2/review/lean-rerun-20261107/summary.json) documents the run of 7 November 2026, not a compilation of these new statements. No new full Lean build is claimed for this revision. AI assistance was used in exposition and parts of proof checking.
 
 ## Acknowledgments
 

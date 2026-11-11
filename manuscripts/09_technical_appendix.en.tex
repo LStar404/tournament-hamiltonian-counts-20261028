@@ -52,9 +52,9 @@
 \Needspace{12\baselineskip}
 \section{Scope and dependency map}\label{scope-and-dependency-map}
 
-This appendix contains the longer analytic proofs used by the main paper, \emph{Quantitative Hamiltonian path counts and degree stability}. It reproduces complete passages from the expanded English proof companion, with their original section, theorem, equation and reference numbers. It is intended to be read with the main paper; the remaining expanded companion is optional further reading, not an additional prerequisite for these proofs.
+This appendix contains the longer analytic proofs used by the main paper, \emph{Quantitative Hamiltonian path counts and degree stability}. It presents the complete proofs with section, theorem, equation and reference numbers retained for compatibility with the main paper. It is intended to be read with the main paper; the remaining expanded companion is optional further reading, not an additional prerequisite for these proofs.
 
-The permanent approximation is an analytic tool with an independent quantitative proof for fixed entry-bound and spectral-gap parameters. Its determinant main term is not asserted to be new, and this appendix makes no broader novelty claim about its range of admissible matrices. The contribution statement in the revised main introduction governs the paper; historical comparisons in the extracted text are retained as source context.
+The permanent approximation is an analytic tool with an independent quantitative proof for fixed entry-bound and spectral-gap parameters. Its determinant main term is not asserted to be new, and this appendix makes no broader novelty claim about its range of admissible matrices. The local comparisons in Section 3 follow the contribution statement in Section 3 of the main paper.
 
 \begin{itemize}
 \tightlist
@@ -65,19 +65,18 @@ The permanent approximation is an analytic tool with an independent quantitative
 \item
   \hyperref[technical-spectral-cap]{Lemma 6.1} is included with its complete proof because A.1 refers to its transitive determinant polynomial. Its eigenvalue calculation also verifies the frequency used in the carousel example in Section 4.3.
 \item
-  \hyperref[technical-algebra]{Sections A.1--A.3} supply the transitive determinant identity, alternating-switching isomorphism, equality of power diagonals and the fourth-moment equality algebra used in the main paper's spectral argument. The mention of Section 8.2 in the example of Section 4.3 is closed here by A.2 and Lemma 6.1.
+  \hyperref[technical-algebra]{Sections A.1--A.3} supply the transitive determinant identity, alternating-switching isomorphism, equality of power diagonals and the fourth-moment equality algebra used in the main paper's spectral argument. The carousel example in Section 4.3 uses A.2 and Lemma 6.1 directly.
 \end{itemize}
 
-References to Sections 7, 8 and 11 in the extracted passages indicate subsequent applications, not additional proof inputs. The references to Section 2 distinguish reused notation; the needed conventions are restated below. Standard external tools retain their original citations. The full original reference list is included to preserve citation numbers. The original author statement and personal acknowledgments are not reproduced.
+Unqualified section and lemma references refer to this appendix; references to the main paper are explicitly identified. The needed notation is restated below. Standard external tools retain their original citations. The full original reference list is included to preserve citation numbers. The original author statement and personal acknowledgments are not reproduced.
 
 \Needspace{12\baselineskip}
-\section{Notation correspondence}\label{notation-correspondence}
+\section{Notation}\label{notation}
 
-The extracted proofs retain their historical notation. In particular, the main paper now writes \(\Delta_s=\|S\mathbf1\|_\infty\) for the maximum score, where Sections 3--4 of this appendix use \(d\) when denoting that quantity. In A.2--A.3, \(d\) instead denotes the matrix or tournament order. The scalar control function \(\Gamma(r)\) of Section 3 is written \(\mathcal G_{C,q}(r)\) in the main paper:
+We use the main paper's maximum-score notation \(\Delta_s=\|S\mathbf1\|_\infty\). In A.2--A.3, \(d\) denotes the matrix or tournament order; local block sizes and degree indices in Section 3 also retain \(d\). The scalar analytic majorant is
 
 \[
-\mathcal G_{C,q}(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right)
-=\Gamma(r)\quad\text{in historical Section 3},\qquad rq<1.
+\mathcal G_{C,q}(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right),\qquad rq<1.
 \]
 
 It is distinct both from the score product \(\Gamma=\prod_i(1-a_i^2)\) in Section 4 and from the Gaussian matrix functional \(\mathcal G(M)=\det(I-MM^{\mathsf T})^{-1/2}\). The generating series \(G(t)=\det(I-t^2BB^{\mathsf T})^{-1/2}\) in Section 3 is also a local notation. The symbols \(C\) and \(q\) there are fixed analytic parameters; in Section 4, \(C=2A/(n-1)\) is a matrix, while in A.2, \(q=(d-1)/2\) is an integer.
@@ -89,7 +88,7 @@ S=A-A^{\mathsf T},\qquad 2A=J-I+S,\qquad s=S\mathbf1,
 \qquad s_i=2d_i^+-(n-1),\qquad \sum_i s_i=0,
 \] \[
 \mathcal E=\|s\|_2^2,\qquad
-\Delta_s=d=\|s\|_\infty,\qquad
+\Delta_s=\|s\|_\infty,\qquad
 a=\frac{s}{n-1},\qquad \tau=\|a\|_2^2\quad(n\ge2).
 \]
 
@@ -115,9 +114,9 @@ The paired singular values give \(\sum_jx_j=(n-1)/(2n)<1/2\), so these determina
 
 In this section we prove a uniform estimate for permanents. Write a matrix with unit row and column sums as \((J_n+E)/n\), where \(E\mathbf1=E^{\mathsf T}\mathbf1=0\). If the entries of \(E\) are bounded and \(\|E/n\|_{\mathrm{op}}\le q<1\), the main term is a determinant. Section 4 applies this estimate to scaled tournament submatrices.
 
-McCullagh {[}5{]} obtained the determinant main term under moderate-deviation conditions. Here we give a self-contained version for a fixed entry bound \(C\) and singular-value spectral gap \(q\), with an error uniform over the matrix class determined by these parameters. The proof controls the coefficients and the tail separately, so that the conclusion applies uniformly to the deletions and scalings in Section 4. A recent related approximation of Li {[}8, Theorem 2.1{]} assumes that the maximum absolute row or column sum of the centered perturbation is \(o(n)\); this condition does not cover dense kernels whose corresponding sums have order \(n\).
+McCullagh {[}5, §3{]} already gives the determinant approximation with an \(O(n^{-1})\) error under moderate-deviation hypotheses. For nonnegative inputs, the fixed entry and spectral-gap assumptions here imply weak boundedness and the required gap, and his determinant factor is exactly \(\det(I-BB^{\mathsf T})^{-1/2}\); the identification is detailed in Section 3 of the main paper. Uniformity over a fixed class is not by itself a novelty distinction from a theorem valid for every admissible sequence. We retain the independent proof to track constants through compressed cores, the coefficient window and the tail, making them available after deletion and scaling. We do not claim to repair an identified gap in {[}5{]}. Li {[}8, Theorem 2.1{]} assumes that the maximum absolute row or column sum of the centered perturbation is \(o(n)\); this narrower hypothesis does not cover the dense kernels used here, but this comparison is not a novelty claim relative to {[}5{]} or {[}12{]}.
 
-The compressed-core proof below was developed independently in the authors' earlier path-counting project {[}14{]}. We retain the signed-matrix theorem as a separate analytic result, while the tournament applications in Sections 4--8 use nonnegative matrices.
+The compressed-core proof was developed independently in the earlier path-counting project {[}14{]}. Signed inputs are not a priority distinction: McCullagh {[}5, §4.1{]} already discusses complex perturbations. We retain the real signed formulation and its proof; the tournament applications use nonnegative inputs.
 
 \Needspace{12\baselineskip}
 \subsection{3.1 The theorem and the proof strategy}\label{the-theorem-and-the-proof-strategy}
@@ -155,7 +154,7 @@ All determinant square roots in this section are the positive square roots on th
 
 Inclusion-exclusion for the row and column indices expresses each coefficient of the permanent as a sum over bipartite multigraphs. Centering eliminates degree-one vertices. The degree-two components correspond to Gaussian pairings and give the determinant main term. We classify the remaining components by their excess, the number of edges minus vertices; each unit of excess contributes a factor \(n^{-1}\). We first estimate coefficients of degree at most \(\alpha n\), then use a complex-analytic bound for the remaining coefficients.
 
-The proof uses the Gaussian series \(G(t)\), which is a different object from the numerical bound \(G=100/19\) in Section 7.4. Put
+The proof uses the Gaussian generating series \(G(t)\). Put
 
 \[
 f(t)=\frac{\operatorname{per}(J_n+tE)}{n!},
@@ -168,10 +167,10 @@ Choose \(1<\sigma<R<1/q\); when \(q=0\), no upper restriction is imposed. For ex
 R=\frac{3+q}{2(1+q)},\qquad \sigma=\frac{1+R}{2}.
 \]
 
-In this section we define a separate control function \(\Gamma(r)\), which is distinct from the score product \(\Gamma\) in Section 7:
+Use the scalar analytic majorant \(\mathcal G_{C,q}\) defined above:
 
 \[
-\Gamma(r)=\exp\left(\frac{C^2r^2}{2(1-q^2r^2)}\right),
+\mathcal G_{C,q}(r)=\exp\left(\frac{C^2r^2}{2(1-q^2r^2)}\right),
 \qquad r\ge0,\ rq<1.
 \]
 
@@ -206,7 +205,7 @@ Using \(-\log(1-u)=\int_0^u(1-v)^{-1}\,dv\le u/(1-u)\),
 \end{aligned}
 \]
 
-Consequently \(1\le G(1)\le\Gamma(1)\). If \(|f(1)-G(1)|\le K/n\), then
+Consequently \(1\le G(1)\le\mathcal G_{C,q}(1)\). If \(|f(1)-G(1)|\le K/n\), then
 
 \[
 \left|\frac{f(1)}{G(1)}-1\right|
@@ -276,7 +275,7 @@ the coefficient of \(t^k\) in this expression is the sum over pairing partitions
 This analytic identity holds when \(|t|\|B\|_{\mathrm{op}}<1\) and determines all formal coefficients. In particular, the coefficients of \(G\) are nonnegative, and
 
 \[
-G(r)\le\Gamma(r)\qquad(r\ge0,\ rq<1),
+G(r)\le\mathcal G_{C,q}(r)\qquad(r\ge0,\ rq<1),
 \]
 
 because \(-\log(1-x)\le x/(1-x)\) and \(\sum_i s_i^2=\|B\|_{\mathrm F}^2\le C^2\); here \(s_i\) are the singular values of \(B\).
@@ -873,7 +872,7 @@ In the formal core identity, contributions of degree at most \(M\) can come only
 
 \[
 \sum_{k=0}^{M}|F_k-[t^k]G|R^k
-\le\Gamma(R)\left(\frac{T_1}n+\frac{8D^2}{n^2}\right).
+\le\mathcal G_{C,q}(R)\left(\frac{T_1}n+\frac{8D^2}{n^2}\right).
 \]
 
 This estimate concerns only coefficients of degree at most \(M\).
@@ -927,7 +926,7 @@ v_\sigma=\frac{\sigma^2C^2(1+\sigma^2q^2)}
 \]
 
 \[
-K_G=\frac{\Gamma(\sigma)}{2(1-\alpha)}
+K_G=\frac{\mathcal G_{C,q}(\sigma)}{2(1-\alpha)}
 \left(u_\sigma^2+v_\sigma\right).
 \]
 
@@ -1006,7 +1005,7 @@ A(\sigma)\le\frac{\sigma^2C^2}{1-\sigma^2q^2}=u_\sigma,
 \le\frac{\sigma^2C^2(1+\sigma^2q^2)}{(1-\sigma^2q^2)^2}=v_\sigma.
 \]
 
-Together with \(G(\sigma)\le\Gamma(\sigma)\), this gives exactly \(K_G/n\).
+Together with \(G(\sigma)\le\mathcal G_{C,q}(\sigma)\), this gives exactly \(K_G/n\).
 
 Define the projection \(\mathcal P_M\sum_kh_kt^k=\sum_{k=0}^Mh_kt^k\). A nonempty core of excess \(j\) has at least \(j+1\) original edges, so in degrees at most \(M\) no \(j>M\) occurs. Thus, exactly,
 
@@ -1022,8 +1021,8 @@ The right-hand side involves only finitely many core series, so its weighted coe
 &=\|\mathcal P_M(F-G)\|_R\\
 &\le\left\|G\sum_{j=1}^MC_j\right\|_R\\
 &\le\|G\|_R\sum_{j=1}^M\|C_j\|_R\\
-&\le\Gamma(R)\left[T_1/n+\sum_{j=2}^M(Dj/n)^j\right]\\
-&\le\Gamma(R)(T_1/n+8D^2/n^2).
+&\le\mathcal G_{C,q}(R)\left[T_1/n+\sum_{j=2}^M(Dj/n)^j\right]\\
+&\le\mathcal G_{C,q}(R)(T_1/n+8D^2/n^2).
 \end{aligned}
 \]
 
@@ -1044,7 +1043,7 @@ We have controlled coefficients through degree \(M\), where \(M\) is proportiona
 
 \textbf{Lemma 3.3 (Permanent polarization).}
 
-For a complex square matrix \(Z\), its singular values are the nonnegative square roots of the eigenvalues of \(Z^*Z\), and the corresponding norms are computed as in Definition 2.3. Write \(|Z|=(Z^*Z)^{1/2}\) for its operator absolute value, taking the Hermitian positive semidefinite square root, rather than the absolute values of individual entries. For a Hermitian matrix, \(H\ge0\) means that \(x^*Hx\ge0\) holds for every vector. Then
+For a complex square matrix \(Z\), its singular values are the nonnegative square roots of the eigenvalues of \(Z^*Z\), and the corresponding norms follow the conventions above. Write \(|Z|=(Z^*Z)^{1/2}\) for its operator absolute value, taking the Hermitian positive semidefinite square root, rather than the absolute values of individual entries. For a Hermitian matrix, \(H\ge0\) means that \(x^*Hx\ge0\) holds for every vector. Then
 
 \[
 |\operatorname{per}Z|
@@ -1088,7 +1087,7 @@ h_n(\lambda_1,\ldots,\lambda_n)
 \prod_{i=1}^n\lambda_i^{k_i}.
 \]
 
-All \(k_i\) are integers. Every zeroth power in this polynomial equals one, including, when \(\lambda_i=0\), the expression \(\lambda_i^0\). This polynomial is a different object from the scalar weight \(h_k=((k+1)/2)^{k/2}\) in Section 2. If \(\lambda_1=1\) and \(0\le\lambda_i<1\) for \(i\ge2\), then
+All \(k_i\) are integers. Every zeroth power in this polynomial equals one, including, when \(\lambda_i=0\), the expression \(\lambda_i^0\). This notation is local to the present lemma. If \(\lambda_1=1\) and \(0\le\lambda_i<1\) for \(i\ge2\), then
 
 \[
 \operatorname{per}H\le\frac{n!}{n^n}
@@ -1136,8 +1135,8 @@ For the Gaussian tail, nonnegativity of the coefficients gives the slightly weak
 
 \[
 \sum_{k>M}g_k
-\le \Gamma(\sigma)\sigma^{-M}
-\le\sigma\Gamma(\sigma)\exp\!\left(-\alpha n\log\sigma\right).
+\le \mathcal G_{C,q}(\sigma)\sigma^{-M}
+\le\sigma\mathcal G_{C,q}(\sigma)\exp\!\left(-\alpha n\log\sigma\right).
 \]
 
 Both tails decay exponentially in \(n\). Combining them with the \(O(n^{-1})\) estimate in the finite window proves Theorem 3.1.
@@ -1303,7 +1302,7 @@ Here \(M\ge\alpha n-1\). The coefficients on the Gaussian side are nonnegative, 
 
 \[
 \sum_{k>M}g_k\le\sigma^{-M}\sum_{k>M}g_k\sigma^k
-\le\sigma\Gamma(\sigma)e^{-\alpha n\log\sigma}.
+\le\sigma\mathcal G_{C,q}(\sigma)e^{-\alpha n\log\sigma}.
 \]
 
 Put \(c=\alpha\log R>0\). For \(n\ge(2\beta/c)^2\), we have \(\beta\sqrt n-cn\le-cn/2\). Since \(ne^{-cn/2}\to0\), the first tail is \(o(n^{-1})\), and the same argument applies to the second. Here we use the linear growth of \(M=\lfloor\alpha n\rfloor\).
@@ -1316,11 +1315,13 @@ Put \(c=\alpha\log R>0\). For \(n\ge(2\beta/c)^2\), we have \(\beta\sqrt n-cn\le
 For every integer \(n\ge4/\alpha\),
 
 \[
+\begin{aligned}
 |f(1)-G(1)|
-\le \frac{\Gamma(R)T_1+K_G}{n}
-+\frac{8\Gamma(R)D^2}{n^2}
-+\frac{R}{R-1}\exp\!\left(\beta\sqrt n-\alpha n\log R\right)
-+\sigma\Gamma(\sigma)\exp\!\left(-\alpha n\log\sigma\right).
+&\le \frac{\mathcal G_{C,q}(R)T_1+K_G}{n}
++\frac{8\mathcal G_{C,q}(R)D^2}{n^2}\\
+&\quad+\frac{R}{R-1}\exp\!\left(\beta\sqrt n-\alpha n\log R\right)\\
+&\quad+\sigma\mathcal G_{C,q}(\sigma)\exp\!\left(-\alpha n\log\sigma\right).
+\end{aligned}
 \]
 
 The first two terms come from the coefficient window and factorial-restoration errors in Section 3.4. The last two come from the tail bounds in Section 3.5. Both exponential terms are \(o(n^{-1})\), giving the uniform error rate in Theorem 3.1.
@@ -1357,37 +1358,37 @@ Thus, for \(n\ge N_1\),
 \]
 
 \[
-\sigma\Gamma(\sigma)e^{-c_2n}
-\le\frac{\sigma\Gamma(\sigma)}{ec_2}\frac1n.
+\sigma\mathcal G_{C,q}(\sigma)e^{-c_2n}
+\le\frac{\sigma\mathcal G_{C,q}(\sigma)}{ec_2}\frac1n.
 \]
 
 If we also require \(n\ge4/\alpha\), the right-hand side of Proposition 3.5 is at most
 
 \[
 \frac1n\left[
-\Gamma(R)T_1+K_G+8\Gamma(R)D^2
+\mathcal G_{C,q}(R)T_1+K_G+8\mathcal G_{C,q}(R)D^2
 +\frac{2R}{ec_1(R-1)}
-+\frac{\sigma\Gamma(\sigma)}{ec_2}\right].
++\frac{\sigma\mathcal G_{C,q}(\sigma)}{ec_2}\right].
 \]
 
 Every quantity in brackets depends only on \(C,q,R,\sigma\) fixed in advance, and not on the matrix being estimated. To obtain one constant valid for all \(n\ge1\), the finitely many smaller dimensions must also be covered. From \(|1+E_{ij}|\le1+C\),
 
 \[
 |f(1)|\le\frac1{n!}\sum_{\pi\in \mathfrak S_n}(1+C)^n=(1+C)^n,
-\qquad 1\le G(1)\le\Gamma(1).
+\qquad 1\le G(1)\le\mathcal G_{C,q}(1).
 \]
 
 Let \(N=\lceil\max\{N_1,4/\alpha\}\rceil\) and enlarge the uniform constant to at least
 
 \[
-\max_{1\le n<N}n\left[(1+C)^n+\Gamma(1)\right]
+\max_{1\le n<N}n\left[(1+C)^n+\mathcal G_{C,q}(1)\right]
 \]
 
 covers the remaining orders as well; the maximum of an empty set is taken to be zero. \(\square\)
 
 \textbf{Quantifying the existing permanent proof.}
 
-Divoux and Wang {[}12, Proposition 3.1{]} prove a uniform permanent approximation with relative error \(o(1)\) for nonnegative doubly stochastic matrices. In the nonnegative setting used in our counting argument, their proof can be refined to give an \(O(N^{-1})\) error. This rate is a refinement of their estimates, rather than the statement of their proposition. Theorem 3.1 here allows an arbitrary real doubly centered matrix \(E\), without requiring \(J+E\) to be nonnegative. We retain that formulation and its detailed proof; the two theorem statements do not have identical hypotheses.
+Divoux and Wang {[}12, Proposition 3.1{]} prove a uniform permanent approximation with relative error \(o(1)\) for nonnegative doubly stochastic matrices. In the nonnegative setting used in our counting argument, their proof can be refined to give an \(O(N^{-1})\) error. This rate is a refinement of their estimates, rather than the statement of their proposition. Theorem 3.1 here allows an arbitrary real doubly centered matrix \(E\), without requiring \(J+E\) to be nonnegative. We retain that formulation and its detailed proof; the two theorem statements do not have identical hypotheses. The difference in stated hypotheses is not a claim of priority or of a new range beyond McCullagh {[}5, §4.1{]}; see also Section 3 of the main paper.
 
 The refinement concerns two estimates in {[}12, Sections 3.2--3.3{]}. Their finite coefficient sum is already bounded by
 
@@ -2538,7 +2539,7 @@ Consequently, \(C'=X=\widetilde X=C\) (here no rows or columns are deleted, so \
 (S_n^{\mathrm{cir}}-I_n)^{\mathsf T}(S_n^{\mathrm{cir}}-I_n)=I_n-(S_n^{\mathrm{cir}})^2.
 \]
 
-The carousel transformation in Section 8.2 preserves all frequencies of the sign matrix, and the largest positive frequency is \(\cot(\pi/(2n))\). Therefore,
+The alternating switching and permutation in A.2 preserve all frequencies of the sign matrix; Lemma 6.1 gives the largest positive frequency \(\cot(\pi/(2n))\). Therefore,
 
 \[
 \begin{aligned}
@@ -2682,38 +2683,38 @@ Combining terms of the same order gives Lemma 4.4. \(\square\)
 \Needspace{12\baselineskip}
 \subsection{4.5 Two-Sided Estimates for Small Scores}\label{two-sided-estimates-for-small-scores}
 
-When every score is \(o(\sqrt n)\), the original marginals are already sufficiently close to one for local scaling to apply directly. The capacity bound then controls the restoration factor from both sides and gives the approximation needed in Theorem 8.1.
+When every score is \(o(\sqrt n)\), the original marginals are already sufficiently close to one for local scaling to apply directly. The capacity bound then controls the restoration factor from both sides and gives the approximation needed in Theorem 8.1 of the main paper.
 
 \textbf{Lemma 4.5 (Permanent approximation for small scores).}
 
-Suppose \(d=\|S\mathbf 1_n\|_\infty=o(\sqrt n)\). Fix \(0<B_0<\infty\), delete any \(t\le B_0\log n\) rows and \(t\) columns, and write \(m=n-t\). Uniformly over these choices,
+Suppose \(\Delta_s=\|S\mathbf 1_n\|_\infty=o(\sqrt n)\). Fix \(0<B_0<\infty\), delete any \(t\le B_0\log n\) rows and \(t\) columns, and write \(m=n-t\). Uniformly over these choices,
 
 \begin{equation}
-\operatorname{per}A[R,T]=e^{-1}D_n(S)\frac{m!}{2^m}\left[1+O_{B_0}\left(\frac{(d+t+1)^2}{n}\right)\right].
+\operatorname{per}A[R,T]=e^{-1}D_n(S)\frac{m!}{2^m}\left[1+O_{B_0}\left(\frac{(\Delta_s+t+1)^2}{n}\right)\right].
 \tag{4.3}
 \label{eq-small-score-permanent}
 \end{equation}
 
-More precisely, for fixed \(B_0>0\) there are constants \(C_{\mathrm{err}},\delta>0\) and an integer \(N_0\ge4\) such that the following holds uniformly for \(n\ge N_0\). Let \(S\) be a tournament sign matrix and let \(I,J\subseteq[n]\) satisfy \(|I|=|J|=t\le B_0\log n\). Put \(d=\|S\mathbf1_n\|_\infty\) and \(\eta=(d+t+1)^2/n\). If \(\eta\le\delta\), the absolute relative error in \hyperref[eq-small-score-permanent]{equation (4.3)} is at most \(C_{\mathrm{err}}\eta\). Here \(R=[n]\setminus I\), \(T=[n]\setminus J\), and \(m=n-t\); the two deleted sets may be chosen independently. In the asymptotic range of the lemma, \(\eta\to0\).
+More precisely, for fixed \(B_0>0\) there are constants \(C_{\mathrm{err}},\delta>0\) and an integer \(N_0\ge4\) such that the following holds uniformly for \(n\ge N_0\). Let \(S\) be a tournament sign matrix and let \(I,J\subseteq[n]\) satisfy \(|I|=|J|=t\le B_0\log n\). Put \(\Delta_s=\|S\mathbf1_n\|_\infty\) and \(\eta=(\Delta_s+t+1)^2/n\). If \(\eta\le\delta\), the absolute relative error in \hyperref[eq-small-score-permanent]{equation (4.3)} is at most \(C_{\mathrm{err}}\eta\). Here \(R=[n]\setminus I\), \(T=[n]\setminus J\), and \(m=n-t\); the two deleted sets may be chosen independently. In the asymptotic range of the lemma, \(\eta\to0\).
 
 \textbf{Proof.}
 
 Increase \(N_0\) so that \(2t\le n\) throughout the logarithmic deletion window, giving \(m\ge n/2>0\). Paired prescaling is not needed here. Set \(C=2A/(n-1)\) and \(X=(n/m)C[R,T]\). The row and column errors of the full matrix \(C\) are \(s_i/(n-1)\) and \(-s_i/(n-1)\), respectively. Thus the exact mass identity \hyperref[eq-deletion-mass]{equation (4.1)} and the marginal formulas in Section 4.3 give
 
 \[
-|\kappa|=O(t(d+t)/n),\qquad \varepsilon(X)=O((d+t)/n),\qquad \|g(X)\|_2=O((d+t)/\sqrt n).
+|\kappa|=O(t(\Delta_s+t)/n),\qquad \varepsilon(X)=O((\Delta_s+t)/n),\qquad \|g(X)\|_2=O((\Delta_s+t)/\sqrt n).
 \]
 
 The mass error satisfies \(|\kappa|\le K\eta\). Decreasing \(\delta\) if necessary uniformly ensures \(\mathfrak m(X)=m+\kappa>0\). Normalize \(\widetilde X=mX/\mathfrak m(X)\). Its density and centered-kernel spectral-gap parameters are fixed, so the local scaling lemma applies. The two-norm displacement and capacity estimates give
 
 \[
-\|B_X-\widetilde X\|_F=O((d+t)/n),\qquad 0\le\theta_{\widetilde X}=O((d+t)^2/n).
+\|B_X-\widetilde X\|_F=O((\Delta_s+t)/n),\qquad 0\le\theta_{\widetilde X}=O((\Delta_s+t)^2/n).
 \]
 
-The correction for general mass then gives \(|\theta_X|=O((d+t)^2/n)\). We also have \(\tau\le nd^2/(n-1)^2\). The finite-deletion estimate, normalization factors, and diagonal-scaling perturbation together give
+The correction for general mass then gives \(|\theta_X|=O((\Delta_s+t)^2/n)\). We also have \(\tau\le n\Delta_s^2/(n-1)^2\). The finite-deletion estimate, normalization factors, and diagonal-scaling perturbation together give
 
 \[
-|\log\mathcal G(B_X-P_m)-\log D_n(S)|=O((d+t+1)^2/n).
+|\log\mathcal G(B_X-P_m)-\log D_n(S)|=O((\Delta_s+t+1)^2/n).
 \]
 
 The exact restoration now contains no score product and is
@@ -2722,29 +2723,29 @@ The exact restoration now contains no score product and is
 \operatorname{per}A[R,T]=\left[\frac{m(n-1)}{2n}\right]^m e^{-\theta_X}\operatorname{per}B_X.
 \]
 
-Apply the uniform permanent theorem and use \((1-1/n)^m=e^{-1}\exp(O((t+1)/n))\). Every logarithmic error is controlled by a fixed multiple of \(\eta=(d+t+1)^2/n\). Choose \(\delta\) sufficiently small and exponentiate these bounds. Throughout the preceding finite range, this uniformly bounds the absolute value of the relative error by \(C_{\mathrm{err}}\eta\). In the asymptotic range \(d=o(\sqrt n)\), \(t\le B_0\log n\), we have \(\eta\to0\). This proves the uniform approximation for submatrices with few deletions used in Theorem 8.1.
+Apply the uniform permanent theorem and use \((1-1/n)^m=e^{-1}\exp(O((t+1)/n))\). Every logarithmic error is controlled by a fixed multiple of \(\eta=(\Delta_s+t+1)^2/n\). Choose \(\delta\) sufficiently small and exponentiate these bounds. Throughout the preceding finite range, this uniformly bounds the absolute value of the relative error by \(C_{\mathrm{err}}\eta\). In the asymptotic range \(\Delta_s=o(\sqrt n)\), \(t\le B_0\log n\), we have \(\eta\to0\). This proves the uniform approximation for submatrices with few deletions used in Theorem 8.1 of the main paper.
 
-Since \(|s_i|\le d\), the absolute marginal error of the full matrix is at most \(d/(n-1)\). The deletion-mass formula gives
+Since \(|s_i|\le \Delta_s\), the absolute marginal error of the full matrix is at most \(\Delta_s/(n-1)\). The deletion-mass formula gives
 
 \[
-|\kappa|\le\frac nm\left[\frac{2td}{n-1}+\frac{2t^2}{n-1}+\frac{t^2}n\right]
-\le K\frac{t(d+t)}n.
+|\kappa|\le\frac nm\left[\frac{2t\Delta_s}{n-1}+\frac{2t^2}{n-1}+\frac{t^2}n\right]
+\le K\frac{t(\Delta_s+t)}n.
 \]
 
-The error in a retained row is at most \(K(d+t)/n\). There are \(2m\) row and column errors in total, so
+The error in a retained row is at most \(K(\Delta_s+t)/n\). There are \(2m\) row and column errors in total, so
 
 \[
-\|g(X)\|_2\le\sqrt{2m}\,K(d+t)/n
-\le K'(d+t)/\sqrt n.
+\|g(X)\|_2\le\sqrt{2m}\,K(\Delta_s+t)/n
+\le K'(\Delta_s+t)/\sqrt n.
 \]
 
 Normalization preserves this order. Capacity and displacement give
 
 \[
-0\le\theta_{\widetilde X}\le K(d+t)^2/n,
+0\le\theta_{\widetilde X}\le K(\Delta_s+t)^2/n,
 \quad
-\|B_X-\widetilde X\|_F\le\frac K{\sqrt m}\frac{d+t}{\sqrt n}
-\le K'(d+t)/n.
+\|B_X-\widetilde X\|_F\le\frac K{\sqrt m}\frac{\Delta_s+t}{\sqrt n}
+\le K'(\Delta_s+t)/n.
 \]
 
 Since \(|\kappa|/m\le1/2\),
@@ -2754,19 +2755,19 @@ Since \(|\kappa|/m\le1/2\),
 =m|\log(1+\kappa/m)|\le2|\kappa|,
 \]
 
-It follows that \(|\theta_X|\le K[(d+t)^2+t(d+t)]/n\le K'(d+t)^2/n\). If \(d=t=0\), all these quantities are zero.
+It follows that \(|\theta_X|\le K[(\Delta_s+t)^2+t(\Delta_s+t)]/n\le K'(\Delta_s+t)^2/n\). If \(\Delta_s=t=0\), all these quantities are zero.
 
 Gaussian deletion gives \(K(t+\tau+1)/n\), while
 
 \[
-\tau=\frac{\sum_i s_i^2}{(n-1)^2}\le\frac{nd^2}{(n-1)^2}\le\frac{4d^2}n.
+\tau=\frac{\sum_i s_i^2}{(n-1)^2}\le\frac{n\Delta_s^2}{(n-1)^2}\le\frac{4\Delta_s^2}n.
 \]
 
-The centered-kernel displacement is \(K(d+t+1)/n\), so the total Gaussian logarithmic error is at most
+The centered-kernel displacement is \(K(\Delta_s+t+1)/n\), so the total Gaussian logarithmic error is at most
 
 \[
-K\left[\frac{t+1}n+\frac{d^2}{n^2}+\frac{d+t+1}n\right]
-\le K'\frac{(d+t+1)^2}n=K'\eta.
+K\left[\frac{t+1}n+\frac{\Delta_s^2}{n^2}+\frac{\Delta_s+t+1}n\right]
+\le K'\frac{(\Delta_s+t+1)^2}n=K'\eta.
 \]
 
 After complete restoration, we may write
@@ -2810,21 +2811,21 @@ Hence
 \|(B_X-P_m)-Z\|_F
 &\le\|\Pi_m(B_X-\widetilde X)\Pi_m\|_F
 +\left|\frac n{m+\kappa}-1\right|\|Z\|_F\\
-&\le K\frac{d+t}{n}+K\frac{t+|\kappa|}{n}\\
-&\le K'\left[\frac{d+t}{n}+\frac{t(d+t)}{n^2}\right].
+&\le K\frac{\Delta_s+t}{n}+K\frac{t+|\kappa|}{n}\\
+&\le K'\left[\frac{\Delta_s+t}{n}+\frac{t(\Delta_s+t)}{n^2}\right].
 \end{aligned}
 \]
 
-Since \(t/n\le1/2\), the last term is absorbed into \(K(d+t)/n\). If \(d=t=0\), this displacement is zero. Including the \(O(n^{-1})\) difference between \(Y\) and \(S/n\) gives the uniform error bound \(O((d+t+1)^2/n)\).
+Since \(t/n\le1/2\), the last term is absorbed into \(K(\Delta_s+t)/n\). If \(\Delta_s=t=0\), this displacement is zero. Including the \(O(n^{-1})\) difference between \(Y\) and \(S/n\) gives the uniform error bound \(O((\Delta_s+t+1)^2/n)\).
 
-For \(d,t\ge0\), each of the following terms is at most a fixed multiple of \(\eta=(d+t+1)^2/n\):
+For \(\Delta_s,t\ge0\), each of the following terms is at most a fixed multiple of \(\eta=(\Delta_s+t+1)^2/n\):
 
 \[
 \frac{t+1}n\le\eta,\quad
-\frac{d+t}n\le\eta,\quad
-\frac{(d+t)^2}n\le\eta,\quad
-\frac{t(d+t)}n\le\eta,\quad
-\frac{d^2}{n^2}\le\eta.
+\frac{\Delta_s+t}n\le\eta,\quad
+\frac{(\Delta_s+t)^2}n\le\eta,\quad
+\frac{t(\Delta_s+t)}n\le\eta,\quad
+\frac{\Delta_s^2}{n^2}\le\eta.
 \]
 
 Thus each logarithmic error is \(O(\eta)\). The inequality \(|e^u-1|\le e^{|u|}|u|\) gives the same order for the relative error. \(\square\)
@@ -2910,7 +2911,7 @@ If \(\Delta=2r+1\), then \(0\le r\le q-1\) and
 
 This difference belongs to \(\{q+1,\ldots,2q\}\), so the direction is reversed; the switched matrix entry is \(-1\). Skew symmetry handles \(i>j\), and all diagonal entries are zero. Thus the map preserves each directed edge and is an ordinary isomorphism.
 
-Sections 6 and 11 also use equality of the diagonal entries of powers of the transitive matrix. Define \(Ze_j=e_{j+1}\) for \(j<d\) and \(Ze_d=-e_1\). When \(i,j<d\),
+The spectral arguments in the main paper also use equality of the diagonal entries of powers of the transitive matrix. Define \(Ze_j=e_{j+1}\) for \(j<d\) and \(Ze_d=-e_1\). When \(i,j<d\),
 
 \[
 (Z^TT_dZ)_{ij}=(T_d)_{i+1,j+1}=(T_d)_{ij}.

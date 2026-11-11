@@ -6,24 +6,23 @@
 
 ## 范围与依赖导航
 
-本附录集中收录主文《竞赛图 Hamilton 路径的定量计数与度稳定性》实际使用的较长分析证明。内容按完整段落从中文详细证明稿抽取，保留原章节号、定理号、式号和引文号。本附录与主文共同构成所需证明；详细稿的其余部分作为可选展开阅读，不是这些证明的额外前提。
+本附录集中收录主文《竞赛图 Hamilton 路径的定量计数与度稳定性》实际使用的较长分析证明。附录完整呈现所需证明，保留章节号、定理号、式号和引文号，以便与主文互相引用。本附录与主文共同构成所需证明；详细稿的其余部分作为可选展开阅读，不是这些证明的额外前提。
 
-永久式近似在这里作为分析工具使用，附录给出固定元素界和谱隙参数下的独立定量证明。本文不把行列式主项称为新结果，也不在此提出关于适用矩阵范围的更广新颖性主张。论文贡献以修订后主文引言的定位为准；抽取段落中的历史比较保留为原文语境。
+永久式近似在这里作为分析工具使用，附录给出固定元素界和谱隙参数下的独立定量证明。本文不把行列式主项称为新结果，也不在此提出关于适用矩阵范围的更广新颖性主张。第 3 节的局部文献比较与主文第 3 节的贡献定位一致。
 
 - [第 3 节](#technical-permanent)完整证明定理 3.1，包括高斯配对、压缩后的非高斯核心、线性系数窗口、阶乘恢复、系数尾部及最终一致误差界。
 - [第 4 节](#technical-scaling)完整证明局部对角缩放及其代价、高斯删除与中心化、配对度差预处理、非主子阵的精确恢复恒等式及小度差近似。引理 4.4 使用定理 3.1 和引理 4.1--4.3；引理 4.5 使用相同的缩放与删除估计，但不作配对预缩放。
 - [引理 6.1](#technical-spectral-cap)保留完整陈述与证明，以补齐 A.1 对传递矩阵行列式多项式的依赖。其中的特征值计算也给出第 4.3 节圆环例子所用的频率。
-- [A.1--A.3](#technical-algebra)给出主文谱论证所需的传递矩阵行列式恒等式、交替切换同构、矩阵幂的对角元相等及四次矩等号代数。第 4.3 节例子中对第 8.2 节的引用，可由本附录的 A.2 和引理 6.1 直接补齐。
+- [A.1--A.3](#technical-algebra)给出主文谱论证所需的传递矩阵行列式恒等式、交替切换同构、矩阵幂的对角元相等及四次矩等号代数。第 4.3 节的圆环例子直接使用 A.2 和引理 6.1。
 
-抽取段落中对第 7、8、11 节的引用指向后续应用，并非额外的证明输入；对第 2 节的引用用于区分复用记号，所需约定在下文重述。标准外部工具保留原引文。附录完整保留原参考文献表以维持引文编号，不收录原作者说明和个人致谢。
+未特别注明的章节和引理引用均指本附录；对主文的引用明确标出。所需记号约定在下文重述。标准外部工具保留原引文。附录完整保留原参考文献表以维持引文编号，不收录原作者说明和个人致谢。
 
-## 记号对照
+## 记号
 
-抽取的证明保留历史记号。主文已将最大度差改记为 $\Delta_s=\|S\mathbf1\|_\infty$；本附录第 3--4 节在表示该量时仍用 $d$。A.2--A.3 中的 $d$ 则表示矩阵或竞赛图阶数。第 3 节的标量控制函数 $\Gamma(r)$ 在主文中改记为 $\mathcal G_{C,q}(r)$：
+最大度差与主文统一记为 $\Delta_s=\|S\mathbf1\|_\infty$。A.2--A.3 中的 $d$ 表示矩阵或竞赛图阶数；第 3 节的局部块大小和度数指标也保留 $d$。标量分析控制函数记为
 
 $$
-\mathcal G_{C,q}(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right)
-=\Gamma(r)\quad\text{（历史第 3 节记号）},\qquad rq<1.
+\mathcal G_{C,q}(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right),\qquad rq<1.
 $$
 
 它既不同于第 4 节的度差乘积 $\Gamma=\prod_i(1-a_i^2)$，也不同于高斯矩阵泛函 $\mathcal G(M)=\det(I-MM^{\mathsf T})^{-1/2}$。第 3 节的生成函数 $G(t)=\det(I-t^2BB^{\mathsf T})^{-1/2}$ 也是局部记号。该节的 $C,q$ 是固定分析参数；第 4 节中 $C=2A/(n-1)$ 是矩阵，A.2 中 $q=(d-1)/2$ 是整数。
@@ -36,7 +35,7 @@ S=A-A^{\mathsf T},\qquad 2A=J-I+S,\qquad s=S\mathbf1,
 $$
 $$
 \mathcal E=\|s\|_2^2,\qquad
-\Delta_s=d=\|s\|_\infty,\qquad
+\Delta_s=\|s\|_\infty,\qquad
 a=\frac{s}{n-1},\qquad \tau=\|a\|_2^2\quad(n\ge2).
 $$
 
@@ -56,7 +55,7 @@ $$
 
 奇异值成对给出 $\sum_jx_j=(n-1)/(2n)<1/2$，所以这些行列式因子为正；平方根均取正根。$T_n^0$、$T_n$、$T_d$ 表示对应阶数的传递符号矩阵，即严格上三角元素全为 $+1$ 的反对称矩阵。奇阶圆环图的阶数为 $d=2q+1$，其边 $i\to j$ 当且仅当 $j-i\pmod d\in\{1,\ldots,q\}$。对数均为自然对数。一致误差常数可以依赖明确固定的分析参数或删除窗口参数，但不依赖具体的容许矩阵、竞赛图或删除集合。
 
-<!-- Extraction from 07_detailed_proof.zh.md; block=technical-permanent; raw_block_sha256=3d4508f07065d636405f7e0479a0bea82fc2fbb8404fc336a140c322ae99d699; copy_block_sha256=ceea79db9a57566f2a4ff4c254f1d82f9cfd0ec7fb340bdf7962e4dea5c9653c; normalization=trailing-tex-control-space-empty-group-v1; replacements=2. -->
+<!-- Extraction from 07_detailed_proof.zh.md; block=technical-permanent; raw_block_sha256=3d4508f07065d636405f7e0479a0bea82fc2fbb8404fc336a140c322ae99d699; copy_block_sha256=00f346938bf36bc0c99816bdc9638ffb306acbbfd0c2c2e4cae378e6bcb47d63; normalization=trailing-tex-control-space-empty-group-v1; transformations=control-space:2,edit-0:1,edit-1:1,edit-2:1,edit-3:1,edit-4:1,edit-5:1,edit-10:1,edit-11:1,analytic-majorant:21. -->
 
 <a id="technical-permanent"></a>
 
@@ -64,9 +63,9 @@ $$
 
 本节证明一个关于永久式的统一估计。将行列和均为一的矩阵写成 $(J_n+E)/n$，其中 $E\mathbf1=E^{\mathsf T}\mathbf1=0$。在元素有界且 $\|E/n\|_{\mathrm{op}}\le q<1$ 的条件下，永久式的主项由一个行列式给出。第 4 节将把这一估计用于缩放后的竞赛图子矩阵。
 
-McCullagh [5] 在适度偏离条件下得到了行列式主项。这里给出固定元素界 $C$、奇异值谱隙 $q$ 下的自包含版本，其误差对这些参数所确定的矩阵类一致成立。证明分别控制系数与尾项，以便将结论一致地用于第 4 节中的删除和缩放。Li [8, Theorem 2.1] 的近期相关近似假设中心扰动的最大绝对行和或列和为 $o(n)$；这一条件不覆盖相应行列和为 $n$ 量级的稠密核。
+McCullagh [5, §3] 已在适度偏离假设下给出具有 $O(n^{-1})$ 误差的行列式近似。对非负输入，本文的固定元素界和谱隙假设蕴含弱有界性及所需谱隙，其行列式因子恰为 $\det(I-BB^{\mathsf T})^{-1/2}$；主文第 3 节详细核对这一对应。固定矩阵类上的一致性本身也不能构成相对于逐个容许序列定理的新颖性区别。这里保留独立证明，以逐步跟踪压缩核心、系数窗口和尾部中的常数，供删除与缩放之后使用，并不声称修复 [5] 中已确认的缺口。Li [8, Theorem 2.1] 假设中心扰动的最大绝对行和或列和为 $o(n)$；这一较窄条件不覆盖这里使用的稠密核，但这一比较不构成相对于 [5] 或 [12] 的新颖性主张。
 
-这套证明的主要结构已见于 10 月 8 日的独立路径存档 [14]。这里保留有符号实矩阵版本，并明确其与后续应用的区别：图论部分实际使用非负的缩放矩阵，有符号一般性是定理本身的额外范围，而非这些应用的必要条件。例如
+压缩核心证明独立形成于此前的路径计数项目 [14]。有符号输入不构成优先性区别：McCullagh [5, §4.1] 已讨论复扰动。这里保留实有符号版本及其证明；竞赛图应用实际使用非负输入。例如
 
 $$
 B=\frac17\begin{pmatrix}1&2&-3\\-2&1&1\\1&-3&2\end{pmatrix},\qquad E=3B
@@ -104,7 +103,7 @@ $$
 
 对行、列指标的互异性分别作容斥，永久式的每个系数可表示为二部多重图之和。中心化消去一度顶点；二度分量对应高斯配对，其总和给出行列式主项。其余分量按超额（边数减顶点数）分类，每单位超额带来一个 $n^{-1}$ 因子。我们先估计次数不超过 $\alpha n$ 的系数，再以复分析方法控制其余系数。
 
-证明中使用高斯级数 $G(t)$；它与第 7.4 节的数值上限 $G=100/19$ 是不同对象。令
+证明中使用高斯生成级数 $G(t)$。令
 
 $$
 f(t)=\frac{\operatorname{per}(J_n+tE)}{n!},
@@ -117,10 +116,10 @@ $$
 R=\frac{3+q}{2(1+q)},\qquad \sigma=\frac{1+R}{2}.
 $$
 
-本节另定义控制函数 $\Gamma(r)$，不与第 7 节的度差乘积 $\Gamma$ 混用：
+使用前面定义的标量分析控制函数 $\mathcal G_{C,q}$：
 
 $$
-\Gamma(r)=\exp\left(\frac{C^2r^2}{2(1-q^2r^2)}\right),
+\mathcal G_{C,q}(r)=\exp\left(\frac{C^2r^2}{2(1-q^2r^2)}\right),
 \qquad r\ge0,\ rq<1.
 $$
 
@@ -156,7 +155,7 @@ $$
 \end{aligned}
 $$
 
-因此 $1\le G(1)\le\Gamma(1)$。若 $|f(1)-G(1)|\le K/n$，则
+因此 $1\le G(1)\le\mathcal G_{C,q}(1)$。若 $|f(1)-G(1)|\le K/n$，则
 
 $$
 \left|\frac{f(1)}{G(1)}-1\right|
@@ -228,7 +227,7 @@ $$
 该解析恒等式在 $|t|\|B\|_{\mathrm{op}}<1$ 时成立，并确定全部形式系数。特别地，$G$ 的系数非负，且
 
 $$
-G(r)\le\Gamma(r)\qquad(r\ge0,\ rq<1),
+G(r)\le\mathcal G_{C,q}(r)\qquad(r\ge0,\ rq<1),
 $$
 
 因为 $-\log(1-x)\le x/(1-x)$，且 $\sum_i s_i^2=\|B\|_{\mathrm F}^2\le C^2$；这里 $s_i$ 为 $B$ 的奇异值。
@@ -836,7 +835,7 @@ $$
 
 $$
 \sum_{k=0}^{M}|F_k-[t^k]G|R^k
-\le\Gamma(R)\left(\frac{T_1}n+\frac{8D^2}{n^2}\right).
+\le\mathcal G_{C,q}(R)\left(\frac{T_1}n+\frac{8D^2}{n^2}\right).
 $$
 
 该估计仅涉及次数不超过 $M$ 的系数。
@@ -891,7 +890,7 @@ v_\sigma=\frac{\sigma^2C^2(1+\sigma^2q^2)}
 $$
 
 $$
-K_G=\frac{\Gamma(\sigma)}{2(1-\alpha)}
+K_G=\frac{\mathcal G_{C,q}(\sigma)}{2(1-\alpha)}
 \left(u_\sigma^2+v_\sigma\right).
 $$
 
@@ -971,7 +970,7 @@ A(\sigma)\le\frac{\sigma^2C^2}{1-\sigma^2q^2}=u_\sigma,
 \le\frac{\sigma^2C^2(1+\sigma^2q^2)}{(1-\sigma^2q^2)^2}=v_\sigma.
 $$
 
-结合 $G(\sigma)\le\Gamma(\sigma)$，恰得到 $K_G/n$。
+结合 $G(\sigma)\le\mathcal G_{C,q}(\sigma)$，恰得到 $K_G/n$。
 
 
 定义投影 $\mathcal P_M\sum_kh_kt^k=\sum_{k=0}^Mh_kt^k$。因为超额 $j$ 的非空核心至少有 $j+1$ 条原始边，次数不超过 $M$ 时不会出现 $j>M$，故有
@@ -988,8 +987,8 @@ $$
 &=\|\mathcal P_M(F-G)\|_R\\
 &\le\left\|G\sum_{j=1}^MC_j\right\|_R\\
 &\le\|G\|_R\sum_{j=1}^M\|C_j\|_R\\
-&\le\Gamma(R)\left[T_1/n+\sum_{j=2}^M(Dj/n)^j\right]\\
-&\le\Gamma(R)(T_1/n+8D^2/n^2).
+&\le\mathcal G_{C,q}(R)\left[T_1/n+\sum_{j=2}^M(Dj/n)^j\right]\\
+&\le\mathcal G_{C,q}(R)(T_1/n+8D^2/n^2).
 \end{aligned}
 $$
 
@@ -1010,7 +1009,7 @@ $$
 
 **引理 3.3（永久式极化）。**
 
-对复方阵 $Z$，其奇异值取 $Z^*Z$ 的特征值的非负平方根，相应范数仍按定义 2.3 计算。记 $|Z|=(Z^*Z)^{1/2}$ 为算子绝对值，其中平方根取 Hermitian 半正定平方根，而非逐元素取绝对值。对 Hermitian 矩阵写 $H\ge0$，意思是每个向量均满足 $x^*Hx\ge0$。则
+对复方阵 $Z$，其奇异值取 $Z^*Z$ 的特征值的非负平方根，相应范数遵循前面的约定。记 $|Z|=(Z^*Z)^{1/2}$ 为算子绝对值，其中平方根取 Hermitian 半正定平方根，而非逐元素取绝对值。对 Hermitian 矩阵写 $H\ge0$，意思是每个向量均满足 $x^*Hx\ge0$。则
 
 $$
 |\operatorname{per}Z|
@@ -1058,7 +1057,7 @@ h_n(\lambda_1,\ldots,\lambda_n)
 \prod_{i=1}^n\lambda_i^{k_i}.
 $$
 
-各 $k_i$ 为整数；多项式中的零次幂恒为一，包括 $\lambda_i=0$ 时的 $\lambda_i^0$。这个多项式与第 2 节标量权重 $h_k=((k+1)/2)^{k/2}$ 是不同对象。若 $\lambda_1=1$ 且 $0\le\lambda_i<1$（$i\ge2$），则
+各 $k_i$ 为整数；多项式中的零次幂恒为一，包括 $\lambda_i=0$ 时的 $\lambda_i^0$。这里的记号只用于本引理。若 $\lambda_1=1$ 且 $0\le\lambda_i<1$（$i\ge2$），则
 
 $$
 \operatorname{per}H\le\frac{n!}{n^n}
@@ -1110,8 +1109,8 @@ $$
 
 $$
 \sum_{k>M}g_k
-\le \Gamma(\sigma)\sigma^{-M}
-\le\sigma\Gamma(\sigma)\exp\!\left(-\alpha n\log\sigma\right).
+\le \mathcal G_{C,q}(\sigma)\sigma^{-M}
+\le\sigma\mathcal G_{C,q}(\sigma)\exp\!\left(-\alpha n\log\sigma\right).
 $$
 
 两个尾项均随 $n$ 指数衰减。将它们与有限窗口中的 $O(n^{-1})$ 估计合并，即证明定理 3.1。
@@ -1281,7 +1280,7 @@ $$
 
 $$
 \sum_{k>M}g_k\le\sigma^{-M}\sum_{k>M}g_k\sigma^k
-\le\sigma\Gamma(\sigma)e^{-\alpha n\log\sigma}.
+\le\sigma\mathcal G_{C,q}(\sigma)e^{-\alpha n\log\sigma}.
 $$
 
 令 $c=\alpha\log R>0$。若 $n\ge(2\beta/c)^2$，则 $\beta\sqrt n-cn\le-cn/2$。由 $ne^{-cn/2}\to0$，第一个尾项为 $o(n^{-1})$，第二个同理。此处用到 $M=\lfloor\alpha n\rfloor$ 随 $n$ 线性增长。
@@ -1294,11 +1293,13 @@ $$
 对每个整数 $n\ge4/\alpha$，
 
 $$
+\begin{aligned}
 |f(1)-G(1)|
-\le \frac{\Gamma(R)T_1+K_G}{n}
-+\frac{8\Gamma(R)D^2}{n^2}
-+\frac{R}{R-1}\exp\!\left(\beta\sqrt n-\alpha n\log R\right)
-+\sigma\Gamma(\sigma)\exp\!\left(-\alpha n\log\sigma\right).
+&\le \frac{\mathcal G_{C,q}(R)T_1+K_G}{n}
++\frac{8\mathcal G_{C,q}(R)D^2}{n^2}\\
+&\quad+\frac{R}{R-1}\exp\!\left(\beta\sqrt n-\alpha n\log R\right)\\
+&\quad+\sigma\mathcal G_{C,q}(\sigma)\exp\!\left(-\alpha n\log\sigma\right).
+\end{aligned}
 $$
 
 
@@ -1337,37 +1338,37 @@ $$
 $$
 
 $$
-\sigma\Gamma(\sigma)e^{-c_2n}
-\le\frac{\sigma\Gamma(\sigma)}{ec_2}\frac1n.
+\sigma\mathcal G_{C,q}(\sigma)e^{-c_2n}
+\le\frac{\sigma\mathcal G_{C,q}(\sigma)}{ec_2}\frac1n.
 $$
 
 若还要求 $n\ge4/\alpha$，命题 3.5 的右边便至多为
 
 $$
 \frac1n\left[
-\Gamma(R)T_1+K_G+8\Gamma(R)D^2
+\mathcal G_{C,q}(R)T_1+K_G+8\mathcal G_{C,q}(R)D^2
 +\frac{2R}{ec_1(R-1)}
-+\frac{\sigma\Gamma(\sigma)}{ec_2}\right].
++\frac{\sigma\mathcal G_{C,q}(\sigma)}{ec_2}\right].
 $$
 
 括号中的每个量都只依赖先固定的 $C,q,R,\sigma$，没有依赖正在估计的矩阵。若要把界写成所有 $n\ge1$ 都成立的同一个常数，还须覆盖有限个小阶数。由 $|1+E_{ij}|\le1+C$，
 
 $$
 |f(1)|\le\frac1{n!}\sum_{\pi\in \mathfrak S_n}(1+C)^n=(1+C)^n,
-\qquad 1\le G(1)\le\Gamma(1).
+\qquad 1\le G(1)\le\mathcal G_{C,q}(1).
 $$
 
 令 $N=\lceil\max\{N_1,4/\alpha\}\rceil$，再把统一常数增大到至少
 
 $$
-\max_{1\le n<N}n\left[(1+C)^n+\Gamma(1)\right]
+\max_{1\le n<N}n\left[(1+C)^n+\mathcal G_{C,q}(1)\right]
 $$
 
 即可覆盖有限个小阶数；若最大值集合为空，约定其值为零。 $\square$
 
 **已有永久式证明中的定量余项。**
 
-Divoux–Wang [12, 命题 3.1] 对非负双随机矩阵给出了统一的 $1+o(1)$ 永久式近似。对于本文计数中出现的这一类矩阵，其证明可以细化为 $1+O(N^{-1})$。这里的误差阶不是原命题的陈述，而是保留其估计中的参数依赖后得到的改进。本文定理 3.1 允许任意实双中心化矩阵 $E$，不要求 $J+E$ 非负；我们保留这一形式及其详细证明，不将两篇论文的定理假设视为完全相同。
+Divoux–Wang [12, 命题 3.1] 对非负双随机矩阵给出了统一的 $1+o(1)$ 永久式近似。对于本文计数中出现的这一类矩阵，其证明可以细化为 $1+O(N^{-1})$。这里的误差阶不是原命题的陈述，而是保留其估计中的参数依赖后得到的改进。本文定理 3.1 允许任意实双中心化矩阵 $E$，不要求 $J+E$ 非负；我们保留这一形式及其详细证明，不将两篇论文的定理假设视为完全相同。 定理假设的表述差别并不构成优先性主张，也不声称超越 McCullagh [5, §4.1] 的适用范围；另见主文第 3 节。
 
 上述细化只涉及 [12, 第 3.2–3.3 节] 的两处估计。其有限系数和已被控制为
 
@@ -1393,7 +1394,7 @@ $$
 
 对 $\Delta(s)=\det(I-s^2B^TB)^{-1/2}$，固定的算子范数间隙与 Frobenius 范数界保证 $\Delta''$ 在所用的固定窗口上一致有界。二阶 Taylor 展开和原文的窗口外估计因而给出 $O(N^{-1})$ 误差。这说明非负双随机情形的永久式误差可以由已有证明细化得到；全局路径估计还需要分别控制缩放、度差和例外顶点造成的误差。
 
-<!-- Extraction from 07_detailed_proof.zh.md; block=technical-scaling; raw_block_sha256=64fc01bf570af1dca2f5c2c5694251bbce7b0625b568f43986375134af770315; copy_block_sha256=64fc01bf570af1dca2f5c2c5694251bbce7b0625b568f43986375134af770315; normalization=trailing-tex-control-space-empty-group-v1; replacements=0. -->
+<!-- Extraction from 07_detailed_proof.zh.md; block=technical-scaling; raw_block_sha256=64fc01bf570af1dca2f5c2c5694251bbce7b0625b568f43986375134af770315; copy_block_sha256=c47eaac61d416d09ff957f0bf5ecddbc721106818d4efa0980e92c0a486e6486; normalization=trailing-tex-control-space-empty-group-v1; transformations=control-space:0,edit-6:1,edit-7:2,maximum-score:46. -->
 
 <a id="technical-scaling"></a>
 
@@ -2542,7 +2543,7 @@ $$
 (S_n^{\mathrm{cir}}-I_n)^{\mathsf T}(S_n^{\mathrm{cir}}-I_n)=I_n-(S_n^{\mathrm{cir}})^2.
 $$
 
-第 8.2 节的圆环变换保留符号矩阵的全部频率，最大正频率为 $\cot(\pi/(2n))$。因此
+A.2 中的交替切换与置换保留符号矩阵的全部频率；引理 6.1 给出最大正频率 $\cot(\pi/(2n))$。因此
 
 $$
 \begin{aligned}
@@ -2689,21 +2690,21 @@ $$
 
 ### 4.5 小度差时的双侧估计
 
-当每个度差均为 $o(\sqrt n)$ 时，原始边际已足够接近一，可以直接使用局部缩放。容量界随后从两侧控制恢复因子，得到定理 8.1 所需的近似。
+当每个度差均为 $o(\sqrt n)$ 时，原始边际已足够接近一，可以直接使用局部缩放。容量界随后从两侧控制恢复因子，得到主文定理 8.1 所需的近似。
 
 
 **引理 4.5（小度差永久式近似）。**
 
-设 $d=\|S\mathbf 1_n\|_\infty=o(\sqrt n)$。固定 $0<B_0<\infty$，任删 $t\le B_0\log n$ 行与 $t$ 列，记 $m=n-t$。对这些选择一致地有
+设 $\Delta_s=\|S\mathbf 1_n\|_\infty=o(\sqrt n)$。固定 $0<B_0<\infty$，任删 $t\le B_0\log n$ 行与 $t$ 列，记 $m=n-t$。对这些选择一致地有
 
 <a id="eq-small-score-permanent"></a>
 
 $$
-\operatorname{per}A[R,T]=e^{-1}D_n(S)\frac{m!}{2^m}\left[1+O_{B_0}\left(\frac{(d+t+1)^2}{n}\right)\right].
+\operatorname{per}A[R,T]=e^{-1}D_n(S)\frac{m!}{2^m}\left[1+O_{B_0}\left(\frac{(\Delta_s+t+1)^2}{n}\right)\right].
 \tag{4.3}
 $$
 
-更具体地，固定 $B_0>0$ 后，存在常数 $C_{\mathrm{err}},\delta>0$ 和整数 $N_0\ge4$，使下述结论对所有 $n\ge N_0$ 一致成立。设 $S$ 为竞赛符号矩阵，$I,J\subseteq[n]$ 且 $|I|=|J|=t\le B_0\log n$；置 $d=\|S\mathbf1_n\|_\infty$、$\eta=(d+t+1)^2/n$。若 $\eta\le\delta$，则[式 (4.3)](#eq-small-score-permanent)的相对误差绝对值不超过 $C_{\mathrm{err}}\eta$。这里 $R=[n]\setminus I$、$T=[n]\setminus J$、$m=n-t$，两个删集可独立选取。在引理所述渐近范围内，$\eta\to0$。
+更具体地，固定 $B_0>0$ 后，存在常数 $C_{\mathrm{err}},\delta>0$ 和整数 $N_0\ge4$，使下述结论对所有 $n\ge N_0$ 一致成立。设 $S$ 为竞赛符号矩阵，$I,J\subseteq[n]$ 且 $|I|=|J|=t\le B_0\log n$；置 $\Delta_s=\|S\mathbf1_n\|_\infty$、$\eta=(\Delta_s+t+1)^2/n$。若 $\eta\le\delta$，则[式 (4.3)](#eq-small-score-permanent)的相对误差绝对值不超过 $C_{\mathrm{err}}\eta$。这里 $R=[n]\setminus I$、$T=[n]\setminus J$、$m=n-t$，两个删集可独立选取。在引理所述渐近范围内，$\eta\to0$。
 
 
 **证明。**
@@ -2711,19 +2712,19 @@ $$
 增大 $N_0$，使整个对数删除窗口内均有 $2t\le n$，于是 $m\ge n/2>0$。此处不需要成对预缩放。令 $C=2A/(n-1)$、$X=(n/m)C[R,T]$。全矩阵 $C$ 的行列误差分别为 $s_i/(n-1)$、$-s_i/(n-1)$。因此，精确质量恒等式[式 (4.1)](#eq-deletion-mass)及第 4.3 节的边际公式给出
 
 $$
-|\kappa|=O(t(d+t)/n),\qquad \varepsilon(X)=O((d+t)/n),\qquad \|g(X)\|_2=O((d+t)/\sqrt n).
+|\kappa|=O(t(\Delta_s+t)/n),\qquad \varepsilon(X)=O((\Delta_s+t)/n),\qquad \|g(X)\|_2=O((\Delta_s+t)/\sqrt n).
 $$
 
 质量误差满足 $|\kappa|\le K\eta$。必要时缩小 $\delta$，便一致保证 $\mathfrak m(X)=m+\kappa>0$。归一化 $\widetilde X=mX/\mathfrak m(X)$。其稠密度与中心核谱隙固定，局部缩放引理适用。二范数位移和容量估计给出
 
 $$
-\|B_X-\widetilde X\|_F=O((d+t)/n),\qquad 0\le\theta_{\widetilde X}=O((d+t)^2/n).
+\|B_X-\widetilde X\|_F=O((\Delta_s+t)/n),\qquad 0\le\theta_{\widetilde X}=O((\Delta_s+t)^2/n).
 $$
 
-非单位质量修正随后给出 $|\theta_X|=O((d+t)^2/n)$。又有 $\tau\le nd^2/(n-1)^2$。有限删除估计、归一化因子和对角缩放的扰动共同给出
+非单位质量修正随后给出 $|\theta_X|=O((\Delta_s+t)^2/n)$。又有 $\tau\le n\Delta_s^2/(n-1)^2$。有限删除估计、归一化因子和对角缩放的扰动共同给出
 
 $$
-|\log\mathcal G(B_X-P_m)-\log D_n(S)|=O((d+t+1)^2/n).
+|\log\mathcal G(B_X-P_m)-\log D_n(S)|=O((\Delta_s+t+1)^2/n).
 $$
 
 此时不含度差乘积的精确恢复为
@@ -2732,30 +2733,30 @@ $$
 \operatorname{per}A[R,T]=\left[\frac{m(n-1)}{2n}\right]^m e^{-\theta_X}\operatorname{per}B_X.
 $$
 
-应用统一永久式定理，并使用 $(1-1/n)^m=e^{-1}\exp(O((t+1)/n))$。所有对数误差均由 $\eta=(d+t+1)^2/n$ 的一个固定倍数控制。将 $\delta$ 取得充分小，对这些界取指数，便在前述有限范围内一致得到相对误差绝对值不超过 $C_{\mathrm{err}}\eta$。在 $d=o(\sqrt n)$、$t\le B_0\log n$ 的渐近范围中，$\eta\to0$。由此得到定理 8.1 所用的短删集子矩阵的一致近似。
+应用统一永久式定理，并使用 $(1-1/n)^m=e^{-1}\exp(O((t+1)/n))$。所有对数误差均由 $\eta=(\Delta_s+t+1)^2/n$ 的一个固定倍数控制。将 $\delta$ 取得充分小，对这些界取指数，便在前述有限范围内一致得到相对误差绝对值不超过 $C_{\mathrm{err}}\eta$。在 $\Delta_s=o(\sqrt n)$、$t\le B_0\log n$ 的渐近范围中，$\eta\to0$。由此得到主文定理 8.1 所用的短删集子矩阵的一致近似。
 
 
-因 $|s_i|\le d$，全矩阵边际绝对误差至多 $d/(n-1)$，删集质量公式给出
-
-$$
-|\kappa|\le\frac nm\left[\frac{2td}{n-1}+\frac{2t^2}{n-1}+\frac{t^2}n\right]
-\le K\frac{t(d+t)}n.
-$$
-
-保留行的误差至多 $K(d+t)/n$，共 $2m$ 个行列误差，故
+因 $|s_i|\le \Delta_s$，全矩阵边际绝对误差至多 $\Delta_s/(n-1)$，删集质量公式给出
 
 $$
-\|g(X)\|_2\le\sqrt{2m}\,K(d+t)/n
-\le K'(d+t)/\sqrt n.
+|\kappa|\le\frac nm\left[\frac{2t\Delta_s}{n-1}+\frac{2t^2}{n-1}+\frac{t^2}n\right]
+\le K\frac{t(\Delta_s+t)}n.
+$$
+
+保留行的误差至多 $K(\Delta_s+t)/n$，共 $2m$ 个行列误差，故
+
+$$
+\|g(X)\|_2\le\sqrt{2m}\,K(\Delta_s+t)/n
+\le K'(\Delta_s+t)/\sqrt n.
 $$
 
 归一化后同阶，容量和位移给出
 
 $$
-0\le\theta_{\widetilde X}\le K(d+t)^2/n,
+0\le\theta_{\widetilde X}\le K(\Delta_s+t)^2/n,
 \quad
-\|B_X-\widetilde X\|_F\le\frac K{\sqrt m}\frac{d+t}{\sqrt n}
-\le K'(d+t)/n.
+\|B_X-\widetilde X\|_F\le\frac K{\sqrt m}\frac{\Delta_s+t}{\sqrt n}
+\le K'(\Delta_s+t)/n.
 $$
 
 因为 $|\kappa|/m\le1/2$，
@@ -2765,19 +2766,19 @@ $$
 =m|\log(1+\kappa/m)|\le2|\kappa|,
 $$
 
-所以 $|\theta_X|\le K[(d+t)^2+t(d+t)]/n\le K'(d+t)^2/n$。若 $d=t=0$，这些量均为零。
+所以 $|\theta_X|\le K[(\Delta_s+t)^2+t(\Delta_s+t)]/n\le K'(\Delta_s+t)^2/n$。若 $\Delta_s=t=0$，这些量均为零。
 
 高斯删除给 $K(t+\tau+1)/n$，而
 
 $$
-\tau=\frac{\sum_i s_i^2}{(n-1)^2}\le\frac{nd^2}{(n-1)^2}\le\frac{4d^2}n.
+\tau=\frac{\sum_i s_i^2}{(n-1)^2}\le\frac{n\Delta_s^2}{(n-1)^2}\le\frac{4\Delta_s^2}n.
 $$
 
-中心核位移为 $K(d+t+1)/n$，故全部高斯对数误差至多
+中心核位移为 $K(\Delta_s+t+1)/n$，故全部高斯对数误差至多
 
 $$
-K\left[\frac{t+1}n+\frac{d^2}{n^2}+\frac{d+t+1}n\right]
-\le K'\frac{(d+t+1)^2}n=K'\eta.
+K\left[\frac{t+1}n+\frac{\Delta_s^2}{n^2}+\frac{\Delta_s+t+1}n\right]
+\le K'\frac{(\Delta_s+t+1)^2}n=K'\eta.
 $$
 
 恢复上述因子后，得
@@ -2822,26 +2823,26 @@ $$
 \|(B_X-P_m)-Z\|_F
 &\le\|\Pi_m(B_X-\widetilde X)\Pi_m\|_F
 +\left|\frac n{m+\kappa}-1\right|\|Z\|_F\\
-&\le K\frac{d+t}{n}+K\frac{t+|\kappa|}{n}\\
-&\le K'\left[\frac{d+t}{n}+\frac{t(d+t)}{n^2}\right].
+&\le K\frac{\Delta_s+t}{n}+K\frac{t+|\kappa|}{n}\\
+&\le K'\left[\frac{\Delta_s+t}{n}+\frac{t(\Delta_s+t)}{n^2}\right].
 \end{aligned}
 $$
 
-由于 $t/n\le1/2$，最后一项被 $K(d+t)/n$ 吸收。若 $d=t=0$，该位移为零。再计入 $Y$ 与 $S/n$ 之间的 $O(n^{-1})$ 误差，得到统一误差界 $O((d+t+1)^2/n)$。
+由于 $t/n\le1/2$，最后一项被 $K(\Delta_s+t)/n$ 吸收。若 $\Delta_s=t=0$，该位移为零。再计入 $Y$ 与 $S/n$ 之间的 $O(n^{-1})$ 误差，得到统一误差界 $O((\Delta_s+t+1)^2/n)$。
 
-对 $d,t\ge0$，以下各项分别都不超过 $\eta=(d+t+1)^2/n$ 的固定倍数：
+对 $\Delta_s,t\ge0$，以下各项分别都不超过 $\eta=(\Delta_s+t+1)^2/n$ 的固定倍数：
 
 $$
 \frac{t+1}n\le\eta,\quad
-\frac{d+t}n\le\eta,\quad
-\frac{(d+t)^2}n\le\eta,\quad
-\frac{t(d+t)}n\le\eta,\quad
-\frac{d^2}{n^2}\le\eta.
+\frac{\Delta_s+t}n\le\eta,\quad
+\frac{(\Delta_s+t)^2}n\le\eta,\quad
+\frac{t(\Delta_s+t)}n\le\eta,\quad
+\frac{\Delta_s^2}{n^2}\le\eta.
 $$
 
 因此，各对数误差均为 $O(\eta)$。由 $|e^u-1|\le e^{|u|}|u|$，相对误差也为 $O(\eta)$。 $\square$
 
-<!-- Extraction from 07_detailed_proof.zh.md; block=technical-spectral-cap; raw_block_sha256=ec6a6e0153c6f6a061769d6e0dae8093260c6b80cf4c7a5d2a12400db52a19b0; copy_block_sha256=ec6a6e0153c6f6a061769d6e0dae8093260c6b80cf4c7a5d2a12400db52a19b0; normalization=trailing-tex-control-space-empty-group-v1; replacements=0. -->
+<!-- Extraction from 07_detailed_proof.zh.md; block=technical-spectral-cap; raw_block_sha256=ec6a6e0153c6f6a061769d6e0dae8093260c6b80cf4c7a5d2a12400db52a19b0; copy_block_sha256=ec6a6e0153c6f6a061769d6e0dae8093260c6b80cf4c7a5d2a12400db52a19b0; normalization=trailing-tex-control-space-empty-group-v1; transformations=control-space:0. -->
 
 <a id="technical-spectral-cap"></a>
 
@@ -2879,7 +2880,7 @@ $$
 
 $\square$
 
-<!-- Extraction from 07_detailed_proof.zh.md; block=technical-algebra; raw_block_sha256=575e14157fdc0b628a3162bb172c934c23d024be87c80e88d1c592ec3b85de94; copy_block_sha256=575e14157fdc0b628a3162bb172c934c23d024be87c80e88d1c592ec3b85de94; normalization=trailing-tex-control-space-empty-group-v1; replacements=0. -->
+<!-- Extraction from 07_detailed_proof.zh.md; block=technical-algebra; raw_block_sha256=575e14157fdc0b628a3162bb172c934c23d024be87c80e88d1c592ec3b85de94; copy_block_sha256=977076bfa4422b457070c3eea79c8e45d0585d7269e2137d132c051580b09207; normalization=trailing-tex-control-space-empty-group-v1; transformations=control-space:0,edit-8:1,edit-9:1. -->
 
 <a id="technical-algebra"></a>
 
@@ -2893,7 +2894,7 @@ $$
 \det(I+tT_n^0)=\frac{(1+t)^n+(1-t)^n}{2}.
 $$
 
-该公式同时覆盖奇阶和偶阶；命题 6.6 与第 8.2 节均使用这一版本。
+该公式同时覆盖奇阶和偶阶，供主文的谱比较使用。
 
 ### A.2 交替切换与圆环的普通同构
 
@@ -2927,7 +2928,7 @@ $$
 
 该差在$\{q+1,\ldots,2q\}$，方向相反；切换矩阵此时为$-1$。反对称性处理$i>j$，对角均为0，所以这是逐条边的普通同构。
 
-第 6、11 节还用到传递矩阵的幂有相同对角元。令$Ze_j=e_{j+1}$（$j<d$）、$Ze_d=-e_1$。当$i,j<d$时，
+主文的谱论证还用到传递矩阵的幂有相同对角元。令$Ze_j=e_{j+1}$（$j<d$）、$Ze_d=-e_1$。当$i,j<d$时，
 
 $$
 (Z^TT_dZ)_{ij}=(T_d)_{i+1,j+1}=(T_d)_{ij}.
@@ -3063,7 +3064,7 @@ $$
 
 若这三点形成有向三圈，则$s'_{ij}=s'_{jk}=-s'_{ik}$，括号为$3s'_{ij}$，平方为9，矛盾。因此剩余顶点无有向三圈。如果$i\to j$、$j\to k$而$i\not\to k$，则$k\to i$，会形成三圈；所以方向关系是严格全序，可按该全序排列。第一顶点指向所有剩余点，整个切换图于是为传递图。反过来带符号置换相似保持迹，故四次矩取等。$d=3$时切换后剩下两点，按其唯一边方向排列即可。
 
-<!-- Extraction from 07_detailed_proof.zh.md; block=technical-references; raw_block_sha256=594f3291d056aab8d9fc862676f0970cce8900d6977f49ca0d1aad1f231fabf0; copy_block_sha256=594f3291d056aab8d9fc862676f0970cce8900d6977f49ca0d1aad1f231fabf0; normalization=trailing-tex-control-space-empty-group-v1; replacements=0. -->
+<!-- Extraction from 07_detailed_proof.zh.md; block=technical-references; raw_block_sha256=594f3291d056aab8d9fc862676f0970cce8900d6977f49ca0d1aad1f231fabf0; copy_block_sha256=594f3291d056aab8d9fc862676f0970cce8900d6977f49ca0d1aad1f231fabf0; normalization=trailing-tex-control-space-empty-group-v1; transformations=control-space:0. -->
 
 <a id="technical-references"></a>
 

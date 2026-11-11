@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
-"""Extract the bilingual technical appendices without rewriting source proofs.
+"""Build unified bilingual submission appendices from audited source proofs.
 
-The detailed companions remain independent expanded reading.  This generator
-copies their complete Sections 3 and 4, Lemma 6.1 (needed by A.1), A.1--A.3,
-and reference lists.  The new front matter records the dependency map and the
-main paper's notation changes.  Source section, theorem, equation and reference
-numbers are preserved.  The sole non-mathematical normalization appends an empty
-group after a single TeX control space immediately before a newline, producing
-\\ {} and retaining the original control space even in math mode.  Extraction
-annotations retain both the raw block SHA-256 and the normalized copy SHA-256,
-together with the exact replacement count.
-Raw block hashes cover the selected ranges after boundary whitespace trimming;
-no interior source whitespace or proof content is otherwise rewritten.
+The historical companions are immutable inputs. Complete proof ranges retain
+all equations and numbering. The explicit, counted EDITS below harmonize local
+literature comparisons and references; scoped substitutions unify maximum-score
+and analytic-majorant notation. No other proof rewriting is permitted.
+SOURCE_HASHES and COPY_HASHES pin every raw and transformed block: changes to
+either require deliberate review, not merely regeneration. Extraction comments
+record both digests and each transformation count. The only whitespace change
+preserves a trailing TeX control space by appending an empty group.
 The LaTeX conversion follows render_compact_main.py and uses the corresponding
 detailed companion's approved preamble.
 
@@ -43,24 +40,23 @@ Xingchen Liu and Xiangyu Ye
 
 ## Scope and dependency map
 
-This appendix contains the longer analytic proofs used by the main paper, *Quantitative Hamiltonian path counts and degree stability*. It reproduces complete passages from the expanded English proof companion, with their original section, theorem, equation and reference numbers. It is intended to be read with the main paper; the remaining expanded companion is optional further reading, not an additional prerequisite for these proofs.
+This appendix contains the longer analytic proofs used by the main paper, *Quantitative Hamiltonian path counts and degree stability*. It presents the complete proofs with section, theorem, equation and reference numbers retained for compatibility with the main paper. It is intended to be read with the main paper; the remaining expanded companion is optional further reading, not an additional prerequisite for these proofs.
 
-The permanent approximation is an analytic tool with an independent quantitative proof for fixed entry-bound and spectral-gap parameters. Its determinant main term is not asserted to be new, and this appendix makes no broader novelty claim about its range of admissible matrices. The contribution statement in the revised main introduction governs the paper; historical comparisons in the extracted text are retained as source context.
+The permanent approximation is an analytic tool with an independent quantitative proof for fixed entry-bound and spectral-gap parameters. Its determinant main term is not asserted to be new, and this appendix makes no broader novelty claim about its range of admissible matrices. The local comparisons in Section 3 follow the contribution statement in Section 3 of the main paper.
 
 - [Section 3](#technical-permanent) proves Theorem 3.1 in full: Gaussian pairing, compressed non-Gaussian cores, the linear coefficient window, factorial restoration, the coefficient tail and the final uniform error bound.
 - [Section 4](#technical-scaling) proves local diagonal scaling and its cost, Gaussian deletion and centering, paired score preprocessing, the exact nonprincipal restoration identity and the small-score estimate. Lemma 4.4 uses Theorem 3.1 and Lemmas 4.1--4.3. Lemma 4.5 uses the same scaling and deletion estimates without paired prescaling.
 - [Lemma 6.1](#technical-spectral-cap) is included with its complete proof because A.1 refers to its transitive determinant polynomial. Its eigenvalue calculation also verifies the frequency used in the carousel example in Section 4.3.
-- [Sections A.1--A.3](#technical-algebra) supply the transitive determinant identity, alternating-switching isomorphism, equality of power diagonals and the fourth-moment equality algebra used in the main paper's spectral argument. The mention of Section 8.2 in the example of Section 4.3 is closed here by A.2 and Lemma 6.1.
+- [Sections A.1--A.3](#technical-algebra) supply the transitive determinant identity, alternating-switching isomorphism, equality of power diagonals and the fourth-moment equality algebra used in the main paper's spectral argument. The carousel example in Section 4.3 uses A.2 and Lemma 6.1 directly.
 
-References to Sections 7, 8 and 11 in the extracted passages indicate subsequent applications, not additional proof inputs. The references to Section 2 distinguish reused notation; the needed conventions are restated below. Standard external tools retain their original citations. The full original reference list is included to preserve citation numbers. The original author statement and personal acknowledgments are not reproduced.
+Unqualified section and lemma references refer to this appendix; references to the main paper are explicitly identified. The needed notation is restated below. Standard external tools retain their original citations. The full original reference list is included to preserve citation numbers. The original author statement and personal acknowledgments are not reproduced.
 
-## Notation correspondence
+## Notation
 
-The extracted proofs retain their historical notation. In particular, the main paper now writes $\Delta_s=\|S\mathbf1\|_\infty$ for the maximum score, where Sections 3--4 of this appendix use $d$ when denoting that quantity. In A.2--A.3, $d$ instead denotes the matrix or tournament order. The scalar control function $\Gamma(r)$ of Section 3 is written $\mathcal G_{C,q}(r)$ in the main paper:
+We use the main paper's maximum-score notation $\Delta_s=\|S\mathbf1\|_\infty$. In A.2--A.3, $d$ denotes the matrix or tournament order; local block sizes and degree indices in Section 3 also retain $d$. The scalar analytic majorant is
 
 $$
-\mathcal G_{C,q}(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right)
-=\Gamma(r)\quad\text{in historical Section 3},\qquad rq<1.
+\mathcal G_{C,q}(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right),\qquad rq<1.
 $$
 
 It is distinct both from the score product $\Gamma=\prod_i(1-a_i^2)$ in Section 4 and from the Gaussian matrix functional $\mathcal G(M)=\det(I-MM^{\mathsf T})^{-1/2}$. The generating series $G(t)=\det(I-t^2BB^{\mathsf T})^{-1/2}$ in Section 3 is also a local notation. The symbols $C$ and $q$ there are fixed analytic parameters; in Section 4, $C=2A/(n-1)$ is a matrix, while in A.2, $q=(d-1)/2$ is an integer.
@@ -73,7 +69,7 @@ S=A-A^{\mathsf T},\qquad 2A=J-I+S,\qquad s=S\mathbf1,
 $$
 $$
 \mathcal E=\|s\|_2^2,\qquad
-\Delta_s=d=\|s\|_\infty,\qquad
+\Delta_s=\|s\|_\infty,\qquad
 a=\frac{s}{n-1},\qquad \tau=\|a\|_2^2\quad(n\ge2).
 $$
 
@@ -101,24 +97,23 @@ The paired singular values give $\sum_jx_j=(n-1)/(2n)<1/2$, so these determinant
 
 ## 范围与依赖导航
 
-本附录集中收录主文《竞赛图 Hamilton 路径的定量计数与度稳定性》实际使用的较长分析证明。内容按完整段落从中文详细证明稿抽取，保留原章节号、定理号、式号和引文号。本附录与主文共同构成所需证明；详细稿的其余部分作为可选展开阅读，不是这些证明的额外前提。
+本附录集中收录主文《竞赛图 Hamilton 路径的定量计数与度稳定性》实际使用的较长分析证明。附录完整呈现所需证明，保留章节号、定理号、式号和引文号，以便与主文互相引用。本附录与主文共同构成所需证明；详细稿的其余部分作为可选展开阅读，不是这些证明的额外前提。
 
-永久式近似在这里作为分析工具使用，附录给出固定元素界和谱隙参数下的独立定量证明。本文不把行列式主项称为新结果，也不在此提出关于适用矩阵范围的更广新颖性主张。论文贡献以修订后主文引言的定位为准；抽取段落中的历史比较保留为原文语境。
+永久式近似在这里作为分析工具使用，附录给出固定元素界和谱隙参数下的独立定量证明。本文不把行列式主项称为新结果，也不在此提出关于适用矩阵范围的更广新颖性主张。第 3 节的局部文献比较与主文第 3 节的贡献定位一致。
 
 - [第 3 节](#technical-permanent)完整证明定理 3.1，包括高斯配对、压缩后的非高斯核心、线性系数窗口、阶乘恢复、系数尾部及最终一致误差界。
 - [第 4 节](#technical-scaling)完整证明局部对角缩放及其代价、高斯删除与中心化、配对度差预处理、非主子阵的精确恢复恒等式及小度差近似。引理 4.4 使用定理 3.1 和引理 4.1--4.3；引理 4.5 使用相同的缩放与删除估计，但不作配对预缩放。
 - [引理 6.1](#technical-spectral-cap)保留完整陈述与证明，以补齐 A.1 对传递矩阵行列式多项式的依赖。其中的特征值计算也给出第 4.3 节圆环例子所用的频率。
-- [A.1--A.3](#technical-algebra)给出主文谱论证所需的传递矩阵行列式恒等式、交替切换同构、矩阵幂的对角元相等及四次矩等号代数。第 4.3 节例子中对第 8.2 节的引用，可由本附录的 A.2 和引理 6.1 直接补齐。
+- [A.1--A.3](#technical-algebra)给出主文谱论证所需的传递矩阵行列式恒等式、交替切换同构、矩阵幂的对角元相等及四次矩等号代数。第 4.3 节的圆环例子直接使用 A.2 和引理 6.1。
 
-抽取段落中对第 7、8、11 节的引用指向后续应用，并非额外的证明输入；对第 2 节的引用用于区分复用记号，所需约定在下文重述。标准外部工具保留原引文。附录完整保留原参考文献表以维持引文编号，不收录原作者说明和个人致谢。
+未特别注明的章节和引理引用均指本附录；对主文的引用明确标出。所需记号约定在下文重述。标准外部工具保留原引文。附录完整保留原参考文献表以维持引文编号，不收录原作者说明和个人致谢。
 
-## 记号对照
+## 记号
 
-抽取的证明保留历史记号。主文已将最大度差改记为 $\Delta_s=\|S\mathbf1\|_\infty$；本附录第 3--4 节在表示该量时仍用 $d$。A.2--A.3 中的 $d$ 则表示矩阵或竞赛图阶数。第 3 节的标量控制函数 $\Gamma(r)$ 在主文中改记为 $\mathcal G_{C,q}(r)$：
+最大度差与主文统一记为 $\Delta_s=\|S\mathbf1\|_\infty$。A.2--A.3 中的 $d$ 表示矩阵或竞赛图阶数；第 3 节的局部块大小和度数指标也保留 $d$。标量分析控制函数记为
 
 $$
-\mathcal G_{C,q}(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right)
-=\Gamma(r)\quad\text{（历史第 3 节记号）},\qquad rq<1.
+\mathcal G_{C,q}(r)=\exp\!\left(\frac{C^2r^2}{2(1-q^2r^2)}\right),\qquad rq<1.
 $$
 
 它既不同于第 4 节的度差乘积 $\Gamma=\prod_i(1-a_i^2)$，也不同于高斯矩阵泛函 $\mathcal G(M)=\det(I-MM^{\mathsf T})^{-1/2}$。第 3 节的生成函数 $G(t)=\det(I-t^2BB^{\mathsf T})^{-1/2}$ 也是局部记号。该节的 $C,q$ 是固定分析参数；第 4 节中 $C=2A/(n-1)$ 是矩阵，A.2 中 $q=(d-1)/2$ 是整数。
@@ -131,7 +126,7 @@ S=A-A^{\mathsf T},\qquad 2A=J-I+S,\qquad s=S\mathbf1,
 $$
 $$
 \mathcal E=\|s\|_2^2,\qquad
-\Delta_s=d=\|s\|_\infty,\qquad
+\Delta_s=\|s\|_\infty,\qquad
 a=\frac{s}{n-1},\qquad \tau=\|a\|_2^2\quad(n\ge2).
 $$
 
@@ -197,7 +192,7 @@ def extract(source: str, start: str, end: str | None = None) -> str:
 
 
 def source_chunks(source: str, config: dict[str, str]) -> list[tuple[str, str]]:
-    """These copied proof ranges are not normalized or edited."""
+    """Select complete raw proof ranges before documented submission transformations."""
     return [
         ("technical-permanent", extract(source, "## 3.", "## 4.")),
         ("technical-scaling", extract(source, "## 4.", "## 5.")),
@@ -220,6 +215,195 @@ def normalize_extracted_copy(raw: str) -> tuple[str, int]:
     return CONTROL_SPACE_EOL.subn(lambda _: r"\ {}", raw)
 
 
+# Reviewed submission edits: (block, exact old text, exact new text, count).
+# These are organizational/notation changes, not replacements of proof steps.
+EDITS = {'en': [('technical-permanent',
+         'McCullagh [5] obtained the determinant main term under moderate-deviation conditions. Here we give '
+         'a self-contained version for a fixed entry bound $C$ and singular-value spectral gap $q$, with an '
+         'error uniform over the matrix class determined by these parameters. The proof controls the '
+         'coefficients and the tail separately, so that the conclusion applies uniformly to the deletions '
+         'and scalings in Section 4. A recent related approximation of Li [8, Theorem 2.1] assumes that the '
+         'maximum absolute row or column sum of the centered perturbation is $o(n)$; this condition does not '
+         'cover dense kernels whose corresponding sums have order $n$.',
+         'McCullagh [5, §3] already gives the determinant approximation with an $O(n^{-1})$ error under '
+         'moderate-deviation hypotheses. For nonnegative inputs, the fixed entry and spectral-gap '
+         'assumptions here imply weak boundedness and the required gap, and his determinant factor is '
+         'exactly $\\det(I-BB^{\\mathsf T})^{-1/2}$; the identification is detailed in Section 3 of the main '
+         'paper. Uniformity over a fixed class is not by itself a novelty distinction from a theorem valid '
+         'for every admissible sequence. We retain the independent proof to track constants through '
+         'compressed cores, the coefficient window and the tail, making them available after deletion and '
+         'scaling. We do not claim to repair an identified gap in [5]. Li [8, Theorem 2.1] assumes that the '
+         'maximum absolute row or column sum of the centered perturbation is $o(n)$; this narrower '
+         'hypothesis does not cover the dense kernels used here, but this comparison is not a novelty claim '
+         'relative to [5] or [12].',
+         1),
+        ('technical-permanent',
+         "The compressed-core proof below was developed independently in the authors' earlier path-counting "
+         'project [14]. We retain the signed-matrix theorem as a separate analytic result, while the '
+         'tournament applications in Sections 4--8 use nonnegative matrices.',
+         'The compressed-core proof was developed independently in the earlier path-counting project [14]. '
+         'Signed inputs are not a priority distinction: McCullagh [5, §4.1] already discusses complex '
+         'perturbations. We retain the real signed formulation and its proof; the tournament applications '
+         'use nonnegative inputs.',
+         1),
+        ('technical-permanent',
+         'Divoux and Wang [12, Proposition 3.1] prove a uniform permanent approximation with relative error '
+         '$o(1)$ for nonnegative doubly stochastic matrices. In the nonnegative setting used in our counting '
+         'argument, their proof can be refined to give an $O(N^{-1})$ error. This rate is a refinement of '
+         'their estimates, rather than the statement of their proposition. Theorem 3.1 here allows an '
+         'arbitrary real doubly centered matrix $E$, without requiring $J+E$ to be nonnegative. We retain '
+         'that formulation and its detailed proof; the two theorem statements do not have identical '
+         'hypotheses.',
+         'Divoux and Wang [12, Proposition 3.1] prove a uniform permanent approximation with relative error '
+         '$o(1)$ for nonnegative doubly stochastic matrices. In the nonnegative setting used in our counting '
+         'argument, their proof can be refined to give an $O(N^{-1})$ error. This rate is a refinement of '
+         'their estimates, rather than the statement of their proposition. Theorem 3.1 here allows an '
+         'arbitrary real doubly centered matrix $E$, without requiring $J+E$ to be nonnegative. We retain '
+         'that formulation and its detailed proof; the two theorem statements do not have identical '
+         'hypotheses. The difference in stated hypotheses is not a claim of priority or of a new range '
+         'beyond McCullagh [5, §4.1]; see also Section 3 of the main paper.',
+         1),
+        ('technical-permanent',
+         'The proof uses the Gaussian series $G(t)$, which is a different object from the numerical bound '
+         '$G=100/19$ in Section 7.4. Put',
+         'The proof uses the Gaussian generating series $G(t)$. Put',
+         1),
+        ('technical-permanent',
+         'In this section we define a separate control function $\\Gamma(r)$, which is distinct from the '
+         'score product $\\Gamma$ in Section 7:',
+         'Use the scalar analytic majorant $\\mathcal G_{C,q}$ defined above:',
+         1),
+        ('technical-permanent',
+         'and the corresponding norms are computed as in Definition 2.3.',
+         'and the corresponding norms follow the conventions above.',
+         1),
+        ('technical-permanent',
+         'This polynomial is a different object from the scalar weight $h_k=((k+1)/2)^{k/2}$ in Section 2.',
+         'This notation is local to the present lemma.',
+         1),
+        ('technical-scaling',
+         'The carousel transformation in Section 8.2 preserves all frequencies of the sign matrix, and the '
+         'largest positive frequency is $\\cot(\\pi/(2n))$.',
+         'The alternating switching and permutation in A.2 preserve all frequencies of the sign matrix; '
+         'Lemma 6.1 gives the largest positive frequency $\\cot(\\pi/(2n))$.',
+         1),
+        ('technical-scaling', 'Theorem 8.1', 'Theorem 8.1 of the main paper', 2),
+        ('technical-algebra',
+         'Sections 6 and 11 also use',
+         'The spectral arguments in the main paper also use',
+         1)],
+ 'zh': [('technical-permanent',
+         'McCullagh [5] 在适度偏离条件下得到了行列式主项。这里给出固定元素界 $C$、奇异值谱隙 $q$ '
+         '下的自包含版本，其误差对这些参数所确定的矩阵类一致成立。证明分别控制系数与尾项，以便将结论一致地用于第 4 节中的删除和缩放。Li [8, Theorem 2.1] '
+         '的近期相关近似假设中心扰动的最大绝对行和或列和为 $o(n)$；这一条件不覆盖相应行列和为 $n$ 量级的稠密核。',
+         'McCullagh [5, §3] 已在适度偏离假设下给出具有 $O(n^{-1})$ 误差的行列式近似。对非负输入，本文的固定元素界和谱隙假设蕴含弱有界性及所需谱隙，其行列式因子恰为 '
+         '$\\det(I-BB^{\\mathsf T})^{-1/2}$；主文第 3 '
+         '节详细核对这一对应。固定矩阵类上的一致性本身也不能构成相对于逐个容许序列定理的新颖性区别。这里保留独立证明，以逐步跟踪压缩核心、系数窗口和尾部中的常数，供删除与缩放之后使用，并不声称修复 [5] '
+         '中已确认的缺口。Li [8, Theorem 2.1] 假设中心扰动的最大绝对行和或列和为 $o(n)$；这一较窄条件不覆盖这里使用的稠密核，但这一比较不构成相对于 [5] 或 [12] '
+         '的新颖性主张。',
+         1),
+        ('technical-permanent',
+         '这套证明的主要结构已见于 10 月 8 日的独立路径存档 '
+         '[14]。这里保留有符号实矩阵版本，并明确其与后续应用的区别：图论部分实际使用非负的缩放矩阵，有符号一般性是定理本身的额外范围，而非这些应用的必要条件。例如',
+         '压缩核心证明独立形成于此前的路径计数项目 [14]。有符号输入不构成优先性区别：McCullagh [5, §4.1] 已讨论复扰动。这里保留实有符号版本及其证明；竞赛图应用实际使用非负输入。例如',
+         1),
+        ('technical-permanent',
+         'Divoux–Wang [12, 命题 3.1] 对非负双随机矩阵给出了统一的 $1+o(1)$ 永久式近似。对于本文计数中出现的这一类矩阵，其证明可以细化为 '
+         '$1+O(N^{-1})$。这里的误差阶不是原命题的陈述，而是保留其估计中的参数依赖后得到的改进。本文定理 3.1 允许任意实双中心化矩阵 $E$，不要求 $J+E$ '
+         '非负；我们保留这一形式及其详细证明，不将两篇论文的定理假设视为完全相同。',
+         'Divoux–Wang [12, 命题 3.1] 对非负双随机矩阵给出了统一的 $1+o(1)$ 永久式近似。对于本文计数中出现的这一类矩阵，其证明可以细化为 '
+         '$1+O(N^{-1})$。这里的误差阶不是原命题的陈述，而是保留其估计中的参数依赖后得到的改进。本文定理 3.1 允许任意实双中心化矩阵 $E$，不要求 $J+E$ '
+         '非负；我们保留这一形式及其详细证明，不将两篇论文的定理假设视为完全相同。 定理假设的表述差别并不构成优先性主张，也不声称超越 McCullagh [5, §4.1] 的适用范围；另见主文第 3 '
+         '节。',
+         1),
+        ('technical-permanent',
+         '证明中使用高斯级数 $G(t)$；它与第 7.4 节的数值上限 $G=100/19$ 是不同对象。令',
+         '证明中使用高斯生成级数 $G(t)$。令',
+         1),
+        ('technical-permanent',
+         '本节另定义控制函数 $\\Gamma(r)$，不与第 7 节的度差乘积 $\\Gamma$ 混用：',
+         '使用前面定义的标量分析控制函数 $\\mathcal G_{C,q}$：',
+         1),
+        ('technical-permanent', '这个多项式与第 2 节标量权重 $h_k=((k+1)/2)^{k/2}$ 是不同对象。', '这里的记号只用于本引理。', 1),
+        ('technical-scaling',
+         '第 8.2 节的圆环变换保留符号矩阵的全部频率，最大正频率为 $\\cot(\\pi/(2n))$。',
+         'A.2 中的交替切换与置换保留符号矩阵的全部频率；引理 6.1 给出最大正频率 $\\cot(\\pi/(2n))$。',
+         1),
+        ('technical-scaling', '定理 8.1', '主文定理 8.1', 2),
+        ('technical-algebra', '第 6、11 节还用到', '主文的谱论证还用到', 1),
+        ('technical-algebra', '该公式同时覆盖奇阶和偶阶；命题 6.6 与第 8.2 节均使用这一版本。', '该公式同时覆盖奇阶和偶阶，供主文的谱比较使用。', 1)]}
+
+EDITS['zh'].append(('technical-permanent', '相应范数仍按定义 2.3 计算。', '相应范数遵循前面的约定。', 1))
+
+# Display-only wrapping of Proposition 3.5 after the majorant notation grows.
+# Three aligned lines retain the four terms verbatim; no font-size changes.
+PROPOSITION_35_DISPLAY = (
+    '|f(1)-G(1)|\n\\le \\frac{\\Gamma(R)T_1+K_G}{n}\n+\\frac{8\\Gamma(R)D^2}{n^2}\n+\\frac{R}{R-1}\\exp\\!\\left(\\beta\\sqrt n-\\alpha n\\log R\\right)\n+\\sigma\\Gamma(\\sigma)\\exp\\!\\left(-\\alpha n\\log\\sigma\\right).',
+    '\\begin{aligned}\n|f(1)-G(1)|\n&\\le \\frac{\\Gamma(R)T_1+K_G}{n}\n+\\frac{8\\Gamma(R)D^2}{n^2}\\\\\n&\\quad+\\frac{R}{R-1}\\exp\\!\\left(\\beta\\sqrt n-\\alpha n\\log R\\right)\\\\\n&\\quad+\\sigma\\Gamma(\\sigma)\\exp\\!\\left(-\\alpha n\\log\\sigma\\right).\n\\end{aligned}',
+)
+for _language in CONFIG:
+    EDITS[_language].append(("technical-permanent", *PROPOSITION_35_DISPLAY, 1))
+
+SOURCE_HASHES = {'en': {'technical-permanent': '1c5a8952c61e6f7ee166f2a96dd233692eadd6e3e53f404a4d3c36f02f852f9d',
+        'technical-scaling': '352940c54d4dcceb929cbd342fe1f4b11da1e120b860e4b90f83a384237ae7b9',
+        'technical-spectral-cap': '1566fa652f4782e1a53216f2626610b61615e140ea7ab628ddc485574e2ffdda',
+        'technical-algebra': '367e0e11472f6d4f97181333616ed6f392c822a92e963729139a72c100edd8ec',
+        'technical-references': '1f98b0b8731d3894c571e1a3720298bf214d1eb37d1bcd346c3a008755e1326a'},
+ 'zh': {'technical-permanent': '3d4508f07065d636405f7e0479a0bea82fc2fbb8404fc336a140c322ae99d699',
+        'technical-scaling': '64fc01bf570af1dca2f5c2c5694251bbce7b0625b568f43986375134af770315',
+        'technical-spectral-cap': 'ec6a6e0153c6f6a061769d6e0dae8093260c6b80cf4c7a5d2a12400db52a19b0',
+        'technical-algebra': '575e14157fdc0b628a3162bb172c934c23d024be87c80e88d1c592ec3b85de94',
+        'technical-references': '594f3291d056aab8d9fc862676f0970cce8900d6977f49ca0d1aad1f231fabf0'}}
+
+
+COPY_HASHES = {'en': {'technical-permanent': 'bec6fe50425f87eba4bd0783d021d5cc15a49bcc14622a4b7daac2f113b7c9b5',
+        'technical-scaling': '4dfe201c1d1b4c72350025bd924dc61a0a80f7e0e3723ec5776e376ab2cde3f7',
+        'technical-spectral-cap': '1566fa652f4782e1a53216f2626610b61615e140ea7ab628ddc485574e2ffdda',
+        'technical-algebra': '4c9b467095a2778603529123f3bf4ef0caac964f0cc04475f53559ee223764f1',
+        'technical-references': '1f98b0b8731d3894c571e1a3720298bf214d1eb37d1bcd346c3a008755e1326a'},
+ 'zh': {'technical-permanent': '00f346938bf36bc0c99816bdc9638ffb306acbbfd0c2c2e4cae378e6bcb47d63',
+        'technical-scaling': 'c47eaac61d416d09ff957f0bf5ecddbc721106818d4efa0980e92c0a486e6486',
+        'technical-spectral-cap': 'ec6a6e0153c6f6a061769d6e0dae8093260c6b80cf4c7a5d2a12400db52a19b0',
+        'technical-algebra': '977076bfa4422b457070c3eea79c8e45d0585d7269e2137d132c051580b09207',
+        'technical-references': '594f3291d056aab8d9fc862676f0970cce8900d6977f49ca0d1aad1f231fabf0'}}
+
+
+def transform_copy(language: str, anchor: str, raw: str) -> tuple[str, list[str]]:
+    """Apply only reviewed exact-text edits and narrowly scoped notation changes."""
+    if hashlib.sha256(raw.encode()).hexdigest() != SOURCE_HASHES[language][anchor]:
+        raise ValueError(f"Unreviewed source change: {language}/{anchor}")
+    chunk, count = normalize_extracted_copy(raw)
+    audit = [f"control-space:{count}"]
+    for index, (block, old, new, expected) in enumerate(EDITS[language]):
+        if block != anchor:
+            continue
+        if chunk.count(old) != expected:
+            raise ValueError(f"Submission edit {language}/{index} no longer matches")
+        chunk = chunk.replace(old, new)
+        audit.append(f"edit-{index}:{expected}")
+    if anchor == "technical-permanent":
+        # Never rename the Gamma(N+1,1) probability distribution.
+        chunk, count = re.subn(r"\\Gamma(?=\((?:r|R|1|\\sigma)\))",
+                               lambda _: r"\mathcal G_{C,q}", chunk)
+        audit.append(f"analytic-majorant:{count}")
+    if anchor == "technical-scaling":
+        before, marker, scores = chunk.partition("### 4.5 ")
+        if not marker:
+            raise ValueError("Missing small-score section boundary")
+        # All standalone d in this subsection denote maximum score; products
+        # nd^2 and 2td require explicit handling. No other section is touched.
+        scores, count = re.subn(r"(?<![A-Za-z\\])d(?![A-Za-z])",
+                                lambda _: r"\Delta_s", scores)
+        for old, new in (("nd^2", r"n\Delta_s^2"), ("2td", r"2t\Delta_s")):
+            count += scores.count(old)
+            scores = scores.replace(old, new)
+        chunk = before + marker + scores
+        audit.append(f"maximum-score:{count}")
+    if hashlib.sha256(chunk.encode()).hexdigest() != COPY_HASHES[language][anchor]:
+        raise ValueError(f"Unreviewed transformed proof change: {language}/{anchor}")
+    return chunk, audit
+
+
 def make_markdown(language: str) -> str:
     config = CONFIG[language]
     path = MANUSCRIPTS / (config["source"] + ".md")
@@ -227,26 +411,25 @@ def make_markdown(language: str) -> str:
     chunks = source_chunks(source, config)
     parts = [FRONT[language].strip()]
     for anchor, raw_chunk in chunks:
-        chunk, count = normalize_extracted_copy(raw_chunk)
+        chunk, audit = transform_copy(language, anchor, raw_chunk)
         raw_digest = hashlib.sha256(raw_chunk.encode("utf-8")).hexdigest()
         copy_digest = hashlib.sha256(chunk.encode("utf-8")).hexdigest()
         annotation = (
             f'<!-- Extraction from {path.name}; block={anchor}; '
             f'raw_block_sha256={raw_digest}; copy_block_sha256={copy_digest}; '
-            f'normalization={NORMALIZATION}; replacements={count}. -->'
+            f'normalization={NORMALIZATION}; transformations={",".join(audit)}. -->'
         )
         parts.extend([annotation, f'<a id="{anchor}"></a>'])
         if anchor == "technical-spectral-cap":
             parts.append(config["lemma_heading"])
         parts.append(chunk)
     markdown = "\n\n".join(parts) + "\n"
-    # Compare against narrowly normalized copies, never broad whitespace folding.
-    # The dual hashes also make source-only and substantive copy changes visible
-    # to --check, which compares every complete generated artifact byte for byte.
-    for _, raw_chunk in chunks:
-        expected, _ = normalize_extracted_copy(raw_chunk)
+    # Pinned raw/copy hashes reject unreviewed changes even on regeneration.
+    # --check additionally compares each generated artifact byte for byte.
+    for anchor, raw_chunk in chunks:
+        expected, _ = transform_copy(language, anchor, raw_chunk)
         if expected not in markdown:
-            raise AssertionError("A source proof range changed beyond the documented normalization")
+            raise AssertionError("A source proof range changed beyond the documented submission transformations")
     original_tags = re.findall(r"\\tag\{([^}]+)\}", "\n".join(c for _, c in chunks))
     actual_tags = re.findall(r"\\tag\{([^}]+)\}", markdown)
     if original_tags != actual_tags:

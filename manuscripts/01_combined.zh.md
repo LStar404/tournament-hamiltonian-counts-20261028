@@ -10,13 +10,13 @@ $^{2}$ 电子科技大学格拉斯哥学院
 
 ## 摘要
 
-本文证明，$n$ 阶竞赛图中有向 Hamilton 路径的最大数目 $P(n)$ 满足
+记 $H(T)$ 为 $n$ 阶竞赛图的有向 Hamilton 路径数，并令 $P(n)=\max_{|V(T)|=n}H(T)$、$\mu_n=n!/2^{n-1}$ 及 $L=\cosh1/\cos1$。本文证明
 
 $$
-P(n)=\left(\frac{\cosh1}{\cos1}+O(n^{-1})\right)\frac{n!}{2^{n-1}}.
+P(n)=\bigl(L+O(n^{-1})\bigr)\mu_n.
 $$
 
-这将 Divoux–Wang 的尖锐首项渐近式细化为统一的 $O(n^{-1})$ 误差。在非主子阵缩放和路径卷积求和中保留度差惩罚，还得到度稳定性：若 $H(T)/\mu_n\ge L-\varepsilon$，则 $\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)$。因此，精确极值图的平均平方度差有界。永久式近似是配有独立定量证明的分析工具，不作为新的行列式主项主张。作为同一谱比值的联系和应用，我们独立于 Bhattacharjee 的重合结果推导 Wormald 原角 Hessian，并得到固定基图阶数的期望极值及正则内部块常数的严格单调性。
+这将 Divoux–Wang 的尖锐首项渐近式细化为统一的 $O(n^{-1})$ 误差。在非主子阵缩放和路径卷积求和中保留度差惩罚，还得到度稳定性：对 $0\le\varepsilon\le(L-1)/2$ 和充分大的 $n$，若 $H(T)/\mu_n\ge L-\varepsilon$，则一致地有 $\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)$。因此，精确极值图的平均平方度差有界。永久式近似是配有独立定量证明的分析工具，不作为新的行列式主项主张。作为同一谱比值的联系和应用，我们独立于 Bhattacharjee 的重合结果推导 Wormald 原角 Hessian，并得到固定基图阶数的期望极值及正则内部块常数的严格单调性。
 
 ## 1. 引言
 
@@ -48,7 +48,7 @@ $$
 
 ### 1.2 度稳定性与定量机制
 
-定理 1.1 的误差阶具有结构后果。记
+定理 1.1 的证明中保留度差惩罚的上界，结合其定量下界，还给出结构后果。记
 
 $$
 V_{\rm deg}(T)=\sum_v\left(d^+(v)-\frac{n-1}{2}\right)^2.
@@ -60,7 +60,13 @@ $$
 V_{\rm deg}(T)\le C(\varepsilon n^2+n).
 $$
 
-特别地，精确极值图满足 $V_{\rm deg}(T)=O(n)$，即平均平方度差有界。证明见推论 8.3。这尚不推出最终正则性、圆环唯一性或编辑距离稳定性；最大单点度差仅受 $O(\sqrt n)$ 控制，未达到定理 8.1 要求的 $o(\sqrt n)$。Divoux–Wang [12, 命题 8.1] 从圈数不低于随机基准出发，而这里假设路径数接近尖锐最大值；两者的结构假设不同。
+特别地，精确极值图满足 $V_{\rm deg}(T)=O(n)$，即平均平方度差有界。证明见推论 8.3。
+
+偶数阶时，这个线性量级不能改小。每个顶点的度差均为半整数，故 $V_{\rm deg}(T)\ge n/4$，等号成立当且仅当所有出度均为 $n/2-1$ 或 $n/2$。因此，偶数阶精确极值图满足 $V_{\rm deg}(T)=\Theta(n)$。这说明关于 $n$ 的量级，并不说明一般 $\varepsilon$ 依赖最优。
+
+相对于实际最大值的一个窗口内，同样有这种控制。令 $\delta_n(T)=(P(n)-H(T))/\mu_n$，推论 8.4 给出：当 $0\le\delta_n(T)\le(L-1)/4$ 且 $n$ 充分大时，$V_{\rm deg}(T)\le C(\delta_n(T)n^2+n)$。特别地，路径数与最大值相差 $O(\mu_n/n)$ 仍蕴含 $V_{\rm deg}(T)=O(n)$。
+
+即便对精确极值图，这个界也尚不推出最终正则性、圆环唯一性或编辑距离稳定性；最大单点度差仅受 $O(\sqrt n)$ 控制，未达到定理 8.1 要求的 $o(\sqrt n)$。Divoux–Wang [12, 命题 8.1] 从圈数不低于随机基准出发，而这里假设路径数接近尖锐最大值；两者的结构假设不同。
 
 技术关键是命题 7.3。排除大方差和异常顶点后，它给出
 
@@ -288,7 +294,7 @@ $$
 
 全部常数及起始阶数只依赖预先固定的 $C,q$ 和据此选取的半径。两项指数余量均为 $o(n^{-1})$；有限多个小阶数可用 $|f(1)|\le(1+C)^n$、$G(1)\le\mathcal G_{C,q}(1)$ 统一覆盖。由 $G(1)\ge1$，绝对误差又给出相对误差。$\square$
 
-技术附录 §3.6 另保留任意大阶数、固定参数的有符号例子，以及从 [12] 的非负证明提取定量误差所需的两个估计；图论应用使用已陈述的非负特例。
+技术附录第 3 节给出任意大阶数、固定参数的有符号例子，§3.6 列出从 [12] 的非负证明提取定量误差所用的两个估计；图论应用使用已陈述的非负特例。
 
 ## 4. 缩放与非主子阵
 
@@ -1898,7 +1904,38 @@ $$
 
 增大阈值使 $0\le B_n\le1/n$ 且左端至少为 $(L+1)/4$，取对数并用 $\log(1+x)\le x$ 即得 $\tau\le C(\varepsilon+1/n)$。乘以 $(n-1)^2/4$ 得方差界。再增大阈值使 $K_\ell/n\le(L-1)/2$，对最大化者使用本节下界并取 $\varepsilon=K_\ell/n$。$\square$
 
-该结论控制平均平方度差，并给出最大单点度差 $O(\sqrt n)$。正则性、圆环同构、编辑距离稳定性以及定理 8.1 所需的 $o(\sqrt n)$ 条件均需要进一步论证。
+对精确极值图，该结论控制平均平方度差，并给出最大单点度差 $O(\sqrt n)$。正则性、圆环同构、编辑距离稳定性以及定理 8.1 所需的 $o(\sqrt n)$ 条件均需要进一步论证。
+
+### 8.4 相对于实际最大值的稳定性
+
+令 $\delta_0=(L-1)/4$，定义归一化亏损
+
+$$
+\delta_n(T)=\frac{P(n)-H(T)}{\mu_n}\ge0.
+$$
+
+**推论 8.4（极值窗口内的稳定性）。** 存在绝对常数 $C,N$，使任意阶数 $n\ge N$ 且满足 $\delta_n(T)\le\delta_0$ 的竞赛图都有
+
+$$
+V_{\rm deg}(T)\le C\bigl(\delta_n(T)n^2+n\bigr).
+$$
+
+因此，对每个固定的 $A\ge0$，满足 $P(n)-H(T)\le A\mu_n/n$ 的竞赛图在 $n\to\infty$ 时均有 $V_{\rm deg}(T)=O_A(n)$。
+
+**证明。** 选取绝对常数 $K_0\ge0$，使定理 1.1 的下界对充分大的 $n$ 给出 $P(n)/\mu_n\ge L-K_0/n$。于是
+
+$$
+\frac{H(T)}{\mu_n}\ge L-\varepsilon,
+\qquad \varepsilon=\delta_n(T)+K_0/n.
+$$
+
+增大共同阈值，使 $K_0/n\le\delta_0$，则 $0\le\varepsilon\le2\delta_0=(L-1)/2$。推论 8.3 给出
+
+$$
+V_{\rm deg}(T)\le C_0\bigl(\delta_n(T)n^2+(K_0+1)n\bigr).
+$$
+
+将固定因子 $K_0+1$ 吸收到 $C$ 中即得结论。最后，当 $n\ge A/\delta_0$ 时，$\delta_n(T)\le A/n\le\delta_0$，因此方差至多为 $C(A+1)n$。$\square$
 
 ## 9. 原角函数的 Hessian
 
@@ -2152,7 +2189,7 @@ $$
 
 仓库快照 [17] 记录了修订前稿件 30 个编号结果的 Lean 端点，包括尖锐路径界、原角 Hessian、路径卷积、谱比较及固定基图期望极值。[固定覆盖表](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/c678e9ee24fb304cad755a27c99f511c8640f75e/formal/COVERAGE.zh.md) 说明对象、假设、量词和覆盖边界；配套[复现说明](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/c678e9ee24fb304cad755a27c99f511c8640f75e/formal/README.zh.md) 给出工具链和审计步骤。
 
-固定形式化工程的实际重建与审计见[本轮复跑记录](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/f578a34dd43f0af7b7e866f4a2e7fd0e55acda72/review/lean-rerun-20261107/README.zh.md)。其覆盖对应历史源码和端点陈述；当前逐项对应见仓库文件 `review/revision-20261111/lean_correspondence.md`，分别标明旧端点已覆盖的结论、尚未对应的书面证明链及无新端点的结论。本次编辑修订不声称重新完成全量 Lean 编译。AI 用于表述和部分证明检查。
+[固定版本的稿件对应表](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/1b66d66cd287310c3a85dc3c64816fa319d55af2/review/revision-20261111/lean_correspondence.md)区分既有端点覆盖的结论与修订后的书面证明。定理 1.1、1.3 已有端点；命题 7.3、定理 1.2／推论 8.3、偶数阶方差观察以及推论 8.4 均无新增端点。[历史构建记录](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/1b66d66cd287310c3a85dc3c64816fa319d55af2/review/lean-rerun-20261107/summary.json)记载的是 2026 年 11 月 7 日的运行，不是这些新增陈述的编译。本轮修订不声称重新完成全量 Lean 构建。AI 用于表述和部分证明检查。
 
 ## 致谢
 

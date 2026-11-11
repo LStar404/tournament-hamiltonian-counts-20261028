@@ -1,0 +1,186 @@
+{
+  "run_date": "2026-11-11",
+  "base_commit": "1b66d66cd287310c3a85dc3c64816fa319d55af2",
+  "scope": "Second reviewer revision. Exact finite regressions and source identity checks are not a new general proof or Lean build.",
+  "source_checks": {
+    "compile_tex_input_check": {
+      "passed": true,
+      "documents": 10
+    },
+    "main_markdown_to_tex_idempotent": true,
+    "technical_appendix_counted_transform_and_generated_source_check": true,
+    "technical_appendix_raw_and_transformed_hashes_checked": true,
+    "technical_appendix_unexpected_mutations_rejected": true,
+    "new_python_scripts_compile": true,
+    "git_diff_check": true,
+    "relative_documentation_links": {
+      "passed": true,
+      "links_checked": 22
+    },
+    "historical_formal_and_review_sources_unchanged": true,
+    "historical_detailed_companions_unchanged": true
+  },
+  "finite_regressions": {
+    "convolution": {
+      "file": "convolution_checks.json",
+      "passed": true,
+      "all_labelled_tournaments_orders": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "tournaments": 1100
+    },
+    "hessian": {
+      "file": "hessian_checks.json",
+      "passed": true,
+      "cases": 5,
+      "arithmetic": "exact rational"
+    },
+    "stability_examples": {
+      "file": "stability_examples.json",
+      "passed": true,
+      "all_labelled_tournaments_orders": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "tournaments": 1099,
+      "transitive_variance_symbolically_verified": true,
+      "even_order_half_integrality_equality_checked_at": [
+        2,
+        4
+      ],
+      "abstract_ranges_checked_in_both_languages": true
+    }
+  },
+  "formal_source_check": {
+    "checker": "check_lean_coverage.py",
+    "passed": true,
+    "english_summary_rows": 37,
+    "endpoint_source_identities": 85,
+    "pinned_evidence_files": 10,
+    "frozen_input_files": 628,
+    "frozen_production_sources": 609,
+    "registered_endpoints": 3067,
+    "lean_compilation_performed": false,
+    "recursive_axiom_audit_performed": false,
+    "new_type_printing_performed": false
+  },
+  "pdf_build": {
+    "engine": "XeLaTeX",
+    "font_mode": "Documented portable alternatives (Liberation and Noto CJK); manuscript bodies unchanged.",
+    "documents": [
+      {
+        "pdf": "manuscripts/01_combined.zh.pdf",
+        "pages": 38,
+        "pdf_sha256": "1dbd90d71fe19a5baf6ad7ec5041242d070a5783796f841dbe4a15c01e480dd4",
+        "tex_sha256": "15bac90ed78d1518323e64e2b750c9424b0ddb157c1c8c3b585f3ce713d2340a",
+        "markdown_sha256": "e6f8a62208534a6ac35e55bd648405fd2167f3b54c016457015a5c00af73c69c",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 0,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "text_outside_page": []
+      },
+      {
+        "pdf": "manuscripts/02_combined.en.pdf",
+        "pages": 41,
+        "pdf_sha256": "fbe9de8d193c441f92dd325de72f6ef77a4846b925625582bdd79ca1ea9ade30",
+        "tex_sha256": "415651d791d6952ea7ef5d148b45b46250ed0b9b32c3a81483676cd11683865e",
+        "markdown_sha256": "1aaa5aabacebbe2f6dc75387c3f625be22abfae09b1747325cbb37cdc7ea5fe3",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 2,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "text_outside_page": []
+      },
+      {
+        "pdf": "manuscripts/09_technical_appendix.en.pdf",
+        "pages": 47,
+        "pdf_sha256": "473158f4e0d021cf6b9dd8703129dd7a9f406a345680bf6ac2e28e1634c79d0a",
+        "tex_sha256": "db5fab587d41362483f109fa5ae488ad5534df18bdbeabe56e1976d420d6e947",
+        "markdown_sha256": "29e18d7261a6d4cfd9138fc21e87337c92ad603a303c5e0094b1624c5c5ba749",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 0,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "text_outside_page": []
+      },
+      {
+        "pdf": "manuscripts/10_technical_appendix.zh.pdf",
+        "pages": 46,
+        "pdf_sha256": "9b2ebaf9522c87650de1b5896f22cd4c07d0058db4c2e1b264118e3b8e38ea8b",
+        "tex_sha256": "071e7a8a1dad7cd8d6536e5dd03045611883864962ce8751bc1dc1e9d1f591ab",
+        "markdown_sha256": "011d9ea2437b05ae34f240ee515fd8a76abc837d46639ef5beacb0f0e07318fd",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 0,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "text_outside_page": []
+      }
+    ],
+    "combined_english_pages": 88,
+    "combined_chinese_pages": 84,
+    "visual_review": {
+      "all_172_pages_contact_sheets": true,
+      "high_resolution_pages": {
+        "01_combined.zh.pdf": [
+          1,
+          2,
+          32,
+          33,
+          37
+        ],
+        "02_combined.en.pdf": [
+          1,
+          2,
+          34,
+          35,
+          40
+        ],
+        "09_technical_appendix.en.pdf": [
+          1,
+          21,
+          22
+        ],
+        "10_technical_appendix.zh.pdf": [
+          1,
+          21,
+          22
+        ]
+      },
+      "result": "No visible clipping, overlap, overflow or missing glyphs found. Final changed main pages rechecked after the last scope clarification. Fixed author-statement PDF link targets checked."
+    }
+  },
+  "independent_mathematical_review": {
+    "abstract_epsilon_range": true,
+    "even_order_variance_lower_bound_and_equality": true,
+    "actual_maximum_deficit_corollary_constants_and_thresholds": true,
+    "scope_of_exact_maximizer_single_degree_bound": true,
+    "appendix_score_and_majorant_notation_separation": true,
+    "limitations": "No new external-literature audit or independent re-proof of the entire manuscript is claimed."
+  },
+  "github_actions_run_performed": false
+}

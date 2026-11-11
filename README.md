@@ -2,7 +2,9 @@
 
 这份材料收录刘星辰、叶祥宇关于竞赛图 Hamilton 路径计数与 Wormald 随机吹胀模型的稿件。论文保留详细推导，另附面向初学者的中文导读、一页思路说明，以及本轮公式、来源和排版复核记录。
 
-## 2026年11月11日审稿修订版
+## 2026年11月11日二次审稿修订版
+
+第二轮修订补全摘要中 $0\le\varepsilon\le(L-1)/2$ 的适用范围及 $L,\mu_n$ 的定义，增加偶数阶精确极值图度方差为 $\Theta(n)$ 的观察，以及相对于实际最大值的稳定性推论 8.4。必要技术附录已统一记号与引用，并新增[英文形式化覆盖摘要](review/revision-20261111-round2/lean_coverage.en.md)。
 
 本轮把全局 $O(n^{-1})$ 路径计数和度方差稳定性作为论文主线。永久式定理明确定位为有独立定量证明的分析工具，不主张首次得到 $O(n^{-1})$ 永久式近似，也不把有符号输入或类一致性本身当作创新区别。
 
@@ -15,7 +17,7 @@
 
 原[英文详细证明伴随稿](manuscripts/08_detailed_proof.en.pdf)和[中文详细证明伴随稿](manuscripts/07_detailed_proof.zh.pdf)、专题稿及导读保留为独立展开阅读材料，不与新正文并列作为投稿版本。主要结论所需的长证明已收入技术附录；旧稿的额外初等计算和高阶展开属于可选阅读。
 
-本轮修改和实际检查见 [review/revision-20261111/](review/revision-20261111/README.md)。[当前稿—Lean对应表](review/revision-20261111/lean_correspondence.md)逐项区分旧端点已覆盖的结论、新书面证明链及无新增端点的结果。本轮未改变 Lean 生产源码，也不把历史构建记录写作本次重新编译。
+本轮修改和实际检查见 [review/revision-20261111-round2/](review/revision-20261111-round2/README.md)，上一轮记录保留在 [review/revision-20261111/](review/revision-20261111/README.md)。[英文覆盖摘要](review/revision-20261111-round2/lean_coverage.en.md)补充本次新增陈述；[详细对应表](review/revision-20261111/lean_correspondence.md)继续区分旧端点已覆盖的结论、新书面证明链及无新增端点的结果。本轮未改变 Lean 生产源码，也不把历史构建记录写作本次重新编译。
 
 历史精炼、来源和形式化复跑记录继续保留，版本边界见 [review/README.md](review/README.md)。
 
@@ -54,7 +56,7 @@ python tools/compile_tex.py --engine xelatex 01_combined.zh
 
 中文稿通过 `xeCJK` 和相对路径 `../fonts/` 读取 `NotoSerifSC-Regular.ttf`（字重 400，正文）与 `NotoSansSC-SemiBold.ttf`（字重 600，标题及粗体），无需另行安装这两种中文字体。它们由官方变量字体固定字重生成，相应许可分别见 `fonts/OFL-NotoSerifSC.txt`、`fonts/OFL-NotoSansSC.txt`。拉丁文字仍使用系统中的 Times New Roman、Arial、Consolas；数学使用 TeX 字体，扩展拉丁字符使用 `lmroman10-regular.otf`。这些字体依赖以各 TeX 导言为准。替换字体会改变行宽、分页和公式附近留白，应重新检查输出。
 
-`python tools/render_compact_main.py` 根据主文 Markdown 重建两个主文的 TeX 正文，并保留各自导言。`python tools/build_technical_appendix.py` 从保留的详细稿重建两个必要技术附录。修改后应先运行相应转换，再编译并检查 PDF。编译器缺少原字体时，可用 `python tools/compile_portable_pdfs.py --documents 01_combined.zh 02_combined.en 09_technical_appendix.en 10_technical_appendix.zh` 在独立目录以已安装的替代字体构建；字体变化会影响分页。
+`python tools/render_compact_main.py` 根据主文 Markdown 重建两个主文的 TeX 正文，并保留各自导言。`python tools/build_technical_appendix.py` 从冻结的详细稿按明确记录的记号、引用及文献表述变换，生成两个必要技术附录；它校验原始段落和变换后段落的哈希，不修改历史原稿。修改后应先运行相应转换，再编译并检查 PDF。编译器缺少原字体时，可用 `python tools/compile_portable_pdfs.py --documents 01_combined.zh 02_combined.en 09_technical_appendix.en 10_technical_appendix.zh` 在独立目录以已安装的替代字体构建；字体变化会影响分页。
 
 ## 重新生成图
 
