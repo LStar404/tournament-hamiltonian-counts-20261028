@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "scope": "Exact elementary identities and finite examples only; not a proof of the asymptotic stability theorem.",
+  "transitive_variance": "n*(n**2 - 1)/12",
+  "constant_absorption_nonnegative_excess": "C_0*K_0*delta*n**2",
+  "even_order_lower_bound_and_equality_checked": [
+    2,
+    4
+  ],
+  "abstract_parameter_guards": "both languages passed",
+  "records": [
+    {
+      "order": 1,
+      "labelled_tournaments": 1,
+      "maximum_paths": 1,
+      "exact_maximizer_variances": [
+        "0"
+      ]
+    },
+    {
+      "order": 2,
+      "labelled_tournaments": 2,
+      "maximum_paths": 1,
+      "exact_maximizer_variances": [
+        "1/2"
+      ]
+    },
+    {
+      "order": 3,
+      "labelled_tournaments": 8,
+      "maximum_paths": 3,
+      "exact_maximizer_variances": [
+        "0"
+      ]
+    },
+    {
+      "order": 4,
+      "labelled_tournaments": 64,
+      "maximum_paths": 5,
+      "exact_maximizer_variances": [
+        "1"
+      ]
+    },
+    {
+      "order": 5,
+      "labelled_tournaments": 1024,
+      "maximum_paths": 15,
+      "exact_maximizer_variances": [
+        "0",
+        "2"
+      ]
+    }
+  ]
+}

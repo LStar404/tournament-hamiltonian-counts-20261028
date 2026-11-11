@@ -1,0 +1,129 @@
+{
+  "run_date": "2026-11-11",
+  "base_commit": "6d960c34a7827d8e4c8409b967dc403c468388f2",
+  "scope": "Targeted response to supplied Gemini comments. New Hessian explanations follow from the existing formula; finite tests are not general proofs.",
+  "source_checks": {
+    "main_render_idempotent": true,
+    "compile_tex_inputs_checked": 10,
+    "appendix_generator_checked": true,
+    "formal_sources_appendices_and_historical_records_unchanged": true,
+    "git_diff_check": true,
+    "new_python_scripts_compile": true,
+    "pinned_anchor_line_targets_checked": 108,
+    "source_anchors_independently_matched_to_declarations": true
+  },
+  "exact_regressions": {
+    "coordinate_spectrum": {
+      "file": "check_hessian_coordinates.json",
+      "cases": 5,
+      "passed": true
+    },
+    "actual_implicit_hessian": {
+      "file": "hessian_checks.json",
+      "cases": 5,
+      "passed": true
+    },
+    "convolution": {
+      "file": "convolution_checks.json",
+      "tournaments": 1100,
+      "passed": true
+    },
+    "stability": {
+      "file": "stability_checks.json",
+      "tournaments": 1099,
+      "passed": true
+    }
+  },
+  "formal_source_checks": {
+    "english_mapping_rows": 37,
+    "unchanged_endpoint_identities": 85,
+    "pinned_evidence_files": 10,
+    "historical_input_files": 628,
+    "production_modules": 609,
+    "registered_endpoints": 3067,
+    "new_lean_build_performed": false,
+    "new_recursive_axiom_audit_performed": false,
+    "new_type_printing_performed": false
+  },
+  "pdf_build": {
+    "engine": "XeLaTeX",
+    "font_mode": "Documented portable alternatives; manuscript bodies unchanged by font conversion.",
+    "documents": [
+      {
+        "pdf": "manuscripts/01_combined.zh.pdf",
+        "pages": 39,
+        "pdf_sha256": "2fa03a771cb8f9a958d692ca8abaaaf84a3bdb2e8daaf30076ea2f764e2b9a04",
+        "tex_sha256": "2ebc87912acb30626a1c18d46cd44d66f45bbf8a125dbced4732f2be430836c2",
+        "markdown_sha256": "2f9c87e1d900ace1bf611779546bd28deb1ed877b1eda7569602775b34618b2d",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "final_pass_log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 0,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "new_pdf_link_uris_match_sources": true,
+        "text_outside_page": []
+      },
+      {
+        "pdf": "manuscripts/02_combined.en.pdf",
+        "pages": 41,
+        "pdf_sha256": "ba6fe8d31d65f388d3664fbff5b9a1b37d988f9b664c8e5e66fd6846648a5825",
+        "tex_sha256": "df7eea7a6fa94bef74c32fe89942ec81f8d517004d58ff6a2dd9242bd5842601",
+        "markdown_sha256": "55b0a2aeec1e3b075c37d218787faa109aaf2581eaf689be256c997ffcf65a41",
+        "passes": 2,
+        "body_unchanged_by_portable_builder": true,
+        "final_pass_log_checks": {
+          "overfull_boxes": 0,
+          "underfull_boxes": 2,
+          "missing_glyphs": 0,
+          "undefined_references": 0
+        },
+        "new_pdf_link_uris_match_sources": true,
+        "text_outside_page": []
+      }
+    ],
+    "unchanged_appendices": [
+      {
+        "pdf": "manuscripts/09_technical_appendix.en.pdf",
+        "pages": 47,
+        "pdf_sha256": "473158f4e0d021cf6b9dd8703129dd7a9f406a345680bf6ac2e28e1634c79d0a"
+      },
+      {
+        "pdf": "manuscripts/10_technical_appendix.zh.pdf",
+        "pages": 46,
+        "pdf_sha256": "9b2ebaf9522c87650de1b5896f22cd4c07d0058db4c2e1b264118e3b8e38ea8b"
+      }
+    ],
+    "visual_review": {
+      "all_80_main_pages_contact_sheets": true,
+      "key_pages": {
+        "01_combined.zh.pdf": [
+          1,
+          4,
+          5,
+          34,
+          35
+        ],
+        "02_combined.en.pdf": [
+          1,
+          5,
+          6,
+          37
+        ]
+      },
+      "result": "Comparison tables kept on one page; formal-scope paragraphs and first Hessian formulas no longer split at their starts. No visible clipping, overflow, overlap or missing glyphs."
+    }
+  },
+  "english_review_archive": {
+    "filename": "english-review-pdfs.zip",
+    "sha256": "6d4ed2277ef5f418f7b91dc693eed196d311257b537ec6f765a30d39e6534dc9",
+    "bytes": 654173,
+    "contains_only_two_english_pdfs_and_manifest": true,
+    "repeated_build_byte_identical": true,
+    "missing_archive_and_tampered_extra_duplicate_members_rejected": true,
+    "uploaded_to_any_journal": false
+  },
+  "github_ci_run_performed": false
+}

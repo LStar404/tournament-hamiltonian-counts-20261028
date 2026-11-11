@@ -16,7 +16,7 @@ $$
 P(n)=\bigl(L+O(n^{-1})\bigr)\mu_n.
 $$
 
-这将 Divoux–Wang 的尖锐首项渐近式细化为统一的 $O(n^{-1})$ 误差。在非主子阵缩放和路径卷积求和中保留度差惩罚，还得到度稳定性：对 $0\le\varepsilon\le(L-1)/2$ 和充分大的 $n$，若 $H(T)/\mu_n\ge L-\varepsilon$，则一致地有 $\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)$。因此，精确极值图的平均平方度差有界。永久式近似作为分析工具使用，并配有独立的定量证明。作为同一谱比值的联系和应用，我们独立于 Bhattacharjee 的重合结果推导 Wormald 原角 Hessian，并得到固定基图阶数的期望极值及正则内部块常数的严格单调性。
+这将 Divoux–Wang 的尖锐首项渐近式细化为统一的 $O(n^{-1})$ 误差。在非主子阵缩放和路径卷积求和中保留度差惩罚，还得到度稳定性：对 $0\le\varepsilon\le(L-1)/2$ 和充分大的 $n$，若 $H(T)/\mu_n\ge L-\varepsilon$，则一致地有 $\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)$。因此，精确极值图的平均平方度差有界。永久式近似作为分析工具使用，并配有独立的定量证明。作为同一谱比值的联系和应用，我们独立于 Bhattacharjee 的重合结果，对每个正则基图推导 Wormald 原角 Hessian，并得到固定基图吹胀模型中计数期望的极值及正则内部块常数的严格单调性。
 
 ## 1. 引言
 
@@ -107,6 +107,8 @@ $$
 
 这里 $\mathcal H=\det\mathbf H$，平方根取正值。角函数的定义见第 9 节。结合 Wormald [6] 的定理 1、4、5，固定 $d$ 后，模型 $\mathcal T(T^*,m)$ 的归一化圈、路径期望均趋于 $\rho_d(S)$，模型 $\mathcal R(T^*,m)$ 的相应极限均为 $e^{1/d}\rho_d(S)$。
 
+这里有两种不同的极限。定理 1.1 在阶数 $n$ 增长时对全部竞赛图一致成立；吹胀模型则固定 $d$ 和 $T^*$，令 $m\to\infty$，角变量维数 $d-1$ 始终固定。Hessian 结论适用于每个正则基图，模型极限讨论内部块随机选择下的期望，而非全部正则竞赛图的逐点计数或几乎必然计数。第 3—8 节的全局路径证明并未调用维数随阶数增长的 Wormald 鞍点定理。
+
 因此，控制全局路径界的谱比值也决定了吹胀模型的常数。这些常数还可直接由 Divoux–Wang [12, 命题 5.1] 得出，无须经过 Hessian 计算；第 10.1 节另写出这一推导。其命题 7.1、引理 9.1 已给出谱比值上界和圆环取等。下面结合这些结论、Fang–Huang [11] 的等号条件，以及正则基图的零行和条件，确定取等基图；非正则情形则另作估计。
 
 **推论 1.4。** 对每个固定奇数 $d\ge3$，存在 $M_d$，使所有 $m\ge M_d$ 时，$\mathrm{Car}_d$ 在同构意义下唯一最大化两个模型的 Hamilton 圈数和路径数期望。对于 $\mathcal R(T^*,m)$，只考虑奇数 $m$。
@@ -128,6 +130,20 @@ $$
 
 早期研究首先确定了指数增长率。Szele [10] 得到 $P(n)=O(n!2^{-3n/4})$，并猜想 $(P(n)/n!)^{1/n}$ 趋于 $1/2$。Alon [2] 将 Brégman 不等式用于邻接矩阵的永久式，再以增添顶点的构造将圈数界转为路径界，得到 $P(n)=O(n^{3/2}\mu_n)$。Friedgut–Kahn [7] 以熵方法改进多项式指数，给出圈数界 $O(n^\alpha\nu_n)$，其中 $\alpha\approx1.249$，以及相应的路径界。
 
+\Needspace{14\baselineskip}
+
+下表统一采用路径归一化，并令 $n\to\infty$。
+
+| 来源 | $P(n)/\mu_n$ 的界 |
+|:---|:---|
+| Szele [10] | $1\le P(n)/\mu_n=O(2^{n/4})$ |
+| Alon [2] | $O(n^{3/2})$ |
+| Friedgut–Kahn [7] | $O(n^{3/2-\xi})$，$\xi=0.2507\ldots$ |
+| Divoux–Wang [12] | $L+o(1)$ |
+| 定理 1.1 | $L+O(n^{-1})$ |
+
+第三行的原圈数界通过 $P(n)\le4\max_{|V(T)|=n+1}C(T)$ 及 $4\nu_{n+1}=\mu_n$ 转移为路径界。这里 $L\approx2.855958$。相较 [12]，首项常数并未改变；改进在于量化余项，不能换算成固定百分比的提升。
+
 提高下界则利用边方向之间的相关性。Adler、Alon 和 Ross [9] 选取近乎覆盖全部边的边不交三角形族，将各三角形独立定向为有向三圈，得到 $(e-o(1))\mu_n$。对随机顶点排列，族中三角形连续出现的次数趋于 $\operatorname{Poisson}(1)$，由此产生因子 $e$。Wormald [6] 的圆环吹胀沿一个无穷阶数序列给出超过 $2.85588$ 的圈数下界常数，并预示约为 $2.855958$ 的极限值。
 
 第一作者于 2026 年 10 月 8 日公开存档的路径稿 [14] 已证明 $(L-O(n^{-1}))\mu_n\le P(n)\le(C_*+O(n^{-1}))\mu_n$，其中 $L<C_*$。该稿包含本文使用的正路径卷积、统一永久式估计、非主子阵缩放及异常顶点分析，早于 Divoux–Wang [12] 于 10 月 16 日提交 arXiv v1。定理 1.1 将该计数框架与 Fang–Huang [11] 的谱矩比较结合，把 [12, 定理 1.4] 的尖锐首项渐近式细化为统一的归一化误差 $O(n^{-1})$。
@@ -141,6 +157,10 @@ Bhattacharjee 于 2026 年 10 月 14 日公开的版本 [16] 包含完整原角 
 第 2 节固定记号，第 3、4 节建立永久式与非主子阵缩放估计。第 5 节正路径卷积的删集大小权重具有可和的固定矩，使这些估计在求和时保持误差阶而不损失对数因子。第 6 节给出全阶数谱比较。第 7 节依次处理大方差、异常顶点和剩余类别；最后一类中，命题 7.3 保留的度差惩罚吸收平方根误差。第 8 节给出匹配下界和度数方差稳定性。第 9—11 节转向角 Hessian 和模型极值：正则非圆环基有严格极限间隙，非正则基的归一化期望趋于零，而固定 $d$ 时基图同构类有限，故可取共同阈值。投稿材料由本正文及技术附录组成。技术附录收录必要的永久式、缩放及谱等号长证明，保留原章节和公式编号；原详细证明伴随稿另作展开阅读材料，其初等计算和高阶展开不再作为主要结果的额外证明前提。
 
 最优误差阶、首个修正项系数及各有限阶数的路径最大图仍是开放问题。另一个问题是估计 $M_d$ 的增长。若让基阶数与块阶数同时趋于无穷，还需超出本文固定基图极限的、对 $d$ 一致的估计。
+
+\Needspace{8\baselineskip}
+
+**形式化证据。** 配套 Lean 工程不仅包含离散和代数结果，也包含连续分析，包括[原坐标解析性](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/6d960c34a7827d8e4c8409b967dc403c468388f2/formal/Tournament/OriginalCoordinates.lean#L202)、[实际角 Hessian](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/6d960c34a7827d8e4c8409b967dc403c468388f2/formal/Tournament/HessianTheorem.lean#L29)，以及[均匀内部块](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/6d960c34a7827d8e4c8409b967dc403c468388f2/formal/TournamentHamiltonian/UniformFinal/UniformExpectationLimit.lean#L22)和[正则内部块](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/6d960c34a7827d8e4c8409b967dc403c468388f2/formal/TournamentHamiltonian/RegularExpectation/Endpoint.lean#L22)的期望极限。既有端点认证的是其准确陈述与假设，而非修订稿中的每一条书面证明。命题 7.3、新增度稳定性推论及下文的 Hessian 条件数说明均无新增映射端点。[英文覆盖摘要](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/6d960c34a7827d8e4c8409b967dc403c468388f2/review/revision-20261111-round2/lean_coverage.en.md)与作者声明区分这些边界，并给出固定上游 Lean/mathlib 依赖及历史递归公理审计的证据；本轮不声称重新完成全量 Lean 编译。
 
 ## 2. 预备知识与记号
 
@@ -2034,6 +2054,25 @@ $$
 
 最后，$\det(I+C^2)=\det(I+iC)^2$，$\det(I-C^2)=\det(I+C)^2$。未平方的两个行列式均为正，分别由各块上的 $1-\lambda^2>0$ 和 $1+\lambda^2>0$ 得出。有理斜对称矩阵 $C$ 的奇数阶主子式为零，故 $\det(I+iC)$ 为有理数，结论得证。$\square$
 
+\Needspace{8\baselineskip}
+
+**坐标、谱与一致性。** 令 $G=E^TE=I_{d-1}+J_{d-1}$。矩阵 $EG^{-1/2}$ 的列构成 $\mathbf1^\perp$ 的一组标准正交基。将 $C|_{\mathbf1^\perp}$ 的频率写作 $\pm i\lambda_j$，$1\le j\le(d-1)/2$，必要时补入零频率对。矩阵 $G^{-1/2}\mathbf HG^{-1/2}$ 的特征值为
+
+$$
+q_j=\frac{1-\lambda_j^2}{1+\lambda_j^2},
+\qquad 1\le j\le(d-1)/2,
+$$
+
+每项计两次。这些是矩阵对 $(\mathbf H,G)$ 的广义特征值，一般不是 $\mathbf H$ 的普通特征值。零频率给出 $q_j=1$，而非零模。上述频率界给出
+
+$$
+\frac{d+1}{3d-1}G\preceq\mathbf H\preceq G.
+$$
+
+由于 $G$ 的特征值为 $1$ 和 $d$，可得 $\lambda_{\min}(\mathbf H)>1/3$，正交坐标下的条件数小于 $3$，且 $\kappa_2(\mathbf H)<3d$。
+
+消去 $y_d$ 是隐函数定理的应用，并非消除旋转零模：$K_{y_d}(z\mathbf1)\ne0$，所得 Hessian 非奇异。在本文的角变量约定下，$\nabla\widetilde f(0)=-i\mathbf1$，所以 $\widetilde f(\theta)-\log z+i\sum_j\theta_j$ 在原点驻定，且具有相同的正定 Hessian。上式行列式中的因子 $d$ 来自 $\det G$，不是规范修正。这些二次型界本身不控制高阶导数或其余积分部分关于 $d$ 的一致性；本文不主张 $d,m$ 同时增长的极限。
+
 上述计算确定了原角坐标下的完整 Hessian。Schur 补的展开计算和显式局部消元保留于《详细证明伴随稿》§9。
 
 ## 10. 模型极限与 carousel 常数
@@ -2060,7 +2099,7 @@ $$
 
 正则块极限沿奇数 $m$ 取值。
 
-**证明.** Wormald 定理 4 在 $\mathcal H\ne0$ 时给出第一个圈极限 $\sqrt{d/\mathcal H}$，其条件及数值已由定理 9.2 确定。他的定理 5 将结论转为路径情形，定理 1 和定理 5 给出正则块因子 $e^{1/d}$。$\square$
+**证明.** Wormald 定理 4 在 $\mathcal H\ne0$ 时给出第一个圈极限 $\sqrt{d/\mathcal H}$，其条件及数值已由定理 9.2 确定。他的定理 5 将结论转为路径情形，定理 1 和定理 5 给出正则块因子 $e^{1/d}$。这里调用包含非中心区域估计在内的完整固定基图渐近定理，不据此推出关于 $d$ 一致的余项。$\square$
 
 作为对照，Divoux–Wang [12, Proposition 5.1] 可直接给出同一组常数。令 $W=(J_N-I_N+S\otimes J_m)/2$，$D=2W/(N-1)$，$B=D-J_N/N$。在常数方向、块常数零和子空间、各块内零和子空间上，$B$ 分别作用为
 

@@ -16,7 +16,7 @@ $$
 P(n)=\bigl(L+O(n^{-1})\bigr)\mu_n.
 $$
 
-This refines the sharp leading asymptotic of Divoux and Wang to a uniform $O(n^{-1})$ error. Retaining the degree-imbalance penalty through nonprincipal scaling and the path convolution also proves degree stability: uniformly for $0\le\varepsilon\le(L-1)/2$ and sufficiently large $n$, if $H(T)/\mu_n\ge L-\varepsilon$, then $\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)$. Exact maximizers therefore have bounded mean square degree deviation. The permanent approximation is used as an analytic tool with an independent quantitative proof. As related applications of the same spectral ratio, we derive Wormald's original angular Hessian independently of Bhattacharjee's overlapping result and obtain fixed-base expectation extrema and strict monotonicity of the regular-block constants.
+This refines the sharp leading asymptotic of Divoux and Wang to a uniform $O(n^{-1})$ error. Retaining the degree-imbalance penalty through nonprincipal scaling and the path convolution also proves degree stability: uniformly for $0\le\varepsilon\le(L-1)/2$ and sufficiently large $n$, if $H(T)/\mu_n\ge L-\varepsilon$, then $\sum_v(d^+(v)-(n-1)/2)^2=O(\varepsilon n^2+n)$. Exact maximizers therefore have bounded mean square degree deviation. The permanent approximation is used as an analytic tool with an independent quantitative proof. As related applications of the same spectral ratio, we derive Wormald's original angular Hessian for every regular base, independently of Bhattacharjee's overlapping result, and obtain extrema of expected counts in fixed-base blow-ups and strict monotonicity of the regular-block constants.
 
 ## 1. Introduction
 
@@ -107,6 +107,8 @@ $$
 
 Here $\mathcal H=\det\mathbf H$, and the square root is positive. The angular function is defined in Section 9. Together with Theorems 1, 4 and 5 of Wormald [6], this shows that, for fixed $d$, the normalized expected cycle and path counts in $\mathcal T(T^*,m)$ both tend to $\rho_d(S)$, while the corresponding limits in $\mathcal R(T^*,m)$ are $e^{1/d}\rho_d(S)$.
 
+These are two different limiting regimes. Theorem 1.1 is uniform over all tournaments as their order $n$ grows. In the blow-up models, $d$ and $T^*$ are fixed while $m\to\infty$, so the angular dimension $d-1$ is fixed. The Hessian statement holds for every regular base, and the model limits concern expectations over the internal blocks, not pointwise or almost-sure counts for all regular tournaments. The global path proof in Sections 3--8 does not apply a growing-dimensional version of Wormald's saddle-point theorem.
+
 Thus the spectral ratio governing the global path bound also determines the blow-up constants. These constants can also be obtained directly from Divoux and Wang [12, Proposition 5.1], without the Hessian calculation; Section 10.1 records that derivation. Their Proposition 7.1 and Lemma 9.1 already give the spectral maximum and the carousel value. The next corollary combines these results with the equality conditions of Fang and Huang [11], the zero-row-sum condition for a regular base, and a separate bound for nonregular bases.
 
 **Corollary 1.4.** For each fixed odd $d\ge3$, there exists $M_d$ such that, for every $m\ge M_d$, the carousel $\mathrm{Car}_d$ is the unique base, up to isomorphism, maximizing the expected number of Hamiltonian cycles and paths in both models. For $\mathcal R(T^*,m)$, only odd $m$ are considered.
@@ -128,6 +130,20 @@ Theorem 1.3 proves Wormald's Hessian conjecture [6, Conjecture 6]. The limit in 
 
 The first bounds determined the exponential scale. Szele [10] obtained $P(n)=O(n!2^{-3n/4})$ and conjectured that $(P(n)/n!)^{1/n}$ tends to $1/2$. Alon [2] proved $P(n)=O(n^{3/2}\mu_n)$ by applying Brégman's inequality to the permanent of the adjacency matrix and then transferring the cycle bound to paths by adding a vertex. Friedgut and Kahn [7] improved the polynomial exponent by an entropy argument, giving a cycle bound $O(n^\alpha\nu_n)$ with $\alpha\approx1.249$ and the corresponding path bound.
 
+\Needspace{14\baselineskip}
+
+For comparison, the following bounds use the same normalization and let $n\to\infty$.
+
+| Source | Bound for $P(n)/\mu_n$ |
+|:---|:---|
+| Szele [10] | $1\le P(n)/\mu_n=O(2^{n/4})$ |
+| Alon [2] | $O(n^{3/2})$ |
+| Friedgut--Kahn [7] | $O(n^{3/2-\xi})$, $\xi=0.2507\ldots$ |
+| Divoux--Wang [12] | $L+o(1)$ |
+| Theorem 1.1 | $L+O(n^{-1})$ |
+
+For the third row, the original cycle bound transfers through $P(n)\le4\max_{|V(T)|=n+1}C(T)$ and $4\nu_{n+1}=\mu_n$. Here $L\approx2.855958$. Compared with [12], the leading constant is unchanged: the improvement is a quantified remainder, not a fixed percentage increase.
+
 Lower bounds improve when edge orientations are correlated. Adler, Alon and Ross [9] used an almost complete packing of edge-disjoint triangles, oriented independently as directed triangles, to obtain $(e-o(1))\mu_n$. For a random vertex ordering, the number of packed triangles occurring consecutively tends to $\operatorname{Poisson}(1)$, which accounts for the factor $e$. Wormald's carousel blow-ups [6] gave a cycle lower constant exceeding $2.85588$ along an infinite sequence of orders and suggested the limiting value about $2.855958$.
 
 The first author's path preprint [14], publicly archived on 8 October 2026, established $(L-O(n^{-1}))\mu_n\le P(n)\le(C_*+O(n^{-1}))\mu_n$, with $L<C_*$. It contains the positive path convolution, uniform permanent estimate, nonprincipal scaling and exceptional-vertex analysis used here. The archive precedes the arXiv v1 submission of Divoux and Wang [12] on 16 October. Theorem 1.1 combines that counting framework with the spectral moment comparison of Fang and Huang [11], refining the sharp leading asymptotic in [12, Theorem 1.4] to a uniform normalized error $O(n^{-1})$.
@@ -141,6 +157,10 @@ Bhattacharjee's public release of 14 October 2026 [16] contains the full origina
 After fixing notation in Section 2, we develop the permanent and nonprincipal scaling estimates in Sections 3 and 4. The positive path convolution in Section 5 has summable deletion-size moments, allowing these estimates to be combined without a logarithmic loss. Section 6 supplies the all-order spectral comparison. Section 7 separates large variance, exceptional vertices and the remaining class; in the last class, the score penalty in Proposition 7.3 absorbs the square-root error terms. Section 8 gives the matching lower bound and degree-variance stability. Sections 9--11 turn to the angular Hessian and the model extrema: regular noncarousel bases have a strict limiting gap, nonregular bases have normalized expectations tending to zero, and the finite number of base classes at fixed $d$ gives a common threshold. The submission consists of this main text and the Technical appendix, which contains the necessary permanent, scaling and spectral-equality proofs with their original section and equation numbers. The detailed proof companion is separate expanded reading; its elementary calculations and higher-order expansions are optional, not additional proof prerequisites for the main results.
 
 The optimal error order, the first correction coefficient and the exact path maximizers at each finite order remain open. Another question is to estimate the growth of $M_d$. Letting the base and block orders grow together would require bounds uniform in $d$, beyond the fixed-base limits used here.
+
+\Needspace{8\baselineskip}
+
+**Formal evidence.** The accompanying Lean development includes discrete, algebraic and continuous-analytic results, including [original-coordinate analyticity](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/6d960c34a7827d8e4c8409b967dc403c468388f2/formal/Tournament/OriginalCoordinates.lean#L202), the [actual angular Hessian](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/6d960c34a7827d8e4c8409b967dc403c468388f2/formal/Tournament/HessianTheorem.lean#L29), and [uniform](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/6d960c34a7827d8e4c8409b967dc403c468388f2/formal/TournamentHamiltonian/UniformFinal/UniformExpectationLimit.lean#L22) and [regular-block](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/6d960c34a7827d8e4c8409b967dc403c468388f2/formal/TournamentHamiltonian/RegularExpectation/Endpoint.lean#L22) expectation limits. Existing endpoints certify their exact statements and hypotheses, not every revised written proof. Proposition 7.3, the new degree-stability consequences and the explanatory Hessian conditioning bounds below have no new mapped endpoints. The [English coverage summary](https://github.com/LStar404/tournament-hamiltonian-counts-20261028/blob/6d960c34a7827d8e4c8409b967dc403c468388f2/review/revision-20261111-round2/lean_coverage.en.md) and author statement distinguish these boundaries. The pinned upstream Lean/mathlib dependency and historical recursive axiom audit are documented there; no new full Lean compilation is claimed here.
 
 ## 2. Preliminaries and notation
 
@@ -2042,6 +2062,25 @@ $$
 
 Finally, $\det(I+C^2)=\det(I+iC)^2$ and $\det(I-C^2)=\det(I+C)^2$. Both unsquared determinants are positive, as follows blockwise from $1-\lambda^2>0$ and $1+\lambda^2>0$. Odd principal minors of the rational skew matrix $C$ vanish; hence $\det(I+iC)$ is rational, proving the last assertion. $\square$
 
+\Needspace{8\baselineskip}
+
+**Coordinates, spectrum and uniformity.** Put $G=E^TE=I_{d-1}+J_{d-1}$. The columns of $EG^{-1/2}$ form an orthonormal basis of $\mathbf1^\perp$. Write the frequencies of $C|_{\mathbf1^\perp}$ as $\pm i\lambda_j$, $1\le j\le(d-1)/2$, including zero pairs if necessary. The eigenvalues of $G^{-1/2}\mathbf HG^{-1/2}$ are
+
+$$
+q_j=\frac{1-\lambda_j^2}{1+\lambda_j^2},
+\qquad 1\le j\le(d-1)/2,
+$$
+
+each listed twice. These are the generalized eigenvalues of $(\mathbf H,G)$, not generally the ordinary eigenvalues of $\mathbf H$. A zero frequency gives $q_j=1$, not a zero mode. The frequency bound above yields
+
+$$
+\frac{d+1}{3d-1}G\preceq\mathbf H\preceq G.
+$$
+
+Since the eigenvalues of $G$ are $1$ and $d$, it follows that $\lambda_{\min}(\mathbf H)>1/3$, the orthonormal-coordinate condition number is less than $3$, and $\kappa_2(\mathbf H)<3d$.
+
+Eliminating $y_d$ uses the implicit function theorem, not removal of a rotational zero mode: $K_{y_d}(z\mathbf1)\ne0$ and the resulting Hessian is nonsingular. In the angular convention used here, $\nabla\widetilde f(0)=-i\mathbf1$, so $\widetilde f(\theta)-\log z+i\sum_j\theta_j$ is stationary at zero and has the same positive Hessian. The determinant factor $d$ above comes from $\det G$, not from a gauge correction. These quadratic bounds do not by themselves control higher derivatives or the remaining integral uniformly in $d$; no joint $d,m$ limit is asserted.
+
 The calculation identifies the full Hessian in the original angular coordinates. The expanded Schur-complement calculations and the explicit local elimination are retained in Detailed proof companion §9.
 
 ## 10. Model limits and the carousel constants
@@ -2066,7 +2105,7 @@ $$
 
 The regular-block limits are taken through odd $m$.
 
-**Proof.** Wormald's Theorem 4 gives the first cycle limit as $\sqrt{d/\mathcal H}$ when $\mathcal H\ne0$, now established by Theorem 9.2. His Theorem 5 transfers it to paths, and Theorems 1 and 5 supply the regular-block factor $e^{1/d}$. $\square$
+**Proof.** Wormald's Theorem 4 gives the first cycle limit as $\sqrt{d/\mathcal H}$ when $\mathcal H\ne0$, now established by Theorem 9.2. His Theorem 5 transfers it to paths, and Theorems 1 and 5 supply the regular-block factor $e^{1/d}$. This invokes the full fixed-base asymptotic theorem, including its noncentral estimates; no remainder uniform in $d$ is inferred. $\square$
 
 For comparison, Divoux–Wang [12, Proposition 5.1] gives the same constants directly. For $W=(J_N-I_N+S\otimes J_m)/2$, put $D=2W/(N-1)$ and $B=D-J_N/N$. On the constant direction, the block-constant zero-sum space, and the within-block zero-sum space, $B$ acts respectively as
 
